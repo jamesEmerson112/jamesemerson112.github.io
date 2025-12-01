@@ -1,6 +1,6 @@
 {
   "id": "private-003",
-  "scannedAt": "2025-12-01T02:53:38.631Z",
+  "scannedAt": "2025-12-01T03:33:05.051Z",
   "metadata": {
     "name": "Private Project 3",
     "fullName": null,
@@ -64,14 +64,14 @@
       "ULOC": 0
     },
     {
-      "Name": "TeX",
+      "Name": "LaTeX",
       "Bytes": 73518,
       "CodeBytes": 0,
       "Lines": 1591,
       "Code": 1210,
       "Comment": 7,
       "Blank": 374,
-      "Complexity": 103,
+      "Complexity": 0,
       "Count": 3,
       "WeightedComplexity": 0,
       "Files": [],
@@ -133,7 +133,7 @@
       "totalBytes": 3817953,
       "totalFiles": 68,
       "totalLanguages": 7,
-      "totalComplexity": 314,
+      "totalComplexity": 211,
       "primaryLanguage": "Plain Text",
       "primaryLanguagePercent": 90.2
     },
@@ -191,14 +191,14 @@
         "percentOfBytes": 1.7
       },
       {
-        "name": "TeX",
+        "name": "LaTeX",
         "lines": 1591,
         "code": 1210,
         "comments": 7,
         "blanks": 374,
         "bytes": 73518,
         "files": 3,
-        "complexity": 103,
+        "complexity": 0,
         "percentOfLines": 1.9,
         "percentOfCode": 1.5,
         "percentOfBytes": 1.9
