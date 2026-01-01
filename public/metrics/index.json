@@ -1,73 +1,108 @@
 {
   "version": "1.0.0",
-  "generatedAt": "2025-12-29T02:53:16.138Z",
-  "lastFullScan": "2025-12-01T03:34:11.329Z",
-  "lastIncrementalScan": "2025-12-29T02:53:16.138Z",
-  "reposScannedThisRun": 172,
-  "totalPublicRepos": 89,
-  "totalPrivateRepos": 83,
-  "totalRepos": 172,
+  "generatedAt": "2026-01-01T03:34:25.718Z",
+  "lastFullScan": "2026-01-01T03:34:25.718Z",
+  "lastIncrementalScan": "2026-01-01T03:34:25.718Z",
+  "reposScannedThisRun": 180,
+  "totalPublicRepos": 91,
+  "totalPrivateRepos": 89,
+  "totalRepos": 180,
   "portfolioTotals": {
-    "totalLines": 2301013,
-    "totalCode": 1999500,
-    "totalComments": 147460,
-    "totalBlanks": 154053,
-    "totalFiles": 6503,
-    "totalBytes": 156623404,
-    "totalComplexity": 88621,
+    "totalLines": 2410088,
+    "totalCode": 2095205,
+    "totalComments": 151119,
+    "totalBlanks": 163764,
+    "totalFiles": 6831,
+    "totalBytes": 185770745,
+    "totalComplexity": 92081,
     "estimatedValue": {
-      "standardCost": 29262816,
-      "totalEffort": 6238.73,
-      "avgTime": 36.27,
+      "standardCost": 30553116,
+      "totalEffort": 6513.83,
+      "avgTime": 36.19,
       "avgPeople": 0
     },
     "soloDeveloper": {
-      "fullTimeMonths": 6238.73,
-      "fullTimeYears": 520,
-      "fullTimeWeeks": 27014,
+      "fullTimeMonths": 6513.83,
+      "fullTimeYears": 543,
+      "fullTimeWeeks": 28205,
       "description": "Total time if developed alone, full-time"
     },
     "languages": {
       "Markdown": {
-        "repos": 158,
-        "totalLines": 169899,
-        "totalCode": 128082,
-        "percentOfTotal": 7.4,
-        "averagePerRepo": 1075
+        "repos": 165,
+        "totalLines": 171679,
+        "totalCode": 129509,
+        "percentOfTotal": 7.1,
+        "averagePerRepo": 1040
       },
       "Python": {
-        "repos": 53,
-        "totalLines": 134060,
-        "totalCode": 96957,
-        "percentOfTotal": 5.8,
-        "averagePerRepo": 2529
+        "repos": 54,
+        "totalLines": 134333,
+        "totalCode": 97121,
+        "percentOfTotal": 5.6,
+        "averagePerRepo": 2488
       },
       "JavaScript": {
-        "repos": 74,
-        "totalLines": 366705,
-        "totalCode": 264042,
-        "percentOfTotal": 15.9,
-        "averagePerRepo": 4955
+        "repos": 78,
+        "totalLines": 367331,
+        "totalCode": 264493,
+        "percentOfTotal": 15.2,
+        "averagePerRepo": 4709
       },
       "C": {
         "repos": 11,
         "totalLines": 85756,
         "totalCode": 64505,
-        "percentOfTotal": 3.7,
+        "percentOfTotal": 3.6,
         "averagePerRepo": 7796
+      },
+      "Svelte": {
+        "repos": 2,
+        "totalLines": 2986,
+        "totalCode": 2508,
+        "percentOfTotal": 0.1,
+        "averagePerRepo": 1493
+      },
+      "HTML": {
+        "repos": 67,
+        "totalLines": 7093,
+        "totalCode": 6090,
+        "percentOfTotal": 0.3,
+        "averagePerRepo": 106
+      },
+      "YAML": {
+        "repos": 21,
+        "totalLines": 2406,
+        "totalCode": 1857,
+        "percentOfTotal": 0.1,
+        "averagePerRepo": 115
+      },
+      "CSS": {
+        "repos": 71,
+        "totalLines": 17104,
+        "totalCode": 14260,
+        "percentOfTotal": 0.7,
+        "averagePerRepo": 241
+      },
+      "License": {
+        "repos": 73,
+        "totalLines": 12012,
+        "totalCode": 9705,
+        "percentOfTotal": 0.5,
+        "averagePerRepo": 165
       },
       "Cuda": {
         "repos": 2,
         "totalLines": 17947,
         "totalCode": 12330,
-        "percentOfTotal": 0.8,
+        "percentOfTotal": 0.7,
         "averagePerRepo": 8974
       },
       "C Header": {
         "repos": 16,
         "totalLines": 449501,
         "totalCode": 420587,
-        "percentOfTotal": 19.5,
+        "percentOfTotal": 18.7,
         "averagePerRepo": 28094
       },
       "Makefile": {
@@ -84,68 +119,40 @@
         "percentOfTotal": 0.1,
         "averagePerRepo": 144
       },
-      "YAML": {
-        "repos": 20,
-        "totalLines": 2383,
-        "totalCode": 1836,
-        "percentOfTotal": 0.1,
-        "averagePerRepo": 119
-      },
       "C++": {
         "repos": 16,
         "totalLines": 27066,
         "totalCode": 17393,
-        "percentOfTotal": 1.2,
+        "percentOfTotal": 1.1,
         "averagePerRepo": 1692
       },
       "Jupyter": {
         "repos": 7,
         "totalLines": 27673,
         "totalCode": 27673,
-        "percentOfTotal": 1.2,
+        "percentOfTotal": 1.1,
         "averagePerRepo": 3953
       },
-      "License": {
-        "repos": 67,
-        "totalLines": 10580,
-        "totalCode": 8531,
-        "percentOfTotal": 0.5,
-        "averagePerRepo": 158
-      },
       "Plain Text": {
-        "repos": 56,
-        "totalLines": 799660,
-        "totalCode": 798156,
-        "percentOfTotal": 34.8,
-        "averagePerRepo": 14280
+        "repos": 58,
+        "totalLines": 799988,
+        "totalCode": 798446,
+        "percentOfTotal": 33.2,
+        "averagePerRepo": 13793
       },
       "JSX": {
-        "repos": 12,
-        "totalLines": 16079,
-        "totalCode": 14082,
+        "repos": 13,
+        "totalLines": 16123,
+        "totalCode": 14122,
         "percentOfTotal": 0.7,
-        "averagePerRepo": 1340
-      },
-      "CSS": {
-        "repos": 67,
-        "totalLines": 14385,
-        "totalCode": 11935,
-        "percentOfTotal": 0.6,
-        "averagePerRepo": 215
-      },
-      "HTML": {
-        "repos": 64,
-        "totalLines": 6989,
-        "totalCode": 6000,
-        "percentOfTotal": 0.3,
-        "averagePerRepo": 109
+        "averagePerRepo": 1240
       },
       "JSON": {
-        "repos": 87,
-        "totalLines": 54206,
-        "totalCode": 54139,
-        "percentOfTotal": 2.4,
-        "averagePerRepo": 623
+        "repos": 91,
+        "totalLines": 55484,
+        "totalCode": 55413,
+        "percentOfTotal": 2.3,
+        "averagePerRepo": 610
       },
       "TOML": {
         "repos": 5,
@@ -162,25 +169,60 @@
         "averagePerRepo": 152
       },
       "CSV": {
-        "repos": 9,
-        "totalLines": 7787,
-        "totalCode": 7787,
-        "percentOfTotal": 0.3,
-        "averagePerRepo": 865
+        "repos": 10,
+        "totalLines": 78278,
+        "totalCode": 73775,
+        "percentOfTotal": 3.2,
+        "averagePerRepo": 7828
       },
-      "Svelte": {
-        "repos": 2,
-        "totalLines": 2986,
-        "totalCode": 2508,
+      "Go": {
+        "repos": 3,
+        "totalLines": 6123,
+        "totalCode": 4912,
+        "percentOfTotal": 0.3,
+        "averagePerRepo": 2041
+      },
+      "TypeScript": {
+        "repos": 22,
+        "totalLines": 39044,
+        "totalCode": 33764,
+        "percentOfTotal": 1.6,
+        "averagePerRepo": 1775
+      },
+      "SQL": {
+        "repos": 4,
+        "totalLines": 1252,
+        "totalCode": 905,
         "percentOfTotal": 0.1,
-        "averagePerRepo": 1493
+        "averagePerRepo": 313
       },
       "SVG": {
-        "repos": 28,
-        "totalLines": 1673,
-        "totalCode": 1649,
+        "repos": 30,
+        "totalLines": 1677,
+        "totalCode": 1653,
         "percentOfTotal": 0.1,
-        "averagePerRepo": 60
+        "averagePerRepo": 56
+      },
+      "Swift": {
+        "repos": 4,
+        "totalLines": 1071,
+        "totalCode": 675,
+        "percentOfTotal": 0,
+        "averagePerRepo": 268
+      },
+      "Dockerfile": {
+        "repos": 6,
+        "totalLines": 216,
+        "totalCode": 114,
+        "percentOfTotal": 0,
+        "averagePerRepo": 36
+      },
+      "C#": {
+        "repos": 2,
+        "totalLines": 21144,
+        "totalCode": 15168,
+        "percentOfTotal": 0.9,
+        "averagePerRepo": 10572
       },
       "TeX": {
         "repos": 1,
@@ -189,20 +231,6 @@
         "percentOfTotal": 0.1,
         "averagePerRepo": 1591
       },
-      "TypeScript": {
-        "repos": 21,
-        "totalLines": 36782,
-        "totalCode": 31732,
-        "percentOfTotal": 1.6,
-        "averagePerRepo": 1752
-      },
-      "SQL": {
-        "repos": 3,
-        "totalLines": 1029,
-        "totalCode": 718,
-        "percentOfTotal": 0,
-        "averagePerRepo": 343
-      },
       "Docker ignore": {
         "repos": 2,
         "totalLines": 198,
@@ -210,26 +238,12 @@
         "percentOfTotal": 0,
         "averagePerRepo": 99
       },
-      "Dockerfile": {
-        "repos": 5,
-        "totalLines": 168,
-        "totalCode": 85,
-        "percentOfTotal": 0,
-        "averagePerRepo": 34
-      },
       "TypeScript Typings": {
         "repos": 10,
         "totalLines": 52171,
         "totalCode": 18220,
-        "percentOfTotal": 2.3,
+        "percentOfTotal": 2.2,
         "averagePerRepo": 5217
-      },
-      "Swift": {
-        "repos": 3,
-        "totalLines": 880,
-        "totalCode": 531,
-        "percentOfTotal": 0,
-        "averagePerRepo": 293
       },
       "Gradle": {
         "repos": 2,
@@ -307,13 +321,6 @@
         "totalCode": 30,
         "percentOfTotal": 0,
         "averagePerRepo": 19
-      },
-      "Go": {
-        "repos": 1,
-        "totalLines": 18,
-        "totalCode": 15,
-        "percentOfTotal": 0,
-        "averagePerRepo": 18
       },
       "R": {
         "repos": 1,
@@ -445,11 +452,47 @@
   },
   "repos": [
     {
+      "id": "ai-cds-disease-diagnosis-reproduction-alpha",
+      "name": "AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
+      "url": "https://github.com/jamesEmerson112/AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
+      "description": "",
+      "lastUpdated": "2025-12-31T17:38:56Z",
+      "primaryLanguage": "Markdown",
+      "isPrivate": false,
+      "isAnonymized": false,
+      "languages": [
+        {
+          "name": "Markdown",
+          "lines": 2,
+          "code": 1,
+          "comments": 0,
+          "blanks": 1,
+          "bytes": 47,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 100,
+          "percentOfCode": 100,
+          "percentOfBytes": 100
+        }
+      ],
+      "summary": {
+        "lines": 2,
+        "code": 1,
+        "files": 1,
+        "complexity": 0,
+        "traditionalCost": 8,
+        "aiCost": 2,
+        "traditionalMonths": 0,
+        "aiMonths": 0
+      },
+      "detailsFile": "repos/ai-cds-disease-diagnosis-reproduction-alpha.json"
+    },
+    {
       "id": "leetcode-with-james",
       "name": "leetcode-with-james",
       "url": "https://github.com/jamesEmerson112/leetcode-with-james",
       "description": "Collection of LeetCode questions to ace the coding interview! - Created using [LeetHub](https://github.com/QasimWani/LeetHub)",
-      "lastUpdated": "2025-12-28T22:22:58Z",
+      "lastUpdated": "2025-12-31T02:26:22Z",
       "primaryLanguage": "Markdown",
       "isPrivate": false,
       "isAnonymized": false,
@@ -463,22 +506,22 @@
           "bytes": 60212,
           "files": 59,
           "complexity": 0,
-          "percentOfLines": 57.3,
-          "percentOfCode": 62.5,
-          "percentOfBytes": 63.5
+          "percentOfLines": 56.6,
+          "percentOfCode": 62,
+          "percentOfBytes": 62.9
         },
         {
           "name": "Python",
-          "lines": 580,
-          "code": 403,
-          "comments": 75,
-          "blanks": 102,
-          "bytes": 18430,
-          "files": 23,
-          "complexity": 134,
-          "percentOfLines": 18.6,
-          "percentOfCode": 18.3,
-          "percentOfBytes": 19.4
+          "lines": 618,
+          "code": 419,
+          "comments": 85,
+          "blanks": 114,
+          "bytes": 19386,
+          "files": 25,
+          "complexity": 138,
+          "percentOfLines": 19.6,
+          "percentOfCode": 18.9,
+          "percentOfBytes": 20.2
         },
         {
           "name": "JavaScript",
@@ -489,9 +532,9 @@
           "bytes": 14164,
           "files": 25,
           "complexity": 93,
-          "percentOfLines": 21.2,
-          "percentOfCode": 16.3,
-          "percentOfBytes": 14.9
+          "percentOfLines": 21,
+          "percentOfCode": 16.2,
+          "percentOfBytes": 14.8
         },
         {
           "name": "C",
@@ -502,22 +545,136 @@
           "bytes": 1993,
           "files": 1,
           "complexity": 13,
-          "percentOfLines": 2.9,
-          "percentOfCode": 2.9,
+          "percentOfLines": 2.8,
+          "percentOfCode": 2.8,
           "percentOfBytes": 2.1
         }
       ],
       "summary": {
-        "lines": 3110,
-        "code": 2198,
-        "files": 108,
-        "complexity": 240,
-        "traditionalCost": 25737,
-        "aiCost": 6563,
-        "traditionalMonths": 5.49,
-        "aiMonths": 1.4
+        "lines": 3148,
+        "code": 2214,
+        "files": 110,
+        "complexity": 244,
+        "traditionalCost": 25934,
+        "aiCost": 6613,
+        "traditionalMonths": 5.53,
+        "aiMonths": 1.41
       },
       "detailsFile": "repos/leetcode-with-james.json"
+    },
+    {
+      "id": "jamesemerson112-github-io",
+      "name": "jamesemerson112.github.io",
+      "url": "https://github.com/jamesEmerson112/jamesemerson112.github.io",
+      "description": "James Emerson Vo's personal portfolio",
+      "lastUpdated": "2025-12-29T02:53:20Z",
+      "primaryLanguage": "Svelte",
+      "isPrivate": false,
+      "isAnonymized": false,
+      "languages": [
+        {
+          "name": "Svelte",
+          "lines": 2978,
+          "code": 2501,
+          "comments": 91,
+          "blanks": 386,
+          "bytes": 66535,
+          "files": 16,
+          "complexity": 37,
+          "percentOfLines": 42.1,
+          "percentOfCode": 45.2,
+          "percentOfBytes": 31.4
+        },
+        {
+          "name": "Markdown",
+          "lines": 1780,
+          "code": 1284,
+          "comments": 0,
+          "blanks": 496,
+          "bytes": 72707,
+          "files": 5,
+          "complexity": 0,
+          "percentOfLines": 25.1,
+          "percentOfCode": 23.2,
+          "percentOfBytes": 34.3
+        },
+        {
+          "name": "JavaScript",
+          "lines": 1143,
+          "code": 771,
+          "comments": 230,
+          "blanks": 142,
+          "bytes": 35084,
+          "files": 9,
+          "complexity": 49,
+          "percentOfLines": 16.1,
+          "percentOfCode": 13.9,
+          "percentOfBytes": 16.5
+        },
+        {
+          "name": "HTML",
+          "lines": 861,
+          "code": 748,
+          "comments": 5,
+          "blanks": 108,
+          "bytes": 28781,
+          "files": 3,
+          "complexity": 0,
+          "percentOfLines": 12.2,
+          "percentOfCode": 13.5,
+          "percentOfBytes": 13.6
+        },
+        {
+          "name": "YAML",
+          "lines": 161,
+          "code": 129,
+          "comments": 5,
+          "blanks": 27,
+          "bytes": 4752,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 2.3,
+          "percentOfCode": 2.3,
+          "percentOfBytes": 2.2
+        },
+        {
+          "name": "CSS",
+          "lines": 147,
+          "code": 100,
+          "comments": 23,
+          "blanks": 24,
+          "bytes": 3251,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 2.1,
+          "percentOfCode": 1.8,
+          "percentOfBytes": 1.5
+        },
+        {
+          "name": "License",
+          "lines": 9,
+          "code": 5,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 1099,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0.5
+        }
+      ],
+      "summary": {
+        "lines": 7079,
+        "code": 5538,
+        "files": 38,
+        "complexity": 86,
+        "traditionalCost": 67913,
+        "aiCost": 17318,
+        "traditionalMonths": 14.48,
+        "aiMonths": 3.69
+      },
+      "detailsFile": "repos/jamesemerson112-github-io.json"
     },
     {
       "id": "audio-language-model-aka-your-babe",
@@ -1002,122 +1159,161 @@
       "detailsFile": "repos/private-001.json"
     },
     {
-      "id": "jamesemerson112-github-io",
-      "name": "jamesemerson112.github.io",
-      "url": "https://github.com/jamesEmerson112/jamesemerson112.github.io",
-      "description": "James Emerson Vo's personal portfolio",
-      "lastUpdated": "2025-12-22T02:48:16Z",
-      "primaryLanguage": "Svelte",
-      "isPrivate": false,
-      "isAnonymized": false,
+      "id": "private-002",
+      "name": "Private Project 2",
+      "url": null,
+      "description": "Private repository",
+      "lastUpdated": "2025-12-21T04:55:47Z",
+      "primaryLanguage": "Go",
+      "isPrivate": true,
+      "isAnonymized": true,
       "languages": [
         {
-          "name": "Svelte",
-          "lines": 2978,
-          "code": 2501,
-          "comments": 91,
-          "blanks": 386,
-          "bytes": 66535,
-          "files": 16,
-          "complexity": 37,
-          "percentOfLines": 42.1,
-          "percentOfCode": 45.2,
-          "percentOfBytes": 31.4
+          "name": "Go",
+          "lines": 6085,
+          "code": 4883,
+          "comments": 273,
+          "blanks": 929,
+          "bytes": 171910,
+          "files": 44,
+          "complexity": 936,
+          "percentOfLines": 63,
+          "percentOfCode": 60.9,
+          "percentOfBytes": 56.5
         },
         {
-          "name": "Markdown",
-          "lines": 1780,
-          "code": 1284,
-          "comments": 0,
-          "blanks": 496,
-          "bytes": 72707,
-          "files": 5,
-          "complexity": 0,
-          "percentOfLines": 25.1,
-          "percentOfCode": 23.2,
-          "percentOfBytes": 34.3
-        },
-        {
-          "name": "JavaScript",
-          "lines": 1143,
-          "code": 771,
-          "comments": 230,
-          "blanks": 142,
-          "bytes": 35084,
-          "files": 9,
-          "complexity": 49,
-          "percentOfLines": 16.1,
-          "percentOfCode": 13.9,
-          "percentOfBytes": 16.5
-        },
-        {
-          "name": "HTML",
-          "lines": 861,
-          "code": 748,
-          "comments": 5,
-          "blanks": 108,
-          "bytes": 28781,
-          "files": 3,
-          "complexity": 0,
-          "percentOfLines": 12.2,
-          "percentOfCode": 13.5,
-          "percentOfBytes": 13.6
-        },
-        {
-          "name": "YAML",
-          "lines": 161,
-          "code": 129,
-          "comments": 5,
-          "blanks": 27,
-          "bytes": 4752,
-          "files": 2,
-          "complexity": 0,
-          "percentOfLines": 2.3,
-          "percentOfCode": 2.3,
-          "percentOfBytes": 2.2
-        },
-        {
-          "name": "CSS",
-          "lines": 147,
-          "code": 100,
-          "comments": 23,
-          "blanks": 24,
-          "bytes": 3251,
-          "files": 2,
-          "complexity": 0,
-          "percentOfLines": 2.1,
-          "percentOfCode": 1.8,
-          "percentOfBytes": 1.5
+          "name": "TypeScript",
+          "lines": 2262,
+          "code": 2032,
+          "comments": 8,
+          "blanks": 222,
+          "bytes": 72703,
+          "files": 44,
+          "complexity": 96,
+          "percentOfLines": 23.4,
+          "percentOfCode": 25.3,
+          "percentOfBytes": 23.9
         },
         {
           "name": "License",
-          "lines": 9,
-          "code": 5,
+          "lines": 674,
+          "code": 553,
+          "comments": 0,
+          "blanks": 121,
+          "bytes": 35129,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 7,
+          "percentOfCode": 6.9,
+          "percentOfBytes": 11.6
+        },
+        {
+          "name": "SQL",
+          "lines": 223,
+          "code": 187,
+          "comments": 18,
+          "blanks": 18,
+          "bytes": 8177,
+          "files": 9,
+          "complexity": 0,
+          "percentOfLines": 2.3,
+          "percentOfCode": 2.3,
+          "percentOfBytes": 2.7
+        },
+        {
+          "name": "Markdown",
+          "lines": 205,
+          "code": 166,
+          "comments": 0,
+          "blanks": 39,
+          "bytes": 5434,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 2.1,
+          "percentOfCode": 2.1,
+          "percentOfBytes": 1.8
+        },
+        {
+          "name": "JSON",
+          "lines": 108,
+          "code": 104,
           "comments": 0,
           "blanks": 4,
-          "bytes": 1099,
+          "bytes": 2729,
+          "files": 4,
+          "complexity": 0,
+          "percentOfLines": 1.1,
+          "percentOfCode": 1.3,
+          "percentOfBytes": 0.9
+        },
+        {
+          "name": "JavaScript",
+          "lines": 57,
+          "code": 55,
+          "comments": 1,
+          "blanks": 1,
+          "bytes": 1267,
+          "files": 3,
+          "complexity": 0,
+          "percentOfLines": 0.6,
+          "percentOfCode": 0.7,
+          "percentOfBytes": 0.4
+        },
+        {
+          "name": "CSS",
+          "lines": 37,
+          "code": 29,
+          "comments": 0,
+          "blanks": 8,
+          "bytes": 801,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.4,
+          "percentOfCode": 0.4,
+          "percentOfBytes": 0.3
+        },
+        {
+          "name": "HTML",
+          "lines": 13,
+          "code": 13,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 357,
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.1,
-          "percentOfCode": 0.1,
-          "percentOfBytes": 0.5
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0.1
+        },
+        {
+          "name": "SVG",
+          "lines": 2,
+          "code": 2,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 5623,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 1.8
         }
       ],
       "summary": {
-        "lines": 7079,
-        "code": 5538,
-        "files": 38,
-        "complexity": 86,
-        "traditionalCost": 67913,
-        "aiCost": 17318,
-        "traditionalMonths": 14.48,
-        "aiMonths": 3.69
+        "lines": 9666,
+        "code": 8024,
+        "files": 111,
+        "complexity": 1032,
+        "traditionalCost": 100240,
+        "aiCost": 25561,
+        "traditionalMonths": 21.37,
+        "aiMonths": 5.45
       },
-      "detailsFile": "repos/jamesemerson112-github-io.json"
+      "detailsFile": "repos/private-002.json"
     },
     {
-      "id": "private-002",
-      "name": "Private Project 2",
+      "id": "private-003",
+      "name": "Private Project 3",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-12-19T22:47:57Z",
@@ -1279,11 +1475,138 @@
         "traditionalMonths": 2.92,
         "aiMonths": 0.74
       },
-      "detailsFile": "repos/private-002.json"
+      "detailsFile": "repos/private-003.json"
     },
     {
-      "id": "private-003",
-      "name": "Private Project 3",
+      "id": "some-parse-tree",
+      "name": "some-parse-tree",
+      "url": "https://github.com/jamesEmerson112/some-parse-tree",
+      "description": "",
+      "lastUpdated": "2025-12-16T06:58:40Z",
+      "primaryLanguage": "JavaScript",
+      "isPrivate": false,
+      "isAnonymized": false,
+      "languages": [
+        {
+          "name": "JavaScript",
+          "lines": 532,
+          "code": 364,
+          "comments": 89,
+          "blanks": 79,
+          "bytes": 15695,
+          "files": 5,
+          "complexity": 18,
+          "percentOfLines": 37.7,
+          "percentOfCode": 34.3,
+          "percentOfBytes": 41.8
+        },
+        {
+          "name": "CSS",
+          "lines": 399,
+          "code": 335,
+          "comments": 9,
+          "blanks": 55,
+          "bytes": 7136,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 28.3,
+          "percentOfCode": 31.5,
+          "percentOfBytes": 19
+        },
+        {
+          "name": "Swift",
+          "lines": 191,
+          "code": 144,
+          "comments": 17,
+          "blanks": 30,
+          "bytes": 5558,
+          "files": 8,
+          "complexity": 3,
+          "percentOfLines": 13.5,
+          "percentOfCode": 13.6,
+          "percentOfBytes": 14.8
+        },
+        {
+          "name": "Markdown",
+          "lines": 120,
+          "code": 88,
+          "comments": 0,
+          "blanks": 32,
+          "bytes": 3317,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 8.5,
+          "percentOfCode": 8.3,
+          "percentOfBytes": 8.8
+        },
+        {
+          "name": "HTML",
+          "lines": 78,
+          "code": 64,
+          "comments": 5,
+          "blanks": 9,
+          "bytes": 2710,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 5.5,
+          "percentOfCode": 6,
+          "percentOfBytes": 7.2
+        },
+        {
+          "name": "Dockerfile",
+          "lines": 48,
+          "code": 29,
+          "comments": 7,
+          "blanks": 12,
+          "bytes": 1654,
+          "files": 1,
+          "complexity": 2,
+          "percentOfLines": 3.4,
+          "percentOfCode": 2.7,
+          "percentOfBytes": 4.4
+        },
+        {
+          "name": "YAML",
+          "lines": 23,
+          "code": 21,
+          "comments": 0,
+          "blanks": 2,
+          "bytes": 431,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 1.6,
+          "percentOfCode": 2,
+          "percentOfBytes": 1.1
+        },
+        {
+          "name": "License",
+          "lines": 21,
+          "code": 17,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 1072,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 1.5,
+          "percentOfCode": 1.6,
+          "percentOfBytes": 2.9
+        }
+      ],
+      "summary": {
+        "lines": 1412,
+        "code": 1062,
+        "files": 20,
+        "complexity": 23,
+        "traditionalCost": 11991,
+        "aiCost": 3058,
+        "traditionalMonths": 2.56,
+        "aiMonths": 0.65
+      },
+      "detailsFile": "repos/some-parse-tree.json"
+    },
+    {
+      "id": "private-004",
+      "name": "Private Project 4",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-12-16T05:42:27Z",
@@ -1315,7 +1638,170 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-003.json"
+      "detailsFile": "repos/private-004.json"
+    },
+    {
+      "id": "private-005",
+      "name": "Private Project 5",
+      "url": null,
+      "description": "Private repository",
+      "lastUpdated": "2025-12-07T16:47:03Z",
+      "primaryLanguage": "C#",
+      "isPrivate": true,
+      "isAnonymized": true,
+      "languages": [
+        {
+          "name": "C#",
+          "lines": 10826,
+          "code": 7755,
+          "comments": 1516,
+          "blanks": 1555,
+          "bytes": 416955,
+          "files": 66,
+          "complexity": 1217,
+          "percentOfLines": 81.3,
+          "percentOfCode": 78,
+          "percentOfBytes": 82.2
+        },
+        {
+          "name": "Markdown",
+          "lines": 1447,
+          "code": 1167,
+          "comments": 0,
+          "blanks": 280,
+          "bytes": 57001,
+          "files": 4,
+          "complexity": 0,
+          "percentOfLines": 10.9,
+          "percentOfCode": 11.7,
+          "percentOfBytes": 11.2
+        },
+        {
+          "name": "JSON",
+          "lines": 967,
+          "code": 967,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 27083,
+          "files": 12,
+          "complexity": 0,
+          "percentOfLines": 7.3,
+          "percentOfCode": 9.7,
+          "percentOfBytes": 5.3
+        },
+        {
+          "name": "Plain Text",
+          "lines": 50,
+          "code": 33,
+          "comments": 0,
+          "blanks": 17,
+          "bytes": 4916,
+          "files": 4,
+          "complexity": 0,
+          "percentOfLines": 0.4,
+          "percentOfCode": 0.3,
+          "percentOfBytes": 1
+        },
+        {
+          "name": "License",
+          "lines": 21,
+          "code": 17,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 1072,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.2,
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0.2
+        }
+      ],
+      "summary": {
+        "lines": 13311,
+        "code": 9939,
+        "files": 87,
+        "complexity": 1217,
+        "traditionalCost": 125499,
+        "aiCost": 32002,
+        "traditionalMonths": 26.76,
+        "aiMonths": 6.82
+      },
+      "detailsFile": "repos/private-005.json"
+    },
+    {
+      "id": "private-006",
+      "name": "Private Project 6",
+      "url": null,
+      "description": "Private repository",
+      "lastUpdated": "2025-12-06T19:20:53Z",
+      "primaryLanguage": "C#",
+      "isPrivate": true,
+      "isAnonymized": true,
+      "languages": [
+        {
+          "name": "C#",
+          "lines": 10318,
+          "code": 7413,
+          "comments": 1428,
+          "blanks": 1477,
+          "bytes": 396589,
+          "files": 64,
+          "complexity": 1178,
+          "percentOfLines": 95.7,
+          "percentOfCode": 94.4,
+          "percentOfBytes": 70.7
+        },
+        {
+          "name": "Plain Text",
+          "lines": 278,
+          "code": 257,
+          "comments": 0,
+          "blanks": 21,
+          "bytes": 159094,
+          "files": 5,
+          "complexity": 0,
+          "percentOfLines": 2.6,
+          "percentOfCode": 3.3,
+          "percentOfBytes": 28.4
+        },
+        {
+          "name": "JSON",
+          "lines": 182,
+          "code": 182,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 4939,
+          "files": 5,
+          "complexity": 0,
+          "percentOfLines": 1.7,
+          "percentOfCode": 2.3,
+          "percentOfBytes": 0.9
+        },
+        {
+          "name": "Markdown",
+          "lines": 3,
+          "code": 2,
+          "comments": 0,
+          "blanks": 1,
+          "bytes": 135,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        }
+      ],
+      "summary": {
+        "lines": 10781,
+        "code": 7854,
+        "files": 75,
+        "complexity": 1178,
+        "traditionalCost": 98011,
+        "aiCost": 24993,
+        "traditionalMonths": 20.9,
+        "aiMonths": 5.33
+      },
+      "detailsFile": "repos/private-006.json"
     },
     {
       "id": "yourresai-2",
@@ -1445,8 +1931,8 @@
       "detailsFile": "repos/yourresai-2.json"
     },
     {
-      "id": "private-004",
-      "name": "Private Project 4",
+      "id": "private-007",
+      "name": "Private Project 7",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-11-23T06:14:59Z",
@@ -1543,7 +2029,7 @@
         "traditionalMonths": 5.81,
         "aiMonths": 1.48
       },
-      "detailsFile": "repos/private-004.json"
+      "detailsFile": "repos/private-007.json"
     },
     {
       "id": "ai-cds-disease-diagnosis-reproduction",
@@ -1647,8 +2133,8 @@
       "detailsFile": "repos/ai-cds-disease-diagnosis-reproduction.json"
     },
     {
-      "id": "private-005",
-      "name": "Private Project 5",
+      "id": "private-008",
+      "name": "Private Project 8",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-11-09T04:58:24Z",
@@ -1706,11 +2192,11 @@
         "traditionalMonths": 0.05,
         "aiMonths": 0.01
       },
-      "detailsFile": "repos/private-005.json"
+      "detailsFile": "repos/private-008.json"
     },
     {
-      "id": "private-006",
-      "name": "Private Project 6",
+      "id": "private-009",
+      "name": "Private Project 9",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-10-27T18:18:05Z",
@@ -1820,11 +2306,11 @@
         "traditionalMonths": 237.81,
         "aiMonths": 60.64
       },
-      "detailsFile": "repos/private-006.json"
+      "detailsFile": "repos/private-009.json"
     },
     {
-      "id": "private-007",
-      "name": "Private Project 7",
+      "id": "private-010",
+      "name": "Private Project 10",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-10-25T16:29:33Z",
@@ -1908,7 +2394,7 @@
         "traditionalMonths": 12.06,
         "aiMonths": 3.08
       },
-      "detailsFile": "repos/private-007.json"
+      "detailsFile": "repos/private-010.json"
     },
     {
       "id": "voicereach",
@@ -2077,8 +2563,8 @@
       "detailsFile": "repos/voicereach.json"
     },
     {
-      "id": "private-008",
-      "name": "Private Project 8",
+      "id": "private-011",
+      "name": "Private Project 11",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-10-14T05:32:27Z",
@@ -2240,7 +2726,7 @@
         "traditionalMonths": 98.38,
         "aiMonths": 25.09
       },
-      "detailsFile": "repos/private-008.json"
+      "detailsFile": "repos/private-011.json"
     },
     {
       "id": "mongodb-agentic-context-window",
@@ -2709,8 +3195,8 @@
       "detailsFile": "repos/jiraoptimizer.json"
     },
     {
-      "id": "private-009",
-      "name": "Private Project 9",
+      "id": "private-012",
+      "name": "Private Project 12",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-09-21T18:18:13Z",
@@ -2807,11 +3293,11 @@
         "traditionalMonths": 30.44,
         "aiMonths": 7.76
       },
-      "detailsFile": "repos/private-009.json"
+      "detailsFile": "repos/private-012.json"
     },
     {
-      "id": "private-010",
-      "name": "Private Project 10",
+      "id": "private-013",
+      "name": "Private Project 13",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-09-16T03:31:30Z",
@@ -2882,11 +3368,11 @@
         "traditionalMonths": 19.29,
         "aiMonths": 4.92
       },
-      "detailsFile": "repos/private-010.json"
+      "detailsFile": "repos/private-013.json"
     },
     {
-      "id": "private-011",
-      "name": "Private Project 11",
+      "id": "private-014",
+      "name": "Private Project 14",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-09-15T22:22:29Z",
@@ -2957,7 +3443,7 @@
         "traditionalMonths": 5.65,
         "aiMonths": 1.44
       },
-      "detailsFile": "repos/private-011.json"
+      "detailsFile": "repos/private-014.json"
     },
     {
       "id": "eye-to-home",
@@ -3110,8 +3596,8 @@
       "detailsFile": "repos/virtual-cursor.json"
     },
     {
-      "id": "private-012",
-      "name": "Private Project 12",
+      "id": "private-015",
+      "name": "Private Project 15",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-08-30T23:16:51Z",
@@ -3221,11 +3707,11 @@
         "traditionalMonths": 0.49,
         "aiMonths": 0.13
       },
-      "detailsFile": "repos/private-012.json"
+      "detailsFile": "repos/private-015.json"
     },
     {
-      "id": "private-014",
-      "name": "Private Project 14",
+      "id": "private-017",
+      "name": "Private Project 17",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-08-25T05:45:27Z",
@@ -3322,11 +3808,11 @@
         "traditionalMonths": 3.53,
         "aiMonths": 0.9
       },
-      "detailsFile": "repos/private-014.json"
+      "detailsFile": "repos/private-017.json"
     },
     {
-      "id": "private-015",
-      "name": "Private Project 15",
+      "id": "private-018",
+      "name": "Private Project 18",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-08-24T18:46:56Z",
@@ -3384,7 +3870,7 @@
         "traditionalMonths": 1.11,
         "aiMonths": 0.28
       },
-      "detailsFile": "repos/private-015.json"
+      "detailsFile": "repos/private-018.json"
     },
     {
       "id": "samdu-news",
@@ -3501,8 +3987,8 @@
       "detailsFile": "repos/samdu-news.json"
     },
     {
-      "id": "private-016",
-      "name": "Private Project 16",
+      "id": "private-019",
+      "name": "Private Project 19",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-08-16T21:15:51Z",
@@ -3547,7 +4033,7 @@
         "traditionalMonths": 0.04,
         "aiMonths": 0.01
       },
-      "detailsFile": "repos/private-016.json"
+      "detailsFile": "repos/private-019.json"
     },
     {
       "id": "las-vegas-hackathon-august-12",
@@ -3625,8 +4111,8 @@
       "detailsFile": "repos/las-vegas-hackathon-august-12.json"
     },
     {
-      "id": "private-017",
-      "name": "Private Project 17",
+      "id": "private-020",
+      "name": "Private Project 20",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-08-12T04:26:26Z",
@@ -3749,7 +4235,7 @@
         "traditionalMonths": 23.09,
         "aiMonths": 5.89
       },
-      "detailsFile": "repos/private-017.json"
+      "detailsFile": "repos/private-020.json"
     },
     {
       "id": "shopify-hackathon-backend",
@@ -3863,8 +4349,8 @@
       "detailsFile": "repos/3d-objects-for-threejs.json"
     },
     {
-      "id": "private-018",
-      "name": "Private Project 18",
+      "id": "private-021",
+      "name": "Private Project 21",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-08-10T16:08:02Z",
@@ -3961,11 +4447,11 @@
         "traditionalMonths": 0.5,
         "aiMonths": 0.13
       },
-      "detailsFile": "repos/private-018.json"
+      "detailsFile": "repos/private-021.json"
     },
     {
-      "id": "private-019",
-      "name": "Private Project 19",
+      "id": "private-022",
+      "name": "Private Project 22",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-08-02T15:45:25Z",
@@ -4218,7 +4704,7 @@
         "traditionalMonths": 7.03,
         "aiMonths": 1.79
       },
-      "detailsFile": "repos/private-019.json"
+      "detailsFile": "repos/private-022.json"
     },
     {
       "id": "openglassbox-python",
@@ -4335,8 +4821,8 @@
       "detailsFile": "repos/openglassbox-python.json"
     },
     {
-      "id": "private-020",
-      "name": "Private Project 20",
+      "id": "private-023",
+      "name": "Private Project 23",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-07-31T20:17:43Z",
@@ -4420,11 +4906,11 @@
         "traditionalMonths": 38.62,
         "aiMonths": 9.85
       },
-      "detailsFile": "repos/private-020.json"
+      "detailsFile": "repos/private-023.json"
     },
     {
-      "id": "private-021",
-      "name": "Private Project 21",
+      "id": "private-024",
+      "name": "Private Project 24",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-07-31T15:03:56Z",
@@ -4547,11 +5033,11 @@
         "traditionalMonths": 935.68,
         "aiMonths": 238.6
       },
-      "detailsFile": "repos/private-021.json"
+      "detailsFile": "repos/private-024.json"
     },
     {
-      "id": "private-022",
-      "name": "Private Project 22",
+      "id": "private-025",
+      "name": "Private Project 25",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-07-05T01:47:32Z",
@@ -4739,7 +5225,7 @@
         "traditionalMonths": 5.1,
         "aiMonths": 1.3
       },
-      "detailsFile": "repos/private-022.json"
+      "detailsFile": "repos/private-025.json"
     },
     {
       "id": "robotic-ai-a-start-search-and-drone-slam",
@@ -4778,8 +5264,8 @@
       "detailsFile": "repos/robotic-ai-a-start-search-and-drone-slam.json"
     },
     {
-      "id": "private-023",
-      "name": "Private Project 23",
+      "id": "private-026",
+      "name": "Private Project 26",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-06-25T14:16:08Z",
@@ -4824,11 +5310,11 @@
         "traditionalMonths": 0.04,
         "aiMonths": 0.01
       },
-      "detailsFile": "repos/private-023.json"
+      "detailsFile": "repos/private-026.json"
     },
     {
-      "id": "private-024",
-      "name": "Private Project 24",
+      "id": "private-027",
+      "name": "Private Project 27",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-06-23T15:46:56Z",
@@ -4925,11 +5411,11 @@
         "traditionalMonths": 18.66,
         "aiMonths": 4.76
       },
-      "detailsFile": "repos/private-024.json"
+      "detailsFile": "repos/private-027.json"
     },
     {
-      "id": "private-025",
-      "name": "Private Project 25",
+      "id": "private-028",
+      "name": "Private Project 28",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-06-23T02:47:41Z",
@@ -4974,11 +5460,11 @@
         "traditionalMonths": 0.83,
         "aiMonths": 0.21
       },
-      "detailsFile": "repos/private-025.json"
+      "detailsFile": "repos/private-028.json"
     },
     {
-      "id": "private-026",
-      "name": "Private Project 26",
+      "id": "private-029",
+      "name": "Private Project 29",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-06-17T15:36:08Z",
@@ -5062,11 +5548,11 @@
         "traditionalMonths": 0.57,
         "aiMonths": 0.15
       },
-      "detailsFile": "repos/private-026.json"
+      "detailsFile": "repos/private-029.json"
     },
     {
-      "id": "private-027",
-      "name": "Private Project 27",
+      "id": "private-030",
+      "name": "Private Project 30",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-06-15T18:18:47Z",
@@ -5176,7 +5662,7 @@
         "traditionalMonths": 34.86,
         "aiMonths": 8.89
       },
-      "detailsFile": "repos/private-027.json"
+      "detailsFile": "repos/private-030.json"
     },
     {
       "id": "deepmind-portfolio",
@@ -5241,8 +5727,8 @@
       "detailsFile": "repos/deepmind-portfolio.json"
     },
     {
-      "id": "private-028",
-      "name": "Private Project 28",
+      "id": "private-031",
+      "name": "Private Project 31",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-06-14T05:24:00Z",
@@ -5378,7 +5864,7 @@
         "traditionalMonths": 13.34,
         "aiMonths": 3.4
       },
-      "detailsFile": "repos/private-028.json"
+      "detailsFile": "repos/private-031.json"
     },
     {
       "id": "chartrag",
@@ -5508,8 +5994,8 @@
       "detailsFile": "repos/chartrag.json"
     },
     {
-      "id": "private-029",
-      "name": "Private Project 29",
+      "id": "private-032",
+      "name": "Private Project 32",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-06-12T19:56:18Z",
@@ -5645,11 +6131,11 @@
         "traditionalMonths": 106.97,
         "aiMonths": 27.28
       },
-      "detailsFile": "repos/private-029.json"
+      "detailsFile": "repos/private-032.json"
     },
     {
-      "id": "private-030",
-      "name": "Private Project 30",
+      "id": "private-033",
+      "name": "Private Project 33",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-06-09T05:27:42Z",
@@ -5707,11 +6193,11 @@
         "traditionalMonths": 0.48,
         "aiMonths": 0.12
       },
-      "detailsFile": "repos/private-030.json"
+      "detailsFile": "repos/private-033.json"
     },
     {
-      "id": "private-031",
-      "name": "Private Project 31",
+      "id": "private-034",
+      "name": "Private Project 34",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-06-02T00:51:43Z",
@@ -5834,7 +6320,7 @@
         "traditionalMonths": 400.93,
         "aiMonths": 102.24
       },
-      "detailsFile": "repos/private-031.json"
+      "detailsFile": "repos/private-034.json"
     },
     {
       "id": "test-framework-with-aurelia",
@@ -5886,8 +6372,8 @@
       "detailsFile": "repos/test-framework-with-aurelia.json"
     },
     {
-      "id": "private-032",
-      "name": "Private Project 32",
+      "id": "private-035",
+      "name": "Private Project 35",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-05-30T04:01:23Z",
@@ -5932,7 +6418,7 @@
         "traditionalMonths": 0.42,
         "aiMonths": 0.11
       },
-      "detailsFile": "repos/private-032.json"
+      "detailsFile": "repos/private-035.json"
     },
     {
       "id": "jamesemerson112",
@@ -5971,8 +6457,8 @@
       "detailsFile": "repos/jamesemerson112.json"
     },
     {
-      "id": "private-033",
-      "name": "Private Project 33",
+      "id": "private-036",
+      "name": "Private Project 36",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-05-14T05:50:10Z",
@@ -6017,11 +6503,11 @@
         "traditionalMonths": 0.04,
         "aiMonths": 0.01
       },
-      "detailsFile": "repos/private-033.json"
+      "detailsFile": "repos/private-036.json"
     },
     {
-      "id": "private-034",
-      "name": "Private Project 34",
+      "id": "private-037",
+      "name": "Private Project 37",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-05-12T21:39:42Z",
@@ -6118,7 +6604,7 @@
         "traditionalMonths": 3.75,
         "aiMonths": 0.96
       },
-      "detailsFile": "repos/private-034.json"
+      "detailsFile": "repos/private-037.json"
     },
     {
       "id": "deep-learning-james",
@@ -6157,8 +6643,8 @@
       "detailsFile": "repos/deep-learning-james.json"
     },
     {
-      "id": "private-035",
-      "name": "Private Project 35",
+      "id": "private-038",
+      "name": "Private Project 38",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-05-09T22:36:32Z",
@@ -6307,7 +6793,7 @@
         "traditionalMonths": 6.13,
         "aiMonths": 1.56
       },
-      "detailsFile": "repos/private-035.json"
+      "detailsFile": "repos/private-038.json"
     },
     {
       "id": "system-design-interview-demos",
@@ -6359,8 +6845,8 @@
       "detailsFile": "repos/system-design-interview-demos.json"
     },
     {
-      "id": "private-037",
-      "name": "Private Project 37",
+      "id": "private-040",
+      "name": "Private Project 40",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-04-27T23:57:03Z",
@@ -6405,7 +6891,7 @@
         "traditionalMonths": 0.2,
         "aiMonths": 0.05
       },
-      "detailsFile": "repos/private-037.json"
+      "detailsFile": "repos/private-040.json"
     },
     {
       "id": "jiraoptimizernext",
@@ -6535,8 +7021,8 @@
       "detailsFile": "repos/jiraoptimizernext.json"
     },
     {
-      "id": "private-038",
-      "name": "Private Project 38",
+      "id": "private-041",
+      "name": "Private Project 41",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-04-23T03:31:24Z",
@@ -6633,7 +7119,7 @@
         "traditionalMonths": 8.17,
         "aiMonths": 2.08
       },
-      "detailsFile": "repos/private-038.json"
+      "detailsFile": "repos/private-041.json"
     },
     {
       "id": "eye-to-home-server",
@@ -7056,8 +7542,8 @@
       "detailsFile": "repos/cs6750-medium-prototype.json"
     },
     {
-      "id": "private-039",
-      "name": "Private Project 39",
+      "id": "private-042",
+      "name": "Private Project 42",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-04-12T20:40:21Z",
@@ -7089,11 +7575,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-039.json"
+      "detailsFile": "repos/private-042.json"
     },
     {
-      "id": "private-040",
-      "name": "Private Project 40",
+      "id": "private-043",
+      "name": "Private Project 43",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-04-09T05:58:15Z",
@@ -7125,11 +7611,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-040.json"
+      "detailsFile": "repos/private-043.json"
     },
     {
-      "id": "private-041",
-      "name": "Private Project 41",
+      "id": "private-044",
+      "name": "Private Project 44",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-03-30T04:25:17Z",
@@ -7252,7 +7738,7 @@
         "traditionalMonths": 1.74,
         "aiMonths": 0.44
       },
-      "detailsFile": "repos/private-041.json"
+      "detailsFile": "repos/private-044.json"
     },
     {
       "id": "project-1-ar-exploration",
@@ -7379,8 +7865,8 @@
       "detailsFile": "repos/local-regression-trees-and-clustering.json"
     },
     {
-      "id": "private-042",
-      "name": "Private Project 42",
+      "id": "private-045",
+      "name": "Private Project 45",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-03-24T12:15:54Z",
@@ -7464,11 +7950,11 @@
         "traditionalMonths": 1.75,
         "aiMonths": 0.45
       },
-      "detailsFile": "repos/private-042.json"
+      "detailsFile": "repos/private-045.json"
     },
     {
-      "id": "private-043",
-      "name": "Private Project 43",
+      "id": "private-046",
+      "name": "Private Project 46",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-03-15T20:33:40Z",
@@ -7500,11 +7986,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-043.json"
+      "detailsFile": "repos/private-046.json"
     },
     {
-      "id": "private-044",
-      "name": "Private Project 44",
+      "id": "private-047",
+      "name": "Private Project 47",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-03-02T23:15:44Z",
@@ -7536,7 +8022,7 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-044.json"
+      "detailsFile": "repos/private-047.json"
     },
     {
       "id": "cloudflare-demo-frontend",
@@ -7640,8 +8126,8 @@
       "detailsFile": "repos/cloudflare-demo-frontend.json"
     },
     {
-      "id": "private-046",
-      "name": "Private Project 46",
+      "id": "private-049",
+      "name": "Private Project 49",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-02-22T22:32:06Z",
@@ -7751,11 +8237,11 @@
         "traditionalMonths": 0.55,
         "aiMonths": 0.14
       },
-      "detailsFile": "repos/private-046.json"
+      "detailsFile": "repos/private-049.json"
     },
     {
-      "id": "private-047",
-      "name": "Private Project 47",
+      "id": "private-050",
+      "name": "Private Project 50",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-02-22T03:08:16Z",
@@ -7787,11 +8273,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-047.json"
+      "detailsFile": "repos/private-050.json"
     },
     {
-      "id": "private-048",
-      "name": "Private Project 48",
+      "id": "private-051",
+      "name": "Private Project 51",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-02-19T07:05:16Z",
@@ -7836,11 +8322,11 @@
         "traditionalMonths": 10.39,
         "aiMonths": 2.65
       },
-      "detailsFile": "repos/private-048.json"
+      "detailsFile": "repos/private-051.json"
     },
     {
-      "id": "private-049",
-      "name": "Private Project 49",
+      "id": "private-052",
+      "name": "Private Project 52",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-01-11T17:06:56Z",
@@ -7937,7 +8423,7 @@
         "traditionalMonths": 0.71,
         "aiMonths": 0.18
       },
-      "detailsFile": "repos/private-049.json"
+      "detailsFile": "repos/private-052.json"
     },
     {
       "id": "icantdrinkmap-frontend",
@@ -7989,8 +8475,8 @@
       "detailsFile": "repos/icantdrinkmap-frontend.json"
     },
     {
-      "id": "private-050",
-      "name": "Private Project 50",
+      "id": "private-053",
+      "name": "Private Project 53",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-01-11T06:44:43Z",
@@ -8022,11 +8508,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-050.json"
+      "detailsFile": "repos/private-053.json"
     },
     {
-      "id": "private-051",
-      "name": "Private Project 51",
+      "id": "private-054",
+      "name": "Private Project 54",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2025-01-11T06:30:54Z",
@@ -8058,11 +8544,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-051.json"
+      "detailsFile": "repos/private-054.json"
     },
     {
-      "id": "private-052",
-      "name": "Private Project 52",
+      "id": "private-055",
+      "name": "Private Project 55",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2024-12-03T11:45:22Z",
@@ -8133,11 +8619,11 @@
         "traditionalMonths": 8.34,
         "aiMonths": 2.13
       },
-      "detailsFile": "repos/private-052.json"
+      "detailsFile": "repos/private-055.json"
     },
     {
-      "id": "private-053",
-      "name": "Private Project 53",
+      "id": "private-056",
+      "name": "Private Project 56",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2024-11-30T07:08:16Z",
@@ -8169,7 +8655,7 @@
         "traditionalMonths": 4.13,
         "aiMonths": 1.05
       },
-      "detailsFile": "repos/private-053.json"
+      "detailsFile": "repos/private-056.json"
     },
     {
       "id": "icantdrinkmap-backend",
@@ -8260,8 +8746,8 @@
       "detailsFile": "repos/icantdrinkmap-backend.json"
     },
     {
-      "id": "private-054",
-      "name": "Private Project 54",
+      "id": "private-057",
+      "name": "Private Project 57",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2024-11-04T04:21:27Z",
@@ -8332,11 +8818,11 @@
         "traditionalMonths": 9.02,
         "aiMonths": 2.3
       },
-      "detailsFile": "repos/private-054.json"
+      "detailsFile": "repos/private-057.json"
     },
     {
-      "id": "private-055",
-      "name": "Private Project 55",
+      "id": "private-058",
+      "name": "Private Project 58",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2024-10-24T04:53:14Z",
@@ -8368,11 +8854,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-055.json"
+      "detailsFile": "repos/private-058.json"
     },
     {
-      "id": "private-056",
-      "name": "Private Project 56",
+      "id": "private-059",
+      "name": "Private Project 59",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2024-10-24T04:52:45Z",
@@ -8404,7 +8890,7 @@
         "traditionalMonths": 3.28,
         "aiMonths": 0.84
       },
-      "detailsFile": "repos/private-056.json"
+      "detailsFile": "repos/private-059.json"
     },
     {
       "id": "sorting-visualizer",
@@ -8560,8 +9046,8 @@
       "detailsFile": "repos/sorting-visualizer.json"
     },
     {
-      "id": "private-057",
-      "name": "Private Project 57",
+      "id": "private-060",
+      "name": "Private Project 60",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2024-07-08T01:35:37Z",
@@ -8645,7 +9131,7 @@
         "traditionalMonths": 0.62,
         "aiMonths": 0.16
       },
-      "detailsFile": "repos/private-057.json"
+      "detailsFile": "repos/private-060.json"
     },
     {
       "id": "the-invisible-bot",
@@ -8736,8 +9222,8 @@
       "detailsFile": "repos/the-invisible-bot.json"
     },
     {
-      "id": "private-058",
-      "name": "Private Project 58",
+      "id": "private-061",
+      "name": "Private Project 61",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-09-11T16:52:37Z",
@@ -8834,11 +9320,11 @@
         "traditionalMonths": 2.67,
         "aiMonths": 0.68
       },
-      "detailsFile": "repos/private-058.json"
+      "detailsFile": "repos/private-061.json"
     },
     {
-      "id": "private-059",
-      "name": "Private Project 59",
+      "id": "private-062",
+      "name": "Private Project 62",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-08-28T14:38:37Z",
@@ -8961,11 +9447,11 @@
         "traditionalMonths": 1.49,
         "aiMonths": 0.38
       },
-      "detailsFile": "repos/private-059.json"
+      "detailsFile": "repos/private-062.json"
     },
     {
-      "id": "private-060",
-      "name": "Private Project 60",
+      "id": "private-063",
+      "name": "Private Project 63",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-08-11T22:36:55Z",
@@ -9010,11 +9496,11 @@
         "traditionalMonths": 0.04,
         "aiMonths": 0.01
       },
-      "detailsFile": "repos/private-060.json"
+      "detailsFile": "repos/private-063.json"
     },
     {
-      "id": "private-061",
-      "name": "Private Project 61",
+      "id": "private-064",
+      "name": "Private Project 64",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-07-17T23:35:29Z",
@@ -9059,11 +9545,73 @@
         "traditionalMonths": 0.02,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-061.json"
+      "detailsFile": "repos/private-064.json"
     },
     {
-      "id": "private-062",
-      "name": "Private Project 62",
+      "id": "private-065",
+      "name": "Private Project 65",
+      "url": null,
+      "description": "Private repository",
+      "lastUpdated": "2023-07-16T22:54:16Z",
+      "primaryLanguage": "License",
+      "isPrivate": true,
+      "isAnonymized": true,
+      "languages": [
+        {
+          "name": "License",
+          "lines": 21,
+          "code": 17,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 1072,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 48.8,
+          "percentOfCode": 51.5,
+          "percentOfBytes": 75
+        },
+        {
+          "name": "Go",
+          "lines": 20,
+          "code": 14,
+          "comments": 0,
+          "blanks": 6,
+          "bytes": 310,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 46.5,
+          "percentOfCode": 42.4,
+          "percentOfBytes": 21.7
+        },
+        {
+          "name": "Markdown",
+          "lines": 2,
+          "code": 2,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 48,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 4.7,
+          "percentOfCode": 6.1,
+          "percentOfBytes": 3.4
+        }
+      ],
+      "summary": {
+        "lines": 43,
+        "code": 33,
+        "files": 3,
+        "complexity": 0,
+        "traditionalCost": 313,
+        "aiCost": 80,
+        "traditionalMonths": 0.07,
+        "aiMonths": 0.02
+      },
+      "detailsFile": "repos/private-065.json"
+    },
+    {
+      "id": "private-066",
+      "name": "Private Project 66",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-06-17T21:06:10Z",
@@ -9095,11 +9643,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-062.json"
+      "detailsFile": "repos/private-066.json"
     },
     {
-      "id": "private-063",
-      "name": "Private Project 63",
+      "id": "private-067",
+      "name": "Private Project 67",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-06-01T05:46:12Z",
@@ -9131,11 +9679,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-063.json"
+      "detailsFile": "repos/private-067.json"
     },
     {
-      "id": "private-064",
-      "name": "Private Project 64",
+      "id": "private-068",
+      "name": "Private Project 68",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-03-04T01:32:11Z",
@@ -9206,7 +9754,7 @@
         "traditionalMonths": 1.55,
         "aiMonths": 0.39
       },
-      "detailsFile": "repos/private-064.json"
+      "detailsFile": "repos/private-068.json"
     },
     {
       "id": "react-native-tutorial",
@@ -9269,6 +9817,120 @@
         "aiMonths": 0.05
       },
       "detailsFile": "repos/react-native-tutorial.json"
+    },
+    {
+      "id": "private-069",
+      "name": "Private Project 69",
+      "url": null,
+      "description": "Private repository",
+      "lastUpdated": "2023-02-21T07:36:57Z",
+      "primaryLanguage": "License",
+      "isPrivate": true,
+      "isAnonymized": true,
+      "languages": [
+        {
+          "name": "License",
+          "lines": 674,
+          "code": 553,
+          "comments": 0,
+          "blanks": 121,
+          "bytes": 35129,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 77.3,
+          "percentOfCode": 75.4,
+          "percentOfBytes": 78.7
+        },
+        {
+          "name": "CSS",
+          "lines": 111,
+          "code": 99,
+          "comments": 0,
+          "blanks": 12,
+          "bytes": 1801,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 12.7,
+          "percentOfCode": 13.5,
+          "percentOfBytes": 4
+        },
+        {
+          "name": "JSX",
+          "lines": 44,
+          "code": 40,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 1128,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 5,
+          "percentOfCode": 5.5,
+          "percentOfBytes": 2.5
+        },
+        {
+          "name": "JSON",
+          "lines": 21,
+          "code": 21,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 412,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 2.4,
+          "percentOfCode": 2.9,
+          "percentOfBytes": 0.9
+        },
+        {
+          "name": "HTML",
+          "lines": 13,
+          "code": 13,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 361,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 1.5,
+          "percentOfCode": 1.8,
+          "percentOfBytes": 0.8
+        },
+        {
+          "name": "JavaScript",
+          "lines": 7,
+          "code": 5,
+          "comments": 1,
+          "blanks": 1,
+          "bytes": 163,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.8,
+          "percentOfCode": 0.7,
+          "percentOfBytes": 0.4
+        },
+        {
+          "name": "SVG",
+          "lines": 2,
+          "code": 2,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 5623,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 0.2,
+          "percentOfCode": 0.3,
+          "percentOfBytes": 12.6
+        }
+      ],
+      "summary": {
+        "lines": 872,
+        "code": 733,
+        "files": 10,
+        "complexity": 0,
+        "traditionalCost": 8124,
+        "aiCost": 2072,
+        "traditionalMonths": 1.73,
+        "aiMonths": 0.44
+      },
+      "detailsFile": "repos/private-069.json"
     },
     {
       "id": "sdc-flash-renew",
@@ -9346,8 +10008,8 @@
       "detailsFile": "repos/sdc-flash-renew.json"
     },
     {
-      "id": "private-065",
-      "name": "Private Project 65",
+      "id": "private-070",
+      "name": "Private Project 70",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-01-28T22:15:51Z",
@@ -9431,7 +10093,7 @@
         "traditionalMonths": 0.35,
         "aiMonths": 0.09
       },
-      "detailsFile": "repos/private-065.json"
+      "detailsFile": "repos/private-070.json"
     },
     {
       "id": "string-to-number-number-to-string",
@@ -9597,8 +10259,8 @@
       "detailsFile": "repos/angular-chess-with-chessjs-api.json"
     },
     {
-      "id": "private-066",
-      "name": "Private Project 66",
+      "id": "private-071",
+      "name": "Private Project 71",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-01-27T01:57:13Z",
@@ -9630,11 +10292,11 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-066.json"
+      "detailsFile": "repos/private-071.json"
     },
     {
-      "id": "private-067",
-      "name": "Private Project 67",
+      "id": "private-072",
+      "name": "Private Project 72",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-01-19T03:51:16Z",
@@ -9744,11 +10406,11 @@
         "traditionalMonths": 2.9,
         "aiMonths": 0.74
       },
-      "detailsFile": "repos/private-067.json"
+      "detailsFile": "repos/private-072.json"
     },
     {
-      "id": "private-068",
-      "name": "Private Project 68",
+      "id": "private-073",
+      "name": "Private Project 73",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2023-01-18T00:27:07Z",
@@ -9910,7 +10572,7 @@
         "traditionalMonths": 1.42,
         "aiMonths": 0.36
       },
-      "detailsFile": "repos/private-068.json"
+      "detailsFile": "repos/private-073.json"
     },
     {
       "id": "quote-generator",
@@ -10040,8 +10702,8 @@
       "detailsFile": "repos/quote-generator.json"
     },
     {
-      "id": "private-069",
-      "name": "Private Project 69",
+      "id": "private-074",
+      "name": "Private Project 74",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2022-12-23T04:28:03Z",
@@ -10164,11 +10826,11 @@
         "traditionalMonths": 2.42,
         "aiMonths": 0.62
       },
-      "detailsFile": "repos/private-069.json"
+      "detailsFile": "repos/private-074.json"
     },
     {
-      "id": "private-071",
-      "name": "Private Project 71",
+      "id": "private-076",
+      "name": "Private Project 76",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2022-11-08T02:11:32Z",
@@ -10291,7 +10953,7 @@
         "traditionalMonths": 0.51,
         "aiMonths": 0.13
       },
-      "detailsFile": "repos/private-071.json"
+      "detailsFile": "repos/private-076.json"
     },
     {
       "id": "underbar-review",
@@ -11826,8 +12488,8 @@
       "detailsFile": "repos/6ees6ees6ees.json"
     },
     {
-      "id": "private-072",
-      "name": "Private Project 72",
+      "id": "private-077",
+      "name": "Private Project 77",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2022-10-12T16:38:16Z",
@@ -11859,7 +12521,7 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-072.json"
+      "detailsFile": "repos/private-077.json"
     },
     {
       "id": "chat-demo-firebase",
@@ -11989,8 +12651,8 @@
       "detailsFile": "repos/chat-demo-firebase.json"
     },
     {
-      "id": "private-073",
-      "name": "Private Project 73",
+      "id": "private-078",
+      "name": "Private Project 78",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2022-10-03T06:25:15Z",
@@ -12139,7 +12801,7 @@
         "traditionalMonths": 0.81,
         "aiMonths": 0.21
       },
-      "detailsFile": "repos/private-073.json"
+      "detailsFile": "repos/private-078.json"
     },
     {
       "id": "chat-demo-stream-chat",
@@ -13048,8 +13710,8 @@
       "detailsFile": "repos/squad-survey-form.json"
     },
     {
-      "id": "private-074",
-      "name": "Private Project 74",
+      "id": "private-079",
+      "name": "Private Project 79",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2022-06-01T22:58:32Z",
@@ -13185,11 +13847,11 @@
         "traditionalMonths": 0.62,
         "aiMonths": 0.16
       },
-      "detailsFile": "repos/private-074.json"
+      "detailsFile": "repos/private-079.json"
     },
     {
-      "id": "private-075",
-      "name": "Private Project 75",
+      "id": "private-080",
+      "name": "Private Project 80",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2022-06-01T09:01:53Z",
@@ -13260,11 +13922,11 @@
         "traditionalMonths": 0.62,
         "aiMonths": 0.16
       },
-      "detailsFile": "repos/private-075.json"
+      "detailsFile": "repos/private-080.json"
     },
     {
-      "id": "private-076",
-      "name": "Private Project 76",
+      "id": "private-081",
+      "name": "Private Project 81",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2022-06-01T05:40:55Z",
@@ -13374,11 +14036,11 @@
         "traditionalMonths": 17.57,
         "aiMonths": 4.48
       },
-      "detailsFile": "repos/private-076.json"
+      "detailsFile": "repos/private-081.json"
     },
     {
-      "id": "private-077",
-      "name": "Private Project 77",
+      "id": "private-082",
+      "name": "Private Project 82",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2022-05-27T10:17:36Z",
@@ -13475,11 +14137,11 @@
         "traditionalMonths": 1.82,
         "aiMonths": 0.46
       },
-      "detailsFile": "repos/private-077.json"
+      "detailsFile": "repos/private-082.json"
     },
     {
-      "id": "private-078",
-      "name": "Private Project 78",
+      "id": "private-083",
+      "name": "Private Project 83",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2022-05-16T20:30:27Z",
@@ -13641,7 +14303,7 @@
         "traditionalMonths": 1.52,
         "aiMonths": 0.39
       },
-      "detailsFile": "repos/private-078.json"
+      "detailsFile": "repos/private-083.json"
     },
     {
       "id": "freecodecamp-projects",
@@ -13807,8 +14469,8 @@
       "detailsFile": "repos/store-angular.json"
     },
     {
-      "id": "private-079",
-      "name": "Private Project 79",
+      "id": "private-084",
+      "name": "Private Project 84",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2021-12-03T13:38:10Z",
@@ -14061,11 +14723,11 @@
         "traditionalMonths": 866.69,
         "aiMonths": 221.01
       },
-      "detailsFile": "repos/private-079.json"
+      "detailsFile": "repos/private-084.json"
     },
     {
-      "id": "private-080",
-      "name": "Private Project 80",
+      "id": "private-085",
+      "name": "Private Project 85",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2021-11-03T03:56:30Z",
@@ -14175,11 +14837,11 @@
         "traditionalMonths": 2.11,
         "aiMonths": 0.54
       },
-      "detailsFile": "repos/private-080.json"
+      "detailsFile": "repos/private-085.json"
     },
     {
-      "id": "private-081",
-      "name": "Private Project 81",
+      "id": "private-086",
+      "name": "Private Project 86",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2021-10-22T03:35:51Z",
@@ -14211,11 +14873,11 @@
         "traditionalMonths": 0.03,
         "aiMonths": 0.01
       },
-      "detailsFile": "repos/private-081.json"
+      "detailsFile": "repos/private-086.json"
     },
     {
-      "id": "private-082",
-      "name": "Private Project 82",
+      "id": "private-087",
+      "name": "Private Project 87",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2021-10-13T14:08:49Z",
@@ -14403,11 +15065,11 @@
         "traditionalMonths": 118.44,
         "aiMonths": 30.2
       },
-      "detailsFile": "repos/private-082.json"
+      "detailsFile": "repos/private-087.json"
     },
     {
-      "id": "private-083",
-      "name": "Private Project 83",
+      "id": "private-088",
+      "name": "Private Project 88",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2021-10-10T18:08:28Z",
@@ -14504,11 +15166,11 @@
         "traditionalMonths": 2.04,
         "aiMonths": 0.52
       },
-      "detailsFile": "repos/private-083.json"
+      "detailsFile": "repos/private-088.json"
     },
     {
-      "id": "private-084",
-      "name": "Private Project 84",
+      "id": "private-089",
+      "name": "Private Project 89",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2021-04-04T09:13:07Z",
@@ -14605,7 +15267,7 @@
         "traditionalMonths": 0.74,
         "aiMonths": 0.19
       },
-      "detailsFile": "repos/private-084.json"
+      "detailsFile": "repos/private-089.json"
     },
     {
       "id": "prescription-secretary",
@@ -14787,8 +15449,109 @@
       "detailsFile": "repos/prescription-secretary.json"
     },
     {
-      "id": "private-085",
-      "name": "Private Project 85",
+      "id": "private-090",
+      "name": "Private Project 90",
+      "url": null,
+      "description": "Private repository",
+      "lastUpdated": "2021-03-12T22:07:38Z",
+      "primaryLanguage": "CSV",
+      "isPrivate": true,
+      "isAnonymized": true,
+      "languages": [
+        {
+          "name": "CSV",
+          "lines": 70491,
+          "code": 65988,
+          "comments": 0,
+          "blanks": 4503,
+          "bytes": 27637582,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 96.6,
+          "percentOfCode": 97,
+          "percentOfBytes": 99.8
+        },
+        {
+          "name": "CSS",
+          "lines": 2172,
+          "code": 1862,
+          "comments": 235,
+          "blanks": 75,
+          "bytes": 45037,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 3,
+          "percentOfCode": 2.7,
+          "percentOfBytes": 0.2
+        },
+        {
+          "name": "Python",
+          "lines": 235,
+          "code": 148,
+          "comments": 42,
+          "blanks": 45,
+          "bytes": 6228,
+          "files": 14,
+          "complexity": 1,
+          "percentOfLines": 0.3,
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "JavaScript",
+          "lines": 30,
+          "code": 27,
+          "comments": 0,
+          "blanks": 3,
+          "bytes": 860,
+          "files": 1,
+          "complexity": 5,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "License",
+          "lines": 21,
+          "code": 17,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 1078,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "Markdown",
+          "lines": 1,
+          "code": 1,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 19,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        }
+      ],
+      "summary": {
+        "lines": 72950,
+        "code": 68043,
+        "files": 19,
+        "complexity": 6,
+        "traditionalCost": 945917,
+        "aiCost": 241209,
+        "traditionalMonths": 201.67,
+        "aiMonths": 51.42
+      },
+      "detailsFile": "repos/private-090.json"
+    },
+    {
+      "id": "private-091",
+      "name": "Private Project 91",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2021-02-11T22:40:11Z",
@@ -14911,7 +15674,7 @@
         "traditionalMonths": 2552.86,
         "aiMonths": 650.98
       },
-      "detailsFile": "repos/private-085.json"
+      "detailsFile": "repos/private-091.json"
     },
     {
       "id": "dijkstra-s-algorithm-for-the-single-source-minimum-path-problem",
@@ -14989,8 +15752,8 @@
       "detailsFile": "repos/dijkstra-s-algorithm-for-the-single-source-minimum-path-problem.json"
     },
     {
-      "id": "private-086",
-      "name": "Private Project 86",
+      "id": "private-092",
+      "name": "Private Project 92",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2020-12-25T00:23:57Z",
@@ -15061,7 +15824,7 @@
         "traditionalMonths": 3.69,
         "aiMonths": 0.94
       },
-      "detailsFile": "repos/private-086.json"
+      "detailsFile": "repos/private-092.json"
     },
     {
       "id": "a-client-and-a-server-communicating-in-rsa-and-fernet",
@@ -15162,8 +15925,8 @@
       "detailsFile": "repos/traveling-trip-budget.json"
     },
     {
-      "id": "private-087",
-      "name": "Private Project 87",
+      "id": "private-093",
+      "name": "Private Project 93",
       "url": null,
       "description": "Private repository",
       "lastUpdated": "2020-09-05T17:04:54Z",
@@ -15195,7 +15958,7 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-087.json"
+      "detailsFile": "repos/private-093.json"
     },
     {
       "id": "hash-tables-made-of-linked-lists",
