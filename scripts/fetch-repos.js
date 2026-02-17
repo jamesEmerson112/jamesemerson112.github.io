@@ -2,22 +2,27 @@
 
 /**
  * GitHub Repository Scanner
- * Fetches all repositories, scans with SCC, calculates metrics
- * Supports incremental and full scans
+ * Fetches repositories, scans with SCC, calculates metrics, and writes a
+ * consistent master index + per-repo details for both full and incremental runs.
  */
 
 import { Octokit } from '@octokit/rest';
 import dotenv from 'dotenv';
-import { fileURLToPath } from 'url';
+import { fileURLToPath, pathToFileURL } from 'url';
 import { dirname, join } from 'path';
 import fs from 'fs/promises';
-import { anonymizePrivateRepo, shouldIncludeRepo, generateRepoId } from './utils/anonymize.js';
+import {
+  anonymizePrivateRepo,
+  shouldIncludeRepo,
+  generateRepoId,
+  extractPrivateProjectIndex
+} from './utils/anonymize.js';
+import { classifyProjectTags } from './utils/project-classifier.js';
+import { backfillSourceRefsInIndex, buildScanPlan } from './utils/scan-planner.js';
 import { scanRepository, initScanner, cleanupScanner } from './scan-repo.js';
 
-// Load environment variables from .env file (for local development)
 dotenv.config();
 
-// Get directory paths
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 const projectRoot = join(__dirname, '..');
@@ -25,156 +30,217 @@ const metricsDir = join(projectRoot, 'public', 'metrics');
 const reposDir = join(metricsDir, 'repos');
 const indexPath = join(metricsDir, 'index.json');
 
-// Parse command line arguments
 const args = process.argv.slice(2);
 const isFullScan = args.includes('--full');
 const isTestMode = args.includes('--test');
-const limitArg = args.find(arg => arg.startsWith('--limit='));
-const repoLimit = limitArg ? parseInt(limitArg.split('=')[1]) : null;
+const limitArg = args.find((arg) => arg.startsWith('--limit='));
+const repoLimit = limitArg ? Number.parseInt(limitArg.split('=')[1], 10) : null;
 
-// Initialize GitHub API client
 const octokit = new Octokit({
   auth: process.env.GITHUB_TOKEN,
-  userAgent: 'portfolio-metrics-scanner/1.0',
+  userAgent: 'portfolio-metrics-scanner/2.0'
 });
 
-/**
- * Verify GitHub authentication
- */
+async function ensureMetricsDirs() {
+  await fs.mkdir(reposDir, { recursive: true });
+}
+
 async function verifyAuth() {
   try {
     const { data: user } = await octokit.users.getAuthenticated();
     console.log(`✅ Authenticated as: ${user.login}`);
-    console.log(`   Public repos: ${user.public_repos}`);
-    console.log(`   Total repos: ${user.total_private_repos + user.public_repos}`);
     return user;
   } catch (error) {
     console.error('❌ Authentication failed!');
-    console.error('   Make sure GITHUB_TOKEN is set in your environment or .env file');
-    console.error('   Error:', error.message);
+    console.error('   Make sure GITHUB_TOKEN is set. In GitHub Actions, map secrets.GH_PAT to GITHUB_TOKEN.');
+    console.error(`   Error: ${error.message}`);
     process.exit(1);
   }
 }
 
-/**
- * Fetch all repositories from GitHub API
- * @returns {Array} List of repository objects
- */
 async function fetchAllRepos() {
   console.log('\n📥 Fetching repositories from GitHub...');
 
   const allRepos = [];
   let page = 1;
-  let hasMore = true;
 
-  while (hasMore) {
+  while (true) {
     try {
       const { data } = await octokit.repos.listForAuthenticatedUser({
         per_page: 100,
         page,
-        type: 'all', // includes both public and private
+        type: 'all',
         sort: 'updated',
         direction: 'desc'
       });
 
       if (data.length === 0) {
-        hasMore = false;
-      } else {
-        allRepos.push(...data);
-        console.log(`   Fetched page ${page}: ${data.length} repos (total: ${allRepos.length})`);
-        page++;
+        break;
       }
+
+      allRepos.push(...data);
+      console.log(`   Fetched page ${page}: ${data.length} repos (total: ${allRepos.length})`);
+      page += 1;
     } catch (error) {
-      console.error(`❌ Error fetching page ${page}:`, error.message);
-      hasMore = false;
+      console.error(`❌ Error fetching page ${page}: ${error.message}`);
+      break;
     }
   }
 
   return allRepos;
 }
 
-/**
- * Filter repositories based on criteria
- * @param {Array} repos - List of repositories
- * @returns {Array} Filtered repositories
- */
 function filterRepos(repos) {
   console.log('\n🔍 Filtering repositories...');
-
   const filtered = repos.filter(shouldIncludeRepo);
 
   const excluded = repos.length - filtered.length;
-  const publicCount = filtered.filter(r => !r.private).length;
-  const privateCount = filtered.filter(r => r.private).length;
+  const publicCount = filtered.filter((repo) => !repo.private).length;
+  const privateCount = filtered.filter((repo) => repo.private).length;
 
   console.log(`   Total fetched: ${repos.length}`);
-  console.log(`   Excluded (forks/archived): ${excluded}`);
+  console.log(`   Excluded (forks): ${excluded}`);
   console.log(`   Public repos: ${publicCount}`);
   console.log(`   Private repos: ${privateCount}`);
-  console.log(`   Total to scan: ${filtered.length}`);
+  console.log(`   Total to process: ${filtered.length}`);
 
   return filtered;
 }
 
-/**
- * Load existing metrics index
- * @returns {Object|null} Existing index or null if doesn't exist
- */
 async function loadExistingIndex() {
   try {
     const content = await fs.readFile(indexPath, 'utf-8');
-    return JSON.parse(content);
-  } catch (error) {
-    console.log('   No existing index found, will create new one');
+    const parsed = JSON.parse(content);
+    const { index: normalized, updated } = backfillSourceRefsInIndex(parsed);
+
+    if (updated) {
+      await fs.writeFile(indexPath, JSON.stringify(normalized, null, 2));
+      console.log('   Backfilled sourceRef for inferable legacy index entries');
+    }
+
+    return normalized;
+  } catch {
     return null;
   }
 }
 
-/**
- * Determine which repos need scanning
- * @param {Array} repos - All filtered repositories
- * @param {Object} existingIndex - Previous scan data
- * @returns {Array} Repos that need scanning
- */
-function getReposToScan(repos, existingIndex) {
-  if (isFullScan || !existingIndex) {
-    console.log('\n🔄 Full scan mode - scanning all repositories');
-    return repos;
+async function loadExistingDetailsSet() {
+  try {
+    const files = await fs.readdir(reposDir);
+    return new Set(files.map((file) => `repos/${file}`));
+  } catch {
+    return new Set();
   }
-
-  console.log('\n⚡ Incremental scan mode - checking for updates...');
-
-  const toScan = repos.filter(repo => {
-    const existingRepo = existingIndex.repos.find(r => {
-      if (repo.private) {
-        // For private repos, match by language and update time
-        return r.isPrivate && r.primaryLanguage === repo.language;
-      }
-      return r.name === repo.name;
-    });
-
-    if (!existingRepo) {
-      return true; // New repo
-    }
-
-    const repoUpdated = new Date(repo.updated_at);
-    const lastScanned = new Date(existingRepo.lastUpdated);
-
-    return repoUpdated > lastScanned; // Updated since last scan
-  });
-
-  console.log(`   Repos to scan: ${toScan.length} out of ${repos.length}`);
-  return toScan;
 }
 
-/**
- * Generate master index from processed repos
- * @param {Array} processedRepos - All processed repositories with metrics
- * @param {Object} existingIndex - Previous index (if exists)
- */
-async function generateMasterIndex(processedRepos, existingIndex) {
-  // Calculate portfolio-wide totals
-  const totals = processedRepos.reduce((acc, repo) => ({
+function decorateScanPlan(planItems) {
+  return planItems.map((item) => {
+    const expectedRepoId = generateRepoId(item.repo, 0, item.sourceRef);
+    const expectedDetailsFile = `repos/${expectedRepoId}.json`;
+
+    const reasons = [...item.reasons];
+    let needsRescan = item.needsRescan;
+
+    // Migrate legacy private detail ids to stable sourceRef-based ids.
+    if (
+      item.repo.private &&
+      item.existingEntry &&
+      item.existingEntry.detailsFile &&
+      item.existingEntry.detailsFile !== expectedDetailsFile
+    ) {
+      reasons.push('legacy-private-id');
+      needsRescan = true;
+    }
+
+    return {
+      ...item,
+      expectedRepoId,
+      expectedDetailsFile,
+      reasons,
+      needsRescan
+    };
+  });
+}
+
+function buildPrivateIndexAllocator(planItems) {
+  const used = new Set();
+
+  for (const item of planItems) {
+    if (!item.repo.private) continue;
+    const parsed = extractPrivateProjectIndex(item.existingEntry?.name);
+    if (parsed) {
+      used.add(parsed);
+    }
+  }
+
+  let nextIndex = 1;
+
+  return function allocate(existingEntry) {
+    const parsed = extractPrivateProjectIndex(existingEntry?.name);
+    if (parsed) {
+      used.add(parsed);
+      return parsed;
+    }
+
+    while (used.has(nextIndex)) {
+      nextIndex += 1;
+    }
+
+    const allocated = nextIndex;
+    used.add(allocated);
+    nextIndex += 1;
+    return allocated;
+  };
+}
+
+async function loadExistingMetrics(detailsFile) {
+  const filePath = join(metricsDir, detailsFile);
+  const content = await fs.readFile(filePath, 'utf-8');
+  return JSON.parse(content);
+}
+
+async function persistMetrics(metrics, detailsFile) {
+  const filePath = join(metricsDir, detailsFile);
+  await fs.writeFile(filePath, JSON.stringify(metrics, null, 2));
+}
+
+async function cleanupOrphanedDetailsFiles(referencedDetailsFiles) {
+  const files = await fs.readdir(reposDir);
+  let removed = 0;
+
+  for (const file of files) {
+    const detailsFile = `repos/${file}`;
+    if (!referencedDetailsFiles.has(detailsFile)) {
+      await fs.rm(join(reposDir, file), { force: true });
+      removed += 1;
+    }
+  }
+
+  return removed;
+}
+
+function ensureProjectTags(metrics) {
+  const existingTags = metrics?.computed?.projectTags;
+  if (Array.isArray(existingTags) && existingTags.length > 0) {
+    return metrics;
+  }
+
+  const projectTags = classifyProjectTags({
+    languages: metrics?.computed?.languages || [],
+    metadata: metrics?.metadata || {}
+  });
+
+  return {
+    ...metrics,
+    computed: {
+      ...metrics.computed,
+      projectTags
+    }
+  };
+}
+
+function buildMasterIndex(allRepos, existingIndex, scannedCount, reusedCount) {
+  const totals = allRepos.reduce((acc, repo) => ({
     totalLines: acc.totalLines + repo.computed.summary.totalLines,
     totalCode: acc.totalCode + repo.computed.summary.totalCode,
     totalComments: acc.totalComments + repo.computed.summary.totalComments,
@@ -200,11 +266,10 @@ async function generateMasterIndex(processedRepos, existingIndex) {
     aiEffort: 0
   });
 
-  // Aggregate language statistics
   const languageMap = new Map();
 
-  processedRepos.forEach(repo => {
-    repo.computed.languages.forEach(lang => {
+  for (const repo of allRepos) {
+    for (const lang of repo.computed.languages) {
       if (!languageMap.has(lang.name)) {
         languageMap.set(lang.name, {
           repos: new Set(),
@@ -217,10 +282,9 @@ async function generateMasterIndex(processedRepos, existingIndex) {
       langData.repos.add(repo.id);
       langData.totalLines += lang.lines;
       langData.totalCode += lang.code;
-    });
-  });
+    }
+  }
 
-  // Convert language map to object
   const languages = {};
   languageMap.forEach((data, name) => {
     languages[name] = {
@@ -228,26 +292,27 @@ async function generateMasterIndex(processedRepos, existingIndex) {
       totalLines: data.totalLines,
       totalCode: data.totalCode,
       percentOfTotal: totals.totalLines > 0
-        ? parseFloat(((data.totalLines / totals.totalLines) * 100).toFixed(1))
+        ? Number.parseFloat(((data.totalLines / totals.totalLines) * 100).toFixed(1))
         : 0,
       averagePerRepo: Math.round(data.totalLines / data.repos.size)
     };
   });
 
-  // Count public/private repos
-  const publicCount = processedRepos.filter(r => !r.metadata.isPrivate).length;
-  const privateCount = processedRepos.filter(r => r.metadata.isPrivate).length;
+  const publicCount = allRepos.filter((repo) => !repo.metadata.isPrivate).length;
+  const privateCount = allRepos.filter((repo) => repo.metadata.isPrivate).length;
 
-  // Create master index
-  const masterIndex = {
-    version: '1.0.0',
+  return {
+    version: '1.1.0',
     generatedAt: new Date().toISOString(),
-    lastFullScan: isFullScan ? new Date().toISOString() : (existingIndex?.lastFullScan || new Date().toISOString()),
+    lastFullScan: isFullScan
+      ? new Date().toISOString()
+      : (existingIndex?.lastFullScan || new Date().toISOString()),
     lastIncrementalScan: new Date().toISOString(),
-    reposScannedThisRun: processedRepos.length,
+    reposScannedThisRun: scannedCount,
+    reposReusedThisRun: reusedCount,
     totalPublicRepos: publicCount,
     totalPrivateRepos: privateCount,
-    totalRepos: processedRepos.length,
+    totalRepos: allRepos.length,
 
     portfolioTotals: {
       totalLines: totals.totalLines,
@@ -260,15 +325,15 @@ async function generateMasterIndex(processedRepos, existingIndex) {
 
       estimatedValue: {
         standardCost: totals.totalCost,
-        totalEffort: parseFloat(totals.totalEffort.toFixed(2)),
-        avgTime: processedRepos.length > 0
-          ? parseFloat((totals.totalEffort / processedRepos.length).toFixed(2))
+        totalEffort: Number.parseFloat(totals.totalEffort.toFixed(2)),
+        avgTime: allRepos.length > 0
+          ? Number.parseFloat((totals.totalEffort / allRepos.length).toFixed(2))
           : 0,
-        avgPeople: 0 // Calculated below
+        avgPeople: 0
       },
 
       soloDeveloper: {
-        fullTimeMonths: parseFloat(totals.totalEffort.toFixed(2)),
+        fullTimeMonths: Number.parseFloat(totals.totalEffort.toFixed(2)),
         fullTimeYears: Math.round(totals.totalEffort / 12),
         fullTimeWeeks: Math.round(totals.totalEffort * 4.33),
         description: 'Total time if developed alone, full-time'
@@ -277,8 +342,9 @@ async function generateMasterIndex(processedRepos, existingIndex) {
       languages
     },
 
-    repos: processedRepos.map(repo => ({
+    repos: allRepos.map((repo) => ({
       id: repo.id,
+      sourceRef: repo.metadata.sourceRef || null,
       name: repo.metadata.name,
       url: repo.metadata.url,
       description: repo.metadata.description,
@@ -286,7 +352,8 @@ async function generateMasterIndex(processedRepos, existingIndex) {
       primaryLanguage: repo.computed.summary.primaryLanguage,
       isPrivate: repo.metadata.isPrivate,
       isAnonymized: repo.metadata.isAnonymized,
-      languages: repo.computed.languages, // Include language breakdown for spider charts
+      projectTags: repo.computed.projectTags || [],
+      languages: repo.computed.languages,
       summary: {
         lines: repo.computed.summary.totalLines,
         code: repo.computed.summary.totalCode,
@@ -300,128 +367,190 @@ async function generateMasterIndex(processedRepos, existingIndex) {
       detailsFile: `repos/${repo.id}.json`
     }))
   };
-
-  // Save master index
-  await fs.writeFile(indexPath, JSON.stringify(masterIndex, null, 2));
-
-  console.log('   ✅ Master index generated');
-  console.log(`   Total lines: ${totals.totalLines.toLocaleString()}`);
-  console.log(`   Total cost: $${totals.totalCost.toLocaleString()}`);
-  console.log(`   Solo dev time: ${Math.round(totals.totalEffort / 12)} years`);
 }
 
-/**
- * Main execution function
- */
-async function main() {
+export async function runScan() {
   console.log('🚀 Portfolio Metrics Scanner');
   console.log('============================\n');
 
   if (!process.env.GITHUB_TOKEN) {
     console.error('❌ ERROR: GITHUB_TOKEN not found!');
-    console.error('   Please create a .env file with your GitHub token');
-    console.error('   See .env.example for instructions\n');
+    console.error('   In local development, define it in .env.');
+    console.error('   In GitHub Actions, map secrets.GH_PAT -> GITHUB_TOKEN.\n');
     process.exit(1);
   }
 
-  // Display scan mode
+  await ensureMetricsDirs();
+
   if (isTestMode) {
-    console.log(`🧪 Test mode: Limiting to ${repoLimit || 5} repos\n`);
+    console.log(`🧪 Test mode: limiting to ${repoLimit || 5} repos\n`);
   } else if (isFullScan) {
-    console.log('🔄 Full scan mode: All repositories\n');
+    console.log('🔄 Full scan mode: all repositories\n');
   } else {
-    console.log('⚡ Incremental scan mode: Only updated repos\n');
+    console.log('⚡ Incremental scan mode: merge unchanged + rescan changed\n');
   }
 
-  // Step 1: Verify authentication
-  const user = await verifyAuth();
+  await verifyAuth();
 
-  // Step 2: Fetch all repositories
-  let allRepos = await fetchAllRepos();
-
-  // Step 3: Filter repositories
+  const allRepos = await fetchAllRepos();
   const filtered = filterRepos(allRepos);
 
-  // Step 4: Apply test mode limit if needed
   let reposToProcess = filtered;
   if (isTestMode && repoLimit) {
     reposToProcess = filtered.slice(0, repoLimit);
-    console.log(`\n🧪 Test mode: Limited to ${reposToProcess.length} repos`);
+    console.log(`\n🧪 Test mode active: ${reposToProcess.length} repositories selected`);
   }
 
-  // Step 5: Load existing index for incremental scanning
   const existingIndex = await loadExistingIndex();
+  const existingDetails = await loadExistingDetailsSet();
 
-  // Step 6: Determine which repos need scanning
-  const reposToScan = getReposToScan(reposToProcess, existingIndex);
+  const initialPlan = buildScanPlan({
+    repos: reposToProcess,
+    existingIndex,
+    existingDetails,
+    forceFullScan: isFullScan
+  });
 
-  if (reposToScan.length === 0) {
-    console.log('\n✅ All repositories are up to date!');
-    console.log('   Use --full flag to force a complete rescan\n');
-    return;
+  const scanPlan = decorateScanPlan(initialPlan);
+  const allocatePrivateIndex = buildPrivateIndexAllocator(scanPlan);
+
+  for (const item of scanPlan) {
+    item.privateDisplayIndex = item.repo.private
+      ? allocatePrivateIndex(item.existingEntry)
+      : null;
   }
 
-  // Step 7: Initialize scanner
-  console.log('\n🔧 Initializing scanner...');
-  await initScanner();
+  const reposToScan = scanPlan.filter((item) => item.needsRescan);
+  const scannedBySourceRef = new Map();
 
-  // Step 8: Process each repository
-  console.log('\n📊 Scanning repositories...\n');
+  console.log(`\n📋 Scan plan: ${reposToScan.length} to scan, ${scanPlan.length - reposToScan.length} to reuse`);
 
-  let privateIndex = 1;
-  const processedRepos = [];
-  let successCount = 0;
-  let failCount = 0;
+  let scanSuccessCount = 0;
+  let scanFailCount = 0;
 
-  for (let i = 0; i < reposToScan.length; i++) {
-    const repo = reposToScan[i];
-    const progress = `[${i + 1}/${reposToScan.length}]`;
+  if (reposToScan.length > 0) {
+    console.log('\n🔧 Initializing scanner...');
+    await initScanner();
 
-    // Generate repo ID
-    const repoId = generateRepoId(repo, privateIndex);
-    if (repo.private) privateIndex++;
+    try {
+      for (let i = 0; i < reposToScan.length; i++) {
+        const item = reposToScan[i];
+        const progress = `[${i + 1}/${reposToScan.length}]`;
 
-    // Anonymize if private
-    const metadata = anonymizePrivateRepo(repo, privateIndex - 1);
+        const metadata = anonymizePrivateRepo(
+          item.repo,
+          item.privateDisplayIndex,
+          item.sourceRef
+        );
 
-    console.log(`${progress} ${metadata.name} (${repo.language || 'Unknown'})`);
+        // Preserve existing private label when available
+        if (item.repo.private && item.existingEntry?.name) {
+          metadata.name = item.existingEntry.name;
+        }
 
-    // Scan repository
-    const metrics = await scanRepository(repo, metadata, repoId, process.env.GITHUB_TOKEN);
+        console.log(`${progress} ${metadata.name} (${item.repo.language || 'Unknown'})`);
 
-    if (metrics) {
-      // Save individual repo JSON
-      const repoFilePath = join(reposDir, `${repoId}.json`);
-      await fs.writeFile(repoFilePath, JSON.stringify(metrics, null, 2));
+        const metrics = await scanRepository(
+          item.repo,
+          metadata,
+          item.expectedRepoId,
+          process.env.GITHUB_TOKEN
+        );
 
-      processedRepos.push(metrics);
-      successCount++;
-    } else {
-      console.log(`   ⚠️  Skipped (scan failed)\n`);
-      failCount++;
+        if (!metrics) {
+          console.log(`   ⚠️  Scan failed; will try reusing previous details if present`);
+          scanFailCount += 1;
+          continue;
+        }
+
+        // Ensure sourceRef and normalized id are persisted.
+        metrics.id = item.expectedRepoId;
+        metrics.metadata = {
+          ...metrics.metadata,
+          sourceRef: item.sourceRef
+        };
+
+        await persistMetrics(metrics, item.expectedDetailsFile);
+        scannedBySourceRef.set(item.sourceRef, metrics);
+        scanSuccessCount += 1;
+      }
+    } finally {
+      console.log('\n🧹 Cleaning up scanner temp directory...');
+      await cleanupScanner();
     }
   }
 
-  // Step 9: Cleanup scanner
-  console.log('🧹 Cleaning up...');
-  await cleanupScanner();
+  console.log('\n📦 Building merged metrics set...');
 
-  console.log('\n✅ Scanning complete!');
-  console.log(`   Successful: ${successCount} repos`);
-  console.log(`   Failed: ${failCount} repos`);
-  console.log(`   Public: ${processedRepos.filter(r => !r.metadata.isPrivate).length}`);
-  console.log(`   Private: ${processedRepos.filter(r => r.metadata.isPrivate).length}`);
+  const mergedRepos = [];
+  let reusedCount = 0;
 
-  // Step 10: Generate master index
-  console.log('\n📝 Generating master index...');
-  await generateMasterIndex(processedRepos, existingIndex);
+  for (const item of scanPlan) {
+    const scanned = scannedBySourceRef.get(item.sourceRef);
+    if (scanned) {
+      mergedRepos.push(scanned);
+      continue;
+    }
 
-  console.log('\n🎉 All done!');
-  console.log(`   Metrics saved to: ${metricsDir}`);
+    if (item.existingEntry?.detailsFile && existingDetails.has(item.existingEntry.detailsFile)) {
+      try {
+        const existingMetrics = await loadExistingMetrics(item.existingEntry.detailsFile);
+        const metadata = anonymizePrivateRepo(
+          item.repo,
+          item.privateDisplayIndex,
+          item.sourceRef
+        );
+
+        if (item.repo.private && item.existingEntry?.name) {
+          metadata.name = item.existingEntry.name;
+        }
+
+        const reusedMetrics = {
+          ...existingMetrics,
+          id: item.expectedRepoId,
+          metadata: {
+            ...existingMetrics.metadata,
+            ...metadata,
+            sourceRef: item.sourceRef
+          }
+        };
+
+        const normalizedMetrics = ensureProjectTags(reusedMetrics);
+
+        // Persist reused metrics under normalized details filename.
+        await persistMetrics(normalizedMetrics, item.expectedDetailsFile);
+
+        mergedRepos.push(normalizedMetrics);
+        reusedCount += 1;
+      } catch (error) {
+        console.warn(`   ⚠️  Could not reuse ${item.existingEntry.detailsFile}: ${error.message}`);
+      }
+    }
+  }
+
+  const masterIndex = buildMasterIndex(mergedRepos, existingIndex, scanSuccessCount, reusedCount);
+
+  await fs.writeFile(indexPath, JSON.stringify(masterIndex, null, 2));
+
+  const referenced = new Set(masterIndex.repos.map((repo) => repo.detailsFile));
+  const removedOrphans = await cleanupOrphanedDetailsFiles(referenced);
+
+  console.log('\n✅ Scan complete');
+  console.log(`   Scanned successfully: ${scanSuccessCount}`);
+  console.log(`   Reused: ${reusedCount}`);
+  console.log(`   Scan failures: ${scanFailCount}`);
+  console.log(`   Total in index: ${masterIndex.totalRepos}`);
+  console.log(`   Orphan detail files removed: ${removedOrphans}`);
+  console.log(`   Index written: ${indexPath}`);
 }
 
-// Run the script
-main().catch(error => {
-  console.error('\n❌ Fatal error:', error);
-  process.exit(1);
-});
+const isDirectRun = process.argv[1]
+  ? import.meta.url === pathToFileURL(process.argv[1]).href
+  : false;
+
+if (isDirectRun) {
+  runScan().catch((error) => {
+    console.error('\n❌ Fatal error:', error);
+    process.exit(1);
+  });
+}

@@ -213,6 +213,16 @@
           }
         }
       }
-    }
+    },
+    "projectTags": [
+      {
+        "label": "Backend",
+        "confidence": 0.6
+      },
+      {
+        "label": "Web",
+        "confidence": 0.4
+      }
+    ]
   }
 }

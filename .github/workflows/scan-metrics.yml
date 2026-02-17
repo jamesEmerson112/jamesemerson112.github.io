@@ -60,6 +60,13 @@ jobs:
             echo "⚡ Weekly scheduled: INCREMENTAL SCAN"
           fi
 
+      - name: Verify GH_PAT secret
+        run: |
+          if [[ -z "${{ secrets.GH_PAT }}" ]]; then
+            echo "::error::Missing required secret GH_PAT. Add a Personal Access Token and map it to GH_PAT."
+            exit 1
+          fi
+
       - name: Run portfolio scan
         env:
           GITHUB_TOKEN: ${{ secrets.GH_PAT }}
@@ -71,6 +78,9 @@ jobs:
             echo "⚡ Starting incremental scan (updated repos only)..."
             npm run scan
           fi
+
+      - name: Validate metrics integrity
+        run: npm run scan:validate
 
       - name: Check for changes
         id: check_changes

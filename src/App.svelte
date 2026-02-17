@@ -9,6 +9,7 @@
   import ContentLayer from './components/layout/ContentLayer.svelte';
   import ThemeSwitcher from './components/ThemeSwitcher.svelte';
   import Copyright from './components/layout/Copyright.svelte';
+  import PortfolioOverview from './components/portfolio/PortfolioOverview.svelte';
   import PortfolioStats from './components/portfolio/PortfolioStats.svelte';
   import Timeline from './components/Timeline.svelte';
   import './styles/themes.css';
@@ -53,8 +54,7 @@
     {:else if currentPage === 'projects'}
       <div class="page projects">
         <div class="projects_content">
-          <h2>Projects</h2>
-          <p>Coming soon - Portfolio with spider web visualizations</p>
+          <PortfolioOverview />
         </div>
       </div>
     {:else if currentPage === 'metrics'}
@@ -65,6 +65,9 @@
             <div class="method_name">Calculated using COCOMO</div>
             <div class="method_citation">(Boehm, 1981)</div>
           </div>
+          <p class="metrics_caveat">
+            Traditional and AI-assisted estimates are directional planning metrics, not guarantees.
+          </p>
         </div>
       </div>
     {:else if currentPage === 'contact'}
@@ -140,22 +143,19 @@
   }
 
   /* Projects Page */
+  .page.projects {
+    justify-content: stretch;
+    align-items: stretch;
+    padding-right: 0;
+  }
+
   .projects_content {
-    text-align: right;
-    max-width: 600px;
-  }
-
-  .projects_content h2 {
-    font-size: clamp(32px, 6vw, 60px);
-    font-weight: 200;
-    margin: 0 0 1em 0;
-    color: #fff;
-  }
-
-  .projects_content p {
-    font-size: 14px;
-    color: #fff;
-    opacity: 0.7;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    text-align: left;
+    max-width: none;
+    padding: calc(var(--pad) * 2);
   }
 
   /* Metrics Page */
@@ -166,6 +166,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .metrics_caveat {
+    margin-top: 1rem;
+    font-size: 11px;
+    color: #fff;
+    opacity: 0.65;
+    max-width: 520px;
+    text-align: center;
+    line-height: 1.4;
   }
 
   .methodology {

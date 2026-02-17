@@ -381,6 +381,16 @@
           }
         }
       }
-    }
+    },
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.55
+      },
+      {
+        "label": "Web",
+        "confidence": 0.45
+      }
+    ]
   }
 }

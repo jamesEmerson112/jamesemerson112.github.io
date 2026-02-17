@@ -10,6 +10,11 @@
 
   let svgElement;
   let mounted = false;
+  const instanceId = `spider-${Math.random().toString(36).slice(2, 10)}`;
+  const codeGradientId = `${instanceId}-code-gradient`;
+  const complexityGradientId = `${instanceId}-complexity-gradient`;
+  const glowFilterId = `${instanceId}-glow`;
+  const shadowFilterId = `${instanceId}-shadow`;
 
   // Filter and prepare language data
   $: validLanguages = languages
@@ -210,19 +215,19 @@
     <!-- Define gradients and filters -->
     <defs>
       <!-- Gradient for code polygon -->
-      <radialGradient id="codeGradient" cx="50%" cy="50%" r="50%">
+      <radialGradient id={codeGradientId} cx="50%" cy="50%" r="50%">
         <stop offset="0%" style="stop-color:rgb(59, 130, 246);stop-opacity:0.3" />
         <stop offset="100%" style="stop-color:rgb(59, 130, 246);stop-opacity:0.1" />
       </radialGradient>
 
       <!-- Gradient for complexity polygon -->
-      <radialGradient id="complexityGradient" cx="50%" cy="50%" r="50%">
+      <radialGradient id={complexityGradientId} cx="50%" cy="50%" r="50%">
         <stop offset="0%" style="stop-color:rgb(239, 68, 68);stop-opacity:0.4" />
         <stop offset="100%" style="stop-color:rgb(239, 68, 68);stop-opacity:0.15" />
       </radialGradient>
 
       <!-- Glow filter -->
-      <filter id="glow">
+      <filter id={glowFilterId}>
         <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
         <feMerge>
           <feMergeNode in="coloredBlur"/>
@@ -231,7 +236,7 @@
       </filter>
 
       <!-- Drop shadow -->
-      <filter id="shadow">
+      <filter id={shadowFilterId}>
         <feDropShadow dx="0" dy="2" stdDeviation="2" flood-opacity="0.3"/>
       </filter>
     </defs>
@@ -282,9 +287,9 @@
     {#if codeArea}
       <path
         d={codeArea}
-        fill="url(#codeGradient)"
+        fill={`url(#${codeGradientId})`}
         class="code-area"
-        filter="url(#shadow)"
+        filter={`url(#${shadowFilterId})`}
       />
     {/if}
 
@@ -292,9 +297,9 @@
     {#if complexityArea}
       <path
         d={complexityArea}
-        fill="url(#complexityGradient)"
+        fill={`url(#${complexityGradientId})`}
         class="complexity-area"
-        filter="url(#shadow)"
+        filter={`url(#${shadowFilterId})`}
       />
     {/if}
 
@@ -306,7 +311,7 @@
         stroke="rgb(59, 130, 246)"
         stroke-width="2.5"
         class="code-path"
-        filter="url(#glow)"
+        filter={`url(#${glowFilterId})`}
         style="opacity: 0;"
       />
     {/if}
@@ -319,7 +324,7 @@
         stroke="rgb(239, 68, 68)"
         stroke-width="2.5"
         class="complexity-path"
-        filter="url(#glow)"
+        filter={`url(#${glowFilterId})`}
         style="opacity: 0;"
       />
     {/if}

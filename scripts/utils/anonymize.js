@@ -2,14 +2,27 @@
  * Private Repository Anonymization Utility
  * Sanitizes private repository data while preserving metrics
  */
+import { createHash } from 'crypto';
+
+function stableHash(input, length = 16) {
+  return createHash('sha256').update(String(input || '')).digest('hex').slice(0, length);
+}
+
+function sourceRefToPrivateSlug(sourceRef) {
+  if (!sourceRef || !sourceRef.startsWith('private:')) {
+    return null;
+  }
+  return sourceRef.replace('private:', '').slice(0, 12);
+}
 
 /**
  * Anonymize a private repository's metadata
  * @param {object} repo - Repository object from GitHub API
  * @param {number} index - Index number for naming (e.g., "Private Project 5")
+ * @param {string|null} sourceRef - Stable repo source reference
  * @returns {object} Anonymized repository metadata
  */
-export function anonymizePrivateRepo(repo, index) {
+export function anonymizePrivateRepo(repo, index, sourceRef = null) {
   // If not private, return original metadata
   if (!repo.private) {
     return {
@@ -26,7 +39,8 @@ export function anonymizePrivateRepo(repo, index) {
       isPrivate: false,
       isFork: repo.fork,
       isArchived: repo.archived,
-      isAnonymized: false
+      isAnonymized: false,
+      sourceRef
     };
   }
 
@@ -45,7 +59,8 @@ export function anonymizePrivateRepo(repo, index) {
     isPrivate: true,
     isFork: repo.fork,
     isArchived: repo.archived,
-    isAnonymized: true
+    isAnonymized: true,
+    sourceRef
   };
 }
 
@@ -63,10 +78,20 @@ export function shouldIncludeRepo(repo) {
  * Generate a safe repository ID for filenames
  * @param {object} repo - Repository object
  * @param {number} privateIndex - Index for private repos
+ * @param {string|null} sourceRef - Stable sourceRef when available
  * @returns {string} Safe filename-compatible ID
  */
-export function generateRepoId(repo, privateIndex = 0) {
+export function generateRepoId(repo, privateIndex = 0, sourceRef = null) {
   if (repo.private) {
+    const refSlug = sourceRefToPrivateSlug(sourceRef);
+    if (refSlug) {
+      return `private-${refSlug}`;
+    }
+
+    if (repo.node_id) {
+      return `private-${stableHash(repo.node_id, 12)}`;
+    }
+
     return `private-${String(privateIndex).padStart(3, '0')}`;
   }
 
@@ -104,4 +129,15 @@ export function getVisibility(metadata) {
     showStars: !metadata.isAnonymized && metadata.stars > 0,
     showMetrics: true // Always show metrics
   };
+}
+
+/**
+ * Extract private project display index from label
+ * @param {string|null} name - Display label
+ * @returns {number|null} Parsed index
+ */
+export function extractPrivateProjectIndex(name) {
+  const match = String(name || '').match(/^Private Project (\d+)$/);
+  if (!match) return null;
+  return Number.parseInt(match[1], 10);
 }
