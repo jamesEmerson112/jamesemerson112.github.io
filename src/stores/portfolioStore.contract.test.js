@@ -17,9 +17,13 @@ describe('portfolioStore public contract', () => {
     expect(store.availableLanguages).toBeDefined();
     expect(store.searchTerm).toBeDefined();
     expect(store.languageFilter).toBeDefined();
+    expect(store.categoryFilter).toBeDefined();
     expect(store.sortBy).toBeDefined();
     expect(store.sortOrder).toBeDefined();
     expect(store.selectedRepo).toBeDefined();
+    expect(store.availableCategories).toBeDefined();
+    expect(store.overallCategoryStats).toBeDefined();
+    expect(store.overallQualityStats).toBeDefined();
     expect(typeof store.loadPortfolioData).toBe('function');
     expect(typeof store.toggleSortOrder).toBe('function');
     expect(typeof store.resetFilters).toBe('function');

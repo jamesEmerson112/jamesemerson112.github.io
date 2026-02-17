@@ -7,7 +7,6 @@
     selectedRepo,
     loadPortfolioData
   } from '../../stores/portfolioStore.js';
-  import PortfolioStats from './PortfolioStats.svelte';
   import SearchFilter from './SearchFilter.svelte';
   import RepoCard from './RepoCard.svelte';
   import RepoDetailPanel from './RepoDetailPanel.svelte';
@@ -49,9 +48,6 @@
         </button>
       </div>
     {:else}
-      <!-- Portfolio Stats -->
-      <PortfolioStats />
-
       <!-- Search & Filter -->
       <SearchFilter />
 
