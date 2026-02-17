@@ -409,6 +409,16 @@
           }
         }
       }
-    }
+    },
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.55
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.45
+      }
+    ]
   }
 }

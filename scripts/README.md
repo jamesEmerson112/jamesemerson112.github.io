@@ -19,6 +19,8 @@ These scripts scan GitHub repositories, calculate portfolio metrics, and generat
   - private repo anonymization + stable repo id helpers
 - `utils/scan-planner.js`
   - deterministic `sourceRef` and incremental scan planning
+- `utils/project-classifier.js`
+  - infers top project-type tags (for example `AI/ML`, `Web`, `Backend`) with confidence
 
 ## Environment
 Set `GITHUB_TOKEN` before scanning.
@@ -43,6 +45,7 @@ Incremental scan now:
 3. Reuses unchanged repo details.
 4. Recomputes aggregate totals from the merged full set.
 5. Removes orphan `public/metrics/repos/*.json` files.
+6. Emits `projectTags` (top 2 with confidence) to support recruiter-friendly categorization.
 
 ## Integrity gate
 `validate-metrics.js` fails on:

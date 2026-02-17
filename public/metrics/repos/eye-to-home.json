@@ -213,6 +213,12 @@
           }
         }
       }
-    }
+    },
+    "projectTags": [
+      {
+        "label": "Mobile",
+        "confidence": 1
+      }
+    ]
   }
 }

@@ -269,6 +269,16 @@
           }
         }
       }
-    }
+    },
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ]
   }
 }

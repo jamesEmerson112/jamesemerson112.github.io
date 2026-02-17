@@ -23,6 +23,10 @@ const fixtureIndex = {
       primaryLanguage: 'JavaScript',
       isPrivate: false,
       isAnonymized: false,
+      projectTags: [
+        { label: 'Web', confidence: 0.62 },
+        { label: 'Backend', confidence: 0.38 }
+      ],
       languages: [
         {
           name: 'JavaScript',
@@ -59,6 +63,10 @@ const fixtureIndex = {
       primaryLanguage: 'TypeScript',
       isPrivate: false,
       isAnonymized: false,
+      projectTags: [
+        { label: 'Web', confidence: 0.71 },
+        { label: 'AI/ML', confidence: 0.29 }
+      ],
       languages: [
         {
           name: 'TypeScript',
@@ -110,6 +118,7 @@ describe('Option B portfolio overview integration', () => {
     expect(await screen.findByText('Portfolio Metrics')).toBeInTheDocument();
     expect(await screen.findByText('Repo Alpha')).toBeInTheDocument();
     expect(await screen.findByText('Repo Zeta')).toBeInTheDocument();
+    expect(await screen.findByText(/Web 62%/i)).toBeInTheDocument();
   });
 
   it('applies search and language filter, and supports name sorting', async () => {
@@ -155,6 +164,8 @@ describe('Option B portfolio overview integration', () => {
     await fireEvent.click(screen.getByRole('button', { name: /Open details for Repo Alpha/i }));
 
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
+    expect(await screen.findByText(/Project Type Signals/i)).toBeInTheDocument();
+    expect((await screen.findAllByText(/Backend 38%/i)).length).toBeGreaterThan(0);
     const closeButton = await screen.findByRole('button', { name: /Close repository details/i });
     expect(closeButton).toHaveFocus();
     await fireEvent.click(closeButton);

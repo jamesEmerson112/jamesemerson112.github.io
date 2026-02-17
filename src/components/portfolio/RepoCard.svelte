@@ -15,6 +15,7 @@
     : 0;
 
   $: languageColor = getLanguageColor(repo.primaryLanguage);
+  $: topProjectTags = Array.isArray(repo.projectTags) ? repo.projectTags.slice(0, 2) : [];
 </script>
 
 <button
@@ -44,6 +45,16 @@
     <p class="repo-description">{repo.description}</p>
   {:else if repo.isAnonymized}
     <p class="repo-description muted">Private repository</p>
+  {/if}
+
+  {#if topProjectTags.length > 0}
+    <div class="project-tags" aria-label="Project type signals">
+      {#each topProjectTags as tag}
+        <span class="project-tag">
+          {tag.label} {Math.round((tag.confidence || 0) * 100)}%
+        </span>
+      {/each}
+    </div>
   {/if}
 
   <!-- Stats -->
@@ -184,6 +195,23 @@
   .repo-description.muted {
     font-style: italic;
     color: var(--text-muted);
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .project-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.22rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    color: var(--text-primary);
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.28);
   }
 
   .repo-stats {

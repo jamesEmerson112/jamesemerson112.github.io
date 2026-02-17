@@ -21,6 +21,7 @@
   $: languageColor = repo?.primaryLanguage
     ? getLanguageColor(repo.primaryLanguage)
     : '#64748b';
+  $: topProjectTags = Array.isArray(repo?.projectTags) ? repo.projectTags.slice(0, 2) : [];
 
   function closePanel() {
     dispatch('close');
@@ -89,6 +90,17 @@
             </p>
           {:else if repo.description}
             <p class="repo-description">{repo.description}</p>
+          {/if}
+
+          {#if topProjectTags.length > 0}
+            <div class="project-signals" aria-label="Project type signals">
+              <div class="signals-label">Project Type Signals</div>
+              <div class="signals-tags">
+                {#each topProjectTags as tag}
+                  <span class="signal-tag">{tag.label} {Math.round((tag.confidence || 0) * 100)}%</span>
+                {/each}
+              </div>
+            </div>
           {/if}
 
           <div class="summary-grid">
@@ -229,6 +241,34 @@
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0.75rem;
     margin-bottom: 1rem;
+  }
+
+  .project-signals {
+    margin: 0 0 1rem;
+  }
+
+  .signals-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.65;
+    margin-bottom: 0.35rem;
+  }
+
+  .signals-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+
+  .signal-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.55rem;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    background: rgba(16, 185, 129, 0.14);
+    border: 1px solid rgba(16, 185, 129, 0.28);
   }
 
   .label {

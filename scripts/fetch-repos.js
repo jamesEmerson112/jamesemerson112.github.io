@@ -17,6 +17,7 @@ import {
   generateRepoId,
   extractPrivateProjectIndex
 } from './utils/anonymize.js';
+import { classifyProjectTags } from './utils/project-classifier.js';
 import { backfillSourceRefsInIndex, buildScanPlan } from './utils/scan-planner.js';
 import { scanRepository, initScanner, cleanupScanner } from './scan-repo.js';
 
@@ -218,6 +219,26 @@ async function cleanupOrphanedDetailsFiles(referencedDetailsFiles) {
   return removed;
 }
 
+function ensureProjectTags(metrics) {
+  const existingTags = metrics?.computed?.projectTags;
+  if (Array.isArray(existingTags) && existingTags.length > 0) {
+    return metrics;
+  }
+
+  const projectTags = classifyProjectTags({
+    languages: metrics?.computed?.languages || [],
+    metadata: metrics?.metadata || {}
+  });
+
+  return {
+    ...metrics,
+    computed: {
+      ...metrics.computed,
+      projectTags
+    }
+  };
+}
+
 function buildMasterIndex(allRepos, existingIndex, scannedCount, reusedCount) {
   const totals = allRepos.reduce((acc, repo) => ({
     totalLines: acc.totalLines + repo.computed.summary.totalLines,
@@ -331,6 +352,7 @@ function buildMasterIndex(allRepos, existingIndex, scannedCount, reusedCount) {
       primaryLanguage: repo.computed.summary.primaryLanguage,
       isPrivate: repo.metadata.isPrivate,
       isAnonymized: repo.metadata.isAnonymized,
+      projectTags: repo.computed.projectTags || [],
       languages: repo.computed.languages,
       summary: {
         lines: repo.computed.summary.totalLines,
@@ -493,10 +515,12 @@ export async function runScan() {
           }
         };
 
-        // Persist reused metrics under normalized details filename.
-        await persistMetrics(reusedMetrics, item.expectedDetailsFile);
+        const normalizedMetrics = ensureProjectTags(reusedMetrics);
 
-        mergedRepos.push(reusedMetrics);
+        // Persist reused metrics under normalized details filename.
+        await persistMetrics(normalizedMetrics, item.expectedDetailsFile);
+
+        mergedRepos.push(normalizedMetrics);
         reusedCount += 1;
       } catch (error) {
         console.warn(`   ⚠️  Could not reuse ${item.existingEntry.detailsFile}: ${error.message}`);

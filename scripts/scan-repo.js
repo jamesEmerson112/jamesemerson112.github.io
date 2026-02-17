@@ -9,6 +9,7 @@ import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import fs from 'fs/promises';
 import { calculateCOCOMO, calculateLanguagePercentages, generateSummary } from './utils/cocomo.js';
+import { classifyProjectTags } from './utils/project-classifier.js';
 
 const execAsync = promisify(exec);
 
@@ -125,6 +126,7 @@ export async function scanRepository(repo, metadata, repoId, token) {
     const summary = generateSummary(sccData);
     const languages = calculateLanguagePercentages(sccData);
     const cocomo = calculateCOCOMO(summary.totalCode);
+    const projectTags = classifyProjectTags({ languages, metadata });
 
     // Step 4: Build complete metrics object
     const metrics = {
@@ -135,6 +137,7 @@ export async function scanRepository(repo, metadata, repoId, token) {
       computed: {
         summary,
         languages,
+        projectTags,
         cocomo
       }
     };

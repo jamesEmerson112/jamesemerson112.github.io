@@ -274,7 +274,17 @@
         "traditionalMonths": 4.24,
         "aiMonths": 1.08
       },
-      "detailsFile": "repos/private-001.json"
+      "detailsFile": "repos/private-001.json",
+      "projectTags": [
+        {
+          "label": "Data",
+          "confidence": 0.6
+        },
+        {
+          "label": "AI/ML",
+          "confidence": 0.4
+        }
+      ]
     },
     {
       "id": "private-002",
@@ -376,7 +386,17 @@
         "traditionalMonths": 2.44,
         "aiMonths": 0.62
       },
-      "detailsFile": "repos/private-002.json"
+      "detailsFile": "repos/private-002.json",
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.6
+        },
+        {
+          "label": "Data",
+          "confidence": 0.4
+        }
+      ]
     },
     {
       "id": "private-003",
@@ -530,7 +550,17 @@
         "traditionalMonths": 410.32,
         "aiMonths": 104.63
       },
-      "detailsFile": "repos/private-003.json"
+      "detailsFile": "repos/private-003.json",
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.55
+        },
+        {
+          "label": "Web",
+          "confidence": 0.45
+        }
+      ]
     },
     {
       "id": "private-004",
@@ -567,7 +597,8 @@
         "traditionalMonths": 2.1,
         "aiMonths": 0.54
       },
-      "detailsFile": "repos/private-004.json"
+      "detailsFile": "repos/private-004.json",
+      "projectTags": []
     },
     {
       "id": "private-005",
@@ -604,7 +635,8 @@
         "traditionalMonths": 0,
         "aiMonths": 0
       },
-      "detailsFile": "repos/private-005.json"
+      "detailsFile": "repos/private-005.json",
+      "projectTags": []
     },
     {
       "id": "private-012",
@@ -680,7 +712,13 @@
         "traditionalMonths": 20.9,
         "aiMonths": 5.33
       },
-      "detailsFile": "repos/private-012.json"
+      "detailsFile": "repos/private-012.json",
+      "projectTags": [
+        {
+          "label": "Backend",
+          "confidence": 1
+        }
+      ]
     },
     {
       "id": "private-006",
@@ -782,7 +820,17 @@
         "traditionalMonths": 5.81,
         "aiMonths": 1.48
       },
-      "detailsFile": "repos/private-006.json"
+      "detailsFile": "repos/private-006.json",
+      "projectTags": [
+        {
+          "label": "Web",
+          "confidence": 0.55
+        },
+        {
+          "label": "AI/ML",
+          "confidence": 0.45
+        }
+      ]
     },
     {
       "id": "private-007",
@@ -845,7 +893,8 @@
         "traditionalMonths": 0.05,
         "aiMonths": 0.01
       },
-      "detailsFile": "repos/private-007.json"
+      "detailsFile": "repos/private-007.json",
+      "projectTags": []
     },
     {
       "id": "private-009",
@@ -1012,7 +1061,17 @@
         "traditionalMonths": 98.38,
         "aiMonths": 25.09
       },
-      "detailsFile": "repos/private-009.json"
+      "detailsFile": "repos/private-009.json",
+      "projectTags": [
+        {
+          "label": "Web",
+          "confidence": 0.55
+        },
+        {
+          "label": "Backend",
+          "confidence": 0.45
+        }
+      ]
     },
     {
       "id": "sglang-and-dynamo-example",
@@ -1062,7 +1121,8 @@
         "traditionalMonths": 9.32,
         "aiMonths": 2.38
       },
-      "detailsFile": "repos/sglang-and-dynamo-example.json"
+      "detailsFile": "repos/sglang-and-dynamo-example.json",
+      "projectTags": []
     },
     {
       "id": "jamesvo-github-io",
@@ -1190,7 +1250,17 @@
         "traditionalMonths": 25.75,
         "aiMonths": 6.57
       },
-      "detailsFile": "repos/jamesvo-github-io.json"
+      "detailsFile": "repos/jamesvo-github-io.json",
+      "projectTags": [
+        {
+          "label": "Web",
+          "confidence": 0.87
+        },
+        {
+          "label": "Backend",
+          "confidence": 0.13
+        }
+      ]
     },
     {
       "id": "jiraoptimizer",
@@ -1331,7 +1401,17 @@
         "traditionalMonths": 4.94,
         "aiMonths": 1.26
       },
-      "detailsFile": "repos/jiraoptimizer.json"
+      "detailsFile": "repos/jiraoptimizer.json",
+      "projectTags": [
+        {
+          "label": "Web",
+          "confidence": 0.69
+        },
+        {
+          "label": "Backend",
+          "confidence": 0.31
+        }
+      ]
     },
     {
       "id": "private-010",
@@ -1407,7 +1487,17 @@
         "traditionalMonths": 19.29,
         "aiMonths": 4.92
       },
-      "detailsFile": "repos/private-010.json"
+      "detailsFile": "repos/private-010.json",
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.53
+        },
+        {
+          "label": "Data",
+          "confidence": 0.47
+        }
+      ]
     },
     {
       "id": "eye-to-home",
@@ -1483,7 +1573,13 @@
         "traditionalMonths": 1.26,
         "aiMonths": 0.32
       },
-      "detailsFile": "repos/eye-to-home.json"
+      "detailsFile": "repos/eye-to-home.json",
+      "projectTags": [
+        {
+          "label": "Mobile",
+          "confidence": 1
+        }
+      ]
     },
     {
       "id": "sf10x-hackathon",
@@ -1650,7 +1746,17 @@
         "traditionalMonths": 98.63,
         "aiMonths": 25.15
       },
-      "detailsFile": "repos/sf10x-hackathon.json"
+      "detailsFile": "repos/sf10x-hackathon.json",
+      "projectTags": [
+        {
+          "label": "Web",
+          "confidence": 0.55
+        },
+        {
+          "label": "Backend",
+          "confidence": 0.45
+        }
+      ]
     },
     {
       "id": "virtual-cursor",
@@ -1726,7 +1832,17 @@
         "traditionalMonths": 6.65,
         "aiMonths": 1.7
       },
-      "detailsFile": "repos/virtual-cursor.json"
+      "detailsFile": "repos/virtual-cursor.json",
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.6
+        },
+        {
+          "label": "Data",
+          "confidence": 0.4
+        }
+      ]
     },
     {
       "id": "private-011",
@@ -1841,7 +1957,17 @@
         "traditionalMonths": 0.49,
         "aiMonths": 0.13
       },
-      "detailsFile": "repos/private-011.json"
+      "detailsFile": "repos/private-011.json",
+      "projectTags": [
+        {
+          "label": "Web",
+          "confidence": 0.9
+        },
+        {
+          "label": "Backend",
+          "confidence": 0.1
+        }
+      ]
     },
     {
       "id": "samdu-news",
@@ -1956,7 +2082,17 @@
         "traditionalMonths": 3.94,
         "aiMonths": 1
       },
-      "detailsFile": "repos/samdu-news.json"
+      "detailsFile": "repos/samdu-news.json",
+      "projectTags": [
+        {
+          "label": "Web",
+          "confidence": 0.6
+        },
+        {
+          "label": "Backend",
+          "confidence": 0.4
+        }
+      ]
     },
     {
       "id": "las-vegas-hackathon-august-12",
@@ -2032,7 +2168,17 @@
         "traditionalMonths": 6.76,
         "aiMonths": 1.72
       },
-      "detailsFile": "repos/las-vegas-hackathon-august-12.json"
+      "detailsFile": "repos/las-vegas-hackathon-august-12.json",
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.6
+        },
+        {
+          "label": "Data",
+          "confidence": 0.4
+        }
+      ]
     },
     {
       "id": "shopify-hackathon-backend",
@@ -2108,7 +2254,17 @@
         "traditionalMonths": 1.29,
         "aiMonths": 0.33
       },
-      "detailsFile": "repos/shopify-hackathon-backend.json"
+      "detailsFile": "repos/shopify-hackathon-backend.json",
+      "projectTags": [
+        {
+          "label": "Backend",
+          "confidence": 0.6
+        },
+        {
+          "label": "Web",
+          "confidence": 0.4
+        }
+      ]
     }
   ]
 }
