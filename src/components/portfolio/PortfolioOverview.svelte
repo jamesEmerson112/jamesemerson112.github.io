@@ -1,14 +1,25 @@
 <script>
   import { onMount } from 'svelte';
-  import { loading, error, filteredRepos, loadPortfolioData } from '../../stores/portfolioStore.js';
+  import {
+    loading,
+    error,
+    filteredRepos,
+    selectedRepo,
+    loadPortfolioData
+  } from '../../stores/portfolioStore.js';
   import PortfolioStats from './PortfolioStats.svelte';
   import SearchFilter from './SearchFilter.svelte';
   import RepoCard from './RepoCard.svelte';
+  import RepoDetailPanel from './RepoDetailPanel.svelte';
 
   // Load data on mount
   onMount(() => {
     loadPortfolioData();
   });
+
+  function closeSelectedRepo() {
+    selectedRepo.set(null);
+  }
 </script>
 
 <section class="portfolio-overview">
@@ -65,6 +76,8 @@
       {/if}
     {/if}
   </div>
+
+  <RepoDetailPanel repo={$selectedRepo} on:close={closeSelectedRepo} />
 </section>
 
 <style>

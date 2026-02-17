@@ -17,7 +17,12 @@
   $: languageColor = getLanguageColor(repo.primaryLanguage);
 </script>
 
-<button class="repo-card" on:click={handleClick}>
+<button
+  class="repo-card"
+  type="button"
+  on:click={handleClick}
+  aria-label={`Open details for ${repo.name}`}
+>
   <!-- Header -->
   <div class="card-header">
     <div class="repo-title">
