@@ -1,0 +1,425 @@
+{
+  "id": "private-b7b286fb133b",
+  "scannedAt": "2026-02-17T08:19:17.878Z",
+  "metadata": {
+    "name": "Private Project 82",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2023-01-18T00:27:07Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Ruby",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:b7b286fb133b7d15"
+  },
+  "sccRaw": [
+    {
+      "Name": "Ruby",
+      "Bytes": 22967,
+      "CodeBytes": 0,
+      "Lines": 666,
+      "Code": 277,
+      "Comment": 258,
+      "Blank": 131,
+      "Complexity": 21,
+      "Count": 36,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JavaScript",
+      "Bytes": 1259,
+      "CodeBytes": 0,
+      "Lines": 34,
+      "Code": 16,
+      "Comment": 11,
+      "Blank": 7,
+      "Complexity": 0,
+      "Count": 5,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Ruby HTML",
+      "Bytes": 806,
+      "CodeBytes": 0,
+      "Lines": 42,
+      "Code": 37,
+      "Comment": 0,
+      "Blank": 5,
+      "Complexity": 0,
+      "Count": 5,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "YAML",
+      "Bytes": 2994,
+      "CodeBytes": 0,
+      "Lines": 111,
+      "Code": 35,
+      "Comment": 63,
+      "Blank": 13,
+      "Complexity": 0,
+      "Count": 5,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 5062,
+      "CodeBytes": 0,
+      "Lines": 200,
+      "Code": 182,
+      "Comment": 3,
+      "Blank": 15,
+      "Complexity": 0,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Rakefile",
+      "Bytes": 317,
+      "CodeBytes": 0,
+      "Lines": 10,
+      "Code": 5,
+      "Comment": 3,
+      "Blank": 2,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 721,
+      "CodeBytes": 0,
+      "Lines": 15,
+      "Code": 0,
+      "Comment": 15,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Gemfile",
+      "Bytes": 2284,
+      "CodeBytes": 0,
+      "Lines": 72,
+      "Code": 24,
+      "Comment": 27,
+      "Blank": 21,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 1072,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 374,
+      "CodeBytes": 0,
+      "Lines": 24,
+      "Code": 13,
+      "Comment": 0,
+      "Blank": 11,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 99,
+      "CodeBytes": 0,
+      "Lines": 1,
+      "Code": 1,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 1196,
+      "totalCode": 607,
+      "totalComments": 380,
+      "totalBlanks": 209,
+      "totalBytes": 37955,
+      "totalFiles": 61,
+      "totalLanguages": 11,
+      "totalComplexity": 21,
+      "primaryLanguage": "Ruby",
+      "primaryLanguagePercent": 45.6
+    },
+    "languages": [
+      {
+        "name": "Ruby",
+        "lines": 666,
+        "code": 277,
+        "comments": 258,
+        "blanks": 131,
+        "bytes": 22967,
+        "files": 36,
+        "complexity": 21,
+        "percentOfLines": 55.7,
+        "percentOfCode": 45.6,
+        "percentOfBytes": 60.5
+      },
+      {
+        "name": "HTML",
+        "lines": 200,
+        "code": 182,
+        "comments": 3,
+        "blanks": 15,
+        "bytes": 5062,
+        "files": 3,
+        "complexity": 0,
+        "percentOfLines": 16.7,
+        "percentOfCode": 30,
+        "percentOfBytes": 13.3
+      },
+      {
+        "name": "Ruby HTML",
+        "lines": 42,
+        "code": 37,
+        "comments": 0,
+        "blanks": 5,
+        "bytes": 806,
+        "files": 5,
+        "complexity": 0,
+        "percentOfLines": 3.5,
+        "percentOfCode": 6.1,
+        "percentOfBytes": 2.1
+      },
+      {
+        "name": "YAML",
+        "lines": 111,
+        "code": 35,
+        "comments": 63,
+        "blanks": 13,
+        "bytes": 2994,
+        "files": 5,
+        "complexity": 0,
+        "percentOfLines": 9.3,
+        "percentOfCode": 5.8,
+        "percentOfBytes": 7.9
+      },
+      {
+        "name": "Gemfile",
+        "lines": 72,
+        "code": 24,
+        "comments": 27,
+        "blanks": 21,
+        "bytes": 2284,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 6,
+        "percentOfCode": 4,
+        "percentOfBytes": 6
+      },
+      {
+        "name": "License",
+        "lines": 21,
+        "code": 17,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1072,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1.8,
+        "percentOfCode": 2.8,
+        "percentOfBytes": 2.8
+      },
+      {
+        "name": "JavaScript",
+        "lines": 34,
+        "code": 16,
+        "comments": 11,
+        "blanks": 7,
+        "bytes": 1259,
+        "files": 5,
+        "complexity": 0,
+        "percentOfLines": 2.8,
+        "percentOfCode": 2.6,
+        "percentOfBytes": 3.3
+      },
+      {
+        "name": "Markdown",
+        "lines": 24,
+        "code": 13,
+        "comments": 0,
+        "blanks": 11,
+        "bytes": 374,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 2,
+        "percentOfCode": 2.1,
+        "percentOfBytes": 1
+      },
+      {
+        "name": "Rakefile",
+        "lines": 10,
+        "code": 5,
+        "comments": 3,
+        "blanks": 2,
+        "bytes": 317,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 0.8,
+        "percentOfCode": 0.8,
+        "percentOfBytes": 0.8
+      },
+      {
+        "name": "Plain Text",
+        "lines": 1,
+        "code": 1,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 99,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.3
+      },
+      {
+        "name": "CSS",
+        "lines": 15,
+        "code": 0,
+        "comments": 15,
+        "blanks": 0,
+        "bytes": 721,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1.3,
+        "percentOfCode": 0,
+        "percentOfBytes": 1.9
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.89
+      },
+      {
+        "label": "DevOps",
+        "confidence": 0.11
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.607,
+        "effort": 1.42,
+        "time": 2.86,
+        "people": 0.5,
+        "cost": 6665,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.36,
+        "time": 1.7,
+        "people": 0.21,
+        "cost": 1699,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 1.42,
+            "weeks": 6.2,
+            "days": 31,
+            "cost": 6665,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.86,
+            "hoursPerWeek": 19.9,
+            "totalHours": 246,
+            "cost": 6665,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.36,
+            "weeks": 1.6,
+            "days": 8,
+            "cost": 1699,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.7,
+            "hoursPerWeek": 8.5,
+            "totalHours": 63,
+            "cost": 1699,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

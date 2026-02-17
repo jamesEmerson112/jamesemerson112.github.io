@@ -1,0 +1,192 @@
+{
+  "id": "uses-huffman-s-algorithm-to-create-an-optimum-prefix-free-code-for-the-roman-alphabet",
+  "scannedAt": "2026-02-17T08:19:41.285Z",
+  "metadata": {
+    "name": "uses-Huffman-s-algorithm-to-create-an-optimum-prefix-free-code-for-the-Roman-alphabet",
+    "fullName": "jamesEmerson112/uses-Huffman-s-algorithm-to-create-an-optimum-prefix-free-code-for-the-Roman-alphabet",
+    "description": "CS 302 - Write a C++ program which uses Huffman's algorithm to create an optimum prefix-free code for the Roman alphabet, together with ta symbol for space, using the frequencies of letters used in English. Since I want everyone's code to be the same, you must use the list of frequencies given in the file.",
+    "url": "https://github.com/jamesEmerson112/uses-Huffman-s-algorithm-to-create-an-optimum-prefix-free-code-for-the-Roman-alphabet",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2019-04-14T03:16:47Z",
+    "createdAt": "2019-04-14T02:01:16Z",
+    "stars": 0,
+    "language": "C++",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/uses-huffman-s-algorithm-to-create-an-optimum-prefix-free-code-for-the-roman-alphabet"
+  },
+  "sccRaw": [
+    {
+      "Name": "C++",
+      "Bytes": 146186,
+      "CodeBytes": 0,
+      "Lines": 6093,
+      "Code": 2911,
+      "Comment": 1531,
+      "Blank": 1651,
+      "Complexity": 571,
+      "Count": 19,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "C Header",
+      "Bytes": 12819,
+      "CodeBytes": 0,
+      "Lines": 447,
+      "Code": 254,
+      "Comment": 117,
+      "Blank": 76,
+      "Complexity": 50,
+      "Count": 4,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 794,
+      "CodeBytes": 0,
+      "Lines": 16,
+      "Code": 13,
+      "Comment": 0,
+      "Blank": 3,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 6556,
+      "totalCode": 3178,
+      "totalComments": 1648,
+      "totalBlanks": 1730,
+      "totalBytes": 159799,
+      "totalFiles": 24,
+      "totalLanguages": 3,
+      "totalComplexity": 621,
+      "primaryLanguage": "C++",
+      "primaryLanguagePercent": 91.6
+    },
+    "languages": [
+      {
+        "name": "C++",
+        "lines": 6093,
+        "code": 2911,
+        "comments": 1531,
+        "blanks": 1651,
+        "bytes": 146186,
+        "files": 19,
+        "complexity": 571,
+        "percentOfLines": 92.9,
+        "percentOfCode": 91.6,
+        "percentOfBytes": 91.5
+      },
+      {
+        "name": "C Header",
+        "lines": 447,
+        "code": 254,
+        "comments": 117,
+        "blanks": 76,
+        "bytes": 12819,
+        "files": 4,
+        "complexity": 50,
+        "percentOfLines": 6.8,
+        "percentOfCode": 8,
+        "percentOfBytes": 8
+      },
+      {
+        "name": "Markdown",
+        "lines": 16,
+        "code": 13,
+        "comments": 0,
+        "blanks": 3,
+        "bytes": 794,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.4,
+        "percentOfBytes": 0.5
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 3.178,
+        "effort": 8.08,
+        "time": 5.53,
+        "people": 1.46,
+        "cost": 37905,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 2.06,
+        "time": 3.29,
+        "people": 0.63,
+        "cost": 9666,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 8.08,
+            "weeks": 35,
+            "days": 175,
+            "cost": 37905,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 5.53,
+            "hoursPerWeek": 58.4,
+            "totalHours": 1398,
+            "cost": 37905,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 2.06,
+            "weeks": 8.9,
+            "days": 45,
+            "cost": 9666,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 3.29,
+            "hoursPerWeek": 25.1,
+            "totalHours": 356,
+            "cost": 9666,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

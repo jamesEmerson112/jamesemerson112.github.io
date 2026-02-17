@@ -1,0 +1,257 @@
+{
+  "id": "the-invisible-bot",
+  "scannedAt": "2026-02-17T08:19:11.573Z",
+  "metadata": {
+    "name": "the-invisible-bot",
+    "fullName": "kirivon/the-invisible-bot",
+    "description": "A Discord bot project written in Python using Discord.py",
+    "url": "https://github.com/kirivon/the-invisible-bot",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2023-10-29T08:47:58Z",
+    "createdAt": "2018-12-20T05:27:51Z",
+    "stars": 3,
+    "language": "Python",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:kirivon/the-invisible-bot"
+  },
+  "sccRaw": [
+    {
+      "Name": "Python",
+      "Bytes": 48590,
+      "CodeBytes": 0,
+      "Lines": 1295,
+      "Code": 939,
+      "Comment": 190,
+      "Blank": 166,
+      "Complexity": 105,
+      "Count": 10,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Dockerfile",
+      "Bytes": 463,
+      "CodeBytes": 0,
+      "Lines": 17,
+      "Code": 6,
+      "Comment": 6,
+      "Blank": 5,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 1944,
+      "CodeBytes": 0,
+      "Lines": 37,
+      "Code": 32,
+      "Comment": 0,
+      "Blank": 5,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 6,
+      "CodeBytes": 0,
+      "Lines": 1,
+      "Code": 1,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "YAML",
+      "Bytes": 179,
+      "CodeBytes": 0,
+      "Lines": 12,
+      "Code": 12,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 1362,
+      "totalCode": 990,
+      "totalComments": 196,
+      "totalBlanks": 176,
+      "totalBytes": 51182,
+      "totalFiles": 14,
+      "totalLanguages": 5,
+      "totalComplexity": 105,
+      "primaryLanguage": "Python",
+      "primaryLanguagePercent": 94.8
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "lines": 1295,
+        "code": 939,
+        "comments": 190,
+        "blanks": 166,
+        "bytes": 48590,
+        "files": 10,
+        "complexity": 105,
+        "percentOfLines": 95.1,
+        "percentOfCode": 94.8,
+        "percentOfBytes": 94.9
+      },
+      {
+        "name": "Markdown",
+        "lines": 37,
+        "code": 32,
+        "comments": 0,
+        "blanks": 5,
+        "bytes": 1944,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 2.7,
+        "percentOfCode": 3.2,
+        "percentOfBytes": 3.8
+      },
+      {
+        "name": "YAML",
+        "lines": 12,
+        "code": 12,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 179,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.9,
+        "percentOfCode": 1.2,
+        "percentOfBytes": 0.3
+      },
+      {
+        "name": "Dockerfile",
+        "lines": 17,
+        "code": 6,
+        "comments": 6,
+        "blanks": 5,
+        "bytes": 463,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1.2,
+        "percentOfCode": 0.6,
+        "percentOfBytes": 0.9
+      },
+      {
+        "name": "Plain Text",
+        "lines": 1,
+        "code": 1,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 6,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.99,
+        "effort": 2.37,
+        "time": 3.47,
+        "people": 0.68,
+        "cost": 11139,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.61,
+        "time": 2.07,
+        "people": 0.29,
+        "cost": 2840,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 2.37,
+            "weeks": 10.3,
+            "days": 52,
+            "cost": 11139,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 3.47,
+            "hoursPerWeek": 27.4,
+            "totalHours": 411,
+            "cost": 11139,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.61,
+            "weeks": 2.6,
+            "days": 13,
+            "cost": 2840,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 2.07,
+            "hoursPerWeek": 11.7,
+            "totalHours": 105,
+            "cost": 2840,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

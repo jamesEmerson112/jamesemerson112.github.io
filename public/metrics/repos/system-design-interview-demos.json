@@ -1,0 +1,173 @@
+{
+  "id": "system-design-interview-demos",
+  "scannedAt": "2026-02-17T08:18:57.691Z",
+  "metadata": {
+    "name": "System-Design-Interview-Demos",
+    "fullName": "jamesEmerson112/System-Design-Interview-Demos",
+    "description": "System Design demos for my personal learning",
+    "url": "https://github.com/jamesEmerson112/System-Design-Interview-Demos",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2025-05-02T20:46:58Z",
+    "createdAt": "2025-04-30T18:39:53Z",
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/system-design-interview-demos"
+  },
+  "sccRaw": [
+    {
+      "Name": "Python",
+      "Bytes": 16808,
+      "CodeBytes": 0,
+      "Lines": 444,
+      "Code": 337,
+      "Comment": 58,
+      "Blank": 49,
+      "Complexity": 52,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 3197,
+      "CodeBytes": 0,
+      "Lines": 47,
+      "Code": 32,
+      "Comment": 0,
+      "Blank": 15,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 491,
+      "totalCode": 369,
+      "totalComments": 58,
+      "totalBlanks": 64,
+      "totalBytes": 20005,
+      "totalFiles": 5,
+      "totalLanguages": 2,
+      "totalComplexity": 52,
+      "primaryLanguage": "Python",
+      "primaryLanguagePercent": 91.3
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "lines": 444,
+        "code": 337,
+        "comments": 58,
+        "blanks": 49,
+        "bytes": 16808,
+        "files": 3,
+        "complexity": 52,
+        "percentOfLines": 90.4,
+        "percentOfCode": 91.3,
+        "percentOfBytes": 84
+      },
+      {
+        "name": "Markdown",
+        "lines": 47,
+        "code": 32,
+        "comments": 0,
+        "blanks": 15,
+        "bytes": 3197,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 9.6,
+        "percentOfCode": 8.7,
+        "percentOfBytes": 16
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.369,
+        "effort": 0.84,
+        "time": 2.34,
+        "people": 0.36,
+        "cost": 3952,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.21,
+        "time": 1.39,
+        "people": 0.15,
+        "cost": 1008,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.84,
+            "weeks": 3.6,
+            "days": 18,
+            "cost": 3952,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.34,
+            "hoursPerWeek": 14.4,
+            "totalHours": 146,
+            "cost": 3952,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.21,
+            "weeks": 0.9,
+            "days": 5,
+            "cost": 1008,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.39,
+            "hoursPerWeek": 6.2,
+            "totalHours": 37,
+            "cost": 1008,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

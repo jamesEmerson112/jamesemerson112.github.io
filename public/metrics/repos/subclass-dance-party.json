@@ -1,0 +1,257 @@
+{
+  "id": "subclass-dance-party",
+  "scannedAt": "2026-02-17T08:19:19.765Z",
+  "metadata": {
+    "name": "subclass-dance-party",
+    "fullName": "jamesEmerson112/subclass-dance-party",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/subclass-dance-party",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2022-10-18T06:27:48Z",
+    "createdAt": "2022-10-18T06:27:41Z",
+    "stars": 0,
+    "language": "JavaScript",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/subclass-dance-party"
+  },
+  "sccRaw": [
+    {
+      "Name": "JavaScript",
+      "Bytes": 4868,
+      "CodeBytes": 0,
+      "Lines": 163,
+      "Code": 100,
+      "Comment": 39,
+      "Blank": 24,
+      "Complexity": 0,
+      "Count": 5,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 1466,
+      "CodeBytes": 0,
+      "Lines": 41,
+      "Code": 41,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 667,
+      "CodeBytes": 0,
+      "Lines": 23,
+      "Code": 23,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 382,
+      "CodeBytes": 0,
+      "Lines": 27,
+      "Code": 27,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 147,
+      "CodeBytes": 0,
+      "Lines": 2,
+      "Code": 2,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 256,
+      "totalCode": 193,
+      "totalComments": 39,
+      "totalBlanks": 24,
+      "totalBytes": 7530,
+      "totalFiles": 11,
+      "totalLanguages": 5,
+      "totalComplexity": 0,
+      "primaryLanguage": "JavaScript",
+      "primaryLanguagePercent": 51.8
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "lines": 163,
+        "code": 100,
+        "comments": 39,
+        "blanks": 24,
+        "bytes": 4868,
+        "files": 5,
+        "complexity": 0,
+        "percentOfLines": 63.7,
+        "percentOfCode": 51.8,
+        "percentOfBytes": 64.6
+      },
+      {
+        "name": "HTML",
+        "lines": 41,
+        "code": 41,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 1466,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 16,
+        "percentOfCode": 21.2,
+        "percentOfBytes": 19.5
+      },
+      {
+        "name": "CSS",
+        "lines": 27,
+        "code": 27,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 382,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 10.5,
+        "percentOfCode": 14,
+        "percentOfBytes": 5.1
+      },
+      {
+        "name": "JSON",
+        "lines": 23,
+        "code": 23,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 667,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 9,
+        "percentOfCode": 11.9,
+        "percentOfBytes": 8.9
+      },
+      {
+        "name": "Markdown",
+        "lines": 2,
+        "code": 2,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 147,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.8,
+        "percentOfCode": 1,
+        "percentOfBytes": 2
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.76
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.24
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.193,
+        "effort": 0.43,
+        "time": 1.81,
+        "people": 0.24,
+        "cost": 2001,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.11,
+        "time": 1.08,
+        "people": 0.1,
+        "cost": 510,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.43,
+            "weeks": 1.8,
+            "days": 9,
+            "cost": 2001,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 1.81,
+            "hoursPerWeek": 9.4,
+            "totalHours": 74,
+            "cost": 2001,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.11,
+            "weeks": 0.5,
+            "days": 2,
+            "cost": 510,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.08,
+            "hoursPerWeek": 4,
+            "totalHours": 19,
+            "cost": 510,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

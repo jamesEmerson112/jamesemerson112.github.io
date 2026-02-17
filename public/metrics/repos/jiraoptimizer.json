@@ -1,6 +1,6 @@
 {
   "id": "jiraoptimizer",
-  "scannedAt": "2026-02-01T03:56:50.495Z",
+  "scannedAt": "2026-02-17T08:18:40.568Z",
   "metadata": {
     "name": "JiraOptimizer",
     "fullName": "T-DEV16/JiraOptimizer",
@@ -15,7 +15,8 @@
     "isPrivate": false,
     "isFork": false,
     "isArchived": false,
-    "isAnonymized": false
+    "isAnonymized": false,
+    "sourceRef": "public:t-dev16/jiraoptimizer"
   },
   "sccRaw": [
     {
@@ -286,6 +287,16 @@
         "percentOfBytes": 0.1
       }
     ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.69
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.31
+      }
+    ],
     "cocomo": {
       "traditional": {
         "kloc": 1.989,
@@ -353,16 +364,6 @@
           }
         }
       }
-    },
-    "projectTags": [
-      {
-        "label": "Web",
-        "confidence": 0.69
-      },
-      {
-        "label": "Backend",
-        "confidence": 0.31
-      }
-    ]
+    }
   }
 }

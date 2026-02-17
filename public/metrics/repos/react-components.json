@@ -1,0 +1,201 @@
+{
+  "id": "react-components",
+  "scannedAt": "2026-02-17T08:19:20.743Z",
+  "metadata": {
+    "name": "react-components",
+    "fullName": "jamesEmerson112/react-components",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/react-components",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2022-10-18T05:31:26Z",
+    "createdAt": "2022-10-18T05:31:21Z",
+    "stars": 0,
+    "language": "JavaScript",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/react-components"
+  },
+  "sccRaw": [
+    {
+      "Name": "HTML",
+      "Bytes": 483,
+      "CodeBytes": 0,
+      "Lines": 15,
+      "Code": 15,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JavaScript",
+      "Bytes": 1757,
+      "CodeBytes": 0,
+      "Lines": 68,
+      "Code": 35,
+      "Comment": 22,
+      "Blank": 11,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 143,
+      "CodeBytes": 0,
+      "Lines": 2,
+      "Code": 2,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 85,
+      "totalCode": 52,
+      "totalComments": 22,
+      "totalBlanks": 11,
+      "totalBytes": 2383,
+      "totalFiles": 3,
+      "totalLanguages": 3,
+      "totalComplexity": 0,
+      "primaryLanguage": "JavaScript",
+      "primaryLanguagePercent": 67.3
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "lines": 68,
+        "code": 35,
+        "comments": 22,
+        "blanks": 11,
+        "bytes": 1757,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 80,
+        "percentOfCode": 67.3,
+        "percentOfBytes": 73.7
+      },
+      {
+        "name": "HTML",
+        "lines": 15,
+        "code": 15,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 483,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 17.6,
+        "percentOfCode": 28.8,
+        "percentOfBytes": 20.3
+      },
+      {
+        "name": "Markdown",
+        "lines": 2,
+        "code": 2,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 143,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 2.4,
+        "percentOfCode": 3.8,
+        "percentOfBytes": 6
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.75
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.25
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.052,
+        "effort": 0.11,
+        "time": 1.07,
+        "people": 0.1,
+        "cost": 505,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.03,
+        "time": 0.64,
+        "people": 0.04,
+        "cost": 129,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.11,
+            "weeks": 0.5,
+            "days": 2,
+            "cost": 505,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 1.07,
+            "hoursPerWeek": 4,
+            "totalHours": 19,
+            "cost": 505,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.03,
+            "weeks": 0.1,
+            "days": 1,
+            "cost": 129,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 0.64,
+            "hoursPerWeek": 1.7,
+            "totalHours": 5,
+            "cost": 129,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "id": "sdc-flash-renew",
+  "scannedAt": "2026-02-17T08:19:15.602Z",
+  "metadata": {
+    "name": "SDC-Flash-Renew",
+    "fullName": "jamesEmerson112/SDC-Flash-Renew",
+    "description": "a revival of SDC Flash, which is a project that converts a legacy backend to my own",
+    "url": "https://github.com/jamesEmerson112/SDC-Flash-Renew",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2023-02-11T23:20:12Z",
+    "createdAt": "2023-02-11T21:42:14Z",
+    "stars": 0,
+    "language": "JavaScript",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/sdc-flash-renew"
+  },
+  "sccRaw": [
+    {
+      "Name": "JavaScript",
+      "Bytes": 9377,
+      "CodeBytes": 0,
+      "Lines": 343,
+      "Code": 227,
+      "Comment": 57,
+      "Blank": 59,
+      "Complexity": 13,
+      "Count": 10,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 111,
+      "CodeBytes": 0,
+      "Lines": 8,
+      "Code": 7,
+      "Comment": 0,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 628,
+      "CodeBytes": 0,
+      "Lines": 28,
+      "Code": 28,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 1744,
+      "CodeBytes": 0,
+      "Lines": 56,
+      "Code": 40,
+      "Comment": 0,
+      "Blank": 16,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 435,
+      "totalCode": 302,
+      "totalComments": 57,
+      "totalBlanks": 76,
+      "totalBytes": 11860,
+      "totalFiles": 13,
+      "totalLanguages": 4,
+      "totalComplexity": 13,
+      "primaryLanguage": "JavaScript",
+      "primaryLanguagePercent": 75.2
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "lines": 343,
+        "code": 227,
+        "comments": 57,
+        "blanks": 59,
+        "bytes": 9377,
+        "files": 10,
+        "complexity": 13,
+        "percentOfLines": 78.9,
+        "percentOfCode": 75.2,
+        "percentOfBytes": 79.1
+      },
+      {
+        "name": "Markdown",
+        "lines": 56,
+        "code": 40,
+        "comments": 0,
+        "blanks": 16,
+        "bytes": 1744,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 12.9,
+        "percentOfCode": 13.2,
+        "percentOfBytes": 14.7
+      },
+      {
+        "name": "JSON",
+        "lines": 28,
+        "code": 28,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 628,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 6.4,
+        "percentOfCode": 9.3,
+        "percentOfBytes": 5.3
+      },
+      {
+        "name": "CSS",
+        "lines": 8,
+        "code": 7,
+        "comments": 0,
+        "blanks": 1,
+        "bytes": 111,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1.8,
+        "percentOfCode": 2.3,
+        "percentOfBytes": 0.9
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.6
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.302,
+        "effort": 0.68,
+        "time": 2.16,
+        "people": 0.32,
+        "cost": 3202,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.17,
+        "time": 1.29,
+        "people": 0.14,
+        "cost": 817,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "74%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.68,
+            "weeks": 3,
+            "days": 15,
+            "cost": 3202,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.16,
+            "hoursPerWeek": 12.6,
+            "totalHours": 118,
+            "cost": 3202,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.17,
+            "weeks": 0.8,
+            "days": 4,
+            "cost": 817,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.29,
+            "hoursPerWeek": 5.4,
+            "totalHours": 30,
+            "cost": 817,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

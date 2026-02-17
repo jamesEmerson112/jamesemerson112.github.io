@@ -1,0 +1,257 @@
+{
+  "id": "private-b4a6c7face4a",
+  "scannedAt": "2026-02-17T08:18:48.417Z",
+  "metadata": {
+    "name": "Private Project 32",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2025-07-31T20:17:43Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "C",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:b4a6c7face4af99a"
+  },
+  "sccRaw": [
+    {
+      "Name": "C",
+      "Bytes": 601797,
+      "CodeBytes": 0,
+      "Lines": 18507,
+      "Code": 13659,
+      "Comment": 2468,
+      "Blank": 2380,
+      "Complexity": 3064,
+      "Count": 10,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 10125,
+      "CodeBytes": 0,
+      "Lines": 300,
+      "Code": 245,
+      "Comment": 0,
+      "Blank": 55,
+      "Complexity": 0,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "C Header",
+      "Bytes": 5456,
+      "CodeBytes": 0,
+      "Lines": 155,
+      "Code": 103,
+      "Comment": 34,
+      "Blank": 18,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Makefile",
+      "Bytes": 4273,
+      "CodeBytes": 0,
+      "Lines": 116,
+      "Code": 77,
+      "Comment": 15,
+      "Blank": 24,
+      "Complexity": 1,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Python",
+      "Bytes": 462,
+      "CodeBytes": 0,
+      "Lines": 15,
+      "Code": 12,
+      "Comment": 0,
+      "Blank": 3,
+      "Complexity": 1,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 19093,
+      "totalCode": 14096,
+      "totalComments": 2517,
+      "totalBlanks": 2480,
+      "totalBytes": 622113,
+      "totalFiles": 17,
+      "totalLanguages": 5,
+      "totalComplexity": 3066,
+      "primaryLanguage": "C",
+      "primaryLanguagePercent": 96.9
+    },
+    "languages": [
+      {
+        "name": "C",
+        "lines": 18507,
+        "code": 13659,
+        "comments": 2468,
+        "blanks": 2380,
+        "bytes": 601797,
+        "files": 10,
+        "complexity": 3064,
+        "percentOfLines": 96.9,
+        "percentOfCode": 96.9,
+        "percentOfBytes": 96.7
+      },
+      {
+        "name": "Markdown",
+        "lines": 300,
+        "code": 245,
+        "comments": 0,
+        "blanks": 55,
+        "bytes": 10125,
+        "files": 3,
+        "complexity": 0,
+        "percentOfLines": 1.6,
+        "percentOfCode": 1.7,
+        "percentOfBytes": 1.6
+      },
+      {
+        "name": "C Header",
+        "lines": 155,
+        "code": 103,
+        "comments": 34,
+        "blanks": 18,
+        "bytes": 5456,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 0.8,
+        "percentOfCode": 0.7,
+        "percentOfBytes": 0.9
+      },
+      {
+        "name": "Makefile",
+        "lines": 116,
+        "code": 77,
+        "comments": 15,
+        "blanks": 24,
+        "bytes": 4273,
+        "files": 1,
+        "complexity": 1,
+        "percentOfLines": 0.6,
+        "percentOfCode": 0.5,
+        "percentOfBytes": 0.7
+      },
+      {
+        "name": "Python",
+        "lines": 15,
+        "code": 12,
+        "comments": 0,
+        "blanks": 3,
+        "bytes": 462,
+        "files": 1,
+        "complexity": 1,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.1
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "DevOps",
+        "confidence": 0.77
+      },
+      {
+        "label": "AI/ML",
+        "confidence": 0.23
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 14.096,
+        "effort": 38.62,
+        "time": 10.02,
+        "people": 3.85,
+        "cost": 181126,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 9.85,
+        "time": 5.96,
+        "people": 1.65,
+        "cost": 46187,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "74%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 38.62,
+            "weeks": 167.2,
+            "days": 838,
+            "cost": 181126,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 10.02,
+            "hoursPerWeek": 154.1,
+            "totalHours": 6680,
+            "cost": 181126,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 9.85,
+            "weeks": 42.6,
+            "days": 214,
+            "cost": 46187,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 5.96,
+            "hoursPerWeek": 66.1,
+            "totalHours": 1704,
+            "cost": 46187,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "virtual-cursor",
-  "scannedAt": "2026-02-01T03:56:53.235Z",
+  "scannedAt": "2026-02-17T08:18:42.237Z",
   "metadata": {
     "name": "virtual-cursor",
     "fullName": "jamesEmerson112/virtual-cursor",
@@ -15,7 +15,8 @@
     "isPrivate": false,
     "isFork": false,
     "isArchived": false,
-    "isAnonymized": false
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/virtual-cursor"
   },
   "sccRaw": [
     {
@@ -146,6 +147,16 @@
         "percentOfBytes": 0
       }
     ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
     "cocomo": {
       "traditional": {
         "kloc": 2.64,
@@ -213,16 +224,6 @@
           }
         }
       }
-    },
-    "projectTags": [
-      {
-        "label": "AI/ML",
-        "confidence": 0.6
-      },
-      {
-        "label": "Data",
-        "confidence": 0.4
-      }
-    ]
+    }
   }
 }

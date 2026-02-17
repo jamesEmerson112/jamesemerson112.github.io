@@ -1,0 +1,397 @@
+{
+  "id": "private-4870e1e5574e",
+  "scannedAt": "2026-02-17T08:18:04.938Z",
+  "metadata": {
+    "name": "Private Project 2",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-02-16T19:34:16Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Go",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:4870e1e5574e0ae9"
+  },
+  "sccRaw": [
+    {
+      "Name": "Go",
+      "Bytes": 297911,
+      "CodeBytes": 0,
+      "Lines": 9806,
+      "Code": 8048,
+      "Comment": 351,
+      "Blank": 1407,
+      "Complexity": 1554,
+      "Count": 77,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TypeScript",
+      "Bytes": 148367,
+      "CodeBytes": 0,
+      "Lines": 4174,
+      "Code": 3783,
+      "Comment": 17,
+      "Blank": 374,
+      "Complexity": 264,
+      "Count": 54,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "SQL",
+      "Bytes": 16759,
+      "CodeBytes": 0,
+      "Lines": 432,
+      "Code": 358,
+      "Comment": 41,
+      "Blank": 33,
+      "Complexity": 0,
+      "Count": 17,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 2728,
+      "CodeBytes": 0,
+      "Lines": 108,
+      "Code": 104,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 4,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 115830,
+      "CodeBytes": 0,
+      "Lines": 1749,
+      "Code": 1388,
+      "Comment": 0,
+      "Blank": 361,
+      "Complexity": 0,
+      "Count": 4,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JavaScript",
+      "Bytes": 3166,
+      "CodeBytes": 0,
+      "Lines": 105,
+      "Code": 103,
+      "Comment": 1,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "SVG",
+      "Bytes": 5623,
+      "CodeBytes": 0,
+      "Lines": 2,
+      "Code": 2,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 4362,
+      "CodeBytes": 0,
+      "Lines": 165,
+      "Code": 124,
+      "Comment": 10,
+      "Blank": 31,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 684,
+      "CodeBytes": 0,
+      "Lines": 17,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 35129,
+      "CodeBytes": 0,
+      "Lines": 674,
+      "Code": 553,
+      "Comment": 0,
+      "Blank": 121,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 17232,
+      "totalCode": 14480,
+      "totalComments": 420,
+      "totalBlanks": 2332,
+      "totalBytes": 630559,
+      "totalFiles": 164,
+      "totalLanguages": 10,
+      "totalComplexity": 1818,
+      "primaryLanguage": "Go",
+      "primaryLanguagePercent": 55.6
+    },
+    "languages": [
+      {
+        "name": "Go",
+        "lines": 9806,
+        "code": 8048,
+        "comments": 351,
+        "blanks": 1407,
+        "bytes": 297911,
+        "files": 77,
+        "complexity": 1554,
+        "percentOfLines": 56.9,
+        "percentOfCode": 55.6,
+        "percentOfBytes": 47.2
+      },
+      {
+        "name": "TypeScript",
+        "lines": 4174,
+        "code": 3783,
+        "comments": 17,
+        "blanks": 374,
+        "bytes": 148367,
+        "files": 54,
+        "complexity": 264,
+        "percentOfLines": 24.2,
+        "percentOfCode": 26.1,
+        "percentOfBytes": 23.5
+      },
+      {
+        "name": "Markdown",
+        "lines": 1749,
+        "code": 1388,
+        "comments": 0,
+        "blanks": 361,
+        "bytes": 115830,
+        "files": 4,
+        "complexity": 0,
+        "percentOfLines": 10.1,
+        "percentOfCode": 9.6,
+        "percentOfBytes": 18.4
+      },
+      {
+        "name": "License",
+        "lines": 674,
+        "code": 553,
+        "comments": 0,
+        "blanks": 121,
+        "bytes": 35129,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 3.9,
+        "percentOfCode": 3.8,
+        "percentOfBytes": 5.6
+      },
+      {
+        "name": "SQL",
+        "lines": 432,
+        "code": 358,
+        "comments": 41,
+        "blanks": 33,
+        "bytes": 16759,
+        "files": 17,
+        "complexity": 0,
+        "percentOfLines": 2.5,
+        "percentOfCode": 2.5,
+        "percentOfBytes": 2.7
+      },
+      {
+        "name": "CSS",
+        "lines": 165,
+        "code": 124,
+        "comments": 10,
+        "blanks": 31,
+        "bytes": 4362,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1,
+        "percentOfCode": 0.9,
+        "percentOfBytes": 0.7
+      },
+      {
+        "name": "JSON",
+        "lines": 108,
+        "code": 104,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 2728,
+        "files": 4,
+        "complexity": 0,
+        "percentOfLines": 0.6,
+        "percentOfCode": 0.7,
+        "percentOfBytes": 0.4
+      },
+      {
+        "name": "JavaScript",
+        "lines": 105,
+        "code": 103,
+        "comments": 1,
+        "blanks": 1,
+        "bytes": 3166,
+        "files": 3,
+        "complexity": 0,
+        "percentOfLines": 0.6,
+        "percentOfCode": 0.7,
+        "percentOfBytes": 0.5
+      },
+      {
+        "name": "HTML",
+        "lines": 17,
+        "code": 17,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 684,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "SVG",
+        "lines": 2,
+        "code": 2,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 5623,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 0,
+        "percentOfCode": 0,
+        "percentOfBytes": 0.9
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Backend",
+        "confidence": 0.73
+      },
+      {
+        "label": "Web",
+        "confidence": 0.27
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 14.48,
+        "effort": 39.72,
+        "time": 10.13,
+        "people": 3.92,
+        "cost": 186311,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 10.13,
+        "time": 6.03,
+        "people": 1.68,
+        "cost": 47509,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 39.72,
+            "weeks": 172,
+            "days": 862,
+            "cost": 186311,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 10.13,
+            "hoursPerWeek": 156.9,
+            "totalHours": 6872,
+            "cost": 186311,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 10.13,
+            "weeks": 43.9,
+            "days": 220,
+            "cost": 47509,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 6.03,
+            "hoursPerWeek": 67.2,
+            "totalHours": 1752,
+            "cost": 47509,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

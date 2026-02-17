@@ -1,0 +1,197 @@
+{
+  "id": "freecodecamp-projects",
+  "scannedAt": "2026-02-17T08:19:31.746Z",
+  "metadata": {
+    "name": "freeCodeCamp-projects",
+    "fullName": "jamesEmerson112/freeCodeCamp-projects",
+    "description": "Personal projects for FreeCodeCamp certificates",
+    "url": "https://github.com/jamesEmerson112/freeCodeCamp-projects",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2022-05-16T02:03:38Z",
+    "createdAt": "2022-05-16T02:03:33Z",
+    "stars": 0,
+    "language": "HTML",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/freecodecamp-projects"
+  },
+  "sccRaw": [
+    {
+      "Name": "CSS",
+      "Bytes": 0,
+      "CodeBytes": 0,
+      "Lines": 0,
+      "Code": 0,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 8276,
+      "CodeBytes": 0,
+      "Lines": 176,
+      "Code": 169,
+      "Comment": 0,
+      "Blank": 7,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 11324,
+      "CodeBytes": 0,
+      "Lines": 201,
+      "Code": 169,
+      "Comment": 0,
+      "Blank": 32,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 377,
+      "totalCode": 338,
+      "totalComments": 0,
+      "totalBlanks": 39,
+      "totalBytes": 19600,
+      "totalFiles": 5,
+      "totalLanguages": 3,
+      "totalComplexity": 0,
+      "primaryLanguage": "HTML",
+      "primaryLanguagePercent": 50
+    },
+    "languages": [
+      {
+        "name": "HTML",
+        "lines": 176,
+        "code": 169,
+        "comments": 0,
+        "blanks": 7,
+        "bytes": 8276,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 46.7,
+        "percentOfCode": 50,
+        "percentOfBytes": 42.2
+      },
+      {
+        "name": "License",
+        "lines": 201,
+        "code": 169,
+        "comments": 0,
+        "blanks": 32,
+        "bytes": 11324,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 53.3,
+        "percentOfCode": 50,
+        "percentOfBytes": 57.8
+      },
+      {
+        "name": "CSS",
+        "lines": 0,
+        "code": 0,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 0,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 0,
+        "percentOfCode": 0,
+        "percentOfBytes": 0
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 1
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.338,
+        "effort": 0.77,
+        "time": 2.26,
+        "people": 0.34,
+        "cost": 3604,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.2,
+        "time": 1.35,
+        "people": 0.15,
+        "cost": 919,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "74%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.77,
+            "weeks": 3.3,
+            "days": 17,
+            "cost": 3604,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.26,
+            "hoursPerWeek": 13.6,
+            "totalHours": 133,
+            "cost": 3604,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.2,
+            "weeks": 0.8,
+            "days": 4,
+            "cost": 919,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.35,
+            "hoursPerWeek": 5.8,
+            "totalHours": 34,
+            "cost": 919,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

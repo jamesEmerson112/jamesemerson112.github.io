@@ -1,0 +1,141 @@
+{
+  "id": "robotic-ai-a-start-search-and-drone-slam",
+  "scannedAt": "2026-02-17T08:18:50.744Z",
+  "metadata": {
+    "name": "Robotic-AI-A-start-Search-and-Drone-SLAM",
+    "fullName": "jamesEmerson112/Robotic-AI-A-start-Search-and-Drone-SLAM",
+    "description": "Robotic-AI-A-start-Search-and-Drone-SLAM documents",
+    "url": "https://github.com/jamesEmerson112/Robotic-AI-A-start-Search-and-Drone-SLAM",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2025-06-30T03:20:52Z",
+    "createdAt": "2024-12-17T11:20:57Z",
+    "stars": 0,
+    "language": "Unknown",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/robotic-ai-a-start-search-and-drone-slam"
+  },
+  "sccRaw": [
+    {
+      "Name": "Markdown",
+      "Bytes": 5281,
+      "CodeBytes": 0,
+      "Lines": 94,
+      "Code": 63,
+      "Comment": 0,
+      "Blank": 31,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 94,
+      "totalCode": 63,
+      "totalComments": 0,
+      "totalBlanks": 31,
+      "totalBytes": 5281,
+      "totalFiles": 1,
+      "totalLanguages": 1,
+      "totalComplexity": 0,
+      "primaryLanguage": "Markdown",
+      "primaryLanguagePercent": 100
+    },
+    "languages": [
+      {
+        "name": "Markdown",
+        "lines": 94,
+        "code": 63,
+        "comments": 0,
+        "blanks": 31,
+        "bytes": 5281,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 100,
+        "percentOfCode": 100,
+        "percentOfBytes": 100
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 1
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.063,
+        "effort": 0.13,
+        "time": 1.16,
+        "people": 0.11,
+        "cost": 618,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.03,
+        "time": 0.69,
+        "people": 0.05,
+        "cost": 157,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "74%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.13,
+            "weeks": 0.6,
+            "days": 3,
+            "cost": 618,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 1.16,
+            "hoursPerWeek": 4.6,
+            "totalHours": 23,
+            "cost": 618,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.03,
+            "weeks": 0.1,
+            "days": 1,
+            "cost": 157,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 0.69,
+            "hoursPerWeek": 2,
+            "totalHours": 6,
+            "cost": 157,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

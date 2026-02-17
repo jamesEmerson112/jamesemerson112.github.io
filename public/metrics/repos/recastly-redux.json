@@ -1,0 +1,285 @@
+{
+  "id": "recastly-redux",
+  "scannedAt": "2026-02-17T08:19:20.278Z",
+  "metadata": {
+    "name": "recastly-redux",
+    "fullName": "jamesEmerson112/recastly-redux",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/recastly-redux",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2022-10-18T06:23:47Z",
+    "createdAt": "2022-10-18T06:23:40Z",
+    "stars": 0,
+    "language": "JavaScript",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/recastly-redux"
+  },
+  "sccRaw": [
+    {
+      "Name": "JavaScript",
+      "Bytes": 26284,
+      "CodeBytes": 0,
+      "Lines": 909,
+      "Code": 775,
+      "Comment": 50,
+      "Blank": 84,
+      "Complexity": 10,
+      "Count": 26,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 5650,
+      "CodeBytes": 0,
+      "Lines": 56,
+      "Code": 56,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSX",
+      "Bytes": 7938,
+      "CodeBytes": 0,
+      "Lines": 214,
+      "Code": 194,
+      "Comment": 2,
+      "Blank": 18,
+      "Complexity": 1,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 1507,
+      "CodeBytes": 0,
+      "Lines": 46,
+      "Code": 42,
+      "Comment": 1,
+      "Blank": 3,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 1085,
+      "CodeBytes": 0,
+      "Lines": 72,
+      "Code": 60,
+      "Comment": 0,
+      "Blank": 12,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 141,
+      "CodeBytes": 0,
+      "Lines": 2,
+      "Code": 2,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 1299,
+      "totalCode": 1129,
+      "totalComments": 53,
+      "totalBlanks": 117,
+      "totalBytes": 42605,
+      "totalFiles": 36,
+      "totalLanguages": 6,
+      "totalComplexity": 11,
+      "primaryLanguage": "JavaScript",
+      "primaryLanguagePercent": 68.6
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "lines": 909,
+        "code": 775,
+        "comments": 50,
+        "blanks": 84,
+        "bytes": 26284,
+        "files": 26,
+        "complexity": 10,
+        "percentOfLines": 70,
+        "percentOfCode": 68.6,
+        "percentOfBytes": 61.7
+      },
+      {
+        "name": "JSX",
+        "lines": 214,
+        "code": 194,
+        "comments": 2,
+        "blanks": 18,
+        "bytes": 7938,
+        "files": 3,
+        "complexity": 1,
+        "percentOfLines": 16.5,
+        "percentOfCode": 17.2,
+        "percentOfBytes": 18.6
+      },
+      {
+        "name": "CSS",
+        "lines": 72,
+        "code": 60,
+        "comments": 0,
+        "blanks": 12,
+        "bytes": 1085,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 5.5,
+        "percentOfCode": 5.3,
+        "percentOfBytes": 2.5
+      },
+      {
+        "name": "JSON",
+        "lines": 56,
+        "code": 56,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 5650,
+        "files": 3,
+        "complexity": 0,
+        "percentOfLines": 4.3,
+        "percentOfCode": 5,
+        "percentOfBytes": 13.3
+      },
+      {
+        "name": "HTML",
+        "lines": 46,
+        "code": 42,
+        "comments": 1,
+        "blanks": 3,
+        "bytes": 1507,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 3.5,
+        "percentOfCode": 3.7,
+        "percentOfBytes": 3.5
+      },
+      {
+        "name": "Markdown",
+        "lines": 2,
+        "code": 2,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 141,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.3
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.67
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.33
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 1.129,
+        "effort": 2.73,
+        "time": 3.66,
+        "people": 0.74,
+        "cost": 12787,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.7,
+        "time": 2.18,
+        "people": 0.32,
+        "cost": 3261,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 2.73,
+            "weeks": 11.8,
+            "days": 59,
+            "cost": 12787,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 3.66,
+            "hoursPerWeek": 29.8,
+            "totalHours": 472,
+            "cost": 12787,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.7,
+            "weeks": 3,
+            "days": 15,
+            "cost": 3261,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 2.18,
+            "hoursPerWeek": 12.8,
+            "totalHours": 120,
+            "cost": 3261,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

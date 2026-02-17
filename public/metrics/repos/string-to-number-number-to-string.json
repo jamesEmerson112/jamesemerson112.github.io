@@ -1,0 +1,164 @@
+{
+  "id": "string-to-number-number-to-string",
+  "scannedAt": "2026-02-17T08:19:16.184Z",
+  "metadata": {
+    "name": "string-to-number-number-to-string",
+    "fullName": "jamesEmerson112/string-to-number-number-to-string",
+    "description": "This program converts string into number and vice versa",
+    "url": "https://github.com/jamesEmerson112/string-to-number-number-to-string",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2023-01-28T18:36:34Z",
+    "createdAt": "2018-03-05T19:33:38Z",
+    "stars": 0,
+    "language": "C++",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": true,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/string-to-number-number-to-string"
+  },
+  "sccRaw": [
+    {
+      "Name": "C++",
+      "Bytes": 2707,
+      "CodeBytes": 0,
+      "Lines": 87,
+      "Code": 54,
+      "Comment": 17,
+      "Blank": 16,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 170,
+      "CodeBytes": 0,
+      "Lines": 3,
+      "Code": 2,
+      "Comment": 0,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 90,
+      "totalCode": 56,
+      "totalComments": 17,
+      "totalBlanks": 17,
+      "totalBytes": 2877,
+      "totalFiles": 2,
+      "totalLanguages": 2,
+      "totalComplexity": 0,
+      "primaryLanguage": "C++",
+      "primaryLanguagePercent": 96.4
+    },
+    "languages": [
+      {
+        "name": "C++",
+        "lines": 87,
+        "code": 54,
+        "comments": 17,
+        "blanks": 16,
+        "bytes": 2707,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 96.7,
+        "percentOfCode": 96.4,
+        "percentOfBytes": 94.1
+      },
+      {
+        "name": "Markdown",
+        "lines": 3,
+        "code": 2,
+        "comments": 0,
+        "blanks": 1,
+        "bytes": 170,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 3.3,
+        "percentOfCode": 3.6,
+        "percentOfBytes": 5.9
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.056,
+        "effort": 0.12,
+        "time": 1.1,
+        "people": 0.11,
+        "cost": 546,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.03,
+        "time": 0.66,
+        "people": 0.05,
+        "cost": 139,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.12,
+            "weeks": 0.5,
+            "days": 3,
+            "cost": 546,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 1.1,
+            "hoursPerWeek": 4.2,
+            "totalHours": 20,
+            "cost": 546,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.03,
+            "weeks": 0.1,
+            "days": 1,
+            "cost": 139,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 0.66,
+            "hoursPerWeek": 1.8,
+            "totalHours": 5,
+            "cost": 139,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

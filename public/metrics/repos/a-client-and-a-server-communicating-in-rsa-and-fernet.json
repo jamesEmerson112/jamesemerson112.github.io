@@ -1,0 +1,201 @@
+{
+  "id": "a-client-and-a-server-communicating-in-rsa-and-fernet",
+  "scannedAt": "2026-02-17T08:19:40.024Z",
+  "metadata": {
+    "name": "A-client-and-a-Server-communicating-in-RSA-and-Fernet",
+    "fullName": "jamesEmerson112/A-client-and-a-Server-communicating-in-RSA-and-Fernet",
+    "description": "This project will be a working client server system where your clients will be accessing a database stored on the server. Clients will need to login as a specific # user and the server will only serve files that belong to the logged in user. You # must implement this system using Python",
+    "url": "https://github.com/jamesEmerson112/A-client-and-a-Server-communicating-in-RSA-and-Fernet",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2020-12-19T19:31:08Z",
+    "createdAt": "2020-12-19T18:28:25Z",
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/a-client-and-a-server-communicating-in-rsa-and-fernet"
+  },
+  "sccRaw": [
+    {
+      "Name": "Python",
+      "Bytes": 29766,
+      "CodeBytes": 0,
+      "Lines": 951,
+      "Code": 575,
+      "Comment": 247,
+      "Blank": 129,
+      "Complexity": 119,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSV",
+      "Bytes": 532,
+      "CodeBytes": 0,
+      "Lines": 10,
+      "Code": 10,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 1490,
+      "CodeBytes": 0,
+      "Lines": 35,
+      "Code": 31,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 996,
+      "totalCode": 616,
+      "totalComments": 247,
+      "totalBlanks": 133,
+      "totalBytes": 31788,
+      "totalFiles": 5,
+      "totalLanguages": 3,
+      "totalComplexity": 119,
+      "primaryLanguage": "Python",
+      "primaryLanguagePercent": 93.3
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "lines": 951,
+        "code": 575,
+        "comments": 247,
+        "blanks": 129,
+        "bytes": 29766,
+        "files": 3,
+        "complexity": 119,
+        "percentOfLines": 95.5,
+        "percentOfCode": 93.3,
+        "percentOfBytes": 93.6
+      },
+      {
+        "name": "Markdown",
+        "lines": 35,
+        "code": 31,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1490,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 3.5,
+        "percentOfCode": 5,
+        "percentOfBytes": 4.7
+      },
+      {
+        "name": "CSV",
+        "lines": 10,
+        "code": 10,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 532,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1,
+        "percentOfCode": 1.6,
+        "percentOfBytes": 1.7
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.56
+      },
+      {
+        "label": "Data",
+        "confidence": 0.44
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.616,
+        "effort": 1.44,
+        "time": 2.87,
+        "people": 0.5,
+        "cost": 6768,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.37,
+        "time": 1.71,
+        "people": 0.22,
+        "cost": 1726,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 1.44,
+            "weeks": 6.2,
+            "days": 31,
+            "cost": 6768,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.87,
+            "hoursPerWeek": 20.1,
+            "totalHours": 250,
+            "cost": 6768,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.37,
+            "weeks": 1.6,
+            "days": 8,
+            "cost": 1726,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.71,
+            "hoursPerWeek": 8.6,
+            "totalHours": 64,
+            "cost": 1726,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

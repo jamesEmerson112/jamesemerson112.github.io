@@ -1,0 +1,481 @@
+{
+  "id": "watch-and-learn",
+  "scannedAt": "2026-02-17T08:18:17.043Z",
+  "metadata": {
+    "name": "watch-and-learn",
+    "fullName": "kfallah/watch-and-learn",
+    "description": "MongoDB 2026 Hackathon Project",
+    "url": "https://github.com/kfallah/watch-and-learn",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-01-11T04:04:25Z",
+    "createdAt": "2026-01-10T18:51:36Z",
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:kfallah/watch-and-learn"
+  },
+  "sccRaw": [
+    {
+      "Name": "Python",
+      "Bytes": 189675,
+      "CodeBytes": 0,
+      "Lines": 5684,
+      "Code": 3810,
+      "Comment": 928,
+      "Blank": 946,
+      "Complexity": 494,
+      "Count": 41,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 1719929,
+      "CodeBytes": 0,
+      "Lines": 12663,
+      "Code": 12663,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 8,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 1135526,
+      "CodeBytes": 0,
+      "Lines": 7886,
+      "Code": 7758,
+      "Comment": 0,
+      "Blank": 128,
+      "Complexity": 0,
+      "Count": 7,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TypeScript",
+      "Bytes": 31147,
+      "CodeBytes": 0,
+      "Lines": 1021,
+      "Code": 866,
+      "Comment": 32,
+      "Blank": 123,
+      "Complexity": 95,
+      "Count": 7,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 55785,
+      "CodeBytes": 0,
+      "Lines": 2107,
+      "Code": 1459,
+      "Comment": 0,
+      "Blank": 648,
+      "Complexity": 0,
+      "Count": 5,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Dockerfile",
+      "Bytes": 3406,
+      "CodeBytes": 0,
+      "Lines": 138,
+      "Code": 70,
+      "Comment": 34,
+      "Blank": 34,
+      "Complexity": 7,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JavaScript",
+      "Bytes": 615,
+      "CodeBytes": 0,
+      "Lines": 28,
+      "Code": 25,
+      "Comment": 2,
+      "Blank": 1,
+      "Complexity": 2,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TypeScript Typings",
+      "Bytes": 1839,
+      "CodeBytes": 0,
+      "Lines": 65,
+      "Code": 53,
+      "Comment": 7,
+      "Blank": 5,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 59,
+      "CodeBytes": 0,
+      "Lines": 3,
+      "Code": 3,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Docker ignore",
+      "Bytes": 63,
+      "CodeBytes": 0,
+      "Lines": 6,
+      "Code": 6,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Shell",
+      "Bytes": 4292,
+      "CodeBytes": 0,
+      "Lines": 161,
+      "Code": 122,
+      "Comment": 19,
+      "Blank": 20,
+      "Complexity": 8,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TOML",
+      "Bytes": 855,
+      "CodeBytes": 0,
+      "Lines": 39,
+      "Code": 34,
+      "Comment": 1,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "YAML",
+      "Bytes": 1718,
+      "CodeBytes": 0,
+      "Lines": 69,
+      "Code": 66,
+      "Comment": 0,
+      "Blank": 3,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 29870,
+      "totalCode": 26935,
+      "totalComments": 1023,
+      "totalBlanks": 1912,
+      "totalBytes": 3144909,
+      "totalFiles": 81,
+      "totalLanguages": 13,
+      "totalComplexity": 606,
+      "primaryLanguage": "JSON",
+      "primaryLanguagePercent": 47
+    },
+    "languages": [
+      {
+        "name": "JSON",
+        "lines": 12663,
+        "code": 12663,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 1719929,
+        "files": 8,
+        "complexity": 0,
+        "percentOfLines": 42.4,
+        "percentOfCode": 47,
+        "percentOfBytes": 54.7
+      },
+      {
+        "name": "Plain Text",
+        "lines": 7886,
+        "code": 7758,
+        "comments": 0,
+        "blanks": 128,
+        "bytes": 1135526,
+        "files": 7,
+        "complexity": 0,
+        "percentOfLines": 26.4,
+        "percentOfCode": 28.8,
+        "percentOfBytes": 36.1
+      },
+      {
+        "name": "Python",
+        "lines": 5684,
+        "code": 3810,
+        "comments": 928,
+        "blanks": 946,
+        "bytes": 189675,
+        "files": 41,
+        "complexity": 494,
+        "percentOfLines": 19,
+        "percentOfCode": 14.1,
+        "percentOfBytes": 6
+      },
+      {
+        "name": "Markdown",
+        "lines": 2107,
+        "code": 1459,
+        "comments": 0,
+        "blanks": 648,
+        "bytes": 55785,
+        "files": 5,
+        "complexity": 0,
+        "percentOfLines": 7.1,
+        "percentOfCode": 5.4,
+        "percentOfBytes": 1.8
+      },
+      {
+        "name": "TypeScript",
+        "lines": 1021,
+        "code": 866,
+        "comments": 32,
+        "blanks": 123,
+        "bytes": 31147,
+        "files": 7,
+        "complexity": 95,
+        "percentOfLines": 3.4,
+        "percentOfCode": 3.2,
+        "percentOfBytes": 1
+      },
+      {
+        "name": "Shell",
+        "lines": 161,
+        "code": 122,
+        "comments": 19,
+        "blanks": 20,
+        "bytes": 4292,
+        "files": 1,
+        "complexity": 8,
+        "percentOfLines": 0.5,
+        "percentOfCode": 0.5,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "Dockerfile",
+        "lines": 138,
+        "code": 70,
+        "comments": 34,
+        "blanks": 34,
+        "bytes": 3406,
+        "files": 3,
+        "complexity": 7,
+        "percentOfLines": 0.5,
+        "percentOfCode": 0.3,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "YAML",
+        "lines": 69,
+        "code": 66,
+        "comments": 0,
+        "blanks": 3,
+        "bytes": 1718,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "TypeScript Typings",
+        "lines": 65,
+        "code": 53,
+        "comments": 7,
+        "blanks": 5,
+        "bytes": 1839,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "TOML",
+        "lines": 39,
+        "code": 34,
+        "comments": 1,
+        "blanks": 4,
+        "bytes": 855,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0
+      },
+      {
+        "name": "JavaScript",
+        "lines": 28,
+        "code": 25,
+        "comments": 2,
+        "blanks": 1,
+        "bytes": 615,
+        "files": 3,
+        "complexity": 2,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0
+      },
+      {
+        "name": "Docker ignore",
+        "lines": 6,
+        "code": 6,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 63,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0,
+        "percentOfCode": 0,
+        "percentOfBytes": 0
+      },
+      {
+        "name": "CSS",
+        "lines": 3,
+        "code": 3,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 59,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0,
+        "percentOfCode": 0,
+        "percentOfBytes": 0
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 26.935,
+        "effort": 76.22,
+        "time": 12.98,
+        "people": 5.87,
+        "cost": 357489,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 19.43,
+        "time": 7.72,
+        "people": 2.52,
+        "cost": 91160,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 76.22,
+            "weeks": 330,
+            "days": 1654,
+            "cost": 357489,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 12.98,
+            "hoursPerWeek": 235,
+            "totalHours": 13185,
+            "cost": 357489,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 19.43,
+            "weeks": 84.2,
+            "days": 422,
+            "cost": 91160,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 7.72,
+            "hoursPerWeek": 100.7,
+            "totalHours": 3362,
+            "cost": 91160,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

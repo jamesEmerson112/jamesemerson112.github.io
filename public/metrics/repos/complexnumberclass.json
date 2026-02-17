@@ -1,0 +1,136 @@
+{
+  "id": "complexnumberclass",
+  "scannedAt": "2026-02-17T08:19:42.241Z",
+  "metadata": {
+    "name": "complexNumberClass",
+    "fullName": "jamesEmerson112/complexNumberClass",
+    "description": "a class for a complex number in C++",
+    "url": "https://github.com/jamesEmerson112/complexNumberClass",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2018-08-28T22:00:00Z",
+    "createdAt": "2018-08-28T21:59:57Z",
+    "stars": 0,
+    "language": "Unknown",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/complexnumberclass"
+  },
+  "sccRaw": [
+    {
+      "Name": "Markdown",
+      "Bytes": 57,
+      "CodeBytes": 0,
+      "Lines": 2,
+      "Code": 2,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 2,
+      "totalCode": 2,
+      "totalComments": 0,
+      "totalBlanks": 0,
+      "totalBytes": 57,
+      "totalFiles": 1,
+      "totalLanguages": 1,
+      "totalComplexity": 0,
+      "primaryLanguage": "Markdown",
+      "primaryLanguagePercent": 100
+    },
+    "languages": [
+      {
+        "name": "Markdown",
+        "lines": 2,
+        "code": 2,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 57,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 100,
+        "percentOfCode": 100,
+        "percentOfBytes": 100
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.002,
+        "effort": 0,
+        "time": 0.29,
+        "people": 0.01,
+        "cost": 17,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0,
+        "time": 0.17,
+        "people": 0.01,
+        "cost": 4,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0,
+            "weeks": 0,
+            "days": 0,
+            "cost": 17,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 0.29,
+            "hoursPerWeek": 0.5,
+            "totalHours": 1,
+            "cost": 17,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0,
+            "weeks": 0,
+            "days": 0,
+            "cost": 4,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 0.17,
+            "hoursPerWeek": 0.2,
+            "totalHours": 0,
+            "cost": 4,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

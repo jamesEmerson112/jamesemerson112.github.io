@@ -1,6 +1,6 @@
 {
   "id": "shopify-hackathon-backend",
-  "scannedAt": "2026-02-01T03:56:59.569Z",
+  "scannedAt": "2026-02-17T08:18:46.451Z",
   "metadata": {
     "name": "shopify-hackathon-backend",
     "fullName": "jamesEmerson112/shopify-hackathon-backend",
@@ -15,7 +15,8 @@
     "isPrivate": false,
     "isFork": false,
     "isArchived": false,
-    "isAnonymized": false
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/shopify-hackathon-backend"
   },
   "sccRaw": [
     {
@@ -146,6 +147,16 @@
         "percentOfBytes": 4.5
       }
     ],
+    "projectTags": [
+      {
+        "label": "Backend",
+        "confidence": 0.6
+      },
+      {
+        "label": "Web",
+        "confidence": 0.4
+      }
+    ],
     "cocomo": {
       "traditional": {
         "kloc": 0.554,
@@ -213,16 +224,6 @@
           }
         }
       }
-    },
-    "projectTags": [
-      {
-        "label": "Backend",
-        "confidence": 0.6
-      },
-      {
-        "label": "Web",
-        "confidence": 0.4
-      }
-    ]
+    }
   }
 }

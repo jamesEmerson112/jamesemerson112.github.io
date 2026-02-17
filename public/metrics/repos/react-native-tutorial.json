@@ -1,0 +1,201 @@
+{
+  "id": "react-native-tutorial",
+  "scannedAt": "2026-02-17T08:19:14.867Z",
+  "metadata": {
+    "name": "react-native-tutorial",
+    "fullName": "jamesEmerson112/react-native-tutorial",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/react-native-tutorial",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2023-02-26T02:14:21Z",
+    "createdAt": "2023-02-02T23:43:14Z",
+    "stars": 0,
+    "language": "JavaScript",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/react-native-tutorial"
+  },
+  "sccRaw": [
+    {
+      "Name": "JSON",
+      "Bytes": 1169,
+      "CodeBytes": 0,
+      "Lines": 54,
+      "Code": 54,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JavaScript",
+      "Bytes": 561,
+      "CodeBytes": 0,
+      "Lines": 26,
+      "Code": 24,
+      "Comment": 0,
+      "Blank": 2,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 1072,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 101,
+      "totalCode": 95,
+      "totalComments": 0,
+      "totalBlanks": 6,
+      "totalBytes": 2802,
+      "totalFiles": 5,
+      "totalLanguages": 3,
+      "totalComplexity": 0,
+      "primaryLanguage": "JSON",
+      "primaryLanguagePercent": 56.8
+    },
+    "languages": [
+      {
+        "name": "JSON",
+        "lines": 54,
+        "code": 54,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 1169,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 53.5,
+        "percentOfCode": 56.8,
+        "percentOfBytes": 41.7
+      },
+      {
+        "name": "JavaScript",
+        "lines": 26,
+        "code": 24,
+        "comments": 0,
+        "blanks": 2,
+        "bytes": 561,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 25.7,
+        "percentOfCode": 25.3,
+        "percentOfBytes": 20
+      },
+      {
+        "name": "License",
+        "lines": 21,
+        "code": 17,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1072,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 20.8,
+        "percentOfCode": 17.9,
+        "percentOfBytes": 38.3
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.72
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.28
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.095,
+        "effort": 0.2,
+        "time": 1.36,
+        "people": 0.15,
+        "cost": 951,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.05,
+        "time": 0.81,
+        "people": 0.06,
+        "cost": 242,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.2,
+            "weeks": 0.9,
+            "days": 4,
+            "cost": 951,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 1.36,
+            "hoursPerWeek": 5.9,
+            "totalHours": 35,
+            "cost": 951,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.05,
+            "weeks": 0.2,
+            "days": 1,
+            "cost": 242,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 0.81,
+            "hoursPerWeek": 2.5,
+            "totalHours": 9,
+            "cost": 242,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

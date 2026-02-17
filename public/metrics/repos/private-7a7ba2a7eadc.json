@@ -1,0 +1,285 @@
+{
+  "id": "private-7a7ba2a7eadc",
+  "scannedAt": "2026-02-17T08:19:11.929Z",
+  "metadata": {
+    "name": "Private Project 70",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2023-09-11T16:52:37Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:7a7ba2a7eadc097c"
+  },
+  "sccRaw": [
+    {
+      "Name": "Python",
+      "Bytes": 66506,
+      "CodeBytes": 0,
+      "Lines": 1596,
+      "Code": 998,
+      "Comment": 329,
+      "Blank": 269,
+      "Complexity": 56,
+      "Count": 6,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "C Header",
+      "Bytes": 1759,
+      "CodeBytes": 0,
+      "Lines": 50,
+      "Code": 20,
+      "Comment": 19,
+      "Blank": 11,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "C++",
+      "Bytes": 2893,
+      "CodeBytes": 0,
+      "Lines": 85,
+      "Code": 36,
+      "Comment": 35,
+      "Blank": 14,
+      "Complexity": 1,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 932,
+      "CodeBytes": 0,
+      "Lines": 19,
+      "Code": 13,
+      "Comment": 0,
+      "Blank": 6,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "ReStructuredText",
+      "Bytes": 1095,
+      "CodeBytes": 0,
+      "Lines": 28,
+      "Code": 23,
+      "Comment": 0,
+      "Blank": 5,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Swig",
+      "Bytes": 1220,
+      "CodeBytes": 0,
+      "Lines": 39,
+      "Code": 17,
+      "Comment": 18,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 1817,
+      "totalCode": 1107,
+      "totalComments": 401,
+      "totalBlanks": 309,
+      "totalBytes": 74405,
+      "totalFiles": 11,
+      "totalLanguages": 6,
+      "totalComplexity": 57,
+      "primaryLanguage": "Python",
+      "primaryLanguagePercent": 90.2
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "lines": 1596,
+        "code": 998,
+        "comments": 329,
+        "blanks": 269,
+        "bytes": 66506,
+        "files": 6,
+        "complexity": 56,
+        "percentOfLines": 87.8,
+        "percentOfCode": 90.2,
+        "percentOfBytes": 89.4
+      },
+      {
+        "name": "C++",
+        "lines": 85,
+        "code": 36,
+        "comments": 35,
+        "blanks": 14,
+        "bytes": 2893,
+        "files": 1,
+        "complexity": 1,
+        "percentOfLines": 4.7,
+        "percentOfCode": 3.3,
+        "percentOfBytes": 3.9
+      },
+      {
+        "name": "ReStructuredText",
+        "lines": 28,
+        "code": 23,
+        "comments": 0,
+        "blanks": 5,
+        "bytes": 1095,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1.5,
+        "percentOfCode": 2.1,
+        "percentOfBytes": 1.5
+      },
+      {
+        "name": "C Header",
+        "lines": 50,
+        "code": 20,
+        "comments": 19,
+        "blanks": 11,
+        "bytes": 1759,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 2.8,
+        "percentOfCode": 1.8,
+        "percentOfBytes": 2.4
+      },
+      {
+        "name": "Swig",
+        "lines": 39,
+        "code": 17,
+        "comments": 18,
+        "blanks": 4,
+        "bytes": 1220,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 2.1,
+        "percentOfCode": 1.5,
+        "percentOfBytes": 1.6
+      },
+      {
+        "name": "Markdown",
+        "lines": 19,
+        "code": 13,
+        "comments": 0,
+        "blanks": 6,
+        "bytes": 932,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1,
+        "percentOfCode": 1.2,
+        "percentOfBytes": 1.3
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 1.107,
+        "effort": 2.67,
+        "time": 3.63,
+        "people": 0.74,
+        "cost": 12525,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.68,
+        "time": 2.16,
+        "people": 0.32,
+        "cost": 3194,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 2.67,
+            "weeks": 11.6,
+            "days": 58,
+            "cost": 12525,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 3.63,
+            "hoursPerWeek": 29.4,
+            "totalHours": 462,
+            "cost": 12525,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.68,
+            "weeks": 2.9,
+            "days": 15,
+            "cost": 3194,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 2.16,
+            "hoursPerWeek": 12.6,
+            "totalHours": 118,
+            "cost": 3194,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

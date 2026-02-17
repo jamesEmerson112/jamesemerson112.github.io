@@ -1,6 +1,6 @@
 {
   "id": "las-vegas-hackathon-august-12",
-  "scannedAt": "2026-02-01T03:56:57.741Z",
+  "scannedAt": "2026-02-17T08:18:45.204Z",
   "metadata": {
     "name": "las-vegas-hackathon-august-12",
     "fullName": "jamesEmerson112/las-vegas-hackathon-august-12",
@@ -15,7 +15,8 @@
     "isPrivate": false,
     "isFork": false,
     "isArchived": false,
-    "isAnonymized": false
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/las-vegas-hackathon-august-12"
   },
   "sccRaw": [
     {
@@ -146,6 +147,16 @@
         "percentOfBytes": 0.5
       }
     ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
     "cocomo": {
       "traditional": {
         "kloc": 2.681,
@@ -213,16 +224,6 @@
           }
         }
       }
-    },
-    "projectTags": [
-      {
-        "label": "AI/ML",
-        "confidence": 0.6
-      },
-      {
-        "label": "Data",
-        "confidence": 0.4
-      }
-    ]
+    }
   }
 }

@@ -1,0 +1,257 @@
+{
+  "id": "data-structures",
+  "scannedAt": "2026-02-17T08:19:22.692Z",
+  "metadata": {
+    "name": "data-structures",
+    "fullName": "jamesEmerson112/data-structures",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/data-structures",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2022-10-18T05:11:04Z",
+    "createdAt": "2022-10-18T05:10:56Z",
+    "stars": 0,
+    "language": "JavaScript",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/data-structures"
+  },
+  "sccRaw": [
+    {
+      "Name": "JavaScript",
+      "Bytes": 1733070,
+      "CodeBytes": 0,
+      "Lines": 56590,
+      "Code": 35588,
+      "Comment": 13728,
+      "Blank": 7274,
+      "Complexity": 6067,
+      "Count": 31,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 2759,
+      "CodeBytes": 0,
+      "Lines": 89,
+      "Code": 82,
+      "Comment": 2,
+      "Blank": 5,
+      "Complexity": 0,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 657,
+      "CodeBytes": 0,
+      "Lines": 23,
+      "Code": 23,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 5595,
+      "CodeBytes": 0,
+      "Lines": 325,
+      "Code": 269,
+      "Comment": 10,
+      "Blank": 46,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 142,
+      "CodeBytes": 0,
+      "Lines": 2,
+      "Code": 2,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 57029,
+      "totalCode": 35964,
+      "totalComments": 13740,
+      "totalBlanks": 7325,
+      "totalBytes": 1742223,
+      "totalFiles": 38,
+      "totalLanguages": 5,
+      "totalComplexity": 6067,
+      "primaryLanguage": "JavaScript",
+      "primaryLanguagePercent": 99
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "lines": 56590,
+        "code": 35588,
+        "comments": 13728,
+        "blanks": 7274,
+        "bytes": 1733070,
+        "files": 31,
+        "complexity": 6067,
+        "percentOfLines": 99.2,
+        "percentOfCode": 99,
+        "percentOfBytes": 99.5
+      },
+      {
+        "name": "CSS",
+        "lines": 325,
+        "code": 269,
+        "comments": 10,
+        "blanks": 46,
+        "bytes": 5595,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.6,
+        "percentOfCode": 0.7,
+        "percentOfBytes": 0.3
+      },
+      {
+        "name": "HTML",
+        "lines": 89,
+        "code": 82,
+        "comments": 2,
+        "blanks": 5,
+        "bytes": 2759,
+        "files": 3,
+        "complexity": 0,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.2
+      },
+      {
+        "name": "JSON",
+        "lines": 23,
+        "code": 23,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 657,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 0,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0
+      },
+      {
+        "name": "Markdown",
+        "lines": 2,
+        "code": 2,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 142,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0,
+        "percentOfCode": 0,
+        "percentOfBytes": 0
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.65
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.35
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 35.964,
+        "effort": 103.25,
+        "time": 14.56,
+        "people": 7.09,
+        "cost": 484275,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 26.33,
+        "time": 8.66,
+        "people": 3.04,
+        "cost": 123490,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 103.25,
+            "weeks": 447.1,
+            "days": 2240,
+            "cost": 484275,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 14.56,
+            "hoursPerWeek": 283.6,
+            "totalHours": 17862,
+            "cost": 484275,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 26.33,
+            "weeks": 114,
+            "days": 571,
+            "cost": 123490,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 8.66,
+            "hoursPerWeek": 121.6,
+            "totalHours": 4555,
+            "cost": 123490,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

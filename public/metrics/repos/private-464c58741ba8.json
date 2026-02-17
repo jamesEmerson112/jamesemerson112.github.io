@@ -1,0 +1,257 @@
+{
+  "id": "private-464c58741ba8",
+  "scannedAt": "2026-02-17T08:19:11.331Z",
+  "metadata": {
+    "name": "Private Project 69",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2024-07-08T01:35:37Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "JavaScript",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:464c58741ba8d899"
+  },
+  "sccRaw": [
+    {
+      "Name": "JavaScript",
+      "Bytes": 6497,
+      "CodeBytes": 0,
+      "Lines": 247,
+      "Code": 138,
+      "Comment": 60,
+      "Blank": 49,
+      "Complexity": 18,
+      "Count": 4,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 792,
+      "CodeBytes": 0,
+      "Lines": 38,
+      "Code": 38,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 111,
+      "CodeBytes": 0,
+      "Lines": 8,
+      "Code": 7,
+      "Comment": 0,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 1072,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 5107,
+      "CodeBytes": 0,
+      "Lines": 78,
+      "Code": 77,
+      "Comment": 0,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 392,
+      "totalCode": 277,
+      "totalComments": 60,
+      "totalBlanks": 55,
+      "totalBytes": 13579,
+      "totalFiles": 9,
+      "totalLanguages": 5,
+      "totalComplexity": 18,
+      "primaryLanguage": "JavaScript",
+      "primaryLanguagePercent": 49.8
+    },
+    "languages": [
+      {
+        "name": "JavaScript",
+        "lines": 247,
+        "code": 138,
+        "comments": 60,
+        "blanks": 49,
+        "bytes": 6497,
+        "files": 4,
+        "complexity": 18,
+        "percentOfLines": 63,
+        "percentOfCode": 49.8,
+        "percentOfBytes": 47.8
+      },
+      {
+        "name": "Markdown",
+        "lines": 78,
+        "code": 77,
+        "comments": 0,
+        "blanks": 1,
+        "bytes": 5107,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 19.9,
+        "percentOfCode": 27.8,
+        "percentOfBytes": 37.6
+      },
+      {
+        "name": "JSON",
+        "lines": 38,
+        "code": 38,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 792,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 9.7,
+        "percentOfCode": 13.7,
+        "percentOfBytes": 5.8
+      },
+      {
+        "name": "License",
+        "lines": 21,
+        "code": 17,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1072,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 5.4,
+        "percentOfCode": 6.1,
+        "percentOfBytes": 7.9
+      },
+      {
+        "name": "CSS",
+        "lines": 8,
+        "code": 7,
+        "comments": 0,
+        "blanks": 1,
+        "bytes": 111,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 2,
+        "percentOfCode": 2.5,
+        "percentOfBytes": 0.8
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.66
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.34
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.277,
+        "effort": 0.62,
+        "time": 2.09,
+        "people": 0.3,
+        "cost": 2924,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.16,
+        "time": 1.24,
+        "people": 0.13,
+        "cost": 746,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.62,
+            "weeks": 2.7,
+            "days": 14,
+            "cost": 2924,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.09,
+            "hoursPerWeek": 11.9,
+            "totalHours": 108,
+            "cost": 2924,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.16,
+            "weeks": 0.7,
+            "days": 3,
+            "cost": 746,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.24,
+            "hoursPerWeek": 5.1,
+            "totalHours": 28,
+            "cost": 746,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 {
   "id": "eye-to-home",
-  "scannedAt": "2026-02-01T03:56:52.804Z",
+  "scannedAt": "2026-02-17T08:18:41.961Z",
   "metadata": {
     "name": "Eye-to-home",
     "fullName": "jamesEmerson112/Eye-to-home",
@@ -15,7 +15,8 @@
     "isPrivate": false,
     "isFork": false,
     "isArchived": false,
-    "isAnonymized": false
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/eye-to-home"
   },
   "sccRaw": [
     {
@@ -146,6 +147,12 @@
         "percentOfBytes": 3.8
       }
     ],
+    "projectTags": [
+      {
+        "label": "Mobile",
+        "confidence": 1
+      }
+    ],
     "cocomo": {
       "traditional": {
         "kloc": 0.54,
@@ -213,12 +220,6 @@
           }
         }
       }
-    },
-    "projectTags": [
-      {
-        "label": "Mobile",
-        "confidence": 1
-      }
-    ]
+    }
   }
 }

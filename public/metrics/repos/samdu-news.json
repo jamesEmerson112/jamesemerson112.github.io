@@ -1,6 +1,6 @@
 {
   "id": "samdu-news",
-  "scannedAt": "2026-02-01T03:56:56.615Z",
+  "scannedAt": "2026-02-17T08:18:44.473Z",
   "metadata": {
     "name": "samdu-news",
     "fullName": "jamesEmerson112/samdu-news",
@@ -15,7 +15,8 @@
     "isPrivate": false,
     "isFork": false,
     "isArchived": false,
-    "isAnonymized": false
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/samdu-news"
   },
   "sccRaw": [
     {
@@ -230,6 +231,16 @@
         "percentOfBytes": 5
       }
     ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.6
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.4
+      }
+    ],
     "cocomo": {
       "traditional": {
         "kloc": 1.603,
@@ -297,16 +308,6 @@
           }
         }
       }
-    },
-    "projectTags": [
-      {
-        "label": "Web",
-        "confidence": 0.6
-      },
-      {
-        "label": "Backend",
-        "confidence": 0.4
-      }
-    ]
+    }
   }
 }

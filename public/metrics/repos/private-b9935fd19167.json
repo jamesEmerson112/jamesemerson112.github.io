@@ -1,0 +1,257 @@
+{
+  "id": "private-b9935fd19167",
+  "scannedAt": "2026-02-17T08:18:38.529Z",
+  "metadata": {
+    "name": "Private Project 22",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2025-10-25T16:29:33Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Cuda",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:b9935fd191671a34"
+  },
+  "sccRaw": [
+    {
+      "Name": "Markdown",
+      "Bytes": 117068,
+      "CodeBytes": 0,
+      "Lines": 3559,
+      "Code": 2740,
+      "Comment": 0,
+      "Blank": 819,
+      "Complexity": 0,
+      "Count": 11,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Cuda",
+      "Bytes": 88136,
+      "CodeBytes": 0,
+      "Lines": 2372,
+      "Code": 1445,
+      "Comment": 469,
+      "Blank": 458,
+      "Complexity": 239,
+      "Count": 10,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 11324,
+      "CodeBytes": 0,
+      "Lines": 201,
+      "Code": 169,
+      "Comment": 0,
+      "Blank": 32,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 6426,
+      "CodeBytes": 0,
+      "Lines": 115,
+      "Code": 114,
+      "Comment": 0,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Python",
+      "Bytes": 10005,
+      "CodeBytes": 0,
+      "Lines": 234,
+      "Code": 187,
+      "Comment": 18,
+      "Blank": 29,
+      "Complexity": 35,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 6481,
+      "totalCode": 4655,
+      "totalComments": 487,
+      "totalBlanks": 1339,
+      "totalBytes": 232959,
+      "totalFiles": 24,
+      "totalLanguages": 5,
+      "totalComplexity": 274,
+      "primaryLanguage": "Markdown",
+      "primaryLanguagePercent": 58.9
+    },
+    "languages": [
+      {
+        "name": "Markdown",
+        "lines": 3559,
+        "code": 2740,
+        "comments": 0,
+        "blanks": 819,
+        "bytes": 117068,
+        "files": 11,
+        "complexity": 0,
+        "percentOfLines": 54.9,
+        "percentOfCode": 58.9,
+        "percentOfBytes": 50.3
+      },
+      {
+        "name": "Cuda",
+        "lines": 2372,
+        "code": 1445,
+        "comments": 469,
+        "blanks": 458,
+        "bytes": 88136,
+        "files": 10,
+        "complexity": 239,
+        "percentOfLines": 36.6,
+        "percentOfCode": 31,
+        "percentOfBytes": 37.8
+      },
+      {
+        "name": "Python",
+        "lines": 234,
+        "code": 187,
+        "comments": 18,
+        "blanks": 29,
+        "bytes": 10005,
+        "files": 1,
+        "complexity": 35,
+        "percentOfLines": 3.6,
+        "percentOfCode": 4,
+        "percentOfBytes": 4.3
+      },
+      {
+        "name": "License",
+        "lines": 201,
+        "code": 169,
+        "comments": 0,
+        "blanks": 32,
+        "bytes": 11324,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 3.1,
+        "percentOfCode": 3.6,
+        "percentOfBytes": 4.9
+      },
+      {
+        "name": "Plain Text",
+        "lines": 115,
+        "code": 114,
+        "comments": 0,
+        "blanks": 1,
+        "bytes": 6426,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1.8,
+        "percentOfCode": 2.4,
+        "percentOfBytes": 2.8
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 4.655,
+        "effort": 12.06,
+        "time": 6.44,
+        "people": 1.87,
+        "cost": 56591,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 3.08,
+        "time": 3.83,
+        "people": 0.8,
+        "cost": 14431,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 12.06,
+            "weeks": 52.2,
+            "days": 262,
+            "cost": 56591,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 6.44,
+            "hoursPerWeek": 74.9,
+            "totalHours": 2087,
+            "cost": 56591,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 3.08,
+            "weeks": 13.3,
+            "days": 67,
+            "cost": 14431,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 3.83,
+            "hoursPerWeek": 32.1,
+            "totalHours": 532,
+            "cost": 14431,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

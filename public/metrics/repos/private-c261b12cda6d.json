@@ -1,0 +1,164 @@
+{
+  "id": "private-c261b12cda6d",
+  "scannedAt": "2026-02-17T08:19:13.183Z",
+  "metadata": {
+    "name": "Private Project 73",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2023-07-17T23:35:29Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Unknown",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:c261b12cda6d4dac"
+  },
+  "sccRaw": [
+    {
+      "Name": "Markdown",
+      "Bytes": 855,
+      "CodeBytes": 0,
+      "Lines": 7,
+      "Code": 7,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 4,
+      "CodeBytes": 0,
+      "Lines": 1,
+      "Code": 1,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 8,
+      "totalCode": 8,
+      "totalComments": 0,
+      "totalBlanks": 0,
+      "totalBytes": 859,
+      "totalFiles": 2,
+      "totalLanguages": 2,
+      "totalComplexity": 0,
+      "primaryLanguage": "Markdown",
+      "primaryLanguagePercent": 87.5
+    },
+    "languages": [
+      {
+        "name": "Markdown",
+        "lines": 7,
+        "code": 7,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 855,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 87.5,
+        "percentOfCode": 87.5,
+        "percentOfBytes": 99.5
+      },
+      {
+        "name": "Plain Text",
+        "lines": 1,
+        "code": 1,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 4,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 12.5,
+        "percentOfCode": 12.5,
+        "percentOfBytes": 0.5
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.008,
+        "effort": 0.02,
+        "time": 0.51,
+        "people": 0.03,
+        "cost": 71,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0,
+        "time": 0.3,
+        "people": 0.01,
+        "cost": 18,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.02,
+            "weeks": 0.1,
+            "days": 0,
+            "cost": 71,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 0.51,
+            "hoursPerWeek": 1.2,
+            "totalHours": 3,
+            "cost": 71,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0,
+            "weeks": 0,
+            "days": 0,
+            "cost": 18,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 0.3,
+            "hoursPerWeek": 0.5,
+            "totalHours": 1,
+            "cost": 18,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "id": "cs-202-determinant-of-a-n-by-b-array",
+  "scannedAt": "2026-02-17T08:19:42.447Z",
+  "metadata": {
+    "name": "CS-202-Determinant-of-a-n-by-b-Array",
+    "fullName": "jamesEmerson112/CS-202-Determinant-of-a-n-by-b-Array",
+    "description": "Find the determinant of a n by n array with a recursive function and a dynamic array",
+    "url": "https://github.com/jamesEmerson112/CS-202-Determinant-of-a-n-by-b-Array",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2018-03-05T21:57:44Z",
+    "createdAt": "2018-03-05T21:53:20Z",
+    "stars": 0,
+    "language": "C++",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/cs-202-determinant-of-a-n-by-b-array"
+  },
+  "sccRaw": [
+    {
+      "Name": "C++",
+      "Bytes": 6130,
+      "CodeBytes": 0,
+      "Lines": 179,
+      "Code": 120,
+      "Comment": 34,
+      "Blank": 25,
+      "Complexity": 24,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 217,
+      "CodeBytes": 0,
+      "Lines": 10,
+      "Code": 7,
+      "Comment": 0,
+      "Blank": 3,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 189,
+      "totalCode": 127,
+      "totalComments": 34,
+      "totalBlanks": 28,
+      "totalBytes": 6347,
+      "totalFiles": 2,
+      "totalLanguages": 2,
+      "totalComplexity": 24,
+      "primaryLanguage": "C++",
+      "primaryLanguagePercent": 94.5
+    },
+    "languages": [
+      {
+        "name": "C++",
+        "lines": 179,
+        "code": 120,
+        "comments": 34,
+        "blanks": 25,
+        "bytes": 6130,
+        "files": 1,
+        "complexity": 24,
+        "percentOfLines": 94.7,
+        "percentOfCode": 94.5,
+        "percentOfBytes": 96.6
+      },
+      {
+        "name": "Markdown",
+        "lines": 10,
+        "code": 7,
+        "comments": 0,
+        "blanks": 3,
+        "bytes": 217,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 5.3,
+        "percentOfCode": 5.5,
+        "percentOfBytes": 3.4
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.127,
+        "effort": 0.27,
+        "time": 1.53,
+        "people": 0.18,
+        "cost": 1290,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.07,
+        "time": 0.91,
+        "people": 0.08,
+        "cost": 329,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.27,
+            "weeks": 1.2,
+            "days": 6,
+            "cost": 1290,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 1.53,
+            "hoursPerWeek": 7.2,
+            "totalHours": 48,
+            "cost": 1290,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.07,
+            "weeks": 0.3,
+            "days": 2,
+            "cost": 329,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 0.91,
+            "hoursPerWeek": 3.1,
+            "totalHours": 12,
+            "cost": 329,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

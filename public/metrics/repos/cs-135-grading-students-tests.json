@@ -1,0 +1,164 @@
+{
+  "id": "cs-135-grading-students-tests",
+  "scannedAt": "2026-02-17T08:19:43.579Z",
+  "metadata": {
+    "name": "CS-135-Grading-Students-Tests",
+    "fullName": "jamesEmerson112/CS-135-Grading-Students-Tests",
+    "description": "This program will grade students' multiple-choice test using void functions and string",
+    "url": "https://github.com/jamesEmerson112/CS-135-Grading-Students-Tests",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2018-03-05T20:34:07Z",
+    "createdAt": "2018-03-05T20:25:35Z",
+    "stars": 0,
+    "language": "C++",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/cs-135-grading-students-tests"
+  },
+  "sccRaw": [
+    {
+      "Name": "C++",
+      "Bytes": 14147,
+      "CodeBytes": 0,
+      "Lines": 407,
+      "Code": 221,
+      "Comment": 147,
+      "Blank": 39,
+      "Complexity": 21,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 2907,
+      "CodeBytes": 0,
+      "Lines": 52,
+      "Code": 50,
+      "Comment": 0,
+      "Blank": 2,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 459,
+      "totalCode": 271,
+      "totalComments": 147,
+      "totalBlanks": 41,
+      "totalBytes": 17054,
+      "totalFiles": 2,
+      "totalLanguages": 2,
+      "totalComplexity": 21,
+      "primaryLanguage": "C++",
+      "primaryLanguagePercent": 81.5
+    },
+    "languages": [
+      {
+        "name": "C++",
+        "lines": 407,
+        "code": 221,
+        "comments": 147,
+        "blanks": 39,
+        "bytes": 14147,
+        "files": 1,
+        "complexity": 21,
+        "percentOfLines": 88.7,
+        "percentOfCode": 81.5,
+        "percentOfBytes": 83
+      },
+      {
+        "name": "Markdown",
+        "lines": 52,
+        "code": 50,
+        "comments": 0,
+        "blanks": 2,
+        "bytes": 2907,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 11.3,
+        "percentOfCode": 18.5,
+        "percentOfBytes": 17
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.271,
+        "effort": 0.61,
+        "time": 2.07,
+        "people": 0.29,
+        "cost": 2858,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.16,
+        "time": 1.23,
+        "people": 0.13,
+        "cost": 729,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.61,
+            "weeks": 2.6,
+            "days": 13,
+            "cost": 2858,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.07,
+            "hoursPerWeek": 11.8,
+            "totalHours": 105,
+            "cost": 2858,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.16,
+            "weeks": 0.7,
+            "days": 3,
+            "cost": 729,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.23,
+            "hoursPerWeek": 5,
+            "totalHours": 27,
+            "cost": 729,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

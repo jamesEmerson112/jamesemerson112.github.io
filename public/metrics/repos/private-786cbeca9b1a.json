@@ -1,0 +1,285 @@
+{
+  "id": "private-786cbeca9b1a",
+  "scannedAt": "2026-02-17T08:18:56.889Z",
+  "metadata": {
+    "name": "Private Project 46",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2025-05-12T21:39:42Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "C",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:786cbeca9b1aa993"
+  },
+  "sccRaw": [
+    {
+      "Name": "C",
+      "Bytes": 25887,
+      "CodeBytes": 0,
+      "Lines": 659,
+      "Code": 469,
+      "Comment": 97,
+      "Blank": 93,
+      "Complexity": 67,
+      "Count": 13,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "C Header",
+      "Bytes": 1149,
+      "CodeBytes": 0,
+      "Lines": 68,
+      "Code": 44,
+      "Comment": 0,
+      "Blank": 24,
+      "Complexity": 0,
+      "Count": 10,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 9729,
+      "CodeBytes": 0,
+      "Lines": 184,
+      "Code": 145,
+      "Comment": 0,
+      "Blank": 39,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Makefile",
+      "Bytes": 1738,
+      "CodeBytes": 0,
+      "Lines": 62,
+      "Code": 17,
+      "Comment": 32,
+      "Blank": 13,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 52680,
+      "CodeBytes": 0,
+      "Lines": 885,
+      "Code": 854,
+      "Comment": 0,
+      "Blank": 31,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Shell",
+      "Bytes": 218,
+      "CodeBytes": 0,
+      "Lines": 3,
+      "Code": 1,
+      "Comment": 2,
+      "Blank": 0,
+      "Complexity": 1,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 1861,
+      "totalCode": 1530,
+      "totalComments": 131,
+      "totalBlanks": 200,
+      "totalBytes": 91401,
+      "totalFiles": 28,
+      "totalLanguages": 6,
+      "totalComplexity": 68,
+      "primaryLanguage": "Plain Text",
+      "primaryLanguagePercent": 55.8
+    },
+    "languages": [
+      {
+        "name": "Plain Text",
+        "lines": 885,
+        "code": 854,
+        "comments": 0,
+        "blanks": 31,
+        "bytes": 52680,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 47.6,
+        "percentOfCode": 55.8,
+        "percentOfBytes": 57.6
+      },
+      {
+        "name": "C",
+        "lines": 659,
+        "code": 469,
+        "comments": 97,
+        "blanks": 93,
+        "bytes": 25887,
+        "files": 13,
+        "complexity": 67,
+        "percentOfLines": 35.4,
+        "percentOfCode": 30.7,
+        "percentOfBytes": 28.3
+      },
+      {
+        "name": "Markdown",
+        "lines": 184,
+        "code": 145,
+        "comments": 0,
+        "blanks": 39,
+        "bytes": 9729,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 9.9,
+        "percentOfCode": 9.5,
+        "percentOfBytes": 10.6
+      },
+      {
+        "name": "C Header",
+        "lines": 68,
+        "code": 44,
+        "comments": 0,
+        "blanks": 24,
+        "bytes": 1149,
+        "files": 10,
+        "complexity": 0,
+        "percentOfLines": 3.7,
+        "percentOfCode": 2.9,
+        "percentOfBytes": 1.3
+      },
+      {
+        "name": "Makefile",
+        "lines": 62,
+        "code": 17,
+        "comments": 32,
+        "blanks": 13,
+        "bytes": 1738,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 3.3,
+        "percentOfCode": 1.1,
+        "percentOfBytes": 1.9
+      },
+      {
+        "name": "Shell",
+        "lines": 3,
+        "code": 1,
+        "comments": 2,
+        "blanks": 0,
+        "bytes": 218,
+        "files": 1,
+        "complexity": 1,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.2
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "DevOps",
+        "confidence": 0.97
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.03
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 1.53,
+        "effort": 3.75,
+        "time": 4.13,
+        "people": 0.91,
+        "cost": 17594,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.96,
+        "time": 2.46,
+        "people": 0.39,
+        "cost": 4486,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 3.75,
+            "weeks": 16.2,
+            "days": 81,
+            "cost": 17594,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 4.13,
+            "hoursPerWeek": 36.3,
+            "totalHours": 649,
+            "cost": 17594,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.96,
+            "weeks": 4.1,
+            "days": 21,
+            "cost": 4486,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 2.46,
+            "hoursPerWeek": 15.6,
+            "totalHours": 165,
+            "cost": 4486,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

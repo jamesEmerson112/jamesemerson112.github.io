@@ -1,0 +1,192 @@
+{
+  "id": "hash-tables-made-of-linked-lists",
+  "scannedAt": "2026-02-17T08:19:41.070Z",
+  "metadata": {
+    "name": "Hash-tables-made-of-linked-lists",
+    "fullName": "jamesEmerson112/Hash-tables-made-of-linked-lists",
+    "description": "CS 302 - Playing around with Hash tables made of linked lists",
+    "url": "https://github.com/jamesEmerson112/Hash-tables-made-of-linked-lists",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2019-04-14T03:28:08Z",
+    "createdAt": "2019-04-14T03:21:08Z",
+    "stars": 0,
+    "language": "C++",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/hash-tables-made-of-linked-lists"
+  },
+  "sccRaw": [
+    {
+      "Name": "C++",
+      "Bytes": 9687,
+      "CodeBytes": 0,
+      "Lines": 476,
+      "Code": 318,
+      "Comment": 78,
+      "Blank": 80,
+      "Complexity": 42,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "C Header",
+      "Bytes": 2691,
+      "CodeBytes": 0,
+      "Lines": 122,
+      "Code": 45,
+      "Comment": 45,
+      "Blank": 32,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 175,
+      "CodeBytes": 0,
+      "Lines": 3,
+      "Code": 2,
+      "Comment": 0,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 601,
+      "totalCode": 365,
+      "totalComments": 123,
+      "totalBlanks": 113,
+      "totalBytes": 12553,
+      "totalFiles": 6,
+      "totalLanguages": 3,
+      "totalComplexity": 42,
+      "primaryLanguage": "C++",
+      "primaryLanguagePercent": 87.1
+    },
+    "languages": [
+      {
+        "name": "C++",
+        "lines": 476,
+        "code": 318,
+        "comments": 78,
+        "blanks": 80,
+        "bytes": 9687,
+        "files": 3,
+        "complexity": 42,
+        "percentOfLines": 79.2,
+        "percentOfCode": 87.1,
+        "percentOfBytes": 77.2
+      },
+      {
+        "name": "C Header",
+        "lines": 122,
+        "code": 45,
+        "comments": 45,
+        "blanks": 32,
+        "bytes": 2691,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 20.3,
+        "percentOfCode": 12.3,
+        "percentOfBytes": 21.4
+      },
+      {
+        "name": "Markdown",
+        "lines": 3,
+        "code": 2,
+        "comments": 0,
+        "blanks": 1,
+        "bytes": 175,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.5,
+        "percentOfCode": 0.5,
+        "percentOfBytes": 1.4
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.365,
+        "effort": 0.83,
+        "time": 2.33,
+        "people": 0.36,
+        "cost": 3907,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.21,
+        "time": 1.39,
+        "people": 0.15,
+        "cost": 996,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.83,
+            "weeks": 3.6,
+            "days": 18,
+            "cost": 3907,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.33,
+            "hoursPerWeek": 14.3,
+            "totalHours": 144,
+            "cost": 3907,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.21,
+            "weeks": 0.9,
+            "days": 5,
+            "cost": 996,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.39,
+            "hoursPerWeek": 6.1,
+            "totalHours": 37,
+            "cost": 996,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

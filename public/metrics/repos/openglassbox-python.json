@@ -1,0 +1,341 @@
+{
+  "id": "openglassbox-python",
+  "scannedAt": "2026-02-17T08:18:06.535Z",
+  "metadata": {
+    "name": "OpenGlassBox-Python",
+    "fullName": "jamesEmerson112/OpenGlassBox-Python",
+    "description": "Python version of OpenGlassBox",
+    "url": "https://github.com/jamesEmerson112/OpenGlassBox-Python",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-02-13T23:17:51Z",
+    "createdAt": "2025-05-25T07:23:42Z",
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/openglassbox-python"
+  },
+  "sccRaw": [
+    {
+      "Name": "Python",
+      "Bytes": 444744,
+      "CodeBytes": 0,
+      "Lines": 12794,
+      "Code": 8023,
+      "Comment": 3143,
+      "Blank": 1628,
+      "Complexity": 1023,
+      "Count": 66,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 130456,
+      "CodeBytes": 0,
+      "Lines": 3098,
+      "Code": 2534,
+      "Comment": 0,
+      "Blank": 564,
+      "Complexity": 0,
+      "Count": 10,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Autoconf",
+      "Bytes": 640,
+      "CodeBytes": 0,
+      "Lines": 26,
+      "Code": 19,
+      "Comment": 4,
+      "Blank": 3,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 11324,
+      "CodeBytes": 0,
+      "Lines": 201,
+      "Code": 169,
+      "Comment": 0,
+      "Blank": 32,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Makefile",
+      "Bytes": 3773,
+      "CodeBytes": 0,
+      "Lines": 139,
+      "Code": 101,
+      "Comment": 13,
+      "Blank": 25,
+      "Complexity": 2,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 1061,
+      "CodeBytes": 0,
+      "Lines": 68,
+      "Code": 46,
+      "Comment": 0,
+      "Blank": 22,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TOML",
+      "Bytes": 3960,
+      "CodeBytes": 0,
+      "Lines": 166,
+      "Code": 152,
+      "Comment": 0,
+      "Blank": 14,
+      "Complexity": 1,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "YAML",
+      "Bytes": 322,
+      "CodeBytes": 0,
+      "Lines": 20,
+      "Code": 16,
+      "Comment": 1,
+      "Blank": 3,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 16512,
+      "totalCode": 11060,
+      "totalComments": 3161,
+      "totalBlanks": 2291,
+      "totalBytes": 596280,
+      "totalFiles": 82,
+      "totalLanguages": 8,
+      "totalComplexity": 1026,
+      "primaryLanguage": "Python",
+      "primaryLanguagePercent": 72.5
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "lines": 12794,
+        "code": 8023,
+        "comments": 3143,
+        "blanks": 1628,
+        "bytes": 444744,
+        "files": 66,
+        "complexity": 1023,
+        "percentOfLines": 77.5,
+        "percentOfCode": 72.5,
+        "percentOfBytes": 74.6
+      },
+      {
+        "name": "Markdown",
+        "lines": 3098,
+        "code": 2534,
+        "comments": 0,
+        "blanks": 564,
+        "bytes": 130456,
+        "files": 10,
+        "complexity": 0,
+        "percentOfLines": 18.8,
+        "percentOfCode": 22.9,
+        "percentOfBytes": 21.9
+      },
+      {
+        "name": "License",
+        "lines": 201,
+        "code": 169,
+        "comments": 0,
+        "blanks": 32,
+        "bytes": 11324,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1.2,
+        "percentOfCode": 1.5,
+        "percentOfBytes": 1.9
+      },
+      {
+        "name": "TOML",
+        "lines": 166,
+        "code": 152,
+        "comments": 0,
+        "blanks": 14,
+        "bytes": 3960,
+        "files": 1,
+        "complexity": 1,
+        "percentOfLines": 1,
+        "percentOfCode": 1.4,
+        "percentOfBytes": 0.7
+      },
+      {
+        "name": "Makefile",
+        "lines": 139,
+        "code": 101,
+        "comments": 13,
+        "blanks": 25,
+        "bytes": 3773,
+        "files": 1,
+        "complexity": 2,
+        "percentOfLines": 0.8,
+        "percentOfCode": 0.9,
+        "percentOfBytes": 0.6
+      },
+      {
+        "name": "Plain Text",
+        "lines": 68,
+        "code": 46,
+        "comments": 0,
+        "blanks": 22,
+        "bytes": 1061,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.4,
+        "percentOfCode": 0.4,
+        "percentOfBytes": 0.2
+      },
+      {
+        "name": "Autoconf",
+        "lines": 26,
+        "code": 19,
+        "comments": 4,
+        "blanks": 3,
+        "bytes": 640,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "YAML",
+        "lines": 20,
+        "code": 16,
+        "comments": 1,
+        "blanks": 3,
+        "bytes": 322,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.1
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 11.06,
+        "effort": 29.93,
+        "time": 9.1,
+        "people": 3.29,
+        "cost": 140402,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 7.63,
+        "time": 5.41,
+        "people": 1.41,
+        "cost": 35803,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 29.93,
+            "weeks": 129.6,
+            "days": 650,
+            "cost": 140402,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 9.1,
+            "hoursPerWeek": 131.6,
+            "totalHours": 5178,
+            "cost": 140402,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 7.63,
+            "weeks": 33.1,
+            "days": 166,
+            "cost": 35803,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 5.41,
+            "hoursPerWeek": 56.4,
+            "totalHours": 1321,
+            "cost": 35803,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

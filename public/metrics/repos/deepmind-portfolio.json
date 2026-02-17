@@ -1,0 +1,192 @@
+{
+  "id": "deepmind-portfolio",
+  "scannedAt": "2026-02-17T08:18:52.993Z",
+  "metadata": {
+    "name": "Deepmind-portfolio",
+    "fullName": "jamesEmerson112/Deepmind-portfolio",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/Deepmind-portfolio",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2025-06-15T17:33:47Z",
+    "createdAt": "2025-06-09T05:28:05Z",
+    "stars": 0,
+    "language": "Unknown",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/deepmind-portfolio"
+  },
+  "sccRaw": [
+    {
+      "Name": "License",
+      "Bytes": 1072,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 8089,
+      "CodeBytes": 0,
+      "Lines": 160,
+      "Code": 114,
+      "Comment": 0,
+      "Blank": 46,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 41,
+      "CodeBytes": 0,
+      "Lines": 3,
+      "Code": 3,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 184,
+      "totalCode": 134,
+      "totalComments": 0,
+      "totalBlanks": 50,
+      "totalBytes": 9202,
+      "totalFiles": 3,
+      "totalLanguages": 3,
+      "totalComplexity": 0,
+      "primaryLanguage": "Markdown",
+      "primaryLanguagePercent": 85.1
+    },
+    "languages": [
+      {
+        "name": "Markdown",
+        "lines": 160,
+        "code": 114,
+        "comments": 0,
+        "blanks": 46,
+        "bytes": 8089,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 87,
+        "percentOfCode": 85.1,
+        "percentOfBytes": 87.9
+      },
+      {
+        "name": "License",
+        "lines": 21,
+        "code": 17,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1072,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 11.4,
+        "percentOfCode": 12.7,
+        "percentOfBytes": 11.6
+      },
+      {
+        "name": "Plain Text",
+        "lines": 3,
+        "code": 3,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 41,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1.6,
+        "percentOfCode": 2.2,
+        "percentOfBytes": 0.4
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.134,
+        "effort": 0.29,
+        "time": 1.56,
+        "people": 0.19,
+        "cost": 1364,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.07,
+        "time": 0.93,
+        "people": 0.08,
+        "cost": 348,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.29,
+            "weeks": 1.3,
+            "days": 6,
+            "cost": 1364,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 1.56,
+            "hoursPerWeek": 7.4,
+            "totalHours": 50,
+            "cost": 1364,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.07,
+            "weeks": 0.3,
+            "days": 2,
+            "cost": 348,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 0.93,
+            "hoursPerWeek": 3.2,
+            "totalHours": 13,
+            "cost": 348,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

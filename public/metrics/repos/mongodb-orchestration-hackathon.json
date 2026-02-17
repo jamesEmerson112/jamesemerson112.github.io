@@ -1,0 +1,136 @@
+{
+  "id": "mongodb-orchestration-hackathon",
+  "scannedAt": "2026-02-17T08:18:17.274Z",
+  "metadata": {
+    "name": "MongoDB-orchestration-hackathon",
+    "fullName": "jamesEmerson112/MongoDB-orchestration-hackathon",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/MongoDB-orchestration-hackathon",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-01-10T10:18:14Z",
+    "createdAt": "2026-01-10T08:04:44Z",
+    "stars": 0,
+    "language": "Unknown",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/mongodb-orchestration-hackathon"
+  },
+  "sccRaw": [
+    {
+      "Name": "Markdown",
+      "Bytes": 19054,
+      "CodeBytes": 0,
+      "Lines": 639,
+      "Code": 485,
+      "Comment": 0,
+      "Blank": 154,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 639,
+      "totalCode": 485,
+      "totalComments": 0,
+      "totalBlanks": 154,
+      "totalBytes": 19054,
+      "totalFiles": 2,
+      "totalLanguages": 1,
+      "totalComplexity": 0,
+      "primaryLanguage": "Markdown",
+      "primaryLanguagePercent": 100
+    },
+    "languages": [
+      {
+        "name": "Markdown",
+        "lines": 639,
+        "code": 485,
+        "comments": 0,
+        "blanks": 154,
+        "bytes": 19054,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 100,
+        "percentOfCode": 100,
+        "percentOfBytes": 100
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.485,
+        "effort": 1.12,
+        "time": 2.61,
+        "people": 0.43,
+        "cost": 5266,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.29,
+        "time": 1.55,
+        "people": 0.18,
+        "cost": 1343,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 1.12,
+            "weeks": 4.9,
+            "days": 24,
+            "cost": 5266,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.61,
+            "hoursPerWeek": 17.2,
+            "totalHours": 194,
+            "cost": 5266,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.29,
+            "weeks": 1.2,
+            "days": 6,
+            "cost": 1343,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.55,
+            "hoursPerWeek": 7.4,
+            "totalHours": 50,
+            "cost": 1343,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}
