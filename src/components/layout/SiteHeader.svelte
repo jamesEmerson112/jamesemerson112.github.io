@@ -3,8 +3,8 @@
 
   const pages = [
     { id: 'home', label: 'Home' },
-    { id: 'projects', label: 'Projects' },
     { id: 'metrics', label: 'Metrics' },
+    { id: 'projects', label: 'Projects' },
     { id: 'contact', label: 'Contact' },
     { id: 'privacy', label: 'Privacy' }
   ];

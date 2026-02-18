@@ -156,6 +156,20 @@ describe('Option B portfolio overview integration', () => {
     });
   });
 
+  it('supports category filtering and removes mini spider from project cards', async () => {
+    const { container } = render(PortfolioOverview);
+
+    await screen.findByText('Repo Alpha');
+    await screen.findByText('Repo Zeta');
+
+    const categoryButton = screen.getByRole('button', { name: 'AI/ML' });
+    await fireEvent.click(categoryButton);
+
+    expect(await screen.findByText('Repo Zeta')).toBeInTheDocument();
+    expect(screen.queryByText('Repo Alpha')).not.toBeInTheDocument();
+    expect(container.querySelector('[data-variant="mini"]')).not.toBeInTheDocument();
+  });
+
   it('opens and closes detail panel from a repository card', async () => {
     render(PortfolioOverview);
 
@@ -166,6 +180,9 @@ describe('Option B portfolio overview integration', () => {
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
     expect(await screen.findByText(/Project Type Signals/i)).toBeInTheDocument();
     expect((await screen.findAllByText(/Backend 38%/i)).length).toBeGreaterThan(0);
+    expect((await screen.findAllByText(/Quality Profile/i)).length).toBeGreaterThan(0);
+    expect((await screen.findAllByText(/Scope/i)).length).toBeGreaterThan(0);
+    expect((await screen.findAllByText(/Freshness/i)).length).toBeGreaterThan(0);
     const closeButton = await screen.findByRole('button', { name: /Close repository details/i });
     expect(closeButton).toHaveFocus();
     await fireEvent.click(closeButton);

@@ -11,14 +11,25 @@ function safeDate(value) {
   return Number.isFinite(ts) ? ts : 0;
 }
 
-export function filterRepos(repoList, search = '', language = 'all') {
+export function filterRepos(repoList, search = '', language = 'all', category = 'all') {
   const normalizedSearch = (search || '').trim().toLowerCase();
   const normalizedLanguage = (language || 'all').toLowerCase();
+  const normalizedCategory = (category || 'all').toLowerCase();
 
   return (repoList || []).filter((repo) => {
     if (normalizedLanguage !== 'all') {
       const primary = (repo.primaryLanguage || '').toLowerCase();
       if (primary !== normalizedLanguage) {
+        return false;
+      }
+    }
+
+    if (normalizedCategory !== 'all') {
+      const categories = Array.isArray(repo.projectTags) ? repo.projectTags : [];
+      const hasCategory = categories.some(
+        (tag) => (tag?.label || '').toLowerCase() === normalizedCategory
+      );
+      if (!hasCategory) {
         return false;
       }
     }
@@ -72,11 +83,12 @@ export function filterAndSortRepos(repoList, options = {}) {
   const {
     searchTerm = '',
     languageFilter = 'all',
+    categoryFilter = 'all',
     sortBy = 'lines',
     sortOrder = 'desc'
   } = options;
 
-  const filtered = filterRepos(repoList, searchTerm, languageFilter);
+  const filtered = filterRepos(repoList, searchTerm, languageFilter, categoryFilter);
   return sortRepos(filtered, sortBy, sortOrder);
 }
 

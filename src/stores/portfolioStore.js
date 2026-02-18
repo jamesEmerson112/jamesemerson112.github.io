@@ -1,6 +1,12 @@
 import { writable, derived } from 'svelte/store';
 import { fetchPortfolioIndex } from '../utils/dataLoader.js';
 import { filterAndSortRepos, getAvailableLanguages } from '../utils/portfolioTransforms.js';
+import {
+  computeQualityBaselines,
+  computeOverallCategorySpider,
+  computeOverallLanguageProficiencySpider,
+  computeOverallQualityStats
+} from '../utils/profileMetrics.js';
 
 /**
  * Portfolio Store
@@ -77,6 +83,7 @@ export const error = hasError;
 // UI state for filters and sorting
 export const searchTerm = writable('');
 export const languageFilter = writable('all');
+export const categoryFilter = writable('all');
 export const sortBy = writable('lines');
 export const sortOrder = writable('desc');
 export const selectedRepo = writable(null);
@@ -86,17 +93,65 @@ export const availableLanguages = derived(
   ($repos) => getAvailableLanguages($repos)
 );
 
+const CATEGORY_ORDER = ['AI/ML', 'Web', 'Backend', 'Data', 'DevOps', 'Mobile'];
+
+export const availableCategories = derived(
+  repos,
+  ($repos) => {
+    const set = new Set();
+    for (const repo of $repos || []) {
+      for (const tag of repo.projectTags || []) {
+        if (tag?.label) {
+          set.add(tag.label);
+        }
+      }
+    }
+
+    return [...set].sort((a, b) => {
+      const aIdx = CATEGORY_ORDER.indexOf(a);
+      const bIdx = CATEGORY_ORDER.indexOf(b);
+      const safeA = aIdx === -1 ? Number.MAX_SAFE_INTEGER : aIdx;
+      const safeB = bIdx === -1 ? Number.MAX_SAFE_INTEGER : bIdx;
+      if (safeA !== safeB) return safeA - safeB;
+      return a.localeCompare(b);
+    });
+  }
+);
+
 export const filteredRepos = derived(
-  [repos, searchTerm, languageFilter, sortBy, sortOrder],
-  ([$repos, $searchTerm, $languageFilter, $sortBy, $sortOrder]) => filterAndSortRepos(
+  [repos, searchTerm, languageFilter, categoryFilter, sortBy, sortOrder],
+  ([$repos, $searchTerm, $languageFilter, $categoryFilter, $sortBy, $sortOrder]) => filterAndSortRepos(
     $repos,
     {
       searchTerm: $searchTerm,
       languageFilter: $languageFilter,
+      categoryFilter: $categoryFilter,
       sortBy: $sortBy,
       sortOrder: $sortOrder
     }
   )
+);
+
+export const categoryFilteredRepos = filteredRepos;
+
+export const qualityBaselines = derived(
+  repos,
+  ($repos) => computeQualityBaselines($repos)
+);
+
+export const overallCategoryStats = derived(
+  repos,
+  ($repos) => computeOverallCategorySpider($repos)
+);
+
+export const overallLanguageProficiencyStats = derived(
+  repos,
+  ($repos) => computeOverallLanguageProficiencySpider($repos)
+);
+
+export const overallQualityStats = derived(
+  [repos, qualityBaselines],
+  ([$repos, $qualityBaselines]) => computeOverallQualityStats($repos, $qualityBaselines)
 );
 
 export async function loadPortfolioData() {
@@ -110,6 +165,7 @@ export function toggleSortOrder() {
 export function resetFilters() {
   searchTerm.set('');
   languageFilter.set('all');
+  categoryFilter.set('all');
   sortBy.set('lines');
   sortOrder.set('desc');
 }

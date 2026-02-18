@@ -10,7 +10,7 @@
   import ThemeSwitcher from './components/ThemeSwitcher.svelte';
   import Copyright from './components/layout/Copyright.svelte';
   import PortfolioOverview from './components/portfolio/PortfolioOverview.svelte';
-  import PortfolioStats from './components/portfolio/PortfolioStats.svelte';
+  import OverallCharacterDashboard from './components/portfolio/OverallCharacterDashboard.svelte';
   import Timeline from './components/Timeline.svelte';
   import './styles/themes.css';
 
@@ -60,14 +60,7 @@
     {:else if currentPage === 'metrics'}
       <div class="page metrics">
         <div class="metrics_content">
-          <PortfolioStats />
-          <div class="methodology">
-            <div class="method_name">Calculated using COCOMO</div>
-            <div class="method_citation">(Boehm, 1981)</div>
-          </div>
-          <p class="metrics_caveat">
-            Traditional and AI-assisted estimates are directional planning metrics, not guarantees.
-          </p>
+          <OverallCharacterDashboard />
         </div>
       </div>
     {:else if currentPage === 'contact'}
@@ -149,6 +142,12 @@
     padding-right: 0;
   }
 
+  .page.metrics {
+    justify-content: stretch;
+    align-items: stretch;
+    padding-right: 0;
+  }
+
   .projects_content {
     width: 100%;
     height: 100%;
@@ -162,39 +161,10 @@
   .metrics_content {
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .metrics_caveat {
-    margin-top: 1rem;
-    font-size: 11px;
-    color: #fff;
-    opacity: 0.65;
-    max-width: 520px;
-    text-align: center;
-    line-height: 1.4;
-  }
-
-  .methodology {
-    margin-top: 3em;
-    text-align: right;
-    font-size: 10px;
-    color: #fff;
-    opacity: 0.5;
-    line-height: 1.4;
-  }
-
-  .method_name {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-  }
-
-  .method_citation {
-    font-style: italic;
-    margin-top: 0.2em;
+    overflow-y: auto;
+    text-align: left;
+    max-width: none;
+    padding: calc(var(--pad) * 2);
   }
 
   /* Contact Page */
