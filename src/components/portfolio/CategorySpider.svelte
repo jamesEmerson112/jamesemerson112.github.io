@@ -6,21 +6,57 @@
   export let showAxisTable = true;
   export let color = '#38bdf8';
   export let fill = 'rgba(56, 189, 248, 0.2)';
+  export let scaleMode = 'absolute';
+  export let tableShowBoth = false;
+  export let absoluteStats = undefined;
 
   const levels = [25, 50, 75, 100];
+
+  function clampScore(value) {
+    const safeScore = Number.isFinite(Number(value)) ? Number(value) : 0;
+    return Math.max(0, Math.min(100, safeScore));
+  }
+
+  function normalizeAxisRows(list = []) {
+    return (Array.isArray(list) ? list : []).map((item, index) => ({
+      axis: item?.axis || `Axis ${index + 1}`,
+      score: clampScore(item?.score)
+    }));
+  }
+
+  $: safeScaleMode = scaleMode === 'relative' ? 'relative' : 'absolute';
+  $: normalizedStats = normalizeAxisRows(stats);
+  $: normalizedAbsoluteStats = normalizeAxisRows(
+    Array.isArray(absoluteStats) && absoluteStats.length > 0 ? absoluteStats : normalizedStats
+  );
+  $: absoluteByAxis = new Map(normalizedAbsoluteStats.map((item) => [item.axis, item.score]));
+  $: maxAbsoluteScore = normalizedStats.reduce((max, item) => Math.max(max, item.score), 0);
+  $: displayStats = normalizedStats.map((item) => {
+    const absoluteScore = absoluteByAxis.has(item.axis) ? absoluteByAxis.get(item.axis) : item.score;
+    const displayScore = safeScaleMode === 'relative'
+      ? (maxAbsoluteScore > 0 ? (item.score / maxAbsoluteScore) * 100 : 0)
+      : item.score;
+
+    return {
+      axis: item.axis,
+      displayScore: clampScore(displayScore),
+      absoluteScore: clampScore(absoluteScore)
+    };
+  });
 
   $: center = size / 2;
   $: radius = Math.max(38, size / 2 - 64);
   $: labelOffset = Math.max(20, radius * 0.18);
-  $: points = (stats || []).map((item, index) => {
-    const safeScore = Number.isFinite(Number(item?.score)) ? Number(item.score) : 0;
-    const clamped = Math.max(0, Math.min(100, safeScore));
-    const angle = ((Math.PI * 2 * index) / Math.max(stats.length, 1)) - Math.PI / 2;
+  $: points = displayStats.map((item, index) => {
+    const clamped = clampScore(item.displayScore);
+    const angle = ((Math.PI * 2 * index) / Math.max(displayStats.length, 1)) - Math.PI / 2;
     const scale = clamped / 100;
     return {
-      axis: item?.axis || `Axis ${index + 1}`,
+      axis: item.axis,
       score: clamped,
       roundedScore: Math.round(clamped),
+      absoluteScore: item.absoluteScore,
+      absoluteRoundedScore: Math.round(item.absoluteScore),
       angle,
       axisX: center + radius * Math.cos(angle),
       axisY: center + radius * Math.sin(angle),
@@ -41,8 +77,11 @@
       })),
       'x',
       'y'
-    );
+      );
   });
+  $: ringHint = safeScaleMode === 'relative'
+    ? 'Rings: 25 / 50 / 75 / 100 (of top axis)'
+    : 'Rings: 25 / 50 / 75 / 100 (raw score)';
 
   function buildPath(pathPoints, xKey, yKey) {
     if (!pathPoints.length) return '';
@@ -103,14 +142,21 @@
       {/each}
     </svg>
 
-    <div class="ring-hint">Rings: 25 / 50 / 75 / 100</div>
+    <div class="ring-hint">{ringHint}</div>
 
     {#if showAxisTable}
       <div class="axis-table" aria-label="Axis values">
         {#each points as point}
           <div class="axis-row">
             <span>{point.axis}</span>
-            <strong>{point.roundedScore}</strong>
+            {#if tableShowBoth && safeScaleMode === 'relative'}
+              <div class="axis-values">
+                <strong class="axis-primary">Rel {point.roundedScore}</strong>
+                <span class="axis-secondary">Abs {point.absoluteRoundedScore}</span>
+              </div>
+            {:else}
+              <strong>{point.roundedScore}</strong>
+            {/if}
           </div>
         {/each}
       </div>
@@ -182,6 +228,21 @@
   .axis-row strong {
     color: var(--text-primary, #f8fafc);
     font-size: 0.82rem;
+  }
+
+  .axis-values {
+    display: flex;
+    align-items: baseline;
+    gap: 0.45rem;
+  }
+
+  .axis-primary {
+    color: var(--text-primary, #f8fafc);
+  }
+
+  .axis-secondary {
+    font-size: 0.72rem;
+    color: var(--text-muted, #94a3b8);
   }
 
   .empty {

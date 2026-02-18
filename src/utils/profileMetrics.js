@@ -7,6 +7,44 @@ const QUALITY_AXES = [
   'Breadth',
   'Freshness'
 ];
+const LANGUAGE_PROFICIENCY_AXES = [
+  'JavaScript/TypeScript',
+  'C/C++/Rust',
+  'Python',
+  'Web UI',
+  'Data/SQL',
+  'Other/Infra'
+];
+const LANGUAGE_FAMILY_ALIASES = new Map([
+  ['javascript', 'JavaScript/TypeScript'],
+  ['typescript', 'JavaScript/TypeScript'],
+  ['jsx', 'JavaScript/TypeScript'],
+  ['tsx', 'JavaScript/TypeScript'],
+  ['typescript typings', 'JavaScript/TypeScript'],
+  ['c', 'C/C++/Rust'],
+  ['c++', 'C/C++/Rust'],
+  ['rust', 'C/C++/Rust'],
+  ['c header', 'C/C++/Rust'],
+  ['python', 'Python'],
+  ['jupyter', 'Python'],
+  ['html', 'Web UI'],
+  ['css', 'Web UI'],
+  ['scss', 'Web UI'],
+  ['less', 'Web UI'],
+  ['svelte', 'Web UI'],
+  ['sql', 'Data/SQL']
+]);
+const EXCLUDED_LANGUAGE_TYPES = new Set([
+  'plain text',
+  'markdown',
+  'json',
+  'csv',
+  'license',
+  'yaml',
+  'toml',
+  'xml',
+  'tex'
+]);
 
 function safeNumber(value, fallback = 0) {
   const numeric = Number(value);
@@ -15,6 +53,10 @@ function safeNumber(value, fallback = 0) {
 
 function clamp01(value) {
   return Math.min(1, Math.max(0, value));
+}
+
+function clamp(value, minValue, maxValue) {
+  return Math.min(maxValue, Math.max(minValue, value));
 }
 
 function percentile(sortedValues, p) {
@@ -42,6 +84,48 @@ function toDaysSince(dateValue) {
 
   const now = Date.now();
   return Math.max(0, (now - timestamp) / (1000 * 60 * 60 * 24));
+}
+
+function normalizeLanguageName(name) {
+  return String(name || '').trim().toLowerCase();
+}
+
+function isExcludedLanguage(name) {
+  return EXCLUDED_LANGUAGE_TYPES.has(normalizeLanguageName(name));
+}
+
+function resolveLanguageFamily(name) {
+  return LANGUAGE_FAMILY_ALIASES.get(normalizeLanguageName(name)) || 'Other/Infra';
+}
+
+function initializeFamilyTotals() {
+  return new Map(
+    LANGUAGE_PROFICIENCY_AXES.map((axis) => [axis, { code: 0, complexity: 0 }])
+  );
+}
+
+function collectFamilyTotals(repo = {}) {
+  const familyTotals = initializeFamilyTotals();
+  let codeTotal = 0;
+  let complexityTotal = 0;
+
+  for (const language of repo.languages || []) {
+    const languageName = language?.name;
+    if (!languageName || isExcludedLanguage(languageName)) {
+      continue;
+    }
+
+    const axis = resolveLanguageFamily(languageName);
+    const code = Math.max(0, safeNumber(language.code ?? language.lines));
+    const complexity = Math.max(0, safeNumber(language.complexity));
+    const family = familyTotals.get(axis);
+    family.code += code;
+    family.complexity += complexity;
+    codeTotal += code;
+    complexityTotal += complexity;
+  }
+
+  return { familyTotals, codeTotal, complexityTotal };
 }
 
 function computeLanguageEntropy(languages = []) {
@@ -224,6 +308,42 @@ export function computeOverallQualityStats(repos = [], baselines = computeQualit
       axis,
       score: Number.parseFloat(score.toFixed(2)),
       band: toBand(score)
+    };
+  });
+}
+
+export function computeOverallLanguageProficiencySpider(repos = []) {
+  const list = Array.isArray(repos) ? repos : [];
+  const totals = new Map(
+    LANGUAGE_PROFICIENCY_AXES.map((axis) => [axis, { weighted: 0, weight: 0 }])
+  );
+
+  for (const repo of list) {
+    const { familyTotals, codeTotal, complexityTotal } = collectFamilyTotals(repo);
+    const daysSince = toDaysSince(repo?.lastUpdated);
+    const recencyFactor = clamp(1 - (Math.min(daysSince, 1095) / 1095), 0.25, 1.0);
+    const repoWeight = Math.sqrt(Math.max(1, safeNumber(repo.summary?.code))) * recencyFactor;
+
+    for (const axis of LANGUAGE_PROFICIENCY_AXES) {
+      const family = familyTotals.get(axis);
+      const familyCodeShare = codeTotal > 0 ? family.code / codeTotal : 0;
+      const familyComplexityShare = complexityTotal > 0
+        ? family.complexity / complexityTotal
+        : familyCodeShare;
+      const familyRepoSignal = (0.7 * familyCodeShare) + (0.3 * familyComplexityShare);
+
+      const bucket = totals.get(axis);
+      bucket.weighted += repoWeight * familyRepoSignal;
+      bucket.weight += repoWeight;
+    }
+  }
+
+  return LANGUAGE_PROFICIENCY_AXES.map((axis) => {
+    const bucket = totals.get(axis);
+    const score = bucket.weight > 0 ? (bucket.weighted / bucket.weight) * 100 : 0;
+    return {
+      axis,
+      score: Number.parseFloat(score.toFixed(2))
     };
   });
 }

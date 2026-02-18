@@ -4,6 +4,7 @@ import { filterAndSortRepos, getAvailableLanguages } from '../utils/portfolioTra
 import {
   computeQualityBaselines,
   computeOverallCategorySpider,
+  computeOverallLanguageProficiencySpider,
   computeOverallQualityStats
 } from '../utils/profileMetrics.js';
 
@@ -141,6 +142,11 @@ export const qualityBaselines = derived(
 export const overallCategoryStats = derived(
   repos,
   ($repos) => computeOverallCategorySpider($repos)
+);
+
+export const overallLanguageProficiencyStats = derived(
+  repos,
+  ($repos) => computeOverallLanguageProficiencySpider($repos)
 );
 
 export const overallQualityStats = derived(

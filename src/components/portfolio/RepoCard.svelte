@@ -1,8 +1,6 @@
 <script>
   import {
     formatNumber,
-    formatCurrency,
-    formatDuration,
     getLanguageColor
   } from '../../utils/dataLoader.js';
   import { selectedRepo, qualityBaselines } from '../../stores/portfolioStore.js';
@@ -21,10 +19,6 @@
     const safe = Number.isFinite(Number(value)) ? Number(value) : 0;
     return Math.max(0, Math.min(100, safe));
   }
-
-  $: savingsPercent = repo.summary.traditionalCost > 0
-    ? Math.round(((repo.summary.traditionalCost - repo.summary.aiCost) / repo.summary.traditionalCost) * 100)
-    : 0;
 
   $: languageColor = getLanguageColor(repo.primaryLanguage);
   $: topProjectTags = Array.isArray(repo.projectTags) ? repo.projectTags.slice(0, 2) : [];
@@ -149,26 +143,6 @@
       </div>
     </section>
   {/if}
-
-  <div class="cost-comparison">
-    <div class="cost-row">
-      <span class="cost-label">Traditional:</span>
-      <span class="cost-value traditional">{formatCurrency(repo.summary.traditionalCost)}</span>
-    </div>
-    <div class="cost-row highlight">
-      <span class="cost-label">AI-Assisted:</span>
-      <span class="cost-value ai">{formatCurrency(repo.summary.aiCost)}</span>
-    </div>
-    <div class="savings-badge">
-      💰 {savingsPercent}% savings
-    </div>
-  </div>
-
-  <div class="time-estimate">
-    <span class="time-icon">⏱️</span>
-    <span class="time-value">{formatDuration(repo.summary.aiMonths)}</span>
-    <span class="time-label">with AI</span>
-  </div>
 
   <div class="card-footer">
     <span class="view-details">View Details →</span>
@@ -427,78 +401,6 @@
     width: 7px;
     height: 7px;
     border-radius: 999px;
-  }
-
-  .cost-comparison {
-    padding: 0.7rem;
-    background: rgba(37, 99, 235, 0.08);
-    border: 1px solid rgba(96, 165, 250, 0.22);
-    border-radius: 8px;
-  }
-
-  .cost-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 0.42rem;
-    font-size: 0.82rem;
-  }
-
-  .cost-row:last-of-type {
-    margin-bottom: 0.65rem;
-  }
-
-  .cost-label {
-    color: var(--text-secondary);
-  }
-
-  .cost-value {
-    font-weight: 600;
-    color: var(--text-primary);
-  }
-
-  .cost-value.traditional {
-    text-decoration: line-through;
-    opacity: 0.58;
-  }
-
-  .cost-value.ai {
-    color: #34d399;
-  }
-
-  .cost-row.highlight {
-    padding: 0.2rem 0;
-  }
-
-  .savings-badge {
-    display: inline-block;
-    padding: 0.22rem 0.65rem;
-    background: rgba(16, 185, 129, 0.15);
-    border: 1px solid rgba(16, 185, 129, 0.26);
-    border-radius: 999px;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: #34d399;
-  }
-
-  .time-estimate {
-    display: flex;
-    align-items: center;
-    gap: 0.45rem;
-    padding: 0.48rem 0.58rem;
-    background: rgba(30, 41, 59, 0.6);
-    border: 1px solid rgba(100, 116, 139, 0.35);
-    border-radius: 8px;
-    font-size: 0.82rem;
-  }
-
-  .time-value {
-    font-weight: 700;
-    color: #c4b5fd;
-  }
-
-  .time-label {
-    color: var(--text-secondary);
   }
 
   .card-footer {

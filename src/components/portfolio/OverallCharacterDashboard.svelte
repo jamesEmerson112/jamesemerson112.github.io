@@ -5,6 +5,7 @@
     error,
     repos,
     overallCategoryStats,
+    overallLanguageProficiencyStats,
     overallQualityStats,
     loadPortfolioData
   } from '../../stores/portfolioStore.js';
@@ -16,6 +17,11 @@
     High: '#22c55e',
     'Very High': '#38bdf8'
   };
+  const SPIDER_SCALE_OPTIONS = [
+    { id: 'relative', label: 'Relative (Top axis = 100)' },
+    { id: 'absolute', label: 'Absolute (Raw score)' }
+  ];
+  let spiderScaleMode = 'relative';
 
   onMount(() => {
     loadPortfolioData();
@@ -57,15 +63,54 @@
       <p>Add repositories to build the overall profile dashboard.</p>
     </div>
   {:else}
+    <div class="spider-controls" role="group" aria-label="Spider scale mode">
+      <div class="control-buttons">
+        {#each SPIDER_SCALE_OPTIONS as option}
+          <button
+            type="button"
+            class="control-button {spiderScaleMode === option.id ? 'is-active' : ''}"
+            aria-pressed={spiderScaleMode === option.id}
+            on:click={() => (spiderScaleMode = option.id)}
+          >
+            {option.label}
+          </button>
+        {/each}
+      </div>
+      <p class="control-caption">
+        Relative mode normalizes each chart by its strongest axis for easier shape comparison.
+      </p>
+    </div>
+
     <div class="dashboard-grid">
-      <div class="category-panel">
-        <CategorySpider
-          stats={$overallCategoryStats}
-          size={430}
-          title="Category Coverage"
-          color="#22d3ee"
-          fill="rgba(34, 211, 238, 0.18)"
-        />
+      <div class="left-column">
+        <div class="category-panel">
+          <CategorySpider
+            stats={$overallCategoryStats}
+            absoluteStats={$overallCategoryStats}
+            scaleMode={spiderScaleMode}
+            tableShowBoth={spiderScaleMode === 'relative'}
+            size={430}
+            title="Category Coverage"
+            color="#22d3ee"
+            fill="rgba(34, 211, 238, 0.18)"
+          />
+        </div>
+
+        <div class="proficiency-panel">
+          <CategorySpider
+            stats={$overallLanguageProficiencyStats}
+            absoluteStats={$overallLanguageProficiencyStats}
+            scaleMode={spiderScaleMode}
+            tableShowBoth={spiderScaleMode === 'relative'}
+            size={430}
+            title="Programming Language Proficiency"
+            color="#34d399"
+            fill="rgba(52, 211, 153, 0.16)"
+          />
+          <p class="proficiency-note">
+            Blended signal: code share + complexity share, recency-weighted.
+          </p>
+        </div>
       </div>
 
       <aside class="quality-panel" aria-label="Quality Scorecard">
@@ -129,16 +174,71 @@
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(320px, 1fr);
     gap: 1rem;
-    align-items: stretch;
+    align-items: start;
+  }
+
+  .spider-controls {
+    margin-bottom: 0.9rem;
+    display: grid;
+    gap: 0.45rem;
+  }
+
+  .control-buttons {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+  }
+
+  .control-button {
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.38);
+    background: rgba(15, 23, 42, 0.58);
+    color: var(--text-secondary, #cbd5e1);
+    padding: 0.35rem 0.72rem;
+    font-size: 0.76rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .control-button.is-active {
+    border-color: rgba(56, 189, 248, 0.7);
+    color: #e0f2fe;
+    background: rgba(14, 116, 144, 0.28);
+  }
+
+  .control-button:focus-visible {
+    outline: 2px solid #38bdf8;
+    outline-offset: 2px;
+  }
+
+  .control-caption {
+    margin: 0;
+    font-size: 0.77rem;
+    color: rgba(203, 213, 225, 0.92);
+    line-height: 1.38;
+  }
+
+  .left-column {
+    display: grid;
+    gap: 1rem;
   }
 
   .category-panel,
+  .proficiency-panel,
   .quality-panel,
   .state-card {
     border: 1px solid rgba(148, 163, 184, 0.24);
     border-radius: 14px;
     background: linear-gradient(155deg, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.48));
     padding: 1rem;
+  }
+
+  .proficiency-note {
+    margin: 0.7rem 0 0;
+    font-size: 0.78rem;
+    color: rgba(203, 213, 225, 0.9);
+    line-height: 1.4;
   }
 
   .quality-panel h2 {
@@ -249,6 +349,7 @@
     }
 
     .category-panel,
+    .proficiency-panel,
     .quality-panel,
     .state-card {
       padding: 0.8rem;

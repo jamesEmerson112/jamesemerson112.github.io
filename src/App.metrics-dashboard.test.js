@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { render, screen } from '@testing-library/svelte';
+import { fireEvent, render, screen } from '@testing-library/svelte';
 import fs from 'fs/promises';
 import path from 'path';
 import OverallCharacterDashboard from './components/portfolio/OverallCharacterDashboard.svelte';
@@ -39,6 +39,26 @@ describe('Metrics dashboard wiring', () => {
 
     expect(await screen.findByText(/Generalist Character Stats/i)).toBeInTheDocument();
     expect((await screen.findAllByText(/AI\/ML/i)).length).toBeGreaterThan(0);
+    expect(await screen.findByText(/Programming Language Proficiency/i)).toBeInTheDocument();
+    expect((await screen.findAllByText(/JavaScript\/TypeScript/i)).length).toBeGreaterThan(0);
+    expect((await screen.findAllByText(/C\/C\+\+\/Rust/i)).length).toBeGreaterThan(0);
     expect(await screen.findByText(/Quality Scorecard/i)).toBeInTheDocument();
+
+    const relativeButton = await screen.findByRole('button', {
+      name: /Relative \(Top axis = 100\)/i
+    });
+    const absoluteButton = await screen.findByRole('button', {
+      name: /Absolute \(Raw score\)/i
+    });
+
+    expect(relativeButton).toHaveAttribute('aria-pressed', 'true');
+    expect(absoluteButton).toHaveAttribute('aria-pressed', 'false');
+    expect((await screen.findAllByText(/Rings: 25 \/ 50 \/ 75 \/ 100 \(of top axis\)/i)).length).toBeGreaterThan(0);
+
+    await fireEvent.click(absoluteButton);
+
+    expect(relativeButton).toHaveAttribute('aria-pressed', 'false');
+    expect(absoluteButton).toHaveAttribute('aria-pressed', 'true');
+    expect((await screen.findAllByText(/Rings: 25 \/ 50 \/ 75 \/ 100 \(raw score\)/i)).length).toBeGreaterThan(0);
   });
 });

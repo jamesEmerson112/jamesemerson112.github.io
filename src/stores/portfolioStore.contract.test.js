@@ -23,6 +23,7 @@ describe('portfolioStore public contract', () => {
     expect(store.selectedRepo).toBeDefined();
     expect(store.availableCategories).toBeDefined();
     expect(store.overallCategoryStats).toBeDefined();
+    expect(store.overallLanguageProficiencyStats).toBeDefined();
     expect(store.overallQualityStats).toBeDefined();
     expect(typeof store.loadPortfolioData).toBe('function');
     expect(typeof store.toggleSortOrder).toBe('function');
