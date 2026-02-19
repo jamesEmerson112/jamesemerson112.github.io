@@ -1,4 +1,8 @@
-<div class="content">
+<script>
+  export let blendMode = 'difference';
+</script>
+
+<div class="content" style={`mix-blend-mode: ${blendMode};`}>
   <div class="content_inner">
     <slot />
   </div>
@@ -13,7 +17,6 @@
     width: 100%;
     height: 100%;
     overflow: hidden;
-    mix-blend-mode: difference;
   }
   
   .content_inner {

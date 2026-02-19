@@ -168,16 +168,20 @@
 
 <style>
   .category-spider {
-    border: 1px solid rgba(148, 163, 184, 0.24);
+    border: 1px solid var(--surface-border);
     border-radius: 14px;
     padding: 0.95rem;
-    background: radial-gradient(circle at 50% 38%, rgba(30, 64, 175, 0.17), rgba(15, 23, 42, 0.56) 58%);
+    background: radial-gradient(
+      circle at 50% 38%,
+      color-mix(in srgb, var(--accent-primary) 20%, transparent),
+      var(--surface-glass) 62%
+    );
   }
 
   h3 {
     margin: 0 0 0.7rem;
     font-size: 1rem;
-    color: var(--text-primary, #f8fafc);
+    color: var(--text-primary);
   }
 
   svg {
@@ -188,20 +192,20 @@
 
   .grid text {
     font-size: 9px;
-    fill: rgba(203, 213, 225, 0.95);
+    fill: var(--text-secondary);
   }
 
   .axis-label {
     font-size: 12px;
     font-weight: 600;
-    fill: var(--text-secondary, #e2e8f0);
+    fill: var(--text-secondary);
   }
 
   .ring-hint {
     margin: 0.28rem 0 0.65rem;
     text-align: center;
     font-size: 0.72rem;
-    color: var(--text-muted, #94a3b8);
+    color: var(--text-muted);
     letter-spacing: 0.02em;
   }
 
@@ -220,13 +224,13 @@
     font-size: 0.8rem;
     padding: 0.28rem 0.44rem;
     border-radius: 6px;
-    border: 1px solid rgba(148, 163, 184, 0.2);
-    background: rgba(15, 23, 42, 0.34);
-    color: var(--text-secondary, #cbd5e1);
+    border: 1px solid var(--surface-border);
+    background: var(--surface-glass);
+    color: var(--text-secondary);
   }
 
   .axis-row strong {
-    color: var(--text-primary, #f8fafc);
+    color: var(--text-primary);
     font-size: 0.82rem;
   }
 
@@ -237,17 +241,17 @@
   }
 
   .axis-primary {
-    color: var(--text-primary, #f8fafc);
+    color: var(--text-primary);
   }
 
   .axis-secondary {
     font-size: 0.72rem;
-    color: var(--text-muted, #94a3b8);
+    color: var(--text-muted);
   }
 
   .empty {
     margin: 0;
-    color: var(--text-muted, #94a3b8);
+    color: var(--text-muted);
     font-size: 0.85rem;
   }
 

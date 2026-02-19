@@ -12,10 +12,10 @@
   import CategorySpider from './CategorySpider.svelte';
 
   const BAND_COLORS = {
-    Low: '#f59e0b',
-    Moderate: '#eab308',
-    High: '#22c55e',
-    'Very High': '#38bdf8'
+    Low: '#6b7280',
+    Moderate: '#9ca3af',
+    High: '#d1d5db',
+    'Very High': '#f3f4f6'
   };
   const SPIDER_SCALE_OPTIONS = [
     { id: 'relative', label: 'Relative (Top axis = 100)' },
@@ -152,19 +152,25 @@
   }
 
   .dashboard-header {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
+    padding: 0.35rem 0;
+    border-radius: 14px;
+    border: none;
+    background: transparent;
+    box-shadow: none;
   }
 
   .dashboard-header h1 {
     margin: 0;
     font-size: clamp(1.8rem, 3vw, 2.6rem);
     line-height: 1.1;
-    color: var(--text-primary, #f8fafc);
+    font-weight: 300;
+    color: var(--text-primary);
   }
 
   .dashboard-header p {
     margin: 0.4rem 0 0;
-    color: var(--text-secondary, #cbd5e1);
+    color: var(--text-secondary);
     max-width: 760px;
     line-height: 1.45;
     font-size: 0.95rem;
@@ -192,9 +198,9 @@
 
   .control-button {
     border-radius: 999px;
-    border: 1px solid rgba(148, 163, 184, 0.38);
-    background: rgba(15, 23, 42, 0.58);
-    color: var(--text-secondary, #cbd5e1);
+    border: 1px solid var(--chip-neutral-border);
+    background: var(--chip-neutral-bg);
+    color: var(--text-secondary);
     padding: 0.35rem 0.72rem;
     font-size: 0.76rem;
     line-height: 1;
@@ -202,20 +208,20 @@
   }
 
   .control-button.is-active {
-    border-color: rgba(56, 189, 248, 0.7);
-    color: #e0f2fe;
-    background: rgba(14, 116, 144, 0.28);
+    border-color: var(--chip-active-border);
+    color: var(--text-primary);
+    background: var(--chip-active-bg);
   }
 
   .control-button:focus-visible {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
   }
 
   .control-caption {
     margin: 0;
     font-size: 0.77rem;
-    color: rgba(203, 213, 225, 0.92);
+    color: var(--text-secondary);
     line-height: 1.38;
   }
 
@@ -228,16 +234,17 @@
   .proficiency-panel,
   .quality-panel,
   .state-card {
-    border: 1px solid rgba(148, 163, 184, 0.24);
+    border: 1px solid var(--panel-cinematic-border);
     border-radius: 14px;
-    background: linear-gradient(155deg, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.48));
+    background: var(--panel-cinematic-bg);
+    box-shadow: var(--panel-cinematic-shadow);
     padding: 1rem;
   }
 
   .proficiency-note {
     margin: 0.7rem 0 0;
     font-size: 0.78rem;
-    color: rgba(203, 213, 225, 0.9);
+    color: var(--text-secondary);
     line-height: 1.4;
   }
 
@@ -249,7 +256,7 @@
   .quality-subtitle {
     margin: 0.35rem 0 0.9rem;
     font-size: 0.8rem;
-    color: var(--text-secondary, #cbd5e1);
+    color: var(--text-secondary);
   }
 
   .quality-row {
@@ -261,14 +268,14 @@
     justify-content: space-between;
     font-size: 0.83rem;
     margin-bottom: 0.22rem;
-    color: var(--text-secondary, #cbd5e1);
+    color: var(--text-secondary);
   }
 
   .row-track {
     width: 100%;
     height: 9px;
     border-radius: 999px;
-    background: rgba(71, 85, 105, 0.38);
+    background: var(--quality-track);
     overflow: hidden;
   }
 
@@ -280,16 +287,16 @@
   .row-band {
     margin-top: 0.18rem;
     font-size: 0.72rem;
-    color: var(--text-muted, #94a3b8);
+    color: var(--text-muted);
   }
 
   .methodology {
     margin: 0.9rem 0 0;
     padding-top: 0.8rem;
-    border-top: 1px solid rgba(148, 163, 184, 0.22);
+    border-top: 1px solid var(--surface-border);
     font-size: 0.74rem;
     line-height: 1.45;
-    color: rgba(226, 232, 240, 0.84);
+    color: var(--text-secondary);
   }
 
   .state-card {
@@ -311,14 +318,14 @@
     margin-top: 0.2rem;
     border-radius: 8px;
     padding: 0.48rem 0.9rem;
-    border: 1px solid rgba(56, 189, 248, 0.65);
-    background: rgba(56, 189, 248, 0.14);
-    color: var(--text-primary, #fff);
+    border: 1px solid color-mix(in srgb, var(--accent-primary) 65%, transparent);
+    background: color-mix(in srgb, var(--accent-primary) 14%, transparent);
+    color: var(--text-primary);
     cursor: pointer;
   }
 
   .state-card.error button:focus-visible {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
   }
 
@@ -326,8 +333,8 @@
     width: 34px;
     height: 34px;
     border-radius: 999px;
-    border: 3px solid rgba(148, 163, 184, 0.32);
-    border-top-color: #38bdf8;
+    border: 3px solid color-mix(in srgb, var(--surface-border-strong) 70%, transparent);
+    border-top-color: var(--accent-primary);
     animation: spin 1s linear infinite;
   }
 

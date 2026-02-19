@@ -132,6 +132,19 @@ const LANGUAGE_COLORS = {
   Swift: '#f05138'
 };
 
+const NON_PROGRAMMING_LANGUAGE_NAMES = new Set([
+  'plain text',
+  'markdown',
+  'json',
+  'csv',
+  'license',
+  'yaml',
+  'yml',
+  'toml',
+  'xml',
+  'tex'
+]);
+
 /**
  * Resolve a language display color for badges/charts
  * @param {string} language - Language name
@@ -139,4 +152,73 @@ const LANGUAGE_COLORS = {
  */
 export function getLanguageColor(language) {
   return LANGUAGE_COLORS[language] || '#64748b';
+}
+
+/**
+ * Whether a language/file type is non-programming for badge display.
+ * @param {string} language - Language name
+ * @returns {boolean}
+ */
+export function isNonProgrammingLanguage(language) {
+  const normalized = String(language || '').trim().toLowerCase();
+  return NON_PROGRAMMING_LANGUAGE_NAMES.has(normalized);
+}
+
+/**
+ * Display-safe top language label for recruiter-facing cards/panels.
+ * @param {string} language - Raw top language label
+ * @returns {string} Display label
+ */
+export function getDisplayPrimaryLanguage(language) {
+  if (!language) {
+    return '';
+  }
+
+  return isNonProgrammingLanguage(language) ? 'Programming Language' : language;
+}
+
+function normalizeHexColor(input) {
+  const value = String(input || '').trim();
+  const hex = value.startsWith('#') ? value.slice(1) : value;
+
+  if (/^[0-9a-fA-F]{3}$/.test(hex)) {
+    return hex
+      .split('')
+      .map((part) => part + part)
+      .join('')
+      .toLowerCase();
+  }
+
+  if (/^[0-9a-fA-F]{6}$/.test(hex)) {
+    return hex.toLowerCase();
+  }
+
+  return null;
+}
+
+/**
+ * Resolve readable foreground text for colored badges.
+ * Uses WCAG relative luminance on the source color.
+ * @param {string} hexColor - Hex color string
+ * @returns {string} Foreground color hex
+ */
+export function getContrastTextColor(hexColor) {
+  const normalized = normalizeHexColor(hexColor);
+  if (!normalized) {
+    return '#f8fafc';
+  }
+
+  const r = parseInt(normalized.slice(0, 2), 16) / 255;
+  const g = parseInt(normalized.slice(2, 4), 16) / 255;
+  const b = parseInt(normalized.slice(4, 6), 16) / 255;
+
+  const linear = (channel) => (
+    channel <= 0.03928
+      ? channel / 12.92
+      : ((channel + 0.055) / 1.055) ** 2.4
+  );
+
+  const luminance = (0.2126 * linear(r)) + (0.7152 * linear(g)) + (0.0722 * linear(b));
+
+  return luminance > 0.45 ? '#0f172a' : '#f8fafc';
 }

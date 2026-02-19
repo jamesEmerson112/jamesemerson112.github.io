@@ -23,29 +23,29 @@ html {
 :root {
   --pad: max(20px, 4vmin);  /* Dynamic padding */
   --fs-text: 12px;           /* Base font size */
-  
-  /* Colors - Light mode default */
-  --c-bg: hsl(0, 0%, 90%);
-  --c-text: hsl(0, 0%, 10%);
+
+  /* Scene colors are driven by theme tokens for Home + data-page parity */
+  --c-bg: var(--scene-canvas, hsl(0, 0%, 5%));
+  --c-text: var(--scene-text, hsl(0, 0%, 95%));
 }
 
 /* Dark mode */
 @media (prefers-color-scheme: dark) {
   :root {
-    --c-bg: hsl(0, 0%, 5%);
-    --c-text: hsl(0, 0%, 95%);
+    --c-bg: var(--scene-canvas, hsl(0, 0%, 5%));
+    --c-text: var(--scene-text, hsl(0, 0%, 95%));
   }
 }
 
 /* Theme override for manual toggle */
 [data-light="false"] {
-  --c-bg: hsl(0, 0%, 5%);
-  --c-text: hsl(0, 0%, 95%);
+  --c-bg: var(--scene-canvas, hsl(0, 0%, 5%));
+  --c-text: var(--scene-text, hsl(0, 0%, 95%));
 }
 
 [data-light="true"] {
-  --c-bg: hsl(0, 0%, 90%);
-  --c-text: hsl(0, 0%, 10%);
+  --c-bg: var(--scene-canvas, hsl(0, 0%, 90%));
+  --c-text: var(--scene-text, hsl(0, 0%, 10%));
 }
 
 html, body {

@@ -4,6 +4,11 @@
     loading,
     error,
     filteredRepos,
+    searchTerm,
+    languageFilter,
+    categoryFilter,
+    sortBy,
+    sortOrder,
     selectedRepo,
     loadPortfolioData
   } from '../../stores/portfolioStore.js';
@@ -11,10 +16,34 @@
   import RepoCard from './RepoCard.svelte';
   import RepoDetailPanel from './RepoDetailPanel.svelte';
 
+  const INITIAL_VISIBLE_COUNT = 12;
+
+  let visibleCount = INITIAL_VISIBLE_COUNT;
+  let filterSignature = '';
+
+  $: shownCount = Math.min(visibleCount, $filteredRepos.length);
+  $: visibleRepos = $filteredRepos.slice(0, shownCount);
+  $: nextFilterSignature = JSON.stringify([
+    $searchTerm,
+    $languageFilter,
+    $categoryFilter,
+    $sortBy,
+    $sortOrder
+  ]);
+
+  $: if (nextFilterSignature !== filterSignature) {
+    filterSignature = nextFilterSignature;
+    visibleCount = INITIAL_VISIBLE_COUNT;
+  }
+
   // Load data on mount
   onMount(() => {
     loadPortfolioData();
   });
+
+  function loadMoreRepos() {
+    visibleCount += INITIAL_VISIBLE_COUNT;
+  }
 
   function closeSelectedRepo() {
     selectedRepo.set(null);
@@ -54,14 +83,26 @@
       <!-- Repositories Grid -->
       {#if $filteredRepos.length > 0}
         <div class="repos-header">
-          <h2>Projects ({$filteredRepos.length})</h2>
+          <h2>Recent Projects ({shownCount} of {$filteredRepos.length})</h2>
         </div>
 
         <div class="repos-grid">
-          {#each $filteredRepos as repo (repo.id)}
+          {#each visibleRepos as repo (repo.id)}
             <RepoCard {repo} />
           {/each}
         </div>
+
+        {#if shownCount < $filteredRepos.length}
+          <div class="load-more-wrap">
+            <button
+              type="button"
+              class="load-more-button"
+              on:click={loadMoreRepos}
+            >
+              Load 12 more
+            </button>
+          </div>
+        {/if}
       {:else}
         <!-- Empty State -->
         <div class="empty-state">
@@ -89,25 +130,27 @@
 
   /* Header */
   .section-header {
-    text-align: center;
-    margin-bottom: 3rem;
+    text-align: left;
+    margin-bottom: 2rem;
+    padding: 0.35rem 0;
+    border-radius: 14px;
+    border: none;
+    background: transparent;
+    box-shadow: none;
   }
 
   .section-header h1 {
     font-size: 3rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-    background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    font-weight: 300;
+    margin-bottom: 0.8rem;
+    color: var(--text-primary);
   }
 
   .section-subtitle {
     font-size: 1.125rem;
     color: var(--text-secondary);
-    max-width: 600px;
-    margin: 0 auto;
+    max-width: 760px;
+    margin: 0;
   }
 
   /* Loading State */
@@ -123,8 +166,8 @@
   .spinner {
     width: 48px;
     height: 48px;
-    border: 4px solid rgba(59, 130, 246, 0.2);
-    border-top-color: #3b82f6;
+    border: 4px solid color-mix(in srgb, var(--accent-primary) 28%, transparent);
+    border-top-color: var(--accent-primary);
     border-radius: 50%;
     animation: spin 1s linear infinite;
   }
@@ -166,10 +209,10 @@
 
   .retry-button {
     padding: 0.75rem 1.5rem;
-    background: #3b82f6;
-    border: none;
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border-strong);
     border-radius: 8px;
-    color: white;
+    color: var(--text-primary);
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2s;
@@ -177,9 +220,9 @@
   }
 
   .retry-button:hover {
-    background: #2563eb;
+    background: color-mix(in srgb, var(--surface-glass) 70%, var(--text-primary) 8%);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    box-shadow: var(--shadow-card);
   }
 
   /* Empty State */
@@ -191,8 +234,8 @@
     padding: 4rem 2rem;
     gap: 1rem;
     text-align: center;
-    background: var(--card-bg, rgba(255, 255, 255, 0.05));
-    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.1));
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
     border-radius: 12px;
   }
 
@@ -228,6 +271,35 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 1.5rem;
+  }
+
+  .load-more-wrap {
+    margin-top: 1.4rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .load-more-button {
+    border: 1px solid var(--surface-border-strong);
+    background: var(--surface-glass);
+    color: var(--text-primary);
+    border-radius: 999px;
+    padding: 0.62rem 1rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+  }
+
+  .load-more-button:hover {
+    border-color: color-mix(in srgb, var(--accent-primary) 65%, transparent);
+    background: color-mix(in srgb, var(--accent-primary) 12%, var(--surface-glass));
+    transform: translateY(-1px);
+  }
+
+  .load-more-button:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
   }
 
   @media (max-width: 768px) {

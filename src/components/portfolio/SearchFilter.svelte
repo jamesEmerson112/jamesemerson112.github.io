@@ -12,6 +12,7 @@
   } from '../../stores/portfolioStore.js';
 
   const sortOptions = [
+    { value: 'recent', label: 'Most Recent' },
     { value: 'lines', label: 'Lines of Code' },
     { value: 'cost', label: 'Cost (AI)' },
     { value: 'name', label: 'Name' },
@@ -112,8 +113,8 @@
     gap: 1rem;
     margin-bottom: 2rem;
     padding: 1.25rem;
-    background: linear-gradient(145deg, rgba(15, 23, 42, 0.65), rgba(15, 23, 42, 0.3));
-    border: 1px solid rgba(148, 163, 184, 0.24);
+    background: var(--surface-panel);
+    border: 1px solid var(--surface-border);
     border-radius: 12px;
   }
 
@@ -133,8 +134,8 @@
   .search-input {
     flex: 1;
     padding: 0.75rem 3rem;
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(148, 163, 184, 0.24);
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
     border-radius: 8px;
     font-size: 0.95rem;
     color: inherit;
@@ -143,8 +144,8 @@
 
   .search-input:focus-visible {
     outline: none;
-    border-color: rgba(56, 189, 248, 0.7);
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--focus-ring);
   }
 
   .search-input::placeholder {
@@ -167,7 +168,7 @@
   }
 
   .clear-button:focus-visible {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -192,8 +193,8 @@
   }
 
   .category-chip {
-    border: 1px solid rgba(148, 163, 184, 0.34);
-    background: rgba(15, 23, 42, 0.45);
+    border: 1px solid var(--chip-neutral-border);
+    background: var(--chip-neutral-bg);
     color: var(--text-secondary);
     border-radius: 999px;
     padding: 0.35rem 0.7rem;
@@ -204,18 +205,18 @@
   }
 
   .category-chip:hover {
-    border-color: rgba(56, 189, 248, 0.55);
+    border-color: color-mix(in srgb, var(--accent-primary) 60%, transparent);
     color: var(--text-primary);
   }
 
   .category-chip.active {
-    border-color: rgba(56, 189, 248, 0.8);
-    background: rgba(56, 189, 248, 0.15);
-    color: #e0f2fe;
+    border-color: var(--chip-active-border);
+    background: var(--chip-active-bg);
+    color: var(--text-primary);
   }
 
   .category-chip:focus-visible {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
   }
 
@@ -241,8 +242,8 @@
 
   .filter-select {
     padding: 0.48rem 0.7rem;
-    background: rgba(15, 23, 42, 0.45);
-    border: 1px solid rgba(148, 163, 184, 0.24);
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
     border-radius: 6px;
     color: inherit;
     font-size: 0.85rem;
@@ -250,13 +251,13 @@
   }
 
   .filter-select:hover {
-    border-color: rgba(56, 189, 248, 0.45);
+    border-color: color-mix(in srgb, var(--accent-primary) 50%, transparent);
   }
 
   .filter-select:focus-visible {
     outline: none;
-    border-color: rgba(56, 189, 248, 0.75);
-    box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
+    border-color: var(--accent-primary);
+    box-shadow: 0 0 0 3px var(--focus-ring);
   }
 
   .sort-toggle,
@@ -273,30 +274,31 @@
   }
 
   .sort-toggle {
-    background: rgba(37, 99, 235, 0.16);
-    border-color: rgba(96, 165, 250, 0.36);
-    color: #bfdbfe;
+    background: var(--surface-glass);
+    border-color: var(--surface-border-strong);
+    color: var(--text-secondary);
   }
 
   .sort-toggle:hover {
-    background: rgba(37, 99, 235, 0.24);
+    border-color: var(--surface-border-strong);
+    color: var(--text-primary);
   }
 
   .reset-button {
-    background: rgba(15, 23, 42, 0.5);
-    border-color: rgba(148, 163, 184, 0.34);
+    background: var(--surface-glass);
+    border-color: var(--surface-border-strong);
     color: var(--text-secondary);
     margin-left: auto;
   }
 
   .reset-button:hover {
-    border-color: rgba(56, 189, 248, 0.55);
+    border-color: color-mix(in srgb, var(--accent-primary) 60%, transparent);
     color: var(--text-primary);
   }
 
   .sort-toggle:focus-visible,
   .reset-button:focus-visible {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
   }
 

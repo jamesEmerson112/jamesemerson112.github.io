@@ -5,7 +5,7 @@
     formatCurrency,
     formatDuration,
     formatNumber,
-    getLanguageColor
+    getDisplayPrimaryLanguage
   } from '../../utils/dataLoader.js';
   import { computePercentShare } from '../../utils/spiderTransforms.js';
   import { computeRepoQualitySignals } from '../../utils/profileMetrics.js';
@@ -17,17 +17,23 @@
   let closeButton;
   let previouslyFocused;
   let panelWasOpen = false;
+  const COMPOSITION_TONES = [
+    'var(--mono-tone-1)',
+    'var(--mono-tone-2)',
+    'var(--mono-tone-3)',
+    'var(--mono-tone-4)'
+  ];
 
   $: savingsPercent = repo?.summary?.traditionalCost > 0
     ? Math.round(((repo.summary.traditionalCost - repo.summary.aiCost) / repo.summary.traditionalCost) * 100)
     : 0;
 
-  $: languageColor = repo?.primaryLanguage
-    ? getLanguageColor(repo.primaryLanguage)
-    : '#64748b';
+  $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo?.primaryLanguage || '');
   $: topProjectTags = Array.isArray(repo?.projectTags) ? repo.projectTags.slice(0, 2) : [];
   $: qualitySignals = repo ? computeRepoQualitySignals(repo, $qualityBaselines) : [];
   $: languageRows = buildLanguageRows(repo?.languages || []);
+  $: repoUrl = repo?.url || repo?.htmlUrl || null;
+  $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
 
   function buildLanguageRows(languages) {
     const codeRows = computePercentShare(languages, 'code');
@@ -44,6 +50,13 @@
 
   function closePanel() {
     dispatch('close');
+  }
+
+  function compositionColor(name, index) {
+    if (name === 'Other') {
+      return 'var(--mono-tone-5)';
+    }
+    return COMPOSITION_TONES[index % COMPOSITION_TONES.length];
   }
 
   function scoreClass(score) {
@@ -92,30 +105,43 @@
       <header class="detail-header">
         <div class="detail-title-wrap">
           <h2 id="repo-detail-title">{repo.name}</h2>
-          {#if repo.primaryLanguage}
-            <span class="language-chip" style="border-color: {languageColor};">
-              <span class="dot" style="background-color: {languageColor};"></span>
-              {repo.primaryLanguage}
+          {#if displayPrimaryLanguage}
+            <span class="language-chip">
+              <span class="dot"></span>
+              {displayPrimaryLanguage}
             </span>
           {/if}
         </div>
 
-        <button
-          bind:this={closeButton}
-          class="close-btn"
-          type="button"
-          on:click={closePanel}
-          aria-label="Close repository details"
-        >
-          Close
-        </button>
+        <div class="header-actions">
+          {#if canShowRepoLink}
+            <a
+              class="repo-link"
+              href={repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`View Repository: ${repo.name}`}
+            >
+              View Repository ↗
+            </a>
+          {/if}
+          <button
+            bind:this={closeButton}
+            class="close-btn"
+            type="button"
+            on:click={closePanel}
+            aria-label="Close repository details"
+          >
+            Close
+          </button>
+        </div>
       </header>
 
       <section class="detail-body">
         <div class="detail-meta">
           {#if repo.isAnonymized}
             <p class="repo-description muted">
-              This private repository is anonymized for recruiter-safe display.
+              This Private Academic Projects entry is anonymized for recruiter-safe display.
             </p>
           {:else if repo.description}
             <p class="repo-description">{repo.description}</p>
@@ -172,7 +198,7 @@
             <h3>Language composition</h3>
             {#if languageRows.length > 0}
               <div class="composition-bars" aria-hidden="true">
-                {#each languageRows as language}
+                {#each languageRows as language, index}
                   <div class="composition-row">
                     <div class="composition-meta">
                       <span>{language.name}</span>
@@ -181,7 +207,7 @@
                     <div class="composition-track">
                       <div
                         class="composition-fill"
-                        style="width: {Math.max(0, Math.min(100, language.percent))}%; background-color: {getLanguageColor(language.name)}"
+                        style="width: {Math.max(0, Math.min(100, language.percent))}%; background-color: {compositionColor(language.name, index)}"
                         data-testid="language-composition-bar"
                       ></div>
                     </div>
@@ -252,7 +278,7 @@
   .detail-overlay {
     position: fixed;
     inset: 0;
-    background: rgba(2, 6, 23, 0.78);
+    background: var(--surface-overlay);
     backdrop-filter: blur(5px);
     z-index: 100;
     display: flex;
@@ -265,9 +291,9 @@
     width: min(1160px, 100%);
     max-height: 92vh;
     overflow: auto;
-    background: linear-gradient(150deg, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.84));
+    background: var(--surface-elevated);
     color: var(--text-primary, #fff);
-    border: 1px solid rgba(148, 163, 184, 0.3);
+    border: 1px solid var(--surface-border-strong);
     border-radius: 16px;
     padding: 1.1rem;
   }
@@ -278,6 +304,12 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
+  }
+
+  .header-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
   }
 
   .detail-title-wrap {
@@ -296,7 +328,9 @@
     display: inline-flex;
     align-items: center;
     gap: 0.34rem;
-    border: 1px solid;
+    border: 1px solid var(--surface-border-strong);
+    background: var(--surface-glass);
+    color: var(--text-primary);
     border-radius: 999px;
     padding: 0.2rem 0.58rem;
     font-size: 0.74rem;
@@ -306,11 +340,12 @@
     width: 8px;
     height: 8px;
     border-radius: 50%;
+    background: var(--text-primary);
   }
 
   .close-btn {
-    border: 1px solid rgba(148, 163, 184, 0.35);
-    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid var(--surface-border-strong);
+    background: var(--surface-glass);
     color: inherit;
     border-radius: 8px;
     padding: 0.5rem 0.85rem;
@@ -318,7 +353,27 @@
   }
 
   .close-btn:focus-visible {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+  }
+
+  .repo-link {
+    text-decoration: none;
+    border: 1px solid var(--surface-border-strong);
+    background: var(--surface-glass);
+    color: var(--text-primary);
+    border-radius: 8px;
+    padding: 0.5rem 0.8rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+  }
+
+  .repo-link:hover {
+    text-decoration: underline;
+  }
+
+  .repo-link:focus-visible {
+    outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
   }
 
@@ -363,9 +418,9 @@
 
   .signal-tag {
     border-radius: 999px;
-    border: 1px solid rgba(16, 185, 129, 0.3);
-    background: rgba(16, 185, 129, 0.14);
-    color: #d1fae5;
+    border: 1px solid var(--surface-border);
+    background: var(--surface-glass);
+    color: var(--text-secondary);
     font-size: 0.7rem;
     padding: 0.2rem 0.55rem;
   }
@@ -391,10 +446,10 @@
   }
 
   .cost-card {
-    border: 1px solid rgba(148, 163, 184, 0.24);
+    border: 1px solid var(--surface-border);
     border-radius: 10px;
     padding: 0.78rem;
-    background: rgba(15, 23, 42, 0.4);
+    background: var(--surface-glass);
   }
 
   .row {
@@ -410,13 +465,13 @@
   }
 
   .row.highlight strong {
-    color: #34d399;
+    color: var(--text-primary);
   }
 
   .caveat {
     margin: 0.3rem 0 0;
     font-size: 0.74rem;
-    color: rgba(226, 232, 240, 0.86);
+    color: var(--text-secondary);
     line-height: 1.4;
   }
 
@@ -429,10 +484,10 @@
 
   .language-breakdown,
   .detail-chart {
-    border: 1px solid rgba(148, 163, 184, 0.24);
+    border: 1px solid var(--surface-border);
     border-radius: 12px;
     padding: 0.8rem;
-    background: rgba(15, 23, 42, 0.36);
+    background: var(--surface-glass);
   }
 
   h3 {
@@ -461,7 +516,7 @@
     width: 100%;
     height: 8px;
     border-radius: 999px;
-    background: rgba(71, 85, 105, 0.4);
+    background: var(--quality-track);
     overflow: hidden;
   }
 
@@ -479,7 +534,7 @@
   th,
   td {
     padding: 0.38rem 0.34rem;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    border-bottom: 1px solid var(--surface-border);
     text-align: left;
   }
 
@@ -514,7 +569,7 @@
     width: 100%;
     height: 7px;
     border-radius: 999px;
-    background: rgba(71, 85, 105, 0.42);
+    background: var(--quality-track);
     overflow: hidden;
   }
 
@@ -524,19 +579,19 @@
   }
 
   .quality-fill.low {
-    background: linear-gradient(90deg, #f59e0b, #f97316);
+    background: linear-gradient(90deg, #6b7280, #9ca3af);
   }
 
   .quality-fill.moderate {
-    background: linear-gradient(90deg, #facc15, #eab308);
+    background: linear-gradient(90deg, #9ca3af, #d1d5db);
   }
 
   .quality-fill.high {
-    background: linear-gradient(90deg, #22c55e, #16a34a);
+    background: linear-gradient(90deg, #d1d5db, #e5e7eb);
   }
 
   .quality-fill.very-high {
-    background: linear-gradient(90deg, #38bdf8, #2563eb);
+    background: linear-gradient(90deg, #e5e7eb, #f3f4f6);
   }
 
   @media (max-width: 1080px) {

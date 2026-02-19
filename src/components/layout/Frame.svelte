@@ -1,4 +1,8 @@
-<div class="frame">
+<script>
+  export let blendMode = 'difference';
+</script>
+
+<div class="frame" style={`mix-blend-mode: ${blendMode};`}>
   <div class="frame_line frame_line-left"></div>
   <div class="frame_line frame_line-right"></div>
   <div class="frame_line frame_line-top"></div>
@@ -13,13 +17,12 @@
     right: var(--pad);
     top: var(--pad);
     bottom: var(--pad);
-    mix-blend-mode: difference;
     pointer-events: none;
   }
   
   .frame_line {
     position: absolute;
-    background-color: #fff;
+    background-color: var(--chrome-fg);
     opacity: 0.5;
   }
   

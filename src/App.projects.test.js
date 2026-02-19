@@ -54,6 +54,40 @@ const fixtureIndex = {
       detailsFile: 'repos/repo-alpha.json'
     },
     {
+      id: 'repo-private-beta',
+      sourceRef: 'private:abc123',
+      name: 'Private Repo Beta',
+      url: null,
+      description: null,
+      lastUpdated: '2026-02-12T00:00:00Z',
+      primaryLanguage: 'Plain Text',
+      isPrivate: true,
+      isAnonymized: true,
+      projectTags: [
+        { label: 'Data', confidence: 0.51 },
+        { label: 'AI/ML', confidence: 0.49 }
+      ],
+      languages: [
+        {
+          name: 'Plain Text',
+          lines: 4000,
+          code: 3900,
+          complexity: 50
+        }
+      ],
+      summary: {
+        lines: 5000,
+        code: 4900,
+        files: 70,
+        complexity: 80,
+        traditionalCost: 300000,
+        aiCost: 90000,
+        traditionalMonths: 48,
+        aiMonths: 16
+      },
+      detailsFile: 'repos/private-beta.json'
+    },
+    {
       id: 'repo-zeta',
       sourceRef: 'public:james/repo-zeta',
       name: 'Repo Zeta',
@@ -90,6 +124,53 @@ const fixtureIndex = {
   ]
 };
 
+function createRepo(index, { isPrivate = false } = {}) {
+  const padded = String(index).padStart(2, '0');
+  const prefix = isPrivate ? 'Private' : 'Public';
+
+  return {
+    id: `${prefix.toLowerCase()}-repo-${padded}`,
+    sourceRef: isPrivate
+      ? `private:${padded}`
+      : `public:james/${prefix.toLowerCase()}-repo-${padded}`,
+    name: `${prefix} Repo ${padded}`,
+    url: isPrivate ? null : `https://github.com/james/${prefix.toLowerCase()}-repo-${padded}`,
+    description: isPrivate ? null : `${prefix} repository ${padded}`,
+    lastUpdated: `2026-02-${String(Math.max(1, 20 - index)).padStart(2, '0')}T00:00:00Z`,
+    primaryLanguage: isPrivate ? 'Plain Text' : 'TypeScript',
+    isPrivate,
+    isAnonymized: isPrivate,
+    projectTags: [{ label: isPrivate ? 'Data' : 'Web', confidence: 0.72 }],
+    languages: [
+      {
+        name: isPrivate ? 'Plain Text' : 'TypeScript',
+        lines: 1200 - index * 10,
+        code: 1000 - index * 9,
+        complexity: isPrivate ? 40 : 20
+      }
+    ],
+    summary: {
+      lines: 1200 - index * 10,
+      code: 1000 - index * 9,
+      files: 10 + index,
+      complexity: isPrivate ? 40 : 20,
+      traditionalCost: 70000 - index * 500,
+      aiCost: 20000 - index * 120,
+      traditionalMonths: 18,
+      aiMonths: 5
+    },
+    detailsFile: `repos/${prefix.toLowerCase()}-repo-${padded}.json`
+  };
+}
+
+const manyReposFixture = {
+  portfolioTotals: fixtureIndex.portfolioTotals,
+  repos: [
+    ...Array.from({ length: 14 }, (_, index) => createRepo(index + 1, { isPrivate: false })),
+    ...Array.from({ length: 4 }, (_, index) => createRepo(index + 15, { isPrivate: true }))
+  ]
+};
+
 describe('Option B portfolio overview integration', () => {
   afterEach(() => {
     cleanup();
@@ -112,6 +193,23 @@ describe('Option B portfolio overview integration', () => {
     expect(appSource).toContain('<PortfolioOverview />');
   });
 
+  it('uses compact header and normal blend mode on data pages while preserving home blend mode', async () => {
+    const appSource = await fs.readFile(path.join(process.cwd(), 'src', 'App.svelte'), 'utf-8');
+
+    expect(appSource).toContain("currentPage === 'projects' || currentPage === 'metrics'");
+    expect(appSource).toContain('compact={isDataPage}');
+    expect(appSource).toContain("blendMode={isDataPage ? 'normal' : 'difference'}");
+  });
+
+  it('supports scroll-wheel page switching in App navigation wiring', async () => {
+    const appSource = await fs.readFile(path.join(process.cwd(), 'src', 'App.svelte'), 'utf-8');
+
+    expect(appSource).toContain("window.addEventListener('wheel'");
+    expect(appSource).toContain('passive: false');
+    expect(appSource).toContain('switchPageByWheelDelta');
+    expect(appSource).toContain('data-page-aura');
+  });
+
   it('renders advanced portfolio content and repository cards', async () => {
     render(PortfolioOverview);
 
@@ -119,6 +217,7 @@ describe('Option B portfolio overview integration', () => {
     expect(await screen.findByText('Repo Alpha')).toBeInTheDocument();
     expect(await screen.findByText('Repo Zeta')).toBeInTheDocument();
     expect(await screen.findByText(/Web 62%/i)).toBeInTheDocument();
+    expect(screen.queryByText('Quality Snapshot')).not.toBeInTheDocument();
   });
 
   it('applies search and language filter, and supports name sorting', async () => {
@@ -153,6 +252,58 @@ describe('Option B portfolio overview integration', () => {
       const headings = screen.getAllByRole('heading', { level: 3 }).map((item) => item.textContent);
       expect(headings[0]).toBe('Repo Alpha');
       expect(headings[1]).toBe('Repo Zeta');
+    });
+  });
+
+  it('keeps public repositories ahead of private repositories in rendered order', async () => {
+    const { container } = render(PortfolioOverview);
+
+    await screen.findByText('Repo Alpha');
+    await screen.findByText('Repo Zeta');
+    await screen.findByText('Private Repo Beta');
+
+    const names = [...container.querySelectorAll('.repo-card h3')].map((item) => item.textContent?.trim());
+
+    expect(names).toEqual(['Repo Alpha', 'Repo Zeta', 'Private Repo Beta']);
+  });
+
+  it('defaults to Most Recent sort and paginates projects with Load more', async () => {
+    portfolioStore.portfolio.hydrate(manyReposFixture);
+    const { container } = render(PortfolioOverview);
+
+    const sortSelect = screen.getByLabelText('Sort by:');
+    expect(sortSelect).toHaveValue('recent');
+    expect(screen.getByRole('option', { name: 'Most Recent' })).toBeInTheDocument();
+
+    await screen.findByText(/Recent Projects \(12 of 18\)/i);
+    expect(container.querySelectorAll('.repo-card').length).toBe(12);
+    expect(screen.getByRole('button', { name: /Load 12 more/i })).toBeInTheDocument();
+
+    await fireEvent.click(screen.getByRole('button', { name: /Load 12 more/i }));
+    await waitFor(() => {
+      expect(container.querySelectorAll('.repo-card').length).toBe(18);
+    });
+    expect(screen.queryByRole('button', { name: /Load 12 more/i })).not.toBeInTheDocument();
+  });
+
+  it('resets visible project count to 12 when filters/search change', async () => {
+    portfolioStore.portfolio.hydrate(manyReposFixture);
+    const { container } = render(PortfolioOverview);
+
+    await screen.findByText(/Recent Projects \(12 of 18\)/i);
+    await fireEvent.click(screen.getByRole('button', { name: /Load 12 more/i }));
+
+    await waitFor(() => {
+      expect(container.querySelectorAll('.repo-card').length).toBe(18);
+    });
+
+    const searchInput = screen.getByPlaceholderText('Search repositories...');
+    await fireEvent.input(searchInput, { target: { value: 'Public Repo 01' } });
+    await screen.findByText(/Recent Projects \(1 of 1\)/i);
+
+    await fireEvent.input(searchInput, { target: { value: '' } });
+    await waitFor(() => {
+      expect(container.querySelectorAll('.repo-card').length).toBe(12);
     });
   });
 

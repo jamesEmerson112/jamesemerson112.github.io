@@ -1,5 +1,6 @@
 <script>
   export let currentPage = 'home';
+  export let compact = false;
 
   const pages = [
     { id: 'home', label: 'Home' },
@@ -16,20 +17,22 @@
   }
 </script>
 
-<header class="siteHeader">
-  <div class="siteHeader_title">
-    <div>James</div>
-    <div>Emerson</div>
-    <div>Vo</div>
-  </div>
+<header class="siteHeader" class:is-compact={compact}>
+  {#if !compact}
+    <div class="siteHeader_title">
+      <div>James</div>
+      <div>Emerson</div>
+      <div>Vo</div>
+    </div>
 
-  <div class="siteHeader_description">
-    <p>I like to study both brains and neural networks.</p>
-    <p>'Cure' neural networks == cure brains</p>
-  </div>
+    <div class="siteHeader_description">
+      <p>I like to study both brains and neural networks.</p>
+      <p>'Cure' neural networks == cure brains</p>
+    </div>
+  {/if}
 
   <nav class="siteHeader_nav">
-    <ol>
+    <ol class:is-compact-list={compact}>
       {#each pages as page}
         <li class:is-selected={currentPage === page.id}>
           <button
@@ -52,7 +55,14 @@
     left: calc(var(--pad) * 2);
     top: calc(var(--pad) * 2);
     mix-blend-mode: difference;
-    color: #fff;
+    color: var(--chrome-fg);
+  }
+
+  .siteHeader.is-compact {
+    left: calc(var(--pad) * 2);
+    right: auto;
+    top: calc(var(--pad) * 1.7);
+    mix-blend-mode: normal;
   }
 
   .siteHeader_title {
@@ -91,10 +101,24 @@
     margin-top: 50px;
   }
 
+  .siteHeader.is-compact .siteHeader_nav {
+    margin-top: 0;
+  }
+
   .siteHeader_nav ol {
     display: flex;
     flex-direction: column;
     row-gap: 15px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .siteHeader_nav ol.is-compact-list {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0.45rem;
+    row-gap: 0.45rem;
   }
 
   .siteHeader_nav ol li {
@@ -113,6 +137,17 @@
     display: block;
   }
 
+  .is-compact .nav-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.33rem;
+    border: 1px solid var(--surface-border-strong);
+    border-radius: 999px;
+    padding: 0.3rem 0.66rem;
+    color: var(--text-secondary);
+    background: var(--surface-glass);
+  }
+
   .nav-button ._dot {
     position: absolute;
     left: 0;
@@ -121,6 +156,12 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s cubic-bezier(0.1, 0.4, 0.2, 1);
+  }
+
+  .is-compact .nav-button ._dot {
+    display: none;
+    position: static;
+    font-size: 8px;
   }
 
   .nav-button ._text {
@@ -149,10 +190,21 @@
   }
 
   .is-selected ._dot {
-    opacity: 1;
+    opacity: 0;
   }
 
   .is-selected ._text {
-    opacity: 0;
+    opacity: 1;
+    color: var(--text-primary);
+  }
+
+  .is-compact .is-selected .nav-button {
+    border-color: var(--chip-active-border);
+    background: var(--chip-active-bg);
+  }
+
+  .nav-button:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
   }
 </style>

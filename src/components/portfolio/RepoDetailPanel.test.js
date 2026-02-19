@@ -6,6 +6,7 @@ const repoFixture = {
   id: 'repo-alpha',
   sourceRef: 'public:james/repo-alpha',
   name: 'Repo Alpha',
+  url: 'https://github.com/james/repo-alpha',
   description: 'Alpha project',
   primaryLanguage: 'TypeScript',
   isPrivate: false,
@@ -66,5 +67,73 @@ describe('RepoDetailPanel', () => {
 
     const closeButton = screen.getByRole('button', { name: /Close repository details/i });
     await fireEvent.click(closeButton);
+  });
+
+  it('uses monochrome language chip styling without inline color overrides', () => {
+    const { container } = render(RepoDetailPanel, {
+      props: { repo: repoFixture }
+    });
+
+    const chip = container.querySelector('.language-chip');
+    expect(chip).toBeInTheDocument();
+    expect(chip?.getAttribute('style')).toBeNull();
+  });
+
+  it('shows repository link for public repos and hides it for private repos', () => {
+    const { unmount } = render(RepoDetailPanel, {
+      props: { repo: repoFixture }
+    });
+
+    const publicLink = screen.getByRole('link', { name: /View Repository/i });
+    expect(publicLink).toHaveAttribute('href', repoFixture.url);
+
+    unmount();
+
+    render(RepoDetailPanel, {
+      props: {
+        repo: {
+          ...repoFixture,
+          id: 'repo-private',
+          isPrivate: true,
+          isAnonymized: true,
+          url: null
+        }
+      }
+    });
+
+    expect(screen.queryByRole('link', { name: /View Repository/i })).not.toBeInTheDocument();
+  });
+
+  it('uses "Programming Language" label when top language is non-programming', () => {
+    render(RepoDetailPanel, {
+      props: {
+        repo: {
+          ...repoFixture,
+          id: 'repo-non-programming',
+          primaryLanguage: 'JSON'
+        }
+      }
+    });
+
+    expect(screen.getByText('Programming Language')).toBeInTheDocument();
+    expect(screen.queryByText('JSON')).not.toBeInTheDocument();
+  });
+
+  it('uses updated private copy label in detail panel', () => {
+    render(RepoDetailPanel, {
+      props: {
+        repo: {
+          ...repoFixture,
+          id: 'repo-private-copy',
+          isPrivate: true,
+          isAnonymized: true,
+          description: null
+        }
+      }
+    });
+
+    expect(
+      screen.getByText('This Private Academic Projects entry is anonymized for recruiter-safe display.')
+    ).toBeInTheDocument();
   });
 });

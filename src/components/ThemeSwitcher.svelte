@@ -1,12 +1,13 @@
 <script>
   import { darkMode } from '../stores/theme.js';
+  export let blendMode = 'difference';
   
   function toggleTheme() {
     darkMode.toggle();
   }
 </script>
 
-<div class="theme">
+<div class="theme" style={`mix-blend-mode: ${blendMode};`}>
   <button on:click={toggleTheme} class="theme_btn">
     <span class="_box"></span>
     <span class="_text">{$darkMode ? 'Dark' : 'Light'}</span>
@@ -22,9 +23,8 @@
     transform-origin: left bottom;
     transform: rotate(-90deg);
     white-space: nowrap;
-    mix-blend-mode: difference;
     cursor: pointer;
-    color: #fff;
+    color: var(--chrome-fg);
   }
   
   .theme_btn {

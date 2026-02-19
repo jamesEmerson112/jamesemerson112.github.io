@@ -1,6 +1,5 @@
 <script>
   import { onMount } from 'svelte';
-  import { darkMode } from './stores/theme.js';
   import { portfolio } from './stores/portfolioStore.js';
   import PageContainer from './components/layout/PageContainer.svelte';
   import Frame from './components/layout/Frame.svelte';
@@ -14,7 +13,71 @@
   import Timeline from './components/Timeline.svelte';
   import './styles/themes.css';
 
+  const PAGE_ORDER = ['home', 'metrics', 'projects', 'contact', 'privacy'];
+  const SCROLL_SWITCH_THRESHOLD = 30;
+  const SCROLL_SWITCH_COOLDOWN_MS = 650;
+
   let currentPage = 'home';
+  let lastWheelSwitchAt = 0;
+  $: isDataPage = currentPage === 'projects' || currentPage === 'metrics';
+
+  function getScrollableAncestor(target) {
+    let node = target instanceof HTMLElement ? target : null;
+
+    while (node) {
+      const { overflowY } = getComputedStyle(node);
+      const isScrollable = /(auto|scroll)/.test(overflowY) && node.scrollHeight > node.clientHeight + 1;
+      if (isScrollable) {
+        return node;
+      }
+
+      node = node.parentElement;
+    }
+
+    return null;
+  }
+
+  function canConsumeWheelDelta(scrollNode, deltaY) {
+    if (!scrollNode || !Number.isFinite(deltaY) || deltaY === 0) {
+      return false;
+    }
+
+    const top = scrollNode.scrollTop;
+    const max = scrollNode.scrollHeight - scrollNode.clientHeight;
+
+    if (deltaY > 0) {
+      return top < max - 1;
+    }
+
+    return top > 1;
+  }
+
+  function switchPageByWheelDelta(deltaY) {
+    if (!Number.isFinite(deltaY) || Math.abs(deltaY) < SCROLL_SWITCH_THRESHOLD) {
+      return false;
+    }
+
+    const now = Date.now();
+    if (now - lastWheelSwitchAt < SCROLL_SWITCH_COOLDOWN_MS) {
+      return false;
+    }
+
+    const currentIndex = PAGE_ORDER.indexOf(currentPage);
+    if (currentIndex === -1) {
+      return false;
+    }
+
+    const direction = deltaY > 0 ? 1 : -1;
+    const nextIndex = Math.max(0, Math.min(PAGE_ORDER.length - 1, currentIndex + direction));
+
+    if (nextIndex === currentIndex) {
+      return false;
+    }
+
+    currentPage = PAGE_ORDER[nextIndex];
+    lastWheelSwitchAt = now;
+    return true;
+  }
 
   onMount(() => {
     // Load portfolio data
@@ -25,26 +88,44 @@
       currentPage = e.detail;
     };
 
+    const handleWheel = (event) => {
+      const scrollableAncestor = getScrollableAncestor(event.target);
+      if (canConsumeWheelDelta(scrollableAncestor, event.deltaY)) {
+        return;
+      }
+
+      const switched = switchPageByWheelDelta(event.deltaY);
+      if (switched) {
+        event.preventDefault();
+      }
+    };
+
     window.addEventListener('pageChange', handlePageChange);
+    window.addEventListener('wheel', handleWheel, { passive: false });
 
     return () => {
       window.removeEventListener('pageChange', handlePageChange);
+      window.removeEventListener('wheel', handleWheel);
     };
   });
 </script>
 
 <PageContainer>
   <!-- Layer 10: UI Chrome -->
-  <Frame />
-  <SiteHeader {currentPage} />
-  <ThemeSwitcher />
-  <Copyright />
+  <Frame blendMode={isDataPage ? 'normal' : 'difference'} />
+  <SiteHeader {currentPage} compact={isDataPage} />
+  <ThemeSwitcher blendMode={isDataPage ? 'normal' : 'difference'} />
+  <Copyright blendMode={isDataPage ? 'normal' : 'difference'} />
 
   <!-- Layer 3: Masks -->
   <Masks />
 
   <!-- Layer 2: Content -->
-  <ContentLayer>
+  <ContentLayer blendMode={isDataPage ? 'normal' : 'difference'}>
+    {#if isDataPage}
+      <div class="data-page-aura" aria-hidden="true"></div>
+    {/if}
+
     {#if currentPage === 'home'}
       <div class="page home">
         <div class="home_content">
@@ -52,14 +133,14 @@
         </div>
       </div>
     {:else if currentPage === 'projects'}
-      <div class="page projects">
-        <div class="projects_content">
+      <div class="page projects data-page">
+        <div class="projects_content data_content">
           <PortfolioOverview />
         </div>
       </div>
     {:else if currentPage === 'metrics'}
-      <div class="page metrics">
-        <div class="metrics_content">
+      <div class="page metrics data-page">
+        <div class="metrics_content data_content">
           <OverallCharacterDashboard />
         </div>
       </div>
@@ -113,12 +194,25 @@
 
   .page {
     position: absolute;
+    z-index: 1;
     width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     padding-right: calc(var(--pad) * 2);
+  }
+
+  .data-page-aura {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background:
+      radial-gradient(circle at 16% 15%, rgba(255, 255, 255, 0.08) 0%, transparent 55%),
+      radial-gradient(circle at 84% 10%, rgba(255, 255, 255, 0.06) 0%, transparent 52%),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 48%);
+    opacity: var(--data-page-aura-opacity, 0.9);
   }
 
   /* Home Page */
@@ -167,6 +261,15 @@
     padding: calc(var(--pad) * 2);
   }
 
+  .page.data-page {
+    align-items: flex-start;
+    justify-content: stretch;
+  }
+
+  .data_content {
+    padding-top: clamp(6rem, 11vw, 7.5rem);
+  }
+
   /* Contact Page */
   .contact_content {
     text-align: right;
@@ -177,7 +280,7 @@
     font-size: clamp(32px, 6vw, 60px);
     font-weight: 200;
     margin: 0 0 1em 0;
-    color: #fff;
+    color: var(--text-primary);
   }
 
   .contact_links {
@@ -192,7 +295,7 @@
     flex-direction: column;
     gap: 0.3em;
     text-decoration: none;
-    color: #fff;
+    color: var(--text-primary);
     transition: opacity 0.3s ease;
   }
 
@@ -222,13 +325,13 @@
     font-size: clamp(32px, 6vw, 60px);
     font-weight: 200;
     margin: 0 0 1em 0;
-    color: #fff;
+    color: var(--text-primary);
   }
 
   .privacy_summary {
     font-size: 14px;
     line-height: 1.6;
-    color: #fff;
+    color: var(--text-secondary);
     opacity: 0.8;
     margin: 2em 0;
   }
@@ -236,7 +339,7 @@
   .privacy_link {
     display: inline-block;
     font-size: 12px;
-    color: #fff;
+    color: var(--text-primary);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -247,5 +350,11 @@
 
   .privacy_link:hover {
     opacity: 1;
+  }
+
+  @media (max-width: 900px) {
+    .data_content {
+      padding-top: clamp(6.5rem, 18vw, 8.5rem);
+    }
   }
 </style>

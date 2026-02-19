@@ -1,32 +1,32 @@
 <script>
   import {
     formatNumber,
-    getLanguageColor
+    getDisplayPrimaryLanguage
   } from '../../utils/dataLoader.js';
-  import { selectedRepo, qualityBaselines } from '../../stores/portfolioStore.js';
-  import { computeRepoQualitySignals } from '../../utils/profileMetrics.js';
+  import { selectedRepo } from '../../stores/portfolioStore.js';
   import { computePercentShare } from '../../utils/spiderTransforms.js';
 
   export let repo;
-
-  const QUICK_AXES = ['Scope', 'Complexity Control', 'Freshness'];
+  const COMPOSITION_TONES = [
+    'var(--mono-tone-1)',
+    'var(--mono-tone-2)',
+    'var(--mono-tone-3)',
+    'var(--mono-tone-4)'
+  ];
 
   function handleClick() {
     selectedRepo.set(repo);
   }
 
-  function toPercent(value) {
-    const safe = Number.isFinite(Number(value)) ? Number(value) : 0;
-    return Math.max(0, Math.min(100, safe));
+  function handleKeydown(event) {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      handleClick();
+    }
   }
 
-  $: languageColor = getLanguageColor(repo.primaryLanguage);
+  $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo.primaryLanguage);
   $: topProjectTags = Array.isArray(repo.projectTags) ? repo.projectTags.slice(0, 2) : [];
-  $: qualitySignals = computeRepoQualitySignals(repo, $qualityBaselines)
-    .filter((signal) => QUICK_AXES.includes(signal.axis));
-  $: qualityIndex = qualitySignals.length > 0
-    ? Math.round(qualitySignals.reduce((sum, item) => sum + item.score, 0) / qualitySignals.length)
-    : 0;
 
   $: rawShares = computePercentShare(repo.languages || [], 'code');
   $: topShares = rawShares.slice(0, 4);
@@ -34,18 +34,28 @@
   $: compositionShares = remainderShare > 0.4
     ? [...topShares, { name: 'Other', percent: remainderShare, code: 0, complexity: 0 }]
     : topShares;
+  $: repoUrl = repo?.url || repo?.htmlUrl || null;
+  $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
 
-  function signalTone(score) {
-    if (score >= 75) return 'high';
-    if (score >= 50) return 'moderate';
-    return 'low';
+  function toPercent(value) {
+    const safe = Number.isFinite(Number(value)) ? Number(value) : 0;
+    return Math.max(0, Math.min(100, safe));
+  }
+
+  function compositionColor(name, index) {
+    if (name === 'Other') {
+      return 'var(--mono-tone-5)';
+    }
+    return COMPOSITION_TONES[index % COMPOSITION_TONES.length];
   }
 </script>
 
-<button
+<div
   class="repo-card"
-  type="button"
+  role="button"
+  tabindex="0"
   on:click={handleClick}
+  on:keydown={handleKeydown}
   aria-label={`Open details for ${repo.name}`}
 >
   <div class="card-header">
@@ -55,10 +65,10 @@
       {/if}
       <h3>{repo.name}</h3>
     </div>
-    {#if repo.primaryLanguage}
-      <span class="language-badge" style="background-color: {languageColor}1f; border-color: {languageColor}">
-        <span class="language-dot" style="background-color: {languageColor}"></span>
-        {repo.primaryLanguage}
+    {#if displayPrimaryLanguage}
+      <span class="language-badge">
+        <span class="language-dot"></span>
+        {displayPrimaryLanguage}
       </span>
     {/if}
   </div>
@@ -66,7 +76,7 @@
   {#if repo.description && !repo.isAnonymized}
     <p class="repo-description">{repo.description}</p>
   {:else if repo.isAnonymized}
-    <p class="repo-description muted">Private repository</p>
+    <p class="repo-description muted">Private Academic Projects</p>
   {/if}
 
   {#if topProjectTags.length > 0}
@@ -97,46 +107,22 @@
     </div>
   </div>
 
-  <section class="quality-snapshot" aria-label="Quality snapshot">
-    <div class="quality-header">
-      <h4>Quality Snapshot</h4>
-      <span class="quality-index">{qualityIndex}/100</span>
-    </div>
-    {#each qualitySignals as signal}
-      <div class="quality-row">
-        <div class="quality-meta">
-          <span class="axis">{signal.axis}</span>
-          <span class="score">{Math.round(signal.score)}</span>
-        </div>
-        <div class="quality-track" aria-hidden="true">
-          <div
-            class="quality-fill {signalTone(signal.score)}"
-            style="width: {toPercent(signal.score)}%"
-          ></div>
-        </div>
-      </div>
-    {/each}
-  </section>
-
   {#if compositionShares.length > 0}
     <section class="language-composition" aria-label="Language composition">
       <div class="composition-label">Language composition</div>
       <div class="composition-track" role="img" aria-label="Top language composition by code share">
-        {#each compositionShares as language}
+        {#each compositionShares as language, index}
           <div
             class="composition-segment"
             title={`${language.name} ${language.percent.toFixed(1)}%`}
-            style="width: {toPercent(language.percent)}%; background-color: {language.name === 'Other' ? '#475569' : getLanguageColor(language.name)}"
+            style="width: {toPercent(language.percent)}%; background-color: {compositionColor(language.name, index)}"
           ></div>
         {/each}
       </div>
       <div class="composition-legend">
-        {#each compositionShares as language}
+        {#each compositionShares as language, index}
           <span class="legend-item">
-            <span
-              class="legend-dot"
-              style="background-color: {language.name === 'Other' ? '#475569' : getLanguageColor(language.name)}"
-            ></span>
+            <span class="legend-dot" style="background-color: {compositionColor(language.name, index)}"></span>
             {language.name} {language.percent.toFixed(0)}%
           </span>
         {/each}
@@ -145,33 +131,45 @@
   {/if}
 
   <div class="card-footer">
+    {#if canShowRepoLink}
+      <a
+        class="repo-link"
+        href={repoUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        on:click|stopPropagation
+        aria-label={`View Repo: ${repo.name}`}
+      >
+        View Repo ↗
+      </a>
+    {/if}
     <span class="view-details">View Details →</span>
   </div>
-</button>
+</div>
 
 <style>
   .repo-card {
-    background: linear-gradient(160deg, rgba(15, 23, 42, 0.78), rgba(15, 23, 42, 0.4));
-    border: 1px solid rgba(148, 163, 184, 0.26);
+    background: var(--surface-panel);
+    border: 1px solid var(--surface-border);
     border-radius: 14px;
-    padding: 1.25rem;
+    padding: 1rem;
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
     text-align: left;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.95rem;
+    gap: 0.72rem;
   }
 
   .repo-card:hover {
     transform: translateY(-3px);
-    border-color: rgba(56, 189, 248, 0.62);
-    box-shadow: 0 10px 24px rgba(2, 6, 23, 0.45);
+    border-color: var(--surface-border-strong);
+    box-shadow: var(--shadow-hover);
   }
 
   .repo-card:focus-visible {
-    outline: 2px solid #38bdf8;
+    outline: 2px solid var(--accent-primary);
     outline-offset: 3px;
   }
 
@@ -216,12 +214,16 @@
     border: 1px solid;
     white-space: nowrap;
     flex-shrink: 0;
+    background: var(--surface-glass);
+    border-color: var(--surface-border-strong);
+    color: var(--text-primary);
   }
 
   .language-dot {
     width: 8px;
     height: 8px;
     border-radius: 50%;
+    background: var(--text-primary);
   }
 
   .repo-description {
@@ -252,16 +254,16 @@
     padding: 0.2rem 0.52rem;
     border-radius: 999px;
     font-size: 0.7rem;
-    color: #d1fae5;
-    background: rgba(16, 185, 129, 0.16);
-    border: 1px solid rgba(16, 185, 129, 0.32);
+    color: var(--text-secondary);
+    background: var(--surface-glass);
+    border: 1px solid var(--surface-border);
   }
 
   .repo-stats {
     display: flex;
     gap: 0.75rem;
     padding: 0.68rem;
-    background: rgba(2, 6, 23, 0.62);
+    background: var(--surface-glass);
     border-radius: 8px;
   }
 
@@ -290,75 +292,11 @@
     color: var(--text-muted);
   }
 
-  .quality-snapshot {
-    border: 1px solid rgba(148, 163, 184, 0.22);
-    border-radius: 10px;
-    padding: 0.7rem;
-    background: rgba(15, 23, 42, 0.38);
-  }
-
-  .quality-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    margin-bottom: 0.45rem;
-  }
-
-  .quality-header h4 {
-    margin: 0;
-    font-size: 0.78rem;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
-  }
-
-  .quality-index {
-    font-weight: 700;
-    color: #93c5fd;
-    font-size: 0.84rem;
-  }
-
-  .quality-row {
-    margin-top: 0.45rem;
-  }
-
-  .quality-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.74rem;
-    margin-bottom: 0.2rem;
-    color: var(--text-secondary);
-  }
-
-  .quality-track {
-    height: 7px;
-    border-radius: 999px;
-    background: rgba(71, 85, 105, 0.45);
-    overflow: hidden;
-  }
-
-  .quality-fill {
-    height: 100%;
-    border-radius: inherit;
-  }
-
-  .quality-fill.low {
-    background: linear-gradient(90deg, #f59e0b, #f97316);
-  }
-
-  .quality-fill.moderate {
-    background: linear-gradient(90deg, #22c55e, #16a34a);
-  }
-
-  .quality-fill.high {
-    background: linear-gradient(90deg, #38bdf8, #2563eb);
-  }
-
   .language-composition {
-    border: 1px solid rgba(148, 163, 184, 0.22);
+    border: 1px solid var(--surface-border);
     border-radius: 10px;
     padding: 0.7rem;
-    background: rgba(15, 23, 42, 0.3);
+    background: var(--surface-glass);
   }
 
   .composition-label {
@@ -375,7 +313,7 @@
     border-radius: 999px;
     overflow: hidden;
     height: 10px;
-    background: rgba(2, 6, 23, 0.6);
+    background: var(--surface-base);
   }
 
   .composition-segment {
@@ -404,13 +342,34 @@
   }
 
   .card-footer {
-    border-top: 1px solid rgba(148, 163, 184, 0.16);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    border-top: 1px solid var(--surface-border-soft);
     padding-top: 0.7rem;
     margin-top: 0.05rem;
   }
 
+  .repo-link {
+    font-size: 0.92rem;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .repo-link:hover {
+    text-decoration: underline;
+  }
+
+  .repo-link:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
   .view-details {
-    color: #60a5fa;
+    color: var(--text-primary);
     font-weight: 600;
     font-size: 1rem;
   }

@@ -1,3 +1,4 @@
+import { get } from 'svelte/store';
 import { describe, expect, it } from 'vitest';
 import * as store from './portfolioStore.js';
 
@@ -28,5 +29,6 @@ describe('portfolioStore public contract', () => {
     expect(typeof store.loadPortfolioData).toBe('function');
     expect(typeof store.toggleSortOrder).toBe('function');
     expect(typeof store.resetFilters).toBe('function');
+    expect(get(store.sortBy)).toBe('recent');
   });
 });

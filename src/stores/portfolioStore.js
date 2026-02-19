@@ -84,7 +84,7 @@ export const error = hasError;
 export const searchTerm = writable('');
 export const languageFilter = writable('all');
 export const categoryFilter = writable('all');
-export const sortBy = writable('lines');
+export const sortBy = writable('recent');
 export const sortOrder = writable('desc');
 export const selectedRepo = writable(null);
 
@@ -166,6 +166,6 @@ export function resetFilters() {
   searchTerm.set('');
   languageFilter.set('all');
   categoryFilter.set('all');
-  sortBy.set('lines');
+  sortBy.set('recent');
   sortOrder.set('desc');
 }

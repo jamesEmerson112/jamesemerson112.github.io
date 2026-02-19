@@ -6,6 +6,7 @@ const repoFixture = {
   id: 'repo-alpha',
   sourceRef: 'public:james/repo-alpha',
   name: 'Repo Alpha',
+  url: 'https://github.com/james/repo-alpha',
   description: 'Alpha project',
   primaryLanguage: 'TypeScript',
   isPrivate: false,
@@ -35,14 +36,15 @@ describe('RepoCard', () => {
     cleanup();
   });
 
-  it('does not render the tiny mini spider and shows quality snapshot rows', () => {
+  it('does not render the tiny mini spider and hides quality snapshot box', () => {
     const { container } = render(RepoCard, {
       props: { repo: repoFixture }
     });
 
     expect(container.querySelector('[data-variant="mini"]')).not.toBeInTheDocument();
-    expect(screen.getByText('Quality Snapshot')).toBeInTheDocument();
-    expect(screen.getByText('Scope')).toBeInTheDocument();
+    expect(screen.queryByText('Quality Snapshot')).not.toBeInTheDocument();
+    expect(screen.getByText('Language composition')).toBeInTheDocument();
+    expect(screen.getByText('View Details →')).toBeInTheDocument();
   });
 
   it('renders top-language composition strip for quick stack scan', () => {
@@ -53,5 +55,71 @@ describe('RepoCard', () => {
     const segments = container.querySelectorAll('.composition-segment');
     expect(segments.length).toBeGreaterThan(0);
     expect(screen.getAllByText('Language composition').length).toBeGreaterThan(0);
+  });
+
+  it('uses monochrome language badge styling without inline color overrides', () => {
+    const { container } = render(RepoCard, {
+      props: { repo: repoFixture }
+    });
+
+    const badge = container.querySelector('.language-badge');
+    expect(badge).toBeInTheDocument();
+    expect(badge?.getAttribute('style')).toBeNull();
+  });
+
+  it('shows a repository link for public repos only', () => {
+    const { unmount } = render(RepoCard, {
+      props: { repo: repoFixture }
+    });
+
+    const publicLink = screen.getByRole('link', { name: /View Repo/i });
+    expect(publicLink).toHaveAttribute('href', repoFixture.url);
+
+    unmount();
+
+    render(RepoCard, {
+      props: {
+        repo: {
+          ...repoFixture,
+          id: 'repo-private',
+          isPrivate: true,
+          isAnonymized: true,
+          url: null
+        }
+      }
+    });
+
+    expect(screen.queryByRole('link', { name: /View Repo/i })).not.toBeInTheDocument();
+  });
+
+  it('uses "Programming Language" label when top language is non-programming', () => {
+    render(RepoCard, {
+      props: {
+        repo: {
+          ...repoFixture,
+          id: 'repo-non-programming',
+          primaryLanguage: 'Plain Text'
+        }
+      }
+    });
+
+    expect(screen.getByText('Programming Language')).toBeInTheDocument();
+    expect(screen.queryByText('Plain Text')).not.toBeInTheDocument();
+  });
+
+  it('uses updated private copy label', () => {
+    render(RepoCard, {
+      props: {
+        repo: {
+          ...repoFixture,
+          id: 'repo-private-copy',
+          isPrivate: true,
+          isAnonymized: true,
+          description: null
+        }
+      }
+    });
+
+    expect(screen.getByText('Private Academic Projects')).toBeInTheDocument();
   });
 });

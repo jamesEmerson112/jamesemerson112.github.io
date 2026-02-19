@@ -1,4 +1,8 @@
-<div class="copyright">
+<script>
+  export let blendMode = 'difference';
+</script>
+
+<div class="copyright" style={`mix-blend-mode: ${blendMode};`}>
   <div class="credit">
     <span class="label">Inspired by</span>
     <a href="https://p5aholic.me/" 
@@ -17,8 +21,7 @@
     bottom: calc(var(--pad) * 0.5);
     font-size: 80%;
     opacity: 0.5;
-    mix-blend-mode: difference;
-    color: #fff;
+    color: var(--chrome-fg);
     text-align: right;
   }
   
