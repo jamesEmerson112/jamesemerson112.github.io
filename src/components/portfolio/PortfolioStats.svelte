@@ -48,7 +48,7 @@
   }
 </script>
 
-<div class="portfolio-stats">
+<div class="portfolio-stats" name="PortfolioStats">
   <div class="stats-container">
     <div class="stat-item">
       <div class="stat-value">

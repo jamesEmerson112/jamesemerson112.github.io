@@ -2,7 +2,7 @@
   export let blendMode = 'difference';
 </script>
 
-<div class="content" style={`mix-blend-mode: ${blendMode};`}>
+<div class="content" style={`mix-blend-mode: ${blendMode};`} name="ContentLayer">
   <div class="content_inner">
     <slot />
   </div>

@@ -193,11 +193,11 @@ describe('Option B portfolio overview integration', () => {
     expect(appSource).toContain('<PortfolioOverview />');
   });
 
-  it('uses compact header and normal blend mode on data pages while preserving home blend mode', async () => {
+  it('keeps header non-compact and preserves blend mode wiring for data pages vs home', async () => {
     const appSource = await fs.readFile(path.join(process.cwd(), 'src', 'App.svelte'), 'utf-8');
 
     expect(appSource).toContain("currentPage === 'projects' || currentPage === 'metrics'");
-    expect(appSource).toContain('compact={isDataPage}');
+    expect(appSource).toContain('compact={false}');
     expect(appSource).toContain("blendMode={isDataPage ? 'normal' : 'difference'}");
   });
 

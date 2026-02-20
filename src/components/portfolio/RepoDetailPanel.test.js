@@ -30,6 +30,18 @@ const repoFixture = {
   ]
 };
 
+const nonProgrammingPrimaryFixture = {
+  ...repoFixture,
+  id: 'repo-json-heavy',
+  primaryLanguage: 'JSON',
+  languages: [
+    { name: 'JSON', code: 900, complexity: 0 },
+    { name: 'Plain Text', code: 600, complexity: 0 },
+    { name: 'Python', code: 500, complexity: 40 },
+    { name: 'TypeScript', code: 300, complexity: 20 }
+  ]
+};
+
 describe('RepoDetailPanel', () => {
   afterEach(() => {
     cleanup();
@@ -69,6 +81,21 @@ describe('RepoDetailPanel', () => {
     await fireEvent.click(closeButton);
   });
 
+  it('uses programming colors in composition bars and buckets non-programming share into Other', () => {
+    render(RepoDetailPanel, {
+      props: { repo: nonProgrammingPrimaryFixture }
+    });
+
+    const bars = screen.getAllByTestId('language-composition-bar');
+    const pythonRow = bars.find((bar) => (
+      /(#3776ab|rgb\(55,\s*118,\s*171\))/i.test(bar.getAttribute('style') || '')
+    ));
+    expect(pythonRow).toBeTruthy();
+    expect(screen.getAllByText('Other').length).toBeGreaterThan(0);
+    expect(screen.queryByText('JSON')).not.toBeInTheDocument();
+    expect(screen.queryByText('Plain Text')).not.toBeInTheDocument();
+  });
+
   it('uses monochrome language chip styling without inline color overrides', () => {
     const { container } = render(RepoDetailPanel, {
       props: { repo: repoFixture }
@@ -104,18 +131,34 @@ describe('RepoDetailPanel', () => {
     expect(screen.queryByRole('link', { name: /View Repository/i })).not.toBeInTheDocument();
   });
 
-  it('uses "Programming Language" label when top language is non-programming', () => {
+  it('skips non-programming dominant candidates and shows first programming language', () => {
+    render(RepoDetailPanel, {
+      props: {
+        repo: nonProgrammingPrimaryFixture
+      }
+    });
+
+    expect(screen.getAllByText('Python').length).toBeGreaterThan(0);
+    expect(screen.queryByText('N/A')).not.toBeInTheDocument();
+    expect(screen.queryByText('JSON')).not.toBeInTheDocument();
+  });
+
+  it('shows N/A when all detected languages are non-programming', () => {
     render(RepoDetailPanel, {
       props: {
         repo: {
           ...repoFixture,
-          id: 'repo-non-programming',
-          primaryLanguage: 'JSON'
+          id: 'repo-no-programming',
+          primaryLanguage: 'JSON',
+          languages: [
+            { name: 'JSON', code: 500, complexity: 0 },
+            { name: 'Plain Text', code: 300, complexity: 0 }
+          ]
         }
       }
     });
 
-    expect(screen.getByText('Programming Language')).toBeInTheDocument();
+    expect(screen.getByText('N/A')).toBeInTheDocument();
     expect(screen.queryByText('JSON')).not.toBeInTheDocument();
   });
 

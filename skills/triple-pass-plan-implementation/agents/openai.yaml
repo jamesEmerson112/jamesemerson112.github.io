@@ -1,0 +1,4 @@
+interface:
+  display_name: "Triple Pass Plan"
+  short_description: "Run plan implementation in three quality-focused passes"
+  default_prompt: "Execute the latest approved plan in exactly three passes: baseline implementation, enhancement, and refactor/hardening, with verification and a per-pass summary."

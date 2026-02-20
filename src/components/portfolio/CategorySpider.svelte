@@ -103,7 +103,7 @@
   }
 </script>
 
-<section class="category-spider" aria-label={title}>
+<section class="category-spider" aria-label={title} name="CategorySpider">
   {#if showTitle}
     <h3>{title}</h3>
   {/if}
@@ -171,6 +171,7 @@
     border: 1px solid var(--surface-border);
     border-radius: 14px;
     padding: 0.95rem;
+    overflow: hidden;
     background: radial-gradient(
       circle at 50% 38%,
       color-mix(in srgb, var(--accent-primary) 20%, transparent),
@@ -187,6 +188,8 @@
   svg {
     display: block;
     margin: 0 auto;
+    max-width: 100%;
+    height: auto;
     overflow: visible;
   }
 

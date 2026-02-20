@@ -46,7 +46,7 @@
 
 </script>
 
-<div class="timeline-wrapper">
+<div class="timeline-wrapper" name="Timeline">
   <div class="timeline">
     {#each timelineData as entry, index}
       <div class="timeline-entry">

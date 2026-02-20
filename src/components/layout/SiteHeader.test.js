@@ -1,0 +1,113 @@
+import { afterEach, describe, expect, it, vi } from 'vitest';
+import { cleanup, fireEvent, render, screen } from '@testing-library/svelte';
+import SiteHeader from './SiteHeader.svelte';
+
+afterEach(() => {
+  cleanup();
+  vi.restoreAllMocks();
+});
+
+describe('SiteHeader', () => {
+  it('shows visible identity block in non-compact mode', () => {
+    const { container } = render(SiteHeader, {
+      props: {
+        currentPage: 'home',
+        compact: false
+      }
+    });
+
+    const identity = container.querySelector('.siteHeader_identity');
+    expect(identity).toBeInTheDocument();
+    expect(identity).not.toHaveClass('is-hidden');
+    expect(identity).toHaveAttribute('aria-hidden', 'false');
+    expect(screen.getByText('James')).toBeInTheDocument();
+    expect(screen.getByText('Emerson')).toBeInTheDocument();
+    expect(screen.getByText('Vo')).toBeInTheDocument();
+  });
+
+  it('keeps identity block mounted but hidden in compact mode', () => {
+    const { container } = render(SiteHeader, {
+      props: {
+        currentPage: 'projects',
+        compact: true
+      }
+    });
+
+    const identity = container.querySelector('.siteHeader_identity');
+    expect(identity).toBeInTheDocument();
+    expect(identity).toHaveClass('is-hidden');
+    expect(identity).toHaveAttribute('aria-hidden', 'true');
+
+    // Nav still rendered and usable in compact mode.
+    expect(screen.getByRole('button', { name: /Metrics/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Projects/i })).toBeInTheDocument();
+  });
+
+  it('keeps identity block mounted but hidden on metrics/projects even when compact is false', async () => {
+    const { component, container } = render(SiteHeader, {
+      props: {
+        currentPage: 'metrics',
+        compact: false
+      }
+    });
+
+    const identity = container.querySelector('.siteHeader_identity');
+    expect(identity).toBeInTheDocument();
+    expect(identity).toHaveClass('is-hidden');
+    expect(identity).toHaveAttribute('aria-hidden', 'true');
+
+    await component.$set({ currentPage: 'privacy' });
+    expect(identity).not.toHaveClass('is-hidden');
+    expect(identity).toHaveAttribute('aria-hidden', 'false');
+  });
+
+  it('dispatches page change events from nav buttons in both modes', async () => {
+    const handler = vi.fn();
+    window.addEventListener('pageChange', handler);
+
+    const { component } = render(SiteHeader, {
+      props: {
+        currentPage: 'home',
+        compact: false
+      }
+    });
+
+    await fireEvent.click(screen.getByRole('button', { name: /Metrics/i }));
+    expect(handler).toHaveBeenCalled();
+    expect(handler.mock.calls.at(-1)?.[0]?.detail).toBe('metrics');
+
+    await component.$set({ currentPage: 'metrics', compact: true });
+    await fireEvent.click(screen.getByRole('button', { name: /Projects/i }));
+    expect(handler.mock.calls.at(-1)?.[0]?.detail).toBe('projects');
+
+    window.removeEventListener('pageChange', handler);
+  });
+
+  it('toggles identity visibility state without removing the identity block from DOM', async () => {
+    const { component, container } = render(SiteHeader, {
+      props: {
+        currentPage: 'home',
+        compact: false
+      }
+    });
+
+    const identity = container.querySelector('.siteHeader_identity');
+    expect(identity).toBeInTheDocument();
+    expect(identity).not.toHaveClass('is-hidden');
+    expect(identity).toHaveAttribute('aria-hidden', 'false');
+
+    await component.$set({ compact: true });
+
+    const identityAfterCompact = container.querySelector('.siteHeader_identity');
+    expect(identityAfterCompact).toBe(identity);
+    expect(identityAfterCompact).toHaveClass('is-hidden');
+    expect(identityAfterCompact).toHaveAttribute('aria-hidden', 'true');
+
+    await component.$set({ compact: false });
+
+    const identityAfterExpand = container.querySelector('.siteHeader_identity');
+    expect(identityAfterExpand).toBe(identity);
+    expect(identityAfterExpand).not.toHaveClass('is-hidden');
+    expect(identityAfterExpand).toHaveAttribute('aria-hidden', 'false');
+  });
+});

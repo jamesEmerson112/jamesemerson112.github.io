@@ -38,7 +38,7 @@
   }
 </script>
 
-<section class="overall-dashboard">
+<section class="overall-dashboard" name="OverallCharacterDashboard">
   <header class="dashboard-header">
     <h1>Generalist Character Stats</h1>
     <p>
@@ -55,7 +55,7 @@
     <div class="state-card error">
       <h2>Unable to load metrics</h2>
       <p>{$error}</p>
-      <button type="button" on:click={loadPortfolioData}>Retry</button>
+      <button type="button" name="dashboard-retry" on:click={loadPortfolioData}>Retry</button>
     </div>
   {:else if $repos.length === 0}
     <div class="state-card">
@@ -70,6 +70,7 @@
             type="button"
             class="control-button {spiderScaleMode === option.id ? 'is-active' : ''}"
             aria-pressed={spiderScaleMode === option.id}
+            name={`spider-scale-${option.id}`}
             on:click={() => (spiderScaleMode = option.id)}
           >
             {option.label}
@@ -179,7 +180,7 @@
   .dashboard-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.2fr) minmax(320px, 1fr);
-    gap: 1rem;
+    gap: 1.35rem;
     align-items: start;
   }
 
@@ -228,6 +229,7 @@
   .left-column {
     display: grid;
     gap: 1rem;
+    min-width: 0;
   }
 
   .category-panel,
@@ -239,6 +241,8 @@
     background: var(--panel-cinematic-bg);
     box-shadow: var(--panel-cinematic-shadow);
     padding: 1rem;
+    min-width: 0;
+    overflow: hidden;
   }
 
   .proficiency-note {
@@ -344,7 +348,7 @@
     }
   }
 
-  @media (max-width: 980px) {
+  @media (max-width: 1160px) {
     .dashboard-grid {
       grid-template-columns: 1fr;
     }

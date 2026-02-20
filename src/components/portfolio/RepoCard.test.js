@@ -31,6 +31,18 @@ const repoFixture = {
   ]
 };
 
+const nonProgrammingPrimaryFixture = {
+  ...repoFixture,
+  id: 'repo-json-heavy',
+  primaryLanguage: 'JSON',
+  languages: [
+    { name: 'JSON', code: 900, complexity: 0 },
+    { name: 'Plain Text', code: 600, complexity: 0 },
+    { name: 'Python', code: 500, complexity: 40 },
+    { name: 'TypeScript', code: 300, complexity: 20 }
+  ]
+};
+
 describe('RepoCard', () => {
   afterEach(() => {
     cleanup();
@@ -55,6 +67,24 @@ describe('RepoCard', () => {
     const segments = container.querySelectorAll('.composition-segment');
     expect(segments.length).toBeGreaterThan(0);
     expect(screen.getAllByText('Language composition').length).toBeGreaterThan(0);
+  });
+
+  it('uses programming language colors and buckets non-programming share into gray Other', () => {
+    const { container } = render(RepoCard, {
+      props: { repo: nonProgrammingPrimaryFixture }
+    });
+
+    const pythonSegment = [...container.querySelectorAll('.composition-segment')]
+      .find((segment) => segment.getAttribute('title')?.startsWith('Python '));
+    const otherSegment = [...container.querySelectorAll('.composition-segment')]
+      .find((segment) => segment.getAttribute('title')?.startsWith('Other '));
+
+    expect(pythonSegment).toBeTruthy();
+    expect(pythonSegment?.getAttribute('style')).toMatch(/(#3776ab|rgb\(55,\s*118,\s*171\))/i);
+    expect(otherSegment).toBeTruthy();
+    expect(otherSegment?.getAttribute('style')).toContain('var(--mono-tone-5)');
+    expect(screen.queryByText('JSON')).not.toBeInTheDocument();
+    expect(screen.queryByText('Plain Text')).not.toBeInTheDocument();
   });
 
   it('uses monochrome language badge styling without inline color overrides', () => {
@@ -92,19 +122,36 @@ describe('RepoCard', () => {
     expect(screen.queryByRole('link', { name: /View Repo/i })).not.toBeInTheDocument();
   });
 
-  it('uses "Programming Language" label when top language is non-programming', () => {
+  it('skips non-programming dominant candidates and shows first programming language', () => {
+    render(RepoCard, {
+      props: {
+        repo: nonProgrammingPrimaryFixture
+      }
+    });
+
+    expect(screen.getByText('Python')).toBeInTheDocument();
+    expect(screen.queryByText('N/A')).not.toBeInTheDocument();
+    expect(screen.queryByText('Plain Text')).not.toBeInTheDocument();
+    expect(screen.queryByText('JSON')).not.toBeInTheDocument();
+  });
+
+  it('shows N/A when there is no programming language in the repository breakdown', () => {
     render(RepoCard, {
       props: {
         repo: {
           ...repoFixture,
-          id: 'repo-non-programming',
-          primaryLanguage: 'Plain Text'
+          id: 'repo-no-programming',
+          primaryLanguage: 'JSON',
+          languages: [
+            { name: 'JSON', code: 600, complexity: 0 },
+            { name: 'Plain Text', code: 400, complexity: 0 },
+            { name: 'Markdown', code: 200, complexity: 0 }
+          ]
         }
       }
     });
 
-    expect(screen.getByText('Programming Language')).toBeInTheDocument();
-    expect(screen.queryByText('Plain Text')).not.toBeInTheDocument();
+    expect(screen.getByText('N/A')).toBeInTheDocument();
   });
 
   it('uses updated private copy label', () => {

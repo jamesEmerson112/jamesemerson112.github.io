@@ -1,4 +1,4 @@
-<div class="mask">
+<div class="mask" name="Masks">
   <div class="mask_top"></div>
   <div class="mask_bottom"></div>
 </div>

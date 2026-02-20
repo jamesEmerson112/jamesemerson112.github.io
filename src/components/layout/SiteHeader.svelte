@@ -10,6 +10,8 @@
     { id: 'privacy', label: 'Privacy' }
   ];
 
+  $: hideIdentity = compact || currentPage === 'metrics' || currentPage === 'projects';
+
   function handlePageChange(pageId) {
     currentPage = pageId;
     // Dispatch event for parent to handle
@@ -17,8 +19,12 @@
   }
 </script>
 
-<header class="siteHeader" class:is-compact={compact}>
-  {#if !compact}
+<header class="siteHeader" class:is-compact={compact} name="SiteHeader">
+  <div
+    class="siteHeader_identity"
+    class:is-hidden={hideIdentity}
+    aria-hidden={hideIdentity ? 'true' : 'false'}
+  >
     <div class="siteHeader_title">
       <div>James</div>
       <div>Emerson</div>
@@ -29,7 +35,7 @@
       <p>I like to study both brains and neural networks.</p>
       <p>'Cure' neural networks == cure brains</p>
     </div>
-  {/if}
+  </div>
 
   <nav class="siteHeader_nav">
     <ol class:is-compact-list={compact}>
@@ -38,6 +44,8 @@
           <button
             on:click={() => handlePageChange(page.id)}
             class="nav-button"
+            type="button"
+            name={`nav-${page.id}`}
           >
             <span class="_dot">●</span>
             <span class="_text">{page.label}</span>
@@ -52,17 +60,35 @@
   .siteHeader {
     position: fixed;
     z-index: 10;
-    left: calc(var(--pad) * 2);
-    top: calc(var(--pad) * 2);
+    --site-header-anchor-left: calc(var(--pad) * 2);
+    --site-header-anchor-top: calc(var(--pad) * 2);
+    left: var(--site-header-anchor-left);
+    top: var(--site-header-anchor-top);
     mix-blend-mode: difference;
     color: var(--chrome-fg);
   }
 
   .siteHeader.is-compact {
-    left: calc(var(--pad) * 2);
-    right: auto;
-    top: calc(var(--pad) * 1.7);
     mix-blend-mode: normal;
+  }
+
+  /* Keep identity footprint so nav anchor does not jump between pages. */
+  .siteHeader_identity {
+    opacity: 1;
+    visibility: visible;
+    transition:
+      opacity 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s linear 0s;
+  }
+
+  .siteHeader_identity.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+    transition:
+      opacity 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s linear 0.28s;
   }
 
   .siteHeader_title {
@@ -101,10 +127,6 @@
     margin-top: 50px;
   }
 
-  .siteHeader.is-compact .siteHeader_nav {
-    margin-top: 0;
-  }
-
   .siteHeader_nav ol {
     display: flex;
     flex-direction: column;
@@ -138,14 +160,12 @@
   }
 
   .is-compact .nav-button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.33rem;
-    border: 1px solid var(--surface-border-strong);
-    border-radius: 999px;
-    padding: 0.3rem 0.66rem;
+    display: block;
+    border: none;
+    border-radius: 0;
+    padding: 0;
     color: var(--text-secondary);
-    background: var(--surface-glass);
+    background: transparent;
   }
 
   .nav-button ._dot {
@@ -196,11 +216,6 @@
   .is-selected ._text {
     opacity: 1;
     color: var(--text-primary);
-  }
-
-  .is-compact .is-selected .nav-button {
-    border-color: var(--chip-active-border);
-    background: var(--chip-active-bg);
   }
 
   .nav-button:focus-visible {

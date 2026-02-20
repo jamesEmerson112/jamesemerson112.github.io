@@ -108,7 +108,12 @@
   }
 </script>
 
-<div class="spider-chart" data-variant={isMini ? 'mini' : 'detail'} style="width: {size}px; height: {size}px;">
+<div
+  class="spider-chart"
+  name="LanguageSpider"
+  data-variant={isMini ? 'mini' : 'detail'}
+  style="width: {size}px; height: {size}px;"
+>
   {#if points.length === 0}
     <div class="empty-state">No language data</div>
   {:else}

@@ -1,18 +1,16 @@
 <script>
   import {
+    buildProgrammingComposition,
     formatNumber,
-    getDisplayPrimaryLanguage
+    getDisplayPrimaryLanguage,
+    getLanguageColor
   } from '../../utils/dataLoader.js';
   import { selectedRepo } from '../../stores/portfolioStore.js';
-  import { computePercentShare } from '../../utils/spiderTransforms.js';
 
   export let repo;
-  const COMPOSITION_TONES = [
-    'var(--mono-tone-1)',
-    'var(--mono-tone-2)',
-    'var(--mono-tone-3)',
-    'var(--mono-tone-4)'
-  ];
+  const PROGRAMMING_LANGUAGE_LIMIT = 4;
+  const OTHER_THRESHOLD_PERCENT = 0.5;
+  const OTHER_COLOR = 'var(--mono-tone-5)';
 
   function handleClick() {
     selectedRepo.set(repo);
@@ -25,15 +23,13 @@
     }
   }
 
-  $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo.primaryLanguage);
+  $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo.primaryLanguage, repo.languages || []);
   $: topProjectTags = Array.isArray(repo.projectTags) ? repo.projectTags.slice(0, 2) : [];
 
-  $: rawShares = computePercentShare(repo.languages || [], 'code');
-  $: topShares = rawShares.slice(0, 4);
-  $: remainderShare = Math.max(0, 100 - topShares.reduce((sum, item) => sum + item.percent, 0));
-  $: compositionShares = remainderShare > 0.4
-    ? [...topShares, { name: 'Other', percent: remainderShare, code: 0, complexity: 0 }]
-    : topShares;
+  $: compositionShares = buildProgrammingComposition(repo.languages || [], {
+    maxProgrammingLanguages: PROGRAMMING_LANGUAGE_LIMIT,
+    otherThresholdPercent: OTHER_THRESHOLD_PERCENT
+  });
   $: repoUrl = repo?.url || repo?.htmlUrl || null;
   $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
 
@@ -42,16 +38,17 @@
     return Math.max(0, Math.min(100, safe));
   }
 
-  function compositionColor(name, index) {
+  function compositionColor(name) {
     if (name === 'Other') {
-      return 'var(--mono-tone-5)';
+      return OTHER_COLOR;
     }
-    return COMPOSITION_TONES[index % COMPOSITION_TONES.length];
+    return getLanguageColor(name);
   }
 </script>
 
 <div
   class="repo-card"
+  name="RepoCard"
   role="button"
   tabindex="0"
   on:click={handleClick}
@@ -111,18 +108,18 @@
     <section class="language-composition" aria-label="Language composition">
       <div class="composition-label">Language composition</div>
       <div class="composition-track" role="img" aria-label="Top language composition by code share">
-        {#each compositionShares as language, index}
+        {#each compositionShares as language}
           <div
             class="composition-segment"
             title={`${language.name} ${language.percent.toFixed(1)}%`}
-            style="width: {toPercent(language.percent)}%; background-color: {compositionColor(language.name, index)}"
+            style="width: {toPercent(language.percent)}%; background-color: {compositionColor(language.name)}"
           ></div>
         {/each}
       </div>
       <div class="composition-legend">
-        {#each compositionShares as language, index}
+        {#each compositionShares as language}
           <span class="legend-item">
-            <span class="legend-dot" style="background-color: {compositionColor(language.name, index)}"></span>
+            <span class="legend-dot" style="background-color: {compositionColor(language.name)}"></span>
             {language.name} {language.percent.toFixed(0)}%
           </span>
         {/each}

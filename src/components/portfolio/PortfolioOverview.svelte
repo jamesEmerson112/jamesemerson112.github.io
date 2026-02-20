@@ -50,7 +50,7 @@
   }
 </script>
 
-<section class="portfolio-overview">
+<section class="portfolio-overview" name="PortfolioOverview">
   <div class="container">
     <!-- Header -->
     <header class="section-header">
@@ -72,7 +72,7 @@
         <span class="error-icon">⚠️</span>
         <h3>Failed to load metrics</h3>
         <p>{$error}</p>
-        <button class="retry-button" on:click={loadPortfolioData}>
+        <button class="retry-button" on:click={loadPortfolioData} type="button" name="portfolio-retry">
           Try Again
         </button>
       </div>
@@ -98,6 +98,7 @@
               type="button"
               class="load-more-button"
               on:click={loadMoreRepos}
+              name="projects-load-more"
             >
               Load 12 more
             </button>

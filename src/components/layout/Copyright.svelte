@@ -2,7 +2,7 @@
   export let blendMode = 'difference';
 </script>
 
-<div class="copyright" style={`mix-blend-mode: ${blendMode};`}>
+<div class="copyright" style={`mix-blend-mode: ${blendMode};`} name="Copyright">
   <div class="credit">
     <span class="label">Inspired by</span>
     <a href="https://p5aholic.me/" 

@@ -79,7 +79,7 @@
   });
 </script>
 
-<section class="metrics-section">
+<section class="metrics-section" name="CodeMetrics">
   <div class="section-header">
     <h2>📊 Code Metrics</h2>
     <p class="section-subtitle">Project statistics and development estimates</p>

@@ -2,12 +2,13 @@
   import { createEventDispatcher, onMount, tick } from 'svelte';
   import CategorySpider from './CategorySpider.svelte';
   import {
+    buildProgrammingComposition,
     formatCurrency,
     formatDuration,
     formatNumber,
-    getDisplayPrimaryLanguage
+    getDisplayPrimaryLanguage,
+    getLanguageColor
   } from '../../utils/dataLoader.js';
-  import { computePercentShare } from '../../utils/spiderTransforms.js';
   import { computeRepoQualitySignals } from '../../utils/profileMetrics.js';
   import { qualityBaselines } from '../../stores/portfolioStore.js';
 
@@ -17,46 +18,28 @@
   let closeButton;
   let previouslyFocused;
   let panelWasOpen = false;
-  const COMPOSITION_TONES = [
-    'var(--mono-tone-1)',
-    'var(--mono-tone-2)',
-    'var(--mono-tone-3)',
-    'var(--mono-tone-4)'
-  ];
+  const OTHER_COLOR = 'var(--mono-tone-5)';
 
   $: savingsPercent = repo?.summary?.traditionalCost > 0
     ? Math.round(((repo.summary.traditionalCost - repo.summary.aiCost) / repo.summary.traditionalCost) * 100)
     : 0;
 
-  $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo?.primaryLanguage || '');
+  $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo?.primaryLanguage || '', repo?.languages || []);
   $: topProjectTags = Array.isArray(repo?.projectTags) ? repo.projectTags.slice(0, 2) : [];
   $: qualitySignals = repo ? computeRepoQualitySignals(repo, $qualityBaselines) : [];
-  $: languageRows = buildLanguageRows(repo?.languages || []);
+  $: languageRows = buildProgrammingComposition(repo?.languages || []);
   $: repoUrl = repo?.url || repo?.htmlUrl || null;
   $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
-
-  function buildLanguageRows(languages) {
-    const codeRows = computePercentShare(languages, 'code');
-    const complexityMap = new Map(
-      computePercentShare(languages, 'complexity')
-        .map((item) => [item.name, item.percent])
-    );
-
-    return codeRows.map((item) => ({
-      ...item,
-      complexityPercent: complexityMap.get(item.name) ?? 0
-    }));
-  }
 
   function closePanel() {
     dispatch('close');
   }
 
-  function compositionColor(name, index) {
+  function compositionColor(name) {
     if (name === 'Other') {
-      return 'var(--mono-tone-5)';
+      return OTHER_COLOR;
     }
-    return COMPOSITION_TONES[index % COMPOSITION_TONES.length];
+    return getLanguageColor(name);
   }
 
   function scoreClass(score) {
@@ -95,7 +78,7 @@
 </script>
 
 {#if repo}
-  <div class="detail-overlay" role="presentation" on:click|self={closePanel}>
+  <div class="detail-overlay" name="RepoDetailPanel" role="presentation" on:click|self={closePanel}>
     <aside
       class="detail-panel"
       role="dialog"
@@ -129,6 +112,7 @@
             bind:this={closeButton}
             class="close-btn"
             type="button"
+            name="repo-detail-close"
             on:click={closePanel}
             aria-label="Close repository details"
           >
@@ -198,7 +182,7 @@
             <h3>Language composition</h3>
             {#if languageRows.length > 0}
               <div class="composition-bars" aria-hidden="true">
-                {#each languageRows as language, index}
+                {#each languageRows as language}
                   <div class="composition-row">
                     <div class="composition-meta">
                       <span>{language.name}</span>
@@ -207,7 +191,7 @@
                     <div class="composition-track">
                       <div
                         class="composition-fill"
-                        style="width: {Math.max(0, Math.min(100, language.percent))}%; background-color: {compositionColor(language.name, index)}"
+                        style="width: {Math.max(0, Math.min(100, language.percent))}%; background-color: {compositionColor(language.name)}"
                         data-testid="language-composition-bar"
                       ></div>
                     </div>

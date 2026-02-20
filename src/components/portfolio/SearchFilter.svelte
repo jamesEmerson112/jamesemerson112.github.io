@@ -24,18 +24,25 @@
   }
 </script>
 
-<div class="search-filter">
+<div class="search-filter" name="SearchFilter">
   <div class="search-box">
     <span class="search-icon">🔍</span>
     <input
       type="text"
+      name="repo-search"
       placeholder="Search repositories..."
       bind:value={$searchTerm}
       class="search-input"
       aria-label="Search repositories"
     />
     {#if $searchTerm}
-      <button class="clear-button" on:click={() => searchTerm.set('')} title="Clear search" type="button">
+      <button
+        class="clear-button"
+        on:click={() => searchTerm.set('')}
+        title="Clear search"
+        type="button"
+        name="repo-search-clear"
+      >
         ✕
       </button>
     {/if}
@@ -50,6 +57,7 @@
           class:active={$categoryFilter === 'all'}
           class="category-chip"
           aria-pressed={$categoryFilter === 'all'}
+          name="category-all"
           on:click={() => setCategory('all')}
         >
           All
@@ -60,6 +68,7 @@
             class:active={$categoryFilter === category}
             class="category-chip"
             aria-pressed={$categoryFilter === category}
+            name={`category-${category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
             on:click={() => setCategory(category)}
           >
             {category}
@@ -72,7 +81,7 @@
   <div class="filters">
     <div class="filter-group">
       <label for="language-filter" class="filter-label">Language:</label>
-      <select id="language-filter" bind:value={$languageFilter} class="filter-select">
+      <select id="language-filter" name="language-filter" bind:value={$languageFilter} class="filter-select">
         <option value="all">All Languages</option>
         {#each $availableLanguages as language}
           <option value={language}>{language}</option>
@@ -82,14 +91,14 @@
 
     <div class="filter-group">
       <label for="sort-by" class="filter-label">Sort by:</label>
-      <select id="sort-by" bind:value={$sortBy} class="filter-select">
+      <select id="sort-by" name="sort-by" bind:value={$sortBy} class="filter-select">
         {#each sortOptions as option}
           <option value={option.value}>{option.label}</option>
         {/each}
       </select>
     </div>
 
-    <button class="sort-toggle" on:click={toggleSortOrder} title="Toggle sort order" type="button">
+    <button class="sort-toggle" on:click={toggleSortOrder} title="Toggle sort order" type="button" name="sort-order-toggle">
       {#if $sortOrder === 'desc'}
         <span class="toggle-icon">↓</span>
         <span class="toggle-label">Desc</span>
@@ -99,7 +108,7 @@
       {/if}
     </button>
 
-    <button class="reset-button" on:click={resetFilters} title="Reset all filters" type="button">
+    <button class="reset-button" on:click={resetFilters} title="Reset all filters" type="button" name="filters-reset">
       <span class="reset-icon">↻</span>
       <span class="reset-label">Reset</span>
     </button>

@@ -2,7 +2,7 @@
   export let blendMode = 'difference';
 </script>
 
-<div class="frame" style={`mix-blend-mode: ${blendMode};`}>
+<div class="frame" style={`mix-blend-mode: ${blendMode};`} name="Frame">
   <div class="frame_line frame_line-left"></div>
   <div class="frame_line frame_line-right"></div>
   <div class="frame_line frame_line-top"></div>

@@ -113,7 +113,7 @@
 <PageContainer>
   <!-- Layer 10: UI Chrome -->
   <Frame blendMode={isDataPage ? 'normal' : 'difference'} />
-  <SiteHeader {currentPage} compact={isDataPage} />
+  <SiteHeader {currentPage} compact={false} />
   <ThemeSwitcher blendMode={isDataPage ? 'normal' : 'difference'} />
   <Copyright blendMode={isDataPage ? 'normal' : 'difference'} />
 
@@ -127,25 +127,25 @@
     {/if}
 
     {#if currentPage === 'home'}
-      <div class="page home">
+      <div class="page home" name="AppHomePage">
         <div class="home_content">
           <Timeline />
         </div>
       </div>
     {:else if currentPage === 'projects'}
-      <div class="page projects data-page">
+      <div class="page projects data-page" name="AppProjectsPage">
         <div class="projects_content data_content">
           <PortfolioOverview />
         </div>
       </div>
     {:else if currentPage === 'metrics'}
-      <div class="page metrics data-page">
+      <div class="page metrics data-page" name="AppMetricsPage">
         <div class="metrics_content data_content">
           <OverallCharacterDashboard />
         </div>
       </div>
     {:else if currentPage === 'contact'}
-      <div class="page contact">
+      <div class="page contact" name="AppContactPage">
         <div class="contact_content">
           <h2>Get in Touch</h2>
           <div class="contact_links">
@@ -168,7 +168,7 @@
         </div>
       </div>
     {:else if currentPage === 'privacy'}
-      <div class="page privacy">
+      <div class="page privacy" name="AppPrivacyPage">
         <div class="privacy_content">
           <h2>Privacy</h2>
           <p class="privacy_summary">
@@ -268,6 +268,8 @@
 
   .data_content {
     padding-top: clamp(6rem, 11vw, 7.5rem);
+    /* Reserve a left rail so fixed site navigation never overlaps data cards. */
+    padding-left: calc((var(--pad) * 2) + clamp(8.5rem, 12vw, 11.5rem));
   }
 
   /* Contact Page */
@@ -355,6 +357,7 @@
   @media (max-width: 900px) {
     .data_content {
       padding-top: clamp(6.5rem, 18vw, 8.5rem);
+      padding-left: calc(var(--pad) * 2);
     }
   }
 </style>
