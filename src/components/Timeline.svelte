@@ -78,7 +78,7 @@
     flex-direction: column;
     gap: 0.5em;
     padding-bottom: 1.5em;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid var(--border-secondary);
   }
 
   .timeline-entry:last-child {
@@ -90,7 +90,7 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: #fff;
+    color: var(--text-secondary);
     opacity: 0.6;
   }
 
@@ -103,7 +103,7 @@
   .timeline-item {
     font-size: 13px;
     line-height: 1.5;
-    color: #fff;
+    color: var(--text-primary);
     opacity: 0.85;
   }
 
