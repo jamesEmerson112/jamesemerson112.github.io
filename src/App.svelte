@@ -123,61 +123,61 @@
   <!-- Layer 2: Content -->
   <ContentLayer blendMode={isDataPage ? 'normal' : 'difference'}>
     {#if isDataPage}
-      <div class="data-page-aura" aria-hidden="true"></div>
+      <div class="data-page-aura" aria-hidden="true" name="AppDiv1"></div>
     {/if}
 
     {#if currentPage === 'home'}
       <div class="page home" name="AppHomePage">
-        <div class="home_content">
+        <div class="home_content" name="AppDiv2">
           <Timeline />
         </div>
       </div>
     {:else if currentPage === 'projects'}
       <div class="page projects data-page" name="AppProjectsPage">
-        <div class="projects_content data_content">
+        <div class="projects_content data_content" name="AppDiv3">
           <PortfolioOverview />
         </div>
       </div>
     {:else if currentPage === 'metrics'}
       <div class="page metrics data-page" name="AppMetricsPage">
-        <div class="metrics_content data_content">
+        <div class="metrics_content data_content" name="AppDiv4">
           <OverallCharacterDashboard />
         </div>
       </div>
     {:else if currentPage === 'contact'}
       <div class="page contact" name="AppContactPage">
-        <div class="contact_content">
-          <h2>Get in Touch</h2>
-          <div class="contact_links">
+        <div class="contact_content" name="AppDiv5">
+          <h2 name="AppH26">Get in Touch</h2>
+          <div class="contact_links" name="AppDiv7">
             <a href="https://x.com/V_like_flan"
                target="_blank"
                rel="noopener noreferrer"
-               class="contact_link">
-              <span class="link_label">Twitter</span>
-              <span class="link_handle">@V_like_flan</span>
+               class="contact_link" name="AppA8">
+              <span class="link_label" name="AppSpan9">Twitter</span>
+              <span class="link_handle" name="AppSpan10">@V_like_flan</span>
             </a>
 
             <a href="https://www.linkedin.com/in/james-vo/"
                target="_blank"
                rel="noopener noreferrer"
-               class="contact_link">
-              <span class="link_label">LinkedIn</span>
-              <span class="link_handle">james-vo</span>
+               class="contact_link" name="AppA11">
+              <span class="link_label" name="AppSpan12">LinkedIn</span>
+              <span class="link_handle" name="AppSpan13">james-vo</span>
             </a>
           </div>
         </div>
       </div>
     {:else if currentPage === 'privacy'}
       <div class="page privacy" name="AppPrivacyPage">
-        <div class="privacy_content">
-          <h2>Privacy</h2>
-          <p class="privacy_summary">
-            This site uses Google Analytics<br />
+        <div class="privacy_content" name="AppDiv14">
+          <h2 name="AppH215">Privacy</h2>
+          <p class="privacy_summary" name="AppP16">
+            This site uses Google Analytics<br name="AppBr17" />
             to understand how visitors use the site.
           </p>
           <a href="/privacy.html"
              target="_blank"
-             class="privacy_link">
+             class="privacy_link" name="AppA18">
             Full Privacy Policy →
           </a>
         </div>

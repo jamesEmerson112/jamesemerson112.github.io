@@ -9,8 +9,8 @@
 
 <div class="theme" style={`mix-blend-mode: ${blendMode};`} name="ThemeSwitcher">
   <button on:click={toggleTheme} class="theme_btn" type="button" name="theme-toggle">
-    <span class="_box"></span>
-    <span class="_text">{$darkMode ? 'Dark' : 'Light'}</span>
+    <span class="_box" name="ThemeSwitcherSpan1"></span>
+    <span class="_text" name="ThemeSwitcherSpan2">{$darkMode ? 'Dark' : 'Light'}</span>
   </button>
 </div>
 

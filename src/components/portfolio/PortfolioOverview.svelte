@@ -51,27 +51,27 @@
 </script>
 
 <section class="portfolio-overview" name="PortfolioOverview">
-  <div class="container">
+  <div class="container" name="PortfolioOverviewDiv1">
     <!-- Header -->
-    <header class="section-header">
-      <h1>Portfolio Metrics</h1>
-      <p class="section-subtitle">
+    <header class="section-header" name="PortfolioOverviewHeader2">
+      <h1 name="PortfolioOverviewH13">Portfolio Metrics</h1>
+      <p class="section-subtitle" name="PortfolioOverviewP4">
         Comprehensive analysis of my development portfolio, powered by AI
       </p>
     </header>
 
     {#if $loading}
       <!-- Loading State -->
-      <div class="loading-state">
-        <div class="spinner"></div>
-        <p>Loading portfolio metrics...</p>
+      <div class="loading-state" name="PortfolioOverviewDiv5">
+        <div class="spinner" name="PortfolioOverviewDiv6"></div>
+        <p name="PortfolioOverviewP7">Loading portfolio metrics...</p>
       </div>
     {:else if $error}
       <!-- Error State -->
-      <div class="error-state">
-        <span class="error-icon">⚠️</span>
-        <h3>Failed to load metrics</h3>
-        <p>{$error}</p>
+      <div class="error-state" name="PortfolioOverviewDiv8">
+        <span class="error-icon" name="PortfolioOverviewSpan9">⚠️</span>
+        <h3 name="PortfolioOverviewH310">Failed to load metrics</h3>
+        <p name="PortfolioOverviewP11">{$error}</p>
         <button class="retry-button" on:click={loadPortfolioData} type="button" name="portfolio-retry">
           Try Again
         </button>
@@ -82,18 +82,18 @@
 
       <!-- Repositories Grid -->
       {#if $filteredRepos.length > 0}
-        <div class="repos-header">
-          <h2>Recent Projects ({shownCount} of {$filteredRepos.length})</h2>
+        <div class="repos-header" name="PortfolioOverviewDiv12">
+          <h2 name="PortfolioOverviewH213">Recent Projects ({shownCount} of {$filteredRepos.length})</h2>
         </div>
 
-        <div class="repos-grid">
+        <div class="repos-grid" name="PortfolioOverviewDiv14">
           {#each visibleRepos as repo (repo.id)}
             <RepoCard {repo} />
           {/each}
         </div>
 
         {#if shownCount < $filteredRepos.length}
-          <div class="load-more-wrap">
+          <div class="load-more-wrap" name="PortfolioOverviewDiv15">
             <button
               type="button"
               class="load-more-button"
@@ -106,10 +106,10 @@
         {/if}
       {:else}
         <!-- Empty State -->
-        <div class="empty-state">
-          <span class="empty-icon">🔍</span>
-          <h3>No repositories found</h3>
-          <p>Try adjusting your search or filters</p>
+        <div class="empty-state" name="PortfolioOverviewDiv16">
+          <span class="empty-icon" name="PortfolioOverviewSpan17">🔍</span>
+          <h3 name="PortfolioOverviewH318">No repositories found</h3>
+          <p name="PortfolioOverviewP19">Try adjusting your search or filters</p>
         </div>
       {/if}
     {/if}

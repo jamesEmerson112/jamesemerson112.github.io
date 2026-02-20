@@ -3,11 +3,11 @@
 </script>
 
 <div class="copyright" style={`mix-blend-mode: ${blendMode};`} name="Copyright">
-  <div class="credit">
-    <span class="label">Inspired by</span>
+  <div class="credit" name="CopyrightDiv1">
+    <span class="label" name="CopyrightSpan2">Inspired by</span>
     <a href="https://p5aholic.me/" 
        target="_blank" 
-       rel="noopener noreferrer">
+       rel="noopener noreferrer" name="CopyrightA3">
       Keita Yamada
     </a>
   </div>

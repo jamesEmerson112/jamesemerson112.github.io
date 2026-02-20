@@ -1,6 +1,6 @@
 <div class="mask" name="Masks">
-  <div class="mask_top"></div>
-  <div class="mask_bottom"></div>
+  <div class="mask_top" name="MasksDiv1"></div>
+  <div class="mask_bottom" name="MasksDiv2"></div>
 </div>
 
 <style>

@@ -115,7 +115,7 @@
   style="width: {size}px; height: {size}px;"
 >
   {#if points.length === 0}
-    <div class="empty-state">No language data</div>
+    <div class="empty-state" name="LanguageSpiderDiv1">No language data</div>
   {:else}
     <svg
       width={size}
@@ -123,30 +123,29 @@
       viewBox="0 0 {size} {size}"
       role="img"
       aria-label={isMini ? 'Repository language share chart' : 'Repository language share detail chart'}
-    >
-      <title>{activeMetric === 'code' ? 'Code % share by language' : 'Complexity % share by language'}</title>
+     name="LanguageSpiderSvg2">
+      <title name="LanguageSpiderTitle3">{activeMetric === 'code' ? 'Code % share by language' : 'Complexity % share by language'}</title>
 
-      <g class="grid">
+      <g class="grid" name="LanguageSpiderG4">
         {#each gridPaths as gridPath, index}
           <path
             d={gridPath}
             fill="none"
             stroke={isMini ? 'rgba(148, 163, 184, 0.22)' : 'rgba(148, 163, 184, 0.28)'}
-            stroke-width="1"
-          />
+            stroke-width="1" name="LanguageSpiderPath5" />
           {#if !isMini}
             <text
               x={center + 4}
               y={(center - radius * (gridLevels[index] / 100)) + 2}
               class="grid-label"
-            >
+             name="LanguageSpiderText6">
               {gridLevels[index]}%
             </text>
           {/if}
         {/each}
       </g>
 
-      <g class="axes">
+      <g class="axes" name="LanguageSpiderG7">
         {#each points as point}
           <line
             x1={center}
@@ -154,23 +153,20 @@
             x2={point.axisX}
             y2={point.axisY}
             stroke="rgba(148, 163, 184, 0.45)"
-            stroke-width="1"
-          />
+            stroke-width="1" name="LanguageSpiderLine8" />
         {/each}
       </g>
 
       <path
         d={shapePath}
         class="data-area"
-        fill={activeMetric === 'complexity' ? 'rgba(239, 68, 68, 0.22)' : 'rgba(59, 130, 246, 0.22)'}
-      />
+        fill={activeMetric === 'complexity' ? 'rgba(239, 68, 68, 0.22)' : 'rgba(59, 130, 246, 0.22)'} name="LanguageSpiderPath9" />
       <path
         d={shapePath}
         class="data-shape"
         fill="none"
         stroke={seriesColor}
-        stroke-width={isMini ? 2.25 : 2.5}
-      />
+        stroke-width={isMini ? 2.25 : 2.5} name="LanguageSpiderPath10" />
 
       {#each points as point}
         <circle
@@ -188,6 +184,7 @@
           on:mouseleave={handlePointBlur}
           on:focus={() => handlePointFocus(point.name)}
           on:blur={handlePointBlur}
+          name={`LanguageSpiderDataPoint-${point.name}`}
         />
       {/each}
 
@@ -199,7 +196,7 @@
             y={point.labelY}
             text-anchor={getTextAnchor(point.angle)}
             dominant-baseline={getBaseline(point.angle)}
-          >
+           name="LanguageSpiderText12">
             {point.name}
           </text>
         {/each}
@@ -207,17 +204,17 @@
     </svg>
 
     {#if effectiveShowLegend}
-      <div class="legend">
-        <span class="legend-dot" style="background-color: {seriesColor};"></span>
-        <span>{activeMetric === 'code' ? 'Code % share' : 'Complexity % share'}</span>
+      <div class="legend" name="LanguageSpiderDiv13">
+        <span class="legend-dot" style="background-color: {seriesColor};" name="LanguageSpiderSpan14"></span>
+        <span name="LanguageSpiderSpan15">{activeMetric === 'code' ? 'Code % share' : 'Complexity % share'}</span>
       </div>
     {/if}
 
     {#if !isMini && hoveredPoint}
-      <div class="tooltip">
-        <strong>{hoveredPoint.name}</strong>
-        <div>Code: {hoveredPoint.code.toLocaleString()} ({formatPercent(hoveredPoint.codePercent)})</div>
-        <div>Complexity: {hoveredPoint.complexity.toLocaleString()} ({formatPercent(hoveredPoint.complexityPercent)})</div>
+      <div class="tooltip" name="LanguageSpiderDiv16">
+        <strong name="LanguageSpiderStrong17">{hoveredPoint.name}</strong>
+        <div name="LanguageSpiderDiv18">Code: {hoveredPoint.code.toLocaleString()} ({formatPercent(hoveredPoint.codePercent)})</div>
+        <div name="LanguageSpiderDiv19">Complexity: {hoveredPoint.complexity.toLocaleString()} ({formatPercent(hoveredPoint.complexityPercent)})</div>
       </div>
     {/if}
   {/if}

@@ -55,71 +55,71 @@
   on:keydown={handleKeydown}
   aria-label={`Open details for ${repo.name}`}
 >
-  <div class="card-header">
-    <div class="repo-title">
+  <div class="card-header" name="RepoCardDiv1">
+    <div class="repo-title" name="RepoCardDiv2">
       {#if repo.isPrivate}
-        <span class="privacy-badge" title="Private Repository">🔒</span>
+        <span class="privacy-badge" title="Private Repository" name="RepoCardSpan3">🔒</span>
       {/if}
-      <h3>{repo.name}</h3>
+      <h3 name="RepoCardH34">{repo.name}</h3>
     </div>
     {#if displayPrimaryLanguage}
-      <span class="language-badge">
-        <span class="language-dot"></span>
+      <span class="language-badge" name="RepoCardSpan5">
+        <span class="language-dot" name="RepoCardSpan6"></span>
         {displayPrimaryLanguage}
       </span>
     {/if}
   </div>
 
   {#if repo.description && !repo.isAnonymized}
-    <p class="repo-description">{repo.description}</p>
+    <p class="repo-description" name="RepoCardP7">{repo.description}</p>
   {:else if repo.isAnonymized}
-    <p class="repo-description muted">Private Academic Projects</p>
+    <p class="repo-description muted" name="RepoCardP8">Private Academic Projects</p>
   {/if}
 
   {#if topProjectTags.length > 0}
-    <div class="project-tags" aria-label="Project type signals">
+    <div class="project-tags" aria-label="Project type signals" name="RepoCardDiv9">
       {#each topProjectTags as tag}
-        <span class="project-tag">
+        <span class="project-tag" name="RepoCardSpan10">
           {tag.label} {Math.round((tag.confidence || 0) * 100)}%
         </span>
       {/each}
     </div>
   {/if}
 
-  <div class="repo-stats">
-    <div class="stat">
-      <span class="stat-icon">📊</span>
-      <span class="stat-value">{formatNumber(repo.summary.lines)}</span>
-      <span class="stat-label">lines</span>
+  <div class="repo-stats" name="RepoCardDiv11">
+    <div class="stat" name="RepoCardDiv12">
+      <span class="stat-icon" name="RepoCardSpan13">📊</span>
+      <span class="stat-value" name="RepoCardSpan14">{formatNumber(repo.summary.lines)}</span>
+      <span class="stat-label" name="RepoCardSpan15">lines</span>
     </div>
-    <div class="stat">
-      <span class="stat-icon">📁</span>
-      <span class="stat-value">{repo.summary.files}</span>
-      <span class="stat-label">files</span>
+    <div class="stat" name="RepoCardDiv16">
+      <span class="stat-icon" name="RepoCardSpan17">📁</span>
+      <span class="stat-value" name="RepoCardSpan18">{repo.summary.files}</span>
+      <span class="stat-label" name="RepoCardSpan19">files</span>
     </div>
-    <div class="stat">
-      <span class="stat-icon">🧮</span>
-      <span class="stat-value">{repo.summary.complexity}</span>
-      <span class="stat-label">complexity</span>
+    <div class="stat" name="RepoCardDiv20">
+      <span class="stat-icon" name="RepoCardSpan21">🧮</span>
+      <span class="stat-value" name="RepoCardSpan22">{repo.summary.complexity}</span>
+      <span class="stat-label" name="RepoCardSpan23">complexity</span>
     </div>
   </div>
 
   {#if compositionShares.length > 0}
-    <section class="language-composition" aria-label="Language composition">
-      <div class="composition-label">Language composition</div>
-      <div class="composition-track" role="img" aria-label="Top language composition by code share">
+    <section class="language-composition" aria-label="Language composition" name="RepoCardSection24">
+      <div class="composition-label" name="RepoCardDiv25">Language composition</div>
+      <div class="composition-track" role="img" aria-label="Top language composition by code share" name="RepoCardDiv26">
         {#each compositionShares as language}
           <div
             class="composition-segment"
             title={`${language.name} ${language.percent.toFixed(1)}%`}
             style="width: {toPercent(language.percent)}%; background-color: {compositionColor(language.name)}"
-          ></div>
+           name="RepoCardDiv27"></div>
         {/each}
       </div>
-      <div class="composition-legend">
+      <div class="composition-legend" name="RepoCardDiv28">
         {#each compositionShares as language}
-          <span class="legend-item">
-            <span class="legend-dot" style="background-color: {compositionColor(language.name)}"></span>
+          <span class="legend-item" name="RepoCardSpan29">
+            <span class="legend-dot" style="background-color: {compositionColor(language.name)}" name="RepoCardSpan30"></span>
             {language.name} {language.percent.toFixed(0)}%
           </span>
         {/each}
@@ -127,7 +127,7 @@
     </section>
   {/if}
 
-  <div class="card-footer">
+  <div class="card-footer" name="RepoCardDiv31">
     {#if canShowRepoLink}
       <a
         class="repo-link"
@@ -136,11 +136,11 @@
         rel="noopener noreferrer"
         on:click|stopPropagation
         aria-label={`View Repo: ${repo.name}`}
-      >
+       name="RepoCardA32">
         View Repo ↗
       </a>
     {/if}
-    <span class="view-details">View Details →</span>
+    <span class="view-details" name="RepoCardSpan33">View Details →</span>
   </div>
 </div>
 

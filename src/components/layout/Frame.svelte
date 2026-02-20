@@ -3,10 +3,10 @@
 </script>
 
 <div class="frame" style={`mix-blend-mode: ${blendMode};`} name="Frame">
-  <div class="frame_line frame_line-left"></div>
-  <div class="frame_line frame_line-right"></div>
-  <div class="frame_line frame_line-top"></div>
-  <div class="frame_line frame_line-bottom"></div>
+  <div class="frame_line frame_line-left" name="FrameDiv1"></div>
+  <div class="frame_line frame_line-right" name="FrameDiv2"></div>
+  <div class="frame_line frame_line-top" name="FrameDiv3"></div>
+  <div class="frame_line frame_line-bottom" name="FrameDiv4"></div>
 </div>
 
 <style>

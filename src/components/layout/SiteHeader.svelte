@@ -28,9 +28,9 @@
     name="SiteHeaderIdentity"
   >
     <div class="siteHeader_title" name="SiteHeaderTitle">
-      <div>James</div>
-      <div>Emerson</div>
-      <div>Vo</div>
+      <div name="SiteHeaderDiv1">James</div>
+      <div name="SiteHeaderDiv2">Emerson</div>
+      <div name="SiteHeaderDiv3">Vo</div>
     </div>
 
     <div
@@ -47,15 +47,15 @@
   <nav class="siteHeader_nav" name="SiteHeaderNav">
     <ol class:is-compact-list={compact} name="SiteHeaderNavList">
       {#each pages as page}
-        <li class:is-selected={currentPage === page.id}>
+        <li class:is-selected={currentPage === page.id} name="SiteHeaderLi4">
           <button
             on:click={() => handlePageChange(page.id)}
             class="nav-button"
             type="button"
             name={`nav-${page.id}`}
           >
-            <span class="_dot">●</span>
-            <span class="_text">{page.label}</span>
+            <span class="_dot" name="SiteHeaderSpan6">●</span>
+            <span class="_text" name="SiteHeaderSpan7">{page.label}</span>
           </button>
         </li>
       {/each}

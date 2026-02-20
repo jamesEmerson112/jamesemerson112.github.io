@@ -193,12 +193,18 @@ describe('Option B portfolio overview integration', () => {
     expect(appSource).toContain('<PortfolioOverview />');
   });
 
-  it('keeps header non-compact and preserves blend mode wiring for data pages vs home', async () => {
+  it('keeps header non-compact and uses shared theme-aware chrome blend mode wiring', async () => {
     const appSource = await fs.readFile(path.join(process.cwd(), 'src', 'App.svelte'), 'utf-8');
 
+    expect(appSource).toContain("import { darkMode } from './stores/theme.js';");
     expect(appSource).toContain("currentPage === 'projects' || currentPage === 'metrics'");
     expect(appSource).toContain('compact={false}');
-    expect(appSource).toContain("blendMode={isDataPage ? 'normal' : 'difference'}");
+    expect(appSource).toContain("$: chromeBlendMode = isDataPage || !$darkMode ? 'normal' : 'difference';");
+    expect(appSource).toContain('<Frame blendMode={chromeBlendMode} />');
+    expect(appSource).toContain('<SiteHeader {currentPage} compact={false} blendMode={chromeBlendMode} />');
+    expect(appSource).toContain('<ThemeSwitcher blendMode={chromeBlendMode} />');
+    expect(appSource).toContain('<Copyright blendMode={chromeBlendMode} />');
+    expect(appSource).toContain('<ContentLayer blendMode={chromeBlendMode}>');
   });
 
   it('supports scroll-wheel page switching in App navigation wiring', async () => {

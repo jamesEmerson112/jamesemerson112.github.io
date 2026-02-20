@@ -8,6 +8,20 @@ afterEach(() => {
 });
 
 describe('SiteHeader', () => {
+  it('applies prop-driven blend mode on the header shell', () => {
+    const { container } = render(SiteHeader, {
+      props: {
+        currentPage: 'home',
+        compact: false,
+        blendMode: 'normal'
+      }
+    });
+
+    const header = container.querySelector('.siteHeader');
+    expect(header).toBeInTheDocument();
+    expect(header).toHaveAttribute('style', expect.stringContaining('mix-blend-mode: normal'));
+  });
+
   it('shows visible identity block in non-compact mode', () => {
     const { container } = render(SiteHeader, {
       props: {

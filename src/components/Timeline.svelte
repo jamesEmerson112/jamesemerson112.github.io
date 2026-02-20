@@ -47,13 +47,13 @@
 </script>
 
 <div class="timeline-wrapper" name="Timeline">
-  <div class="timeline">
+  <div class="timeline" name="TimelineDiv1">
     {#each timelineData as entry, index}
-      <div class="timeline-entry">
-        <div class="timeline-year">{entry.year}</div>
-        <div class="timeline-items">
+      <div class="timeline-entry" name="TimelineDiv2">
+        <div class="timeline-year" name="TimelineDiv3">{entry.year}</div>
+        <div class="timeline-items" name="TimelineDiv4">
           {#each entry.items as item}
-            <div class="timeline-item">{item}</div>
+            <div class="timeline-item" name="TimelineDiv5">{item}</div>
           {/each}
         </div>
       </div>

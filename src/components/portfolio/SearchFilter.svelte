@@ -25,8 +25,8 @@
 </script>
 
 <div class="search-filter" name="SearchFilter">
-  <div class="search-box">
-    <span class="search-icon">🔍</span>
+  <div class="search-box" name="SearchFilterDiv1">
+    <span class="search-icon" name="SearchFilterSpan2">🔍</span>
     <input
       type="text"
       name="repo-search"
@@ -49,9 +49,9 @@
   </div>
 
   {#if $availableCategories.length > 0}
-    <div class="category-filter" role="group" aria-label="Category filter">
-      <span class="category-label">Category:</span>
-      <div class="category-chips">
+    <div class="category-filter" role="group" aria-label="Category filter" name="SearchFilterDiv4">
+      <span class="category-label" name="SearchFilterSpan5">Category:</span>
+      <div class="category-chips" name="SearchFilterDiv6">
         <button
           type="button"
           class:active={$categoryFilter === 'all'}
@@ -78,39 +78,39 @@
     </div>
   {/if}
 
-  <div class="filters">
-    <div class="filter-group">
-      <label for="language-filter" class="filter-label">Language:</label>
+  <div class="filters" name="SearchFilterDiv7">
+    <div class="filter-group" name="SearchFilterDiv8">
+      <label for="language-filter" class="filter-label" name="SearchFilterLabel9">Language:</label>
       <select id="language-filter" name="language-filter" bind:value={$languageFilter} class="filter-select">
-        <option value="all">All Languages</option>
+        <option value="all" name="SearchFilterOption10">All Languages</option>
         {#each $availableLanguages as language}
-          <option value={language}>{language}</option>
+          <option value={language} name="SearchFilterOption11">{language}</option>
         {/each}
       </select>
     </div>
 
-    <div class="filter-group">
-      <label for="sort-by" class="filter-label">Sort by:</label>
+    <div class="filter-group" name="SearchFilterDiv12">
+      <label for="sort-by" class="filter-label" name="SearchFilterLabel13">Sort by:</label>
       <select id="sort-by" name="sort-by" bind:value={$sortBy} class="filter-select">
         {#each sortOptions as option}
-          <option value={option.value}>{option.label}</option>
+          <option value={option.value} name="SearchFilterOption14">{option.label}</option>
         {/each}
       </select>
     </div>
 
     <button class="sort-toggle" on:click={toggleSortOrder} title="Toggle sort order" type="button" name="sort-order-toggle">
       {#if $sortOrder === 'desc'}
-        <span class="toggle-icon">↓</span>
-        <span class="toggle-label">Desc</span>
+        <span class="toggle-icon" name="SearchFilterSpan15">↓</span>
+        <span class="toggle-label" name="SearchFilterSpan16">Desc</span>
       {:else}
-        <span class="toggle-icon">↑</span>
-        <span class="toggle-label">Asc</span>
+        <span class="toggle-icon" name="SearchFilterSpan17">↑</span>
+        <span class="toggle-label" name="SearchFilterSpan18">Asc</span>
       {/if}
     </button>
 
     <button class="reset-button" on:click={resetFilters} title="Reset all filters" type="button" name="filters-reset">
-      <span class="reset-icon">↻</span>
-      <span class="reset-label">Reset</span>
+      <span class="reset-icon" name="SearchFilterSpan19">↻</span>
+      <span class="reset-label" name="SearchFilterSpan20">Reset</span>
     </button>
   </div>
 </div>

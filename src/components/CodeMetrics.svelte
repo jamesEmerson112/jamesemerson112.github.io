@@ -80,77 +80,77 @@
 </script>
 
 <section class="metrics-section" name="CodeMetrics">
-  <div class="section-header">
-    <h2>📊 Code Metrics</h2>
-    <p class="section-subtitle">Project statistics and development estimates</p>
+  <div class="section-header" name="CodeMetricsDiv1">
+    <h2 name="CodeMetricsH22">📊 Code Metrics</h2>
+    <p class="section-subtitle" name="CodeMetricsP3">Project statistics and development estimates</p>
   </div>
 
   {#if loading}
-    <div class="loading">Loading metrics...</div>
+    <div class="loading" name="CodeMetricsDiv4">Loading metrics...</div>
   {:else if error}
-    <div class="error">Unable to load metrics data</div>
+    <div class="error" name="CodeMetricsDiv5">Unable to load metrics data</div>
   {:else}
     <!-- Summary Stats -->
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-value">{formatNumber(totals.code)}</div>
-        <div class="stat-label">Lines of Code</div>
+    <div class="stats-grid" name="CodeMetricsDiv6">
+      <div class="stat-card" name="CodeMetricsDiv7">
+        <div class="stat-value" name="CodeMetricsDiv8">{formatNumber(totals.code)}</div>
+        <div class="stat-label" name="CodeMetricsDiv9">Lines of Code</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-value">{metricsData.length}</div>
-        <div class="stat-label">Languages</div>
+      <div class="stat-card" name="CodeMetricsDiv10">
+        <div class="stat-value" name="CodeMetricsDiv11">{metricsData.length}</div>
+        <div class="stat-label" name="CodeMetricsDiv12">Languages</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-value">{formatNumber(totals.files)}</div>
-        <div class="stat-label">Files</div>
+      <div class="stat-card" name="CodeMetricsDiv13">
+        <div class="stat-value" name="CodeMetricsDiv14">{formatNumber(totals.files)}</div>
+        <div class="stat-label" name="CodeMetricsDiv15">Files</div>
       </div>
-      <div class="stat-card">
-        <div class="stat-value">{totals.complexity}</div>
-        <div class="stat-label">Complexity</div>
+      <div class="stat-card" name="CodeMetricsDiv16">
+        <div class="stat-value" name="CodeMetricsDiv17">{totals.complexity}</div>
+        <div class="stat-label" name="CodeMetricsDiv18">Complexity</div>
       </div>
     </div>
 
     <!-- COCOMO Estimates -->
-    <div class="cocomo-section">
-      <h3>💰 Development Estimates (COCOMO)</h3>
-      <div class="cocomo-grid">
-        <div class="cocomo-card">
-          <div class="cocomo-icon">💵</div>
-          <div class="cocomo-value">${formatNumber(cocomo.cost)}</div>
-          <div class="cocomo-label">Estimated Cost</div>
+    <div class="cocomo-section" name="CodeMetricsDiv19">
+      <h3 name="CodeMetricsH320">💰 Development Estimates (COCOMO)</h3>
+      <div class="cocomo-grid" name="CodeMetricsDiv21">
+        <div class="cocomo-card" name="CodeMetricsDiv22">
+          <div class="cocomo-icon" name="CodeMetricsDiv23">💵</div>
+          <div class="cocomo-value" name="CodeMetricsDiv24">${formatNumber(cocomo.cost)}</div>
+          <div class="cocomo-label" name="CodeMetricsDiv25">Estimated Cost</div>
         </div>
-        <div class="cocomo-card">
-          <div class="cocomo-icon">📅</div>
-          <div class="cocomo-value">{cocomo.time} months</div>
-          <div class="cocomo-label">Schedule Effort</div>
+        <div class="cocomo-card" name="CodeMetricsDiv26">
+          <div class="cocomo-icon" name="CodeMetricsDiv27">📅</div>
+          <div class="cocomo-value" name="CodeMetricsDiv28">{cocomo.time} months</div>
+          <div class="cocomo-label" name="CodeMetricsDiv29">Schedule Effort</div>
         </div>
-        <div class="cocomo-card">
-          <div class="cocomo-icon">👥</div>
-          <div class="cocomo-value">{cocomo.people}</div>
-          <div class="cocomo-label">People Required</div>
+        <div class="cocomo-card" name="CodeMetricsDiv30">
+          <div class="cocomo-icon" name="CodeMetricsDiv31">👥</div>
+          <div class="cocomo-value" name="CodeMetricsDiv32">{cocomo.people}</div>
+          <div class="cocomo-label" name="CodeMetricsDiv33">People Required</div>
         </div>
       </div>
     </div>
 
     <!-- Language Breakdown -->
-    <div class="languages-section">
-      <h3>Languages Used</h3>
-      <div class="language-grid">
+    <div class="languages-section" name="CodeMetricsDiv34">
+      <h3 name="CodeMetricsH335">Languages Used</h3>
+      <div class="language-grid" name="CodeMetricsDiv36">
         {#each metricsData.sort((a, b) => b.Lines - a.Lines).slice(0, 6) as lang}
-          <div class="language-card">
-            <div class="language-name">{lang.Name}</div>
-            <div class="language-stats">
-              <span>{formatNumber(lang.Code)} lines</span>
-              <span class="dot">•</span>
-              <span>{lang.Count} {lang.Count === 1 ? 'file' : 'files'}</span>
+          <div class="language-card" name="CodeMetricsDiv37">
+            <div class="language-name" name="CodeMetricsDiv38">{lang.Name}</div>
+            <div class="language-stats" name="CodeMetricsDiv39">
+              <span name="CodeMetricsSpan40">{formatNumber(lang.Code)} lines</span>
+              <span class="dot" name="CodeMetricsSpan41">•</span>
+              <span name="CodeMetricsSpan42">{lang.Count} {lang.Count === 1 ? 'file' : 'files'}</span>
             </div>
           </div>
         {/each}
       </div>
     </div>
 
-    <div class="metrics-footer">
-      <p>Metrics calculated using <a href="https://github.com/boyter/scc" target="_blank" rel="noopener">scc</a></p>
+    <div class="metrics-footer" name="CodeMetricsDiv43">
+      <p name="CodeMetricsP44">Metrics calculated using <a href="https://github.com/boyter/scc" target="_blank" rel="noopener" name="CodeMetricsA45">scc</a></p>
     </div>
   {/if}
 </section>

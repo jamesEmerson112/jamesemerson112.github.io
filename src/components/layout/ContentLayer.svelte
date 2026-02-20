@@ -3,7 +3,7 @@
 </script>
 
 <div class="content" style={`mix-blend-mode: ${blendMode};`} name="ContentLayer">
-  <div class="content_inner">
+  <div class="content_inner" name="ContentLayerDiv1">
     <slot />
   </div>
 </div>

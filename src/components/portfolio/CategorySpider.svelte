@@ -105,64 +105,64 @@
 
 <section class="category-spider" aria-label={title} name="CategorySpider">
   {#if showTitle}
-    <h3>{title}</h3>
+    <h3 name="CategorySpiderH31">{title}</h3>
   {/if}
 
   {#if points.length > 0}
-    <svg width={size} height={size} viewBox="0 0 {size} {size}" role="img" aria-label={title}>
-      <g class="grid">
+    <svg width={size} height={size} viewBox="0 0 {size} {size}" role="img" aria-label={title} name="CategorySpiderSvg2">
+      <g class="grid" name="CategorySpiderG3">
         {#each gridPaths as path}
-          <path d={path} fill="none" stroke="rgba(148, 163, 184, 0.34)" stroke-width="1.1" />
+          <path d={path} fill="none" stroke="rgba(148, 163, 184, 0.34)" stroke-width="1.1" name="CategorySpiderPath4" />
         {/each}
         {#each levels as level, idx}
-          <text x={center + 8} y={center - radius * (levels[idx] / 100)}>{level}%</text>
+          <text x={center + 8} y={center - radius * (levels[idx] / 100)} name="CategorySpiderText5">{level}%</text>
         {/each}
       </g>
 
-      <g class="axes">
+      <g class="axes" name="CategorySpiderG6">
         {#each points as point}
-          <line x1={center} y1={center} x2={point.axisX} y2={point.axisY} stroke="rgba(148, 163, 184, 0.52)" />
+          <line x1={center} y1={center} x2={point.axisX} y2={point.axisY} stroke="rgba(148, 163, 184, 0.52)" name="CategorySpiderLine7" />
         {/each}
       </g>
 
-      <path d={polygonPath} fill={fill} />
-      <path d={polygonPath} fill="none" stroke={color} stroke-width="2.8" />
+      <path d={polygonPath} fill={fill} name="CategorySpiderPath8" />
+      <path d={polygonPath} fill="none" stroke={color} stroke-width="2.8" name="CategorySpiderPath9" />
 
       {#each points as point}
-        <circle cx={point.x} cy={point.y} r="4.4" fill={color} stroke="rgba(15, 23, 42, 0.95)" stroke-width="1.6" />
+        <circle cx={point.x} cy={point.y} r="4.4" fill={color} stroke="rgba(15, 23, 42, 0.95)" stroke-width="1.6" name="CategorySpiderCircle10" />
         <text
           class="axis-label"
           x={point.labelX}
           y={point.labelY}
           text-anchor={getTextAnchor(point.angle)}
           dominant-baseline={getBaseline(point.angle)}
-        >
+         name="CategorySpiderText11">
           {point.axis}
         </text>
       {/each}
     </svg>
 
-    <div class="ring-hint">{ringHint}</div>
+    <div class="ring-hint" name="CategorySpiderDiv12">{ringHint}</div>
 
     {#if showAxisTable}
-      <div class="axis-table" aria-label="Axis values">
+      <div class="axis-table" aria-label="Axis values" name="CategorySpiderDiv13">
         {#each points as point}
-          <div class="axis-row">
-            <span>{point.axis}</span>
+          <div class="axis-row" name="CategorySpiderDiv14">
+            <span name="CategorySpiderSpan15">{point.axis}</span>
             {#if tableShowBoth && safeScaleMode === 'relative'}
-              <div class="axis-values">
-                <strong class="axis-primary">Rel {point.roundedScore}</strong>
-                <span class="axis-secondary">Abs {point.absoluteRoundedScore}</span>
+              <div class="axis-values" name="CategorySpiderDiv16">
+                <strong class="axis-primary" name="CategorySpiderStrong17">Rel {point.roundedScore}</strong>
+                <span class="axis-secondary" name="CategorySpiderSpan18">Abs {point.absoluteRoundedScore}</span>
               </div>
             {:else}
-              <strong>{point.roundedScore}</strong>
+              <strong name="CategorySpiderStrong19">{point.roundedScore}</strong>
             {/if}
           </div>
         {/each}
       </div>
     {/if}
   {:else}
-    <p class="empty">No category stats available.</p>
+    <p class="empty" name="CategorySpiderP20">No category stats available.</p>
   {/if}
 </section>
 
