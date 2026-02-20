@@ -10,7 +10,8 @@
     { id: 'privacy', label: 'Privacy' }
   ];
 
-  $: hideIdentity = compact || currentPage === 'metrics' || currentPage === 'projects';
+  $: hideIdentity = compact;
+  $: hideDescription = compact || currentPage === 'metrics' || currentPage === 'projects';
 
   function handlePageChange(pageId) {
     currentPage = pageId;
@@ -31,7 +32,11 @@
       <div>Vo</div>
     </div>
 
-    <div class="siteHeader_description">
+    <div
+      class="siteHeader_description"
+      class:is-hidden={hideDescription}
+      aria-hidden={hideDescription ? 'true' : 'false'}
+    >
       <p>I like to study both brains and neural networks.</p>
       <p>'Cure' neural networks == cure brains</p>
     </div>
@@ -110,6 +115,20 @@
     line-height: 1.6;
     opacity: 0.8;
     max-width: 300px;
+    visibility: visible;
+    transition:
+      opacity 0.24s cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s linear 0s;
+  }
+
+  .siteHeader_description.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    user-select: none;
+    transition:
+      opacity 0.24s cubic-bezier(0.2, 0.8, 0.2, 1),
+      visibility 0s linear 0.24s;
   }
 
   .siteHeader_description p {

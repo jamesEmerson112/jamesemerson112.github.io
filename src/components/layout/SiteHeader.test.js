@@ -17,9 +17,13 @@ describe('SiteHeader', () => {
     });
 
     const identity = container.querySelector('.siteHeader_identity');
+    const description = container.querySelector('.siteHeader_description');
     expect(identity).toBeInTheDocument();
     expect(identity).not.toHaveClass('is-hidden');
     expect(identity).toHaveAttribute('aria-hidden', 'false');
+    expect(description).toBeInTheDocument();
+    expect(description).not.toHaveClass('is-hidden');
+    expect(description).toHaveAttribute('aria-hidden', 'false');
     expect(screen.getByText('James')).toBeInTheDocument();
     expect(screen.getByText('Emerson')).toBeInTheDocument();
     expect(screen.getByText('Vo')).toBeInTheDocument();
@@ -43,7 +47,7 @@ describe('SiteHeader', () => {
     expect(screen.getByRole('button', { name: /Projects/i })).toBeInTheDocument();
   });
 
-  it('keeps identity block mounted but hidden on metrics/projects even when compact is false', async () => {
+  it('keeps identity visible on metrics/projects when compact is false', async () => {
     const { component, container } = render(SiteHeader, {
       props: {
         currentPage: 'metrics',
@@ -52,13 +56,19 @@ describe('SiteHeader', () => {
     });
 
     const identity = container.querySelector('.siteHeader_identity');
+    const description = container.querySelector('.siteHeader_description');
     expect(identity).toBeInTheDocument();
-    expect(identity).toHaveClass('is-hidden');
-    expect(identity).toHaveAttribute('aria-hidden', 'true');
+    expect(identity).not.toHaveClass('is-hidden');
+    expect(identity).toHaveAttribute('aria-hidden', 'false');
+    expect(description).toBeInTheDocument();
+    expect(description).toHaveClass('is-hidden');
+    expect(description).toHaveAttribute('aria-hidden', 'true');
 
     await component.$set({ currentPage: 'privacy' });
     expect(identity).not.toHaveClass('is-hidden');
     expect(identity).toHaveAttribute('aria-hidden', 'false');
+    expect(description).not.toHaveClass('is-hidden');
+    expect(description).toHaveAttribute('aria-hidden', 'false');
   });
 
   it('dispatches page change events from nav buttons in both modes', async () => {
