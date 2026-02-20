@@ -1,6 +1,7 @@
 <script>
   export let currentPage = 'home';
   export let compact = false;
+  export let blendMode = 'difference';
 
   const pages = [
     { id: 'home', label: 'Home' },
@@ -12,6 +13,7 @@
 
   $: hideIdentity = compact;
   $: hideDescription = compact || currentPage === 'metrics' || currentPage === 'projects';
+  $: effectiveBlendMode = compact ? 'normal' : blendMode;
 
   function handlePageChange(pageId) {
     currentPage = pageId;
@@ -20,7 +22,12 @@
   }
 </script>
 
-<header class="siteHeader" class:is-compact={compact} name="SiteHeader">
+<header
+  class="siteHeader"
+  class:is-compact={compact}
+  style={`mix-blend-mode: ${effectiveBlendMode};`}
+  name="SiteHeader"
+>
   <div
     class="siteHeader_identity"
     class:is-hidden={hideIdentity}
@@ -71,12 +78,7 @@
     --site-header-anchor-top: calc(var(--pad) * 2);
     left: var(--site-header-anchor-left);
     top: var(--site-header-anchor-top);
-    mix-blend-mode: difference;
     color: var(--chrome-fg);
-  }
-
-  .siteHeader.is-compact {
-    mix-blend-mode: normal;
   }
 
   /* Keep identity footprint so nav anchor does not jump between pages. */

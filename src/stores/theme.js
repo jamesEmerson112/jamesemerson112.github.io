@@ -1,55 +1,78 @@
 
-// Simple reactive dark mode store
+function resolveInitialMode() {
+  if (typeof window === 'undefined') {
+    return true;
+  }
+
+  try {
+    const savedMode = localStorage.getItem('darkMode');
+    if (savedMode === 'true') {
+      return true;
+    }
+    if (savedMode === 'false') {
+      return false;
+    }
+  } catch {
+    // Ignore storage errors and continue to system preference.
+  }
+
+  if (typeof window.matchMedia === 'function') {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+  }
+
+  return true;
+}
+
+function applyThemeToDocument(isDark) {
+  if (typeof window === 'undefined') {
+    return;
+  }
+
+  document.documentElement.setAttribute('data-light', (!isDark).toString());
+
+  if (document.body) {
+    document.body.classList.toggle('dark-theme', isDark);
+    document.body.classList.toggle('light-theme', !isDark);
+  }
+}
+
 class DarkModeStore {
   constructor() {
     this.subscribers = new Set();
-    // Check localStorage first, then default to dark mode (true)
-    this.value = typeof window !== 'undefined' ? 
-      (localStorage.getItem('darkMode') !== null ? 
-        localStorage.getItem('darkMode') === 'true' : 
-        true) : 
-      true;
-    
-    // Immediately set the data-light attribute with inverted logic
-    // darkMode true = data-light="false", darkMode false = data-light="true"
-    if (typeof window !== 'undefined') {
-      document.documentElement.setAttribute('data-light', (!this.value).toString());
-    }
+    this.value = resolveInitialMode();
+    applyThemeToDocument(this.value);
   }
 
   subscribe(callback) {
     this.subscribers.add(callback);
     callback(this.value);
-    
+
     return () => {
       this.subscribers.delete(callback);
     };
   }
 
+  notify() {
+    this.subscribers.forEach((callback) => callback(this.value));
+  }
+
   toggle() {
-    this.value = !this.value;
-    
-    // Persist to localStorage and update data-light attribute
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('darkMode', this.value.toString());
-      document.documentElement.setAttribute('data-light', (!this.value).toString());
-    }
-    
-    // Notify subscribers
-    this.subscribers.forEach(callback => callback(this.value));
+    this.setMode(!this.value);
   }
 
   setMode(isDark) {
-    this.value = isDark;
-    
-    // Persist to localStorage and update data-light attribute
+    this.value = Boolean(isDark);
+
     if (typeof window !== 'undefined') {
-      localStorage.setItem('darkMode', this.value.toString());
-      document.documentElement.setAttribute('data-light', (!this.value).toString());
+      try {
+        localStorage.setItem('darkMode', this.value.toString());
+      } catch {
+        // Ignore storage errors; UI state should still update.
+      }
     }
-    
-    // Notify subscribers
-    this.subscribers.forEach(callback => callback(this.value));
+
+    applyThemeToDocument(this.value);
+    this.notify();
   }
 }
 

@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { darkMode } from './stores/theme.js';
   import { portfolio } from './stores/portfolioStore.js';
   import PageContainer from './components/layout/PageContainer.svelte';
   import Frame from './components/layout/Frame.svelte';
@@ -20,6 +21,7 @@
   let currentPage = 'home';
   let lastWheelSwitchAt = 0;
   $: isDataPage = currentPage === 'projects' || currentPage === 'metrics';
+  $: chromeBlendMode = isDataPage || !$darkMode ? 'normal' : 'difference';
 
   function getScrollableAncestor(target) {
     let node = target instanceof HTMLElement ? target : null;
@@ -112,16 +114,16 @@
 
 <PageContainer>
   <!-- Layer 10: UI Chrome -->
-  <Frame blendMode={isDataPage ? 'normal' : 'difference'} />
-  <SiteHeader {currentPage} compact={false} />
-  <ThemeSwitcher blendMode={isDataPage ? 'normal' : 'difference'} />
-  <Copyright blendMode={isDataPage ? 'normal' : 'difference'} />
+  <Frame blendMode={chromeBlendMode} />
+  <SiteHeader {currentPage} compact={false} blendMode={chromeBlendMode} />
+  <ThemeSwitcher blendMode={chromeBlendMode} />
+  <Copyright blendMode={chromeBlendMode} />
 
   <!-- Layer 3: Masks -->
   <Masks />
 
   <!-- Layer 2: Content -->
-  <ContentLayer blendMode={isDataPage ? 'normal' : 'difference'}>
+  <ContentLayer blendMode={chromeBlendMode}>
     {#if isDataPage}
       <div class="data-page-aura" aria-hidden="true" name="AppDiv1"></div>
     {/if}
