@@ -50,3 +50,8 @@ inspired_code/
 # Planning documents (keep private)
 PORTFOLIO-METRICS-PLAN.md
 ROADMAP.md
+
+# Local Codex scratch artifacts
+skills/html-name-attributor/
+src/components/Timeline.test.js
+src/stores/theme.test.js
