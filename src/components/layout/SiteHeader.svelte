@@ -25,8 +25,9 @@
     class="siteHeader_identity"
     class:is-hidden={hideIdentity}
     aria-hidden={hideIdentity ? 'true' : 'false'}
+    name="SiteHeaderIdentity"
   >
-    <div class="siteHeader_title">
+    <div class="siteHeader_title" name="SiteHeaderTitle">
       <div>James</div>
       <div>Emerson</div>
       <div>Vo</div>
@@ -36,14 +37,15 @@
       class="siteHeader_description"
       class:is-hidden={hideDescription}
       aria-hidden={hideDescription ? 'true' : 'false'}
+      name="SiteHeaderDescription"
     >
-      <p>I like to study both brains and neural networks.</p>
-      <p>'Cure' neural networks == cure brains</p>
+      <p name="SiteHeaderDescriptionLineOne">I like to study both brains and neural networks.</p>
+      <p name="SiteHeaderDescriptionLineTwo">'Cure' neural networks == cure brains</p>
     </div>
   </div>
 
-  <nav class="siteHeader_nav">
-    <ol class:is-compact-list={compact}>
+  <nav class="siteHeader_nav" name="SiteHeaderNav">
+    <ol class:is-compact-list={compact} name="SiteHeaderNavList">
       {#each pages as page}
         <li class:is-selected={currentPage === page.id}>
           <button
