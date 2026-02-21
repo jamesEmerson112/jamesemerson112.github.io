@@ -48,78 +48,78 @@
 
 <div
   class="repo-card"
-  name="RepoCard"
+  data-name="RepoCard"
   role="button"
   tabindex="0"
   on:click={handleClick}
   on:keydown={handleKeydown}
   aria-label={`Open details for ${repo.name}`}
 >
-  <div class="card-header" name="RepoCardDiv1">
-    <div class="repo-title" name="RepoCardDiv2">
+  <div class="card-header" data-name="RepoCardDiv1">
+    <div class="repo-title" data-name="RepoCardDiv2">
       {#if repo.isPrivate}
-        <span class="privacy-badge" title="Private Repository" name="RepoCardSpan3">🔒</span>
+        <span class="privacy-badge" title="Private Repository" data-name="RepoCardSpan3">🔒</span>
       {/if}
-      <h3 name="RepoCardH34">{repo.name}</h3>
+      <h3 data-name="RepoCardH34">{repo.name}</h3>
     </div>
     {#if displayPrimaryLanguage}
-      <span class="language-badge" name="RepoCardSpan5">
-        <span class="language-dot" name="RepoCardSpan6"></span>
+      <span class="language-badge" data-name="RepoCardSpan5">
+        <span class="language-dot" data-name="RepoCardSpan6"></span>
         {displayPrimaryLanguage}
       </span>
     {/if}
   </div>
 
   {#if repo.description && !repo.isAnonymized}
-    <p class="repo-description" name="RepoCardP7">{repo.description}</p>
+    <p class="repo-description" data-name="RepoCardP7">{repo.description}</p>
   {:else if repo.isAnonymized}
-    <p class="repo-description muted" name="RepoCardP8">Private Academic Projects</p>
+    <p class="repo-description muted" data-name="RepoCardP8">Private Academic Projects</p>
   {/if}
 
   {#if topProjectTags.length > 0}
-    <div class="project-tags" aria-label="Project type signals" name="RepoCardDiv9">
+    <div class="project-tags" aria-label="Project type signals" data-name="RepoCardDiv9">
       {#each topProjectTags as tag}
-        <span class="project-tag" name="RepoCardSpan10">
+        <span class="project-tag" data-name="RepoCardSpan10">
           {tag.label} {Math.round((tag.confidence || 0) * 100)}%
         </span>
       {/each}
     </div>
   {/if}
 
-  <div class="repo-stats" name="RepoCardDiv11">
-    <div class="stat" name="RepoCardDiv12">
-      <span class="stat-icon" name="RepoCardSpan13">📊</span>
-      <span class="stat-value" name="RepoCardSpan14">{formatNumber(repo.summary.lines)}</span>
-      <span class="stat-label" name="RepoCardSpan15">lines</span>
+  <div class="repo-stats" data-name="RepoCardDiv11">
+    <div class="stat" data-name="RepoCardDiv12">
+      <span class="stat-icon" data-name="RepoCardSpan13">📊</span>
+      <span class="stat-value" data-name="RepoCardSpan14">{formatNumber(repo.summary.lines)}</span>
+      <span class="stat-label" data-name="RepoCardSpan15">lines</span>
     </div>
-    <div class="stat" name="RepoCardDiv16">
-      <span class="stat-icon" name="RepoCardSpan17">📁</span>
-      <span class="stat-value" name="RepoCardSpan18">{repo.summary.files}</span>
-      <span class="stat-label" name="RepoCardSpan19">files</span>
+    <div class="stat" data-name="RepoCardDiv16">
+      <span class="stat-icon" data-name="RepoCardSpan17">📁</span>
+      <span class="stat-value" data-name="RepoCardSpan18">{repo.summary.files}</span>
+      <span class="stat-label" data-name="RepoCardSpan19">files</span>
     </div>
-    <div class="stat" name="RepoCardDiv20">
-      <span class="stat-icon" name="RepoCardSpan21">🧮</span>
-      <span class="stat-value" name="RepoCardSpan22">{repo.summary.complexity}</span>
-      <span class="stat-label" name="RepoCardSpan23">complexity</span>
+    <div class="stat" data-name="RepoCardDiv20">
+      <span class="stat-icon" data-name="RepoCardSpan21">🧮</span>
+      <span class="stat-value" data-name="RepoCardSpan22">{repo.summary.complexity}</span>
+      <span class="stat-label" data-name="RepoCardSpan23">complexity</span>
     </div>
   </div>
 
   {#if compositionShares.length > 0}
-    <section class="language-composition" aria-label="Language composition" name="RepoCardSection24">
-      <div class="composition-label" name="RepoCardDiv25">Language composition</div>
-      <div class="composition-track" role="img" aria-label="Top language composition by code share" name="RepoCardDiv26">
+    <section class="language-composition" aria-label="Language composition" data-name="RepoCardSection24">
+      <div class="composition-label" data-name="RepoCardDiv25">Language composition</div>
+      <div class="composition-track" role="img" aria-label="Top language composition by code share" data-name="RepoCardDiv26">
         {#each compositionShares as language}
           <div
             class="composition-segment"
             title={`${language.name} ${language.percent.toFixed(1)}%`}
             style="width: {toPercent(language.percent)}%; background-color: {compositionColor(language.name)}"
-           name="RepoCardDiv27"></div>
+           data-name="RepoCardDiv27"></div>
         {/each}
       </div>
-      <div class="composition-legend" name="RepoCardDiv28">
+      <div class="composition-legend" data-name="RepoCardDiv28">
         {#each compositionShares as language}
-          <span class="legend-item" name="RepoCardSpan29">
-            <span class="legend-dot" style="background-color: {compositionColor(language.name)}" name="RepoCardSpan30"></span>
+          <span class="legend-item" data-name="RepoCardSpan29">
+            <span class="legend-dot" style="background-color: {compositionColor(language.name)}" data-name="RepoCardSpan30"></span>
             {language.name} {language.percent.toFixed(0)}%
           </span>
         {/each}
@@ -127,7 +127,7 @@
     </section>
   {/if}
 
-  <div class="card-footer" name="RepoCardDiv31">
+  <div class="card-footer" data-name="RepoCardDiv31">
     {#if canShowRepoLink}
       <a
         class="repo-link"
@@ -136,11 +136,11 @@
         rel="noopener noreferrer"
         on:click|stopPropagation
         aria-label={`View Repo: ${repo.name}`}
-       name="RepoCardA32">
+       data-name="RepoCardA32">
         View Repo ↗
       </a>
     {/if}
-    <span class="view-details" name="RepoCardSpan33">View Details →</span>
+    <span class="view-details" data-name="RepoCardSpan33">View Details →</span>
   </div>
 </div>
 

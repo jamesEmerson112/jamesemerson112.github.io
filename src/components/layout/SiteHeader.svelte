@@ -34,43 +34,43 @@
   class:is-mobile-hidden={isMobile && mobileHidden}
   aria-hidden={isMobile && mobileHidden ? 'true' : 'false'}
   style={`mix-blend-mode: ${effectiveBlendMode};`}
-  name="SiteHeader"
+  data-name="SiteHeader"
 >
   <div
     class="siteHeader_identity"
     class:is-hidden={hideIdentity}
     aria-hidden={hideIdentity ? 'true' : 'false'}
-    name="SiteHeaderIdentity"
+    data-name="SiteHeaderIdentity"
   >
-    <div class="siteHeader_title" name="SiteHeaderTitle">
-      <div name="SiteHeaderDiv1">James</div>
-      <div name="SiteHeaderDiv2">Emerson</div>
-      <div name="SiteHeaderDiv3">Vo</div>
+    <div class="siteHeader_title" data-name="SiteHeaderTitle">
+      <div data-name="SiteHeaderDiv1">James</div>
+      <div data-name="SiteHeaderDiv2">Emerson</div>
+      <div data-name="SiteHeaderDiv3">Vo</div>
     </div>
 
     <div
       class="siteHeader_description"
       class:is-hidden={hideDescription}
       aria-hidden={hideDescription ? 'true' : 'false'}
-      name="SiteHeaderDescription"
+      data-name="SiteHeaderDescription"
     >
-      <p name="SiteHeaderDescriptionLineOne">I like to study both brains and neural networks.</p>
-      <p name="SiteHeaderDescriptionLineTwo">'Cure' neural networks == cure brains</p>
+      <p data-name="SiteHeaderDescriptionLineOne">I like to study both brains and neural networks.</p>
+      <p data-name="SiteHeaderDescriptionLineTwo">'Cure' neural networks == cure brains</p>
     </div>
   </div>
 
-  <nav class="siteHeader_nav" name="SiteHeaderNav">
-    <ol class:is-compact-list={compact} name="SiteHeaderNavList">
+  <nav class="siteHeader_nav" data-name="SiteHeaderNav">
+    <ol class:is-compact-list={compact} data-name="SiteHeaderNavList">
       {#each pages as page}
-        <li class:is-selected={selectedSection === page.id} name="SiteHeaderLi4">
+        <li class:is-selected={selectedSection === page.id} data-name="SiteHeaderLi4">
           <button
             on:click={() => handlePageChange(page.id)}
             class="nav-button"
             type="button"
-            name={`nav-${page.id}`}
+            data-name={`nav-${page.id}`}
           >
-            <span class="_dot" name="SiteHeaderSpan6">●</span>
-            <span class="_text" name="SiteHeaderSpan7">{page.label}</span>
+            <span class="_dot" data-name="SiteHeaderSpan6">●</span>
+            <span class="_text" data-name="SiteHeaderSpan7">{page.label}</span>
           </button>
         </li>
       {/each}

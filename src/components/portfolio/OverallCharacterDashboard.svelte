@@ -41,53 +41,53 @@
   }
 </script>
 
-<section class="overall-dashboard" name="OverallCharacterDashboard">
-  <header class="dashboard-header" name="OverallCharacterDashboardHeader1">
-    <h1 name="OverallCharacterDashboardH12">Generalist Character Stats</h1>
-    <p name="OverallCharacterDashboardP3">
+<section class="overall-dashboard" data-name="OverallCharacterDashboard">
+  <header class="dashboard-header" data-name="OverallCharacterDashboardHeader1">
+    <h1 data-name="OverallCharacterDashboardH12">Generalist Character Stats</h1>
+    <p data-name="OverallCharacterDashboardP3">
       Portfolio-level dashboard for recruiter scanning: breadth by domain and quality proxy indicators.
     </p>
   </header>
 
   {#if $loading}
-    <div class="state-card" name="OverallCharacterDashboardDiv4">
-      <div class="spinner" aria-hidden="true" name="OverallCharacterDashboardDiv5"></div>
-      <p name="OverallCharacterDashboardP6">Loading portfolio dashboard...</p>
+    <div class="state-card" data-name="OverallCharacterDashboardDiv4">
+      <div class="spinner" aria-hidden="true" data-name="OverallCharacterDashboardDiv5"></div>
+      <p data-name="OverallCharacterDashboardP6">Loading portfolio dashboard...</p>
     </div>
   {:else if $error}
-    <div class="state-card error" name="OverallCharacterDashboardDiv7">
-      <h2 name="OverallCharacterDashboardH28">Unable to load metrics</h2>
-      <p name="OverallCharacterDashboardP9">{$error}</p>
-      <button type="button" name="dashboard-retry" on:click={loadPortfolioData}>Retry</button>
+    <div class="state-card error" data-name="OverallCharacterDashboardDiv7">
+      <h2 data-name="OverallCharacterDashboardH28">Unable to load metrics</h2>
+      <p data-name="OverallCharacterDashboardP9">{$error}</p>
+      <button type="button" data-name="dashboard-retry" on:click={loadPortfolioData}>Retry</button>
     </div>
   {:else if $repos.length === 0}
-    <div class="state-card" name="OverallCharacterDashboardDiv10">
-      <h2 name="OverallCharacterDashboardH211">No projects to summarize yet</h2>
-      <p name="OverallCharacterDashboardP12">Add repositories to build the overall profile dashboard.</p>
+    <div class="state-card" data-name="OverallCharacterDashboardDiv10">
+      <h2 data-name="OverallCharacterDashboardH211">No projects to summarize yet</h2>
+      <p data-name="OverallCharacterDashboardP12">Add repositories to build the overall profile dashboard.</p>
     </div>
   {:else}
-    <div class="spider-controls" role="group" aria-label="Spider scale mode" name="OverallCharacterDashboardDiv13">
-      <div class="control-buttons" name="OverallCharacterDashboardDiv14">
+    <div class="spider-controls" role="group" aria-label="Spider scale mode" data-name="OverallCharacterDashboardDiv13">
+      <div class="control-buttons" data-name="OverallCharacterDashboardDiv14">
         {#each SPIDER_SCALE_OPTIONS as option}
           <button
             type="button"
             class="control-button {spiderScaleMode === option.id ? 'is-active' : ''}"
             aria-pressed={spiderScaleMode === option.id}
-            name={`spider-scale-${option.id}`}
+            data-name={`spider-scale-${option.id}`}
             on:click={() => (spiderScaleMode = option.id)}
           >
             {option.label}
           </button>
         {/each}
       </div>
-      <p class="control-caption" name="OverallCharacterDashboardP15">
+      <p class="control-caption" data-name="OverallCharacterDashboardP15">
         Relative mode normalizes each chart by its strongest axis for easier shape comparison.
       </p>
     </div>
 
-    <div class="dashboard-grid" name="OverallCharacterDashboardDiv16">
-      <div class="left-column" name="OverallCharacterDashboardDiv17">
-        <div class="category-panel" name="OverallCharacterDashboardDiv18">
+    <div class="dashboard-grid" data-name="OverallCharacterDashboardDiv16">
+      <div class="left-column" data-name="OverallCharacterDashboardDiv17">
+        <div class="category-panel" data-name="OverallCharacterDashboardDiv18">
           <CategorySpider
             stats={$overallCategoryStats}
             absoluteStats={$overallCategoryStats}
@@ -100,7 +100,7 @@
           />
         </div>
 
-        <div class="proficiency-panel" name="OverallCharacterDashboardDiv19">
+        <div class="proficiency-panel" data-name="OverallCharacterDashboardDiv19">
           <CategorySpider
             stats={$overallLanguageProficiencyStats}
             absoluteStats={$overallLanguageProficiencyStats}
@@ -111,33 +111,33 @@
             color="#34d399"
             fill="rgba(52, 211, 153, 0.16)"
           />
-          <p class="proficiency-note" name="OverallCharacterDashboardP20">
+          <p class="proficiency-note" data-name="OverallCharacterDashboardP20">
             Blended signal: code share + complexity share, recency-weighted.
           </p>
         </div>
       </div>
 
-      <aside class="quality-panel" aria-label="Quality Scorecard" name="OverallCharacterDashboardAside21">
-        <h2 name="OverallCharacterDashboardH222">Quality Scorecard</h2>
-        <p class="quality-subtitle" name="OverallCharacterDashboardP23">Proxy indicators from static code metrics.</p>
+      <aside class="quality-panel" aria-label="Quality Scorecard" data-name="OverallCharacterDashboardAside21">
+        <h2 data-name="OverallCharacterDashboardH222">Quality Scorecard</h2>
+        <p class="quality-subtitle" data-name="OverallCharacterDashboardP23">Proxy indicators from static code metrics.</p>
 
         {#each $overallQualityStats as item}
-          <div class="quality-row" name="OverallCharacterDashboardDiv24">
-            <div class="row-meta" name="OverallCharacterDashboardDiv25">
-              <span name="OverallCharacterDashboardSpan26">{item.axis}</span>
-              <strong name="OverallCharacterDashboardStrong27">{Math.round(item.score)}</strong>
+          <div class="quality-row" data-name="OverallCharacterDashboardDiv24">
+            <div class="row-meta" data-name="OverallCharacterDashboardDiv25">
+              <span data-name="OverallCharacterDashboardSpan26">{item.axis}</span>
+              <strong data-name="OverallCharacterDashboardStrong27">{Math.round(item.score)}</strong>
             </div>
-            <div class="row-track" name="OverallCharacterDashboardDiv28">
+            <div class="row-track" data-name="OverallCharacterDashboardDiv28">
               <div
                 class="row-fill"
                 style="width: {safePercent(item.score)}%; background: {tone(item.band)}"
-               name="OverallCharacterDashboardDiv29"></div>
+               data-name="OverallCharacterDashboardDiv29"></div>
             </div>
-            <div class="row-band" name="OverallCharacterDashboardDiv30">{item.band}</div>
+            <div class="row-band" data-name="OverallCharacterDashboardDiv30">{item.band}</div>
           </div>
         {/each}
 
-        <p class="methodology" name="OverallCharacterDashboardP31">
+        <p class="methodology" data-name="OverallCharacterDashboardP31">
           Methodology: robust normalization (`p10/p90`) on portfolio-relative signals.
           Caveat: proxy indicators from static code metrics; not runtime correctness evidence.
         </p>

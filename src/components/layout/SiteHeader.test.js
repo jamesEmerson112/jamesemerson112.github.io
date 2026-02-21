@@ -143,8 +143,8 @@ describe('SiteHeader', () => {
       }
     });
 
-    const metricsItem = container.querySelector('li.is-selected .nav-button[name="nav-metrics"]');
-    const homeItem = container.querySelector('li.is-selected .nav-button[name="nav-home"]');
+    const metricsItem = container.querySelector('li.is-selected .nav-button[data-name="nav-metrics"]');
+    const homeItem = container.querySelector('li.is-selected .nav-button[data-name="nav-home"]');
     expect(metricsItem).toBeInTheDocument();
     expect(homeItem).not.toBeInTheDocument();
   });

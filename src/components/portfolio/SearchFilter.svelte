@@ -24,12 +24,12 @@
   }
 </script>
 
-<div class="search-filter" name="SearchFilter">
-  <div class="search-box" name="SearchFilterDiv1">
-    <span class="search-icon" name="SearchFilterSpan2">🔍</span>
+<div class="search-filter" data-name="SearchFilter">
+  <div class="search-box" data-name="SearchFilterDiv1">
+    <span class="search-icon" data-name="SearchFilterSpan2">🔍</span>
     <input
       type="text"
-      name="repo-search"
+      data-name="repo-search"
       placeholder="Search repositories..."
       bind:value={$searchTerm}
       class="search-input"
@@ -41,7 +41,7 @@
         on:click={() => searchTerm.set('')}
         title="Clear search"
         type="button"
-        name="repo-search-clear"
+        data-name="repo-search-clear"
       >
         ✕
       </button>
@@ -49,15 +49,15 @@
   </div>
 
   {#if $availableCategories.length > 0}
-    <div class="category-filter" role="group" aria-label="Category filter" name="SearchFilterDiv4">
-      <span class="category-label" name="SearchFilterSpan5">Category:</span>
-      <div class="category-chips" name="SearchFilterDiv6">
+    <div class="category-filter" role="group" aria-label="Category filter" data-name="SearchFilterDiv4">
+      <span class="category-label" data-name="SearchFilterSpan5">Category:</span>
+      <div class="category-chips" data-name="SearchFilterDiv6">
         <button
           type="button"
           class:active={$categoryFilter === 'all'}
           class="category-chip"
           aria-pressed={$categoryFilter === 'all'}
-          name="category-all"
+          data-name="category-all"
           on:click={() => setCategory('all')}
         >
           All
@@ -68,7 +68,7 @@
             class:active={$categoryFilter === category}
             class="category-chip"
             aria-pressed={$categoryFilter === category}
-            name={`category-${category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
+            data-name={`category-${category.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`}
             on:click={() => setCategory(category)}
           >
             {category}
@@ -78,39 +78,39 @@
     </div>
   {/if}
 
-  <div class="filters" name="SearchFilterDiv7">
-    <div class="filter-group" name="SearchFilterDiv8">
-      <label for="language-filter" class="filter-label" name="SearchFilterLabel9">Language:</label>
-      <select id="language-filter" name="language-filter" bind:value={$languageFilter} class="filter-select">
-        <option value="all" name="SearchFilterOption10">All Languages</option>
+  <div class="filters" data-name="SearchFilterDiv7">
+    <div class="filter-group" data-name="SearchFilterDiv8">
+      <label for="language-filter" class="filter-label" data-name="SearchFilterLabel9">Language:</label>
+      <select id="language-filter" data-name="language-filter" bind:value={$languageFilter} class="filter-select">
+        <option value="all" data-name="SearchFilterOption10">All Languages</option>
         {#each $availableLanguages as language}
-          <option value={language} name="SearchFilterOption11">{language}</option>
+          <option value={language} data-name="SearchFilterOption11">{language}</option>
         {/each}
       </select>
     </div>
 
-    <div class="filter-group" name="SearchFilterDiv12">
-      <label for="sort-by" class="filter-label" name="SearchFilterLabel13">Sort by:</label>
-      <select id="sort-by" name="sort-by" bind:value={$sortBy} class="filter-select">
+    <div class="filter-group" data-name="SearchFilterDiv12">
+      <label for="sort-by" class="filter-label" data-name="SearchFilterLabel13">Sort by:</label>
+      <select id="sort-by" data-name="sort-by" bind:value={$sortBy} class="filter-select">
         {#each sortOptions as option}
-          <option value={option.value} name="SearchFilterOption14">{option.label}</option>
+          <option value={option.value} data-name="SearchFilterOption14">{option.label}</option>
         {/each}
       </select>
     </div>
 
-    <button class="sort-toggle" on:click={toggleSortOrder} title="Toggle sort order" type="button" name="sort-order-toggle">
+    <button class="sort-toggle" on:click={toggleSortOrder} title="Toggle sort order" type="button" data-name="sort-order-toggle">
       {#if $sortOrder === 'desc'}
-        <span class="toggle-icon" name="SearchFilterSpan15">↓</span>
-        <span class="toggle-label" name="SearchFilterSpan16">Desc</span>
+        <span class="toggle-icon" data-name="SearchFilterSpan15">↓</span>
+        <span class="toggle-label" data-name="SearchFilterSpan16">Desc</span>
       {:else}
-        <span class="toggle-icon" name="SearchFilterSpan17">↑</span>
-        <span class="toggle-label" name="SearchFilterSpan18">Asc</span>
+        <span class="toggle-icon" data-name="SearchFilterSpan17">↑</span>
+        <span class="toggle-label" data-name="SearchFilterSpan18">Asc</span>
       {/if}
     </button>
 
-    <button class="reset-button" on:click={resetFilters} title="Reset all filters" type="button" name="filters-reset">
-      <span class="reset-icon" name="SearchFilterSpan19">↻</span>
-      <span class="reset-label" name="SearchFilterSpan20">Reset</span>
+    <button class="reset-button" on:click={resetFilters} title="Reset all filters" type="button" data-name="filters-reset">
+      <span class="reset-icon" data-name="SearchFilterSpan19">↻</span>
+      <span class="reset-label" data-name="SearchFilterSpan20">Reset</span>
     </button>
   </div>
 </div>

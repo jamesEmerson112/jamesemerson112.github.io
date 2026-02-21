@@ -2,11 +2,11 @@
   export let blendMode = 'difference';
 </script>
 
-<div class="frame" style={`mix-blend-mode: ${blendMode};`} name="Frame">
-  <div class="frame_line frame_line-left" name="FrameDiv1"></div>
-  <div class="frame_line frame_line-right" name="FrameDiv2"></div>
-  <div class="frame_line frame_line-top" name="FrameDiv3"></div>
-  <div class="frame_line frame_line-bottom" name="FrameDiv4"></div>
+<div class="frame" style={`mix-blend-mode: ${blendMode};`} data-name="Frame">
+  <div class="frame_line frame_line-left" data-name="FrameDiv1"></div>
+  <div class="frame_line frame_line-right" data-name="FrameDiv2"></div>
+  <div class="frame_line frame_line-top" data-name="FrameDiv3"></div>
+  <div class="frame_line frame_line-bottom" data-name="FrameDiv4"></div>
 </div>
 
 <style>

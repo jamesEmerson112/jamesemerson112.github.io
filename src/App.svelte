@@ -232,12 +232,12 @@
       class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}
       bind:this={scrollRoot}
       on:scroll={handleRootScroll}
-      name="AppMainScroll"
+      data-name="AppMainScroll"
     >
-      <div class="page-aura" aria-hidden="true" name="AppDiv1"></div>
+      <div class="page-aura" aria-hidden="true" data-name="AppDiv1"></div>
 
-      <section id="home" class="app-section home-section" use:registerSection={'home'} name="AppHomeSection">
-        <div class="home_content" name="AppDiv2">
+      <section id="home" class="app-section home-section" use:registerSection={'home'} data-name="AppHomeSection">
+        <div class="home_content" data-name="AppDiv2">
           <Timeline />
         </div>
       </section>
@@ -246,9 +246,9 @@
         id="metrics"
         class="app-section metrics-section"
         use:registerSection={'metrics'}
-        name="AppMetricsSection"
+        data-name="AppMetricsSection"
       >
-        <div class="metrics_content data_content" name="AppDiv3">
+        <div class="metrics_content data_content" data-name="AppDiv3">
           <OverallCharacterDashboard autoLoad={false} />
         </div>
       </section>
@@ -257,9 +257,9 @@
         id="projects"
         class="app-section projects-section"
         use:registerSection={'projects'}
-        name="AppProjectsSection"
+        data-name="AppProjectsSection"
       >
-        <div class="projects_content data_content" name="AppDiv4">
+        <div class="projects_content data_content" data-name="AppDiv4">
           <PortfolioOverview autoLoad={false} />
         </div>
       </section>
@@ -268,20 +268,20 @@
         id="contact"
         class="app-section contact-section"
         use:registerSection={'contact'}
-        name="AppContactSection"
+        data-name="AppContactSection"
       >
-        <div class="contact_content" name="AppDiv5">
-          <h2 name="AppH26">Get in Touch</h2>
-          <div class="contact_links" name="AppDiv7">
+        <div class="contact_content" data-name="AppDiv5">
+          <h2 data-name="AppH26">Get in Touch</h2>
+          <div class="contact_links" data-name="AppDiv7">
             <a
               href="https://x.com/V_like_flan"
               target="_blank"
               rel="noopener noreferrer"
               class="contact_link"
-              name="AppA8"
+              data-name="AppA8"
             >
-              <span class="link_label" name="AppSpan9">Twitter</span>
-              <span class="link_handle" name="AppSpan10">@V_like_flan</span>
+              <span class="link_label" data-name="AppSpan9">Twitter</span>
+              <span class="link_handle" data-name="AppSpan10">@V_like_flan</span>
             </a>
 
             <a
@@ -289,10 +289,10 @@
               target="_blank"
               rel="noopener noreferrer"
               class="contact_link"
-              name="AppA11"
+              data-name="AppA11"
             >
-              <span class="link_label" name="AppSpan12">LinkedIn</span>
-              <span class="link_handle" name="AppSpan13">james-vo</span>
+              <span class="link_label" data-name="AppSpan12">LinkedIn</span>
+              <span class="link_handle" data-name="AppSpan13">james-vo</span>
             </a>
           </div>
         </div>
@@ -302,15 +302,15 @@
         id="privacy"
         class="app-section privacy-section"
         use:registerSection={'privacy'}
-        name="AppPrivacySection"
+        data-name="AppPrivacySection"
       >
-        <div class="privacy_content" name="AppDiv14">
-          <h2 name="AppH215">Privacy</h2>
-          <p class="privacy_summary" name="AppP16">
-            This site uses Google Analytics<br name="AppBr17" />
+        <div class="privacy_content" data-name="AppDiv14">
+          <h2 data-name="AppH215">Privacy</h2>
+          <p class="privacy_summary" data-name="AppP16">
+            This site uses Google Analytics<br data-name="AppBr17" />
             to understand how visitors use the site.
           </p>
-          <a href="/privacy.html" target="_blank" class="privacy_link" name="AppA18">
+          <a href="/privacy.html" target="_blank" class="privacy_link" data-name="AppA18">
             Full Privacy Policy →
           </a>
         </div>

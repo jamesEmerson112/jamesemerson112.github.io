@@ -7,10 +7,10 @@
   }
 </script>
 
-<div class="theme" style={`mix-blend-mode: ${blendMode};`} name="ThemeSwitcher">
-  <button on:click={toggleTheme} class="theme_btn" type="button" name="theme-toggle">
-    <span class="_box" name="ThemeSwitcherSpan1"></span>
-    <span class="_text" name="ThemeSwitcherSpan2">{$darkMode ? 'Dark' : 'Light'}</span>
+<div class="theme" style={`mix-blend-mode: ${blendMode};`} data-name="ThemeSwitcher">
+  <button on:click={toggleTheme} class="theme_btn" type="button" data-name="theme-toggle">
+    <span class="_box" data-name="ThemeSwitcherSpan1"></span>
+    <span class="_text" data-name="ThemeSwitcherSpan2">{$darkMode ? 'Dark' : 'Light'}</span>
   </button>
 </div>
 
