@@ -78,25 +78,25 @@
 </script>
 
 {#if repo}
-  <div class="detail-overlay" name="RepoDetailPanel" role="presentation" on:click|self={closePanel}>
+  <div class="detail-overlay" data-name="RepoDetailPanel" role="presentation" on:click|self={closePanel}>
     <aside
       class="detail-panel"
       role="dialog"
       aria-modal="true"
       aria-labelledby="repo-detail-title"
-     name="RepoDetailPanelAside1">
-      <header class="detail-header" name="RepoDetailPanelHeader2">
-        <div class="detail-title-wrap" name="RepoDetailPanelDiv3">
-          <h2 id="repo-detail-title" name="RepoDetailPanelH24">{repo.name}</h2>
+     data-name="RepoDetailPanelAside1">
+      <header class="detail-header" data-name="RepoDetailPanelHeader2">
+        <div class="detail-title-wrap" data-name="RepoDetailPanelDiv3">
+          <h2 id="repo-detail-title" data-name="RepoDetailPanelH24">{repo.name}</h2>
           {#if displayPrimaryLanguage}
-            <span class="language-chip" name="RepoDetailPanelSpan5">
-              <span class="dot" name="RepoDetailPanelSpan6"></span>
+            <span class="language-chip" data-name="RepoDetailPanelSpan5">
+              <span class="dot" data-name="RepoDetailPanelSpan6"></span>
               {displayPrimaryLanguage}
             </span>
           {/if}
         </div>
 
-        <div class="header-actions" name="RepoDetailPanelDiv7">
+        <div class="header-actions" data-name="RepoDetailPanelDiv7">
           {#if canShowRepoLink}
             <a
               class="repo-link"
@@ -104,7 +104,7 @@
               target="_blank"
               rel="noopener noreferrer"
               aria-label={`View Repository: ${repo.name}`}
-             name="RepoDetailPanelA8">
+             data-name="RepoDetailPanelA8">
               View Repository ↗
             </a>
           {/if}
@@ -112,7 +112,7 @@
             bind:this={closeButton}
             class="close-btn"
             type="button"
-            name="repo-detail-close"
+            data-name="repo-detail-close"
             on:click={closePanel}
             aria-label="Close repository details"
           >
@@ -121,113 +121,113 @@
         </div>
       </header>
 
-      <section class="detail-body" name="RepoDetailPanelSection9">
-        <div class="detail-meta" name="RepoDetailPanelDiv10">
+      <section class="detail-body" data-name="RepoDetailPanelSection9">
+        <div class="detail-meta" data-name="RepoDetailPanelDiv10">
           {#if repo.isAnonymized}
-            <p class="repo-description muted" name="RepoDetailPanelP11">
+            <p class="repo-description muted" data-name="RepoDetailPanelP11">
               This Private Academic Projects entry is anonymized for recruiter-safe display.
             </p>
           {:else if repo.description}
-            <p class="repo-description" name="RepoDetailPanelP12">{repo.description}</p>
+            <p class="repo-description" data-name="RepoDetailPanelP12">{repo.description}</p>
           {/if}
 
           {#if topProjectTags.length > 0}
-            <div class="project-signals" aria-label="Project type signals" name="RepoDetailPanelDiv13">
-              <div class="signals-label" name="RepoDetailPanelDiv14">Project Type Signals</div>
-              <div class="signals-tags" name="RepoDetailPanelDiv15">
+            <div class="project-signals" aria-label="Project type signals" data-name="RepoDetailPanelDiv13">
+              <div class="signals-label" data-name="RepoDetailPanelDiv14">Project Type Signals</div>
+              <div class="signals-tags" data-name="RepoDetailPanelDiv15">
                 {#each topProjectTags as tag}
-                  <span class="signal-tag" name="RepoDetailPanelSpan16">{tag.label} {Math.round((tag.confidence || 0) * 100)}%</span>
+                  <span class="signal-tag" data-name="RepoDetailPanelSpan16">{tag.label} {Math.round((tag.confidence || 0) * 100)}%</span>
                 {/each}
               </div>
             </div>
           {/if}
 
-          <div class="summary-grid" name="RepoDetailPanelDiv17">
-            <div name="RepoDetailPanelDiv18">
-              <div class="label" name="RepoDetailPanelDiv19">Lines</div>
-              <div class="value" name="RepoDetailPanelDiv20">{formatNumber(repo.summary.lines)}</div>
+          <div class="summary-grid" data-name="RepoDetailPanelDiv17">
+            <div data-name="RepoDetailPanelDiv18">
+              <div class="label" data-name="RepoDetailPanelDiv19">Lines</div>
+              <div class="value" data-name="RepoDetailPanelDiv20">{formatNumber(repo.summary.lines)}</div>
             </div>
-            <div name="RepoDetailPanelDiv21">
-              <div class="label" name="RepoDetailPanelDiv22">Files</div>
-              <div class="value" name="RepoDetailPanelDiv23">{formatNumber(repo.summary.files)}</div>
+            <div data-name="RepoDetailPanelDiv21">
+              <div class="label" data-name="RepoDetailPanelDiv22">Files</div>
+              <div class="value" data-name="RepoDetailPanelDiv23">{formatNumber(repo.summary.files)}</div>
             </div>
-            <div name="RepoDetailPanelDiv24">
-              <div class="label" name="RepoDetailPanelDiv25">Complexity</div>
-              <div class="value" name="RepoDetailPanelDiv26">{formatNumber(repo.summary.complexity)}</div>
+            <div data-name="RepoDetailPanelDiv24">
+              <div class="label" data-name="RepoDetailPanelDiv25">Complexity</div>
+              <div class="value" data-name="RepoDetailPanelDiv26">{formatNumber(repo.summary.complexity)}</div>
             </div>
           </div>
 
-          <div class="cost-card" name="RepoDetailPanelDiv27">
-            <div class="row" name="RepoDetailPanelDiv28">
-              <span name="RepoDetailPanelSpan29">Traditional estimate</span>
-              <strong name="RepoDetailPanelStrong30">{formatCurrency(repo.summary.traditionalCost)}</strong>
+          <div class="cost-card" data-name="RepoDetailPanelDiv27">
+            <div class="row" data-name="RepoDetailPanelDiv28">
+              <span data-name="RepoDetailPanelSpan29">Traditional estimate</span>
+              <strong data-name="RepoDetailPanelStrong30">{formatCurrency(repo.summary.traditionalCost)}</strong>
             </div>
-            <div class="row highlight" name="RepoDetailPanelDiv31">
-              <span name="RepoDetailPanelSpan32">AI-assisted estimate</span>
-              <strong name="RepoDetailPanelStrong33">{formatCurrency(repo.summary.aiCost)}</strong>
+            <div class="row highlight" data-name="RepoDetailPanelDiv31">
+              <span data-name="RepoDetailPanelSpan32">AI-assisted estimate</span>
+              <strong data-name="RepoDetailPanelStrong33">{formatCurrency(repo.summary.aiCost)}</strong>
             </div>
-            <div class="row" name="RepoDetailPanelDiv34">
-              <span name="RepoDetailPanelSpan35">AI-assisted timeline</span>
-              <strong name="RepoDetailPanelStrong36">{formatDuration(repo.summary.aiMonths)}</strong>
+            <div class="row" data-name="RepoDetailPanelDiv34">
+              <span data-name="RepoDetailPanelSpan35">AI-assisted timeline</span>
+              <strong data-name="RepoDetailPanelStrong36">{formatDuration(repo.summary.aiMonths)}</strong>
             </div>
-            <p class="caveat" name="RepoDetailPanelP37">
+            <p class="caveat" data-name="RepoDetailPanelP37">
               Estimates are COCOMO-derived directional metrics, not delivery guarantees.
               Savings shown: {savingsPercent}%.
             </p>
           </div>
         </div>
 
-        <div class="detail-visuals" name="RepoDetailPanelDiv38">
-          <div class="language-breakdown" name="RepoDetailPanelDiv39">
-            <h3 name="RepoDetailPanelH340">Language composition</h3>
+        <div class="detail-visuals" data-name="RepoDetailPanelDiv38">
+          <div class="language-breakdown" data-name="RepoDetailPanelDiv39">
+            <h3 data-name="RepoDetailPanelH340">Language composition</h3>
             {#if languageRows.length > 0}
-              <div class="composition-bars" aria-hidden="true" name="RepoDetailPanelDiv41">
+              <div class="composition-bars" aria-hidden="true" data-name="RepoDetailPanelDiv41">
                 {#each languageRows as language}
-                  <div class="composition-row" name="RepoDetailPanelDiv42">
-                    <div class="composition-meta" name="RepoDetailPanelDiv43">
-                      <span name="RepoDetailPanelSpan44">{language.name}</span>
-                      <span name="RepoDetailPanelSpan45">{language.percent.toFixed(1)}%</span>
+                  <div class="composition-row" data-name="RepoDetailPanelDiv42">
+                    <div class="composition-meta" data-name="RepoDetailPanelDiv43">
+                      <span data-name="RepoDetailPanelSpan44">{language.name}</span>
+                      <span data-name="RepoDetailPanelSpan45">{language.percent.toFixed(1)}%</span>
                     </div>
-                    <div class="composition-track" name="RepoDetailPanelDiv46">
+                    <div class="composition-track" data-name="RepoDetailPanelDiv46">
                       <div
                         class="composition-fill"
                         style="width: {Math.max(0, Math.min(100, language.percent))}%; background-color: {compositionColor(language.name)}"
                         data-testid="language-composition-bar"
-                       name="RepoDetailPanelDiv47"></div>
+                       data-name="RepoDetailPanelDiv47"></div>
                     </div>
                   </div>
                 {/each}
               </div>
 
-              <table aria-label="Language composition breakdown" name="RepoDetailPanelTable48">
-                <thead name="RepoDetailPanelThead49">
-                  <tr name="RepoDetailPanelTr50">
-                    <th scope="col" name="RepoDetailPanelTh51">Language</th>
-                    <th scope="col" name="RepoDetailPanelTh52">Code</th>
-                    <th scope="col" name="RepoDetailPanelTh53">Code %</th>
-                    <th scope="col" name="RepoDetailPanelTh54">Complexity</th>
-                    <th scope="col" name="RepoDetailPanelTh55">Complexity %</th>
+              <table aria-label="Language composition breakdown" data-name="RepoDetailPanelTable48">
+                <thead data-name="RepoDetailPanelThead49">
+                  <tr data-name="RepoDetailPanelTr50">
+                    <th scope="col" data-name="RepoDetailPanelTh51">Language</th>
+                    <th scope="col" data-name="RepoDetailPanelTh52">Code</th>
+                    <th scope="col" data-name="RepoDetailPanelTh53">Code %</th>
+                    <th scope="col" data-name="RepoDetailPanelTh54">Complexity</th>
+                    <th scope="col" data-name="RepoDetailPanelTh55">Complexity %</th>
                   </tr>
                 </thead>
-                <tbody name="RepoDetailPanelTbody56">
+                <tbody data-name="RepoDetailPanelTbody56">
                   {#each languageRows as language}
-                    <tr name="RepoDetailPanelTr57">
-                      <th scope="row" name="RepoDetailPanelTh58">{language.name}</th>
-                      <td name="RepoDetailPanelTd59">{formatNumber(language.code)}</td>
-                      <td name="RepoDetailPanelTd60">{language.percent.toFixed(1)}%</td>
-                      <td name="RepoDetailPanelTd61">{formatNumber(language.complexity)}</td>
-                      <td name="RepoDetailPanelTd62">{language.complexityPercent.toFixed(1)}%</td>
+                    <tr data-name="RepoDetailPanelTr57">
+                      <th scope="row" data-name="RepoDetailPanelTh58">{language.name}</th>
+                      <td data-name="RepoDetailPanelTd59">{formatNumber(language.code)}</td>
+                      <td data-name="RepoDetailPanelTd60">{language.percent.toFixed(1)}%</td>
+                      <td data-name="RepoDetailPanelTd61">{formatNumber(language.complexity)}</td>
+                      <td data-name="RepoDetailPanelTd62">{language.complexityPercent.toFixed(1)}%</td>
                     </tr>
                   {/each}
                 </tbody>
               </table>
             {:else}
-              <p class="empty-breakdown" name="RepoDetailPanelP63">No language metrics available.</p>
+              <p class="empty-breakdown" data-name="RepoDetailPanelP63">No language metrics available.</p>
             {/if}
           </div>
 
-          <div class="detail-chart" name="RepoDetailPanelDiv64">
-            <h3 name="RepoDetailPanelH365">Quality Profile</h3>
+          <div class="detail-chart" data-name="RepoDetailPanelDiv64">
+            <h3 data-name="RepoDetailPanelH365">Quality Profile</h3>
             <CategorySpider
               stats={qualitySignals}
               size={360}
@@ -238,15 +238,15 @@
               fill="rgba(56, 189, 248, 0.18)"
             />
 
-            <div class="quality-rows" aria-label="Quality profile scores" name="RepoDetailPanelDiv66">
+            <div class="quality-rows" aria-label="Quality profile scores" data-name="RepoDetailPanelDiv66">
               {#each qualitySignals as signal}
-                <div class="quality-row" name="RepoDetailPanelDiv67">
-                  <div class="quality-meta" name="RepoDetailPanelDiv68">
-                    <span name="RepoDetailPanelSpan69">{signal.axis}</span>
-                    <strong name="RepoDetailPanelStrong70">{Math.round(signal.score)}</strong>
+                <div class="quality-row" data-name="RepoDetailPanelDiv67">
+                  <div class="quality-meta" data-name="RepoDetailPanelDiv68">
+                    <span data-name="RepoDetailPanelSpan69">{signal.axis}</span>
+                    <strong data-name="RepoDetailPanelStrong70">{Math.round(signal.score)}</strong>
                   </div>
-                  <div class="quality-track" name="RepoDetailPanelDiv71">
-                    <div class="quality-fill {scoreClass(signal.score)}" style="width: {signal.score}%" name="RepoDetailPanelDiv72"></div>
+                  <div class="quality-track" data-name="RepoDetailPanelDiv71">
+                    <div class="quality-fill {scoreClass(signal.score)}" style="width: {signal.score}%" data-name="RepoDetailPanelDiv72"></div>
                   </div>
                 </div>
               {/each}

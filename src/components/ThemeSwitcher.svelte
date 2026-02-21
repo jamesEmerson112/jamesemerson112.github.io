@@ -7,10 +7,10 @@
   }
 </script>
 
-<div class="theme" style={`mix-blend-mode: ${blendMode};`} name="ThemeSwitcher">
-  <button on:click={toggleTheme} class="theme_btn" type="button" name="theme-toggle">
-    <span class="_box" name="ThemeSwitcherSpan1"></span>
-    <span class="_text" name="ThemeSwitcherSpan2">{$darkMode ? 'Dark' : 'Light'}</span>
+<div class="theme" style={`mix-blend-mode: ${blendMode};`} data-name="ThemeSwitcher">
+  <button on:click={toggleTheme} class="theme_btn" type="button" data-name="theme-toggle">
+    <span class="_box" data-name="ThemeSwitcherSpan1"></span>
+    <span class="_text" data-name="ThemeSwitcherSpan2">{$darkMode ? 'Dark' : 'Light'}</span>
   </button>
 </div>
 
@@ -47,5 +47,24 @@
   
   .theme_btn:hover {
     opacity: 0.7;
+  }
+
+  @media (max-width: 900px) {
+    .theme {
+      left: auto;
+      right: calc(var(--pad) * 1.2);
+      top: calc(var(--pad) * 1.1);
+      bottom: auto;
+      transform: none;
+      white-space: nowrap;
+    }
+
+    .theme_btn {
+      font-size: 11px;
+      padding: 0.2rem 0.35rem;
+      border: 1px solid var(--surface-border);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface-base) 90%, transparent);
+    }
   }
 </style>

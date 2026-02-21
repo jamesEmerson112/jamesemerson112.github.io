@@ -2,12 +2,12 @@
   export let blendMode = 'difference';
 </script>
 
-<div class="copyright" style={`mix-blend-mode: ${blendMode};`} name="Copyright">
-  <div class="credit" name="CopyrightDiv1">
-    <span class="label" name="CopyrightSpan2">Inspired by</span>
+<div class="copyright" style={`mix-blend-mode: ${blendMode};`} data-name="Copyright">
+  <div class="credit" data-name="CopyrightDiv1">
+    <span class="label" data-name="CopyrightSpan2">Inspired by</span>
     <a href="https://p5aholic.me/" 
        target="_blank" 
-       rel="noopener noreferrer" name="CopyrightA3">
+       rel="noopener noreferrer" data-name="CopyrightA3">
       Keita Yamada
     </a>
   </div>
@@ -46,5 +46,11 @@
   
   .copyright a:hover {
     opacity: 0.7;
+  }
+
+  @media (max-width: 900px) {
+    .copyright {
+      display: none;
+    }
   }
 </style>

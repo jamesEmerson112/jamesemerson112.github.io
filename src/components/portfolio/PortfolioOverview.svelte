@@ -16,6 +16,7 @@
   import RepoCard from './RepoCard.svelte';
   import RepoDetailPanel from './RepoDetailPanel.svelte';
 
+  export let autoLoad = true;
   const INITIAL_VISIBLE_COUNT = 12;
 
   let visibleCount = INITIAL_VISIBLE_COUNT;
@@ -38,7 +39,9 @@
 
   // Load data on mount
   onMount(() => {
-    loadPortfolioData();
+    if (autoLoad) {
+      loadPortfolioData();
+    }
   });
 
   function loadMoreRepos() {
@@ -50,29 +53,29 @@
   }
 </script>
 
-<section class="portfolio-overview" name="PortfolioOverview">
-  <div class="container" name="PortfolioOverviewDiv1">
+<section class="portfolio-overview" data-name="PortfolioOverview">
+  <div class="container" data-name="PortfolioOverviewDiv1">
     <!-- Header -->
-    <header class="section-header" name="PortfolioOverviewHeader2">
-      <h1 name="PortfolioOverviewH13">Portfolio Metrics</h1>
-      <p class="section-subtitle" name="PortfolioOverviewP4">
+    <header class="section-header" data-name="PortfolioOverviewHeader2">
+      <h1 data-name="PortfolioOverviewH13">Portfolio Metrics</h1>
+      <p class="section-subtitle" data-name="PortfolioOverviewP4">
         Comprehensive analysis of my development portfolio, powered by AI
       </p>
     </header>
 
     {#if $loading}
       <!-- Loading State -->
-      <div class="loading-state" name="PortfolioOverviewDiv5">
-        <div class="spinner" name="PortfolioOverviewDiv6"></div>
-        <p name="PortfolioOverviewP7">Loading portfolio metrics...</p>
+      <div class="loading-state" data-name="PortfolioOverviewDiv5">
+        <div class="spinner" data-name="PortfolioOverviewDiv6"></div>
+        <p data-name="PortfolioOverviewP7">Loading portfolio metrics...</p>
       </div>
     {:else if $error}
       <!-- Error State -->
-      <div class="error-state" name="PortfolioOverviewDiv8">
-        <span class="error-icon" name="PortfolioOverviewSpan9">⚠️</span>
-        <h3 name="PortfolioOverviewH310">Failed to load metrics</h3>
-        <p name="PortfolioOverviewP11">{$error}</p>
-        <button class="retry-button" on:click={loadPortfolioData} type="button" name="portfolio-retry">
+      <div class="error-state" data-name="PortfolioOverviewDiv8">
+        <span class="error-icon" data-name="PortfolioOverviewSpan9">⚠️</span>
+        <h3 data-name="PortfolioOverviewH310">Failed to load metrics</h3>
+        <p data-name="PortfolioOverviewP11">{$error}</p>
+        <button class="retry-button" on:click={loadPortfolioData} type="button" data-name="portfolio-retry">
           Try Again
         </button>
       </div>
@@ -82,23 +85,23 @@
 
       <!-- Repositories Grid -->
       {#if $filteredRepos.length > 0}
-        <div class="repos-header" name="PortfolioOverviewDiv12">
-          <h2 name="PortfolioOverviewH213">Recent Projects ({shownCount} of {$filteredRepos.length})</h2>
+        <div class="repos-header" data-name="PortfolioOverviewDiv12">
+          <h2 data-name="PortfolioOverviewH213">Recent Projects ({shownCount} of {$filteredRepos.length})</h2>
         </div>
 
-        <div class="repos-grid" name="PortfolioOverviewDiv14">
+        <div class="repos-grid" data-name="PortfolioOverviewDiv14">
           {#each visibleRepos as repo (repo.id)}
             <RepoCard {repo} />
           {/each}
         </div>
 
         {#if shownCount < $filteredRepos.length}
-          <div class="load-more-wrap" name="PortfolioOverviewDiv15">
+          <div class="load-more-wrap" data-name="PortfolioOverviewDiv15">
             <button
               type="button"
               class="load-more-button"
               on:click={loadMoreRepos}
-              name="projects-load-more"
+              data-name="projects-load-more"
             >
               Load 12 more
             </button>
@@ -106,10 +109,10 @@
         {/if}
       {:else}
         <!-- Empty State -->
-        <div class="empty-state" name="PortfolioOverviewDiv16">
-          <span class="empty-icon" name="PortfolioOverviewSpan17">🔍</span>
-          <h3 name="PortfolioOverviewH318">No repositories found</h3>
-          <p name="PortfolioOverviewP19">Try adjusting your search or filters</p>
+        <div class="empty-state" data-name="PortfolioOverviewDiv16">
+          <span class="empty-icon" data-name="PortfolioOverviewSpan17">🔍</span>
+          <h3 data-name="PortfolioOverviewH318">No repositories found</h3>
+          <p data-name="PortfolioOverviewP19">Try adjusting your search or filters</p>
         </div>
       {/if}
     {/if}
@@ -270,8 +273,8 @@
   /* Repos Grid */
   .repos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 1.1rem;
   }
 
   .load-more-wrap {
@@ -318,6 +321,7 @@
 
     .repos-grid {
       grid-template-columns: 1fr;
+      gap: 0.8rem;
     }
   }
 </style>

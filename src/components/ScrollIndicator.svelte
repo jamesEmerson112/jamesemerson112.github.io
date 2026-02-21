@@ -22,9 +22,9 @@
 </script>
 
 {#if isVisible}
-  <div class="scroll-indicator" name="ScrollIndicator">
-    <div class="arrow" name="ScrollIndicatorDiv1">↓</div>
-    <div class="text" name="ScrollIndicatorDiv2">Scroll</div>
+  <div class="scroll-indicator" data-name="ScrollIndicator">
+    <div class="arrow" data-name="ScrollIndicatorDiv1">↓</div>
+    <div class="text" data-name="ScrollIndicatorDiv2">Scroll</div>
   </div>
 {/if}
 

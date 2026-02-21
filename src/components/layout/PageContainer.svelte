@@ -13,7 +13,7 @@
   });
 </script>
 
-<div id="Page" name="PageContainer">
+<div id="Page" data-name="PageContainer">
   <slot />
 </div>
 

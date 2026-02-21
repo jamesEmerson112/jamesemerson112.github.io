@@ -48,34 +48,34 @@
   }
 </script>
 
-<div class="portfolio-stats" name="PortfolioStats">
-  <div class="stats-container" name="PortfolioStatsDiv1">
-    <div class="stat-item" name="PortfolioStatsDiv2">
-      <div class="stat-value" name="PortfolioStatsDiv3">
+<div class="portfolio-stats" data-name="PortfolioStats">
+  <div class="stats-container" data-name="PortfolioStatsDiv1">
+    <div class="stat-item" data-name="PortfolioStatsDiv2">
+      <div class="stat-value" data-name="PortfolioStatsDiv3">
         {formatNumber(Math.round(displayLines))}
       </div>
-      <div class="stat-label" name="PortfolioStatsDiv4">Lines of Code</div>
+      <div class="stat-label" data-name="PortfolioStatsDiv4">Lines of Code</div>
     </div>
 
-    <div class="stat-item" name="PortfolioStatsDiv5">
-      <div class="stat-value" name="PortfolioStatsDiv6">
+    <div class="stat-item" data-name="PortfolioStatsDiv5">
+      <div class="stat-value" data-name="PortfolioStatsDiv6">
         {formatCurrency(displayValue)}
       </div>
-      <div class="stat-label" name="PortfolioStatsDiv7">Development Value</div>
+      <div class="stat-label" data-name="PortfolioStatsDiv7">Development Value</div>
     </div>
 
-    <div class="stat-item" name="PortfolioStatsDiv8">
-      <div class="stat-value" name="PortfolioStatsDiv9">
+    <div class="stat-item" data-name="PortfolioStatsDiv8">
+      <div class="stat-value" data-name="PortfolioStatsDiv9">
         {Math.round(displayYears)}
       </div>
-      <div class="stat-label" name="PortfolioStatsDiv10">Years Solo Dev Time</div>
+      <div class="stat-label" data-name="PortfolioStatsDiv10">Years Solo Dev Time</div>
     </div>
 
-    <div class="stat-item" name="PortfolioStatsDiv11">
-      <div class="stat-value" name="PortfolioStatsDiv12">
+    <div class="stat-item" data-name="PortfolioStatsDiv11">
+      <div class="stat-value" data-name="PortfolioStatsDiv12">
         {Math.round(displayLanguages)}
       </div>
-      <div class="stat-label" name="PortfolioStatsDiv13">Programming Languages</div>
+      <div class="stat-label" data-name="PortfolioStatsDiv13">Programming Languages</div>
     </div>
   </div>
 </div>
