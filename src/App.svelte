@@ -358,7 +358,7 @@
       clamp(4.5rem, 7.5vw, 6rem)
       calc(var(--pad) * 2)
       clamp(2.5rem, 4.8vw, 3.8rem);
-    padding-left: calc((var(--pad) * 2) + clamp(8.5rem, 12vw, 11.5rem));
+    padding-left: calc((var(--pad) * 2) + clamp(11rem, 18vw, 15rem) + clamp(1rem, 2vw, 1.75rem));
     transition: padding-left 0.22s ease;
   }
 

@@ -82,10 +82,12 @@
   .siteHeader {
     position: fixed;
     z-index: 10;
+    --site-header-rail-width: clamp(11rem, 18vw, 15rem);
     --site-header-anchor-left: calc(var(--pad) * 2);
     --site-header-anchor-top: calc(var(--pad) * 2);
     left: var(--site-header-anchor-left);
     top: var(--site-header-anchor-top);
+    width: min(var(--site-header-rail-width), calc(100vw - (var(--pad) * 4)));
     color: var(--chrome-fg);
     transition: opacity 0.22s ease, transform 0.22s ease;
   }
@@ -129,10 +131,13 @@
 
   .siteHeader_description {
     margin-top: 1.5em;
-    font-size: 12px;
-    line-height: 1.6;
+    font-size: clamp(0.72rem, 0.88vw, 0.88rem);
+    line-height: 1.55;
     opacity: 0.8;
-    max-width: 300px;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
     visibility: visible;
     transition:
       opacity 0.24s cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -156,7 +161,6 @@
   @media (min-width: 1280px) {
     .siteHeader_description {
       font-size: 14px;
-      max-width: 400px;
     }
   }
 
@@ -282,6 +286,7 @@
 
   @media (max-width: 900px) {
     .siteHeader {
+      width: auto;
       left: calc(var(--pad) * 0.85);
       top: calc(var(--pad) * 0.8);
     }
