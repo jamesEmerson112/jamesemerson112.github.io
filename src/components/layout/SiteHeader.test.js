@@ -11,7 +11,7 @@ describe('SiteHeader', () => {
   it('applies prop-driven blend mode on the header shell', () => {
     const { container } = render(SiteHeader, {
       props: {
-        currentPage: 'home',
+        activeSection: 'home',
         compact: false,
         blendMode: 'normal'
       }
@@ -25,7 +25,7 @@ describe('SiteHeader', () => {
   it('shows visible identity block in non-compact mode', () => {
     const { container } = render(SiteHeader, {
       props: {
-        currentPage: 'home',
+        activeSection: 'home',
         compact: false
       }
     });
@@ -46,7 +46,7 @@ describe('SiteHeader', () => {
   it('keeps identity block mounted but hidden in compact mode', () => {
     const { container } = render(SiteHeader, {
       props: {
-        currentPage: 'projects',
+        activeSection: 'projects',
         compact: true
       }
     });
@@ -56,7 +56,6 @@ describe('SiteHeader', () => {
     expect(identity).toHaveClass('is-hidden');
     expect(identity).toHaveAttribute('aria-hidden', 'true');
 
-    // Nav still rendered and usable in compact mode.
     expect(screen.getByRole('button', { name: /Metrics/i })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /Projects/i })).toBeInTheDocument();
   });
@@ -64,7 +63,7 @@ describe('SiteHeader', () => {
   it('keeps identity visible on metrics/projects when compact is false', async () => {
     const { component, container } = render(SiteHeader, {
       props: {
-        currentPage: 'metrics',
+        activeSection: 'metrics',
         compact: false
       }
     });
@@ -78,39 +77,82 @@ describe('SiteHeader', () => {
     expect(description).toHaveClass('is-hidden');
     expect(description).toHaveAttribute('aria-hidden', 'true');
 
-    await component.$set({ currentPage: 'privacy' });
+    await component.$set({ activeSection: 'privacy' });
     expect(identity).not.toHaveClass('is-hidden');
     expect(identity).toHaveAttribute('aria-hidden', 'false');
     expect(description).not.toHaveClass('is-hidden');
     expect(description).toHaveAttribute('aria-hidden', 'false');
   });
 
-  it('dispatches page change events from nav buttons in both modes', async () => {
-    const handler = vi.fn();
-    window.addEventListener('pageChange', handler);
-
-    const { component } = render(SiteHeader, {
+  it('hides description on mobile even when active section is home', () => {
+    const { container } = render(SiteHeader, {
       props: {
-        currentPage: 'home',
-        compact: false
+        activeSection: 'home',
+        compact: false,
+        isMobile: true
       }
     });
+
+    const description = container.querySelector('.siteHeader_description');
+    expect(description).toBeInTheDocument();
+    expect(description).toHaveClass('is-hidden');
+    expect(description).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('applies mobile hidden shell class when auto-hide is active', () => {
+    const { container } = render(SiteHeader, {
+      props: {
+        activeSection: 'projects',
+        isMobile: true,
+        mobileHidden: true
+      }
+    });
+
+    const header = container.querySelector('.siteHeader');
+    expect(header).toBeInTheDocument();
+    expect(header).toHaveClass('is-mobile-hidden');
+    expect(header).toHaveAttribute('aria-hidden', 'true');
+  });
+
+  it('emits navigate events from nav buttons in both modes', async () => {
+    const { component } = render(SiteHeader, {
+      props: {
+        activeSection: 'home',
+        compact: false,
+        isMobile: true,
+        mobileHidden: false
+      }
+    });
+    const handler = vi.fn();
+    component.$on('navigate', handler);
 
     await fireEvent.click(screen.getByRole('button', { name: /Metrics/i }));
     expect(handler).toHaveBeenCalled();
     expect(handler.mock.calls.at(-1)?.[0]?.detail).toBe('metrics');
 
-    await component.$set({ currentPage: 'metrics', compact: true });
+    await component.$set({ activeSection: 'metrics', compact: true });
     await fireEvent.click(screen.getByRole('button', { name: /Projects/i }));
     expect(handler.mock.calls.at(-1)?.[0]?.detail).toBe('projects');
+  });
 
-    window.removeEventListener('pageChange', handler);
+  it('reflects selected state from activeSection prop', () => {
+    const { container } = render(SiteHeader, {
+      props: {
+        activeSection: 'metrics',
+        compact: false
+      }
+    });
+
+    const metricsItem = container.querySelector('li.is-selected .nav-button[name="nav-metrics"]');
+    const homeItem = container.querySelector('li.is-selected .nav-button[name="nav-home"]');
+    expect(metricsItem).toBeInTheDocument();
+    expect(homeItem).not.toBeInTheDocument();
   });
 
   it('toggles identity visibility state without removing the identity block from DOM', async () => {
     const { component, container } = render(SiteHeader, {
       props: {
-        currentPage: 'home',
+        activeSection: 'home',
         compact: false
       }
     });

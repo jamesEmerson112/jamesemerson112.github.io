@@ -47,4 +47,10 @@
   .copyright a:hover {
     opacity: 0.7;
   }
+
+  @media (max-width: 900px) {
+    .copyright {
+      display: none;
+    }
+  }
 </style>

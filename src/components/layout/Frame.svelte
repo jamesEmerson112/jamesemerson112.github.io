@@ -53,4 +53,10 @@
     width: 100%;
     height: 1px;
   }
+
+  @media (max-width: 900px) {
+    .frame {
+      display: none;
+    }
+  }
 </style>

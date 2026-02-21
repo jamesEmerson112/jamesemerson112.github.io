@@ -16,6 +16,7 @@
   import RepoCard from './RepoCard.svelte';
   import RepoDetailPanel from './RepoDetailPanel.svelte';
 
+  export let autoLoad = true;
   const INITIAL_VISIBLE_COUNT = 12;
 
   let visibleCount = INITIAL_VISIBLE_COUNT;
@@ -38,7 +39,9 @@
 
   // Load data on mount
   onMount(() => {
-    loadPortfolioData();
+    if (autoLoad) {
+      loadPortfolioData();
+    }
   });
 
   function loadMoreRepos() {
@@ -270,8 +273,8 @@
   /* Repos Grid */
   .repos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
+    gap: 1.1rem;
   }
 
   .load-more-wrap {
@@ -318,6 +321,7 @@
 
     .repos-grid {
       grid-template-columns: 1fr;
+      gap: 0.8rem;
     }
   }
 </style>

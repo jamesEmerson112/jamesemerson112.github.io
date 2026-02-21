@@ -1,7 +1,7 @@
 <script>
-  import { onMount } from 'svelte';
+  import { onMount, tick } from 'svelte';
   import { darkMode } from './stores/theme.js';
-  import { portfolio } from './stores/portfolioStore.js';
+  import { loadPortfolioData } from './stores/portfolioStore.js';
   import PageContainer from './components/layout/PageContainer.svelte';
   import Frame from './components/layout/Frame.svelte';
   import Masks from './components/layout/Masks.svelte';
@@ -12,102 +12,198 @@
   import PortfolioOverview from './components/portfolio/PortfolioOverview.svelte';
   import OverallCharacterDashboard from './components/portfolio/OverallCharacterDashboard.svelte';
   import Timeline from './components/Timeline.svelte';
+  import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.js';
   import './styles/themes.css';
 
-  const PAGE_ORDER = ['home', 'metrics', 'projects', 'contact', 'privacy'];
-  const SCROLL_SWITCH_THRESHOLD = 30;
-  const SCROLL_SWITCH_COOLDOWN_MS = 650;
+  const SECTION_IDS = ['home', 'metrics', 'projects', 'contact', 'privacy'];
+  const DATA_PRELOAD_SECTIONS = new Set(['metrics', 'projects']);
+  const MOBILE_BREAKPOINT = 900;
+  const REVEAL_TOP_Y = 0;
 
-  let currentPage = 'home';
-  let lastWheelSwitchAt = 0;
-  $: isDataPage = currentPage === 'projects' || currentPage === 'metrics';
-  $: chromeBlendMode = isDataPage || !$darkMode ? 'normal' : 'difference';
+  let activeSection = 'home';
+  let scrollRoot;
+  let hasLoadedPortfolioData = false;
+  let isMobileViewport = false;
+  let mobileHeaderHidden = false;
+  const sectionElements = new Map();
 
-  function getScrollableAncestor(target) {
-    let node = target instanceof HTMLElement ? target : null;
+  $: chromeBlendMode = !$darkMode ? 'normal' : 'difference';
 
-    while (node) {
-      const { overflowY } = getComputedStyle(node);
-      const isScrollable = /(auto|scroll)/.test(overflowY) && node.scrollHeight > node.clientHeight + 1;
-      if (isScrollable) {
-        return node;
+  function isValidSection(sectionId) {
+    return SECTION_IDS.includes(sectionId);
+  }
+
+  function getHashSection() {
+    const hashSection = window.location.hash.replace('#', '');
+    return isValidSection(hashSection) ? hashSection : null;
+  }
+
+  function updateHash(sectionId, mode = 'replace') {
+    if (!isValidSection(sectionId)) return;
+
+    const nextHash = `#${sectionId}`;
+    if (window.location.hash === nextHash) return;
+
+    if (mode === 'push') {
+      window.history.pushState(null, '', nextHash);
+      return;
+    }
+
+    window.history.replaceState(null, '', nextHash);
+  }
+
+  function registerSection(node, sectionId) {
+    sectionElements.set(sectionId, node);
+    return {
+      destroy() {
+        if (sectionElements.get(sectionId) === node) {
+          sectionElements.delete(sectionId);
+        }
       }
-
-      node = node.parentElement;
-    }
-
-    return null;
+    };
   }
 
-  function canConsumeWheelDelta(scrollNode, deltaY) {
-    if (!scrollNode || !Number.isFinite(deltaY) || deltaY === 0) {
-      return false;
+  function scrollToSection(sectionId, { behavior = 'smooth', hashMode = null } = {}) {
+    if (!isValidSection(sectionId)) return;
+    const sectionNode = sectionElements.get(sectionId);
+    if (!sectionNode) return;
+
+    activeSection = sectionId;
+
+    if (hashMode) {
+      updateHash(sectionId, hashMode);
     }
 
-    const top = scrollNode.scrollTop;
-    const max = scrollNode.scrollHeight - scrollNode.clientHeight;
-
-    if (deltaY > 0) {
-      return top < max - 1;
-    }
-
-    return top > 1;
+    sectionNode.scrollIntoView({
+      behavior,
+      block: 'start'
+    });
   }
 
-  function switchPageByWheelDelta(deltaY) {
-    if (!Number.isFinite(deltaY) || Math.abs(deltaY) < SCROLL_SWITCH_THRESHOLD) {
-      return false;
+  function handleNavigate(event) {
+    const sectionId = event.detail;
+    scrollToSection(sectionId, { behavior: 'smooth', hashMode: 'push' });
+  }
+
+  function handleRootScroll() {
+    if (!scrollRoot) {
+      return;
     }
 
-    const now = Date.now();
-    if (now - lastWheelSwitchAt < SCROLL_SWITCH_COOLDOWN_MS) {
-      return false;
-    }
-
-    const currentIndex = PAGE_ORDER.indexOf(currentPage);
-    if (currentIndex === -1) {
-      return false;
-    }
-
-    const direction = deltaY > 0 ? 1 : -1;
-    const nextIndex = Math.max(0, Math.min(PAGE_ORDER.length - 1, currentIndex + direction));
-
-    if (nextIndex === currentIndex) {
-      return false;
-    }
-
-    currentPage = PAGE_ORDER[nextIndex];
-    lastWheelSwitchAt = now;
-    return true;
+    const scrollTop = scrollRoot.scrollTop;
+    mobileHeaderHidden = resolveMobileHeaderHidden({
+      isMobile: isMobileViewport,
+      scrollTop,
+      revealTopY: REVEAL_TOP_Y
+    });
   }
 
   onMount(() => {
-    // Load portfolio data
-    portfolio.load();
+    let sectionObserver;
+    let preloadObserver;
+    const mobileQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
 
-    // Listen for page change events from SiteHeader
-    const handlePageChange = (e) => {
-      currentPage = e.detail;
+    const handleViewportChange = (event) => {
+      isMobileViewport = event.matches;
+      if (!isMobileViewport) {
+        mobileHeaderHidden = false;
+      }
     };
 
-    const handleWheel = (event) => {
-      const scrollableAncestor = getScrollableAncestor(event.target);
-      if (canConsumeWheelDelta(scrollableAncestor, event.deltaY)) {
+    handleViewportChange(mobileQuery);
+    if (typeof mobileQuery.addEventListener === 'function') {
+      mobileQuery.addEventListener('change', handleViewportChange);
+    } else {
+      mobileQuery.addListener(handleViewportChange);
+    }
+
+    const handleHashChange = () => {
+      const hashSection = getHashSection();
+      if (hashSection) {
+        scrollToSection(hashSection, { behavior: 'smooth' });
+      }
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    tick().then(() => {
+      sectionObserver = new IntersectionObserver((entries) => {
+        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
+        if (visibleEntries.length === 0) {
+          return;
+        }
+
+        const dominantEntry = visibleEntries.sort(
+          (a, b) => b.intersectionRatio - a.intersectionRatio
+        )[0];
+        const nextSection = dominantEntry.target.id;
+
+        if (!isValidSection(nextSection)) {
+          return;
+        }
+
+        if (nextSection === activeSection) {
+          return;
+        }
+
+        activeSection = nextSection;
+        updateHash(nextSection, 'replace');
+      }, {
+        root: scrollRoot,
+        threshold: [0.35, 0.6],
+        rootMargin: '-15% 0px -45% 0px'
+      });
+
+      for (const sectionId of SECTION_IDS) {
+        const sectionNode = sectionElements.get(sectionId);
+        if (sectionNode) {
+          sectionObserver.observe(sectionNode);
+        }
+      }
+
+      preloadObserver = new IntersectionObserver((entries) => {
+        if (hasLoadedPortfolioData) {
+          return;
+        }
+
+        if (!entries.some((entry) => entry.isIntersecting)) {
+          return;
+        }
+
+        hasLoadedPortfolioData = true;
+        loadPortfolioData();
+        preloadObserver.disconnect();
+      }, {
+        root: scrollRoot,
+        rootMargin: '500px 0px',
+        threshold: 0
+      });
+
+      for (const sectionId of DATA_PRELOAD_SECTIONS) {
+        const sectionNode = sectionElements.get(sectionId);
+        if (sectionNode) {
+          preloadObserver.observe(sectionNode);
+        }
+      }
+
+      const initialHashSection = getHashSection();
+      if (!initialHashSection) {
         return;
       }
 
-      const switched = switchPageByWheelDelta(event.deltaY);
-      if (switched) {
-        event.preventDefault();
-      }
-    };
-
-    window.addEventListener('pageChange', handlePageChange);
-    window.addEventListener('wheel', handleWheel, { passive: false });
+      scrollToSection(initialHashSection, { behavior: 'auto' });
+    });
 
     return () => {
-      window.removeEventListener('pageChange', handlePageChange);
-      window.removeEventListener('wheel', handleWheel);
+      if (typeof mobileQuery.removeEventListener === 'function') {
+        mobileQuery.removeEventListener('change', handleViewportChange);
+      } else {
+        mobileQuery.removeListener(handleViewportChange);
+      }
+
+      window.removeEventListener('hashchange', handleHashChange);
+      sectionObserver?.disconnect();
+      preloadObserver?.disconnect();
     };
   });
 </script>
@@ -115,7 +211,14 @@
 <PageContainer>
   <!-- Layer 10: UI Chrome -->
   <Frame blendMode={chromeBlendMode} />
-  <SiteHeader {currentPage} compact={false} blendMode={chromeBlendMode} />
+  <SiteHeader
+    activeSection={activeSection}
+    compact={false}
+    blendMode={chromeBlendMode}
+    isMobile={isMobileViewport}
+    mobileHidden={mobileHeaderHidden}
+    on:navigate={handleNavigate}
+  />
   <ThemeSwitcher blendMode={chromeBlendMode} />
   <Copyright blendMode={chromeBlendMode} />
 
@@ -124,67 +227,95 @@
 
   <!-- Layer 2: Content -->
   <ContentLayer blendMode={chromeBlendMode}>
-    {#if isDataPage}
-      <div class="data-page-aura" aria-hidden="true" name="AppDiv1"></div>
-    {/if}
+    <main
+      class="single-page-scroll"
+      class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}
+      bind:this={scrollRoot}
+      on:scroll={handleRootScroll}
+      name="AppMainScroll"
+    >
+      <div class="page-aura" aria-hidden="true" name="AppDiv1"></div>
 
-    {#if currentPage === 'home'}
-      <div class="page home" name="AppHomePage">
+      <section id="home" class="app-section home-section" use:registerSection={'home'} name="AppHomeSection">
         <div class="home_content" name="AppDiv2">
           <Timeline />
         </div>
-      </div>
-    {:else if currentPage === 'projects'}
-      <div class="page projects data-page" name="AppProjectsPage">
-        <div class="projects_content data_content" name="AppDiv3">
-          <PortfolioOverview />
+      </section>
+
+      <section
+        id="metrics"
+        class="app-section metrics-section"
+        use:registerSection={'metrics'}
+        name="AppMetricsSection"
+      >
+        <div class="metrics_content data_content" name="AppDiv3">
+          <OverallCharacterDashboard autoLoad={false} />
         </div>
-      </div>
-    {:else if currentPage === 'metrics'}
-      <div class="page metrics data-page" name="AppMetricsPage">
-        <div class="metrics_content data_content" name="AppDiv4">
-          <OverallCharacterDashboard />
+      </section>
+
+      <section
+        id="projects"
+        class="app-section projects-section"
+        use:registerSection={'projects'}
+        name="AppProjectsSection"
+      >
+        <div class="projects_content data_content" name="AppDiv4">
+          <PortfolioOverview autoLoad={false} />
         </div>
-      </div>
-    {:else if currentPage === 'contact'}
-      <div class="page contact" name="AppContactPage">
+      </section>
+
+      <section
+        id="contact"
+        class="app-section contact-section"
+        use:registerSection={'contact'}
+        name="AppContactSection"
+      >
         <div class="contact_content" name="AppDiv5">
           <h2 name="AppH26">Get in Touch</h2>
           <div class="contact_links" name="AppDiv7">
-            <a href="https://x.com/V_like_flan"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="contact_link" name="AppA8">
+            <a
+              href="https://x.com/V_like_flan"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact_link"
+              name="AppA8"
+            >
               <span class="link_label" name="AppSpan9">Twitter</span>
               <span class="link_handle" name="AppSpan10">@V_like_flan</span>
             </a>
 
-            <a href="https://www.linkedin.com/in/james-vo/"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="contact_link" name="AppA11">
+            <a
+              href="https://www.linkedin.com/in/james-vo/"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="contact_link"
+              name="AppA11"
+            >
               <span class="link_label" name="AppSpan12">LinkedIn</span>
               <span class="link_handle" name="AppSpan13">james-vo</span>
             </a>
           </div>
         </div>
-      </div>
-    {:else if currentPage === 'privacy'}
-      <div class="page privacy" name="AppPrivacyPage">
+      </section>
+
+      <section
+        id="privacy"
+        class="app-section privacy-section"
+        use:registerSection={'privacy'}
+        name="AppPrivacySection"
+      >
         <div class="privacy_content" name="AppDiv14">
           <h2 name="AppH215">Privacy</h2>
           <p class="privacy_summary" name="AppP16">
             This site uses Google Analytics<br name="AppBr17" />
             to understand how visitors use the site.
           </p>
-          <a href="/privacy.html"
-             target="_blank"
-             class="privacy_link" name="AppA18">
+          <a href="/privacy.html" target="_blank" class="privacy_link" name="AppA18">
             Full Privacy Policy →
           </a>
         </div>
-      </div>
-    {/if}
+      </section>
+    </main>
   </ContentLayer>
 </PageContainer>
 
@@ -194,19 +325,18 @@
     padding: 0;
   }
 
-  .page {
-    position: absolute;
+  .single-page-scroll {
+    position: relative;
     z-index: 1;
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding-right: calc(var(--pad) * 2);
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
   }
 
-  .data-page-aura {
-    position: absolute;
+  .page-aura {
+    position: fixed;
     inset: 0;
     pointer-events: none;
     z-index: 0;
@@ -214,73 +344,61 @@
       radial-gradient(circle at 16% 15%, rgba(255, 255, 255, 0.08) 0%, transparent 55%),
       radial-gradient(circle at 84% 10%, rgba(255, 255, 255, 0.06) 0%, transparent 52%),
       linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 48%);
-    opacity: var(--data-page-aura-opacity, 0.9);
+    opacity: var(--data-page-aura-opacity, 0.75);
   }
 
-  /* Home Page */
-  .page.home {
-    overflow: hidden;
+  .app-section {
+    position: relative;
+    z-index: 1;
+    min-height: clamp(560px, 85svh, 940px);
+    display: flex;
+    align-items: flex-start;
+    justify-content: stretch;
+    padding:
+      clamp(4.5rem, 7.5vw, 6rem)
+      calc(var(--pad) * 2)
+      clamp(2.5rem, 4.8vw, 3.8rem);
+    padding-left: calc((var(--pad) * 2) + clamp(8.5rem, 12vw, 11.5rem));
+    transition: padding-left 0.22s ease;
+  }
+
+  .home-section {
+    min-height: 100svh;
+    align-items: center;
+    justify-content: flex-end;
   }
 
   .home_content {
     text-align: right;
     max-width: 600px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+    width: 100%;
   }
 
-  /* Projects Page */
-  .page.projects {
-    justify-content: stretch;
-    align-items: stretch;
-    padding-right: 0;
-  }
-
-  .page.metrics {
-    justify-content: stretch;
-    align-items: stretch;
-    padding-right: 0;
-  }
-
+  .metrics_content,
   .projects_content {
     width: 100%;
-    height: 100%;
-    overflow-y: auto;
     text-align: left;
     max-width: none;
-    padding: calc(var(--pad) * 2);
-  }
-
-  /* Metrics Page */
-  .metrics_content {
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-    text-align: left;
-    max-width: none;
-    padding: calc(var(--pad) * 2);
-  }
-
-  .page.data-page {
-    align-items: flex-start;
-    justify-content: stretch;
   }
 
   .data_content {
-    padding-top: clamp(6rem, 11vw, 7.5rem);
-    /* Reserve a left rail so fixed site navigation never overlaps data cards. */
-    padding-left: calc((var(--pad) * 2) + clamp(8.5rem, 12vw, 11.5rem));
+    width: 100%;
   }
 
-  /* Contact Page */
-  .contact_content {
+  .contact-section,
+  .privacy-section {
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .contact_content,
+  .privacy_content {
     text-align: right;
     max-width: 600px;
   }
 
-  .contact_content h2 {
+  .contact_content h2,
+  .privacy_content h2 {
     font-size: clamp(32px, 6vw, 60px);
     font-weight: 200;
     margin: 0 0 1em 0;
@@ -319,19 +437,6 @@
     font-weight: 400;
   }
 
-  /* Privacy Page */
-  .privacy_content {
-    text-align: right;
-    max-width: 600px;
-  }
-
-  .privacy_content h2 {
-    font-size: clamp(32px, 6vw, 60px);
-    font-weight: 200;
-    margin: 0 0 1em 0;
-    color: var(--text-primary);
-  }
-
   .privacy_summary {
     font-size: 14px;
     line-height: 1.6;
@@ -357,9 +462,19 @@
   }
 
   @media (max-width: 900px) {
-    .data_content {
-      padding-top: clamp(6.5rem, 18vw, 8.5rem);
+    .app-section {
+      padding-top: clamp(5.6rem, 16vw, 8rem);
+      padding-left: calc((var(--pad) * 2) + 3.9rem);
+      padding-right: calc(var(--pad) * 2);
+    }
+
+    .single-page-scroll.mobile-header-hidden .app-section {
       padding-left: calc(var(--pad) * 2);
+    }
+
+    .home_content {
+      text-align: left;
+      max-width: none;
     }
   }
 </style>

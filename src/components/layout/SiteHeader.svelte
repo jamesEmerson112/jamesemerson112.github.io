@@ -1,7 +1,13 @@
 <script>
-  export let currentPage = 'home';
+  import { createEventDispatcher } from 'svelte';
+
+  export let activeSection = 'home';
+  export let currentPage = null;
   export let compact = false;
   export let blendMode = 'difference';
+  export let isMobile = false;
+  export let mobileHidden = false;
+  const dispatch = createEventDispatcher();
 
   const pages = [
     { id: 'home', label: 'Home' },
@@ -11,20 +17,22 @@
     { id: 'privacy', label: 'Privacy' }
   ];
 
+  $: selectedSection = currentPage || activeSection || 'home';
   $: hideIdentity = compact;
-  $: hideDescription = compact || currentPage === 'metrics' || currentPage === 'projects';
+  $: hideDescription = isMobile || compact || selectedSection === 'metrics' || selectedSection === 'projects';
   $: effectiveBlendMode = compact ? 'normal' : blendMode;
 
   function handlePageChange(pageId) {
-    currentPage = pageId;
-    // Dispatch event for parent to handle
-    window.dispatchEvent(new CustomEvent('pageChange', { detail: pageId }));
+    dispatch('navigate', pageId);
   }
 </script>
 
 <header
   class="siteHeader"
   class:is-compact={compact}
+  class:is-mobile={isMobile}
+  class:is-mobile-hidden={isMobile && mobileHidden}
+  aria-hidden={isMobile && mobileHidden ? 'true' : 'false'}
   style={`mix-blend-mode: ${effectiveBlendMode};`}
   name="SiteHeader"
 >
@@ -54,7 +62,7 @@
   <nav class="siteHeader_nav" name="SiteHeaderNav">
     <ol class:is-compact-list={compact} name="SiteHeaderNavList">
       {#each pages as page}
-        <li class:is-selected={currentPage === page.id} name="SiteHeaderLi4">
+        <li class:is-selected={selectedSection === page.id} name="SiteHeaderLi4">
           <button
             on:click={() => handlePageChange(page.id)}
             class="nav-button"
@@ -79,9 +87,15 @@
     left: var(--site-header-anchor-left);
     top: var(--site-header-anchor-top);
     color: var(--chrome-fg);
+    transition: opacity 0.22s ease, transform 0.22s ease;
   }
 
-  /* Keep identity footprint so nav anchor does not jump between pages. */
+  .siteHeader.is-mobile-hidden {
+    opacity: 0;
+    transform: translateX(-14px);
+    pointer-events: none;
+  }
+
   .siteHeader_identity {
     opacity: 1;
     visibility: visible;
@@ -209,7 +223,21 @@
 
   .nav-button ._text {
     position: relative;
-    transition: opacity 0.4s cubic-bezier(0.1, 0.4, 0.2, 1);
+    transition: opacity 0.4s cubic-bezier(0.1, 0.4, 0.2, 1), letter-spacing 0.25s ease;
+  }
+
+  .nav-button ._text::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 100%;
+    height: 1px;
+    background: var(--text-primary);
+    transform-origin: left center;
+    transform: scaleX(0);
+    opacity: 0.7;
+    transition: transform 0.28s ease, opacity 0.28s ease;
   }
 
   .nav-button ._text::before {
@@ -239,10 +267,50 @@
   .is-selected ._text {
     opacity: 1;
     color: var(--text-primary);
+    letter-spacing: 0.02em;
+  }
+
+  .is-selected ._text::after {
+    transform: scaleX(1);
+    opacity: 1;
   }
 
   .nav-button:focus-visible {
     outline: 2px solid var(--accent-primary);
     outline-offset: 2px;
+  }
+
+  @media (max-width: 900px) {
+    .siteHeader {
+      left: calc(var(--pad) * 0.85);
+      top: calc(var(--pad) * 0.8);
+    }
+
+    .siteHeader_title {
+      font-size: 16px;
+      line-height: 1.02;
+    }
+
+    .siteHeader_nav {
+      margin-top: 12px;
+    }
+
+    .siteHeader_nav ol {
+      row-gap: 8px;
+    }
+
+    .nav-button {
+      padding: 0.08rem 0;
+    }
+
+    .nav-button ._text {
+      font-size: 14px;
+      letter-spacing: 0.01em;
+    }
+
+    .nav-button ._dot {
+      top: 1px;
+      font-size: 8px;
+    }
   }
 </style>

@@ -48,4 +48,23 @@
   .theme_btn:hover {
     opacity: 0.7;
   }
+
+  @media (max-width: 900px) {
+    .theme {
+      left: auto;
+      right: calc(var(--pad) * 1.2);
+      top: calc(var(--pad) * 1.1);
+      bottom: auto;
+      transform: none;
+      white-space: nowrap;
+    }
+
+    .theme_btn {
+      font-size: 11px;
+      padding: 0.2rem 0.35rem;
+      border: 1px solid var(--surface-border);
+      border-radius: 999px;
+      background: color-mix(in srgb, var(--surface-base) 90%, transparent);
+    }
+  }
 </style>

@@ -148,15 +148,17 @@
   .repo-card {
     background: var(--surface-panel);
     border: 1px solid var(--surface-border);
-    border-radius: 14px;
-    padding: 1rem;
+    border-radius: 12px;
+    padding: clamp(0.72rem, 1.2vw, 0.96rem);
     transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
     cursor: pointer;
     text-align: left;
     width: 100%;
+    min-width: 0;
+    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 0.72rem;
+    gap: clamp(0.5rem, 0.95vw, 0.68rem);
   }
 
   .repo-card:hover {
@@ -174,6 +176,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    flex-wrap: wrap;
     gap: 1rem;
   }
 
@@ -192,12 +195,17 @@
 
   .repo-title h3 {
     margin: 0;
-    font-size: 1.2rem;
+    font-size: 1.08rem;
     font-weight: 700;
     color: var(--text-primary);
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
+    overflow-wrap: anywhere;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
   }
 
   .language-badge {
@@ -214,6 +222,7 @@
     background: var(--surface-glass);
     border-color: var(--surface-border-strong);
     color: var(--text-primary);
+    margin-left: auto;
   }
 
   .language-dot {
@@ -225,9 +234,9 @@
 
   .repo-description {
     margin: 0;
-    font-size: 0.875rem;
+    font-size: 0.84rem;
     color: var(--text-secondary);
-    line-height: 1.4;
+    line-height: 1.34;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -257,19 +266,20 @@
   }
 
   .repo-stats {
-    display: flex;
-    gap: 0.75rem;
-    padding: 0.68rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
+    gap: 0.45rem;
+    padding: 0.56rem;
     background: var(--surface-glass);
-    border-radius: 8px;
+    border-radius: 7px;
   }
 
   .stat {
     display: flex;
     align-items: center;
     gap: 0.3rem;
-    flex: 1;
     min-width: 0;
+    padding: 0.08rem 0;
   }
 
   .stat-icon {
@@ -278,7 +288,7 @@
 
   .stat-value {
     font-weight: 700;
-    font-size: 0.84rem;
+    font-size: 0.8rem;
     color: var(--text-primary);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -291,8 +301,8 @@
 
   .language-composition {
     border: 1px solid var(--surface-border);
-    border-radius: 10px;
-    padding: 0.7rem;
+    border-radius: 9px;
+    padding: 0.56rem;
     background: var(--surface-glass);
   }
 
@@ -309,7 +319,7 @@
     width: 100%;
     border-radius: 999px;
     overflow: hidden;
-    height: 10px;
+    height: 8px;
     background: var(--surface-base);
   }
 
@@ -342,9 +352,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
     gap: 0.75rem;
     border-top: 1px solid var(--surface-border-soft);
-    padding-top: 0.7rem;
+    padding-top: 0.56rem;
     margin-top: 0.05rem;
   }
 
@@ -369,19 +380,60 @@
     color: var(--text-primary);
     font-weight: 600;
     font-size: 1rem;
+    margin-left: auto;
+  }
+
+  @media (max-width: 1024px) {
+    .repo-stats {
+      grid-template-columns: repeat(auto-fit, minmax(min(100%, 7rem), 1fr));
+    }
   }
 
   @media (max-width: 560px) {
     .repo-card {
-      padding: 1rem;
+      padding: 0.78rem;
+      gap: 0.52rem;
     }
 
     .repo-stats {
-      flex-wrap: wrap;
+      padding: 0.5rem;
+      gap: 0.45rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .stat {
-      min-width: 40%;
+      min-width: 0;
+    }
+
+    .repo-title h3 {
+      font-size: 1rem;
+      -webkit-line-clamp: 3;
+    }
+
+    .repo-description {
+      font-size: 0.8rem;
+      -webkit-line-clamp: 1;
+    }
+
+    .language-composition {
+      padding: 0.5rem;
+    }
+
+    .composition-legend {
+      gap: 0.34rem;
+    }
+
+    .legend-item {
+      font-size: 0.62rem;
+    }
+
+    .card-footer {
+      gap: 0.4rem 0.75rem;
+    }
+
+    .repo-link,
+    .view-details {
+      font-size: 0.86rem;
     }
   }
 </style>

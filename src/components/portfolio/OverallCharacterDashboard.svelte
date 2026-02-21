@@ -21,10 +21,13 @@
     { id: 'relative', label: 'Relative (Top axis = 100)' },
     { id: 'absolute', label: 'Absolute (Raw score)' }
   ];
+  export let autoLoad = true;
   let spiderScaleMode = 'relative';
 
   onMount(() => {
-    loadPortfolioData();
+    if (autoLoad) {
+      loadPortfolioData();
+    }
   });
 
   function safePercent(score) {

@@ -6,11 +6,12 @@ import OverallCharacterDashboard from './components/portfolio/OverallCharacterDa
 import * as portfolioStore from './stores/portfolioStore.js';
 
 describe('Metrics dashboard wiring', () => {
-  it('mounts OverallCharacterDashboard for metrics route in App.svelte', async () => {
+  it('mounts OverallCharacterDashboard in the metrics section of App.svelte', async () => {
     const appSource = await fs.readFile(path.join(process.cwd(), 'src', 'App.svelte'), 'utf-8');
 
-    expect(appSource).toContain("currentPage === 'metrics'");
-    expect(appSource).toContain('<OverallCharacterDashboard />');
+    expect(appSource).toContain('class="single-page-scroll"');
+    expect(appSource).toContain('id="metrics"');
+    expect(appSource).toContain('<OverallCharacterDashboard autoLoad={false} />');
   });
 
   it('renders overall recruiter stat dashboard', async () => {
@@ -35,7 +36,7 @@ describe('Metrics dashboard wiring', () => {
       ]
     });
 
-    render(OverallCharacterDashboard);
+    render(OverallCharacterDashboard, { props: { autoLoad: false } });
 
     expect(await screen.findByText(/Generalist Character Stats/i)).toBeInTheDocument();
     expect((await screen.findAllByText(/AI\/ML/i)).length).toBeGreaterThan(0);
@@ -60,5 +61,16 @@ describe('Metrics dashboard wiring', () => {
     expect(relativeButton).toHaveAttribute('aria-pressed', 'false');
     expect(absoluteButton).toHaveAttribute('aria-pressed', 'true');
     expect((await screen.findAllByText(/Rings: 25 \/ 50 \/ 75 \/ 100 \(raw score\)/i)).length).toBeGreaterThan(0);
+  });
+
+  it('supports autoLoad contract in OverallCharacterDashboard source', async () => {
+    const source = await fs.readFile(
+      path.join(process.cwd(), 'src', 'components', 'portfolio', 'OverallCharacterDashboard.svelte'),
+      'utf-8'
+    );
+
+    expect(source).toContain('export let autoLoad = true;');
+    expect(source).toContain('if (autoLoad) {');
+    expect(source).toContain('loadPortfolioData();');
   });
 });
