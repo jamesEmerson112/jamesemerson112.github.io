@@ -1,6 +1,6 @@
 {
   "id": "private-8efe9e517468",
-  "scannedAt": "2026-02-17T08:18:14.238Z",
+  "scannedAt": "2026-02-23T03:10:28.375Z",
   "metadata": {
     "name": "Private Project 16",
     "fullName": null,
@@ -8,7 +8,7 @@
     "url": null,
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-02-02T05:25:26Z",
+    "lastUpdated": "2026-02-22T23:23:57Z",
     "createdAt": null,
     "stars": 0,
     "language": "Jupyter Notebook",
@@ -21,14 +21,14 @@
   "sccRaw": [
     {
       "Name": "CSV",
-      "Bytes": 13813,
+      "Bytes": 41257,
       "CodeBytes": 0,
-      "Lines": 746,
-      "Code": 746,
+      "Lines": 2349,
+      "Code": 2349,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
-      "Count": 2,
+      "Count": 4,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -36,12 +36,27 @@
     },
     {
       "Name": "Plain Text",
-      "Bytes": 246,
+      "Bytes": 22972,
       "CodeBytes": 0,
-      "Lines": 14,
-      "Code": 12,
+      "Lines": 599,
+      "Code": 482,
       "Comment": 0,
-      "Blank": 2,
+      "Blank": 117,
+      "Complexity": 0,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Jupyter",
+      "Bytes": 3957813,
+      "CodeBytes": 0,
+      "Lines": 2752,
+      "Code": 2752,
+      "Comment": 0,
+      "Blank": 0,
       "Complexity": 0,
       "Count": 2,
       "WeightedComplexity": 0,
@@ -50,30 +65,15 @@
       "ULOC": 0
     },
     {
-      "Name": "Jupyter",
-      "Bytes": 2701803,
-      "CodeBytes": 0,
-      "Lines": 1473,
-      "Code": 1473,
-      "Comment": 0,
-      "Blank": 0,
-      "Complexity": 0,
-      "Count": 1,
-      "WeightedComplexity": 0,
-      "Files": [],
-      "LineLength": null,
-      "ULOC": 0
-    },
-    {
       "Name": "Markdown",
-      "Bytes": 33,
+      "Bytes": 17293,
       "CodeBytes": 0,
-      "Lines": 2,
-      "Code": 1,
+      "Lines": 501,
+      "Code": 398,
       "Comment": 0,
-      "Blank": 1,
+      "Blank": 103,
       "Complexity": 0,
-      "Count": 1,
+      "Count": 2,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -82,98 +82,98 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 2235,
-      "totalCode": 2232,
+      "totalLines": 6201,
+      "totalCode": 5981,
       "totalComments": 0,
-      "totalBlanks": 3,
-      "totalBytes": 2715895,
-      "totalFiles": 6,
+      "totalBlanks": 220,
+      "totalBytes": 4039335,
+      "totalFiles": 11,
       "totalLanguages": 4,
       "totalComplexity": 0,
       "primaryLanguage": "Jupyter",
-      "primaryLanguagePercent": 66
+      "primaryLanguagePercent": 46
     },
     "languages": [
       {
         "name": "Jupyter",
-        "lines": 1473,
-        "code": 1473,
+        "lines": 2752,
+        "code": 2752,
         "comments": 0,
         "blanks": 0,
-        "bytes": 2701803,
-        "files": 1,
+        "bytes": 3957813,
+        "files": 2,
         "complexity": 0,
-        "percentOfLines": 65.9,
-        "percentOfCode": 66,
-        "percentOfBytes": 99.5
+        "percentOfLines": 44.4,
+        "percentOfCode": 46,
+        "percentOfBytes": 98
       },
       {
         "name": "CSV",
-        "lines": 746,
-        "code": 746,
+        "lines": 2349,
+        "code": 2349,
         "comments": 0,
         "blanks": 0,
-        "bytes": 13813,
-        "files": 2,
+        "bytes": 41257,
+        "files": 4,
         "complexity": 0,
-        "percentOfLines": 33.4,
-        "percentOfCode": 33.4,
-        "percentOfBytes": 0.5
+        "percentOfLines": 37.9,
+        "percentOfCode": 39.3,
+        "percentOfBytes": 1
       },
       {
         "name": "Plain Text",
-        "lines": 14,
-        "code": 12,
+        "lines": 599,
+        "code": 482,
         "comments": 0,
-        "blanks": 2,
-        "bytes": 246,
-        "files": 2,
+        "blanks": 117,
+        "bytes": 22972,
+        "files": 3,
         "complexity": 0,
-        "percentOfLines": 0.6,
-        "percentOfCode": 0.5,
-        "percentOfBytes": 0
+        "percentOfLines": 9.7,
+        "percentOfCode": 8.1,
+        "percentOfBytes": 0.6
       },
       {
         "name": "Markdown",
-        "lines": 2,
-        "code": 1,
+        "lines": 501,
+        "code": 398,
         "comments": 0,
-        "blanks": 1,
-        "bytes": 33,
-        "files": 1,
+        "blanks": 103,
+        "bytes": 17293,
+        "files": 2,
         "complexity": 0,
-        "percentOfLines": 0.1,
-        "percentOfCode": 0,
-        "percentOfBytes": 0
+        "percentOfLines": 8.1,
+        "percentOfCode": 6.7,
+        "percentOfBytes": 0.4
       }
     ],
     "projectTags": [
       {
         "label": "Data",
-        "confidence": 0.57
+        "confidence": 0.61
       },
       {
         "label": "AI/ML",
-        "confidence": 0.43
+        "confidence": 0.39
       }
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 2.232,
-        "effort": 5.58,
-        "time": 4.8,
-        "people": 1.16,
-        "cost": 26155,
+        "kloc": 5.981,
+        "effort": 15.7,
+        "time": 7.12,
+        "people": 2.21,
+        "cost": 73628,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 1.42,
-        "time": 2.86,
-        "people": 0.5,
-        "cost": 6670,
+        "effort": 4,
+        "time": 4.23,
+        "people": 0.95,
+        "cost": 18775,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -193,33 +193,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 5.58,
-            "weeks": 24.1,
-            "days": 121,
-            "cost": 26155,
+            "months": 15.7,
+            "weeks": 68,
+            "days": 341,
+            "cost": 73628,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 4.8,
-            "hoursPerWeek": 46.4,
-            "totalHours": 965,
-            "cost": 26155,
+            "months": 7.12,
+            "hoursPerWeek": 88.2,
+            "totalHours": 2716,
+            "cost": 73628,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 1.42,
-            "weeks": 6.2,
-            "days": 31,
-            "cost": 6670,
+            "months": 4,
+            "weeks": 17.3,
+            "days": 87,
+            "cost": 18775,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 2.86,
-            "hoursPerWeek": 19.9,
-            "totalHours": 246,
-            "cost": 6670,
+            "months": 4.23,
+            "hoursPerWeek": 37.8,
+            "totalHours": 692,
+            "cost": 18775,
             "description": "AI-assisted part-time development"
           }
         }
