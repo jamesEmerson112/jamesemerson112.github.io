@@ -1,6 +1,6 @@
 {
   "id": "private-34e2aa74c09f",
-  "scannedAt": "2026-03-01T03:50:56.914Z",
+  "scannedAt": "2026-03-16T03:13:45.259Z",
   "metadata": {
     "name": "Private Project 5",
     "fullName": null,
@@ -8,7 +8,7 @@
     "url": null,
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-01-04T18:50:29Z",
+    "lastUpdated": "2026-03-09T04:42:05Z",
     "createdAt": null,
     "stars": 0,
     "language": "Unknown",
@@ -21,14 +21,14 @@
   "sccRaw": [
     {
       "Name": "Markdown",
-      "Bytes": 79,
+      "Bytes": 4692,
       "CodeBytes": 0,
-      "Lines": 2,
-      "Code": 2,
+      "Lines": 121,
+      "Code": 82,
       "Comment": 0,
-      "Blank": 0,
+      "Blank": 39,
       "Complexity": 0,
-      "Count": 1,
+      "Count": 2,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -37,12 +37,12 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 2,
-      "totalCode": 2,
+      "totalLines": 121,
+      "totalCode": 82,
       "totalComments": 0,
-      "totalBlanks": 0,
-      "totalBytes": 79,
-      "totalFiles": 1,
+      "totalBlanks": 39,
+      "totalBytes": 4692,
+      "totalFiles": 2,
       "totalLanguages": 1,
       "totalComplexity": 0,
       "primaryLanguage": "Markdown",
@@ -51,12 +51,12 @@
     "languages": [
       {
         "name": "Markdown",
-        "lines": 2,
-        "code": 2,
+        "lines": 121,
+        "code": 82,
         "comments": 0,
-        "blanks": 0,
-        "bytes": 79,
-        "files": 1,
+        "blanks": 39,
+        "bytes": 4692,
+        "files": 2,
         "complexity": 0,
         "percentOfLines": 100,
         "percentOfCode": 100,
@@ -66,21 +66,21 @@
     "projectTags": [],
     "cocomo": {
       "traditional": {
-        "kloc": 0.002,
-        "effort": 0,
-        "time": 0.29,
-        "people": 0.01,
-        "cost": 17,
+        "kloc": 0.082,
+        "effort": 0.17,
+        "time": 1.29,
+        "people": 0.14,
+        "cost": 815,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 0,
-        "time": 0.17,
-        "people": 0.01,
-        "cost": 4,
+        "effort": 0.04,
+        "time": 0.76,
+        "people": 0.06,
+        "cost": 208,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -92,7 +92,7 @@
         }
       },
       "comparison": {
-        "effortReduction": "75%",
+        "effortReduction": "74%",
         "timeReduction": "41%",
         "costReduction": "75%",
         "speedup": "3.9x"
@@ -100,33 +100,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 0,
-            "weeks": 0,
-            "days": 0,
-            "cost": 17,
+            "months": 0.17,
+            "weeks": 0.8,
+            "days": 4,
+            "cost": 815,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 0.29,
-            "hoursPerWeek": 0.5,
-            "totalHours": 1,
-            "cost": 17,
+            "months": 1.29,
+            "hoursPerWeek": 5.4,
+            "totalHours": 30,
+            "cost": 815,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 0,
-            "weeks": 0,
-            "days": 0,
-            "cost": 4,
+            "months": 0.04,
+            "weeks": 0.2,
+            "days": 1,
+            "cost": 208,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 0.17,
-            "hoursPerWeek": 0.2,
-            "totalHours": 0,
-            "cost": 4,
+            "months": 0.76,
+            "hoursPerWeek": 2.3,
+            "totalHours": 8,
+            "cost": 208,
             "description": "AI-assisted part-time development"
           }
         }

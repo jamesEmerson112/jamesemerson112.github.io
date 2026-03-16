@@ -1,6 +1,6 @@
 {
   "id": "leetcode-with-james",
-  "scannedAt": "2026-03-01T03:50:49.753Z",
+  "scannedAt": "2026-03-16T03:13:35.313Z",
   "metadata": {
     "name": "leetcode-with-james",
     "fullName": "jamesEmerson112/leetcode-with-james",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/leetcode-with-james",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-01-19T06:46:16Z",
+    "lastUpdated": "2026-03-15T19:43:18Z",
     "createdAt": "2022-10-18T07:03:50Z",
     "stars": 0,
     "language": "JavaScript",
@@ -51,12 +51,12 @@
     },
     {
       "Name": "Python",
-      "Bytes": 22280,
+      "Bytes": 22351,
       "CodeBytes": 0,
-      "Lines": 711,
+      "Lines": 713,
       "Code": 454,
-      "Comment": 123,
-      "Blank": 134,
+      "Comment": 124,
+      "Blank": 135,
       "Complexity": 147,
       "Count": 27,
       "WeightedComplexity": 0,
@@ -157,11 +157,11 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 6249,
+      "totalLines": 6251,
       "totalCode": 4448,
-      "totalComments": 822,
-      "totalBlanks": 979,
-      "totalBytes": 200690,
+      "totalComments": 823,
+      "totalBlanks": 980,
+      "totalBytes": 200761,
       "totalFiles": 152,
       "totalLanguages": 9,
       "totalComplexity": 346,
@@ -180,7 +180,7 @@
         "complexity": 186,
         "percentOfLines": 50.1,
         "percentOfCode": 48,
-        "percentOfBytes": 50.4
+        "percentOfBytes": 50.3
       },
       {
         "name": "Markdown",
@@ -191,17 +191,17 @@
         "bytes": 63620,
         "files": 60,
         "complexity": 0,
-        "percentOfLines": 29.7,
+        "percentOfLines": 29.6,
         "percentOfCode": 31.7,
         "percentOfBytes": 31.7
       },
       {
         "name": "Python",
-        "lines": 711,
+        "lines": 713,
         "code": 454,
-        "comments": 123,
-        "blanks": 134,
-        "bytes": 22280,
+        "comments": 124,
+        "blanks": 135,
+        "bytes": 22351,
         "files": 27,
         "complexity": 147,
         "percentOfLines": 11.4,

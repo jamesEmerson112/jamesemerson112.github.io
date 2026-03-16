@@ -1,0 +1,169 @@
+{
+  "id": "james-neural-network-study",
+  "scannedAt": "2026-03-16T03:13:37.376Z",
+  "metadata": {
+    "name": "James-neural-network-study",
+    "fullName": "jamesEmerson112/James-neural-network-study",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/James-neural-network-study",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-03-15T19:43:01Z",
+    "createdAt": "2026-03-10T05:32:59Z",
+    "stars": 0,
+    "language": "HTML",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/james-neural-network-study"
+  },
+  "sccRaw": [
+    {
+      "Name": "Markdown",
+      "Bytes": 35882,
+      "CodeBytes": 0,
+      "Lines": 839,
+      "Code": 599,
+      "Comment": 0,
+      "Blank": 240,
+      "Complexity": 0,
+      "Count": 9,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 86478,
+      "CodeBytes": 0,
+      "Lines": 1334,
+      "Code": 1010,
+      "Comment": 132,
+      "Blank": 192,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 2173,
+      "totalCode": 1609,
+      "totalComments": 132,
+      "totalBlanks": 432,
+      "totalBytes": 122360,
+      "totalFiles": 10,
+      "totalLanguages": 2,
+      "totalComplexity": 0,
+      "primaryLanguage": "HTML",
+      "primaryLanguagePercent": 62.8
+    },
+    "languages": [
+      {
+        "name": "HTML",
+        "lines": 1334,
+        "code": 1010,
+        "comments": 132,
+        "blanks": 192,
+        "bytes": 86478,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 61.4,
+        "percentOfCode": 62.8,
+        "percentOfBytes": 70.7
+      },
+      {
+        "name": "Markdown",
+        "lines": 839,
+        "code": 599,
+        "comments": 0,
+        "blanks": 240,
+        "bytes": 35882,
+        "files": 9,
+        "complexity": 0,
+        "percentOfLines": 38.6,
+        "percentOfCode": 37.2,
+        "percentOfBytes": 29.3
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 1
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 1.609,
+        "effort": 3.95,
+        "time": 4.22,
+        "people": 0.94,
+        "cost": 18549,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 1.01,
+        "time": 2.51,
+        "people": 0.4,
+        "cost": 4730,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "74%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 3.95,
+            "weeks": 17.1,
+            "days": 86,
+            "cost": 18549,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 4.22,
+            "hoursPerWeek": 37.5,
+            "totalHours": 684,
+            "cost": 18549,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 1.01,
+            "weeks": 4.4,
+            "days": 22,
+            "cost": 4730,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 2.51,
+            "hoursPerWeek": 16.1,
+            "totalHours": 174,
+            "cost": 4730,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

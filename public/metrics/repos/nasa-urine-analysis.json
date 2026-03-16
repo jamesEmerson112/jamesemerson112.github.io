@@ -1,6 +1,6 @@
 {
   "id": "nasa-urine-analysis",
-  "scannedAt": "2026-03-09T03:09:13.009Z",
+  "scannedAt": "2026-03-16T03:13:37.884Z",
   "metadata": {
     "name": "NASA-Urine-Analysis",
     "fullName": "jamesEmerson112/NASA-Urine-Analysis",
@@ -8,10 +8,10 @@
     "url": "https://github.com/jamesEmerson112/NASA-Urine-Analysis",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-03-07T17:45:11Z",
+    "lastUpdated": "2026-03-14T23:15:07Z",
     "createdAt": "2026-03-07T17:45:07Z",
     "stars": 0,
-    "language": "Unknown",
+    "language": "Python",
     "isPrivate": false,
     "isFork": false,
     "isArchived": false,
@@ -19,6 +19,81 @@
     "sourceRef": "public:jamesemerson112/nasa-urine-analysis"
   },
   "sccRaw": [
+    {
+      "Name": "Markdown",
+      "Bytes": 68760,
+      "CodeBytes": 0,
+      "Lines": 1025,
+      "Code": 647,
+      "Comment": 0,
+      "Blank": 378,
+      "Complexity": 0,
+      "Count": 13,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Python",
+      "Bytes": 24203,
+      "CodeBytes": 0,
+      "Lines": 710,
+      "Code": 557,
+      "Comment": 41,
+      "Blank": 112,
+      "Complexity": 31,
+      "Count": 5,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 5416,
+      "CodeBytes": 0,
+      "Lines": 319,
+      "Code": 261,
+      "Comment": 12,
+      "Blank": 46,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 6261,
+      "CodeBytes": 0,
+      "Lines": 111,
+      "Code": 101,
+      "Comment": 3,
+      "Blank": 7,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JavaScript",
+      "Bytes": 6603,
+      "CodeBytes": 0,
+      "Lines": 207,
+      "Code": 170,
+      "Comment": 9,
+      "Blank": 28,
+      "Complexity": 32,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
     {
       "Name": "License",
       "Bytes": 1072,
@@ -35,14 +110,29 @@
       "ULOC": 0
     },
     {
-      "Name": "Markdown",
-      "Bytes": 23,
+      "Name": "Plain Text",
+      "Bytes": 14,
       "CodeBytes": 0,
-      "Lines": 2,
+      "Lines": 1,
       "Code": 1,
       "Comment": 0,
-      "Blank": 1,
+      "Blank": 0,
       "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Shell",
+      "Bytes": 2337,
+      "CodeBytes": 0,
+      "Lines": 60,
+      "Code": 42,
+      "Comment": 6,
+      "Blank": 12,
+      "Complexity": 13,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -52,18 +142,96 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 23,
-      "totalCode": 18,
-      "totalComments": 0,
-      "totalBlanks": 5,
-      "totalBytes": 1095,
-      "totalFiles": 2,
-      "totalLanguages": 2,
-      "totalComplexity": 0,
-      "primaryLanguage": "License",
-      "primaryLanguagePercent": 94.4
+      "totalLines": 2454,
+      "totalCode": 1796,
+      "totalComments": 71,
+      "totalBlanks": 587,
+      "totalBytes": 114666,
+      "totalFiles": 24,
+      "totalLanguages": 8,
+      "totalComplexity": 76,
+      "primaryLanguage": "Markdown",
+      "primaryLanguagePercent": 36
     },
     "languages": [
+      {
+        "name": "Markdown",
+        "lines": 1025,
+        "code": 647,
+        "comments": 0,
+        "blanks": 378,
+        "bytes": 68760,
+        "files": 13,
+        "complexity": 0,
+        "percentOfLines": 41.8,
+        "percentOfCode": 36,
+        "percentOfBytes": 60
+      },
+      {
+        "name": "Python",
+        "lines": 710,
+        "code": 557,
+        "comments": 41,
+        "blanks": 112,
+        "bytes": 24203,
+        "files": 5,
+        "complexity": 31,
+        "percentOfLines": 28.9,
+        "percentOfCode": 31,
+        "percentOfBytes": 21.1
+      },
+      {
+        "name": "CSS",
+        "lines": 319,
+        "code": 261,
+        "comments": 12,
+        "blanks": 46,
+        "bytes": 5416,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 13,
+        "percentOfCode": 14.5,
+        "percentOfBytes": 4.7
+      },
+      {
+        "name": "JavaScript",
+        "lines": 207,
+        "code": 170,
+        "comments": 9,
+        "blanks": 28,
+        "bytes": 6603,
+        "files": 1,
+        "complexity": 32,
+        "percentOfLines": 8.4,
+        "percentOfCode": 9.5,
+        "percentOfBytes": 5.8
+      },
+      {
+        "name": "HTML",
+        "lines": 111,
+        "code": 101,
+        "comments": 3,
+        "blanks": 7,
+        "bytes": 6261,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 4.5,
+        "percentOfCode": 5.6,
+        "percentOfBytes": 5.5
+      },
+      {
+        "name": "Shell",
+        "lines": 60,
+        "code": 42,
+        "comments": 6,
+        "blanks": 12,
+        "bytes": 2337,
+        "files": 1,
+        "complexity": 13,
+        "percentOfLines": 2.4,
+        "percentOfCode": 2.3,
+        "percentOfBytes": 2
+      },
       {
         "name": "License",
         "lines": 21,
@@ -73,42 +241,51 @@
         "bytes": 1072,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 91.3,
-        "percentOfCode": 94.4,
-        "percentOfBytes": 97.9
+        "percentOfLines": 0.9,
+        "percentOfCode": 0.9,
+        "percentOfBytes": 0.9
       },
       {
-        "name": "Markdown",
-        "lines": 2,
+        "name": "Plain Text",
+        "lines": 1,
         "code": 1,
         "comments": 0,
-        "blanks": 1,
-        "bytes": 23,
+        "blanks": 0,
+        "bytes": 14,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 8.7,
-        "percentOfCode": 5.6,
-        "percentOfBytes": 2.1
+        "percentOfLines": 0,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0
       }
     ],
-    "projectTags": [],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.51
+      },
+      {
+        "label": "AI/ML",
+        "confidence": 0.49
+      }
+    ],
     "cocomo": {
       "traditional": {
-        "kloc": 0.018,
-        "effort": 0.04,
-        "time": 0.7,
-        "people": 0.05,
-        "cost": 166,
+        "kloc": 1.796,
+        "effort": 4.44,
+        "time": 4.4,
+        "people": 1.01,
+        "cost": 20819,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 0.01,
-        "time": 0.42,
-        "people": 0.02,
-        "cost": 42,
+        "effort": 1.13,
+        "time": 2.62,
+        "people": 0.43,
+        "cost": 5309,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -128,33 +305,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 0.04,
-            "weeks": 0.2,
-            "days": 1,
-            "cost": 166,
+            "months": 4.44,
+            "weeks": 19.2,
+            "days": 96,
+            "cost": 20819,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 0.7,
-            "hoursPerWeek": 2,
-            "totalHours": 6,
-            "cost": 166,
+            "months": 4.4,
+            "hoursPerWeek": 40.3,
+            "totalHours": 768,
+            "cost": 20819,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 0.01,
-            "weeks": 0,
-            "days": 0,
-            "cost": 42,
+            "months": 1.13,
+            "weeks": 4.9,
+            "days": 25,
+            "cost": 5309,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 0.42,
-            "hoursPerWeek": 0.9,
-            "totalHours": 2,
-            "cost": 42,
+            "months": 2.62,
+            "hoursPerWeek": 17.3,
+            "totalHours": 196,
+            "cost": 5309,
             "description": "AI-assisted part-time development"
           }
         }

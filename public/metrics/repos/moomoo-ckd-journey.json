@@ -1,6 +1,6 @@
 {
   "id": "moomoo-ckd-journey",
-  "scannedAt": "2026-03-01T03:50:33.649Z",
+  "scannedAt": "2026-03-16T03:13:39.000Z",
   "metadata": {
     "name": "Moomoo-CKD-journey-",
     "fullName": "jamesEmerson112/Moomoo-CKD-journey-",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/Moomoo-CKD-journey-",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-02-28T23:27:21Z",
+    "lastUpdated": "2026-03-13T08:35:07Z",
     "createdAt": "2026-02-24T06:53:14Z",
     "stars": 0,
     "language": "TypeScript",
@@ -36,14 +36,14 @@
     },
     {
       "Name": "JSON",
-      "Bytes": 55302,
+      "Bytes": 77257,
       "CodeBytes": 0,
-      "Lines": 1506,
-      "Code": 1506,
+      "Lines": 2157,
+      "Code": 2157,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
-      "Count": 7,
+      "Count": 8,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -51,12 +51,12 @@
     },
     {
       "Name": "CSS",
-      "Bytes": 25266,
+      "Bytes": 33559,
       "CodeBytes": 0,
-      "Lines": 1380,
-      "Code": 1180,
-      "Comment": 0,
-      "Blank": 200,
+      "Lines": 1647,
+      "Code": 1383,
+      "Comment": 21,
+      "Blank": 243,
       "Complexity": 0,
       "Count": 1,
       "WeightedComplexity": 0,
@@ -111,10 +111,10 @@
     },
     {
       "Name": "Plain Text",
-      "Bytes": 149,
+      "Bytes": 2779,
       "CodeBytes": 0,
-      "Lines": 3,
-      "Code": 3,
+      "Lines": 36,
+      "Code": 36,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
@@ -142,16 +142,16 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 10062,
-      "totalCode": 9039,
-      "totalComments": 18,
-      "totalBlanks": 1005,
-      "totalBytes": 294431,
-      "totalFiles": 104,
+      "totalLines": 11013,
+      "totalCode": 9926,
+      "totalComments": 39,
+      "totalBlanks": 1048,
+      "totalBytes": 327309,
+      "totalFiles": 105,
       "totalLanguages": 8,
       "totalComplexity": 462,
       "primaryLanguage": "TypeScript",
-      "primaryLanguagePercent": 68.9
+      "primaryLanguagePercent": 62.7
     },
     "languages": [
       {
@@ -163,35 +163,35 @@
         "bytes": 208045,
         "files": 91,
         "complexity": 462,
-        "percentOfLines": 69.6,
-        "percentOfCode": 68.9,
-        "percentOfBytes": 70.7
+        "percentOfLines": 63.6,
+        "percentOfCode": 62.7,
+        "percentOfBytes": 63.6
       },
       {
         "name": "JSON",
-        "lines": 1506,
-        "code": 1506,
+        "lines": 2157,
+        "code": 2157,
         "comments": 0,
         "blanks": 0,
-        "bytes": 55302,
-        "files": 7,
+        "bytes": 77257,
+        "files": 8,
         "complexity": 0,
-        "percentOfLines": 15,
-        "percentOfCode": 16.7,
-        "percentOfBytes": 18.8
+        "percentOfLines": 19.6,
+        "percentOfCode": 21.7,
+        "percentOfBytes": 23.6
       },
       {
         "name": "CSS",
-        "lines": 1380,
-        "code": 1180,
-        "comments": 0,
-        "blanks": 200,
-        "bytes": 25266,
+        "lines": 1647,
+        "code": 1383,
+        "comments": 21,
+        "blanks": 243,
+        "bytes": 33559,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 13.7,
-        "percentOfCode": 13.1,
-        "percentOfBytes": 8.6
+        "percentOfLines": 15,
+        "percentOfCode": 13.9,
+        "percentOfBytes": 10.3
       },
       {
         "name": "Markdown",
@@ -202,9 +202,22 @@
         "bytes": 4267,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 1.4,
-        "percentOfCode": 1.1,
-        "percentOfBytes": 1.4
+        "percentOfLines": 1.3,
+        "percentOfCode": 1,
+        "percentOfBytes": 1.3
+      },
+      {
+        "name": "Plain Text",
+        "lines": 36,
+        "code": 36,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 2779,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.3,
+        "percentOfCode": 0.4,
+        "percentOfBytes": 0.8
       },
       {
         "name": "License",
@@ -217,7 +230,7 @@
         "complexity": 0,
         "percentOfLines": 0.2,
         "percentOfCode": 0.2,
-        "percentOfBytes": 0.4
+        "percentOfBytes": 0.3
       },
       {
         "name": "JavaScript",
@@ -231,19 +244,6 @@
         "percentOfLines": 0,
         "percentOfCode": 0.1,
         "percentOfBytes": 0
-      },
-      {
-        "name": "Plain Text",
-        "lines": 3,
-        "code": 3,
-        "comments": 0,
-        "blanks": 0,
-        "bytes": 149,
-        "files": 1,
-        "complexity": 0,
-        "percentOfLines": 0,
-        "percentOfCode": 0,
-        "percentOfBytes": 0.1
       },
       {
         "name": "TypeScript Typings",
@@ -262,30 +262,30 @@
     "projectTags": [
       {
         "label": "Web",
-        "confidence": 0.64
+        "confidence": 0.65
       },
       {
         "label": "Backend",
-        "confidence": 0.36
+        "confidence": 0.35
       }
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 9.039,
-        "effort": 24.22,
-        "time": 8.39,
-        "people": 2.89,
-        "cost": 113594,
+        "kloc": 9.926,
+        "effort": 26.72,
+        "time": 8.71,
+        "people": 3.07,
+        "cost": 125327,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 6.18,
-        "time": 4.99,
-        "people": 1.24,
-        "cost": 28967,
+        "effort": 6.81,
+        "time": 5.18,
+        "people": 1.31,
+        "cost": 31958,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -305,33 +305,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 24.22,
-            "weeks": 104.9,
-            "days": 526,
-            "cost": 113594,
+            "months": 26.72,
+            "weeks": 115.7,
+            "days": 580,
+            "cost": 125327,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 8.39,
-            "hoursPerWeek": 115.4,
-            "totalHours": 4190,
-            "cost": 113594,
+            "months": 8.71,
+            "hoursPerWeek": 122.7,
+            "totalHours": 4622,
+            "cost": 125327,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 6.18,
-            "weeks": 26.7,
-            "days": 134,
-            "cost": 28967,
+            "months": 6.81,
+            "weeks": 29.5,
+            "days": 148,
+            "cost": 31958,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 4.99,
-            "hoursPerWeek": 49.5,
-            "totalHours": 1068,
-            "cost": 28967,
+            "months": 5.18,
+            "hoursPerWeek": 52.6,
+            "totalHours": 1179,
+            "cost": 31958,
             "description": "AI-assisted part-time development"
           }
         }
