@@ -1,6 +1,6 @@
 {
   "id": "private-27eb0d48a34b",
-  "scannedAt": "2026-03-16T03:13:34.668Z",
+  "scannedAt": "2026-03-23T03:12:28.440Z",
   "metadata": {
     "name": "Private Project 8",
     "fullName": null,
@@ -8,10 +8,10 @@
     "url": null,
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-03-16T01:49:48Z",
+    "lastUpdated": "2026-03-19T03:47:33Z",
     "createdAt": null,
     "stars": 0,
-    "language": "Makefile",
+    "language": "Jupyter Notebook",
     "isPrivate": true,
     "isFork": false,
     "isArchived": false,
@@ -21,14 +21,14 @@
   "sccRaw": [
     {
       "Name": "Python",
-      "Bytes": 321961,
+      "Bytes": 330470,
       "CodeBytes": 0,
-      "Lines": 8175,
-      "Code": 4394,
-      "Comment": 2649,
-      "Blank": 1132,
-      "Complexity": 427,
-      "Count": 72,
+      "Lines": 8376,
+      "Code": 4525,
+      "Comment": 2691,
+      "Blank": 1160,
+      "Complexity": 444,
+      "Count": 73,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -36,14 +36,14 @@
     },
     {
       "Name": "Markdown",
-      "Bytes": 283746,
+      "Bytes": 450562,
       "CodeBytes": 0,
-      "Lines": 5904,
-      "Code": 4402,
+      "Lines": 9844,
+      "Code": 7218,
       "Comment": 0,
-      "Blank": 1502,
+      "Blank": 2626,
       "Complexity": 0,
-      "Count": 24,
+      "Count": 35,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -126,10 +126,10 @@
     },
     {
       "Name": "Jupyter",
-      "Bytes": 150944,
+      "Bytes": 708631,
       "CodeBytes": 0,
-      "Lines": 3182,
-      "Code": 3182,
+      "Lines": 4804,
+      "Code": 4804,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
@@ -156,10 +156,10 @@
     },
     {
       "Name": "JSON",
-      "Bytes": 256,
+      "Bytes": 276,
       "CodeBytes": 0,
-      "Lines": 12,
-      "Code": 12,
+      "Lines": 13,
+      "Code": 13,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
@@ -187,56 +187,56 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 18824,
-      "totalCode": 13159,
-      "totalComments": 2823,
-      "totalBlanks": 2842,
-      "totalBytes": 808236,
-      "totalFiles": 157,
+      "totalLines": 24588,
+      "totalCode": 17729,
+      "totalComments": 2865,
+      "totalBlanks": 3994,
+      "totalBytes": 1541268,
+      "totalFiles": 169,
       "totalLanguages": 11,
-      "totalComplexity": 462,
+      "totalComplexity": 479,
       "primaryLanguage": "Markdown",
-      "primaryLanguagePercent": 33.5
+      "primaryLanguagePercent": 40.7
     },
     "languages": [
       {
         "name": "Markdown",
-        "lines": 5904,
-        "code": 4402,
+        "lines": 9844,
+        "code": 7218,
         "comments": 0,
-        "blanks": 1502,
-        "bytes": 283746,
-        "files": 24,
+        "blanks": 2626,
+        "bytes": 450562,
+        "files": 35,
         "complexity": 0,
-        "percentOfLines": 31.4,
-        "percentOfCode": 33.5,
-        "percentOfBytes": 35.1
-      },
-      {
-        "name": "Python",
-        "lines": 8175,
-        "code": 4394,
-        "comments": 2649,
-        "blanks": 1132,
-        "bytes": 321961,
-        "files": 72,
-        "complexity": 427,
-        "percentOfLines": 43.4,
-        "percentOfCode": 33.4,
-        "percentOfBytes": 39.8
+        "percentOfLines": 40,
+        "percentOfCode": 40.7,
+        "percentOfBytes": 29.2
       },
       {
         "name": "Jupyter",
-        "lines": 3182,
-        "code": 3182,
+        "lines": 4804,
+        "code": 4804,
         "comments": 0,
         "blanks": 0,
-        "bytes": 150944,
+        "bytes": 708631,
         "files": 3,
         "complexity": 0,
-        "percentOfLines": 16.9,
-        "percentOfCode": 24.2,
-        "percentOfBytes": 18.7
+        "percentOfLines": 19.5,
+        "percentOfCode": 27.1,
+        "percentOfBytes": 46
+      },
+      {
+        "name": "Python",
+        "lines": 8376,
+        "code": 4525,
+        "comments": 2691,
+        "blanks": 1160,
+        "bytes": 330470,
+        "files": 73,
+        "complexity": 444,
+        "percentOfLines": 34.1,
+        "percentOfCode": 25.5,
+        "percentOfBytes": 21.4
       },
       {
         "name": "Rust",
@@ -247,9 +247,9 @@
         "bytes": 31483,
         "files": 11,
         "complexity": 28,
-        "percentOfLines": 5.1,
-        "percentOfCode": 5,
-        "percentOfBytes": 3.9
+        "percentOfLines": 3.9,
+        "percentOfCode": 3.7,
+        "percentOfBytes": 2
       },
       {
         "name": "Plain Text",
@@ -260,9 +260,9 @@
         "bytes": 13515,
         "files": 18,
         "complexity": 0,
-        "percentOfLines": 1.4,
-        "percentOfCode": 1.8,
-        "percentOfBytes": 1.7
+        "percentOfLines": 1.1,
+        "percentOfCode": 1.3,
+        "percentOfBytes": 0.9
       },
       {
         "name": "YAML",
@@ -273,9 +273,9 @@
         "bytes": 3916,
         "files": 17,
         "complexity": 0,
-        "percentOfLines": 1.4,
-        "percentOfCode": 1.7,
-        "percentOfBytes": 0.5
+        "percentOfLines": 1.1,
+        "percentOfCode": 1.3,
+        "percentOfBytes": 0.3
       },
       {
         "name": "Batch",
@@ -287,7 +287,7 @@
         "files": 4,
         "complexity": 6,
         "percentOfLines": 0.1,
-        "percentOfCode": 0.2,
+        "percentOfCode": 0.1,
         "percentOfBytes": 0.1
       },
       {
@@ -305,11 +305,11 @@
       },
       {
         "name": "JSON",
-        "lines": 12,
-        "code": 12,
+        "lines": 13,
+        "code": 13,
         "comments": 0,
         "blanks": 0,
-        "bytes": 256,
+        "bytes": 276,
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0.1,
@@ -355,21 +355,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 13.159,
-        "effort": 35.92,
-        "time": 9.75,
-        "people": 3.68,
-        "cost": 168506,
+        "kloc": 17.729,
+        "effort": 49.13,
+        "time": 10.98,
+        "people": 4.47,
+        "cost": 230435,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 9.16,
-        "time": 5.8,
-        "people": 1.58,
-        "cost": 42969,
+        "effort": 12.53,
+        "time": 6.53,
+        "people": 1.92,
+        "cost": 58761,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -389,33 +389,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 35.92,
-            "weeks": 155.6,
-            "days": 780,
-            "cost": 168506,
+            "months": 49.13,
+            "weeks": 212.7,
+            "days": 1066,
+            "cost": 230435,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 9.75,
-            "hoursPerWeek": 147.4,
-            "totalHours": 6215,
-            "cost": 168506,
+            "months": 10.98,
+            "hoursPerWeek": 179,
+            "totalHours": 8499,
+            "cost": 230435,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 9.16,
-            "weeks": 39.7,
-            "days": 199,
-            "cost": 42969,
+            "months": 12.53,
+            "weeks": 54.2,
+            "days": 272,
+            "cost": 58761,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 5.8,
-            "hoursPerWeek": 63.2,
-            "totalHours": 1585,
-            "cost": 42969,
+            "months": 6.53,
+            "hoursPerWeek": 76.7,
+            "totalHours": 2167,
+            "cost": 58761,
             "description": "AI-assisted part-time development"
           }
         }
