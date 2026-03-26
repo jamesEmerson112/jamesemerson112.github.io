@@ -13,6 +13,7 @@
     { id: 'home', label: 'Home' },
     { id: 'metrics', label: 'Metrics' },
     { id: 'projects', label: 'Projects' },
+    { id: 'blog', label: 'Blog' },
     { id: 'contact', label: 'Contact' },
     { id: 'privacy', label: 'Privacy' }
   ];

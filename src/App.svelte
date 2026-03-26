@@ -12,6 +12,8 @@
   import PortfolioOverview from './components/portfolio/PortfolioOverview.svelte';
   import OverallCharacterDashboard from './components/portfolio/OverallCharacterDashboard.svelte';
   import Timeline from './components/Timeline.svelte';
+  import BlogList from './components/blog/BlogList.svelte';
+  import BlogPost from './components/blog/BlogPost.svelte';
   import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.js';
   import './styles/themes.css';
 
@@ -21,6 +23,8 @@
   const REVEAL_TOP_Y = 0;
 
   let activeSection = 'home';
+  let currentView = 'main'; // 'main' | 'blog' | 'post'
+  let blogSlug = '';
   let scrollRoot;
   let hasLoadedPortfolioData = false;
   let isMobileViewport = false;
@@ -31,6 +35,30 @@
 
   function isValidSection(sectionId) {
     return SECTION_IDS.includes(sectionId);
+  }
+
+  function parseHash() {
+    const hash = window.location.hash.replace('#', '');
+    if (hash === 'blog') return { view: 'blog', section: null, slug: null };
+    if (hash.startsWith('blog/')) return { view: 'post', section: null, slug: hash.slice(5) };
+    if (isValidSection(hash)) return { view: 'main', section: hash, slug: null };
+    return { view: 'main', section: null, slug: null };
+  }
+
+  function applyHash() {
+    const parsed = parseHash();
+    currentView = parsed.view;
+    if (parsed.view === 'post') {
+      blogSlug = parsed.slug;
+      activeSection = 'blog';
+    } else if (parsed.view === 'blog') {
+      blogSlug = '';
+      activeSection = 'blog';
+    } else if (parsed.section) {
+      blogSlug = '';
+      return parsed.section;
+    }
+    return null;
   }
 
   function getHashSection() {
@@ -82,6 +110,19 @@
 
   function handleNavigate(event) {
     const sectionId = event.detail;
+    if (sectionId === 'blog') {
+      window.location.hash = 'blog';
+      return;
+    }
+    if (currentView !== 'main') {
+      currentView = 'main';
+      blogSlug = '';
+      window.location.hash = sectionId;
+      tick().then(() => {
+        scrollToSection(sectionId, { behavior: 'auto' });
+      });
+      return;
+    }
     scrollToSection(sectionId, { behavior: 'smooth', hashMode: 'push' });
   }
 
@@ -118,9 +159,9 @@
     }
 
     const handleHashChange = () => {
-      const hashSection = getHashSection();
-      if (hashSection) {
-        scrollToSection(hashSection, { behavior: 'smooth' });
+      const scrollTarget = applyHash();
+      if (scrollTarget) {
+        scrollToSection(scrollTarget, { behavior: 'smooth' });
       }
     };
 
@@ -186,12 +227,12 @@
         }
       }
 
-      const initialHashSection = getHashSection();
-      if (!initialHashSection) {
+      const initialScrollTarget = applyHash();
+      if (!initialScrollTarget) {
         return;
       }
 
-      scrollToSection(initialHashSection, { behavior: 'auto' });
+      scrollToSection(initialScrollTarget, { behavior: 'auto' });
     });
 
     return () => {
@@ -227,95 +268,115 @@
 
   <!-- Layer 2: Content -->
   <ContentLayer blendMode={chromeBlendMode}>
-    <main
-      class="single-page-scroll"
-      class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}
-      bind:this={scrollRoot}
-      on:scroll={handleRootScroll}
-      data-name="AppMainScroll"
-    >
-      <div class="page-aura" aria-hidden="true" data-name="AppDiv1"></div>
-
-      <section id="home" class="app-section home-section" use:registerSection={'home'} data-name="AppHomeSection">
-        <div class="home_content" data-name="AppDiv2">
-          <Timeline />
-        </div>
-      </section>
-
-      <section
-        id="metrics"
-        class="app-section metrics-section"
-        use:registerSection={'metrics'}
-        data-name="AppMetricsSection"
+    {#if currentView === 'blog'}
+      <main
+        class="single-page-scroll blog-view"
+        class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}
+        data-name="AppBlogScroll"
       >
-        <div class="metrics_content data_content" data-name="AppDiv3">
-          <OverallCharacterDashboard autoLoad={false} />
-        </div>
-      </section>
-
-      <section
-        id="projects"
-        class="app-section projects-section"
-        use:registerSection={'projects'}
-        data-name="AppProjectsSection"
+        <div class="page-aura" aria-hidden="true" data-name="AppDiv1"></div>
+        <BlogList />
+      </main>
+    {:else if currentView === 'post'}
+      <main
+        class="single-page-scroll blog-view"
+        class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}
+        data-name="AppPostScroll"
       >
-        <div class="projects_content data_content" data-name="AppDiv4">
-          <PortfolioOverview autoLoad={false} />
-        </div>
-      </section>
-
-      <section
-        id="contact"
-        class="app-section contact-section"
-        use:registerSection={'contact'}
-        data-name="AppContactSection"
+        <div class="page-aura" aria-hidden="true" data-name="AppDiv1"></div>
+        <BlogPost slug={blogSlug} />
+      </main>
+    {:else}
+      <main
+        class="single-page-scroll"
+        class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}
+        bind:this={scrollRoot}
+        on:scroll={handleRootScroll}
+        data-name="AppMainScroll"
       >
-        <div class="contact_content" data-name="AppDiv5">
-          <h2 data-name="AppH26">Get in Touch</h2>
-          <div class="contact_links" data-name="AppDiv7">
-            <a
-              href="https://x.com/V_like_flan"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact_link"
-              data-name="AppA8"
-            >
-              <span class="link_label" data-name="AppSpan9">Twitter</span>
-              <span class="link_handle" data-name="AppSpan10">@V_like_flan</span>
-            </a>
+        <div class="page-aura" aria-hidden="true" data-name="AppDiv1"></div>
 
-            <a
-              href="https://www.linkedin.com/in/james-vo/"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="contact_link"
-              data-name="AppA11"
-            >
-              <span class="link_label" data-name="AppSpan12">LinkedIn</span>
-              <span class="link_handle" data-name="AppSpan13">james-vo</span>
+        <section id="home" class="app-section home-section" use:registerSection={'home'} data-name="AppHomeSection">
+          <div class="home_content" data-name="AppDiv2">
+            <Timeline />
+          </div>
+        </section>
+
+        <section
+          id="metrics"
+          class="app-section metrics-section"
+          use:registerSection={'metrics'}
+          data-name="AppMetricsSection"
+        >
+          <div class="metrics_content data_content" data-name="AppDiv3">
+            <OverallCharacterDashboard autoLoad={false} />
+          </div>
+        </section>
+
+        <section
+          id="projects"
+          class="app-section projects-section"
+          use:registerSection={'projects'}
+          data-name="AppProjectsSection"
+        >
+          <div class="projects_content data_content" data-name="AppDiv4">
+            <PortfolioOverview autoLoad={false} />
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          class="app-section contact-section"
+          use:registerSection={'contact'}
+          data-name="AppContactSection"
+        >
+          <div class="contact_content" data-name="AppDiv5">
+            <h2 data-name="AppH26">Get in Touch</h2>
+            <div class="contact_links" data-name="AppDiv7">
+              <a
+                href="https://x.com/V_like_flan"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact_link"
+                data-name="AppA8"
+              >
+                <span class="link_label" data-name="AppSpan9">Twitter</span>
+                <span class="link_handle" data-name="AppSpan10">@V_like_flan</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/james-vo/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact_link"
+                data-name="AppA11"
+              >
+                <span class="link_label" data-name="AppSpan12">LinkedIn</span>
+                <span class="link_handle" data-name="AppSpan13">james-vo</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="privacy"
+          class="app-section privacy-section"
+          use:registerSection={'privacy'}
+          data-name="AppPrivacySection"
+        >
+          <div class="privacy_content" data-name="AppDiv14">
+            <h2 data-name="AppH215">Privacy</h2>
+            <p class="privacy_summary" data-name="AppP16">
+              This site uses Google Analytics<br data-name="AppBr17" />
+              to understand how visitors use the site.
+            </p>
+            <a href="/privacy.html" target="_blank" class="privacy_link" data-name="AppA18">
+              Full Privacy Policy →
             </a>
           </div>
-        </div>
-      </section>
-
-      <section
-        id="privacy"
-        class="app-section privacy-section"
-        use:registerSection={'privacy'}
-        data-name="AppPrivacySection"
-      >
-        <div class="privacy_content" data-name="AppDiv14">
-          <h2 data-name="AppH215">Privacy</h2>
-          <p class="privacy_summary" data-name="AppP16">
-            This site uses Google Analytics<br data-name="AppBr17" />
-            to understand how visitors use the site.
-          </p>
-          <a href="/privacy.html" target="_blank" class="privacy_link" data-name="AppA18">
-            Full Privacy Policy →
-          </a>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
+    {/if}
   </ContentLayer>
 </PageContainer>
 
@@ -461,7 +522,20 @@
     opacity: 1;
   }
 
+  .blog-view {
+    padding-left: calc((var(--pad) * 2) + clamp(11rem, 18vw, 15rem) + clamp(1rem, 2vw, 1.75rem));
+    transition: padding-left 0.22s ease;
+  }
+
   @media (max-width: 900px) {
+    .blog-view {
+      padding-left: calc((var(--pad) * 2) + 3.9rem);
+    }
+
+    .single-page-scroll.mobile-header-hidden.blog-view {
+      padding-left: calc(var(--pad) * 2);
+    }
+
     .app-section {
       padding-top: clamp(5.6rem, 16vw, 8rem);
       padding-left: calc((var(--pad) * 2) + 3.9rem);
