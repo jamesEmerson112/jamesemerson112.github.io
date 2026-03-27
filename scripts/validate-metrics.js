@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import fs from 'fs/promises';
 import { dirname, join } from 'path';
 import { fileURLToPath, pathToFileURL } from 'url';
