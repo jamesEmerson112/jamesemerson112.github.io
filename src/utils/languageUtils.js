@@ -1,0 +1,216 @@
+/**
+ * Language classification, color, and composition utilities.
+ */
+
+const LANGUAGE_COLORS = {
+  JavaScript: '#f7df1e',
+  TypeScript: '#3178c6',
+  Python: '#3776ab',
+  Svelte: '#ff3e00',
+  HTML: '#e34f26',
+  CSS: '#1572b6',
+  Shell: '#89e051',
+  Markdown: '#083fa1',
+  JSON: '#f5f5f5',
+  SQL: '#336791',
+  C: '#a8b9cc',
+  'C++': '#00599c',
+  Go: '#00add8',
+  Rust: '#dea584',
+  Java: '#b07219',
+  Swift: '#f05138'
+};
+
+export const NON_PROGRAMMING_LANGUAGE_NAMES = new Set([
+  'plain text',
+  'markdown',
+  'json',
+  'csv',
+  'license',
+  'yaml',
+  'yml',
+  'toml',
+  'xml',
+  'tex'
+]);
+
+export function getLanguageColor(language) {
+  return LANGUAGE_COLORS[language] || '#64748b';
+}
+
+export function isNonProgrammingLanguage(language) {
+  const normalized = String(language || '').trim().toLowerCase();
+  return NON_PROGRAMMING_LANGUAGE_NAMES.has(normalized);
+}
+
+export function getDisplayPrimaryLanguage(language, languages = []) {
+  return resolveDominantProgrammingLanguage(language, languages);
+}
+
+function toMetricNumber(value) {
+  const parsed = Number(value);
+  return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
+}
+
+function normalizeLanguageEntry(language) {
+  if (language && typeof language === 'object') {
+    return {
+      name: String(language.name || '').trim(),
+      code: toMetricNumber(language.code ?? language.lines),
+      lines: toMetricNumber(language.lines),
+      complexity: toMetricNumber(language.complexity)
+    };
+  }
+
+  return {
+    name: '',
+    code: 0,
+    lines: 0,
+    complexity: 0
+  };
+}
+
+function toLanguageEntryList(languages) {
+  if (Array.isArray(languages)) {
+    return languages
+      .map(normalizeLanguageEntry)
+      .filter((language) => language.name.length > 0);
+  }
+
+  if (languages && typeof languages === 'object') {
+    return Object.entries(languages)
+      .map(([name, details]) => normalizeLanguageEntry({
+        ...(details && typeof details === 'object' ? details : {}),
+        name
+      }))
+      .filter((language) => language.name.length > 0);
+  }
+
+  return [];
+}
+
+function compareLanguageEntriesByDominance(a, b) {
+  const codeDelta = b.code - a.code;
+  if (codeDelta !== 0) {
+    return codeDelta;
+  }
+
+  const linesDelta = b.lines - a.lines;
+  if (linesDelta !== 0) {
+    return linesDelta;
+  }
+
+  return a.name.localeCompare(b.name);
+}
+
+export function buildProgrammingComposition(languages = [], options = {}) {
+  const maxProgrammingLanguages = Number.isFinite(Number(options.maxProgrammingLanguages))
+    ? Math.max(0, Math.floor(Number(options.maxProgrammingLanguages)))
+    : Number.POSITIVE_INFINITY;
+  const otherThresholdPercent = Number.isFinite(Number(options.otherThresholdPercent))
+    ? Math.max(0, Number(options.otherThresholdPercent))
+    : 0.5;
+
+  const sortedEntries = toLanguageEntryList(languages)
+    .sort(compareLanguageEntriesByDominance);
+  const totalCode = sortedEntries.reduce((sum, entry) => sum + entry.code, 0);
+
+  if (totalCode <= 0) {
+    return [];
+  }
+
+  const totalComplexity = sortedEntries.reduce((sum, entry) => sum + entry.complexity, 0);
+  const sharedEntries = sortedEntries.map((entry) => ({
+    ...entry,
+    percent: (entry.code / totalCode) * 100,
+    complexityPercent: totalComplexity > 0
+      ? (entry.complexity / totalComplexity) * 100
+      : 0
+  }));
+
+  const keptProgrammingEntries = sharedEntries
+    .filter((entry) => !isNonProgrammingLanguage(entry.name))
+    .slice(0, maxProgrammingLanguages);
+  const keptProgrammingNames = new Set(keptProgrammingEntries.map((entry) => entry.name));
+  const keptProgrammingShare = keptProgrammingEntries
+    .reduce((sum, entry) => sum + entry.percent, 0);
+  const otherShare = Math.max(0, 100 - keptProgrammingShare);
+
+  if (otherShare < otherThresholdPercent) {
+    return keptProgrammingEntries;
+  }
+
+  const otherEntries = sharedEntries.filter((entry) => !keptProgrammingNames.has(entry.name));
+  const otherCode = otherEntries.reduce((sum, entry) => sum + entry.code, 0);
+  const otherComplexity = otherEntries.reduce((sum, entry) => sum + entry.complexity, 0);
+  const otherComplexityPercent = totalComplexity > 0
+    ? (otherComplexity / totalComplexity) * 100
+    : 0;
+
+  return [
+    ...keptProgrammingEntries,
+    {
+      name: 'Other',
+      code: otherCode,
+      lines: 0,
+      complexity: otherComplexity,
+      percent: otherShare,
+      complexityPercent: otherComplexityPercent
+    }
+  ];
+}
+
+export function resolveDominantProgrammingLanguage(primaryLanguage, languages = []) {
+  const normalizedPrimary = String(primaryLanguage || '').trim();
+  if (normalizedPrimary && !isNonProgrammingLanguage(normalizedPrimary)) {
+    return normalizedPrimary;
+  }
+
+  const rankedLanguages = toLanguageEntryList(languages)
+    .sort(compareLanguageEntriesByDominance);
+
+  const firstProgrammingLanguage = rankedLanguages
+    .find((language) => !isNonProgrammingLanguage(language.name));
+
+  return firstProgrammingLanguage?.name || 'N/A';
+}
+
+function normalizeHexColor(input) {
+  const value = String(input || '').trim();
+  const hex = value.startsWith('#') ? value.slice(1) : value;
+
+  if (/^[0-9a-fA-F]{3}$/.test(hex)) {
+    return hex
+      .split('')
+      .map((part) => part + part)
+      .join('')
+      .toLowerCase();
+  }
+
+  if (/^[0-9a-fA-F]{6}$/.test(hex)) {
+    return hex.toLowerCase();
+  }
+
+  return null;
+}
+
+export function getContrastTextColor(hexColor) {
+  const normalized = normalizeHexColor(hexColor);
+  if (!normalized) {
+    return '#f8fafc';
+  }
+
+  const r = parseInt(normalized.slice(0, 2), 16) / 255;
+  const g = parseInt(normalized.slice(2, 4), 16) / 255;
+  const b = parseInt(normalized.slice(4, 6), 16) / 255;
+
+  const linear = (channel) => (
+    channel <= 0.03928
+      ? channel / 12.92
+      : ((channel + 0.055) / 1.055) ** 2.4
+  );
+
+  const luminance = (0.2126 * linear(r)) + (0.7152 * linear(g)) + (0.0722 * linear(b));
+
+  return luminance > 0.45 ? '#0f172a' : '#f8fafc';
+}

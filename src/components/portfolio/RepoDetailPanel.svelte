@@ -6,7 +6,7 @@
     buildProgrammingComposition,
     getDisplayPrimaryLanguage,
     getLanguageColor
-  } from '../../utils/dataLoader.js';
+  } from '../../utils/languageUtils.js';
   import { computeRepoQualitySignals } from '../../utils/profileMetrics.js';
   import { qualityBaselines } from '../../stores/portfolioStore.js';
 
