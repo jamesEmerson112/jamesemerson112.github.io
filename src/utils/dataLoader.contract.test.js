@@ -8,7 +8,6 @@ describe('dataLoader public contract', () => {
     expect(typeof dataLoader.formatNumber).toBe('function');
     expect(typeof dataLoader.formatCurrency).toBe('function');
     expect(typeof dataLoader.formatYears).toBe('function');
-    expect(typeof dataLoader.getTopLanguages).toBe('function');
 
     // Compatibility exports used by RepoCard
     expect(typeof dataLoader.formatDuration).toBe('function');

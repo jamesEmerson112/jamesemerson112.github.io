@@ -1,7 +1,7 @@
 <script>
+  import { formatNumber } from '../../utils/formatters.js';
   import {
     buildProgrammingComposition,
-    formatNumber,
     getDisplayPrimaryLanguage,
     getLanguageColor
   } from '../../utils/dataLoader.js';

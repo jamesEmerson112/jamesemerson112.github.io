@@ -1,11 +1,9 @@
 <script>
   import { createEventDispatcher, onMount, tick } from 'svelte';
   import CategorySpider from './CategorySpider.svelte';
+  import { formatCurrency, formatDuration, formatNumber } from '../../utils/formatters.js';
   import {
     buildProgrammingComposition,
-    formatCurrency,
-    formatDuration,
-    formatNumber,
     getDisplayPrimaryLanguage,
     getLanguageColor
   } from '../../utils/dataLoader.js';

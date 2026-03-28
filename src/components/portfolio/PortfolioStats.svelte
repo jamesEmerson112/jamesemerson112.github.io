@@ -1,7 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { portfolioTotals } from '../../stores/portfolioStore.js';
-  import { formatNumber, formatCurrency } from '../../utils/dataLoader.js';
+  import { formatNumber, formatCurrency } from '../../utils/formatters.js';
 
   let displayLines = 0;
   let displayValue = 0;
