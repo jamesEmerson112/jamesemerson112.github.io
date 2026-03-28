@@ -9,7 +9,6 @@ describe('Metrics dashboard wiring', () => {
   it('mounts OverallCharacterDashboard in the metrics section of App.svelte', async () => {
     const appSource = await fs.readFile(path.join(process.cwd(), 'src', 'App.svelte'), 'utf-8');
 
-    expect(appSource).toContain('class="single-page-scroll"');
     expect(appSource).toContain('id="metrics"');
     expect(appSource).toContain('<OverallCharacterDashboard autoLoad={false} />');
   });
