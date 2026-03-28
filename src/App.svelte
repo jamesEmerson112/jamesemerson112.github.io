@@ -14,10 +14,11 @@
   import Timeline from './components/Timeline.svelte';
   import BlogList from './components/blog/BlogList.svelte';
   import BlogPost from './components/blog/BlogPost.svelte';
+  import RecentPosts from './components/blog/RecentPosts.svelte';
   import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.js';
   import './styles/themes.css';
 
-  const SECTION_IDS = ['home', 'metrics', 'projects', 'contact', 'privacy'];
+  const SECTION_IDS = ['home', 'blog', 'metrics', 'projects', 'contact', 'privacy'];
   const DATA_PRELOAD_SECTIONS = new Set(['metrics', 'projects']);
   const MOBILE_BREAKPOINT = 900;
   const REVEAL_TOP_Y = 0;
@@ -39,8 +40,8 @@
 
   function parseHash() {
     const hash = window.location.hash.replace('#', '');
-    if (hash === 'blog') return { view: 'blog', section: null, slug: null };
-    if (hash.startsWith('blog/')) return { view: 'post', section: null, slug: hash.slice(5) };
+    if (hash === 'posts') return { view: 'blog', section: null, slug: null };
+    if (hash.startsWith('posts/')) return { view: 'post', section: null, slug: hash.slice(6) };
     if (isValidSection(hash)) return { view: 'main', section: hash, slug: null };
     return { view: 'main', section: null, slug: null };
   }
@@ -110,10 +111,6 @@
 
   function handleNavigate(event) {
     const sectionId = event.detail;
-    if (sectionId === 'blog') {
-      window.location.hash = 'blog';
-      return;
-    }
     if (currentView !== 'main') {
       currentView = 'main';
       blogSlug = '';
@@ -302,6 +299,12 @@
           </div>
         </section>
 
+        <section id="blog" class="app-section blog-section" use:registerSection={'blog'} data-name="AppBlogSection">
+          <div class="blog_content" data-name="AppBlogDiv">
+            <RecentPosts />
+          </div>
+        </section>
+
         <section
           id="metrics"
           class="app-section metrics-section"
@@ -433,6 +436,16 @@
     text-align: right;
     max-width: 600px;
     width: 100%;
+  }
+
+  .blog-section {
+    min-height: auto;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .blog_content {
+    width: 100%;
+    max-width: 600px;
   }
 
   .metrics_content,

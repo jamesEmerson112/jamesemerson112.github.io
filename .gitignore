@@ -51,6 +51,9 @@ inspired_code/
 PORTFOLIO-METRICS-PLAN.md
 ROADMAP.md
 
+# Detailed system design (local reference only)
+.system-design-visualization.md
+
 # Local Codex scratch artifacts
 skills/html-name-attributor/
 src/components/Timeline.test.js

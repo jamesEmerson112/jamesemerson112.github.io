@@ -1,6 +1,7 @@
 <script>
   import { onMount } from 'svelte';
   import { marked } from 'marked';
+  import DOMPurify from 'dompurify';
   import { fetchBlogPost, parseFrontmatter, formatDate } from '../../utils/blogLoader.js';
 
   export let slug;
@@ -19,7 +20,7 @@
       const { meta, content } = parseFrontmatter(raw);
       title = meta.title || postSlug;
       date = meta.date || '';
-      html = marked.parse(content);
+      html = DOMPurify.sanitize(marked.parse(content));
     } catch (e) {
       error = e.message;
     } finally {
@@ -32,7 +33,7 @@
   $: if (slug) loadPost(slug);
 
   function goBack() {
-    window.location.hash = 'blog';
+    window.location.hash = 'posts';
   }
 </script>
 

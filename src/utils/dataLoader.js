@@ -26,6 +26,9 @@ export async function fetchPortfolioIndex() {
  * @returns {Promise<Object>} Repository details
  */
 export async function fetchRepoDetails(detailsFile) {
+  if (!/^repos\/[a-zA-Z0-9_-]+\.json$/.test(detailsFile)) {
+    throw new Error(`Invalid details file path: ${detailsFile}`);
+  }
   try {
     const response = await fetch(`/metrics/${detailsFile}`);
     if (!response.ok) {

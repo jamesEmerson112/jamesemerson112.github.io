@@ -230,8 +230,9 @@ describe('Option B portfolio overview integration', () => {
     expect(appSource).not.toContain('hideAfterY');
     expect(appSource).not.toContain('prevHidden');
     expect(appSource).toContain('class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}');
-    expect(appSource).toContain("const SECTION_IDS = ['home', 'metrics', 'projects', 'contact', 'privacy'];");
+    expect(appSource).toContain("const SECTION_IDS = ['home', 'blog', 'metrics', 'projects', 'contact', 'privacy'];");
     expect(appSource).toContain('id="home"');
+    expect(appSource).toContain('id="blog"');
     expect(appSource).toContain('id="metrics"');
     expect(appSource).toContain('id="projects"');
     expect(appSource).toContain('id="contact"');

@@ -17,7 +17,7 @@
   });
 
   function navigateToPost(slug) {
-    window.location.hash = `blog/${slug}`;
+    window.location.hash = `posts/${slug}`;
   }
 </script>
 

@@ -9,6 +9,9 @@ export async function fetchBlogIndex() {
 }
 
 export async function fetchBlogPost(slug) {
+  if (!/^[a-zA-Z0-9][a-zA-Z0-9_-]*$/.test(slug)) {
+    throw new Error(`Invalid post slug: ${slug}`);
+  }
   const res = await fetch(`/blog/posts/${slug}.md`);
   if (!res.ok) throw new Error(`Failed to load post: ${slug}`);
   return res.text();
