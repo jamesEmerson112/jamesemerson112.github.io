@@ -15,6 +15,8 @@
   import BlogList from './components/blog/BlogList.svelte';
   import BlogPost from './components/blog/BlogPost.svelte';
   import RecentPosts from './components/blog/RecentPosts.svelte';
+  import ContactSection from './components/sections/ContactSection.svelte';
+  import PrivacySection from './components/sections/PrivacySection.svelte';
   import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.js';
   import './styles/themes.css';
 
@@ -333,32 +335,7 @@
           use:registerSection={'contact'}
           data-name="AppContactSection"
         >
-          <div class="contact_content" data-name="AppDiv5">
-            <h2 data-name="AppH26">Get in Touch</h2>
-            <div class="contact_links" data-name="AppDiv7">
-              <a
-                href="https://x.com/V_like_flan"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact_link"
-                data-name="AppA8"
-              >
-                <span class="link_label" data-name="AppSpan9">Twitter</span>
-                <span class="link_handle" data-name="AppSpan10">@V_like_flan</span>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/james-vo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact_link"
-                data-name="AppA11"
-              >
-                <span class="link_label" data-name="AppSpan12">LinkedIn</span>
-                <span class="link_handle" data-name="AppSpan13">james-vo</span>
-              </a>
-            </div>
-          </div>
+          <ContactSection />
         </section>
 
         <section
@@ -367,16 +344,7 @@
           use:registerSection={'privacy'}
           data-name="AppPrivacySection"
         >
-          <div class="privacy_content" data-name="AppDiv14">
-            <h2 data-name="AppH215">Privacy</h2>
-            <p class="privacy_summary" data-name="AppP16">
-              This site uses Google Analytics<br data-name="AppBr17" />
-              to understand how visitors use the site.
-            </p>
-            <a href="/privacy.html" target="_blank" class="privacy_link" data-name="AppA18">
-              Full Privacy Policy →
-            </a>
-          </div>
+          <PrivacySection />
         </section>
       </main>
     {/if}
@@ -463,76 +431,6 @@
   .privacy-section {
     justify-content: flex-end;
     align-items: center;
-  }
-
-  .contact_content,
-  .privacy_content {
-    text-align: right;
-    max-width: 600px;
-  }
-
-  .contact_content h2,
-  .privacy_content h2 {
-    font-size: clamp(32px, 6vw, 60px);
-    font-weight: 200;
-    margin: 0 0 1em 0;
-    color: var(--text-primary);
-  }
-
-  .contact_links {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    margin-top: 3em;
-  }
-
-  .contact_link {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3em;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: opacity 0.3s ease;
-  }
-
-  .contact_link:hover {
-    opacity: 0.7;
-  }
-
-  .link_label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    opacity: 0.5;
-  }
-
-  .link_handle {
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  .privacy_summary {
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    opacity: 0.8;
-    margin: 2em 0;
-  }
-
-  .privacy_link {
-    display: inline-block;
-    font-size: 12px;
-    color: var(--text-primary);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.5em 0;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-  }
-
-  .privacy_link:hover {
-    opacity: 1;
   }
 
   .blog-view {
