@@ -18,9 +18,9 @@
   import ContactSection from './components/sections/ContactSection.svelte';
   import PrivacySection from './components/sections/PrivacySection.svelte';
   import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.js';
+  import { SECTION_IDS, isValidSection, parseHash, updateHash } from './utils/routing.js';
   import './styles/themes.css';
 
-  const SECTION_IDS = ['home', 'blog', 'metrics', 'projects', 'contact', 'privacy'];
   const DATA_PRELOAD_SECTIONS = new Set(['metrics', 'projects']);
   const MOBILE_BREAKPOINT = 900;
   const REVEAL_TOP_Y = 0;
@@ -36,18 +36,6 @@
 
   $: chromeBlendMode = !$darkMode ? 'normal' : 'difference';
 
-  function isValidSection(sectionId) {
-    return SECTION_IDS.includes(sectionId);
-  }
-
-  function parseHash() {
-    const hash = window.location.hash.replace('#', '');
-    if (hash === 'posts') return { view: 'blog', section: null, slug: null };
-    if (hash.startsWith('posts/')) return { view: 'post', section: null, slug: hash.slice(6) };
-    if (isValidSection(hash)) return { view: 'main', section: hash, slug: null };
-    return { view: 'main', section: null, slug: null };
-  }
-
   function applyHash() {
     const parsed = parseHash();
     currentView = parsed.view;
@@ -62,25 +50,6 @@
       return parsed.section;
     }
     return null;
-  }
-
-  function getHashSection() {
-    const hashSection = window.location.hash.replace('#', '');
-    return isValidSection(hashSection) ? hashSection : null;
-  }
-
-  function updateHash(sectionId, mode = 'replace') {
-    if (!isValidSection(sectionId)) return;
-
-    const nextHash = `#${sectionId}`;
-    if (window.location.hash === nextHash) return;
-
-    if (mode === 'push') {
-      window.history.pushState(null, '', nextHash);
-      return;
-    }
-
-    window.history.replaceState(null, '', nextHash);
   }
 
   function registerSection(node, sectionId) {

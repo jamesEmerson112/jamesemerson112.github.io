@@ -1,5 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
+  import { NAV_ITEMS } from '../../utils/routing.js';
 
   export let activeSection = 'home';
   export let currentPage = null;
@@ -9,14 +10,7 @@
   export let mobileHidden = false;
   const dispatch = createEventDispatcher();
 
-  const pages = [
-    { id: 'home', label: 'Home' },
-    { id: 'metrics', label: 'Metrics' },
-    { id: 'projects', label: 'Projects' },
-    { id: 'blog', label: 'Blog' },
-    { id: 'contact', label: 'Contact' },
-    { id: 'privacy', label: 'Privacy' }
-  ];
+  const pages = NAV_ITEMS;
 
   $: selectedSection = currentPage || activeSection || 'home';
   $: hideIdentity = compact;
