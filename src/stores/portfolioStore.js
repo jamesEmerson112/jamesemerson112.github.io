@@ -1,5 +1,4 @@
 import { writable, derived } from 'svelte/store';
-import { fetchPortfolioIndex } from '../utils/dataLoader.js';
 import { filterAndSortRepos, getAvailableLanguages } from '../utils/portfolioTransforms.js';
 import {
   computeQualityBaselines,
@@ -29,7 +28,11 @@ function createPortfolioStore() {
       update(state => ({ ...state, loading: true, error: null }));
 
       try {
-        const data = await fetchPortfolioIndex();
+        const response = await fetch('/metrics/index.json');
+        if (!response.ok) {
+          throw new Error(`Failed to fetch portfolio index: ${response.status}`);
+        }
+        const data = await response.json();
         set({ data, loading: false, error: null });
       } catch (error) {
         set({ data: null, loading: false, error: error.message });
