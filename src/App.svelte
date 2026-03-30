@@ -19,6 +19,9 @@
   import PrivacySection from './components/sections/PrivacySection.svelte';
   import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.js';
   import { SECTION_IDS, isValidSection, parseHash, updateHash } from './utils/routing.js';
+  import { createScrollSync } from './utils/scrollSync.js';
+  import { createDataPreloader } from './utils/dataPreloader.js';
+  import { createViewportDetection } from './utils/viewportDetection.js';
   import './styles/themes.css';
 
   const DATA_PRELOAD_SECTIONS = new Set(['metrics', 'projects']);
@@ -108,23 +111,13 @@
   }
 
   onMount(() => {
-    let sectionObserver;
-    let preloadObserver;
-    const mobileQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
-
-    const handleViewportChange = (event) => {
-      isMobileViewport = event.matches;
-      if (!isMobileViewport) {
-        mobileHeaderHidden = false;
+    const viewport = createViewportDetection({
+      breakpoint: MOBILE_BREAKPOINT,
+      onChange(isMobile) {
+        isMobileViewport = isMobile;
+        if (!isMobile) mobileHeaderHidden = false;
       }
-    };
-
-    handleViewportChange(mobileQuery);
-    if (typeof mobileQuery.addEventListener === 'function') {
-      mobileQuery.addEventListener('change', handleViewportChange);
-    } else {
-      mobileQuery.addListener(handleViewportChange);
-    }
+    });
 
     const handleHashChange = () => {
       const scrollTarget = applyHash();
@@ -135,84 +128,41 @@
 
     window.addEventListener('hashchange', handleHashChange);
 
+    let scrollSyncHandle;
+    let preloadHandle;
+
     tick().then(() => {
-      sectionObserver = new IntersectionObserver((entries) => {
-        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
-        if (visibleEntries.length === 0) {
-          return;
+      scrollSyncHandle = createScrollSync({
+        scrollRoot,
+        sectionElements,
+        sectionIds: SECTION_IDS,
+        isValidSection,
+        onSectionChange(nextSection) {
+          if (nextSection !== activeSection) {
+            activeSection = nextSection;
+            updateHash(nextSection, 'replace');
+          }
         }
-
-        const dominantEntry = visibleEntries.sort(
-          (a, b) => b.intersectionRatio - a.intersectionRatio
-        )[0];
-        const nextSection = dominantEntry.target.id;
-
-        if (!isValidSection(nextSection)) {
-          return;
-        }
-
-        if (nextSection === activeSection) {
-          return;
-        }
-
-        activeSection = nextSection;
-        updateHash(nextSection, 'replace');
-      }, {
-        root: scrollRoot,
-        threshold: [0.35, 0.6],
-        rootMargin: '-15% 0px -45% 0px'
       });
 
-      for (const sectionId of SECTION_IDS) {
-        const sectionNode = sectionElements.get(sectionId);
-        if (sectionNode) {
-          sectionObserver.observe(sectionNode);
-        }
-      }
-
-      preloadObserver = new IntersectionObserver((entries) => {
-        if (hasLoadedPortfolioData) {
-          return;
-        }
-
-        if (!entries.some((entry) => entry.isIntersecting)) {
-          return;
-        }
-
-        hasLoadedPortfolioData = true;
-        loadPortfolioData();
-        preloadObserver.disconnect();
-      }, {
-        root: scrollRoot,
-        rootMargin: '500px 0px',
-        threshold: 0
+      preloadHandle = createDataPreloader({
+        scrollRoot,
+        sectionElements,
+        preloadSections: DATA_PRELOAD_SECTIONS,
+        onPreload: loadPortfolioData
       });
-
-      for (const sectionId of DATA_PRELOAD_SECTIONS) {
-        const sectionNode = sectionElements.get(sectionId);
-        if (sectionNode) {
-          preloadObserver.observe(sectionNode);
-        }
-      }
 
       const initialScrollTarget = applyHash();
-      if (!initialScrollTarget) {
-        return;
+      if (initialScrollTarget) {
+        scrollToSection(initialScrollTarget, { behavior: 'auto' });
       }
-
-      scrollToSection(initialScrollTarget, { behavior: 'auto' });
     });
 
     return () => {
-      if (typeof mobileQuery.removeEventListener === 'function') {
-        mobileQuery.removeEventListener('change', handleViewportChange);
-      } else {
-        mobileQuery.removeListener(handleViewportChange);
-      }
-
+      viewport.destroy();
       window.removeEventListener('hashchange', handleHashChange);
-      sectionObserver?.disconnect();
-      preloadObserver?.disconnect();
+      scrollSyncHandle?.destroy();
+      preloadHandle?.destroy();
     };
   });
 </script>
