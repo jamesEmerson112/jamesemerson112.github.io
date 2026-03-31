@@ -1,6 +1,12 @@
 <script lang="ts">
   const timelineData = [
     {
+      year: '2026',
+      items: [
+        '3 Year Anniversary at JCM Global'
+      ]
+    },
+    {
       year: '2025',
       items: [
         'Won SF10X Hackathon (Summer)',
