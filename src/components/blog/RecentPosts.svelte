@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { fetchBlogIndex, formatDate } from '../../utils/blogLoader.ts';
 

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { darkMode } from '../stores/theme.ts';
   export let blendMode = 'difference';
   

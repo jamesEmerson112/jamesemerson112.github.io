@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   export let stats = [];
   export let size = 360;
   export let title = 'Spider chart';

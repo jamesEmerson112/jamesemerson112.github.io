@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { formatNumber } from '../../utils/formatters.ts';
   import { buildProgrammingComposition, getLanguageColor } from '../../utils/languageUtils.ts';
 

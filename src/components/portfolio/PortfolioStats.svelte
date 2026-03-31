@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import { portfolioTotals } from '../../stores/portfolioStore.ts';
   import { formatNumber, formatCurrency } from '../../utils/formatters.ts';

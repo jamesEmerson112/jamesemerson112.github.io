@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { buildSpiderDataset } from '../../utils/spiderTransforms.ts';
 
   export let languages = [];

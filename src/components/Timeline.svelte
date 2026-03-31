@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   const timelineData = [
     {
       year: '2025',

@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher, onMount, tick } from 'svelte';
   import CategorySpider from './CategorySpider.svelte';
   import RepoCostCard from './RepoCostCard.svelte';

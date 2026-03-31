@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount, tick } from 'svelte';
   import { darkMode } from './stores/theme.ts';
   import { loadPortfolioData } from './stores/portfolioStore.ts';
