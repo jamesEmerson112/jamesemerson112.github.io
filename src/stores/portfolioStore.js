@@ -1,11 +1,11 @@
 import { writable, derived } from 'svelte/store';
-import { filterAndSortRepos, getAvailableLanguages } from '../utils/portfolioTransforms.js';
+import { filterAndSortRepos, getAvailableLanguages } from '../utils/portfolioTransforms.ts';
 import {
   computeQualityBaselines,
   computeOverallCategorySpider,
   computeOverallLanguageProficiencySpider,
   computeOverallQualityStats
-} from '../utils/profileMetrics.js';
+} from '../utils/profileMetrics.ts';
 
 /**
  * Portfolio Store

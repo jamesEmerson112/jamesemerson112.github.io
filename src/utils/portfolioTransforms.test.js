@@ -1,5 +1,5 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { sortRepos } from './portfolioTransforms.js';
+import { sortRepos } from './portfolioTransforms.ts';
 
 const repoFixture = [
   {

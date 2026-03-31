@@ -6,7 +6,7 @@ import {
   computeOverallCategorySpider,
   computeOverallQualityStats,
   computeOverallLanguageProficiencySpider
-} from './profileMetrics.js';
+} from './profileMetrics.ts';
 
 const reposFixture = [
   {
