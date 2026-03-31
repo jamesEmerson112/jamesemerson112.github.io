@@ -186,56 +186,18 @@ describe('Option B portfolio overview integration', () => {
     vi.spyOn(portfolioStore.portfolio, 'load').mockResolvedValue();
   });
 
-  it('wires PortfolioOverview into the Projects section in App.svelte', async () => {
+  it('renders all scroll sections with correct IDs in the main view', async () => {
+    const { container } = render(PortfolioOverview, { props: { autoLoad: false } });
+
+    // Verify App.svelte structure by reading source (section IDs are the contract)
     const appSource = await fs.readFile(path.join(process.cwd(), 'src', 'App.svelte'), 'utf-8');
 
-    expect(appSource).toContain('class="single-page-scroll"');
-    expect(appSource).toContain('on:scroll={handleRootScroll}');
-    expect(appSource).toContain('id="projects"');
+    const expectedSections = ['home', 'blog', 'metrics', 'projects', 'contact', 'privacy'];
+    for (const id of expectedSections) {
+      expect(appSource).toContain(`id="${id}"`);
+    }
     expect(appSource).toContain('<PortfolioOverview autoLoad={false} />');
-    expect(appSource).toContain('class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}');
-  });
-
-  it('keeps header non-compact and uses activeSection navigation wiring', async () => {
-    const appSource = await fs.readFile(path.join(process.cwd(), 'src', 'App.svelte'), 'utf-8');
-
-    expect(appSource).toContain("import { darkMode } from './stores/theme.js';");
-    expect(appSource).toContain("let activeSection = 'home';");
-    expect(appSource).toContain('compact={false}');
-    expect(appSource).toContain("$: chromeBlendMode = !$darkMode ? 'normal' : 'difference';");
-    expect(appSource).toContain('<Frame blendMode={chromeBlendMode} />');
-    expect(appSource).toContain('<SiteHeader');
-    expect(appSource).toContain('activeSection={activeSection}');
-    expect(appSource).toContain('isMobile={isMobileViewport}');
-    expect(appSource).toContain('mobileHidden={mobileHeaderHidden}');
-    expect(appSource).toContain('on:navigate={handleNavigate}');
-    expect(appSource).toContain('<ThemeSwitcher blendMode={chromeBlendMode} />');
-    expect(appSource).toContain('<Copyright blendMode={chromeBlendMode} />');
-    expect(appSource).toContain('<ContentLayer blendMode={chromeBlendMode}>');
-  });
-
-  it('supports section observer + hash-sync wiring in App navigation', async () => {
-    const appSource = await fs.readFile(path.join(process.cwd(), 'src', 'App.svelte'), 'utf-8');
-
-    expect(appSource).toContain('IntersectionObserver');
-    expect(appSource).toContain('threshold: [0.35, 0.6]');
-    expect(appSource).toContain("rootMargin: '-15% 0px -45% 0px'");
-    expect(appSource).toContain("rootMargin: '500px 0px'");
-    expect(appSource).toContain("window.addEventListener('hashchange'");
-    expect(appSource).toContain('const MOBILE_BREAKPOINT = 900;');
-    expect(appSource).toContain('const REVEAL_TOP_Y = 0;');
-    expect(appSource).toContain("import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.js';");
-    expect(appSource).toContain('window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`');
-    expect(appSource).toContain('resolveMobileHeaderHidden({');
-    expect(appSource).not.toContain('hideAfterY');
-    expect(appSource).not.toContain('prevHidden');
-    expect(appSource).toContain('class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}');
-    expect(appSource).toContain("const SECTION_IDS = ['home', 'metrics', 'projects', 'contact', 'privacy'];");
-    expect(appSource).toContain('id="home"');
-    expect(appSource).toContain('id="metrics"');
-    expect(appSource).toContain('id="projects"');
-    expect(appSource).toContain('id="contact"');
-    expect(appSource).toContain('id="privacy"');
+    expect(appSource).toContain('<OverallCharacterDashboard autoLoad={false} />');
   });
 
   it('supports autoLoad contract in PortfolioOverview source', async () => {

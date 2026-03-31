@@ -14,10 +14,16 @@
   import Timeline from './components/Timeline.svelte';
   import BlogList from './components/blog/BlogList.svelte';
   import BlogPost from './components/blog/BlogPost.svelte';
+  import RecentPosts from './components/blog/RecentPosts.svelte';
+  import ContactSection from './components/sections/ContactSection.svelte';
+  import PrivacySection from './components/sections/PrivacySection.svelte';
   import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.js';
+  import { SECTION_IDS, isValidSection, parseHash, updateHash } from './utils/routing.js';
+  import { createScrollSync } from './utils/scrollSync.js';
+  import { createDataPreloader } from './utils/dataPreloader.js';
+  import { createViewportDetection } from './utils/viewportDetection.js';
   import './styles/themes.css';
 
-  const SECTION_IDS = ['home', 'metrics', 'projects', 'contact', 'privacy'];
   const DATA_PRELOAD_SECTIONS = new Set(['metrics', 'projects']);
   const MOBILE_BREAKPOINT = 900;
   const REVEAL_TOP_Y = 0;
@@ -33,18 +39,6 @@
 
   $: chromeBlendMode = !$darkMode ? 'normal' : 'difference';
 
-  function isValidSection(sectionId) {
-    return SECTION_IDS.includes(sectionId);
-  }
-
-  function parseHash() {
-    const hash = window.location.hash.replace('#', '');
-    if (hash === 'blog') return { view: 'blog', section: null, slug: null };
-    if (hash.startsWith('blog/')) return { view: 'post', section: null, slug: hash.slice(5) };
-    if (isValidSection(hash)) return { view: 'main', section: hash, slug: null };
-    return { view: 'main', section: null, slug: null };
-  }
-
   function applyHash() {
     const parsed = parseHash();
     currentView = parsed.view;
@@ -59,25 +53,6 @@
       return parsed.section;
     }
     return null;
-  }
-
-  function getHashSection() {
-    const hashSection = window.location.hash.replace('#', '');
-    return isValidSection(hashSection) ? hashSection : null;
-  }
-
-  function updateHash(sectionId, mode = 'replace') {
-    if (!isValidSection(sectionId)) return;
-
-    const nextHash = `#${sectionId}`;
-    if (window.location.hash === nextHash) return;
-
-    if (mode === 'push') {
-      window.history.pushState(null, '', nextHash);
-      return;
-    }
-
-    window.history.replaceState(null, '', nextHash);
   }
 
   function registerSection(node, sectionId) {
@@ -110,10 +85,6 @@
 
   function handleNavigate(event) {
     const sectionId = event.detail;
-    if (sectionId === 'blog') {
-      window.location.hash = 'blog';
-      return;
-    }
     if (currentView !== 'main') {
       currentView = 'main';
       blogSlug = '';
@@ -140,23 +111,13 @@
   }
 
   onMount(() => {
-    let sectionObserver;
-    let preloadObserver;
-    const mobileQuery = window.matchMedia(`(max-width: ${MOBILE_BREAKPOINT}px)`);
-
-    const handleViewportChange = (event) => {
-      isMobileViewport = event.matches;
-      if (!isMobileViewport) {
-        mobileHeaderHidden = false;
+    const viewport = createViewportDetection({
+      breakpoint: MOBILE_BREAKPOINT,
+      onChange(isMobile) {
+        isMobileViewport = isMobile;
+        if (!isMobile) mobileHeaderHidden = false;
       }
-    };
-
-    handleViewportChange(mobileQuery);
-    if (typeof mobileQuery.addEventListener === 'function') {
-      mobileQuery.addEventListener('change', handleViewportChange);
-    } else {
-      mobileQuery.addListener(handleViewportChange);
-    }
+    });
 
     const handleHashChange = () => {
       const scrollTarget = applyHash();
@@ -167,84 +128,41 @@
 
     window.addEventListener('hashchange', handleHashChange);
 
+    let scrollSyncHandle;
+    let preloadHandle;
+
     tick().then(() => {
-      sectionObserver = new IntersectionObserver((entries) => {
-        const visibleEntries = entries.filter((entry) => entry.isIntersecting);
-        if (visibleEntries.length === 0) {
-          return;
+      scrollSyncHandle = createScrollSync({
+        scrollRoot,
+        sectionElements,
+        sectionIds: SECTION_IDS,
+        isValidSection,
+        onSectionChange(nextSection) {
+          if (nextSection !== activeSection) {
+            activeSection = nextSection;
+            updateHash(nextSection, 'replace');
+          }
         }
-
-        const dominantEntry = visibleEntries.sort(
-          (a, b) => b.intersectionRatio - a.intersectionRatio
-        )[0];
-        const nextSection = dominantEntry.target.id;
-
-        if (!isValidSection(nextSection)) {
-          return;
-        }
-
-        if (nextSection === activeSection) {
-          return;
-        }
-
-        activeSection = nextSection;
-        updateHash(nextSection, 'replace');
-      }, {
-        root: scrollRoot,
-        threshold: [0.35, 0.6],
-        rootMargin: '-15% 0px -45% 0px'
       });
 
-      for (const sectionId of SECTION_IDS) {
-        const sectionNode = sectionElements.get(sectionId);
-        if (sectionNode) {
-          sectionObserver.observe(sectionNode);
-        }
-      }
-
-      preloadObserver = new IntersectionObserver((entries) => {
-        if (hasLoadedPortfolioData) {
-          return;
-        }
-
-        if (!entries.some((entry) => entry.isIntersecting)) {
-          return;
-        }
-
-        hasLoadedPortfolioData = true;
-        loadPortfolioData();
-        preloadObserver.disconnect();
-      }, {
-        root: scrollRoot,
-        rootMargin: '500px 0px',
-        threshold: 0
+      preloadHandle = createDataPreloader({
+        scrollRoot,
+        sectionElements,
+        preloadSections: DATA_PRELOAD_SECTIONS,
+        onPreload: loadPortfolioData
       });
-
-      for (const sectionId of DATA_PRELOAD_SECTIONS) {
-        const sectionNode = sectionElements.get(sectionId);
-        if (sectionNode) {
-          preloadObserver.observe(sectionNode);
-        }
-      }
 
       const initialScrollTarget = applyHash();
-      if (!initialScrollTarget) {
-        return;
+      if (initialScrollTarget) {
+        scrollToSection(initialScrollTarget, { behavior: 'auto' });
       }
-
-      scrollToSection(initialScrollTarget, { behavior: 'auto' });
     });
 
     return () => {
-      if (typeof mobileQuery.removeEventListener === 'function') {
-        mobileQuery.removeEventListener('change', handleViewportChange);
-      } else {
-        mobileQuery.removeListener(handleViewportChange);
-      }
-
+      viewport.destroy();
       window.removeEventListener('hashchange', handleHashChange);
-      sectionObserver?.disconnect();
-      preloadObserver?.disconnect();
+      scrollSyncHandle?.destroy();
+      preloadHandle?.destroy();
     };
   });
 </script>
@@ -302,6 +220,12 @@
           </div>
         </section>
 
+        <section id="blog" class="app-section blog-section" use:registerSection={'blog'} data-name="AppBlogSection">
+          <div class="blog_content" data-name="AppBlogDiv">
+            <RecentPosts />
+          </div>
+        </section>
+
         <section
           id="metrics"
           class="app-section metrics-section"
@@ -330,32 +254,7 @@
           use:registerSection={'contact'}
           data-name="AppContactSection"
         >
-          <div class="contact_content" data-name="AppDiv5">
-            <h2 data-name="AppH26">Get in Touch</h2>
-            <div class="contact_links" data-name="AppDiv7">
-              <a
-                href="https://x.com/V_like_flan"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact_link"
-                data-name="AppA8"
-              >
-                <span class="link_label" data-name="AppSpan9">Twitter</span>
-                <span class="link_handle" data-name="AppSpan10">@V_like_flan</span>
-              </a>
-
-              <a
-                href="https://www.linkedin.com/in/james-vo/"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="contact_link"
-                data-name="AppA11"
-              >
-                <span class="link_label" data-name="AppSpan12">LinkedIn</span>
-                <span class="link_handle" data-name="AppSpan13">james-vo</span>
-              </a>
-            </div>
-          </div>
+          <ContactSection />
         </section>
 
         <section
@@ -364,16 +263,7 @@
           use:registerSection={'privacy'}
           data-name="AppPrivacySection"
         >
-          <div class="privacy_content" data-name="AppDiv14">
-            <h2 data-name="AppH215">Privacy</h2>
-            <p class="privacy_summary" data-name="AppP16">
-              This site uses Google Analytics<br data-name="AppBr17" />
-              to understand how visitors use the site.
-            </p>
-            <a href="/privacy.html" target="_blank" class="privacy_link" data-name="AppA18">
-              Full Privacy Policy →
-            </a>
-          </div>
+          <PrivacySection />
         </section>
       </main>
     {/if}
@@ -435,6 +325,18 @@
     width: 100%;
   }
 
+  .blog-section {
+    min-height: auto;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .blog_content {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+  }
+
   .metrics_content,
   .projects_content {
     width: 100%;
@@ -450,76 +352,6 @@
   .privacy-section {
     justify-content: flex-end;
     align-items: center;
-  }
-
-  .contact_content,
-  .privacy_content {
-    text-align: right;
-    max-width: 600px;
-  }
-
-  .contact_content h2,
-  .privacy_content h2 {
-    font-size: clamp(32px, 6vw, 60px);
-    font-weight: 200;
-    margin: 0 0 1em 0;
-    color: var(--text-primary);
-  }
-
-  .contact_links {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    margin-top: 3em;
-  }
-
-  .contact_link {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3em;
-    text-decoration: none;
-    color: var(--text-primary);
-    transition: opacity 0.3s ease;
-  }
-
-  .contact_link:hover {
-    opacity: 0.7;
-  }
-
-  .link_label {
-    font-size: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    opacity: 0.5;
-  }
-
-  .link_handle {
-    font-size: 16px;
-    font-weight: 400;
-  }
-
-  .privacy_summary {
-    font-size: 14px;
-    line-height: 1.6;
-    color: var(--text-secondary);
-    opacity: 0.8;
-    margin: 2em 0;
-  }
-
-  .privacy_link {
-    display: inline-block;
-    font-size: 12px;
-    color: var(--text-primary);
-    text-decoration: none;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    padding: 0.5em 0;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-  }
-
-  .privacy_link:hover {
-    opacity: 1;
   }
 
   .blog-view {

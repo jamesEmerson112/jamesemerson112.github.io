@@ -1,3 +1,5 @@
+import { isNonProgrammingLanguage } from './languageUtils.js';
+
 const CATEGORY_AXES = ['AI/ML', 'Web', 'Backend', 'Data', 'DevOps', 'Mobile'];
 const QUALITY_AXES = [
   'Scope',
@@ -34,18 +36,6 @@ const LANGUAGE_FAMILY_ALIASES = new Map([
   ['svelte', 'Web UI'],
   ['sql', 'Data/SQL']
 ]);
-const EXCLUDED_LANGUAGE_TYPES = new Set([
-  'plain text',
-  'markdown',
-  'json',
-  'csv',
-  'license',
-  'yaml',
-  'toml',
-  'xml',
-  'tex'
-]);
-
 function safeNumber(value, fallback = 0) {
   const numeric = Number(value);
   return Number.isFinite(numeric) ? numeric : fallback;
@@ -86,16 +76,9 @@ function toDaysSince(dateValue) {
   return Math.max(0, (now - timestamp) / (1000 * 60 * 60 * 24));
 }
 
-function normalizeLanguageName(name) {
-  return String(name || '').trim().toLowerCase();
-}
-
-function isExcludedLanguage(name) {
-  return EXCLUDED_LANGUAGE_TYPES.has(normalizeLanguageName(name));
-}
-
 function resolveLanguageFamily(name) {
-  return LANGUAGE_FAMILY_ALIASES.get(normalizeLanguageName(name)) || 'Other/Infra';
+  const normalized = String(name || '').trim().toLowerCase();
+  return LANGUAGE_FAMILY_ALIASES.get(normalized) || 'Other/Infra';
 }
 
 function initializeFamilyTotals() {
@@ -111,7 +94,7 @@ function collectFamilyTotals(repo = {}) {
 
   for (const language of repo.languages || []) {
     const languageName = language?.name;
-    if (!languageName || isExcludedLanguage(languageName)) {
+    if (!languageName || isNonProgrammingLanguage(languageName)) {
       continue;
     }
 

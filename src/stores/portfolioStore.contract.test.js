@@ -11,9 +11,6 @@ describe('portfolioStore public contract', () => {
     expect(store.isLoading).toBeDefined();
     expect(store.hasError).toBeDefined();
 
-    // Compatibility exports used by PortfolioOverview/SearchFilter/RepoCard
-    expect(store.loading).toBeDefined();
-    expect(store.error).toBeDefined();
     expect(store.filteredRepos).toBeDefined();
     expect(store.availableLanguages).toBeDefined();
     expect(store.searchTerm).toBeDefined();

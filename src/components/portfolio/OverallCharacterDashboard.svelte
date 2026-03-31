@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte';
   import {
-    loading,
-    error,
+    isLoading,
+    hasError,
     repos,
     overallCategoryStats,
     overallLanguageProficiencyStats,
@@ -49,15 +49,15 @@
     </p>
   </header>
 
-  {#if $loading}
+  {#if $isLoading}
     <div class="state-card" data-name="OverallCharacterDashboardDiv4">
       <div class="spinner" aria-hidden="true" data-name="OverallCharacterDashboardDiv5"></div>
       <p data-name="OverallCharacterDashboardP6">Loading portfolio dashboard...</p>
     </div>
-  {:else if $error}
+  {:else if $hasError}
     <div class="state-card error" data-name="OverallCharacterDashboardDiv7">
       <h2 data-name="OverallCharacterDashboardH28">Unable to load metrics</h2>
-      <p data-name="OverallCharacterDashboardP9">{$error}</p>
+      <p data-name="OverallCharacterDashboardP9">{$hasError}</p>
       <button type="button" data-name="dashboard-retry" on:click={loadPortfolioData}>Retry</button>
     </div>
   {:else if $repos.length === 0}

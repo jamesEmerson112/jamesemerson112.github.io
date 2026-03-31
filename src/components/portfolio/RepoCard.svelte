@@ -1,10 +1,10 @@
 <script>
+  import { formatNumber } from '../../utils/formatters.js';
   import {
     buildProgrammingComposition,
-    formatNumber,
     getDisplayPrimaryLanguage,
     getLanguageColor
-  } from '../../utils/dataLoader.js';
+  } from '../../utils/languageUtils.js';
   import { selectedRepo } from '../../stores/portfolioStore.js';
 
   export let repo;

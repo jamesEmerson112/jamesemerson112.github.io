@@ -1,31 +1,17 @@
 import fs from 'fs';
 import path from 'path';
+import { parseFrontmatter } from '../src/utils/frontmatter.js';
 
 const POSTS_DIR = path.resolve('public/blog/posts');
 const INDEX_PATH = path.resolve('public/blog/index.json');
-
-function parseFrontmatter(raw) {
-  const match = raw.match(/^---\n([\s\S]*?)\n---/);
-  if (!match) return null;
-
-  const meta = {};
-  for (const line of match[1].split('\n')) {
-    const idx = line.indexOf(':');
-    if (idx === -1) continue;
-    const key = line.slice(0, idx).trim();
-    const val = line.slice(idx + 1).trim();
-    meta[key] = val;
-  }
-  return meta;
-}
 
 const files = fs.readdirSync(POSTS_DIR).filter(f => f.endsWith('.md'));
 
 const posts = files
   .map(file => {
     const raw = fs.readFileSync(path.join(POSTS_DIR, file), 'utf-8');
-    const meta = parseFrontmatter(raw);
-    if (!meta || !meta.title || !meta.date) {
+    const { meta } = parseFrontmatter(raw);
+    if (!meta.title || !meta.date) {
       console.warn(`Skipping ${file}: missing title or date in frontmatter`);
       return null;
     }
