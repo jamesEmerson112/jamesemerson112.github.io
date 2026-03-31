@@ -5,7 +5,7 @@
     getDisplayPrimaryLanguage,
     getLanguageColor
   } from '../../utils/languageUtils.ts';
-  import { selectedRepo } from '../../stores/portfolioStore.js';
+  import { selectedRepo } from '../../stores/portfolioStore.ts';
 
   export let repo;
   const PROGRAMMING_LANGUAGE_LIMIT = 4;

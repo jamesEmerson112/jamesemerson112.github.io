@@ -9,7 +9,7 @@
     availableCategories,
     resetFilters,
     toggleSortOrder
-  } from '../../stores/portfolioStore.js';
+  } from '../../stores/portfolioStore.ts';
 
   const sortOptions = [
     { value: 'recent', label: 'Most Recent' },

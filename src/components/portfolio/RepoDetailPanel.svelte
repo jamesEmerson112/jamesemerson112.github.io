@@ -5,7 +5,7 @@
   import RepoLanguageBreakdown from './RepoLanguageBreakdown.svelte';
   import { getDisplayPrimaryLanguage } from '../../utils/languageUtils.ts';
   import { computeRepoQualitySignals } from '../../utils/profileMetrics.ts';
-  import { qualityBaselines } from '../../stores/portfolioStore.js';
+  import { qualityBaselines } from '../../stores/portfolioStore.ts';
 
   export let repo = null;
 

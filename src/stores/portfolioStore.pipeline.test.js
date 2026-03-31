@@ -15,7 +15,7 @@ import {
   languageFilter,
   categoryFilter,
   resetFilters
-} from './portfolioStore.js';
+} from './portfolioStore.ts';
 
 /**
  * Fixture derived from real public/metrics/index.json shapes.

@@ -1,7 +1,7 @@
 <script>
   import { onMount, tick } from 'svelte';
-  import { darkMode } from './stores/theme.js';
-  import { loadPortfolioData } from './stores/portfolioStore.js';
+  import { darkMode } from './stores/theme.ts';
+  import { loadPortfolioData } from './stores/portfolioStore.ts';
   import PageContainer from './components/layout/PageContainer.svelte';
   import Frame from './components/layout/Frame.svelte';
   import Masks from './components/layout/Masks.svelte';

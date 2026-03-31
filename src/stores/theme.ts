@@ -1,17 +1,14 @@
+import type { Readable } from 'svelte/store';
 
-function resolveInitialMode() {
-  if (typeof window === 'undefined') {
-    return true;
-  }
+type Subscriber = (value: boolean) => void;
+
+function resolveInitialMode(): boolean {
+  if (typeof window === 'undefined') return true;
 
   try {
     const savedMode = localStorage.getItem('darkMode');
-    if (savedMode === 'true') {
-      return true;
-    }
-    if (savedMode === 'false') {
-      return false;
-    }
+    if (savedMode === 'true') return true;
+    if (savedMode === 'false') return false;
   } catch {
     // Ignore storage errors and continue to system preference.
   }
@@ -23,10 +20,8 @@ function resolveInitialMode() {
   return true;
 }
 
-function applyThemeToDocument(isDark) {
-  if (typeof window === 'undefined') {
-    return;
-  }
+function applyThemeToDocument(isDark: boolean): void {
+  if (typeof window === 'undefined') return;
 
   document.documentElement.setAttribute('data-light', (!isDark).toString());
 
@@ -36,14 +31,16 @@ function applyThemeToDocument(isDark) {
   }
 }
 
-class DarkModeStore {
+class DarkModeStore implements Readable<boolean> {
+  private subscribers = new Set<Subscriber>();
+  private value: boolean;
+
   constructor() {
-    this.subscribers = new Set();
     this.value = resolveInitialMode();
     applyThemeToDocument(this.value);
   }
 
-  subscribe(callback) {
+  subscribe(callback: Subscriber): () => void {
     this.subscribers.add(callback);
     callback(this.value);
 
@@ -52,15 +49,15 @@ class DarkModeStore {
     };
   }
 
-  notify() {
+  notify(): void {
     this.subscribers.forEach((callback) => callback(this.value));
   }
 
-  toggle() {
+  toggle(): void {
     this.setMode(!this.value);
   }
 
-  setMode(isDark) {
+  setMode(isDark: boolean): void {
     this.value = Boolean(isDark);
 
     if (typeof window !== 'undefined') {
