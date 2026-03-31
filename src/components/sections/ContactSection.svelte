@@ -23,6 +23,31 @@
       <span class="link_handle" data-name="AppSpan13">james-vo</span>
     </a>
   </div>
+
+  <div class="contact_links" data-name="AppDiv19">
+    <div class="section_label" data-name="AppDiv20">Blogs I Follow</div>
+    <a
+      href="https://sebastianraschka.com/blog/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact_link"
+      data-name="AppA21"
+    >
+      <span class="link_label" data-name="AppSpan22">AI / ML Research</span>
+      <span class="link_handle" data-name="AppSpan23">Sebastian Raschka</span>
+    </a>
+
+    <a
+      href="https://karpathy.ai/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact_link"
+      data-name="AppA24"
+    >
+      <span class="link_label" data-name="AppSpan25">AI / Deep Learning</span>
+      <span class="link_handle" data-name="AppSpan26">Andrej Karpathy</span>
+    </a>
+  </div>
 </div>
 
 <style>
@@ -68,5 +93,14 @@
   .link_handle {
     font-size: 16px;
     font-weight: 400;
+  }
+
+  .section_label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--text-secondary);
+    opacity: 0.6;
   }
 </style>
