@@ -1,11 +1,8 @@
-/**
- * Hash-based routing utilities.
- * Pure functions with no DOM or Svelte dependencies.
- */
+import type { NavItem, ParsedRoute } from '../types.js';
 
-export const SECTION_IDS = ['home', 'blog', 'metrics', 'projects', 'contact', 'privacy'];
+export const SECTION_IDS: readonly string[] = ['home', 'blog', 'metrics', 'projects', 'contact', 'privacy'];
 
-export const NAV_ITEMS = [
+export const NAV_ITEMS: NavItem[] = [
   { id: 'home', label: 'Home' },
   { id: 'blog', label: 'Blog' },
   { id: 'metrics', label: 'Metrics' },
@@ -14,11 +11,11 @@ export const NAV_ITEMS = [
   { id: 'privacy', label: 'Privacy' }
 ];
 
-export function isValidSection(sectionId) {
+export function isValidSection(sectionId: string): boolean {
   return SECTION_IDS.includes(sectionId);
 }
 
-export function parseHash() {
+export function parseHash(): ParsedRoute {
   const hash = window.location.hash.replace('#', '');
   if (hash === 'posts') return { view: 'blog', section: null, slug: null };
   if (hash.startsWith('posts/')) return { view: 'post', section: null, slug: hash.slice(6) };
@@ -26,7 +23,7 @@ export function parseHash() {
   return { view: 'main', section: null, slug: null };
 }
 
-export function updateHash(sectionId, mode = 'replace') {
+export function updateHash(sectionId: string, mode: 'replace' | 'push' = 'replace'): void {
   if (!isValidSection(sectionId)) return;
 
   const nextHash = `#${sectionId}`;

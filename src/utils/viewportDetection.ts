@@ -1,11 +1,9 @@
-/**
- * Sets up matchMedia listener for mobile viewport detection.
- * Returns current state and a destroy function.
- */
-export function createViewportDetection({ breakpoint, onChange }) {
+import type { ViewportDetectionParams, Destroyable } from '../types.js';
+
+export function createViewportDetection({ breakpoint, onChange }: ViewportDetectionParams): Destroyable {
   const query = window.matchMedia(`(max-width: ${breakpoint}px)`);
 
-  const handler = (event) => onChange(event.matches);
+  const handler = (event: MediaQueryListEvent) => onChange(event.matches);
 
   onChange(query.matches);
 

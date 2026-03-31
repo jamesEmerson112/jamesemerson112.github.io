@@ -1,6 +1,6 @@
 <script>
   import { createEventDispatcher } from 'svelte';
-  import { NAV_ITEMS } from '../../utils/routing.js';
+  import { NAV_ITEMS } from '../../utils/routing.ts';
 
   export let activeSection = 'home';
   export let compact = false;

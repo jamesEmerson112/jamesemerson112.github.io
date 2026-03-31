@@ -1,4 +1,4 @@
-export { parseFrontmatter } from './frontmatter.js';
+export { parseFrontmatter } from './frontmatter.ts';
 
 let cachedIndex = null;
 

@@ -1,12 +1,8 @@
-/**
- * Number and currency formatting utilities.
- */
-
-export function formatNumber(num) {
+export function formatNumber(num: number): string {
   return num.toLocaleString('en-US');
 }
 
-export function formatCurrency(amount) {
+export function formatCurrency(amount: number): string {
   if (amount >= 1000000) {
     return `$${(amount / 1000000).toFixed(1)}M`;
   } else if (amount >= 1000) {
@@ -15,7 +11,7 @@ export function formatCurrency(amount) {
   return `$${amount}`;
 }
 
-export function formatYears(years) {
+export function formatYears(years: number): string {
   if (years >= 1) {
     return `${Math.round(years)} year${years !== 1 ? 's' : ''}`;
   }
@@ -23,7 +19,7 @@ export function formatYears(years) {
   return `${months} month${months !== 1 ? 's' : ''}`;
 }
 
-export function formatDuration(months) {
+export function formatDuration(months: number): string {
   if (!Number.isFinite(months) || months <= 0) {
     return '0 mo';
   }

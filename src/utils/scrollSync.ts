@@ -1,8 +1,6 @@
-/**
- * Creates an IntersectionObserver that tracks which section is dominant
- * in the viewport and calls onSectionChange when it changes.
- */
-export function createScrollSync({ scrollRoot, sectionElements, sectionIds, isValidSection, onSectionChange }) {
+import type { ScrollSyncParams, Destroyable } from '../types.js';
+
+export function createScrollSync({ scrollRoot, sectionElements, sectionIds, isValidSection, onSectionChange }: ScrollSyncParams): Destroyable {
   const observer = new IntersectionObserver((entries) => {
     const visibleEntries = entries.filter((entry) => entry.isIntersecting);
     if (visibleEntries.length === 0) return;

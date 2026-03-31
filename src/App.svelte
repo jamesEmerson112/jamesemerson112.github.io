@@ -17,11 +17,11 @@
   import RecentPosts from './components/blog/RecentPosts.svelte';
   import ContactSection from './components/sections/ContactSection.svelte';
   import PrivacySection from './components/sections/PrivacySection.svelte';
-  import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.js';
-  import { SECTION_IDS, isValidSection, parseHash, updateHash } from './utils/routing.js';
-  import { createScrollSync } from './utils/scrollSync.js';
-  import { createDataPreloader } from './utils/dataPreloader.js';
-  import { createViewportDetection } from './utils/viewportDetection.js';
+  import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.ts';
+  import { SECTION_IDS, isValidSection, parseHash, updateHash } from './utils/routing.ts';
+  import { createScrollSync } from './utils/scrollSync.ts';
+  import { createDataPreloader } from './utils/dataPreloader.ts';
+  import { createViewportDetection } from './utils/viewportDetection.ts';
   import './styles/themes.css';
 
   const DATA_PRELOAD_SECTIONS = new Set(['metrics', 'projects']);

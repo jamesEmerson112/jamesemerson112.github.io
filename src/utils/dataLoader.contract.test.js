@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatNumber, formatCurrency, formatYears, formatDuration } from './formatters.js';
+import { formatNumber, formatCurrency, formatYears, formatDuration } from './formatters.ts';
 import {
   getLanguageColor,
   isNonProgrammingLanguage,
