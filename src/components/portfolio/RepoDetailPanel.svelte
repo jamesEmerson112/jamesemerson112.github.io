@@ -1,12 +1,9 @@
 <script>
   import { createEventDispatcher, onMount, tick } from 'svelte';
   import CategorySpider from './CategorySpider.svelte';
-  import { formatCurrency, formatDuration, formatNumber } from '../../utils/formatters.js';
-  import {
-    buildProgrammingComposition,
-    getDisplayPrimaryLanguage,
-    getLanguageColor
-  } from '../../utils/languageUtils.js';
+  import RepoCostCard from './RepoCostCard.svelte';
+  import RepoLanguageBreakdown from './RepoLanguageBreakdown.svelte';
+  import { getDisplayPrimaryLanguage } from '../../utils/languageUtils.js';
   import { computeRepoQualitySignals } from '../../utils/profileMetrics.js';
   import { qualityBaselines } from '../../stores/portfolioStore.js';
 
@@ -16,28 +13,15 @@
   let closeButton;
   let previouslyFocused;
   let panelWasOpen = false;
-  const OTHER_COLOR = 'var(--mono-tone-5)';
-
-  $: savingsPercent = repo?.summary?.traditionalCost > 0
-    ? Math.round(((repo.summary.traditionalCost - repo.summary.aiCost) / repo.summary.traditionalCost) * 100)
-    : 0;
 
   $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo?.primaryLanguage || '', repo?.languages || []);
   $: topProjectTags = Array.isArray(repo?.projectTags) ? repo.projectTags.slice(0, 2) : [];
   $: qualitySignals = repo ? computeRepoQualitySignals(repo, $qualityBaselines) : [];
-  $: languageRows = buildProgrammingComposition(repo?.languages || []);
   $: repoUrl = repo?.url || repo?.htmlUrl || null;
   $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
 
   function closePanel() {
     dispatch('close');
-  }
-
-  function compositionColor(name) {
-    if (name === 'Other') {
-      return OTHER_COLOR;
-    }
-    return getLanguageColor(name);
   }
 
   function scoreClass(score) {
@@ -140,89 +124,11 @@
             </div>
           {/if}
 
-          <div class="summary-grid" data-name="RepoDetailPanelDiv17">
-            <div data-name="RepoDetailPanelDiv18">
-              <div class="label" data-name="RepoDetailPanelDiv19">Lines</div>
-              <div class="value" data-name="RepoDetailPanelDiv20">{formatNumber(repo.summary.lines)}</div>
-            </div>
-            <div data-name="RepoDetailPanelDiv21">
-              <div class="label" data-name="RepoDetailPanelDiv22">Files</div>
-              <div class="value" data-name="RepoDetailPanelDiv23">{formatNumber(repo.summary.files)}</div>
-            </div>
-            <div data-name="RepoDetailPanelDiv24">
-              <div class="label" data-name="RepoDetailPanelDiv25">Complexity</div>
-              <div class="value" data-name="RepoDetailPanelDiv26">{formatNumber(repo.summary.complexity)}</div>
-            </div>
-          </div>
-
-          <div class="cost-card" data-name="RepoDetailPanelDiv27">
-            <div class="row" data-name="RepoDetailPanelDiv28">
-              <span data-name="RepoDetailPanelSpan29">Traditional estimate</span>
-              <strong data-name="RepoDetailPanelStrong30">{formatCurrency(repo.summary.traditionalCost)}</strong>
-            </div>
-            <div class="row highlight" data-name="RepoDetailPanelDiv31">
-              <span data-name="RepoDetailPanelSpan32">AI-assisted estimate</span>
-              <strong data-name="RepoDetailPanelStrong33">{formatCurrency(repo.summary.aiCost)}</strong>
-            </div>
-            <div class="row" data-name="RepoDetailPanelDiv34">
-              <span data-name="RepoDetailPanelSpan35">AI-assisted timeline</span>
-              <strong data-name="RepoDetailPanelStrong36">{formatDuration(repo.summary.aiMonths)}</strong>
-            </div>
-            <p class="caveat" data-name="RepoDetailPanelP37">
-              Estimates are COCOMO-derived directional metrics, not delivery guarantees.
-              Savings shown: {savingsPercent}%.
-            </p>
-          </div>
+          <RepoCostCard summary={repo.summary} />
         </div>
 
         <div class="detail-visuals" data-name="RepoDetailPanelDiv38">
-          <div class="language-breakdown" data-name="RepoDetailPanelDiv39">
-            <h3 data-name="RepoDetailPanelH340">Language composition</h3>
-            {#if languageRows.length > 0}
-              <div class="composition-bars" aria-hidden="true" data-name="RepoDetailPanelDiv41">
-                {#each languageRows as language}
-                  <div class="composition-row" data-name="RepoDetailPanelDiv42">
-                    <div class="composition-meta" data-name="RepoDetailPanelDiv43">
-                      <span data-name="RepoDetailPanelSpan44">{language.name}</span>
-                      <span data-name="RepoDetailPanelSpan45">{language.percent.toFixed(1)}%</span>
-                    </div>
-                    <div class="composition-track" data-name="RepoDetailPanelDiv46">
-                      <div
-                        class="composition-fill"
-                        style="width: {Math.max(0, Math.min(100, language.percent))}%; background-color: {compositionColor(language.name)}"
-                        data-testid="language-composition-bar"
-                       data-name="RepoDetailPanelDiv47"></div>
-                    </div>
-                  </div>
-                {/each}
-              </div>
-
-              <table aria-label="Language composition breakdown" data-name="RepoDetailPanelTable48">
-                <thead data-name="RepoDetailPanelThead49">
-                  <tr data-name="RepoDetailPanelTr50">
-                    <th scope="col" data-name="RepoDetailPanelTh51">Language</th>
-                    <th scope="col" data-name="RepoDetailPanelTh52">Code</th>
-                    <th scope="col" data-name="RepoDetailPanelTh53">Code %</th>
-                    <th scope="col" data-name="RepoDetailPanelTh54">Complexity</th>
-                    <th scope="col" data-name="RepoDetailPanelTh55">Complexity %</th>
-                  </tr>
-                </thead>
-                <tbody data-name="RepoDetailPanelTbody56">
-                  {#each languageRows as language}
-                    <tr data-name="RepoDetailPanelTr57">
-                      <th scope="row" data-name="RepoDetailPanelTh58">{language.name}</th>
-                      <td data-name="RepoDetailPanelTd59">{formatNumber(language.code)}</td>
-                      <td data-name="RepoDetailPanelTd60">{language.percent.toFixed(1)}%</td>
-                      <td data-name="RepoDetailPanelTd61">{formatNumber(language.complexity)}</td>
-                      <td data-name="RepoDetailPanelTd62">{language.complexityPercent.toFixed(1)}%</td>
-                    </tr>
-                  {/each}
-                </tbody>
-              </table>
-            {:else}
-              <p class="empty-breakdown" data-name="RepoDetailPanelP63">No language metrics available.</p>
-            {/if}
-          </div>
+          <RepoLanguageBreakdown languages={repo.languages || []} />
 
           <div class="detail-chart" data-name="RepoDetailPanelDiv64">
             <h3 data-name="RepoDetailPanelH365">Quality Profile</h3>
@@ -407,56 +313,6 @@
     padding: 0.2rem 0.55rem;
   }
 
-  .summary-grid {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0.7rem;
-    margin-bottom: 1rem;
-  }
-
-  .summary-grid .label {
-    font-size: 0.7rem;
-    opacity: 0.65;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.24rem;
-  }
-
-  .summary-grid .value {
-    font-size: 1rem;
-    font-weight: 700;
-  }
-
-  .cost-card {
-    border: 1px solid var(--surface-border);
-    border-radius: 10px;
-    padding: 0.78rem;
-    background: var(--surface-glass);
-  }
-
-  .row {
-    display: flex;
-    justify-content: space-between;
-    gap: 0.6rem;
-    margin-bottom: 0.5rem;
-    font-size: 0.85rem;
-  }
-
-  .row strong {
-    font-weight: 700;
-  }
-
-  .row.highlight strong {
-    color: var(--text-primary);
-  }
-
-  .caveat {
-    margin: 0.3rem 0 0;
-    font-size: 0.74rem;
-    color: var(--text-secondary);
-    line-height: 1.4;
-  }
-
   .detail-visuals {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -464,7 +320,6 @@
     align-items: start;
   }
 
-  .language-breakdown,
   .detail-chart {
     border: 1px solid var(--surface-border);
     border-radius: 12px;
@@ -476,59 +331,6 @@
     margin: 0 0 0.65rem;
     font-size: 0.94rem;
     letter-spacing: 0.02em;
-  }
-
-  .composition-bars {
-    margin-bottom: 0.75rem;
-  }
-
-  .composition-row {
-    margin-bottom: 0.45rem;
-  }
-
-  .composition-meta {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.74rem;
-    margin-bottom: 0.2rem;
-    color: var(--text-secondary, #cbd5e1);
-  }
-
-  .composition-track {
-    width: 100%;
-    height: 8px;
-    border-radius: 999px;
-    background: var(--quality-track);
-    overflow: hidden;
-  }
-
-  .composition-fill {
-    height: 100%;
-    border-radius: inherit;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.78rem;
-  }
-
-  th,
-  td {
-    padding: 0.38rem 0.34rem;
-    border-bottom: 1px solid var(--surface-border);
-    text-align: left;
-  }
-
-  tbody tr:last-child th,
-  tbody tr:last-child td {
-    border-bottom: none;
-  }
-
-  .empty-breakdown {
-    margin: 0;
-    color: var(--text-muted, #94a3b8);
-    font-size: 0.8rem;
   }
 
   .quality-rows {
@@ -587,22 +389,8 @@
       grid-template-columns: 1fr;
     }
 
-    .language-breakdown {
-      order: 1;
-    }
-
     .detail-chart {
       order: 2;
-    }
-
-    .summary-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
-  @media (max-width: 560px) {
-    .summary-grid {
-      grid-template-columns: 1fr;
     }
   }
 </style>
