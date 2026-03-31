@@ -7,9 +7,9 @@ export const SECTION_IDS = ['home', 'blog', 'metrics', 'projects', 'contact', 'p
 
 export const NAV_ITEMS = [
   { id: 'home', label: 'Home' },
+  { id: 'blog', label: 'Blog' },
   { id: 'metrics', label: 'Metrics' },
   { id: 'projects', label: 'Projects' },
-  { id: 'blog', label: 'Blog' },
   { id: 'contact', label: 'Contact' },
   { id: 'privacy', label: 'Privacy' }
 ];

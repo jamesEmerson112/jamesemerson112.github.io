@@ -327,12 +327,14 @@
 
   .blog-section {
     min-height: auto;
+    justify-content: center;
     background: rgba(255, 255, 255, 0.03);
   }
 
   .blog_content {
     width: 100%;
     max-width: 600px;
+    text-align: center;
   }
 
   .metrics_content,
