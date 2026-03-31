@@ -2,7 +2,7 @@
   import { onMount } from 'svelte';
   import { marked } from 'marked';
   import DOMPurify from 'dompurify';
-  import { fetchBlogPost, parseFrontmatter, formatDate } from '../../utils/blogLoader.js';
+  import { fetchBlogPost, parseFrontmatter, formatDate } from '../../utils/blogLoader.ts';
 
   export let slug;
 

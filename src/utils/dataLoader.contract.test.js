@@ -7,7 +7,7 @@ import {
   buildProgrammingComposition,
   resolveDominantProgrammingLanguage,
   getContrastTextColor
-} from './languageUtils.js';
+} from './languageUtils.ts';
 
 describe('formatter exports', () => {
   it('exports all formatter functions', () => {

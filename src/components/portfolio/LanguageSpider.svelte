@@ -1,5 +1,5 @@
 <script>
-  import { buildSpiderDataset } from '../../utils/spiderTransforms.js';
+  import { buildSpiderDataset } from '../../utils/spiderTransforms.ts';
 
   export let languages = [];
   export let size = 300;

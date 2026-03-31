@@ -1,4 +1,4 @@
-import { isNonProgrammingLanguage } from './languageUtils.js';
+import { isNonProgrammingLanguage } from './languageUtils.ts';
 
 const CATEGORY_AXES = ['AI/ML', 'Web', 'Backend', 'Data', 'DevOps', 'Mobile'];
 const QUALITY_AXES = [

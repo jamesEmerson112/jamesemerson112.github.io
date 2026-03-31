@@ -3,7 +3,7 @@
   import CategorySpider from './CategorySpider.svelte';
   import RepoCostCard from './RepoCostCard.svelte';
   import RepoLanguageBreakdown from './RepoLanguageBreakdown.svelte';
-  import { getDisplayPrimaryLanguage } from '../../utils/languageUtils.js';
+  import { getDisplayPrimaryLanguage } from '../../utils/languageUtils.ts';
   import { computeRepoQualitySignals } from '../../utils/profileMetrics.js';
   import { qualityBaselines } from '../../stores/portfolioStore.js';
 

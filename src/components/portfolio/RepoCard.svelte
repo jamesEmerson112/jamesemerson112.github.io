@@ -4,7 +4,7 @@
     buildProgrammingComposition,
     getDisplayPrimaryLanguage,
     getLanguageColor
-  } from '../../utils/languageUtils.js';
+  } from '../../utils/languageUtils.ts';
   import { selectedRepo } from '../../stores/portfolioStore.js';
 
   export let repo;

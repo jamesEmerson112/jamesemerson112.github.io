@@ -1,6 +1,6 @@
 <script>
   import { onMount } from 'svelte';
-  import { fetchBlogIndex, formatDate } from '../../utils/blogLoader.js';
+  import { fetchBlogIndex, formatDate } from '../../utils/blogLoader.ts';
 
   let posts = [];
   let loading = true;
