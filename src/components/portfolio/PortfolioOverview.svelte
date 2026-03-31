@@ -1,8 +1,8 @@
 <script>
   import { onMount } from 'svelte';
   import {
-    loading,
-    error,
+    isLoading,
+    hasError,
     filteredRepos,
     searchTerm,
     languageFilter,
@@ -63,18 +63,18 @@
       </p>
     </header>
 
-    {#if $loading}
+    {#if $isLoading}
       <!-- Loading State -->
       <div class="loading-state" data-name="PortfolioOverviewDiv5">
         <div class="spinner" data-name="PortfolioOverviewDiv6"></div>
         <p data-name="PortfolioOverviewP7">Loading portfolio metrics...</p>
       </div>
-    {:else if $error}
+    {:else if $hasError}
       <!-- Error State -->
       <div class="error-state" data-name="PortfolioOverviewDiv8">
         <span class="error-icon" data-name="PortfolioOverviewSpan9">⚠️</span>
         <h3 data-name="PortfolioOverviewH310">Failed to load metrics</h3>
-        <p data-name="PortfolioOverviewP11">{$error}</p>
+        <p data-name="PortfolioOverviewP11">{$hasError}</p>
         <button class="retry-button" on:click={loadPortfolioData} type="button" data-name="portfolio-retry">
           Try Again
         </button>

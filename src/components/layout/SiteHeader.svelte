@@ -3,7 +3,6 @@
   import { NAV_ITEMS } from '../../utils/routing.js';
 
   export let activeSection = 'home';
-  export let currentPage = null;
   export let compact = false;
   export let blendMode = 'difference';
   export let isMobile = false;
@@ -12,7 +11,7 @@
 
   const pages = NAV_ITEMS;
 
-  $: selectedSection = currentPage || activeSection || 'home';
+  $: selectedSection = activeSection || 'home';
   $: hideIdentity = compact;
   $: hideDescription = isMobile || compact || selectedSection === 'metrics' || selectedSection === 'projects';
   $: effectiveBlendMode = compact ? 'normal' : blendMode;

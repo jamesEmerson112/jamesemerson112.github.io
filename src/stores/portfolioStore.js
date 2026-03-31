@@ -79,10 +79,6 @@ export const hasError = derived(
   $portfolio => $portfolio.error
 );
 
-// Compatibility aliases for advanced portfolio components
-export const loading = isLoading;
-export const error = hasError;
-
 // UI state for filters and sorting
 export const searchTerm = writable('');
 export const languageFilter = writable('all');
@@ -135,7 +131,6 @@ export const filteredRepos = derived(
   )
 );
 
-export const categoryFilteredRepos = filteredRepos;
 
 export const qualityBaselines = derived(
   repos,
