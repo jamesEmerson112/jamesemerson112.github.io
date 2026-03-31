@@ -1,6 +1,6 @@
 import { get } from 'svelte/store';
 import { describe, expect, it } from 'vitest';
-import * as store from './portfolioStore.js';
+import * as store from './portfolioStore.ts';
 
 describe('portfolioStore public contract', () => {
   it('exports the advanced portfolio API used by portfolio components', () => {

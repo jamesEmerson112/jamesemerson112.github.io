@@ -3,7 +3,7 @@ import { fireEvent, render, screen } from '@testing-library/svelte';
 import fs from 'fs/promises';
 import path from 'path';
 import OverallCharacterDashboard from './components/portfolio/OverallCharacterDashboard.svelte';
-import * as portfolioStore from './stores/portfolioStore.js';
+import * as portfolioStore from './stores/portfolioStore.ts';
 
 describe('Metrics dashboard wiring', () => {
   it('mounts OverallCharacterDashboard in the metrics section of App.svelte', async () => {

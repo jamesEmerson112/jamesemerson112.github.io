@@ -1,11 +1,11 @@
-<script>
+<script lang="ts">
   import { createEventDispatcher, onMount, tick } from 'svelte';
   import CategorySpider from './CategorySpider.svelte';
   import RepoCostCard from './RepoCostCard.svelte';
   import RepoLanguageBreakdown from './RepoLanguageBreakdown.svelte';
-  import { getDisplayPrimaryLanguage } from '../../utils/languageUtils.js';
-  import { computeRepoQualitySignals } from '../../utils/profileMetrics.js';
-  import { qualityBaselines } from '../../stores/portfolioStore.js';
+  import { getDisplayPrimaryLanguage } from '../../utils/languageUtils.ts';
+  import { computeRepoQualitySignals } from '../../utils/profileMetrics.ts';
+  import { qualityBaselines } from '../../stores/portfolioStore.ts';
 
   export let repo = null;
 
@@ -17,7 +17,7 @@
   $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo?.primaryLanguage || '', repo?.languages || []);
   $: topProjectTags = Array.isArray(repo?.projectTags) ? repo.projectTags.slice(0, 2) : [];
   $: qualitySignals = repo ? computeRepoQualitySignals(repo, $qualityBaselines) : [];
-  $: repoUrl = repo?.url || repo?.htmlUrl || null;
+  $: repoUrl = repo?.url || null;
   $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
 
   function closePanel() {

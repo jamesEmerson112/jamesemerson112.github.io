@@ -1,5 +1,5 @@
-<script>
-  import { formatCurrency, formatDuration, formatNumber } from '../../utils/formatters.js';
+<script lang="ts">
+  import { formatCurrency, formatDuration, formatNumber } from '../../utils/formatters.ts';
 
   export let summary;
 

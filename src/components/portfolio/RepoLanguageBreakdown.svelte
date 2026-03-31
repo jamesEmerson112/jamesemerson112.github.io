@@ -1,6 +1,6 @@
-<script>
-  import { formatNumber } from '../../utils/formatters.js';
-  import { buildProgrammingComposition, getLanguageColor } from '../../utils/languageUtils.js';
+<script lang="ts">
+  import { formatNumber } from '../../utils/formatters.ts';
+  import { buildProgrammingComposition, getLanguageColor } from '../../utils/languageUtils.ts';
 
   export let languages = [];
 

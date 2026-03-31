@@ -1,8 +1,14 @@
+interface MobileHeaderParams {
+  isMobile: boolean;
+  scrollTop: number;
+  revealTopY?: number;
+}
+
 export function resolveMobileHeaderHidden({
   isMobile,
   scrollTop,
   revealTopY = 0
-}) {
+}: MobileHeaderParams): boolean {
   if (!isMobile) {
     return false;
   }

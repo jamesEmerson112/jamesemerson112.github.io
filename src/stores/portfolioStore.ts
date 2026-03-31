@@ -1,20 +1,16 @@
 import { writable, derived } from 'svelte/store';
-import { filterAndSortRepos, getAvailableLanguages } from '../utils/portfolioTransforms.js';
+import type { Writable, Readable } from 'svelte/store';
+import { filterAndSortRepos, getAvailableLanguages } from '../utils/portfolioTransforms.ts';
 import {
   computeQualityBaselines,
   computeOverallCategorySpider,
   computeOverallLanguageProficiencySpider,
   computeOverallQualityStats
-} from '../utils/profileMetrics.js';
+} from '../utils/profileMetrics.ts';
+import type { PortfolioIndex, PortfolioTotals, Repo, SortKey, SortOrder, PortfolioStoreState } from '../types.js';
 
-/**
- * Portfolio Store
- * Manages portfolio metrics state
- */
-
-// Create a writable store for the portfolio data
 function createPortfolioStore() {
-  const { subscribe, set, update } = writable({
+  const { subscribe, set, update } = writable<PortfolioStoreState>({
     data: null,
     loading: true,
     error: null
@@ -23,7 +19,6 @@ function createPortfolioStore() {
   return {
     subscribe,
 
-    // Load portfolio data from the API
     async load() {
       update(state => ({ ...state, loading: true, error: null }));
 
@@ -32,20 +27,18 @@ function createPortfolioStore() {
         if (!response.ok) {
           throw new Error(`Failed to fetch portfolio index: ${response.status}`);
         }
-        const data = await response.json();
+        const data: PortfolioIndex = await response.json();
         set({ data, loading: false, error: null });
-      } catch (error) {
-        set({ data: null, loading: false, error: error.message });
+      } catch (err) {
+        set({ data: null, loading: false, error: (err as Error).message });
       }
     },
 
-    // Reset the store
     reset() {
       set({ data: null, loading: false, error: null });
     },
 
-    // Test/support helper for deterministic state initialization
-    hydrate(data) {
+    hydrate(data: PortfolioIndex) {
       set({ data, loading: false, error: null });
     }
   };
@@ -53,13 +46,12 @@ function createPortfolioStore() {
 
 export const portfolio = createPortfolioStore();
 
-// Derived stores for easy access to specific data
-export const portfolioTotals = derived(
+export const portfolioTotals: Readable<PortfolioTotals | null> = derived(
   portfolio,
   $portfolio => $portfolio.data?.portfolioTotals || null
 );
 
-export const repos = derived(
+export const repos: Readable<Repo[]> = derived(
   portfolio,
   $portfolio => $portfolio.data?.repos || []
 );
@@ -69,35 +61,34 @@ export const languages = derived(
   $portfolio => $portfolio.data?.portfolioTotals?.languages || {}
 );
 
-export const isLoading = derived(
+export const isLoading: Readable<boolean> = derived(
   portfolio,
   $portfolio => $portfolio.loading
 );
 
-export const hasError = derived(
+export const hasError: Readable<string | null> = derived(
   portfolio,
   $portfolio => $portfolio.error
 );
 
-// UI state for filters and sorting
-export const searchTerm = writable('');
-export const languageFilter = writable('all');
-export const categoryFilter = writable('all');
-export const sortBy = writable('recent');
-export const sortOrder = writable('desc');
-export const selectedRepo = writable(null);
+export const searchTerm: Writable<string> = writable('');
+export const languageFilter: Writable<string> = writable('all');
+export const categoryFilter: Writable<string> = writable('all');
+export const sortBy: Writable<SortKey> = writable<SortKey>('recent');
+export const sortOrder: Writable<SortOrder> = writable<SortOrder>('desc');
+export const selectedRepo: Writable<Repo | null> = writable<Repo | null>(null);
 
-export const availableLanguages = derived(
+export const availableLanguages: Readable<string[]> = derived(
   repos,
   ($repos) => getAvailableLanguages($repos)
 );
 
 const CATEGORY_ORDER = ['AI/ML', 'Web', 'Backend', 'Data', 'DevOps', 'Mobile'];
 
-export const availableCategories = derived(
+export const availableCategories: Readable<string[]> = derived(
   repos,
   ($repos) => {
-    const set = new Set();
+    const set = new Set<string>();
     for (const repo of $repos || []) {
       for (const tag of repo.projectTags || []) {
         if (tag?.label) {
@@ -117,7 +108,7 @@ export const availableCategories = derived(
   }
 );
 
-export const filteredRepos = derived(
+export const filteredRepos: Readable<Repo[]> = derived(
   [repos, searchTerm, languageFilter, categoryFilter, sortBy, sortOrder],
   ([$repos, $searchTerm, $languageFilter, $categoryFilter, $sortBy, $sortOrder]) => filterAndSortRepos(
     $repos,
@@ -130,7 +121,6 @@ export const filteredRepos = derived(
     }
   )
 );
-
 
 export const qualityBaselines = derived(
   repos,
@@ -152,18 +142,18 @@ export const overallQualityStats = derived(
   ([$repos, $qualityBaselines]) => computeOverallQualityStats($repos, $qualityBaselines)
 );
 
-export async function loadPortfolioData() {
+export async function loadPortfolioData(): Promise<void> {
   await portfolio.load();
 }
 
-export function toggleSortOrder() {
+export function toggleSortOrder(): void {
   sortOrder.update((current) => (current === 'desc' ? 'asc' : 'desc'));
 }
 
-export function resetFilters() {
+export function resetFilters(): void {
   searchTerm.set('');
   languageFilter.set('all');
   categoryFilter.set('all');
-  sortBy.set('recent');
-  sortOrder.set('desc');
+  sortBy.set('recent' as SortKey);
+  sortOrder.set('desc' as SortOrder);
 }

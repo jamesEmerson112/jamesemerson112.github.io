@@ -1,13 +1,10 @@
-/**
- * Parse YAML-like frontmatter from a markdown string.
- * @param {string} raw - Raw markdown string with optional ---delimited frontmatter
- * @returns {{ meta: Object, content: string }} Parsed metadata and body content
- */
-export function parseFrontmatter(raw) {
+import type { FrontmatterResult } from '../types.js';
+
+export function parseFrontmatter(raw: string): FrontmatterResult {
   const match = raw.match(/^---\n([\s\S]*?)\n---\n([\s\S]*)$/);
   if (!match) return { meta: {}, content: raw };
 
-  const meta = {};
+  const meta: Record<string, string> = {};
   for (const line of match[1].split('\n')) {
     const idx = line.indexOf(':');
     if (idx === -1) continue;

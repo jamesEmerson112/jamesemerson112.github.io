@@ -1,11 +1,11 @@
-<script>
-  import { formatNumber } from '../../utils/formatters.js';
+<script lang="ts">
+  import { formatNumber } from '../../utils/formatters.ts';
   import {
     buildProgrammingComposition,
     getDisplayPrimaryLanguage,
     getLanguageColor
-  } from '../../utils/languageUtils.js';
-  import { selectedRepo } from '../../stores/portfolioStore.js';
+  } from '../../utils/languageUtils.ts';
+  import { selectedRepo } from '../../stores/portfolioStore.ts';
 
   export let repo;
   const PROGRAMMING_LANGUAGE_LIMIT = 4;
@@ -30,7 +30,7 @@
     maxProgrammingLanguages: PROGRAMMING_LANGUAGE_LIMIT,
     otherThresholdPercent: OTHER_THRESHOLD_PERCENT
   });
-  $: repoUrl = repo?.url || repo?.htmlUrl || null;
+  $: repoUrl = repo?.url || null;
   $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
 
   function toPercent(value) {

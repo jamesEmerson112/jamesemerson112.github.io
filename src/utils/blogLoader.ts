@@ -1,16 +1,18 @@
-export { parseFrontmatter } from './frontmatter.js';
+import type { BlogPostMeta } from '../types.js';
 
-let cachedIndex = null;
+export { parseFrontmatter } from './frontmatter.ts';
 
-export async function fetchBlogIndex() {
+let cachedIndex: BlogPostMeta[] | null = null;
+
+export async function fetchBlogIndex(): Promise<BlogPostMeta[]> {
   if (cachedIndex) return cachedIndex;
   const res = await fetch('/blog/index.json');
   if (!res.ok) throw new Error(`Failed to load blog index: ${res.status}`);
   cachedIndex = await res.json();
-  return cachedIndex;
+  return cachedIndex!;
 }
 
-export async function fetchBlogPost(slug) {
+export async function fetchBlogPost(slug: string): Promise<string> {
   if (!/^[a-zA-Z0-9][a-zA-Z0-9_-]*$/.test(slug)) {
     throw new Error(`Invalid post slug: ${slug}`);
   }
@@ -19,7 +21,7 @@ export async function fetchBlogPost(slug) {
   return res.text();
 }
 
-export function formatDate(dateStr) {
+export function formatDate(dateStr: string): string {
   const date = new Date(dateStr + 'T00:00:00');
   return date.toLocaleDateString('en-US', {
     year: 'numeric',

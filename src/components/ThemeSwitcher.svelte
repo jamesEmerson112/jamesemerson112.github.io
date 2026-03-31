@@ -1,5 +1,5 @@
-<script>
-  import { darkMode } from '../stores/theme.js';
+<script lang="ts">
+  import { darkMode } from '../stores/theme.ts';
   export let blendMode = 'difference';
   
   function toggleTheme() {

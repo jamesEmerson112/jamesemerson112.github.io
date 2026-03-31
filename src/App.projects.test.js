@@ -3,7 +3,7 @@ import { cleanup, fireEvent, render, screen, waitFor } from '@testing-library/sv
 import fs from 'fs/promises';
 import path from 'path';
 import PortfolioOverview from './components/portfolio/PortfolioOverview.svelte';
-import * as portfolioStore from './stores/portfolioStore.js';
+import * as portfolioStore from './stores/portfolioStore.ts';
 
 const fixtureIndex = {
   portfolioTotals: {

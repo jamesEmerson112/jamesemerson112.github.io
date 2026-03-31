@@ -1,6 +1,6 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
-  import { fetchBlogIndex, formatDate } from '../../utils/blogLoader.js';
+  import { fetchBlogIndex, formatDate } from '../../utils/blogLoader.ts';
 
   const MAX_POSTS = 3;
 

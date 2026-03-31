@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { resolveMobileHeaderHidden } from './mobileHeaderVisibility.js';
+import { resolveMobileHeaderHidden } from './mobileHeaderVisibility.ts';
 
 describe('mobileHeaderVisibility', () => {
   it('always returns visible for non-mobile contexts', () => {

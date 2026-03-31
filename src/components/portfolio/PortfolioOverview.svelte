@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import {
     isLoading,
@@ -11,7 +11,7 @@
     sortOrder,
     selectedRepo,
     loadPortfolioData
-  } from '../../stores/portfolioStore.js';
+  } from '../../stores/portfolioStore.ts';
   import SearchFilter from './SearchFilter.svelte';
   import RepoCard from './RepoCard.svelte';
   import RepoDetailPanel from './RepoDetailPanel.svelte';

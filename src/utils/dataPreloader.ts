@@ -1,8 +1,6 @@
-/**
- * Creates an IntersectionObserver that triggers data loading when
- * target sections approach the viewport.
- */
-export function createDataPreloader({ scrollRoot, sectionElements, preloadSections, onPreload }) {
+import type { DataPreloaderParams, Destroyable } from '../types.js';
+
+export function createDataPreloader({ scrollRoot, sectionElements, preloadSections, onPreload }: DataPreloaderParams): Destroyable {
   let loaded = false;
 
   const observer = new IntersectionObserver((entries) => {

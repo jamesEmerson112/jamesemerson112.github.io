@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import { onMount } from 'svelte';
   import {
     isLoading,
@@ -8,7 +8,7 @@
     overallLanguageProficiencyStats,
     overallQualityStats,
     loadPortfolioData
-  } from '../../stores/portfolioStore.js';
+  } from '../../stores/portfolioStore.ts';
   import CategorySpider from './CategorySpider.svelte';
 
   const BAND_COLORS = {

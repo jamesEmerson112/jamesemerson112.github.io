@@ -1,8 +1,6 @@
-/**
- * Language classification, color, and composition utilities.
- */
+import type { CompositionEntry } from '../types.js';
 
-const LANGUAGE_COLORS = {
+const LANGUAGE_COLORS: Record<string, string> = {
   JavaScript: '#f7df1e',
   TypeScript: '#3178c6',
   Python: '#3776ab',
@@ -34,43 +32,56 @@ export const NON_PROGRAMMING_LANGUAGE_NAMES = new Set([
   'tex'
 ]);
 
-export function getLanguageColor(language) {
+export function getLanguageColor(language: string): string {
   return LANGUAGE_COLORS[language] || '#64748b';
 }
 
-export function isNonProgrammingLanguage(language) {
+export function isNonProgrammingLanguage(language: string): boolean {
   const normalized = String(language || '').trim().toLowerCase();
   return NON_PROGRAMMING_LANGUAGE_NAMES.has(normalized);
 }
 
-export function getDisplayPrimaryLanguage(language, languages = []) {
+interface LanguageInput {
+  name?: string;
+  code?: number;
+  lines?: number;
+  complexity?: number;
+  [key: string]: unknown;
+}
+
+type LanguagesParam = LanguageInput[] | Record<string, Partial<LanguageInput>>;
+
+interface NormalizedEntry {
+  name: string;
+  code: number;
+  lines: number;
+  complexity: number;
+}
+
+export function getDisplayPrimaryLanguage(language: string, languages: LanguagesParam = []): string {
   return resolveDominantProgrammingLanguage(language, languages);
 }
 
-function toMetricNumber(value) {
+function toMetricNumber(value: unknown): number {
   const parsed = Number(value);
   return Number.isFinite(parsed) && parsed > 0 ? parsed : 0;
 }
 
-function normalizeLanguageEntry(language) {
+function normalizeLanguageEntry(language: unknown): NormalizedEntry {
   if (language && typeof language === 'object') {
+    const lang = language as LanguageInput;
     return {
-      name: String(language.name || '').trim(),
-      code: toMetricNumber(language.code ?? language.lines),
-      lines: toMetricNumber(language.lines),
-      complexity: toMetricNumber(language.complexity)
+      name: String(lang.name || '').trim(),
+      code: toMetricNumber(lang.code ?? lang.lines),
+      lines: toMetricNumber(lang.lines),
+      complexity: toMetricNumber(lang.complexity)
     };
   }
 
-  return {
-    name: '',
-    code: 0,
-    lines: 0,
-    complexity: 0
-  };
+  return { name: '', code: 0, lines: 0, complexity: 0 };
 }
 
-function toLanguageEntryList(languages) {
+function toLanguageEntryList(languages: LanguagesParam): NormalizedEntry[] {
   if (Array.isArray(languages)) {
     return languages
       .map(normalizeLanguageEntry)
@@ -89,21 +100,22 @@ function toLanguageEntryList(languages) {
   return [];
 }
 
-function compareLanguageEntriesByDominance(a, b) {
+function compareLanguageEntriesByDominance(a: NormalizedEntry, b: NormalizedEntry): number {
   const codeDelta = b.code - a.code;
-  if (codeDelta !== 0) {
-    return codeDelta;
-  }
+  if (codeDelta !== 0) return codeDelta;
 
   const linesDelta = b.lines - a.lines;
-  if (linesDelta !== 0) {
-    return linesDelta;
-  }
+  if (linesDelta !== 0) return linesDelta;
 
   return a.name.localeCompare(b.name);
 }
 
-export function buildProgrammingComposition(languages = [], options = {}) {
+interface CompositionOptions {
+  maxProgrammingLanguages?: number;
+  otherThresholdPercent?: number;
+}
+
+export function buildProgrammingComposition(languages: LanguagesParam = [], options: CompositionOptions = {}): CompositionEntry[] {
   const maxProgrammingLanguages = Number.isFinite(Number(options.maxProgrammingLanguages))
     ? Math.max(0, Math.floor(Number(options.maxProgrammingLanguages)))
     : Number.POSITIVE_INFINITY;
@@ -115,12 +127,10 @@ export function buildProgrammingComposition(languages = [], options = {}) {
     .sort(compareLanguageEntriesByDominance);
   const totalCode = sortedEntries.reduce((sum, entry) => sum + entry.code, 0);
 
-  if (totalCode <= 0) {
-    return [];
-  }
+  if (totalCode <= 0) return [];
 
   const totalComplexity = sortedEntries.reduce((sum, entry) => sum + entry.complexity, 0);
-  const sharedEntries = sortedEntries.map((entry) => ({
+  const sharedEntries: CompositionEntry[] = sortedEntries.map((entry) => ({
     ...entry,
     percent: (entry.code / totalCode) * 100,
     complexityPercent: totalComplexity > 0
@@ -136,9 +146,7 @@ export function buildProgrammingComposition(languages = [], options = {}) {
     .reduce((sum, entry) => sum + entry.percent, 0);
   const otherShare = Math.max(0, 100 - keptProgrammingShare);
 
-  if (otherShare < otherThresholdPercent) {
-    return keptProgrammingEntries;
-  }
+  if (otherShare < otherThresholdPercent) return keptProgrammingEntries;
 
   const otherEntries = sharedEntries.filter((entry) => !keptProgrammingNames.has(entry.name));
   const otherCode = otherEntries.reduce((sum, entry) => sum + entry.code, 0);
@@ -160,7 +168,7 @@ export function buildProgrammingComposition(languages = [], options = {}) {
   ];
 }
 
-export function resolveDominantProgrammingLanguage(primaryLanguage, languages = []) {
+export function resolveDominantProgrammingLanguage(primaryLanguage: string, languages: LanguagesParam = []): string {
   const normalizedPrimary = String(primaryLanguage || '').trim();
   if (normalizedPrimary && !isNonProgrammingLanguage(normalizedPrimary)) {
     return normalizedPrimary;
@@ -175,7 +183,7 @@ export function resolveDominantProgrammingLanguage(primaryLanguage, languages = 
   return firstProgrammingLanguage?.name || 'N/A';
 }
 
-function normalizeHexColor(input) {
+function normalizeHexColor(input: string): string | null {
   const value = String(input || '').trim();
   const hex = value.startsWith('#') ? value.slice(1) : value;
 
@@ -194,17 +202,15 @@ function normalizeHexColor(input) {
   return null;
 }
 
-export function getContrastTextColor(hexColor) {
+export function getContrastTextColor(hexColor: string): string {
   const normalized = normalizeHexColor(hexColor);
-  if (!normalized) {
-    return '#f8fafc';
-  }
+  if (!normalized) return '#f8fafc';
 
   const r = parseInt(normalized.slice(0, 2), 16) / 255;
   const g = parseInt(normalized.slice(2, 4), 16) / 255;
   const b = parseInt(normalized.slice(4, 6), 16) / 255;
 
-  const linear = (channel) => (
+  const linear = (channel: number) => (
     channel <= 0.03928
       ? channel / 12.92
       : ((channel + 0.055) / 1.055) ** 2.4

@@ -3,7 +3,7 @@ import {
   buildSpiderDataset,
   computePercentShare,
   rankLanguages
-} from './spiderTransforms.js';
+} from './spiderTransforms.ts';
 
 const fixtureLanguages = [
   { name: 'TypeScript', code: 500, complexity: 80 },

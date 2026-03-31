@@ -1,41 +1,39 @@
-/**
- * Pure helpers for portfolio filtering and sorting.
- */
+import type { Repo, SortKey, SortOrder } from '../types.js';
 
-function safeNumber(value, fallback = 0) {
-  return Number.isFinite(value) ? value : fallback;
+function safeNumber(value: unknown, fallback: number = 0): number {
+  return Number.isFinite(value) ? value as number : fallback;
 }
 
-function safeDate(value) {
-  const ts = Date.parse(value || '');
+function safeDate(value: unknown): number {
+  const ts = Date.parse(String(value || ''));
   return Number.isFinite(ts) ? ts : 0;
 }
 
-function clamp(value, min, max) {
+function clamp(value: number, min: number, max: number): number {
   return Math.max(min, Math.min(max, value));
 }
 
-function compareNames(a, b) {
+function compareNames(a: Repo, b: Repo): number {
   const aName = (a?.name || '').toLowerCase();
   const bName = (b?.name || '').toLowerCase();
   return aName.localeCompare(bName);
 }
 
-function isPrivateRepo(repo) {
+function isPrivateRepo(repo: Repo): boolean {
   return repo?.isPrivate === true;
 }
 
-function getPrivacyBucket(repo) {
+function getPrivacyBucket(repo: Repo): 'public' | 'private' {
   return isPrivateRepo(repo) ? 'private' : 'public';
 }
 
-function getRepoCode(repo) {
-  const summary = repo?.summary || {};
+function getRepoCode(repo: Repo): number {
+  const summary = repo?.summary || {} as Repo['summary'];
   const code = safeNumber(summary.code, safeNumber(summary.lines));
   return Math.max(0, code);
 }
 
-function getRecentBlendScore(repo, nowTimestamp, maxCode) {
+function getRecentBlendScore(repo: Repo, nowTimestamp: number, maxCode: number): number {
   const lastUpdated = safeDate(repo?.lastUpdated);
   const daysSince = lastUpdated > 0
     ? Math.max(0, (nowTimestamp - lastUpdated) / 86400000)
@@ -49,8 +47,8 @@ function getRecentBlendScore(repo, nowTimestamp, maxCode) {
   return (0.7 * recencyScore) + (0.3 * sizeScore);
 }
 
-function buildRecentScoreMap(repoList, nowTimestamp) {
-  const maxCodeByBucket = new Map([
+function buildRecentScoreMap(repoList: Repo[], nowTimestamp: number): Map<Repo, number> {
+  const maxCodeByBucket = new Map<string, number>([
     ['public', 1],
     ['private', 1]
   ]);
@@ -65,12 +63,12 @@ function buildRecentScoreMap(repoList, nowTimestamp) {
     repoList.map((repo) => {
       const bucket = getPrivacyBucket(repo);
       const maxCode = maxCodeByBucket.get(bucket) || 1;
-      return [repo, getRecentBlendScore(repo, nowTimestamp, maxCode)];
+      return [repo, getRecentBlendScore(repo, nowTimestamp, maxCode)] as const;
     })
   );
 }
 
-export function filterRepos(repoList, search = '', language = 'all', category = 'all') {
+export function filterRepos(repoList: Repo[], search: string = '', language: string = 'all', category: string = 'all'): Repo[] {
   const normalizedSearch = (search || '').trim().toLowerCase();
   const normalizedLanguage = (language || 'all').toLowerCase();
   const normalizedCategory = (category || 'all').toLowerCase();
@@ -78,9 +76,7 @@ export function filterRepos(repoList, search = '', language = 'all', category = 
   return (repoList || []).filter((repo) => {
     if (normalizedLanguage !== 'all') {
       const primary = (repo.primaryLanguage || '').toLowerCase();
-      if (primary !== normalizedLanguage) {
-        return false;
-      }
+      if (primary !== normalizedLanguage) return false;
     }
 
     if (normalizedCategory !== 'all') {
@@ -88,20 +84,12 @@ export function filterRepos(repoList, search = '', language = 'all', category = 
       const hasCategory = categories.some(
         (tag) => (tag?.label || '').toLowerCase() === normalizedCategory
       );
-      if (!hasCategory) {
-        return false;
-      }
+      if (!hasCategory) return false;
     }
 
-    if (!normalizedSearch) {
-      return true;
-    }
+    if (!normalizedSearch) return true;
 
-    const haystack = [
-      repo.name,
-      repo.description,
-      repo.primaryLanguage
-    ]
+    const haystack = [repo.name, repo.description, repo.primaryLanguage]
       .filter(Boolean)
       .join(' ')
       .toLowerCase();
@@ -110,18 +98,15 @@ export function filterRepos(repoList, search = '', language = 'all', category = 
   });
 }
 
-export function sortRepos(repoList, by = 'lines', order = 'desc') {
+export function sortRepos(repoList: Repo[], by: SortKey = 'lines', order: SortOrder = 'desc'): Repo[] {
   const direction = order === 'asc' ? 1 : -1;
   const sortable = [...(repoList || [])];
   const nowTimestamp = Date.now();
   const recentScoreMap = buildRecentScoreMap(sortable, nowTimestamp);
 
   return sortable.sort((a, b) => {
-    // Public repositories always appear before private repositories.
     const privacyDelta = (isPrivateRepo(a) ? 1 : 0) - (isPrivateRepo(b) ? 1 : 0);
-    if (privacyDelta !== 0) {
-      return privacyDelta;
-    }
+    if (privacyDelta !== 0) return privacyDelta;
 
     let metricDelta = 0;
     switch (by) {
@@ -143,23 +128,26 @@ export function sortRepos(repoList, by = 'lines', order = 'desc') {
         break;
     }
 
-    if (metricDelta !== 0) {
-      return metricDelta * direction;
-    }
+    if (metricDelta !== 0) return metricDelta * direction;
 
     if (by === 'recent') {
       const lastUpdatedDelta = safeDate(a?.lastUpdated) - safeDate(b?.lastUpdated);
-      if (lastUpdatedDelta !== 0) {
-        return lastUpdatedDelta * direction;
-      }
+      if (lastUpdatedDelta !== 0) return lastUpdatedDelta * direction;
     }
 
-    // Deterministic tie-breaker for stable rendering.
     return compareNames(a, b);
   });
 }
 
-export function filterAndSortRepos(repoList, options = {}) {
+interface FilterAndSortOptions {
+  searchTerm?: string;
+  languageFilter?: string;
+  categoryFilter?: string;
+  sortBy?: SortKey;
+  sortOrder?: SortOrder;
+}
+
+export function filterAndSortRepos(repoList: Repo[], options: FilterAndSortOptions = {}): Repo[] {
   const {
     searchTerm = '',
     languageFilter = 'all',
@@ -172,8 +160,8 @@ export function filterAndSortRepos(repoList, options = {}) {
   return sortRepos(filtered, sortBy, sortOrder);
 }
 
-export function getAvailableLanguages(repoList) {
-  const set = new Set();
+export function getAvailableLanguages(repoList: Repo[]): string[] {
+  const set = new Set<string>();
 
   for (const repo of repoList || []) {
     if (repo?.primaryLanguage) {
