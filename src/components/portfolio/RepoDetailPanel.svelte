@@ -17,7 +17,7 @@
   $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo?.primaryLanguage || '', repo?.languages || []);
   $: topProjectTags = Array.isArray(repo?.projectTags) ? repo.projectTags.slice(0, 2) : [];
   $: qualitySignals = repo ? computeRepoQualitySignals(repo, $qualityBaselines) : [];
-  $: repoUrl = repo?.url || repo?.htmlUrl || null;
+  $: repoUrl = repo?.url || null;
   $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
 
   function closePanel() {

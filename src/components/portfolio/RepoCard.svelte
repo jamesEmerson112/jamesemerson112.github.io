@@ -30,7 +30,7 @@
     maxProgrammingLanguages: PROGRAMMING_LANGUAGE_LIMIT,
     otherThresholdPercent: OTHER_THRESHOLD_PERCENT
   });
-  $: repoUrl = repo?.url || repo?.htmlUrl || null;
+  $: repoUrl = repo?.url || null;
   $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
 
   function toPercent(value) {
