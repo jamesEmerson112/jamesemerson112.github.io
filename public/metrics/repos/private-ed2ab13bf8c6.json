@@ -1,6 +1,6 @@
 {
   "id": "private-ed2ab13bf8c6",
-  "scannedAt": "2026-03-01T03:51:15.503Z",
+  "scannedAt": "2026-04-01T04:02:59.298Z",
   "metadata": {
     "name": "Private Project 31",
     "fullName": null,
@@ -42,7 +42,7 @@
       "Code": 292,
       "Comment": 72,
       "Blank": 48,
-      "Complexity": 8,
+      "Complexity": 13,
       "Count": 6,
       "WeightedComplexity": 0,
       "Files": [],
@@ -299,7 +299,7 @@
       "totalBytes": 109589,
       "totalFiles": 52,
       "totalLanguages": 18,
-      "totalComplexity": 153,
+      "totalComplexity": 158,
       "primaryLanguage": "TypeScript",
       "primaryLanguagePercent": 47.8
     },
@@ -338,7 +338,7 @@
         "blanks": 48,
         "bytes": 15694,
         "files": 6,
-        "complexity": 8,
+        "complexity": 13,
         "percentOfLines": 11.6,
         "percentOfCode": 10.5,
         "percentOfBytes": 14.3
