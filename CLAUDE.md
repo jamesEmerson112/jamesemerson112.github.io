@@ -18,20 +18,25 @@ npm run scan:validate   # Verify metrics index/details integrity
 npm run blog:index   # Rebuild blog index from markdown files
 ```
 
+Run a single test file:
+```bash
+npx vitest run src/utils/portfolioTransforms.test.js
+npx vitest run scripts/utils/project-classifier.test.js
+```
+
 ## Architecture
 
-Svelte 4 + Vite 5 + TypeScript (strict mode) static site deployed to GitHub Pages.
+Svelte 4 + Vite 5 + TypeScript static site deployed to GitHub Pages.
 
 ### Frontend
 
-Single-page app with hash-based routing. Scroll sections: `#home`, `#blog`, `#metrics`, `#projects`, `#contact`, `#privacy`. Blog views: `#posts` (full list), `#posts/{slug}` (individual post).
+Single-page app with hash-based routing (`src/utils/routing.ts`). Scroll sections: `#home`, `#blog`, `#metrics`, `#projects`, `#contact`, `#privacy`. Blog views: `#posts` (full list), `#posts/{slug}` (individual post). Routing is hash-based — no server-side routing exists.
 
-- **Types**: Shared domain interfaces in `src/types.ts` (PortfolioIndex, Repo, RepoLanguageEntry, QualitySignal, etc.).
-- **State**: Svelte writable/derived stores in `src/stores/`. `portfolioStore.ts` holds all portfolio data, filters, sort state, and exposes derived stores (`filteredRepos`, `availableLanguages`, `qualityBaselines`, etc.). `theme.ts` manages dark/light mode with localStorage persistence and system preference detection.
-- **Data loading**: Lazy — triggered by IntersectionObserver (`src/utils/dataPreloader.ts`) when metrics/projects sections approach the viewport. `portfolioStore.ts` fetches directly from `/metrics/index.json`.
-- **Utilities**: Single-responsibility modules in `src/utils/` — `formatters.ts` (number/currency), `languageUtils.ts` (colors, classification, composition), `profileMetrics.ts` (quality signals, spider stats), `spiderTransforms.ts` (chart data), `portfolioTransforms.ts` (filter/sort), `routing.ts` (hash parsing, nav config), `scrollSync.ts` / `dataPreloader.ts` / `viewportDetection.ts` (observer factories), `frontmatter.ts` (shared YAML parser), `blogLoader.ts` (blog fetch + cache).
-- **Visualization**: Hand-crafted SVG spider/radar charts (`CategorySpider.svelte`, `LanguageSpider.svelte`). Three.js and GSAP for decorative effects.
-- **Theming**: CSS custom properties defined in `src/styles/themes.css`, toggled via `data-light` attribute on `<html>`. No CSS framework.
+- **Types**: All shared domain interfaces live in `src/types.ts`. Import from there, not inline.
+- **State**: Svelte stores in `src/stores/`. `portfolioStore.ts` holds portfolio data, filters, sort state, and exposes derived stores (`filteredRepos`, `availableLanguages`, `qualityBaselines`, etc.). `theme.ts` manages dark/light mode with localStorage persistence and system preference detection.
+- **Data loading**: Lazy — triggered by IntersectionObserver (`src/utils/dataPreloader.ts`) when metrics/projects sections approach the viewport. `portfolioStore.ts` fetches from `/metrics/index.json`.
+- **Visualization**: Hand-crafted SVG spider/radar charts (`CategorySpider.svelte`, `LanguageSpider.svelte`). Three.js + GSAP for decorative effects.
+- **Theming**: CSS custom properties in `src/styles/themes.css`, toggled via `data-light` attribute on `<html>`. No CSS framework.
 - **Security**: CSP meta tag in `index.html`. Blog markdown sanitized with DOMPurify. Blog slugs validated with regex. All external links use `rel="noopener noreferrer"`.
 
 ### Blog
@@ -56,7 +61,7 @@ Markdown files in `public/blog/posts/` with YAML frontmatter (`title`, `date`, `
 7. Write `public/metrics/index.json` (portfolio totals + repo summaries) and `public/metrics/repos/{id}.json` (per-repo details)
 8. Validate integrity via `scripts/validate-metrics.js`
 
-Incremental scanning uses `sourceRef` hashes to skip unchanged repos. The `scripts/utils/scan-planner.js` decides what needs rescanning.
+Incremental scanning uses `sourceRef` hashes to skip unchanged repos. `scripts/utils/scan-planner.js` decides what needs rescanning.
 
 ### CI/CD (GitHub Actions)
 
@@ -65,11 +70,11 @@ Incremental scanning uses `sourceRef` hashes to skip unchanged repos. The `scrip
 
 ## Resume Workflow
 
-When a job description is pasted, Claude should cross-reference:
-- `public/metrics/index.json` — 203 repos with categories (AI/ML, Web, Backend, Data, DevOps, Mobile), language breakdowns, confidence scores, COCOMO estimates
+When a job description is pasted, cross-reference:
+- `public/metrics/index.json` — repos with categories (AI/ML, Web, Backend, Data, DevOps, Mobile), language breakdowns, confidence scores, COCOMO estimates
 - `docs/resume-notes.txt` — career timeline, education, experience, achievements, links
 
-Generate a tailored resume that emphasizes the skills, projects, and experience most relevant to the specific job description. Score repos against JD requirements using the existing category tags and language data.
+Generate a tailored resume scoring repos against JD requirements using the existing category tags and language data.
 
 ## Environment
 
@@ -81,7 +86,13 @@ Generate a tailored resume that emphasizes the skills, projects, and experience 
 Vitest with jsdom environment. Tests live alongside source files as `*.test.js`.
 
 - Component tests use `@testing-library/svelte`
-- Script/utility tests validate transforms, classification, COCOMO, and metrics validation
-- Setup file: `src/test/setup.js`
+- Setup file: `src/test/setup.js` (imports `@testing-library/jest-dom/vitest`)
 - Coverage: `npx vitest --coverage` (v8 provider)
-- Contract test: `markup-attrs.contract.test.js` enforces `data-name` attributes on all Svelte components
+- Contract test: `markup-attrs.contract.test.js` enforces `data-name` attributes on **all** Svelte components — every new component must include a `data-name` attribute or this test fails.
+
+## Conventions
+
+- **Import extensions**: Vite/Rollup does NOT resolve `.js` → `.ts` imports in Svelte files. When renaming `foo.js` → `foo.ts`, ALL importers (Svelte + test files) must update to the `.ts` extension.
+- **TypeScript status**: All `src/` source files are `.ts` or `<script lang="ts">`. Test files remain `.js`. `tsconfig.json` still has `allowJs: true`.
+- **Scripts stay JS**: Everything under `scripts/` is plain `.js` (Node.js scripts, excluded from tsconfig).
+- **`data-name` required**: Every Svelte component must have a `data-name` attribute on its root element. Enforced by contract test.
