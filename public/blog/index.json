@@ -1,5 +1,11 @@
 [
   {
+    "slug": "fifty-cents-a-day",
+    "title": "My Journey to Making $0.50 a Day",
+    "date": "2026-04-12",
+    "excerpt": "What happens when an engineer tries to build a product that generates 50 cents per day in passive income? Math, reality checks, and a scheduling system."
+  },
+  {
     "slug": "hello-world",
     "title": "Hello World",
     "date": "2026-03-22",
