@@ -1,6 +1,6 @@
 {
   "id": "quote-generator",
-  "scannedAt": "2026-04-01T04:02:31.830Z",
+  "scannedAt": "2026-04-13T03:14:42.654Z",
   "metadata": {
     "name": "quote-generator",
     "fullName": "jamesEmerson112/quote-generator",
@@ -8,13 +8,13 @@
     "url": "https://github.com/jamesEmerson112/quote-generator",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-02-12T06:52:21Z",
+    "lastUpdated": "2026-04-12T06:26:16Z",
     "createdAt": "2022-11-13T00:01:46Z",
     "stars": 0,
     "language": "JavaScript",
     "isPrivate": false,
     "isFork": false,
-    "isArchived": false,
+    "isArchived": true,
     "isAnonymized": false,
     "sourceRef": "public:jamesemerson112/quote-generator"
   },

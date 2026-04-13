@@ -1,22 +1,22 @@
 {
-  "id": "private-864e517d77ef",
-  "scannedAt": "2026-04-01T04:02:09.101Z",
+  "id": "dl-team-proposal",
+  "scannedAt": "2026-04-13T03:14:41.662Z",
   "metadata": {
-    "name": "Private Project 48",
-    "fullName": null,
-    "description": "Private repository",
-    "url": null,
+    "name": "DL-Team-Proposal",
+    "fullName": "jamesEmerson112/DL-Team-Proposal",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/DL-Team-Proposal",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-03-27T04:04:26Z",
-    "createdAt": null,
+    "lastUpdated": "2026-04-13T02:20:19Z",
+    "createdAt": "2026-03-07T02:31:03Z",
     "stars": 0,
     "language": "Unknown",
-    "isPrivate": true,
+    "isPrivate": false,
     "isFork": false,
     "isArchived": false,
-    "isAnonymized": true,
-    "sourceRef": "private:864e517d77ef6135"
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/dl-team-proposal"
   },
   "sccRaw": [
     {
