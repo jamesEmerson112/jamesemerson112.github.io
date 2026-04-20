@@ -1,54 +1,131 @@
 {
   "version": "1.1.0",
-  "generatedAt": "2026-04-13T03:14:53.730Z",
+  "generatedAt": "2026-04-20T03:14:32.446Z",
   "lastFullScan": "2026-04-01T04:03:58.394Z",
-  "lastIncrementalScan": "2026-04-13T03:14:53.730Z",
-  "reposScannedThisRun": 7,
-  "reposReusedThisRun": 198,
-  "totalPublicRepos": 104,
-  "totalPrivateRepos": 101,
+  "lastIncrementalScan": "2026-04-20T03:14:32.446Z",
+  "reposScannedThisRun": 6,
+  "reposReusedThisRun": 199,
+  "totalPublicRepos": 103,
+  "totalPrivateRepos": 102,
   "totalRepos": 205,
   "portfolioTotals": {
-    "totalLines": 2964177,
-    "totalCode": 2589118,
-    "totalComments": 164574,
-    "totalBlanks": 210485,
-    "totalFiles": 8742,
-    "totalBytes": 270987719,
-    "totalComplexity": 102103,
+    "totalLines": 3050251,
+    "totalCode": 2663814,
+    "totalComments": 167342,
+    "totalBlanks": 219095,
+    "totalFiles": 9083,
+    "totalBytes": 273674371,
+    "totalComplexity": 108088,
     "estimatedValue": {
-      "standardCost": 37270358,
-      "totalEffort": 7945.9,
-      "avgTime": 38.76,
+      "standardCost": 38306023,
+      "totalEffort": 8166.72,
+      "avgTime": 39.84,
       "avgPeople": 0
     },
     "soloDeveloper": {
-      "fullTimeMonths": 7945.9,
-      "fullTimeYears": 662,
-      "fullTimeWeeks": 34406,
+      "fullTimeMonths": 8166.72,
+      "fullTimeYears": 681,
+      "fullTimeWeeks": 35362,
       "description": "Total time if developed alone, full-time"
     },
     "languages": {
       "Markdown": {
         "repos": 190,
-        "totalLines": 273227,
-        "totalCode": 205406,
-        "percentOfTotal": 9.2,
-        "averagePerRepo": 1438
+        "totalLines": 287013,
+        "totalCode": 215131,
+        "percentOfTotal": 9.4,
+        "averagePerRepo": 1511
       },
-      "License": {
-        "repos": 85,
-        "totalLines": 12917,
-        "totalCode": 10445,
-        "percentOfTotal": 0.4,
-        "averagePerRepo": 152
+      "Python": {
+        "repos": 67,
+        "totalLines": 224606,
+        "totalCode": 169764,
+        "percentOfTotal": 7.4,
+        "averagePerRepo": 3352
+      },
+      "YAML": {
+        "repos": 27,
+        "totalLines": 8203,
+        "totalCode": 7601,
+        "percentOfTotal": 0.3,
+        "averagePerRepo": 304
+      },
+      "Jupyter": {
+        "repos": 9,
+        "totalLines": 42092,
+        "totalCode": 42092,
+        "percentOfTotal": 1.4,
+        "averagePerRepo": 4677
+      },
+      "HTML": {
+        "repos": 83,
+        "totalLines": 51772,
+        "totalCode": 45086,
+        "percentOfTotal": 1.7,
+        "averagePerRepo": 624
+      },
+      "Rust": {
+        "repos": 5,
+        "totalLines": 6592,
+        "totalCode": 5480,
+        "percentOfTotal": 0.2,
+        "averagePerRepo": 1318
+      },
+      "Powershell": {
+        "repos": 4,
+        "totalLines": 1337,
+        "totalCode": 1037,
+        "percentOfTotal": 0,
+        "averagePerRepo": 334
+      },
+      "Plain Text": {
+        "repos": 73,
+        "totalLines": 861169,
+        "totalCode": 855386,
+        "percentOfTotal": 28.2,
+        "averagePerRepo": 11797
+      },
+      "Shell": {
+        "repos": 19,
+        "totalLines": 3891,
+        "totalCode": 2674,
+        "percentOfTotal": 0.1,
+        "averagePerRepo": 205
+      },
+      "Batch": {
+        "repos": 7,
+        "totalLines": 565,
+        "totalCode": 471,
+        "percentOfTotal": 0,
+        "averagePerRepo": 81
       },
       "JSON": {
         "repos": 111,
-        "totalLines": 264677,
-        "totalCode": 264590,
-        "percentOfTotal": 8.9,
-        "averagePerRepo": 2384
+        "totalLines": 275865,
+        "totalCode": 275778,
+        "percentOfTotal": 9,
+        "averagePerRepo": 2485
+      },
+      "TOML": {
+        "repos": 13,
+        "totalLines": 1077,
+        "totalCode": 610,
+        "percentOfTotal": 0,
+        "averagePerRepo": 83
+      },
+      "License": {
+        "repos": 85,
+        "totalLines": 12938,
+        "totalCode": 10462,
+        "percentOfTotal": 0.4,
+        "averagePerRepo": 152
+      },
+      "Makefile": {
+        "repos": 15,
+        "totalLines": 1777,
+        "totalCode": 1141,
+        "percentOfTotal": 0.1,
+        "averagePerRepo": 118
       },
       "Svelte": {
         "repos": 3,
@@ -61,63 +138,35 @@
         "repos": 89,
         "totalLines": 374840,
         "totalCode": 270633,
-        "percentOfTotal": 12.6,
+        "percentOfTotal": 12.3,
         "averagePerRepo": 4212
       },
       "TypeScript": {
         "repos": 31,
         "totalLines": 62305,
         "totalCode": 53714,
-        "percentOfTotal": 2.1,
+        "percentOfTotal": 2,
         "averagePerRepo": 2010
-      },
-      "HTML": {
-        "repos": 81,
-        "totalLines": 49990,
-        "totalCode": 43541,
-        "percentOfTotal": 1.7,
-        "averagePerRepo": 617
       },
       "CSS": {
         "repos": 83,
         "totalLines": 22511,
         "totalCode": 18800,
-        "percentOfTotal": 0.8,
+        "percentOfTotal": 0.7,
         "averagePerRepo": 271
       },
-      "YAML": {
-        "repos": 27,
-        "totalLines": 7711,
-        "totalCode": 7109,
-        "percentOfTotal": 0.3,
-        "averagePerRepo": 286
-      },
-      "Plain Text": {
-        "repos": 72,
-        "totalLines": 847185,
-        "totalCode": 842578,
-        "percentOfTotal": 28.6,
-        "averagePerRepo": 11766
-      },
       "SVG": {
-        "repos": 39,
-        "totalLines": 11355,
-        "totalCode": 11306,
-        "percentOfTotal": 0.4,
-        "averagePerRepo": 291
-      },
-      "Python": {
-        "repos": 66,
-        "totalLines": 172982,
-        "totalCode": 123373,
-        "percentOfTotal": 5.8,
-        "averagePerRepo": 2621
+        "repos": 38,
+        "totalLines": 2044,
+        "totalCode": 2007,
+        "percentOfTotal": 0.1,
+        "averagePerRepo": 54
       },
       "CSV": {
         "repos": 11,
         "totalLines": 89532,
         "totalCode": 85029,
-        "percentOfTotal": 3,
+        "percentOfTotal": 2.9,
         "averagePerRepo": 8139
       },
       "R": {
@@ -126,48 +175,6 @@
         "totalCode": 51,
         "percentOfTotal": 0,
         "averagePerRepo": 73
-      },
-      "Jupyter": {
-        "repos": 9,
-        "totalLines": 42092,
-        "totalCode": 42092,
-        "percentOfTotal": 1.4,
-        "averagePerRepo": 4677
-      },
-      "Rust": {
-        "repos": 5,
-        "totalLines": 6089,
-        "totalCode": 5076,
-        "percentOfTotal": 0.2,
-        "averagePerRepo": 1218
-      },
-      "Powershell": {
-        "repos": 4,
-        "totalLines": 1062,
-        "totalCode": 827,
-        "percentOfTotal": 0,
-        "averagePerRepo": 266
-      },
-      "Shell": {
-        "repos": 17,
-        "totalLines": 2230,
-        "totalCode": 1510,
-        "percentOfTotal": 0.1,
-        "averagePerRepo": 131
-      },
-      "Batch": {
-        "repos": 7,
-        "totalLines": 564,
-        "totalCode": 470,
-        "percentOfTotal": 0,
-        "averagePerRepo": 81
-      },
-      "TOML": {
-        "repos": 13,
-        "totalLines": 1077,
-        "totalCode": 610,
-        "percentOfTotal": 0,
-        "averagePerRepo": 83
       },
       "Dockerfile": {
         "repos": 7,
@@ -180,7 +187,7 @@
         "repos": 14,
         "totalLines": 52265,
         "totalCode": 18285,
-        "percentOfTotal": 1.8,
+        "percentOfTotal": 1.7,
         "averagePerRepo": 3733
       },
       "Docker ignore": {
@@ -208,7 +215,7 @@
         "repos": 12,
         "totalLines": 105077,
         "totalCode": 79066,
-        "percentOfTotal": 3.5,
+        "percentOfTotal": 3.4,
         "averagePerRepo": 8756
       },
       "TeX": {
@@ -217,13 +224,6 @@
         "totalCode": 1730,
         "percentOfTotal": 0.1,
         "averagePerRepo": 1164
-      },
-      "Makefile": {
-        "repos": 14,
-        "totalLines": 1709,
-        "totalCode": 1091,
-        "percentOfTotal": 0.1,
-        "averagePerRepo": 122
       },
       "Autoconf": {
         "repos": 2,
@@ -257,7 +257,7 @@
         "repos": 16,
         "totalLines": 449501,
         "totalCode": 420587,
-        "percentOfTotal": 15.2,
+        "percentOfTotal": 14.7,
         "averagePerRepo": 28094
       },
       "C++": {
@@ -467,29 +467,366 @@
   },
   "repos": [
     {
+      "id": "private-27eb0d48a34b",
+      "sourceRef": "private:27eb0d48a34b372d",
+      "name": "Private Project 8",
+      "url": null,
+      "description": "Private repository",
+      "lastUpdated": "2026-04-20T01:20:33Z",
+      "primaryLanguage": "Markdown",
+      "isPrivate": true,
+      "isAnonymized": true,
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.56
+        },
+        {
+          "label": "Data",
+          "confidence": 0.44
+        }
+      ],
+      "languages": [
+        {
+          "name": "Markdown",
+          "lines": 18474,
+          "code": 14387,
+          "comments": 0,
+          "blanks": 4087,
+          "bytes": 896849,
+          "files": 57,
+          "complexity": 0,
+          "percentOfLines": 41.3,
+          "percentOfCode": 40.9,
+          "percentOfBytes": 38.5
+        },
+        {
+          "name": "Python",
+          "lines": 12116,
+          "code": 7232,
+          "comments": 3185,
+          "blanks": 1699,
+          "bytes": 473803,
+          "files": 110,
+          "complexity": 694,
+          "percentOfLines": 27.1,
+          "percentOfCode": 20.6,
+          "percentOfBytes": 20.4
+        },
+        {
+          "name": "YAML",
+          "lines": 5638,
+          "code": 5596,
+          "comments": 0,
+          "blanks": 42,
+          "bytes": 79242,
+          "files": 258,
+          "complexity": 0,
+          "percentOfLines": 12.6,
+          "percentOfCode": 15.9,
+          "percentOfBytes": 3.4
+        },
+        {
+          "name": "Jupyter",
+          "lines": 5572,
+          "code": 5572,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 767864,
+          "files": 3,
+          "complexity": 0,
+          "percentOfLines": 12.5,
+          "percentOfCode": 15.9,
+          "percentOfBytes": 33
+        },
+        {
+          "name": "HTML",
+          "lines": 859,
+          "code": 806,
+          "comments": 12,
+          "blanks": 41,
+          "bytes": 35213,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 1.9,
+          "percentOfCode": 2.3,
+          "percentOfBytes": 1.5
+        },
+        {
+          "name": "Rust",
+          "lines": 951,
+          "code": 652,
+          "comments": 167,
+          "blanks": 132,
+          "bytes": 31483,
+          "files": 11,
+          "complexity": 28,
+          "percentOfLines": 2.1,
+          "percentOfCode": 1.9,
+          "percentOfBytes": 1.4
+        },
+        {
+          "name": "Powershell",
+          "lines": 731,
+          "code": 561,
+          "comments": 20,
+          "blanks": 150,
+          "bytes": 24858,
+          "files": 20,
+          "complexity": 60,
+          "percentOfLines": 1.6,
+          "percentOfCode": 1.6,
+          "percentOfBytes": 1.1
+        },
+        {
+          "name": "Plain Text",
+          "lines": 269,
+          "code": 240,
+          "comments": 0,
+          "blanks": 29,
+          "bytes": 13712,
+          "files": 19,
+          "complexity": 0,
+          "percentOfLines": 0.6,
+          "percentOfCode": 0.7,
+          "percentOfBytes": 0.6
+        },
+        {
+          "name": "Shell",
+          "lines": 56,
+          "code": 37,
+          "comments": 9,
+          "blanks": 10,
+          "bytes": 2088,
+          "files": 7,
+          "complexity": 3,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0.1
+        },
+        {
+          "name": "Batch",
+          "lines": 35,
+          "code": 30,
+          "comments": 2,
+          "blanks": 3,
+          "bytes": 1419,
+          "files": 5,
+          "complexity": 6,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0.1
+        },
+        {
+          "name": "JSON",
+          "lines": 13,
+          "code": 13,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 276,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "TOML",
+          "lines": 13,
+          "code": 12,
+          "comments": 0,
+          "blanks": 1,
+          "bytes": 262,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        }
+      ],
+      "summary": {
+        "lines": 44727,
+        "code": 35138,
+        "files": 494,
+        "complexity": 791,
+        "traditionalCost": 472603,
+        "aiCost": 120514,
+        "traditionalMonths": 100.76,
+        "aiMonths": 25.69
+      },
+      "detailsFile": "repos/private-27eb0d48a34b.json"
+    },
+    {
       "id": "dl-team-proposal",
       "sourceRef": "public:jamesemerson112/dl-team-proposal",
       "name": "DL-Team-Proposal",
       "url": "https://github.com/jamesEmerson112/DL-Team-Proposal",
       "description": "",
-      "lastUpdated": "2026-04-13T02:20:19Z",
-      "primaryLanguage": "Markdown",
+      "lastUpdated": "2026-04-20T01:17:59Z",
+      "primaryLanguage": "Python",
       "isPrivate": false,
       "isAnonymized": false,
-      "projectTags": [],
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.6
+        },
+        {
+          "label": "Data",
+          "confidence": 0.4
+        }
+      ],
       "languages": [
         {
-          "name": "Markdown",
-          "lines": 4344,
-          "code": 3202,
+          "name": "Python",
+          "lines": 44333,
+          "code": 40489,
+          "comments": 1646,
+          "blanks": 2198,
+          "bytes": 2095809,
+          "files": 42,
+          "complexity": 4886,
+          "percentOfLines": 64.2,
+          "percentOfCode": 66,
+          "percentOfBytes": 63.2
+        },
+        {
+          "name": "Plain Text",
+          "lines": 13808,
+          "code": 12650,
           "comments": 0,
-          "blanks": 1142,
-          "bytes": 169655,
-          "files": 33,
+          "blanks": 1158,
+          "bytes": 704934,
+          "files": 16,
           "complexity": 0,
-          "percentOfLines": 99.3,
-          "percentOfCode": 99.1,
-          "percentOfBytes": 99.2
+          "percentOfLines": 20,
+          "percentOfCode": 20.6,
+          "percentOfBytes": 21.3
+        },
+        {
+          "name": "Markdown",
+          "lines": 8656,
+          "code": 6278,
+          "comments": 0,
+          "blanks": 2378,
+          "bytes": 426646,
+          "files": 71,
+          "complexity": 0,
+          "percentOfLines": 12.5,
+          "percentOfCode": 10.2,
+          "percentOfBytes": 12.9
+        },
+        {
+          "name": "JSON",
+          "lines": 747,
+          "code": 747,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 29747,
+          "files": 38,
+          "complexity": 0,
+          "percentOfLines": 1.1,
+          "percentOfCode": 1.2,
+          "percentOfBytes": 0.9
+        },
+        {
+          "name": "Shell",
+          "lines": 872,
+          "code": 607,
+          "comments": 150,
+          "blanks": 115,
+          "bytes": 28803,
+          "files": 7,
+          "complexity": 52,
+          "percentOfLines": 1.3,
+          "percentOfCode": 1,
+          "percentOfBytes": 0.9
+        },
+        {
+          "name": "HTML",
+          "lines": 629,
+          "code": 560,
+          "comments": 17,
+          "blanks": 52,
+          "bytes": 28129,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.9,
+          "percentOfCode": 0.9,
+          "percentOfBytes": 0.8
+        },
+        {
+          "name": "License",
+          "lines": 42,
+          "code": 34,
+          "comments": 0,
+          "blanks": 8,
+          "bytes": 2135,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0.1
+        }
+      ],
+      "summary": {
+        "lines": 69087,
+        "code": 61365,
+        "files": 177,
+        "complexity": 4938,
+        "traditionalCost": 848686,
+        "aiCost": 216415,
+        "traditionalMonths": 180.94,
+        "aiMonths": 46.14
+      },
+      "detailsFile": "repos/dl-team-proposal.json"
+    },
+    {
+      "id": "rust-learning",
+      "sourceRef": "public:jamesemerson112/rust-learning",
+      "name": "Rust-learning",
+      "url": "https://github.com/jamesEmerson112/Rust-learning",
+      "description": "",
+      "lastUpdated": "2026-04-19T23:21:59Z",
+      "primaryLanguage": "Rust",
+      "isPrivate": false,
+      "isAnonymized": false,
+      "projectTags": [
+        {
+          "label": "Backend",
+          "confidence": 0.8
+        },
+        {
+          "label": "DevOps",
+          "confidence": 0.2
+        }
+      ],
+      "languages": [
+        {
+          "name": "Rust",
+          "lines": 2612,
+          "code": 2106,
+          "comments": 130,
+          "blanks": 376,
+          "bytes": 73099,
+          "files": 97,
+          "complexity": 106,
+          "percentOfLines": 82.9,
+          "percentOfCode": 83.5,
+          "percentOfBytes": 69.9
+        },
+        {
+          "name": "Markdown",
+          "lines": 500,
+          "code": 383,
+          "comments": 0,
+          "blanks": 117,
+          "bytes": 30221,
+          "files": 3,
+          "complexity": 0,
+          "percentOfLines": 15.9,
+          "percentOfCode": 15.2,
+          "percentOfBytes": 28.9
         },
         {
           "name": "License",
@@ -500,17 +837,30 @@
           "bytes": 1072,
           "files": 1,
           "complexity": 0,
-          "percentOfLines": 0.5,
-          "percentOfCode": 0.5,
-          "percentOfBytes": 0.6
+          "percentOfLines": 0.7,
+          "percentOfCode": 0.7,
+          "percentOfBytes": 1
         },
         {
           "name": "JSON",
-          "lines": 11,
-          "code": 11,
+          "lines": 8,
+          "code": 8,
           "comments": 0,
           "blanks": 0,
-          "bytes": 221,
+          "bytes": 103,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.3,
+          "percentOfCode": 0.3,
+          "percentOfBytes": 0.1
+        },
+        {
+          "name": "TOML",
+          "lines": 8,
+          "code": 7,
+          "comments": 0,
+          "blanks": 1,
+          "bytes": 150,
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.3,
@@ -519,16 +869,227 @@
         }
       ],
       "summary": {
-        "lines": 4376,
-        "code": 3230,
-        "files": 35,
-        "complexity": 0,
-        "traditionalCost": 38556,
-        "aiCost": 9832,
-        "traditionalMonths": 8.22,
-        "aiMonths": 2.1
+        "lines": 3149,
+        "code": 2521,
+        "files": 103,
+        "complexity": 106,
+        "traditionalCost": 29722,
+        "aiCost": 7579,
+        "traditionalMonths": 6.34,
+        "aiMonths": 1.62
       },
-      "detailsFile": "repos/dl-team-proposal.json"
+      "detailsFile": "repos/rust-learning.json"
+    },
+    {
+      "id": "private-07c83a2f9d37",
+      "sourceRef": "private:07c83a2f9d371a28",
+      "name": "Private Project 48",
+      "url": null,
+      "description": "Private repository",
+      "lastUpdated": "2026-04-19T03:17:34Z",
+      "primaryLanguage": "JSON",
+      "isPrivate": true,
+      "isAnonymized": true,
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.6
+        },
+        {
+          "label": "Data",
+          "confidence": 0.4
+        }
+      ],
+      "languages": [
+        {
+          "name": "JSON",
+          "lines": 10511,
+          "code": 10511,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 222475,
+          "files": 69,
+          "complexity": 0,
+          "percentOfLines": 39.5,
+          "percentOfCode": 45.6,
+          "percentOfBytes": 21.6
+        },
+        {
+          "name": "Python",
+          "lines": 8382,
+          "code": 6653,
+          "comments": 903,
+          "blanks": 826,
+          "bytes": 326113,
+          "files": 26,
+          "complexity": 1015,
+          "percentOfLines": 31.5,
+          "percentOfCode": 28.9,
+          "percentOfBytes": 31.7
+        },
+        {
+          "name": "Markdown",
+          "lines": 5517,
+          "code": 4103,
+          "comments": 0,
+          "blanks": 1414,
+          "bytes": 385113,
+          "files": 31,
+          "complexity": 0,
+          "percentOfLines": 20.7,
+          "percentOfCode": 17.8,
+          "percentOfBytes": 37.4
+        },
+        {
+          "name": "HTML",
+          "lines": 1153,
+          "code": 985,
+          "comments": 44,
+          "blanks": 124,
+          "bytes": 61823,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 4.3,
+          "percentOfCode": 4.3,
+          "percentOfBytes": 6
+        },
+        {
+          "name": "Shell",
+          "lines": 789,
+          "code": 557,
+          "comments": 136,
+          "blanks": 96,
+          "bytes": 24940,
+          "files": 5,
+          "complexity": 96,
+          "percentOfLines": 3,
+          "percentOfCode": 2.4,
+          "percentOfBytes": 2.4
+        },
+        {
+          "name": "Plain Text",
+          "lines": 200,
+          "code": 177,
+          "comments": 0,
+          "blanks": 23,
+          "bytes": 7275,
+          "files": 6,
+          "complexity": 0,
+          "percentOfLines": 0.8,
+          "percentOfCode": 0.8,
+          "percentOfBytes": 0.7
+        },
+        {
+          "name": "Makefile",
+          "lines": 68,
+          "code": 50,
+          "comments": 5,
+          "blanks": 13,
+          "bytes": 2184,
+          "files": 1,
+          "complexity": 3,
+          "percentOfLines": 0.3,
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0.2
+        }
+      ],
+      "summary": {
+        "lines": 26620,
+        "code": 23036,
+        "files": 139,
+        "complexity": 1114,
+        "traditionalCost": 303360,
+        "aiCost": 77357,
+        "traditionalMonths": 64.68,
+        "aiMonths": 16.49
+      },
+      "detailsFile": "repos/private-07c83a2f9d37.json"
+    },
+    {
+      "id": "james-neural-network-study",
+      "sourceRef": "public:jamesemerson112/james-neural-network-study",
+      "name": "James-neural-network-study",
+      "url": "https://github.com/jamesEmerson112/James-neural-network-study",
+      "description": "",
+      "lastUpdated": "2026-04-15T06:11:38Z",
+      "primaryLanguage": "Markdown",
+      "isPrivate": false,
+      "isAnonymized": false,
+      "projectTags": [
+        {
+          "label": "Web",
+          "confidence": 0.84
+        },
+        {
+          "label": "AI/ML",
+          "confidence": 0.16
+        }
+      ],
+      "languages": [
+        {
+          "name": "Markdown",
+          "lines": 26017,
+          "code": 18313,
+          "comments": 0,
+          "blanks": 7704,
+          "bytes": 1415328,
+          "files": 110,
+          "complexity": 0,
+          "percentOfLines": 94.1,
+          "percentOfCode": 93.6,
+          "percentOfBytes": 93.5
+        },
+        {
+          "name": "HTML",
+          "lines": 1334,
+          "code": 1010,
+          "comments": 132,
+          "blanks": 192,
+          "bytes": 86478,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 4.8,
+          "percentOfCode": 5.2,
+          "percentOfBytes": 5.7
+        },
+        {
+          "name": "Python",
+          "lines": 282,
+          "code": 210,
+          "comments": 37,
+          "blanks": 35,
+          "bytes": 10352,
+          "files": 1,
+          "complexity": 15,
+          "percentOfLines": 1,
+          "percentOfCode": 1.1,
+          "percentOfBytes": 0.7
+        },
+        {
+          "name": "JSON",
+          "lines": 23,
+          "code": 23,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 911,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0.1
+        }
+      ],
+      "summary": {
+        "lines": 27656,
+        "code": 19556,
+        "files": 113,
+        "complexity": 15,
+        "traditionalCost": 255431,
+        "aiCost": 65135,
+        "traditionalMonths": 54.46,
+        "aiMonths": 13.89
+      },
+      "detailsFile": "repos/james-neural-network-study.json"
     },
     {
       "id": "jamesemerson112-github-io",
@@ -536,7 +1097,7 @@
       "name": "jamesemerson112.github.io",
       "url": "https://github.com/jamesEmerson112/jamesemerson112.github.io",
       "description": "James Emerson Vo's personal portfolio",
-      "lastUpdated": "2026-04-12T23:10:55Z",
+      "lastUpdated": "2026-04-13T03:14:58Z",
       "primaryLanguage": "JSON",
       "isPrivate": false,
       "isAnonymized": false,
@@ -553,15 +1114,15 @@
       "languages": [
         {
           "name": "JSON",
-          "lines": 75656,
-          "code": 75656,
+          "lines": 75697,
+          "code": 75697,
           "comments": 0,
           "blanks": 0,
-          "bytes": 1797361,
+          "bytes": 1798449,
           "files": 212,
           "complexity": 0,
           "percentOfLines": 85.2,
-          "percentOfCode": 87.2,
+          "percentOfCode": 87.3,
           "percentOfBytes": 82.3
         },
         {
@@ -573,7 +1134,7 @@
           "bytes": 130490,
           "files": 26,
           "complexity": 92,
-          "percentOfLines": 5.9,
+          "percentOfLines": 5.8,
           "percentOfCode": 5.2,
           "percentOfBytes": 6
         },
@@ -670,14 +1231,14 @@
         }
       ],
       "summary": {
-        "lines": 88797,
-        "code": 86714,
+        "lines": 88838,
+        "code": 86755,
         "files": 304,
         "complexity": 493,
-        "traditionalCost": 1220180,
-        "aiCost": 311146,
-        "traditionalMonths": 260.14,
-        "aiMonths": 66.34
+        "traditionalCost": 1220786,
+        "aiCost": 311300,
+        "traditionalMonths": 260.27,
+        "aiMonths": 66.37
       },
       "detailsFile": "repos/jamesemerson112-github-io.json"
     },
@@ -1080,480 +1641,6 @@
         "aiMonths": 2.08
       },
       "detailsFile": "repos/private-cd575c20a9ea.json"
-    },
-    {
-      "id": "private-27eb0d48a34b",
-      "sourceRef": "private:27eb0d48a34b372d",
-      "name": "Private Project 8",
-      "url": null,
-      "description": "Private repository",
-      "lastUpdated": "2026-04-08T06:08:32Z",
-      "primaryLanguage": "Markdown",
-      "isPrivate": true,
-      "isAnonymized": true,
-      "projectTags": [
-        {
-          "label": "AI/ML",
-          "confidence": 0.56
-        },
-        {
-          "label": "Data",
-          "confidence": 0.44
-        }
-      ],
-      "languages": [
-        {
-          "name": "Markdown",
-          "lines": 18258,
-          "code": 14235,
-          "comments": 0,
-          "blanks": 4023,
-          "bytes": 882254,
-          "files": 55,
-          "complexity": 0,
-          "percentOfLines": 42,
-          "percentOfCode": 41.8,
-          "percentOfBytes": 38.5
-        },
-        {
-          "name": "Python",
-          "lines": 11852,
-          "code": 6991,
-          "comments": 3182,
-          "blanks": 1679,
-          "bytes": 467432,
-          "files": 107,
-          "complexity": 673,
-          "percentOfLines": 27.3,
-          "percentOfCode": 20.5,
-          "percentOfBytes": 20.4
-        },
-        {
-          "name": "Jupyter",
-          "lines": 5572,
-          "code": 5572,
-          "comments": 0,
-          "blanks": 0,
-          "bytes": 767864,
-          "files": 3,
-          "complexity": 0,
-          "percentOfLines": 12.8,
-          "percentOfCode": 16.4,
-          "percentOfBytes": 33.5
-        },
-        {
-          "name": "YAML",
-          "lines": 5146,
-          "code": 5104,
-          "comments": 0,
-          "blanks": 42,
-          "bytes": 72345,
-          "files": 236,
-          "complexity": 0,
-          "percentOfLines": 11.8,
-          "percentOfCode": 15,
-          "percentOfBytes": 3.2
-        },
-        {
-          "name": "HTML",
-          "lines": 859,
-          "code": 806,
-          "comments": 12,
-          "blanks": 41,
-          "bytes": 35213,
-          "files": 2,
-          "complexity": 0,
-          "percentOfLines": 2,
-          "percentOfCode": 2.4,
-          "percentOfBytes": 1.5
-        },
-        {
-          "name": "Rust",
-          "lines": 951,
-          "code": 652,
-          "comments": 167,
-          "blanks": 132,
-          "bytes": 31483,
-          "files": 11,
-          "complexity": 28,
-          "percentOfLines": 2.2,
-          "percentOfCode": 1.9,
-          "percentOfBytes": 1.4
-        },
-        {
-          "name": "Powershell",
-          "lines": 456,
-          "code": 351,
-          "comments": 18,
-          "blanks": 87,
-          "bytes": 15285,
-          "files": 13,
-          "complexity": 39,
-          "percentOfLines": 1,
-          "percentOfCode": 1,
-          "percentOfBytes": 0.7
-        },
-        {
-          "name": "Plain Text",
-          "lines": 269,
-          "code": 240,
-          "comments": 0,
-          "blanks": 29,
-          "bytes": 13712,
-          "files": 19,
-          "complexity": 0,
-          "percentOfLines": 0.6,
-          "percentOfCode": 0.7,
-          "percentOfBytes": 0.6
-        },
-        {
-          "name": "Shell",
-          "lines": 56,
-          "code": 37,
-          "comments": 9,
-          "blanks": 10,
-          "bytes": 2011,
-          "files": 7,
-          "complexity": 3,
-          "percentOfLines": 0.1,
-          "percentOfCode": 0.1,
-          "percentOfBytes": 0.1
-        },
-        {
-          "name": "Batch",
-          "lines": 34,
-          "code": 29,
-          "comments": 2,
-          "blanks": 3,
-          "bytes": 1337,
-          "files": 5,
-          "complexity": 6,
-          "percentOfLines": 0.1,
-          "percentOfCode": 0.1,
-          "percentOfBytes": 0.1
-        },
-        {
-          "name": "JSON",
-          "lines": 13,
-          "code": 13,
-          "comments": 0,
-          "blanks": 0,
-          "bytes": 276,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        },
-        {
-          "name": "TOML",
-          "lines": 13,
-          "code": 12,
-          "comments": 0,
-          "blanks": 1,
-          "bytes": 262,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        }
-      ],
-      "summary": {
-        "lines": 43479,
-        "code": 34042,
-        "files": 460,
-        "complexity": 749,
-        "traditionalCost": 457137,
-        "aiCost": 116570,
-        "traditionalMonths": 97.46,
-        "aiMonths": 24.85
-      },
-      "detailsFile": "repos/private-27eb0d48a34b.json"
-    },
-    {
-      "id": "james-neural-network-study",
-      "sourceRef": "public:jamesemerson112/james-neural-network-study",
-      "name": "James-neural-network-study",
-      "url": "https://github.com/jamesEmerson112/James-neural-network-study",
-      "description": "",
-      "lastUpdated": "2026-04-05T05:37:50Z",
-      "primaryLanguage": "Markdown",
-      "isPrivate": false,
-      "isAnonymized": false,
-      "projectTags": [
-        {
-          "label": "Web",
-          "confidence": 0.85
-        },
-        {
-          "label": "AI/ML",
-          "confidence": 0.15
-        }
-      ],
-      "languages": [
-        {
-          "name": "Markdown",
-          "lines": 20405,
-          "code": 14419,
-          "comments": 0,
-          "blanks": 5986,
-          "bytes": 1089802,
-          "files": 91,
-          "complexity": 0,
-          "percentOfLines": 92.6,
-          "percentOfCode": 92.1,
-          "percentOfBytes": 91.8
-        },
-        {
-          "name": "HTML",
-          "lines": 1334,
-          "code": 1010,
-          "comments": 132,
-          "blanks": 192,
-          "bytes": 86478,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 6.1,
-          "percentOfCode": 6.5,
-          "percentOfBytes": 7.3
-        },
-        {
-          "name": "Python",
-          "lines": 282,
-          "code": 210,
-          "comments": 37,
-          "blanks": 35,
-          "bytes": 10352,
-          "files": 1,
-          "complexity": 15,
-          "percentOfLines": 1.3,
-          "percentOfCode": 1.3,
-          "percentOfBytes": 0.9
-        },
-        {
-          "name": "JSON",
-          "lines": 10,
-          "code": 10,
-          "comments": 0,
-          "blanks": 0,
-          "bytes": 185,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0.1,
-          "percentOfBytes": 0
-        }
-      ],
-      "summary": {
-        "lines": 22031,
-        "code": 15649,
-        "files": 94,
-        "complexity": 15,
-        "traditionalCost": 202135,
-        "aiCost": 51544,
-        "traditionalMonths": 43.09,
-        "aiMonths": 10.99
-      },
-      "detailsFile": "repos/james-neural-network-study.json"
-    },
-    {
-      "id": "agentsforimpact",
-      "sourceRef": "public:b0mung51/agentsforimpact",
-      "name": "AgentsForImpact",
-      "url": "https://github.com/b0mung51/AgentsForImpact",
-      "description": "",
-      "lastUpdated": "2026-04-03T08:30:28Z",
-      "primaryLanguage": "SVG",
-      "isPrivate": false,
-      "isAnonymized": false,
-      "projectTags": [
-        {
-          "label": "AI/ML",
-          "confidence": 0.6
-        },
-        {
-          "label": "Data",
-          "confidence": 0.4
-        }
-      ],
-      "languages": [
-        {
-          "name": "SVG",
-          "lines": 9311,
-          "code": 9299,
-          "comments": 12,
-          "blanks": 0,
-          "bytes": 1757638,
-          "files": 3,
-          "complexity": 0,
-          "percentOfLines": 71.9,
-          "percentOfCode": 76.6,
-          "percentOfBytes": 93
-        },
-        {
-          "name": "Markdown",
-          "lines": 2139,
-          "code": 1714,
-          "comments": 0,
-          "blanks": 425,
-          "bytes": 81440,
-          "files": 4,
-          "complexity": 0,
-          "percentOfLines": 16.5,
-          "percentOfCode": 14.1,
-          "percentOfBytes": 4.3
-        },
-        {
-          "name": "Python",
-          "lines": 1355,
-          "code": 992,
-          "comments": 156,
-          "blanks": 207,
-          "bytes": 46142,
-          "files": 12,
-          "complexity": 119,
-          "percentOfLines": 10.5,
-          "percentOfCode": 8.2,
-          "percentOfBytes": 2.4
-        },
-        {
-          "name": "JSON",
-          "lines": 113,
-          "code": 113,
-          "comments": 0,
-          "blanks": 0,
-          "bytes": 3379,
-          "files": 4,
-          "complexity": 0,
-          "percentOfLines": 0.9,
-          "percentOfCode": 0.9,
-          "percentOfBytes": 0.2
-        },
-        {
-          "name": "Plain Text",
-          "lines": 24,
-          "code": 19,
-          "comments": 0,
-          "blanks": 5,
-          "bytes": 377,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0.2,
-          "percentOfCode": 0.2,
-          "percentOfBytes": 0
-        }
-      ],
-      "summary": {
-        "lines": 12942,
-        "code": 12137,
-        "files": 24,
-        "complexity": 119,
-        "traditionalCost": 154792,
-        "aiCost": 39472,
-        "traditionalMonths": 33,
-        "aiMonths": 8.42
-      },
-      "detailsFile": "repos/agentsforimpact.json"
-    },
-    {
-      "id": "rust-learning",
-      "sourceRef": "public:jamesemerson112/rust-learning",
-      "name": "Rust-learning",
-      "url": "https://github.com/jamesEmerson112/Rust-learning",
-      "description": "",
-      "lastUpdated": "2026-04-02T20:08:13Z",
-      "primaryLanguage": "Rust",
-      "isPrivate": false,
-      "isAnonymized": false,
-      "projectTags": [
-        {
-          "label": "Backend",
-          "confidence": 0.8
-        },
-        {
-          "label": "DevOps",
-          "confidence": 0.2
-        }
-      ],
-      "languages": [
-        {
-          "name": "Rust",
-          "lines": 2109,
-          "code": 1702,
-          "comments": 100,
-          "blanks": 307,
-          "bytes": 59237,
-          "files": 67,
-          "complexity": 96,
-          "percentOfLines": 88.7,
-          "percentOfCode": 89.4,
-          "percentOfBytes": 85.7
-        },
-        {
-          "name": "Markdown",
-          "lines": 232,
-          "code": 169,
-          "comments": 0,
-          "blanks": 63,
-          "bytes": 8568,
-          "files": 2,
-          "complexity": 0,
-          "percentOfLines": 9.8,
-          "percentOfCode": 8.9,
-          "percentOfBytes": 12.4
-        },
-        {
-          "name": "License",
-          "lines": 21,
-          "code": 17,
-          "comments": 0,
-          "blanks": 4,
-          "bytes": 1072,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0.9,
-          "percentOfCode": 0.9,
-          "percentOfBytes": 1.6
-        },
-        {
-          "name": "JSON",
-          "lines": 8,
-          "code": 8,
-          "comments": 0,
-          "blanks": 0,
-          "bytes": 103,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0.3,
-          "percentOfCode": 0.4,
-          "percentOfBytes": 0.1
-        },
-        {
-          "name": "TOML",
-          "lines": 8,
-          "code": 7,
-          "comments": 0,
-          "blanks": 1,
-          "bytes": 150,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0.3,
-          "percentOfCode": 0.4,
-          "percentOfBytes": 0.2
-        }
-      ],
-      "summary": {
-        "lines": 2378,
-        "code": 1903,
-        "files": 72,
-        "complexity": 96,
-        "traditionalCost": 22123,
-        "aiCost": 5641,
-        "traditionalMonths": 4.72,
-        "aiMonths": 1.2
-      },
-      "detailsFile": "repos/rust-learning.json"
     },
     {
       "id": "private-a63c7751e1b6",

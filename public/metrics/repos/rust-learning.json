@@ -1,6 +1,6 @@
 {
   "id": "rust-learning",
-  "scannedAt": "2026-04-06T03:14:02.825Z",
+  "scannedAt": "2026-04-20T03:14:27.501Z",
   "metadata": {
     "name": "Rust-learning",
     "fullName": "jamesEmerson112/Rust-learning",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/Rust-learning",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-04-02T20:08:13Z",
+    "lastUpdated": "2026-04-19T23:21:59Z",
     "createdAt": "2026-03-05T06:11:45Z",
     "stars": 0,
     "language": "Rust",
@@ -21,14 +21,14 @@
   "sccRaw": [
     {
       "Name": "Rust",
-      "Bytes": 59237,
+      "Bytes": 73099,
       "CodeBytes": 0,
-      "Lines": 2109,
-      "Code": 1702,
-      "Comment": 100,
-      "Blank": 307,
-      "Complexity": 96,
-      "Count": 67,
+      "Lines": 2612,
+      "Code": 2106,
+      "Comment": 130,
+      "Blank": 376,
+      "Complexity": 106,
+      "Count": 97,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -36,14 +36,14 @@
     },
     {
       "Name": "Markdown",
-      "Bytes": 8568,
+      "Bytes": 30221,
       "CodeBytes": 0,
-      "Lines": 232,
-      "Code": 169,
+      "Lines": 500,
+      "Code": 383,
       "Comment": 0,
-      "Blank": 63,
+      "Blank": 117,
       "Complexity": 0,
-      "Count": 2,
+      "Count": 3,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -97,43 +97,43 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 2378,
-      "totalCode": 1903,
-      "totalComments": 100,
-      "totalBlanks": 375,
-      "totalBytes": 69130,
-      "totalFiles": 72,
+      "totalLines": 3149,
+      "totalCode": 2521,
+      "totalComments": 130,
+      "totalBlanks": 498,
+      "totalBytes": 104645,
+      "totalFiles": 103,
       "totalLanguages": 5,
-      "totalComplexity": 96,
+      "totalComplexity": 106,
       "primaryLanguage": "Rust",
-      "primaryLanguagePercent": 89.4
+      "primaryLanguagePercent": 83.5
     },
     "languages": [
       {
         "name": "Rust",
-        "lines": 2109,
-        "code": 1702,
-        "comments": 100,
-        "blanks": 307,
-        "bytes": 59237,
-        "files": 67,
-        "complexity": 96,
-        "percentOfLines": 88.7,
-        "percentOfCode": 89.4,
-        "percentOfBytes": 85.7
+        "lines": 2612,
+        "code": 2106,
+        "comments": 130,
+        "blanks": 376,
+        "bytes": 73099,
+        "files": 97,
+        "complexity": 106,
+        "percentOfLines": 82.9,
+        "percentOfCode": 83.5,
+        "percentOfBytes": 69.9
       },
       {
         "name": "Markdown",
-        "lines": 232,
-        "code": 169,
+        "lines": 500,
+        "code": 383,
         "comments": 0,
-        "blanks": 63,
-        "bytes": 8568,
-        "files": 2,
+        "blanks": 117,
+        "bytes": 30221,
+        "files": 3,
         "complexity": 0,
-        "percentOfLines": 9.8,
-        "percentOfCode": 8.9,
-        "percentOfBytes": 12.4
+        "percentOfLines": 15.9,
+        "percentOfCode": 15.2,
+        "percentOfBytes": 28.9
       },
       {
         "name": "License",
@@ -144,9 +144,9 @@
         "bytes": 1072,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 0.9,
-        "percentOfCode": 0.9,
-        "percentOfBytes": 1.6
+        "percentOfLines": 0.7,
+        "percentOfCode": 0.7,
+        "percentOfBytes": 1
       },
       {
         "name": "JSON",
@@ -158,7 +158,7 @@
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0.3,
-        "percentOfCode": 0.4,
+        "percentOfCode": 0.3,
         "percentOfBytes": 0.1
       },
       {
@@ -171,8 +171,8 @@
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0.3,
-        "percentOfCode": 0.4,
-        "percentOfBytes": 0.2
+        "percentOfCode": 0.3,
+        "percentOfBytes": 0.1
       }
     ],
     "projectTags": [
@@ -187,21 +187,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 1.903,
-        "effort": 4.72,
-        "time": 4.51,
-        "people": 1.05,
-        "cost": 22123,
+        "kloc": 2.521,
+        "effort": 6.34,
+        "time": 5.04,
+        "people": 1.26,
+        "cost": 29722,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 1.2,
-        "time": 2.68,
-        "people": 0.45,
-        "cost": 5641,
+        "effort": 1.62,
+        "time": 3,
+        "people": 0.54,
+        "cost": 7579,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -221,33 +221,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 4.72,
-            "weeks": 20.4,
-            "days": 102,
-            "cost": 22123,
+            "months": 6.34,
+            "weeks": 27.4,
+            "days": 138,
+            "cost": 29722,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 4.51,
-            "hoursPerWeek": 41.9,
-            "totalHours": 816,
-            "cost": 22123,
+            "months": 5.04,
+            "hoursPerWeek": 50.3,
+            "totalHours": 1096,
+            "cost": 29722,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 1.2,
-            "weeks": 5.2,
-            "days": 26,
-            "cost": 5641,
+            "months": 1.62,
+            "weeks": 7,
+            "days": 35,
+            "cost": 7579,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 2.68,
-            "hoursPerWeek": 17.9,
-            "totalHours": 208,
-            "cost": 5641,
+            "months": 3,
+            "hoursPerWeek": 21.5,
+            "totalHours": 280,
+            "cost": 7579,
             "description": "AI-assisted part-time development"
           }
         }

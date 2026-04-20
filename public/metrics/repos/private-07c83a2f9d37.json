@@ -1,0 +1,313 @@
+{
+  "id": "private-07c83a2f9d37",
+  "scannedAt": "2026-04-20T03:14:28.014Z",
+  "metadata": {
+    "name": "Private Project 48",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-04-19T03:17:34Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:07c83a2f9d371a28"
+  },
+  "sccRaw": [
+    {
+      "Name": "JSON",
+      "Bytes": 222475,
+      "CodeBytes": 0,
+      "Lines": 10511,
+      "Code": 10511,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 69,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 385113,
+      "CodeBytes": 0,
+      "Lines": 5517,
+      "Code": 4103,
+      "Comment": 0,
+      "Blank": 1414,
+      "Complexity": 0,
+      "Count": 31,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Python",
+      "Bytes": 326113,
+      "CodeBytes": 0,
+      "Lines": 8382,
+      "Code": 6653,
+      "Comment": 903,
+      "Blank": 826,
+      "Complexity": 1015,
+      "Count": 26,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 7275,
+      "CodeBytes": 0,
+      "Lines": 200,
+      "Code": 177,
+      "Comment": 0,
+      "Blank": 23,
+      "Complexity": 0,
+      "Count": 6,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Shell",
+      "Bytes": 24940,
+      "CodeBytes": 0,
+      "Lines": 789,
+      "Code": 557,
+      "Comment": 136,
+      "Blank": 96,
+      "Complexity": 96,
+      "Count": 5,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 61823,
+      "CodeBytes": 0,
+      "Lines": 1153,
+      "Code": 985,
+      "Comment": 44,
+      "Blank": 124,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Makefile",
+      "Bytes": 2184,
+      "CodeBytes": 0,
+      "Lines": 68,
+      "Code": 50,
+      "Comment": 5,
+      "Blank": 13,
+      "Complexity": 3,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 26620,
+      "totalCode": 23036,
+      "totalComments": 1088,
+      "totalBlanks": 2496,
+      "totalBytes": 1029923,
+      "totalFiles": 139,
+      "totalLanguages": 7,
+      "totalComplexity": 1114,
+      "primaryLanguage": "JSON",
+      "primaryLanguagePercent": 45.6
+    },
+    "languages": [
+      {
+        "name": "JSON",
+        "lines": 10511,
+        "code": 10511,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 222475,
+        "files": 69,
+        "complexity": 0,
+        "percentOfLines": 39.5,
+        "percentOfCode": 45.6,
+        "percentOfBytes": 21.6
+      },
+      {
+        "name": "Python",
+        "lines": 8382,
+        "code": 6653,
+        "comments": 903,
+        "blanks": 826,
+        "bytes": 326113,
+        "files": 26,
+        "complexity": 1015,
+        "percentOfLines": 31.5,
+        "percentOfCode": 28.9,
+        "percentOfBytes": 31.7
+      },
+      {
+        "name": "Markdown",
+        "lines": 5517,
+        "code": 4103,
+        "comments": 0,
+        "blanks": 1414,
+        "bytes": 385113,
+        "files": 31,
+        "complexity": 0,
+        "percentOfLines": 20.7,
+        "percentOfCode": 17.8,
+        "percentOfBytes": 37.4
+      },
+      {
+        "name": "HTML",
+        "lines": 1153,
+        "code": 985,
+        "comments": 44,
+        "blanks": 124,
+        "bytes": 61823,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 4.3,
+        "percentOfCode": 4.3,
+        "percentOfBytes": 6
+      },
+      {
+        "name": "Shell",
+        "lines": 789,
+        "code": 557,
+        "comments": 136,
+        "blanks": 96,
+        "bytes": 24940,
+        "files": 5,
+        "complexity": 96,
+        "percentOfLines": 3,
+        "percentOfCode": 2.4,
+        "percentOfBytes": 2.4
+      },
+      {
+        "name": "Plain Text",
+        "lines": 200,
+        "code": 177,
+        "comments": 0,
+        "blanks": 23,
+        "bytes": 7275,
+        "files": 6,
+        "complexity": 0,
+        "percentOfLines": 0.8,
+        "percentOfCode": 0.8,
+        "percentOfBytes": 0.7
+      },
+      {
+        "name": "Makefile",
+        "lines": 68,
+        "code": 50,
+        "comments": 5,
+        "blanks": 13,
+        "bytes": 2184,
+        "files": 1,
+        "complexity": 3,
+        "percentOfLines": 0.3,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.2
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 23.036,
+        "effort": 64.68,
+        "time": 12.19,
+        "people": 5.31,
+        "cost": 303360,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 16.49,
+        "time": 7.25,
+        "people": 2.27,
+        "cost": 77357,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 64.68,
+            "weeks": 280,
+            "days": 1403,
+            "cost": 303360,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 12.19,
+            "hoursPerWeek": 212.2,
+            "totalHours": 11189,
+            "cost": 303360,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 16.49,
+            "weeks": 71.4,
+            "days": 358,
+            "cost": 77357,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 7.25,
+            "hoursPerWeek": 91,
+            "totalHours": 2853,
+            "cost": 77357,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}
