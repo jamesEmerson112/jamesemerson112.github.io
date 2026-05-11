@@ -1,0 +1,164 @@
+{
+  "id": "firstresdrone",
+  "scannedAt": "2026-05-11T03:18:50.868Z",
+  "metadata": {
+    "name": "FirstResDrone",
+    "fullName": "jamesEmerson112/FirstResDrone",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/FirstResDrone",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-05-08T19:37:01Z",
+    "createdAt": "2026-05-08T19:36:53Z",
+    "stars": 0,
+    "language": "Unknown",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/firstresdrone"
+  },
+  "sccRaw": [
+    {
+      "Name": "License",
+      "Bytes": 1072,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 17,
+      "CodeBytes": 0,
+      "Lines": 2,
+      "Code": 1,
+      "Comment": 0,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 23,
+      "totalCode": 18,
+      "totalComments": 0,
+      "totalBlanks": 5,
+      "totalBytes": 1089,
+      "totalFiles": 2,
+      "totalLanguages": 2,
+      "totalComplexity": 0,
+      "primaryLanguage": "License",
+      "primaryLanguagePercent": 94.4
+    },
+    "languages": [
+      {
+        "name": "License",
+        "lines": 21,
+        "code": 17,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1072,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 91.3,
+        "percentOfCode": 94.4,
+        "percentOfBytes": 98.4
+      },
+      {
+        "name": "Markdown",
+        "lines": 2,
+        "code": 1,
+        "comments": 0,
+        "blanks": 1,
+        "bytes": 17,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 8.7,
+        "percentOfCode": 5.6,
+        "percentOfBytes": 1.6
+      }
+    ],
+    "projectTags": [],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.018,
+        "effort": 0.04,
+        "time": 0.7,
+        "people": 0.05,
+        "cost": 166,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.01,
+        "time": 0.42,
+        "people": 0.02,
+        "cost": 42,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 0.04,
+            "weeks": 0.2,
+            "days": 1,
+            "cost": 166,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 0.7,
+            "hoursPerWeek": 2,
+            "totalHours": 6,
+            "cost": 166,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.01,
+            "weeks": 0,
+            "days": 0,
+            "cost": 42,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 0.42,
+            "hoursPerWeek": 0.9,
+            "totalHours": 2,
+            "cost": 42,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}
