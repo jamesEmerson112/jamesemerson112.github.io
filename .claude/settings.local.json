@@ -34,7 +34,16 @@
       "Bash(find /c/Users/voan2/Documents/GitHub/jamesemerson112.github.io -name *.json -path */stores* -o -name *store* -type f)",
       "Bash(git commit:*)",
       "Bash(git add:*)",
-      "Bash(wc -l src/utils/*.js src/stores/*.js)"
+      "Bash(wc -l src/utils/*.js src/stores/*.js)",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/chenglou/pretext/main/README.md\")",
+      "Bash(curl -sL \"https://raw.githubusercontent.com/chenglou/pretext/master/README.md\")",
+      "Bash(curl:*)",
+      "WebFetch(domain:chenglou.me)",
+      "WebFetch(domain:www.npmjs.com)",
+      "Skill(browse)",
+      "Bash(code --list-extensions)",
+      "Bash(npm info:*)",
+      "WebFetch(domain:docs.anthropic.com)"
     ],
     "deny": [
       "Bash(git push:*)",

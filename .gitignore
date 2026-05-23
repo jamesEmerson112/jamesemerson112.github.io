@@ -58,3 +58,4 @@ ROADMAP.md
 skills/html-name-attributor/
 src/components/Timeline.test.js
 src/stores/theme.test.js
+.gstack/
