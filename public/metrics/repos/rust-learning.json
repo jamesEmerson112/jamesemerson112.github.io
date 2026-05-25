@@ -1,6 +1,6 @@
 {
   "id": "rust-learning",
-  "scannedAt": "2026-05-18T03:19:24.212Z",
+  "scannedAt": "2026-05-25T03:20:10.398Z",
   "metadata": {
     "name": "Rust-learning",
     "fullName": "jamesEmerson112/Rust-learning",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/Rust-learning",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-05-16T05:39:50Z",
+    "lastUpdated": "2026-05-18T22:52:01Z",
     "createdAt": "2026-03-05T06:11:45Z",
     "stars": 0,
     "language": "Rust",
@@ -21,13 +21,13 @@
   "sccRaw": [
     {
       "Name": "Rust",
-      "Bytes": 121277,
+      "Bytes": 121888,
       "CodeBytes": 0,
-      "Lines": 4351,
-      "Code": 3502,
-      "Comment": 216,
-      "Blank": 633,
-      "Complexity": 174,
+      "Lines": 4365,
+      "Code": 3507,
+      "Comment": 222,
+      "Blank": 636,
+      "Complexity": 175,
       "Count": 173,
       "WeightedComplexity": 0,
       "Files": [],
@@ -127,30 +127,30 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 5932,
-      "totalCode": 4610,
-      "totalComments": 376,
-      "totalBlanks": 946,
-      "totalBytes": 191186,
+      "totalLines": 5946,
+      "totalCode": 4615,
+      "totalComments": 382,
+      "totalBlanks": 949,
+      "totalBytes": 191797,
       "totalFiles": 251,
       "totalLanguages": 7,
-      "totalComplexity": 270,
+      "totalComplexity": 271,
       "primaryLanguage": "Rust",
       "primaryLanguagePercent": 76
     },
     "languages": [
       {
         "name": "Rust",
-        "lines": 4351,
-        "code": 3502,
-        "comments": 216,
-        "blanks": 633,
-        "bytes": 121277,
+        "lines": 4365,
+        "code": 3507,
+        "comments": 222,
+        "blanks": 636,
+        "bytes": 121888,
         "files": 173,
-        "complexity": 174,
-        "percentOfLines": 73.3,
+        "complexity": 175,
+        "percentOfLines": 73.4,
         "percentOfCode": 76,
-        "percentOfBytes": 63.4
+        "percentOfBytes": 63.6
       },
       {
         "name": "Markdown",
@@ -163,7 +163,7 @@
         "complexity": 0,
         "percentOfLines": 12.1,
         "percentOfCode": 11.8,
-        "percentOfBytes": 22.2
+        "percentOfBytes": 22.1
       },
       {
         "name": "Python",
@@ -243,11 +243,11 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 4.61,
-        "effort": 11.94,
+        "kloc": 4.615,
+        "effort": 11.96,
         "time": 6.42,
         "people": 1.86,
-        "cost": 56017,
+        "cost": 56080,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
@@ -257,7 +257,7 @@
         "effort": 3.05,
         "time": 3.82,
         "people": 0.8,
-        "cost": 14284,
+        "cost": 14300,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -277,17 +277,17 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 11.94,
-            "weeks": 51.7,
+            "months": 11.96,
+            "weeks": 51.8,
             "days": 259,
-            "cost": 56017,
+            "cost": 56080,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
             "months": 6.42,
             "hoursPerWeek": 74.5,
-            "totalHours": 2066,
-            "cost": 56017,
+            "totalHours": 2068,
+            "cost": 56080,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
@@ -296,14 +296,14 @@
             "months": 3.05,
             "weeks": 13.2,
             "days": 66,
-            "cost": 14284,
+            "cost": 14300,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
             "months": 3.82,
             "hoursPerWeek": 31.9,
             "totalHours": 527,
-            "cost": 14284,
+            "cost": 14300,
             "description": "AI-assisted part-time development"
           }
         }
