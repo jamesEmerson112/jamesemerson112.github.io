@@ -1,6 +1,6 @@
 {
   "id": "ai-cds-disease-diagnosis-reproduction-alpha",
-  "scannedAt": "2026-05-01T04:22:48.961Z",
+  "scannedAt": "2026-06-01T04:31:05.362Z",
   "metadata": {
     "name": "AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
     "fullName": "jamesEmerson112/AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
@@ -155,6 +155,21 @@
       "ULOC": 0
     },
     {
+      "Name": "LaTeX",
+      "Bytes": 27738,
+      "CodeBytes": 0,
+      "Lines": 737,
+      "Code": 520,
+      "Comment": 0,
+      "Blank": 217,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
       "Name": "License",
       "Bytes": 1072,
       "CodeBytes": 0,
@@ -178,21 +193,6 @@
       "Comment": 0,
       "Blank": 3,
       "Complexity": 1,
-      "Count": 1,
-      "WeightedComplexity": 0,
-      "Files": [],
-      "LineLength": null,
-      "ULOC": 0
-    },
-    {
-      "Name": "TeX",
-      "Bytes": 27738,
-      "CodeBytes": 0,
-      "Lines": 737,
-      "Code": 520,
-      "Comment": 0,
-      "Blank": 217,
-      "Complexity": 26,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -224,7 +224,7 @@
       "totalBytes": 3134123,
       "totalFiles": 104,
       "totalLanguages": 13,
-      "totalComplexity": 4120,
+      "totalComplexity": 4094,
       "primaryLanguage": "Plain Text",
       "primaryLanguagePercent": 50.6
     },
@@ -308,14 +308,14 @@
         "percentOfBytes": 1.2
       },
       {
-        "name": "TeX",
+        "name": "LaTeX",
         "lines": 737,
         "code": 520,
         "comments": 0,
         "blanks": 217,
         "bytes": 27738,
         "files": 1,
-        "complexity": 26,
+        "complexity": 0,
         "percentOfLines": 1.3,
         "percentOfCode": 1.1,
         "percentOfBytes": 0.9
