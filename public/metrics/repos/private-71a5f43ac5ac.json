@@ -1,0 +1,257 @@
+{
+  "id": "private-71a5f43ac5ac",
+  "scannedAt": "2026-06-01T03:21:06.186Z",
+  "metadata": {
+    "name": "Private Project 104",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-05-30T16:11:53Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:71a5f43ac5ac053e"
+  },
+  "sccRaw": [
+    {
+      "Name": "Markdown",
+      "Bytes": 122346,
+      "CodeBytes": 0,
+      "Lines": 2027,
+      "Code": 1678,
+      "Comment": 0,
+      "Blank": 349,
+      "Complexity": 0,
+      "Count": 13,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSV",
+      "Bytes": 15429,
+      "CodeBytes": 0,
+      "Lines": 178,
+      "Code": 178,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Python",
+      "Bytes": 10260,
+      "CodeBytes": 0,
+      "Lines": 325,
+      "Code": 202,
+      "Comment": 53,
+      "Blank": 70,
+      "Complexity": 30,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 1385,
+      "CodeBytes": 0,
+      "Lines": 28,
+      "Code": 28,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 35129,
+      "CodeBytes": 0,
+      "Lines": 674,
+      "Code": 553,
+      "Comment": 0,
+      "Blank": 121,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 3232,
+      "totalCode": 2639,
+      "totalComments": 53,
+      "totalBlanks": 540,
+      "totalBytes": 184549,
+      "totalFiles": 20,
+      "totalLanguages": 5,
+      "totalComplexity": 30,
+      "primaryLanguage": "Markdown",
+      "primaryLanguagePercent": 63.6
+    },
+    "languages": [
+      {
+        "name": "Markdown",
+        "lines": 2027,
+        "code": 1678,
+        "comments": 0,
+        "blanks": 349,
+        "bytes": 122346,
+        "files": 13,
+        "complexity": 0,
+        "percentOfLines": 62.7,
+        "percentOfCode": 63.6,
+        "percentOfBytes": 66.3
+      },
+      {
+        "name": "License",
+        "lines": 674,
+        "code": 553,
+        "comments": 0,
+        "blanks": 121,
+        "bytes": 35129,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 20.9,
+        "percentOfCode": 21,
+        "percentOfBytes": 19
+      },
+      {
+        "name": "Python",
+        "lines": 325,
+        "code": 202,
+        "comments": 53,
+        "blanks": 70,
+        "bytes": 10260,
+        "files": 2,
+        "complexity": 30,
+        "percentOfLines": 10.1,
+        "percentOfCode": 7.7,
+        "percentOfBytes": 5.6
+      },
+      {
+        "name": "CSV",
+        "lines": 178,
+        "code": 178,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 15429,
+        "files": 3,
+        "complexity": 0,
+        "percentOfLines": 5.5,
+        "percentOfCode": 6.7,
+        "percentOfBytes": 8.4
+      },
+      {
+        "name": "JSON",
+        "lines": 28,
+        "code": 28,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 1385,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.9,
+        "percentOfCode": 1.1,
+        "percentOfBytes": 0.8
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Data",
+        "confidence": 0.59
+      },
+      {
+        "label": "AI/ML",
+        "confidence": 0.41
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 2.639,
+        "effort": 6.65,
+        "time": 5.14,
+        "people": 1.29,
+        "cost": 31185,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 1.7,
+        "time": 3.06,
+        "people": 0.55,
+        "cost": 7952,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 6.65,
+            "weeks": 28.8,
+            "days": 144,
+            "cost": 31185,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 5.14,
+            "hoursPerWeek": 51.8,
+            "totalHours": 1150,
+            "cost": 31185,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 1.7,
+            "weeks": 7.3,
+            "days": 37,
+            "cost": 7952,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 3.06,
+            "hoursPerWeek": 22.2,
+            "totalHours": 293,
+            "cost": 7952,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}
