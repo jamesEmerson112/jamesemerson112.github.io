@@ -1,6 +1,6 @@
 {
   "id": "private-5deea4999119",
-  "scannedAt": "2026-06-08T03:20:48.399Z",
+  "scannedAt": "2026-06-15T03:21:27.412Z",
   "metadata": {
     "name": "Private Project 105",
     "fullName": null,
@@ -8,7 +8,7 @@
     "url": null,
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-06-02T14:04:39Z",
+    "lastUpdated": "2026-06-08T07:54:08Z",
     "createdAt": null,
     "stars": 0,
     "language": "TypeScript",
@@ -36,14 +36,14 @@
     },
     {
       "Name": "Markdown",
-      "Bytes": 70323,
+      "Bytes": 127803,
       "CodeBytes": 0,
-      "Lines": 1166,
-      "Code": 899,
+      "Lines": 1652,
+      "Code": 1276,
       "Comment": 0,
-      "Blank": 267,
+      "Blank": 376,
       "Complexity": 0,
-      "Count": 9,
+      "Count": 10,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -127,30 +127,30 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 2437,
-      "totalCode": 2016,
+      "totalLines": 2923,
+      "totalCode": 2393,
       "totalComments": 71,
-      "totalBlanks": 350,
-      "totalBytes": 105917,
-      "totalFiles": 32,
+      "totalBlanks": 459,
+      "totalBytes": 163397,
+      "totalFiles": 33,
       "totalLanguages": 7,
       "totalComplexity": 22,
       "primaryLanguage": "Markdown",
-      "primaryLanguagePercent": 44.6
+      "primaryLanguagePercent": 53.3
     },
     "languages": [
       {
         "name": "Markdown",
-        "lines": 1166,
-        "code": 899,
+        "lines": 1652,
+        "code": 1276,
         "comments": 0,
-        "blanks": 267,
-        "bytes": 70323,
-        "files": 9,
+        "blanks": 376,
+        "bytes": 127803,
+        "files": 10,
         "complexity": 0,
-        "percentOfLines": 47.8,
-        "percentOfCode": 44.6,
-        "percentOfBytes": 66.4
+        "percentOfLines": 56.5,
+        "percentOfCode": 53.3,
+        "percentOfBytes": 78.2
       },
       {
         "name": "TypeScript",
@@ -161,9 +161,9 @@
         "bytes": 24797,
         "files": 17,
         "complexity": 22,
-        "percentOfLines": 31.8,
-        "percentOfCode": 33.2,
-        "percentOfBytes": 23.4
+        "percentOfLines": 26.5,
+        "percentOfCode": 28,
+        "percentOfBytes": 15.2
       },
       {
         "name": "CSS",
@@ -174,9 +174,9 @@
         "bytes": 7860,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 16.2,
-        "percentOfCode": 17.9,
-        "percentOfBytes": 7.4
+        "percentOfLines": 13.5,
+        "percentOfCode": 15,
+        "percentOfBytes": 4.8
       },
       {
         "name": "JSON",
@@ -187,9 +187,9 @@
         "bytes": 1244,
         "files": 2,
         "complexity": 0,
-        "percentOfLines": 2.6,
-        "percentOfCode": 3.2,
-        "percentOfBytes": 1.2
+        "percentOfLines": 2.2,
+        "percentOfCode": 2.7,
+        "percentOfBytes": 0.8
       },
       {
         "name": "License",
@@ -200,9 +200,9 @@
         "bytes": 1072,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 0.9,
-        "percentOfCode": 0.8,
-        "percentOfBytes": 1
+        "percentOfLines": 0.7,
+        "percentOfCode": 0.7,
+        "percentOfBytes": 0.7
       },
       {
         "name": "JavaScript",
@@ -213,9 +213,9 @@
         "bytes": 370,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 0.4,
+        "percentOfLines": 0.3,
         "percentOfCode": 0.2,
-        "percentOfBytes": 0.3
+        "percentOfBytes": 0.2
       },
       {
         "name": "TypeScript Typings",
@@ -234,30 +234,30 @@
     "projectTags": [
       {
         "label": "Web",
-        "confidence": 0.71
+        "confidence": 0.7
       },
       {
         "label": "Backend",
-        "confidence": 0.29
+        "confidence": 0.3
       }
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 2.016,
-        "effort": 5.01,
-        "time": 4.61,
-        "people": 1.09,
-        "cost": 23504,
+        "kloc": 2.393,
+        "effort": 6,
+        "time": 4.94,
+        "people": 1.21,
+        "cost": 28140,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 1.28,
-        "time": 2.74,
-        "people": 0.47,
-        "cost": 5994,
+        "effort": 1.53,
+        "time": 2.94,
+        "people": 0.52,
+        "cost": 7176,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -277,33 +277,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 5.01,
-            "weeks": 21.7,
-            "days": 109,
-            "cost": 23504,
+            "months": 6,
+            "weeks": 26,
+            "days": 130,
+            "cost": 28140,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 4.61,
-            "hoursPerWeek": 43.5,
-            "totalHours": 867,
-            "cost": 23504,
+            "months": 4.94,
+            "hoursPerWeek": 48.6,
+            "totalHours": 1038,
+            "cost": 28140,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 1.28,
-            "weeks": 5.5,
-            "days": 28,
-            "cost": 5994,
+            "months": 1.53,
+            "weeks": 6.6,
+            "days": 33,
+            "cost": 7176,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 2.74,
-            "hoursPerWeek": 18.6,
-            "totalHours": 221,
-            "cost": 5994,
+            "months": 2.94,
+            "hoursPerWeek": 20.8,
+            "totalHours": 265,
+            "cost": 7176,
             "description": "AI-assisted part-time development"
           }
         }

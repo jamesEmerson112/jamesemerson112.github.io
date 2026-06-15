@@ -1,6 +1,6 @@
 {
   "id": "jamesemerson112-github-io",
-  "scannedAt": "2026-06-08T03:20:53.236Z",
+  "scannedAt": "2026-06-15T03:21:27.886Z",
   "metadata": {
     "name": "jamesemerson112.github.io",
     "fullName": "jamesEmerson112/jamesemerson112.github.io",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/jamesemerson112.github.io",
     "homepage": "https://jamesemerson112.github.io/",
     "topics": [],
-    "lastUpdated": "2026-06-01T04:32:36Z",
+    "lastUpdated": "2026-06-08T03:21:00Z",
     "createdAt": "2022-06-03T13:53:42Z",
     "stars": 1,
     "language": "JavaScript",
@@ -21,14 +21,14 @@
   "sccRaw": [
     {
       "Name": "JSON",
-      "Bytes": 1868841,
+      "Bytes": 1879016,
       "CodeBytes": 0,
-      "Lines": 78717,
-      "Code": 78717,
+      "Lines": 79155,
+      "Code": 79155,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
-      "Count": 218,
+      "Count": 219,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -157,12 +157,12 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 91858,
-      "totalCode": 89775,
+      "totalLines": 92296,
+      "totalCode": 90213,
       "totalComments": 213,
       "totalBlanks": 1870,
-      "totalBytes": 2255516,
-      "totalFiles": 310,
+      "totalBytes": 2265691,
+      "totalFiles": 311,
       "totalLanguages": 9,
       "totalComplexity": 493,
       "primaryLanguage": "JSON",
@@ -171,14 +171,14 @@
     "languages": [
       {
         "name": "JSON",
-        "lines": 78717,
-        "code": 78717,
+        "lines": 79155,
+        "code": 79155,
         "comments": 0,
         "blanks": 0,
-        "bytes": 1868841,
-        "files": 218,
+        "bytes": 1879016,
+        "files": 219,
         "complexity": 0,
-        "percentOfLines": 85.7,
+        "percentOfLines": 85.8,
         "percentOfCode": 87.7,
         "percentOfBytes": 82.9
       },
@@ -191,7 +191,7 @@
         "bytes": 130490,
         "files": 26,
         "complexity": 92,
-        "percentOfLines": 5.7,
+        "percentOfLines": 5.6,
         "percentOfCode": 5,
         "percentOfBytes": 5.8
       },
@@ -204,7 +204,7 @@
         "bytes": 130653,
         "files": 30,
         "complexity": 200,
-        "percentOfLines": 4.6,
+        "percentOfLines": 4.5,
         "percentOfCode": 3.9,
         "percentOfBytes": 5.8
       },
@@ -299,21 +299,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 89.775,
-        "effort": 269.79,
-        "time": 20.98,
-        "people": 12.86,
-        "cost": 1265446,
+        "kloc": 90.213,
+        "effort": 271.17,
+        "time": 21.02,
+        "people": 12.9,
+        "cost": 1271929,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 68.8,
-        "time": 12.48,
-        "people": 5.51,
-        "cost": 322689,
+        "effort": 69.15,
+        "time": 12.5,
+        "people": 5.53,
+        "cost": 324342,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -325,7 +325,7 @@
         }
       },
       "comparison": {
-        "effortReduction": "74%",
+        "effortReduction": "75%",
         "timeReduction": "41%",
         "costReduction": "75%",
         "speedup": "3.9x"
@@ -333,33 +333,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 269.79,
-            "weeks": 1168.2,
-            "days": 5854,
-            "cost": 1265446,
+            "months": 271.17,
+            "weeks": 1174.2,
+            "days": 5884,
+            "cost": 1271929,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 20.98,
-            "hoursPerWeek": 514.5,
-            "totalHours": 46674,
-            "cost": 1265446,
+            "months": 21.02,
+            "hoursPerWeek": 516.1,
+            "totalHours": 46913,
+            "cost": 1271929,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 68.8,
-            "weeks": 297.9,
-            "days": 1493,
-            "cost": 322689,
+            "months": 69.15,
+            "weeks": 299.4,
+            "days": 1501,
+            "cost": 324342,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 12.48,
-            "hoursPerWeek": 220.5,
-            "totalHours": 11902,
-            "cost": 322689,
+            "months": 12.5,
+            "hoursPerWeek": 221.2,
+            "totalHours": 11963,
+            "cost": 324342,
             "description": "AI-assisted part-time development"
           }
         }
