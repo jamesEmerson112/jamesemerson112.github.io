@@ -1,14 +1,14 @@
 {
   "id": "agentsforimpact",
-  "scannedAt": "2026-06-15T03:21:28.176Z",
+  "scannedAt": "2026-06-29T03:20:20.644Z",
   "metadata": {
     "name": "AgentsForImpact",
-    "fullName": "b0mung51/AgentsForImpact",
+    "fullName": "beaumont-code/AgentsForImpact",
     "description": "",
-    "url": "https://github.com/b0mung51/AgentsForImpact",
+    "url": "https://github.com/beaumont-code/AgentsForImpact",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-04-03T08:30:28Z",
+    "lastUpdated": "2026-06-24T04:36:57Z",
     "createdAt": "2026-03-16T23:07:30Z",
     "stars": 0,
     "language": "Python",
@@ -16,7 +16,7 @@
     "isFork": false,
     "isArchived": false,
     "isAnonymized": false,
-    "sourceRef": "public:b0mung51/agentsforimpact"
+    "sourceRef": "public:beaumont-code/agentsforimpact"
   },
   "sccRaw": [
     {

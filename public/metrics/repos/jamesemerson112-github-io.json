@@ -1,6 +1,6 @@
 {
   "id": "jamesemerson112-github-io",
-  "scannedAt": "2026-06-22T03:21:09.085Z",
+  "scannedAt": "2026-06-29T03:20:21.592Z",
   "metadata": {
     "name": "jamesemerson112.github.io",
     "fullName": "jamesEmerson112/jamesemerson112.github.io",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/jamesemerson112.github.io",
     "homepage": "https://jamesemerson112.github.io/",
     "topics": [],
-    "lastUpdated": "2026-06-15T03:21:35Z",
+    "lastUpdated": "2026-06-22T03:21:15Z",
     "createdAt": "2022-06-03T13:53:42Z",
     "stars": 1,
     "language": "JavaScript",
@@ -21,7 +21,7 @@
   "sccRaw": [
     {
       "Name": "JSON",
-      "Bytes": 1897305,
+      "Bytes": 1897302,
       "CodeBytes": 0,
       "Lines": 79900,
       "Code": 79900,
@@ -161,7 +161,7 @@
       "totalCode": 90958,
       "totalComments": 213,
       "totalBlanks": 1870,
-      "totalBytes": 2283980,
+      "totalBytes": 2283977,
       "totalFiles": 314,
       "totalLanguages": 9,
       "totalComplexity": 493,
@@ -175,7 +175,7 @@
         "code": 79900,
         "comments": 0,
         "blanks": 0,
-        "bytes": 1897305,
+        "bytes": 1897302,
         "files": 222,
         "complexity": 0,
         "percentOfLines": 85.9,
