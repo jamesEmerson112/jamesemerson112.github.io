@@ -114,6 +114,11 @@ export interface SpiderDataPoint {
   isOther?: boolean;
 }
 
+export interface AxisScore {
+  axis: string;
+  score: number;
+}
+
 export type QualityBand = 'Low' | 'Moderate' | 'High' | 'Very High';
 
 export interface QualitySignal {

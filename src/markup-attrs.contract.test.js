@@ -1,7 +1,11 @@
+// @vitest-environment node
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { describe, expect, it } from 'vitest';
-import { parse } from 'svelte/compiler';
+import { parse, preprocess } from 'svelte/compiler';
+import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
+
+const preprocessor = vitePreprocess();
 
 async function collectSvelteFiles(rootDirectory) {
   const entries = await fs.readdir(rootDirectory, { withFileTypes: true });
@@ -52,7 +56,8 @@ describe('markup attribute contract', () => {
 
     for (const filePath of svelteFiles) {
       const source = await fs.readFile(filePath, 'utf8');
-      const ast = parse(source, { filename: filePath });
+      const processed = await preprocess(source, preprocessor, { filename: filePath });
+      const ast = parse(processed.code, { filename: filePath });
 
       walkAst(ast, (node) => {
         if (!node || typeof node !== 'object' || !Array.isArray(node.attributes)) {

@@ -1,7 +1,7 @@
 import { isNonProgrammingLanguage } from './languageUtils.ts';
-import type { Repo, QualitySignal, QualityBand } from '../types.js';
+import type { Repo, QualitySignal, QualityBand, AxisScore } from '../types.js';
 
-const CATEGORY_AXES = ['AI/ML', 'Web', 'Backend', 'Data', 'DevOps', 'Mobile'] as const;
+export const CATEGORY_AXES = ['AI/ML', 'Web', 'Backend', 'Data', 'DevOps', 'Mobile'] as const;
 const QUALITY_AXES = [
   'Scope',
   'Complexity Control',
@@ -59,11 +59,6 @@ interface RawSignals {
   structure: number;
   breadth: number;
   freshness: number;
-}
-
-interface AxisScore {
-  axis: string;
-  score: number;
 }
 
 function safeNumber(value: unknown, fallback: number = 0): number {

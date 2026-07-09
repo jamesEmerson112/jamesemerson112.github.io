@@ -2,12 +2,13 @@ import { writable, derived } from 'svelte/store';
 import type { Writable, Readable } from 'svelte/store';
 import { filterAndSortRepos, getAvailableLanguages } from '../utils/portfolioTransforms.ts';
 import {
+  CATEGORY_AXES,
   computeQualityBaselines,
   computeOverallCategorySpider,
   computeOverallLanguageProficiencySpider,
   computeOverallQualityStats
 } from '../utils/profileMetrics.ts';
-import type { PortfolioIndex, PortfolioTotals, Repo, SortKey, SortOrder, PortfolioStoreState } from '../types.js';
+import type { PortfolioIndex, Repo, SortKey, SortOrder, PortfolioStoreState } from '../types.js';
 
 function createPortfolioStore() {
   const { subscribe, set, update } = writable<PortfolioStoreState>({
@@ -46,19 +47,9 @@ function createPortfolioStore() {
 
 export const portfolio = createPortfolioStore();
 
-export const portfolioTotals: Readable<PortfolioTotals | null> = derived(
-  portfolio,
-  $portfolio => $portfolio.data?.portfolioTotals || null
-);
-
 export const repos: Readable<Repo[]> = derived(
   portfolio,
   $portfolio => $portfolio.data?.repos || []
-);
-
-export const languages = derived(
-  portfolio,
-  $portfolio => $portfolio.data?.portfolioTotals?.languages || {}
 );
 
 export const isLoading: Readable<boolean> = derived(
@@ -83,7 +74,7 @@ export const availableLanguages: Readable<string[]> = derived(
   ($repos) => getAvailableLanguages($repos)
 );
 
-const CATEGORY_ORDER = ['AI/ML', 'Web', 'Backend', 'Data', 'DevOps', 'Mobile'];
+const CATEGORY_ORDER: readonly string[] = CATEGORY_AXES;
 
 export const availableCategories: Readable<string[]> = derived(
   repos,
@@ -154,6 +145,6 @@ export function resetFilters(): void {
   searchTerm.set('');
   languageFilter.set('all');
   categoryFilter.set('all');
-  sortBy.set('recent' as SortKey);
-  sortOrder.set('desc' as SortOrder);
+  sortBy.set('recent');
+  sortOrder.set('desc');
 }

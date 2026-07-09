@@ -1,26 +1,24 @@
 <script lang="ts">
-  export let stats = [];
+  import { clampPercent } from '../../utils/math.ts';
+  import type { AxisScore } from '../../types.js';
+
+  export let stats: AxisScore[] = [];
   export let size = 360;
   export let title = 'Spider chart';
   export let showTitle = true;
   export let showAxisTable = true;
   export let color = '#38bdf8';
   export let fill = 'rgba(56, 189, 248, 0.2)';
-  export let scaleMode = 'absolute';
+  export let scaleMode: 'absolute' | 'relative' = 'absolute';
   export let tableShowBoth = false;
-  export let absoluteStats = undefined;
+  export let absoluteStats: AxisScore[] | undefined = undefined;
 
   const levels = [25, 50, 75, 100];
-
-  function clampScore(value) {
-    const safeScore = Number.isFinite(Number(value)) ? Number(value) : 0;
-    return Math.max(0, Math.min(100, safeScore));
-  }
 
   function normalizeAxisRows(list = []) {
     return (Array.isArray(list) ? list : []).map((item, index) => ({
       axis: item?.axis || `Axis ${index + 1}`,
-      score: clampScore(item?.score)
+      score: clampPercent(item?.score)
     }));
   }
 
@@ -39,8 +37,8 @@
 
     return {
       axis: item.axis,
-      displayScore: clampScore(displayScore),
-      absoluteScore: clampScore(absoluteScore)
+      displayScore: clampPercent(displayScore),
+      absoluteScore: clampPercent(absoluteScore)
     };
   });
 
@@ -48,7 +46,7 @@
   $: radius = Math.max(38, size / 2 - 64);
   $: labelOffset = Math.max(20, radius * 0.18);
   $: points = displayStats.map((item, index) => {
-    const clamped = clampScore(item.displayScore);
+    const clamped = clampPercent(item.displayScore);
     const angle = ((Math.PI * 2 * index) / Math.max(displayStats.length, 1)) - Math.PI / 2;
     const scale = clamped / 100;
     return {

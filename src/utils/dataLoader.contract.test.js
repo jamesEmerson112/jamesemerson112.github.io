@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { formatNumber, formatCurrency, formatYears, formatDuration } from './formatters.ts';
+import { formatNumber, formatCurrency, formatDuration } from './formatters.ts';
 import {
   getLanguageColor,
   isNonProgrammingLanguage,
@@ -13,7 +13,6 @@ describe('formatter exports', () => {
   it('exports all formatter functions', () => {
     expect(typeof formatNumber).toBe('function');
     expect(typeof formatCurrency).toBe('function');
-    expect(typeof formatYears).toBe('function');
     expect(typeof formatDuration).toBe('function');
   });
 });

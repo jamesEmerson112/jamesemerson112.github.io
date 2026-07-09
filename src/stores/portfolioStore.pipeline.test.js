@@ -2,9 +2,7 @@ import { get } from 'svelte/store';
 import { describe, expect, it, beforeEach } from 'vitest';
 import {
   portfolio,
-  portfolioTotals,
   repos,
-  languages,
   filteredRepos,
   availableLanguages,
   availableCategories,
@@ -119,28 +117,22 @@ describe('portfolioStore pipeline with real-shaped data', () => {
     resetFilters();
   });
 
-  it('hydrates and exposes portfolioTotals with expected shape', () => {
+  it('hydrates portfolioTotals data with expected shape', () => {
     portfolio.hydrate(REAL_DATA_FIXTURE);
-    const totals = get(portfolioTotals);
+    const totals = get(portfolio).data?.portfolioTotals;
     expect(totals).not.toBeNull();
     expect(totals.totalLines).toBe(96000);
     expect(totals.totalCode).toBe(84000);
     expect(totals.totalComplexity).toBe(1200);
     expect(totals.estimatedValue.standardCost).toBe(450000);
     expect(totals.soloDeveloper.fullTimeMonths).toBe(95);
+    expect(totals.languages).toHaveProperty('JavaScript');
+    expect(totals.languages.JavaScript.repos).toBe(2);
   });
 
   it('exposes repos array with correct count', () => {
     portfolio.hydrate(REAL_DATA_FIXTURE);
     expect(get(repos)).toHaveLength(3);
-  });
-
-  it('exposes languages from portfolioTotals', () => {
-    portfolio.hydrate(REAL_DATA_FIXTURE);
-    const langs = get(languages);
-    expect(langs).toHaveProperty('JavaScript');
-    expect(langs).toHaveProperty('Python');
-    expect(langs.JavaScript.repos).toBe(2);
   });
 
   it('filteredRepos returns all repos with default filters', () => {

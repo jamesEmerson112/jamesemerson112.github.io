@@ -5,9 +5,11 @@
     getDisplayPrimaryLanguage,
     getLanguageColor
   } from '../../utils/languageUtils.ts';
+  import { clampPercent } from '../../utils/math.ts';
   import { selectedRepo } from '../../stores/portfolioStore.ts';
+  import type { Repo } from '../../types.js';
 
-  export let repo;
+  export let repo: Repo;
   const PROGRAMMING_LANGUAGE_LIMIT = 4;
   const OTHER_THRESHOLD_PERCENT = 0.5;
   const OTHER_COLOR = 'var(--mono-tone-5)';
@@ -32,11 +34,6 @@
   });
   $: repoUrl = repo?.url || null;
   $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);
-
-  function toPercent(value) {
-    const safe = Number.isFinite(Number(value)) ? Number(value) : 0;
-    return Math.max(0, Math.min(100, safe));
-  }
 
   function compositionColor(name) {
     if (name === 'Other') {
@@ -112,7 +109,7 @@
           <div
             class="composition-segment"
             title={`${language.name} ${language.percent.toFixed(1)}%`}
-            style="width: {toPercent(language.percent)}%; background-color: {compositionColor(language.name)}"
+            style="width: {clampPercent(language.percent)}%; background-color: {compositionColor(language.name)}"
            data-name="RepoCardDiv27"></div>
         {/each}
       </div>

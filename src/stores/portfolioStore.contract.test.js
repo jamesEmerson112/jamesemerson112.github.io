@@ -5,9 +5,7 @@ import * as store from './portfolioStore.ts';
 describe('portfolioStore public contract', () => {
   it('exports the advanced portfolio API used by portfolio components', () => {
     expect(store.portfolio).toBeDefined();
-    expect(store.portfolioTotals).toBeDefined();
     expect(store.repos).toBeDefined();
-    expect(store.languages).toBeDefined();
     expect(store.isLoading).toBeDefined();
     expect(store.hasError).toBeDefined();
 

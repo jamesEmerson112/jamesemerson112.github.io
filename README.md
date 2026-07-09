@@ -3,16 +3,16 @@
 Recruiter-facing portfolio site with automated GitHub repository scanning, COCOMO-style estimates, and interactive project visualizations (including spider charts).
 
 ## What this repo does
-- Renders a Svelte portfolio website deployed to GitHub Pages.
+- Renders a Svelte portfolio website deployed to Vercel.
 - Scans GitHub repositories (public + private with anonymization) via `scc`.
 - Generates portfolio metrics JSON under `public/metrics/`.
 - Displays searchable/filterable projects with mini spider charts and a selected-project detail panel.
-- Runs scheduled scan/deploy workflows in GitHub Actions.
+- Runs the scheduled metrics scan in GitHub Actions; its commits auto-trigger Vercel deploys.
 
 ## Stack
 - Frontend: Svelte 4 + Vite 5
 - Data scanning: Node.js scripts + Octokit + `scc`
-- CI/CD: GitHub Actions (scan + deploy)
+- CI/CD: Vercel git integration (deploys) + GitHub Actions (metrics scan)
 - Tests: Vitest + Testing Library
 
 ## Project structure
@@ -23,7 +23,8 @@ Recruiter-facing portfolio site with automated GitHub repository scanning, COCOM
 - `scripts/validate-metrics.js` integrity gate for index/details consistency
 - `public/metrics/` generated metrics index + per-repo details
 - `.github/workflows/scan-metrics.yml` scheduled/manual scanning workflow
-- `.github/workflows/deploy.yml` GitHub Pages build/deploy workflow
+- `.github/workflows/deploy.yml` legacy GitHub Pages deploy (being retired after Vercel cutover)
+- `vercel.json` Vercel config (security headers, cache policy)
 
 ## Local development
 Install dependencies:
@@ -47,8 +48,10 @@ npm run test
 ```
 
 ## Metrics pipeline (local)
-Required env var:
-- `GITHUB_TOKEN` (PAT with access to repos you want scanned)
+Requirements:
+- `GITHUB_TOKEN` env var (PAT with access to repos you want scanned; set in a gitignored `.env`)
+- `scc` on PATH (e.g. `winget install --id boyter.scc` on Windows, `brew install scc` on macOS)
+- `git` on PATH (repos are shallow-cloned during scanning)
 
 Commands:
 ```bash
@@ -72,6 +75,11 @@ Private repos are included in metrics but anonymized for recruiter-facing displa
 - private URLs/descriptions are hidden
 - summary metrics remain visible
 
+## Deployment
+- **Vercel git integration**: every push to `main` deploys to production; every PR gets a preview URL. No tokens or CI config needed — connect the repo once at vercel.com/new.
+- Metrics commits made by `scan-metrics.yml` (as `github-actions[bot]`) auto-trigger Vercel production deploys, keeping the live site's metrics fresh.
+- `vercel.json` sets security headers (nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy) and cache policy (immutable `/assets/*`, revalidated `/metrics/*` and `/blog/*`). CSP stays in the `index.html` meta tag.
+
 ## Workflows
 - `scan-metrics.yml`
   - weekly incremental scan
@@ -79,8 +87,9 @@ Private repos are included in metrics but anonymized for recruiter-facing displa
   - manual dispatch with full scan option
   - requires `GH_PAT` secret (mapped to `GITHUB_TOKEN` in scan step)
   - runs `npm run scan:validate` before committing metrics updates
-- `deploy.yml`
+- `deploy.yml` (legacy)
   - builds and deploys site to GitHub Pages on pushes to `main`
+  - kept running in parallel during the Vercel cutover; delete after Vercel production is verified
 
 ## Notes
 - If `scan:validate` fails locally, run a fresh full scan (`npm run scan:full`) once credentials and `scc` are available.

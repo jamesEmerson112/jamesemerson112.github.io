@@ -9,6 +9,7 @@
     overallQualityStats,
     loadPortfolioData
   } from '../../stores/portfolioStore.ts';
+  import { clampPercent } from '../../utils/math.ts';
   import CategorySpider from './CategorySpider.svelte';
 
   const BAND_COLORS = {
@@ -29,12 +30,6 @@
       loadPortfolioData();
     }
   });
-
-  function safePercent(score) {
-    const value = Number(score);
-    if (!Number.isFinite(value)) return 0;
-    return Math.max(0, Math.min(100, value));
-  }
 
   function tone(band) {
     return BAND_COLORS[band] || '#94a3b8';
@@ -130,7 +125,7 @@
             <div class="row-track" data-name="OverallCharacterDashboardDiv28">
               <div
                 class="row-fill"
-                style="width: {safePercent(item.score)}%; background: {tone(item.band)}"
+                style="width: {clampPercent(item.score)}%; background: {tone(item.band)}"
                data-name="OverallCharacterDashboardDiv29"></div>
             </div>
             <div class="row-band" data-name="OverallCharacterDashboardDiv30">{item.band}</div>

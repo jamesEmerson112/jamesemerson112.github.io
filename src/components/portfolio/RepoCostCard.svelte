@@ -1,7 +1,8 @@
 <script lang="ts">
   import { formatCurrency, formatDuration, formatNumber } from '../../utils/formatters.ts';
+  import type { RepoSummary } from '../../types.js';
 
-  export let summary;
+  export let summary: RepoSummary;
 
   $: savingsPercent = summary?.traditionalCost > 0
     ? Math.round(((summary.traditionalCost - summary.aiCost) / summary.traditionalCost) * 100)

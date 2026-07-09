@@ -23,6 +23,14 @@ export function parseHash(): ParsedRoute {
   return { view: 'main', section: null, slug: null };
 }
 
+export function navigateToPost(slug: string): void {
+  window.location.hash = `posts/${slug}`;
+}
+
+export function navigateToBlogList(): void {
+  window.location.hash = 'posts';
+}
+
 export function updateHash(sectionId: string, mode: 'replace' | 'push' = 'replace'): void {
   if (!isValidSection(sectionId)) return;
 

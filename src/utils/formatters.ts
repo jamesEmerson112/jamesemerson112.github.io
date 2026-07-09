@@ -11,14 +11,6 @@ export function formatCurrency(amount: number): string {
   return `$${amount}`;
 }
 
-export function formatYears(years: number): string {
-  if (years >= 1) {
-    return `${Math.round(years)} year${years !== 1 ? 's' : ''}`;
-  }
-  const months = Math.round(years * 12);
-  return `${months} month${months !== 1 ? 's' : ''}`;
-}
-
 export function formatDuration(months: number): string {
   if (!Number.isFinite(months) || months <= 0) {
     return '0 mo';

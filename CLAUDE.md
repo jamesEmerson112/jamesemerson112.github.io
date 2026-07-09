@@ -35,7 +35,7 @@ Single-page app with hash-based routing (`src/utils/routing.ts`). Scroll section
 - **Types**: All shared domain interfaces live in `src/types.ts`. Import from there, not inline.
 - **State**: Svelte stores in `src/stores/`. `portfolioStore.ts` holds portfolio data, filters, sort state, and exposes derived stores (`filteredRepos`, `availableLanguages`, `qualityBaselines`, etc.). `theme.ts` manages dark/light mode with localStorage persistence and system preference detection.
 - **Data loading**: Lazy — triggered by IntersectionObserver (`src/utils/dataPreloader.ts`) when metrics/projects sections approach the viewport. `portfolioStore.ts` fetches from `/metrics/index.json`.
-- **Visualization**: Hand-crafted SVG spider/radar charts (`CategorySpider.svelte`, `LanguageSpider.svelte`). Three.js + GSAP for decorative effects.
+- **Visualization**: Hand-crafted SVG spider/radar charts (`CategorySpider.svelte`).
 - **Theming**: CSS custom properties in `src/styles/themes.css`, toggled via `data-light` attribute on `<html>`. No CSS framework.
 - **Security**: CSP meta tag in `index.html`. Blog markdown sanitized with DOMPurify. Blog slugs validated with regex. All external links use `rel="noopener noreferrer"`.
 
@@ -54,7 +54,7 @@ Markdown files in `public/blog/posts/` with YAML frontmatter (`title`, `date`, `
 
 1. Fetch repos via Octokit (`@octokit/rest`)
 2. Filter out archived/forked/excluded repos
-3. Run SCC (`scripts/scc.exe` on Windows, downloaded in CI for Linux) to count lines/comments/blanks per language
+3. Run SCC (`scc` resolved from PATH — install locally via `winget install scc` or equivalent; CI downloads the Linux binary) to count lines/comments/blanks per language
 4. Auto-classify repos into categories (AI/ML, Web, Backend, Data, DevOps, Mobile) via `scripts/utils/project-classifier.js`
 5. Calculate COCOMO cost/effort estimates via `scripts/utils/cocomo.js`
 6. Anonymize private repos (`scripts/utils/anonymize.js`)
@@ -63,10 +63,11 @@ Markdown files in `public/blog/posts/` with YAML frontmatter (`title`, `date`, `
 
 Incremental scanning uses `sourceRef` hashes to skip unchanged repos. `scripts/utils/scan-planner.js` decides what needs rescanning.
 
-### CI/CD (GitHub Actions)
+### CI/CD
 
-- **deploy.yml**: On push to `main` — build and deploy to GitHub Pages.
-- **scan-metrics.yml**: Weekly incremental scan (Monday 2 AM UTC), monthly full scan (1st of month). Commits updated metrics back to the repo. Requires `GH_PAT` secret.
+- **Vercel git integration**: pushes to `main` deploy to production; PRs get preview URLs. Config in `vercel.json` (security headers + cache policy — do NOT add a CSP header there; CSP lives in the `index.html` meta tag).
+- **scan-metrics.yml** (GitHub Actions): Weekly incremental scan (Monday 2 AM UTC), monthly full scan (1st of month). Commits updated metrics back to the repo, which auto-triggers a Vercel deploy. Requires `GH_PAT` secret.
+- **deploy.yml** (legacy GitHub Pages deploy): running in parallel during the Vercel cutover; delete after Vercel production is verified.
 
 ## Resume Workflow
 

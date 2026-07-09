@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fetchBlogIndex, formatDate } from '../../utils/blogLoader.ts';
+  import { navigateToPost } from '../../utils/routing.ts';
 
   let posts = [];
   let loading = true;
@@ -16,9 +17,6 @@
     }
   });
 
-  function navigateToPost(slug) {
-    window.location.hash = `posts/${slug}`;
-  }
 </script>
 
 <div class="blog-list" data-name="BlogList">

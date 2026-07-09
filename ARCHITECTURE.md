@@ -36,11 +36,10 @@ flowchart LR
 | Framework | Svelte 4.2 |
 | Bundler | Vite 5.4 |
 | Charts | Hand-crafted SVG (spider/radar) |
-| Animation | GSAP, Three.js |
-| Markdown | marked |
+| Markdown | marked + DOMPurify |
 | Tests | Vitest + @testing-library/svelte |
-| CI/CD | GitHub Actions |
-| Hosting | GitHub Pages |
+| CI/CD | GitHub Actions (metrics scan) |
+| Hosting | Vercel (migrating from GitHub Pages) |
 
 ## Directory Layout
 
@@ -72,7 +71,6 @@ src/
       RepoCard                   # Compact repo summary card
       RepoDetailPanel            # Full-screen detail modal
       CategorySpider             # Reusable radar chart (SVG)
-      LanguageSpider             # Language composition radar
     blog/
       RecentPosts                # Top 3 posts (scroll section)
       BlogList                   # Full post list (standalone view)

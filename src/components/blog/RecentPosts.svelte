@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { fetchBlogIndex, formatDate } from '../../utils/blogLoader.ts';
+  import { navigateToPost, navigateToBlogList } from '../../utils/routing.ts';
 
   const MAX_POSTS = 3;
 
@@ -17,13 +18,7 @@
     }
   });
 
-  function navigateToPost(slug) {
-    window.location.hash = `posts/${slug}`;
-  }
-
-  function viewAll() {
-    window.location.hash = 'posts';
-  }
+  const viewAll = navigateToBlogList;
 </script>
 
 {#if visible}

@@ -2,7 +2,11 @@
 
 This repository has two workflows:
 - `scan-metrics.yml` (repository metrics scan)
-- `deploy.yml` (site build + GitHub Pages deploy)
+- `deploy.yml` (legacy site build + GitHub Pages deploy — being retired)
+
+Site deployments are handled by the **Vercel git integration**: every push to `main`
+(including metrics commits from `scan-metrics.yml`) triggers a production deploy, and
+every PR gets a preview URL. No deploy tokens or workflow config are required.
 
 ## 1) Scan Repository Metrics (`scan-metrics.yml`)
 
@@ -33,7 +37,10 @@ Metrics updates are blocked if validation fails for:
 - orphan details files
 - aggregate totals mismatch
 
-## 2) Deploy to GitHub Pages (`deploy.yml`)
+## 2) Deploy to GitHub Pages (`deploy.yml`) — LEGACY
+
+Kept running in parallel during the Vercel cutover. Delete this workflow (and disable
+Pages in repo settings) once Vercel production is verified end-to-end.
 
 ### Triggers
 - Push to `main`
@@ -69,4 +76,3 @@ Check workflow summary for:
 ## Related docs
 - `README.md`
 - `scripts/README.md`
-- `DASHBOARD-README.md`
