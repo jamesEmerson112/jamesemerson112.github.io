@@ -88,7 +88,7 @@ describe('RepoDetailPanel', () => {
 
     const bars = screen.getAllByTestId('language-composition-bar');
     const pythonRow = bars.find((bar) => (
-      /(#3776ab|rgb\(55,\s*118,\s*171\))/i.test(bar.getAttribute('style') || '')
+      /(#3572A5|rgb\(53,\s*114,\s*165\))/i.test(bar.getAttribute('style') || '')
     ));
     expect(pythonRow).toBeTruthy();
     expect(screen.getAllByText('Other').length).toBeGreaterThan(0);

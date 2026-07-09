@@ -158,7 +158,7 @@ export interface NavItem {
 
 // ─── Store Helpers ───────────────────────────────────────────────
 
-export type SortKey = 'recent' | 'lines' | 'updated' | 'cost' | 'name';
+export type SortKey = 'recent' | 'lines' | 'complexity' | 'updated' | 'cost' | 'name';
 export type SortOrder = 'asc' | 'desc';
 
 export interface PortfolioStoreState {

@@ -5,8 +5,12 @@
   export let stats: AxisScore[] = [];
   export let size = 360;
   export let title = 'Spider chart';
+  export let subtitle = '';
   export let showTitle = true;
   export let showAxisTable = true;
+  export let showRingHint = true;
+  export let dotRadius = 4.4;
+  export let displayLabels: string[] | null = null;
   export let color = '#38bdf8';
   export let fill = 'rgba(56, 189, 248, 0.2)';
   export let scaleMode: 'absolute' | 'relative' = 'absolute';
@@ -29,15 +33,16 @@
   );
   $: absoluteByAxis = new Map(normalizedAbsoluteStats.map((item) => [item.axis, item.score]));
   $: maxAbsoluteScore = normalizedStats.reduce((max, item) => Math.max(max, item.score), 0);
-  $: displayStats = normalizedStats.map((item) => {
+  $: displayStats = normalizedStats.map((item, index) => {
     const absoluteScore = absoluteByAxis.has(item.axis) ? absoluteByAxis.get(item.axis) : item.score;
-    const displayScore = safeScaleMode === 'relative'
-      ? (maxAbsoluteScore > 0 ? (item.score / maxAbsoluteScore) * 100 : 0)
-      : item.score;
+    const relativeScore = maxAbsoluteScore > 0 ? (item.score / maxAbsoluteScore) * 100 : 0;
+    const displayScore = safeScaleMode === 'relative' ? relativeScore : item.score;
 
     return {
       axis: item.axis,
+      label: displayLabels?.[index] ?? item.axis,
       displayScore: clampPercent(displayScore),
+      relativeScore: clampPercent(relativeScore),
       absoluteScore: clampPercent(absoluteScore)
     };
   });
@@ -51,8 +56,10 @@
     const scale = clamped / 100;
     return {
       axis: item.axis,
+      label: item.label,
       score: clamped,
       roundedScore: Math.round(clamped),
+      relativeRoundedScore: Math.round(item.relativeScore),
       absoluteScore: item.absoluteScore,
       absoluteRoundedScore: Math.round(item.absoluteScore),
       angle,
@@ -105,29 +112,41 @@
   {#if showTitle}
     <h3 data-name="CategorySpiderH31">{title}</h3>
   {/if}
+  {#if subtitle}
+    <p class="chart-subtitle" data-name="CategorySpiderSubtitle">{subtitle}</p>
+  {/if}
 
   {#if points.length > 0}
     <svg width={size} height={size} viewBox="0 0 {size} {size}" role="img" aria-label={title} data-name="CategorySpiderSvg2">
       <g class="grid" data-name="CategorySpiderG3">
         {#each gridPaths as path}
-          <path d={path} fill="none" stroke="rgba(148, 163, 184, 0.34)" stroke-width="1.1" data-name="CategorySpiderPath4" />
+          <path d={path} fill="none" class="grid-ring" stroke-width="1" data-name="CategorySpiderPath4" />
         {/each}
-        {#each levels as level, idx}
-          <text x={center + 8} y={center - radius * (levels[idx] / 100)} data-name="CategorySpiderText5">{level}%</text>
-        {/each}
+        {#if showRingHint}
+          {#each levels as level, idx}
+            <text x={center + 8} y={center - radius * (levels[idx] / 100)} data-name="CategorySpiderText5">{level}%</text>
+          {/each}
+        {/if}
       </g>
 
       <g class="axes" data-name="CategorySpiderG6">
         {#each points as point}
-          <line x1={center} y1={center} x2={point.axisX} y2={point.axisY} stroke="rgba(148, 163, 184, 0.52)" data-name="CategorySpiderLine7" />
+          <line x1={center} y1={center} x2={point.axisX} y2={point.axisY} class="axis-spoke" data-name="CategorySpiderLine7" />
         {/each}
       </g>
 
-      <path d={polygonPath} fill={fill} data-name="CategorySpiderPath8" />
-      <path d={polygonPath} fill="none" stroke={color} stroke-width="2.8" data-name="CategorySpiderPath9" />
+      <path d={polygonPath} style="fill: {fill}" data-name="CategorySpiderPath8" />
+      <path
+        d={polygonPath}
+        fill="none"
+        style="stroke: {color}"
+        stroke-width="1.6"
+        stroke-linejoin="round"
+        data-name="CategorySpiderPath9"
+      />
 
       {#each points as point}
-        <circle cx={point.x} cy={point.y} r="4.4" fill={color} stroke="rgba(15, 23, 42, 0.95)" stroke-width="1.6" data-name="CategorySpiderCircle10" />
+        <circle cx={point.x} cy={point.y} r={dotRadius} style="fill: {color}" data-name="CategorySpiderCircle10" />
         <text
           class="axis-label"
           x={point.labelX}
@@ -135,22 +154,24 @@
           text-anchor={getTextAnchor(point.angle)}
           dominant-baseline={getBaseline(point.angle)}
          data-name="CategorySpiderText11">
-          {point.axis}
+          {point.label}
         </text>
       {/each}
     </svg>
 
-    <div class="ring-hint" data-name="CategorySpiderDiv12">{ringHint}</div>
+    {#if showRingHint}
+      <div class="ring-hint" data-name="CategorySpiderDiv12">{ringHint}</div>
+    {/if}
 
     {#if showAxisTable}
       <div class="axis-table" aria-label="Axis values" data-name="CategorySpiderDiv13">
         {#each points as point}
           <div class="axis-row" data-name="CategorySpiderDiv14">
-            <span data-name="CategorySpiderSpan15">{point.axis}</span>
-            {#if tableShowBoth && safeScaleMode === 'relative'}
+            <span data-name="CategorySpiderSpan15">{point.label}</span>
+            {#if tableShowBoth}
               <div class="axis-values" data-name="CategorySpiderDiv16">
-                <strong class="axis-primary" data-name="CategorySpiderStrong17">Rel {point.roundedScore}</strong>
-                <span class="axis-secondary" data-name="CategorySpiderSpan18">Abs {point.absoluteRoundedScore}</span>
+                <strong class="axis-primary" style="color: {color}" data-name="CategorySpiderStrong17">R{point.relativeRoundedScore}</strong>
+                <span class="axis-secondary" data-name="CategorySpiderSpan18">A{point.absoluteRoundedScore}</span>
               </div>
             {:else}
               <strong data-name="CategorySpiderStrong19">{point.roundedScore}</strong>
@@ -166,27 +187,31 @@
 
 <style>
   .category-spider {
-    border: 1px solid var(--surface-border);
-    border-radius: 14px;
-    padding: 0.95rem;
+    border: none;
+    padding: 0;
+    background: transparent;
     overflow: hidden;
-    background: radial-gradient(
-      circle at 50% 38%,
-      color-mix(in srgb, var(--accent-primary) 20%, transparent),
-      var(--surface-glass) 62%
-    );
   }
 
   h3 {
-    margin: 0 0 0.7rem;
-    font-size: 1rem;
+    margin: 0 0 2px;
+    font-size: 15px;
+    font-weight: 500;
     color: var(--text-primary);
+  }
+
+  .chart-subtitle {
+    margin: 0 0 14px;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    color: var(--text-muted);
   }
 
   svg {
     display: block;
     margin: 0 auto;
-    max-width: 100%;
+    max-width: 300px;
+    width: 100%;
     height: auto;
     overflow: visible;
   }
@@ -196,16 +221,26 @@
     fill: var(--text-secondary);
   }
 
+  .grid-ring {
+    stroke: var(--radar-ring);
+  }
+
+  .axis-spoke {
+    stroke: var(--radar-spoke);
+    stroke-width: 1;
+  }
+
   .axis-label {
-    font-size: 12px;
-    font-weight: 600;
-    fill: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    fill: var(--radar-label);
   }
 
   .ring-hint {
     margin: 0.28rem 0 0.65rem;
     text-align: center;
-    font-size: 0.72rem;
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
     color: var(--text-muted);
     letter-spacing: 0.02em;
   }
@@ -213,41 +248,35 @@
   .axis-table {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.42rem 0.7rem;
-    margin-top: 0.28rem;
+    gap: 6px 14px;
+    margin-top: 16px;
   }
 
   .axis-row {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: baseline;
     gap: 0.55rem;
-    font-size: 0.8rem;
-    padding: 0.28rem 0.44rem;
-    border-radius: 6px;
-    border: 1px solid var(--surface-border);
-    background: var(--surface-glass);
-    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--mono-tone-3);
   }
 
   .axis-row strong {
     color: var(--text-primary);
-    font-size: 0.82rem;
+    font-size: 10px;
+    font-weight: 500;
   }
 
   .axis-values {
     display: flex;
     align-items: baseline;
-    gap: 0.45rem;
-  }
-
-  .axis-primary {
-    color: var(--text-primary);
+    gap: 8px;
   }
 
   .axis-secondary {
-    font-size: 0.72rem;
-    color: var(--text-muted);
+    font-size: 10px;
+    color: var(--mono-tone-5);
   }
 
   .empty {

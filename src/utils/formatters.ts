@@ -2,6 +2,13 @@ export function formatNumber(num: number): string {
   return num.toLocaleString('en-US');
 }
 
+export function formatCompact(num: number): string {
+  if (!Number.isFinite(num) || num <= 0) return '0';
+  if (num >= 1_000_000) return `${(num / 1_000_000).toFixed(1)}M`;
+  if (num >= 1_000) return `${Math.round(num / 1_000)}K`;
+  return String(Math.round(num));
+}
+
 export function formatCurrency(amount: number): string {
   if (amount >= 1000000) {
     return `$${(amount / 1000000).toFixed(1)}M`;

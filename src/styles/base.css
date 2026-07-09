@@ -23,6 +23,8 @@ html {
 :root {
   --pad: max(20px, 4vmin);  /* Dynamic padding */
   --fs-text: 12px;           /* Base font size */
+  --rail: 300px;             /* Sidebar rail width */
+  --sec-pad-x: clamp(26px, 5vw, 80px); /* Section horizontal padding */
 
   /* Scene colors are driven by theme tokens for Home + data-page parity */
   --c-bg: var(--scene-canvas, hsl(0, 0%, 5%));
@@ -56,11 +58,26 @@ html, body {
 
 body {
   background-color: var(--c-bg);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-family-primary, system-ui, sans-serif);
   font-weight: 400;
   font-size: var(--fs-text);
   color: var(--c-text);
   transition: background-color 0.9s cubic-bezier(0.1, 0.4, 0.2, 1);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar (prototype) */
+::-webkit-scrollbar {
+  width: 11px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--c-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb, #26292a);
+  border-radius: 6px;
+  border: 3px solid var(--c-bg);
 }

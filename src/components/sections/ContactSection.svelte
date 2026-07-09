@@ -57,50 +57,52 @@
   }
 
   .contact_content h2 {
-    font-size: clamp(32px, 6vw, 60px);
+    font-family: var(--font-display);
+    font-size: clamp(34px, 6vw, 60px);
     font-weight: 200;
-    margin: 0 0 1em 0;
-    color: var(--text-primary);
+    margin: 0;
+    color: var(--scene-text);
   }
 
   .contact_links {
     display: flex;
     flex-direction: column;
-    gap: 2em;
-    margin-top: 3em;
+    gap: 28px;
+    margin-top: 44px;
   }
 
   .contact_link {
     display: flex;
     flex-direction: column;
-    gap: 0.3em;
+    gap: 5px;
     text-decoration: none;
-    color: var(--text-primary);
+    color: var(--scene-text);
     transition: opacity 0.3s ease;
   }
 
   .contact_link:hover {
-    opacity: 0.7;
+    opacity: 0.65;
   }
 
   .link_label {
+    font-family: var(--font-mono);
     font-size: 10px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    opacity: 0.5;
+    color: var(--text-muted);
   }
 
   .link_handle {
-    font-size: 16px;
+    font-size: 17px;
     font-weight: 400;
   }
 
   .section_label {
-    font-size: 11px;
-    font-weight: 600;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
     text-transform: uppercase;
     letter-spacing: 0.15em;
-    color: var(--text-secondary);
-    opacity: 0.6;
+    color: var(--text-muted);
+    margin-bottom: -4px;
   }
 </style>

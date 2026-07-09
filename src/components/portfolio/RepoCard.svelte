@@ -12,7 +12,7 @@
   export let repo: Repo;
   const PROGRAMMING_LANGUAGE_LIMIT = 4;
   const OTHER_THRESHOLD_PERCENT = 0.5;
-  const OTHER_COLOR = 'var(--mono-tone-5)';
+  const OTHER_COLOR = '#6a6d6a';
 
   function handleClick() {
     selectedRepo.set(repo);
@@ -61,7 +61,11 @@
     </div>
     {#if displayPrimaryLanguage}
       <span class="language-badge" data-name="RepoCardSpan5">
-        <span class="language-dot" data-name="RepoCardSpan6"></span>
+        <span
+          class="language-dot"
+          style="background-color: {getLanguageColor(displayPrimaryLanguage)}"
+          data-name="RepoCardSpan6"
+        ></span>
         {displayPrimaryLanguage}
       </span>
     {/if}
@@ -85,18 +89,15 @@
 
   <div class="repo-stats" data-name="RepoCardDiv11">
     <div class="stat" data-name="RepoCardDiv12">
-      <span class="stat-icon" data-name="RepoCardSpan13">📊</span>
       <span class="stat-value" data-name="RepoCardSpan14">{formatNumber(repo.summary.lines)}</span>
       <span class="stat-label" data-name="RepoCardSpan15">lines</span>
     </div>
     <div class="stat" data-name="RepoCardDiv16">
-      <span class="stat-icon" data-name="RepoCardSpan17">📁</span>
-      <span class="stat-value" data-name="RepoCardSpan18">{repo.summary.files}</span>
+      <span class="stat-value" data-name="RepoCardSpan18">{formatNumber(repo.summary.files)}</span>
       <span class="stat-label" data-name="RepoCardSpan19">files</span>
     </div>
     <div class="stat" data-name="RepoCardDiv20">
-      <span class="stat-icon" data-name="RepoCardSpan21">🧮</span>
-      <span class="stat-value" data-name="RepoCardSpan22">{repo.summary.complexity}</span>
+      <span class="stat-value" data-name="RepoCardSpan22">{formatNumber(repo.summary.complexity)}</span>
       <span class="stat-label" data-name="RepoCardSpan23">complexity</span>
     </div>
   </div>
@@ -143,11 +144,11 @@
 
 <style>
   .repo-card {
-    background: var(--surface-panel);
-    border: 1px solid var(--surface-border);
-    border-radius: 12px;
-    padding: clamp(0.72rem, 1.2vw, 0.96rem);
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    background: var(--card-bg);
+    border: 1px solid var(--line-2);
+    border-radius: 14px;
+    padding: 20px;
+    transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
     cursor: pointer;
     text-align: left;
     width: 100%;
@@ -155,17 +156,17 @@
     height: 100%;
     display: flex;
     flex-direction: column;
-    gap: clamp(0.5rem, 0.95vw, 0.68rem);
+    gap: 14px;
   }
 
   .repo-card:hover {
     transform: translateY(-3px);
-    border-color: var(--surface-border-strong);
-    box-shadow: var(--shadow-hover);
+    border-color: color-mix(in srgb, var(--acc) 45%, transparent);
+    background: var(--card-hover-bg);
   }
 
   .repo-card:focus-visible {
-    outline: 2px solid var(--accent-primary);
+    outline: 2px solid var(--acc);
     outline-offset: 3px;
   }
 
@@ -192,8 +193,8 @@
 
   .repo-title h3 {
     margin: 0;
-    font-size: 1.08rem;
-    font-weight: 700;
+    font-size: 16px;
+    font-weight: 600;
     color: var(--text-primary);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -208,17 +209,16 @@
   .language-badge {
     display: inline-flex;
     align-items: center;
-    gap: 0.35rem;
-    padding: 0.25rem 0.7rem;
+    gap: 6px;
+    padding: 3px 10px;
     border-radius: 999px;
-    font-size: 0.74rem;
-    font-weight: 600;
-    border: 1px solid;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    border: 1px solid var(--line-1);
     white-space: nowrap;
     flex-shrink: 0;
-    background: var(--surface-glass);
-    border-color: var(--surface-border-strong);
-    color: var(--text-primary);
+    background: transparent;
+    color: var(--mono-tone-2);
     margin-left: auto;
   }
 
@@ -254,61 +254,59 @@
   .project-tag {
     display: inline-flex;
     align-items: center;
-    padding: 0.2rem 0.52rem;
+    padding: 3px 9px;
     border-radius: 999px;
-    font-size: 0.7rem;
-    color: var(--text-secondary);
-    background: var(--surface-glass);
-    border: 1px solid var(--surface-border);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    color: var(--mono-tone-3);
+    background: var(--chip-neutral-bg);
+    border: 1px solid var(--line-2);
   }
 
   .repo-stats {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, 8rem), 1fr));
-    gap: 0.45rem;
-    padding: 0.56rem;
-    background: var(--surface-glass);
-    border-radius: 7px;
+    display: flex;
+    gap: 20px;
+    padding: 12px 14px;
+    background: var(--card-bg);
+    border-radius: 8px;
+    font-family: var(--font-mono);
   }
 
   .stat {
     display: flex;
-    align-items: center;
-    gap: 0.3rem;
+    flex-direction: column;
+    gap: 2px;
     min-width: 0;
-    padding: 0.08rem 0;
-  }
-
-  .stat-icon {
-    font-size: 0.95rem;
   }
 
   .stat-value {
-    font-weight: 700;
-    font-size: 0.8rem;
-    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--scene-text);
     overflow: hidden;
     text-overflow: ellipsis;
   }
 
   .stat-label {
-    font-size: 0.72rem;
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--text-muted);
   }
 
   .language-composition {
-    border: 1px solid var(--surface-border);
-    border-radius: 9px;
-    padding: 0.56rem;
-    background: var(--surface-glass);
+    border: none;
+    padding: 0;
+    background: transparent;
   }
 
   .composition-label {
-    margin-bottom: 0.35rem;
-    font-size: 0.75rem;
+    margin-bottom: 7px;
+    font-family: var(--font-mono);
+    font-size: 9px;
     text-transform: uppercase;
-    letter-spacing: 0.08em;
-    color: var(--text-secondary);
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
   }
 
   .composition-track {
@@ -316,8 +314,8 @@
     width: 100%;
     border-radius: 999px;
     overflow: hidden;
-    height: 8px;
-    background: var(--surface-base);
+    height: 7px;
+    background: var(--quality-track);
   }
 
   .composition-segment {
@@ -325,24 +323,25 @@
   }
 
   .composition-legend {
-    margin-top: 0.45rem;
+    margin-top: 9px;
     display: flex;
-    gap: 0.45rem;
+    gap: 10px;
     flex-wrap: wrap;
   }
 
   .legend-item {
     display: inline-flex;
     align-items: center;
-    gap: 0.28rem;
-    font-size: 0.68rem;
-    color: var(--text-secondary);
+    gap: 5px;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    color: var(--mono-tone-3);
   }
 
   .legend-dot {
     width: 7px;
     height: 7px;
-    border-radius: 999px;
+    border-radius: 50%;
   }
 
   .card-footer {
@@ -351,32 +350,32 @@
     justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.75rem;
-    border-top: 1px solid var(--surface-border-soft);
-    padding-top: 0.56rem;
-    margin-top: 0.05rem;
+    border-top: 1px solid var(--line-3);
+    padding-top: 13px;
+    margin-top: 2px;
   }
 
   .repo-link {
-    font-size: 0.92rem;
-    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--mono-tone-2);
     text-decoration: none;
-    font-weight: 600;
   }
 
   .repo-link:hover {
-    text-decoration: underline;
+    color: var(--acc-hover);
   }
 
   .repo-link:focus-visible {
-    outline: 2px solid var(--accent-primary);
+    outline: 2px solid var(--acc);
     outline-offset: 2px;
     border-radius: 6px;
   }
 
   .view-details {
-    color: var(--text-primary);
-    font-weight: 600;
-    font-size: 1rem;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--acc);
     margin-left: auto;
   }
 

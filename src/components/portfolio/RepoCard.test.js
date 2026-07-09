@@ -80,9 +80,9 @@ describe('RepoCard', () => {
       .find((segment) => segment.getAttribute('title')?.startsWith('Other '));
 
     expect(pythonSegment).toBeTruthy();
-    expect(pythonSegment?.getAttribute('style')).toMatch(/(#3776ab|rgb\(55,\s*118,\s*171\))/i);
+    expect(pythonSegment?.getAttribute('style')).toMatch(/(#3572A5|rgb\(53,\s*114,\s*165\))/i);
     expect(otherSegment).toBeTruthy();
-    expect(otherSegment?.getAttribute('style')).toContain('var(--mono-tone-5)');
+    expect(otherSegment?.getAttribute('style')).toMatch(/(#6a6d6a|rgb\(106,\s*109,\s*106\))/i);
     expect(screen.queryByText('JSON')).not.toBeInTheDocument();
     expect(screen.queryByText('Plain Text')).not.toBeInTheDocument();
   });

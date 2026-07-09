@@ -113,7 +113,7 @@ const fixtureIndex = {
         lines: 200,
         code: 180,
         files: 5,
-        complexity: 8,
+        complexity: 500,
         traditionalCost: 30000,
         aiCost: 8000,
         traditionalMonths: 8,
@@ -221,7 +221,7 @@ describe('Option B portfolio overview integration', () => {
     expect(screen.queryByText('Quality Snapshot')).not.toBeInTheDocument();
   });
 
-  it('applies search and language filter, and supports name sorting', async () => {
+  it('applies search and language filter, and supports complexity sorting', async () => {
     render(PortfolioOverview);
 
     await screen.findByText('Repo Alpha');
@@ -244,15 +244,13 @@ describe('Option B portfolio overview integration', () => {
     await fireEvent.change(languageSelect, { target: { value: 'all' } });
 
     const sortSelect = screen.getByLabelText('Sort by:');
-    await fireEvent.change(sortSelect, { target: { value: 'name' } });
-
-    const sortToggle = screen.getByTitle('Toggle sort order');
-    await fireEvent.click(sortToggle);
+    await fireEvent.change(sortSelect, { target: { value: 'complexity' } });
 
     await waitFor(() => {
       const headings = screen.getAllByRole('heading', { level: 3 }).map((item) => item.textContent);
-      expect(headings[0]).toBe('Repo Alpha');
-      expect(headings[1]).toBe('Repo Zeta');
+      // Most complex first among public repos: Zeta (500) before Alpha (20).
+      expect(headings[0]).toBe('Repo Zeta');
+      expect(headings[1]).toBe('Repo Alpha');
     });
   });
 
@@ -268,7 +266,7 @@ describe('Option B portfolio overview integration', () => {
     expect(names).toEqual(['Repo Alpha', 'Repo Zeta', 'Private Repo Beta']);
   });
 
-  it('defaults to Most Recent sort and paginates projects with Load more', async () => {
+  it('defaults to Most Recent sort and reveals every project with Show all', async () => {
     portfolioStore.portfolio.hydrate(manyReposFixture);
     const { container } = render(PortfolioOverview);
 
@@ -278,21 +276,21 @@ describe('Option B portfolio overview integration', () => {
 
     await screen.findByText(/Recent Projects \(12 of 18\)/i);
     expect(container.querySelectorAll('.repo-card').length).toBe(12);
-    expect(screen.getByRole('button', { name: /Load 12 more/i })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /Show all 18/i })).toBeInTheDocument();
 
-    await fireEvent.click(screen.getByRole('button', { name: /Load 12 more/i }));
+    await fireEvent.click(screen.getByRole('button', { name: /Show all 18/i }));
     await waitFor(() => {
       expect(container.querySelectorAll('.repo-card').length).toBe(18);
     });
-    expect(screen.queryByRole('button', { name: /Load 12 more/i })).not.toBeInTheDocument();
+    expect(screen.queryByRole('button', { name: /Show all/i })).not.toBeInTheDocument();
   });
 
-  it('resets visible project count to 12 when filters/search change', async () => {
+  it('auto-expands matches while filtering and returns to Top-N when cleared', async () => {
     portfolioStore.portfolio.hydrate(manyReposFixture);
     const { container } = render(PortfolioOverview);
 
     await screen.findByText(/Recent Projects \(12 of 18\)/i);
-    await fireEvent.click(screen.getByRole('button', { name: /Load 12 more/i }));
+    await fireEvent.click(screen.getByRole('button', { name: /Show all 18/i }));
 
     await waitFor(() => {
       expect(container.querySelectorAll('.repo-card').length).toBe(18);
@@ -302,7 +300,12 @@ describe('Option B portfolio overview integration', () => {
     await fireEvent.input(searchInput, { target: { value: 'Public Repo 01' } });
     await screen.findByText(/Recent Projects \(1 of 1\)/i);
 
+    // A category filter shows every match, not just the first twelve.
     await fireEvent.input(searchInput, { target: { value: '' } });
+    await fireEvent.click(screen.getByRole('button', { name: 'Web' }));
+    await screen.findByText(/Recent Projects \(14 of 14\)/i);
+
+    await fireEvent.click(screen.getByRole('button', { name: 'All' }));
     await waitFor(() => {
       expect(container.querySelectorAll('.repo-card').length).toBe(12);
     });

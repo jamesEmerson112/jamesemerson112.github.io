@@ -97,9 +97,9 @@ describe('CategorySpider', () => {
 
     const rowA = getAxisRow('Axis A');
     const rowB = getAxisRow('Axis B');
-    expect(within(rowA).getByText(/Rel 100/i)).toBeInTheDocument();
-    expect(within(rowA).getByText(/Abs 28/i)).toBeInTheDocument();
-    expect(within(rowB).getByText(/Rel 50/i)).toBeInTheDocument();
-    expect(within(rowB).getByText(/Abs 14/i)).toBeInTheDocument();
+    expect(within(rowA).getByText(/^R100$/i)).toBeInTheDocument();
+    expect(within(rowA).getByText(/^A28$/i)).toBeInTheDocument();
+    expect(within(rowB).getByText(/^R50$/i)).toBeInTheDocument();
+    expect(within(rowB).getByText(/^A14$/i)).toBeInTheDocument();
   });
 });

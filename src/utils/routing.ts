@@ -1,12 +1,12 @@
 import type { NavItem, ParsedRoute } from '../types.js';
 
-export const SECTION_IDS: readonly string[] = ['home', 'blog', 'metrics', 'projects', 'contact', 'privacy'];
+export const SECTION_IDS: readonly string[] = ['home', 'metrics', 'projects', 'blog', 'contact', 'privacy'];
 
 export const NAV_ITEMS: NavItem[] = [
   { id: 'home', label: 'Home' },
-  { id: 'blog', label: 'Blog' },
   { id: 'metrics', label: 'Metrics' },
   { id: 'projects', label: 'Projects' },
+  { id: 'blog', label: 'Blog' },
   { id: 'contact', label: 'Contact' },
   { id: 'privacy', label: 'Privacy' }
 ];

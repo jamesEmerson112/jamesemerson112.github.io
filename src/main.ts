@@ -1,3 +1,8 @@
+import '@fontsource/newsreader/200.css'
+import '@fontsource/newsreader/300.css'
+import '@fontsource/newsreader/400.css'
+import '@fontsource/jetbrains-mono/400.css'
+import '@fontsource/jetbrains-mono/500.css'
 import './styles/base.css'
 import { inject } from '@vercel/analytics'
 import App from './App.svelte'

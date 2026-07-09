@@ -16,33 +16,33 @@
   }
 
   .privacy_content h2 {
-    font-size: clamp(32px, 6vw, 60px);
+    font-family: var(--font-display);
+    font-size: clamp(34px, 6vw, 60px);
     font-weight: 200;
-    margin: 0 0 1em 0;
-    color: var(--text-primary);
+    margin: 0;
+    color: var(--scene-text);
   }
 
   .privacy_summary {
     font-size: 14px;
     line-height: 1.6;
     color: var(--text-secondary);
-    opacity: 0.8;
-    margin: 2em 0;
+    margin: 32px 0;
   }
 
   .privacy_link {
     display: inline-block;
-    font-size: 12px;
-    color: var(--text-primary);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--mono-tone-2);
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.1em;
     padding: 0.5em 0;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
+    transition: color 0.3s ease;
   }
 
   .privacy_link:hover {
-    opacity: 1;
+    color: var(--acc-hover);
   }
 </style>

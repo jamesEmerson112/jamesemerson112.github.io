@@ -122,6 +122,9 @@ export function sortRepos(repoList: Repo[], by: SortKey = 'lines', order: SortOr
       case 'cost':
         metricDelta = safeNumber(a?.summary?.aiCost) - safeNumber(b?.summary?.aiCost);
         break;
+      case 'complexity':
+        metricDelta = safeNumber(a?.summary?.complexity) - safeNumber(b?.summary?.complexity);
+        break;
       case 'lines':
       default:
         metricDelta = safeNumber(a?.summary?.lines) - safeNumber(b?.summary?.lines);

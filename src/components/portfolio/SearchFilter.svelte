@@ -4,29 +4,27 @@
     languageFilter,
     categoryFilter,
     sortBy,
-    sortOrder,
     availableLanguages,
-    availableCategories,
-    resetFilters,
-    toggleSortOrder
+    availableCategories
   } from '../../stores/portfolioStore.ts';
 
   const sortOptions = [
     { value: 'recent', label: 'Most Recent' },
-    { value: 'lines', label: 'Lines of Code' },
-    { value: 'cost', label: 'Cost (AI)' },
-    { value: 'name', label: 'Name' },
-    { value: 'updated', label: 'Last Updated' }
+    { value: 'lines', label: 'Most Lines' },
+    { value: 'complexity', label: 'Most Complex' }
   ];
 
-  function setCategory(category) {
+  function setCategory(category: string) {
     categoryFilter.set(category);
   }
 </script>
 
 <div class="search-filter" data-name="SearchFilter">
   <div class="search-box" data-name="SearchFilterDiv1">
-    <span class="search-icon" data-name="SearchFilterSpan2">🔍</span>
+    <span class="search-icon" aria-hidden="true" data-name="SearchFilterSpan2">
+      <span class="search-circle" data-name="SearchFilterSpan3"></span>
+      <span class="search-handle" data-name="SearchFilterSpan21"></span>
+    </span>
     <input
       type="text"
       data-name="repo-search"
@@ -48,10 +46,9 @@
     {/if}
   </div>
 
-  {#if $availableCategories.length > 0}
-    <div class="category-filter" role="group" aria-label="Category filter" data-name="SearchFilterDiv4">
-      <span class="category-label" data-name="SearchFilterSpan5">Category:</span>
-      <div class="category-chips" data-name="SearchFilterDiv6">
+  <div class="filter-row" data-name="SearchFilterDiv7">
+    {#if $availableCategories.length > 0}
+      <div class="category-chips" role="group" aria-label="Category filter" data-name="SearchFilterDiv6">
         <button
           type="button"
           class:active={$categoryFilter === 'all'}
@@ -75,10 +72,10 @@
           </button>
         {/each}
       </div>
-    </div>
-  {/if}
+    {/if}
 
-  <div class="filters" data-name="SearchFilterDiv7">
+    <div class="spacer" data-name="SearchFilterSpacer"></div>
+
     <div class="filter-group" data-name="SearchFilterDiv8">
       <label for="language-filter" class="filter-label" data-name="SearchFilterLabel9">Language:</label>
       <select id="language-filter" data-name="language-filter" bind:value={$languageFilter} class="filter-select">
@@ -97,21 +94,6 @@
         {/each}
       </select>
     </div>
-
-    <button class="sort-toggle" on:click={toggleSortOrder} title="Toggle sort order" type="button" data-name="sort-order-toggle">
-      {#if $sortOrder === 'desc'}
-        <span class="toggle-icon" data-name="SearchFilterSpan15">↓</span>
-        <span class="toggle-label" data-name="SearchFilterSpan16">Desc</span>
-      {:else}
-        <span class="toggle-icon" data-name="SearchFilterSpan17">↑</span>
-        <span class="toggle-label" data-name="SearchFilterSpan18">Asc</span>
-      {/if}
-    </button>
-
-    <button class="reset-button" on:click={resetFilters} title="Reset all filters" type="button" data-name="filters-reset">
-      <span class="reset-icon" data-name="SearchFilterSpan19">↻</span>
-      <span class="reset-label" data-name="SearchFilterSpan20">Reset</span>
-    </button>
   </div>
 </div>
 
@@ -119,12 +101,8 @@
   .search-filter {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    margin-bottom: 2rem;
-    padding: 1.25rem;
-    background: var(--surface-panel);
-    border: 1px solid var(--surface-border);
-    border-radius: 12px;
+    gap: 16px;
+    margin-bottom: 34px;
   }
 
   .search-box {
@@ -135,26 +113,50 @@
 
   .search-icon {
     position: absolute;
-    left: 1rem;
-    font-size: 1rem;
-    color: var(--text-muted);
+    left: 17px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    pointer-events: none;
+  }
+
+  .search-circle {
+    position: absolute;
+    left: 0;
+    top: 3px;
+    width: 12px;
+    height: 12px;
+    border: 1.5px solid var(--text-muted);
+    border-radius: 50%;
+  }
+
+  .search-handle {
+    position: absolute;
+    left: 10px;
+    top: 14px;
+    width: 7px;
+    height: 1.5px;
+    background: var(--text-muted);
+    transform: rotate(45deg);
   }
 
   .search-input {
     flex: 1;
-    padding: 0.75rem 3rem;
+    width: 100%;
     background: var(--surface-glass);
-    border: 1px solid var(--surface-border);
-    border-radius: 8px;
-    font-size: 0.95rem;
-    color: inherit;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    border: 1px solid var(--line-1);
+    border-radius: 12px;
+    padding: 14px 18px 14px 44px;
+    color: var(--scene-text);
+    font-family: var(--font-mono);
+    font-size: 13.5px;
+    outline: none;
+    transition: border-color 0.2s;
   }
 
-  .search-input:focus-visible {
-    outline: none;
-    border-color: var(--accent-primary);
-    box-shadow: 0 0 0 3px var(--focus-ring);
+  .search-input:focus {
+    border-color: color-mix(in srgb, var(--acc) 50%, transparent);
   }
 
   .search-input::placeholder {
@@ -163,12 +165,12 @@
 
   .clear-button {
     position: absolute;
-    right: 0.9rem;
-    padding: 0.15rem;
+    right: 14px;
+    padding: 2px 4px;
     background: none;
     border: none;
     color: var(--text-muted);
-    font-size: 1rem;
+    font-size: 14px;
     cursor: pointer;
   }
 
@@ -177,165 +179,111 @@
   }
 
   .clear-button:focus-visible {
-    outline: 2px solid var(--accent-primary);
+    outline: 2px solid var(--acc);
     outline-offset: 2px;
     border-radius: 4px;
   }
 
-  .category-filter {
+  .filter-row {
     display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
     flex-wrap: wrap;
-  }
-
-  .category-label {
-    font-size: 0.75rem;
-    color: var(--text-secondary);
-    margin-top: 0.35rem;
+    gap: 10px;
+    align-items: center;
   }
 
   .category-chips {
     display: flex;
-    gap: 0.45rem;
+    gap: 10px;
     flex-wrap: wrap;
   }
 
   .category-chip {
-    border: 1px solid var(--chip-neutral-border);
-    background: var(--chip-neutral-bg);
-    color: var(--text-secondary);
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    color: var(--mono-tone-3);
+    background: transparent;
+    border: 1px solid var(--line-1);
     border-radius: 999px;
-    padding: 0.35rem 0.7rem;
-    font-size: 0.75rem;
-    font-weight: 600;
+    padding: 6px 15px;
     cursor: pointer;
-    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+    transition: all 0.18s;
+    white-space: nowrap;
   }
 
   .category-chip:hover {
-    border-color: color-mix(in srgb, var(--accent-primary) 60%, transparent);
+    border-color: color-mix(in srgb, var(--acc) 55%, transparent);
     color: var(--text-primary);
   }
 
   .category-chip.active {
-    border-color: var(--chip-active-border);
-    background: var(--chip-active-bg);
-    color: var(--text-primary);
+    background: var(--acc);
+    border-color: var(--acc);
+    color: #06272a;
+  }
+
+  :global([data-light='true']) .category-chip.active {
+    color: #ffffff;
   }
 
   .category-chip:focus-visible {
-    outline: 2px solid var(--accent-primary);
-    outline-offset: 2px;
+    outline: 2px solid var(--acc);
+    outline-offset: 3px;
   }
 
-  .filters {
-    display: flex;
-    gap: 0.8rem;
-    flex-wrap: wrap;
-    align-items: center;
+  .spacer {
+    flex: 1;
   }
 
   .filter-group {
     display: flex;
     align-items: center;
-    gap: 0.45rem;
+    gap: 8px;
   }
 
   .filter-label {
-    font-size: 0.82rem;
-    font-weight: 500;
+    font-family: var(--font-mono);
+    font-size: 11px;
     color: var(--text-secondary);
     white-space: nowrap;
   }
 
   .filter-select {
-    padding: 0.48rem 0.7rem;
     background: var(--surface-glass);
-    border: 1px solid var(--surface-border);
-    border-radius: 6px;
-    color: inherit;
-    font-size: 0.85rem;
+    border: 1px solid var(--line-1);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--mono-tone-2);
+    outline: none;
     cursor: pointer;
   }
 
   .filter-select:hover {
-    border-color: color-mix(in srgb, var(--accent-primary) 50%, transparent);
+    border-color: color-mix(in srgb, var(--acc) 50%, transparent);
   }
 
   .filter-select:focus-visible {
-    outline: none;
-    border-color: var(--accent-primary);
+    border-color: var(--acc);
     box-shadow: 0 0 0 3px var(--focus-ring);
   }
 
-  .sort-toggle,
-  .reset-button {
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    padding: 0.48rem 0.72rem;
-    border-radius: 6px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    cursor: pointer;
-    border: 1px solid;
-  }
-
-  .sort-toggle {
-    background: var(--surface-glass);
-    border-color: var(--surface-border-strong);
-    color: var(--text-secondary);
-  }
-
-  .sort-toggle:hover {
-    border-color: var(--surface-border-strong);
-    color: var(--text-primary);
-  }
-
-  .reset-button {
-    background: var(--surface-glass);
-    border-color: var(--surface-border-strong);
-    color: var(--text-secondary);
-    margin-left: auto;
-  }
-
-  .reset-button:hover {
-    border-color: color-mix(in srgb, var(--accent-primary) 60%, transparent);
-    color: var(--text-primary);
-  }
-
-  .sort-toggle:focus-visible,
-  .reset-button:focus-visible {
-    outline: 2px solid var(--accent-primary);
-    outline-offset: 2px;
-  }
-
-  .toggle-icon,
-  .reset-icon {
-    font-size: 1rem;
-    line-height: 1;
-  }
-
   @media (max-width: 900px) {
-    .filters {
+    .spacer {
+      display: none;
+    }
+
+    .filter-row {
       align-items: stretch;
+      flex-direction: column;
     }
 
     .filter-group {
-      width: 100%;
       justify-content: space-between;
     }
 
     .filter-select {
       flex: 1;
-    }
-
-    .sort-toggle,
-    .reset-button {
-      width: 100%;
-      justify-content: center;
-      margin-left: 0;
     }
   }
 </style>

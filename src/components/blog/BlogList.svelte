@@ -60,10 +60,11 @@
   }
 
   .blog-header h1 {
+    font-family: var(--font-display);
     font-size: clamp(36px, 7vw, 56px);
     font-weight: 200;
     margin: 0 0 2em 0;
-    color: var(--text-primary);
+    color: var(--scene-text);
     letter-spacing: -0.02em;
   }
 
@@ -87,11 +88,11 @@
   }
 
   .post-item {
-    border-top: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+    border-top: 1px solid var(--line-2);
   }
 
   .post-item:last-child {
-    border-bottom: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+    border-bottom: 1px solid var(--line-2);
   }
 
   .post-link {
@@ -120,15 +121,16 @@
 
   .post-date {
     display: block;
-    font-size: 12px;
+    font-family: var(--font-mono);
+    font-size: 11px;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--text-secondary);
-    opacity: 0.5;
+    color: var(--accent-info);
     margin-bottom: 0.6em;
   }
 
   .post-title {
+    font-family: var(--font-display);
     font-size: clamp(20px, 3vw, 26px);
     font-weight: 400;
     margin: 0;

@@ -30,7 +30,9 @@ Svelte 4 + Vite 5 + TypeScript static site deployed to GitHub Pages.
 
 ### Frontend
 
-Single-page app with hash-based routing (`src/utils/routing.ts`). Scroll sections: `#home`, `#blog`, `#metrics`, `#projects`, `#contact`, `#privacy`. Blog views: `#posts` (full list), `#posts/{slug}` (individual post). Routing is hash-based — no server-side routing exists.
+Single-page app with hash-based routing (`src/utils/routing.ts`). Scroll sections (in nav order): `#home`, `#metrics`, `#projects`, `#blog`, `#contact`, `#privacy`. Blog views: `#posts` (full list), `#posts/{slug}` (individual post). Routing is hash-based — no server-side routing exists.
+
+Design: dark-first "Keita Yamada"-style layout — fixed 300px sidebar rail (`layout/Sidebar.svelte`, collapses to a fixed top bar under 960px), animated neural-network canvas background (`effects/NeuralField.svelte`; pauses when hidden, disabled under `prefers-reduced-motion`), Newsreader + JetBrains Mono self-hosted via `@fontsource` (CSP blocks font CDNs). Light mode is a derived variant of the same tokens.
 
 - **Types**: All shared domain interfaces live in `src/types.ts`. Import from there, not inline.
 - **State**: Svelte stores in `src/stores/`. `portfolioStore.ts` holds portfolio data, filters, sort state, and exposes derived stores (`filteredRepos`, `availableLanguages`, `qualityBaselines`, etc.). `theme.ts` manages dark/light mode with localStorage persistence and system preference detection.
@@ -85,6 +87,8 @@ Generate a tailored resume scoring repos against JD requirements using the exist
 ## Testing
 
 Vitest with jsdom environment. Tests live alongside source files as `*.test.js`.
+
+- `vitest.config.js` sets `resolve.conditions: ['browser']` under VITEST — without it, `svelte` resolves to its SSR build and `onMount` silently never runs in component tests. Do not remove.
 
 - Component tests use `@testing-library/svelte`
 - Setup file: `src/test/setup.js` (imports `@testing-library/jest-dom/vitest`)

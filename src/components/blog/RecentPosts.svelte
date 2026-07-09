@@ -23,134 +23,161 @@
 
 {#if visible}
   <div class="recent-posts" data-name="RecentPosts">
-    <div class="recent-label" data-name="RecentPostsLabel">Recent Posts</div>
+    <div class="eyebrow" data-name="RecentPostsLabel">// RECENT POSTS</div>
+    <h2 class="writing-title" data-name="RecentPostsTitle">Writing</h2>
     <div class="recent-items" data-name="RecentPostsItems">
       {#each posts as post}
         <button
-          class="recent-item"
+          class="blogrow"
           type="button"
           on:click={() => navigateToPost(post.slug)}
           data-name={`recent-post-${post.slug}`}
         >
           <time class="recent-date" datetime={post.date}>{formatDate(post.date)}</time>
-          <span class="recent-title">{post.title}</span>
+          <span class="row-main">
+            <span class="recent-title">{post.title}</span>
+            {#if post.excerpt}
+              <span class="recent-excerpt">{post.excerpt}</span>
+            {/if}
+          </span>
+          <span class="barrow" aria-hidden="true">→</span>
         </button>
       {/each}
     </div>
     <button class="recent-view-all" type="button" on:click={viewAll} data-name="RecentPostsViewAll">
-      View all posts →
+      VIEW ALL POSTS →
     </button>
   </div>
 {/if}
 
 <style>
   .recent-posts {
-    margin-top: 2.5em;
-    padding-top: 1.5em;
-    border-top: 1px solid var(--border-secondary);
+    width: 100%;
   }
 
-  .recent-label {
-    font-size: 11px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
-    color: var(--text-secondary);
-    opacity: 0.6;
-    margin-bottom: 0.8em;
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    color: var(--acc);
+    margin-bottom: 12px;
+  }
+
+  .writing-title {
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(30px, 3.6vw, 46px);
+    letter-spacing: -0.01em;
+    color: var(--scene-text);
+    margin: 0 0 34px;
   }
 
   .recent-items {
     display: flex;
     flex-direction: column;
-    gap: 0.5em;
+    text-align: left;
+    max-width: 520px;
+    margin: 0 auto;
   }
 
-  .recent-item {
+  .blogrow {
     display: flex;
     align-items: baseline;
-    gap: 0.8em;
-    background: none;
+    gap: 18px;
+    padding: 20px 4px;
     border: none;
-    padding: 0.25em 0;
+    border-top: 1px solid var(--line-2);
+    background: none;
     cursor: pointer;
     color: inherit;
     font-family: inherit;
-    text-align: inherit;
-    transition: opacity 0.25s ease;
+    text-align: left;
+    width: 100%;
   }
 
-  @media (hover: hover) {
-    .recent-item:hover {
-      opacity: 0.6;
-    }
-  }
-
-  .recent-item:focus-visible {
-    outline: 2px solid var(--accent-primary);
+  .blogrow:focus-visible {
+    outline: 2px solid var(--acc);
     outline-offset: 2px;
   }
 
   .recent-date {
+    font-family: var(--font-mono);
     font-size: 11px;
-    color: var(--text-secondary);
-    opacity: 0.5;
+    color: var(--accent-info);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
     white-space: nowrap;
     flex-shrink: 0;
   }
 
+  .row-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+
   .recent-title {
-    font-size: 13px;
-    line-height: 1.5;
+    font-family: var(--font-display);
+    font-size: 21px;
+    color: var(--text-secondary);
+    transition: color 0.2s;
+    display: block;
+    line-height: 1.3;
+  }
+
+  .blogrow:hover .recent-title {
     color: var(--text-primary);
-    opacity: 0.85;
+  }
+
+  .recent-excerpt {
+    font-size: 12.5px;
+    color: var(--text-muted);
+    display: block;
+    margin-top: 5px;
+    line-height: 1.5;
+  }
+
+  .barrow {
+    color: var(--acc);
+    opacity: 0.5;
+    transition: opacity 0.2s, transform 0.2s;
+    font-family: var(--font-mono);
+    font-size: 13px;
+  }
+
+  .blogrow:hover .barrow {
+    opacity: 1;
+    transform: translateX(3px);
   }
 
   .recent-view-all {
     display: inline-block;
-    margin-top: 1.2em;
+    margin-top: 26px;
+    font-family: var(--font-mono);
     font-size: 11px;
-    font-family: inherit;
-    text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--text-primary);
-    opacity: 0.5;
+    color: var(--nav-idle);
     background: none;
     border: none;
     padding: 0;
     cursor: pointer;
-    text-align: inherit;
-    transition: opacity 0.25s ease;
+    transition: color 0.25s ease;
   }
 
   @media (hover: hover) {
     .recent-view-all:hover {
-      opacity: 0.85;
+      color: var(--nav-hover);
     }
   }
 
   .recent-view-all:focus-visible {
-    outline: 2px solid var(--accent-primary);
+    outline: 2px solid var(--acc);
     outline-offset: 2px;
   }
 
   @media (max-width: 768px) {
     .recent-title {
-      font-size: 12px;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .recent-label {
-      font-size: 10px;
-    }
-
-    .recent-title {
-      font-size: 11px;
-    }
-
-    .recent-date {
-      font-size: 10px;
+      font-size: 18px;
     }
   }
 </style>

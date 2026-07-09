@@ -1,14 +1,10 @@
 <script lang="ts">
   import { onMount, tick } from 'svelte';
-  import { darkMode } from './stores/theme.ts';
-  import { loadPortfolioData } from './stores/portfolioStore.ts';
+  import { portfolio, loadPortfolioData } from './stores/portfolioStore.ts';
   import PageContainer from './components/layout/PageContainer.svelte';
-  import Frame from './components/layout/Frame.svelte';
-  import Masks from './components/layout/Masks.svelte';
-  import SiteHeader from './components/layout/SiteHeader.svelte';
-  import ContentLayer from './components/layout/ContentLayer.svelte';
-  import ThemeSwitcher from './components/ThemeSwitcher.svelte';
-  import Copyright from './components/layout/Copyright.svelte';
+  import Sidebar from './components/layout/Sidebar.svelte';
+  import Footer from './components/layout/Footer.svelte';
+  import NeuralField from './components/effects/NeuralField.svelte';
   import PortfolioOverview from './components/portfolio/PortfolioOverview.svelte';
   import OverallCharacterDashboard from './components/portfolio/OverallCharacterDashboard.svelte';
   import Timeline from './components/Timeline.svelte';
@@ -17,7 +13,7 @@
   import RecentPosts from './components/blog/RecentPosts.svelte';
   import ContactSection from './components/sections/ContactSection.svelte';
   import PrivacySection from './components/sections/PrivacySection.svelte';
-  import { resolveMobileHeaderHidden } from './utils/mobileHeaderVisibility.ts';
+  import { formatCompact } from './utils/formatters.ts';
   import { SECTION_IDS, isValidSection, parseHash, updateHash } from './utils/routing.ts';
   import { createScrollSync } from './utils/scrollSync.ts';
   import { createDataPreloader } from './utils/dataPreloader.ts';
@@ -25,19 +21,41 @@
   import './styles/themes.css';
 
   const DATA_PRELOAD_SECTIONS = new Set(['metrics', 'projects']);
-  const MOBILE_BREAKPOINT = 900;
-  const REVEAL_TOP_Y = 0;
+  const MOBILE_BREAKPOINT = 960;
 
   let activeSection = 'home';
   let currentView = 'main'; // 'main' | 'blog' | 'post'
   let blogSlug = '';
   let scrollRoot;
-  let hasLoadedPortfolioData = false;
   let isMobileViewport = false;
-  let mobileHeaderHidden = false;
+  let lastTrackedView = '';
   const sectionElements = new Map();
 
-  $: chromeBlendMode = !$darkMode ? 'normal' : 'difference';
+  $: portfolioIndex = $portfolio.data;
+  $: heroStats = portfolioIndex?.portfolioTotals
+    ? {
+        repos: portfolioIndex.totalRepos ?? portfolioIndex.repos?.length ?? 0,
+        lines: formatCompact(portfolioIndex.portfolioTotals.totalLines),
+        languages: Object.keys(portfolioIndex.portfolioTotals.languages || {}).length,
+        scanned: formatScanDate(portfolioIndex.generatedAt)
+      }
+    : null;
+
+  function formatScanDate(value) {
+    const timestamp = Date.parse(String(value || ''));
+    if (!Number.isFinite(timestamp)) return null;
+    return new Date(timestamp).toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric'
+    });
+  }
+
+  function trackView(id) {
+    if (!id || id === lastTrackedView) return;
+    lastTrackedView = id;
+    window.gtag?.('event', 'section_view', { section_id: id });
+  }
 
   function applyHash() {
     const parsed = parseHash();
@@ -45,9 +63,11 @@
     if (parsed.view === 'post') {
       blogSlug = parsed.slug;
       activeSection = 'blog';
+      trackView(`posts/${parsed.slug}`);
     } else if (parsed.view === 'blog') {
       blogSlug = '';
       activeSection = 'blog';
+      trackView('posts');
     } else if (parsed.section) {
       blogSlug = '';
       return parsed.section;
@@ -72,6 +92,7 @@
     if (!sectionNode) return;
 
     activeSection = sectionId;
+    trackView(sectionId);
 
     if (hashMode) {
       updateHash(sectionId, hashMode);
@@ -97,25 +118,11 @@
     scrollToSection(sectionId, { behavior: 'smooth', hashMode: 'push' });
   }
 
-  function handleRootScroll() {
-    if (!scrollRoot) {
-      return;
-    }
-
-    const scrollTop = scrollRoot.scrollTop;
-    mobileHeaderHidden = resolveMobileHeaderHidden({
-      isMobile: isMobileViewport,
-      scrollTop,
-      revealTopY: REVEAL_TOP_Y
-    });
-  }
-
   onMount(() => {
     const viewport = createViewportDetection({
       breakpoint: MOBILE_BREAKPOINT,
       onChange(isMobile) {
         isMobileViewport = isMobile;
-        if (!isMobile) mobileHeaderHidden = false;
       }
     });
 
@@ -127,6 +134,13 @@
     };
 
     window.addEventListener('hashchange', handleHashChange);
+
+    // Hero stats need the metrics index; defer past first paint.
+    if (typeof window.requestIdleCallback === 'function') {
+      window.requestIdleCallback(() => loadPortfolioData());
+    } else {
+      setTimeout(() => loadPortfolioData(), 1200);
+    }
 
     let scrollSyncHandle;
     let preloadHandle;
@@ -140,6 +154,7 @@
         onSectionChange(nextSection) {
           if (nextSection !== activeSection) {
             activeSection = nextSection;
+            trackView(nextSection);
             updateHash(nextSection, 'replace');
           }
         }
@@ -168,106 +183,97 @@
 </script>
 
 <PageContainer>
-  <!-- Layer 10: UI Chrome -->
-  <Frame blendMode={chromeBlendMode} />
-  <SiteHeader
+  <NeuralField />
+  <Sidebar
     activeSection={activeSection}
-    compact={false}
-    blendMode={chromeBlendMode}
     isMobile={isMobileViewport}
-    mobileHidden={mobileHeaderHidden}
     on:navigate={handleNavigate}
   />
-  <ThemeSwitcher blendMode={chromeBlendMode} />
-  <Copyright blendMode={chromeBlendMode} />
 
-  <!-- Layer 3: Masks -->
-  <Masks />
+  {#if currentView === 'blog'}
+    <main class="single-page-scroll blog-view" data-name="AppBlogScroll">
+      <BlogList />
+    </main>
+  {:else if currentView === 'post'}
+    <main class="single-page-scroll blog-view" data-name="AppPostScroll">
+      <BlogPost slug={blogSlug} />
+    </main>
+  {:else}
+    <main
+      class="single-page-scroll"
+      bind:this={scrollRoot}
+      data-name="AppMainScroll"
+    >
+      <section id="home" class="sec home-sec" use:registerSection={'home'} data-name="AppHomeSection">
+        <div class="rightblk home-block" data-name="AppHomeContent">
+          <div class="herotag" data-name="AppHeroTag">
+            'Cure' neural networks <span class="eq">==</span> cure brains
+          </div>
+          <div class="role-line" data-name="AppRoleLine">
+            Software Developer @ JCM Global · MSCS @ Georgia Tech
+          </div>
+          <div class="hero-stats" data-name="AppHeroStats">
+            {#if heroStats}
+              {heroStats.repos} repos · {heroStats.lines} lines · {heroStats.languages} languages{#if heroStats.scanned}
+                · scanned {heroStats.scanned}{/if}
+            {:else}
+              — repos · — lines · — languages
+            {/if}
+          </div>
+          <div class="eyebrow" data-name="AppTimelineEyebrow">// TIMELINE</div>
+          <Timeline />
+        </div>
+      </section>
 
-  <!-- Layer 2: Content -->
-  <ContentLayer blendMode={chromeBlendMode}>
-    {#if currentView === 'blog'}
-      <main
-        class="single-page-scroll blog-view"
-        class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}
-        data-name="AppBlogScroll"
+      <section
+        id="metrics"
+        class="sec wide-sec"
+        use:registerSection={'metrics'}
+        data-name="AppMetricsSection"
       >
-        <div class="page-aura" aria-hidden="true" data-name="AppDiv1"></div>
-        <BlogList />
-      </main>
-    {:else if currentView === 'post'}
-      <main
-        class="single-page-scroll blog-view"
-        class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}
-        data-name="AppPostScroll"
+        <div class="wide-inner" data-name="AppMetricsContent">
+          <OverallCharacterDashboard autoLoad={false} />
+        </div>
+      </section>
+
+      <section
+        id="projects"
+        class="sec wide-sec"
+        use:registerSection={'projects'}
+        data-name="AppProjectsSection"
       >
-        <div class="page-aura" aria-hidden="true" data-name="AppDiv1"></div>
-        <BlogPost slug={blogSlug} />
-      </main>
-    {:else}
-      <main
-        class="single-page-scroll"
-        class:mobile-header-hidden={isMobileViewport && mobileHeaderHidden}
-        bind:this={scrollRoot}
-        on:scroll={handleRootScroll}
-        data-name="AppMainScroll"
+        <div class="wide-inner" data-name="AppProjectsContent">
+          <PortfolioOverview autoLoad={false} />
+        </div>
+      </section>
+
+      <section id="blog" class="sec blog-sec" use:registerSection={'blog'} data-name="AppBlogSection">
+        <div class="blog-inner" data-name="AppBlogContent">
+          <RecentPosts />
+        </div>
+      </section>
+
+      <section
+        id="contact"
+        class="sec right-sec contact-sec"
+        use:registerSection={'contact'}
+        data-name="AppContactSection"
       >
-        <div class="page-aura" aria-hidden="true" data-name="AppDiv1"></div>
+        <ContactSection />
+      </section>
 
-        <section id="home" class="app-section home-section" use:registerSection={'home'} data-name="AppHomeSection">
-          <div class="home_content" data-name="AppDiv2">
-            <Timeline />
-          </div>
-        </section>
+      <section
+        id="privacy"
+        class="sec right-sec privacy-sec"
+        use:registerSection={'privacy'}
+        data-name="AppPrivacySection"
+      >
+        <PrivacySection />
+      </section>
 
-        <section id="blog" class="app-section blog-section" use:registerSection={'blog'} data-name="AppBlogSection">
-          <div class="blog_content" data-name="AppBlogDiv">
-            <RecentPosts />
-          </div>
-        </section>
-
-        <section
-          id="metrics"
-          class="app-section metrics-section"
-          use:registerSection={'metrics'}
-          data-name="AppMetricsSection"
-        >
-          <div class="metrics_content data_content" data-name="AppDiv3">
-            <OverallCharacterDashboard autoLoad={false} />
-          </div>
-        </section>
-
-        <section
-          id="projects"
-          class="app-section projects-section"
-          use:registerSection={'projects'}
-          data-name="AppProjectsSection"
-        >
-          <div class="projects_content data_content" data-name="AppDiv4">
-            <PortfolioOverview autoLoad={false} />
-          </div>
-        </section>
-
-        <section
-          id="contact"
-          class="app-section contact-section"
-          use:registerSection={'contact'}
-          data-name="AppContactSection"
-        >
-          <ContactSection />
-        </section>
-
-        <section
-          id="privacy"
-          class="app-section privacy-section"
-          use:registerSection={'privacy'}
-          data-name="AppPrivacySection"
-        >
-          <PrivacySection />
-        </section>
-      </main>
-    {/if}
-  </ContentLayer>
+      <Footer />
+    </main>
+  {/if}
 </PageContainer>
 
 <style>
@@ -278,109 +284,129 @@
 
   .single-page-scroll {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
     scroll-behavior: smooth;
+    padding-left: var(--rail);
   }
 
-  .page-aura {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background:
-      radial-gradient(circle at 16% 15%, rgba(255, 255, 255, 0.08) 0%, transparent 55%),
-      radial-gradient(circle at 84% 10%, rgba(255, 255, 255, 0.06) 0%, transparent 52%),
-      linear-gradient(180deg, rgba(255, 255, 255, 0.04) 0%, transparent 48%);
-    opacity: var(--data-page-aura-opacity, 0.75);
-  }
-
-  .app-section {
+  .sec {
     position: relative;
     z-index: 1;
-    min-height: clamp(560px, 85svh, 940px);
-    display: flex;
-    align-items: flex-start;
-    justify-content: stretch;
-    padding:
-      clamp(4.5rem, 7.5vw, 6rem)
-      calc(var(--pad) * 2)
-      clamp(2.5rem, 4.8vw, 3.8rem);
-    padding-left: calc((var(--pad) * 2) + clamp(11rem, 18vw, 15rem) + clamp(1rem, 2vw, 1.75rem));
-    transition: padding-left 0.22s ease;
+    min-height: 100vh;
+    padding: 120px var(--sec-pad-x);
   }
 
-  .home-section {
-    min-height: 100svh;
+  .home-sec {
+    display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-top: 100px;
+    padding-bottom: 100px;
   }
 
-  .home_content {
+  .rightblk {
+    max-width: 620px;
+    margin-left: auto;
     text-align: right;
-    max-width: 600px;
     width: 100%;
   }
 
-  .blog-section {
-    min-height: auto;
-    justify-content: center;
-    background: rgba(255, 255, 255, 0.03);
+  .herotag {
+    font-family: var(--font-mono);
+    font-size: 15px;
+    letter-spacing: 0.01em;
+    color: var(--mono-tone-2);
+    margin-bottom: 14px;
+    white-space: nowrap;
   }
 
-  .blog_content {
+  .herotag .eq {
+    color: var(--acc);
+  }
+
+  .role-line {
+    font-size: 14px;
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+  }
+
+  .hero-stats {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.04em;
+    color: var(--text-muted);
+    margin-bottom: 30px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    color: var(--acc);
+    margin-bottom: 8px;
+  }
+
+  .wide-sec .wide-inner {
+    max-width: 1160px;
+    margin: 0 auto;
+  }
+
+  .blog-sec {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    padding-top: 110px;
+    padding-bottom: 110px;
+  }
+
+  .blog-inner {
     width: 100%;
     max-width: 600px;
+    margin: 0 auto;
     text-align: center;
   }
 
-  .metrics_content,
-  .projects_content {
-    width: 100%;
-    text-align: left;
-    max-width: none;
-  }
-
-  .data_content {
-    width: 100%;
-  }
-
-  .contact-section,
-  .privacy-section {
-    justify-content: flex-end;
+  .right-sec {
+    display: flex;
     align-items: center;
+    justify-content: flex-end;
+  }
+
+  .contact-sec {
+    min-height: 90vh;
+  }
+
+  .privacy-sec {
+    min-height: 70vh;
+    padding-bottom: 140px;
   }
 
   .blog-view {
-    padding-left: calc((var(--pad) * 2) + clamp(11rem, 18vw, 15rem) + clamp(1rem, 2vw, 1.75rem));
-    transition: padding-left 0.22s ease;
+    padding-top: 40px;
   }
 
-  @media (max-width: 900px) {
-    .blog-view {
-      padding-left: calc((var(--pad) * 2) + 3.9rem);
+  @media (max-width: 960px) {
+    .single-page-scroll {
+      padding-left: 0;
+      padding-top: var(--topbar-h, 128px);
     }
 
-    .single-page-scroll.mobile-header-hidden.blog-view {
-      padding-left: calc(var(--pad) * 2);
+    .sec {
+      padding-top: clamp(4rem, 12vw, 7rem);
     }
 
-    .app-section {
-      padding-top: clamp(5.6rem, 16vw, 8rem);
-      padding-left: calc((var(--pad) * 2) + 3.9rem);
-      padding-right: calc(var(--pad) * 2);
+    .herotag {
+      white-space: normal;
+      font-size: 13.5px;
     }
 
-    .single-page-scroll.mobile-header-hidden .app-section {
-      padding-left: calc(var(--pad) * 2);
-    }
-
-    .home_content {
+    .rightblk {
+      margin-left: 0;
       text-align: left;
-      max-width: none;
     }
   }
 </style>

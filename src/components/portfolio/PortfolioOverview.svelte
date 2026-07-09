@@ -3,6 +3,7 @@
   import {
     isLoading,
     hasError,
+    repos,
     filteredRepos,
     searchTerm,
     languageFilter,
@@ -22,7 +23,11 @@
   let visibleCount = INITIAL_VISIBLE_COUNT;
   let filterSignature = '';
 
-  $: shownCount = Math.min(visibleCount, $filteredRepos.length);
+  // Any active filter shows every match (auto-expand); the default view is Top-N.
+  $: anyFilterActive =
+    $searchTerm.trim() !== '' || $languageFilter !== 'all' || $categoryFilter !== 'all';
+  $: effectiveVisibleCount = anyFilterActive ? $filteredRepos.length : visibleCount;
+  $: shownCount = Math.min(effectiveVisibleCount, $filteredRepos.length);
   $: visibleRepos = $filteredRepos.slice(0, shownCount);
   $: nextFilterSignature = JSON.stringify([
     $searchTerm,
@@ -44,8 +49,8 @@
     }
   });
 
-  function loadMoreRepos() {
-    visibleCount += INITIAL_VISIBLE_COUNT;
+  function showAllRepos() {
+    visibleCount = $filteredRepos.length;
   }
 
   function closeSelectedRepo() {
@@ -57,6 +62,9 @@
   <div class="container" data-name="PortfolioOverviewDiv1">
     <!-- Header -->
     <header class="section-header" data-name="PortfolioOverviewHeader2">
+      <div class="eyebrow" data-name="PortfolioOverviewEyebrow">
+        // {$repos.length} REPOSITORIES ANALYZED
+      </div>
       <h1 data-name="PortfolioOverviewH13">Portfolio Metrics</h1>
       <p class="section-subtitle" data-name="PortfolioOverviewP4">
         Comprehensive analysis of my development portfolio, powered by AI
@@ -100,10 +108,10 @@
             <button
               type="button"
               class="load-more-button"
-              on:click={loadMoreRepos}
-              data-name="projects-load-more"
+              on:click={showAllRepos}
+              data-name="projects-show-all"
             >
-              Load 12 more
+              Show all {$filteredRepos.length}
             </button>
           </div>
         {/if}
@@ -123,12 +131,12 @@
 
 <style>
   .portfolio-overview {
-    min-height: 100vh;
-    padding: 4rem 2rem;
+    /* Outer spacing comes from the App section wrapper. */
+    padding: 0;
   }
 
   .container {
-    max-width: 1400px;
+    max-width: 1160px;
     margin: 0 auto;
   }
 
@@ -143,17 +151,28 @@
     box-shadow: none;
   }
 
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    color: var(--acc);
+    margin-bottom: 14px;
+  }
+
   .section-header h1 {
-    font-size: 3rem;
+    font-family: var(--font-display);
+    font-size: clamp(32px, 3.8vw, 50px);
     font-weight: 300;
+    letter-spacing: -0.01em;
     margin-bottom: 0.8rem;
-    color: var(--text-primary);
+    color: var(--scene-text);
   }
 
   .section-subtitle {
-    font-size: 1.125rem;
+    font-size: 15px;
+    line-height: 1.5;
     color: var(--text-secondary);
-    max-width: 760px;
+    max-width: 720px;
     margin: 0;
   }
 
@@ -264,17 +283,18 @@
   }
 
   .repos-header h2 {
-    font-size: 2rem;
-    font-weight: 600;
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 400;
     margin: 0;
-    color: var(--text-primary);
+    color: var(--scene-text);
   }
 
   /* Repos Grid */
   .repos-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(min(100%, 320px), 1fr));
-    gap: 1.1rem;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 330px), 1fr));
+    gap: 18px;
   }
 
   .load-more-wrap {
@@ -307,10 +327,6 @@
   }
 
   @media (max-width: 768px) {
-    .portfolio-overview {
-      padding: 2rem 1rem;
-    }
-
     .section-header h1 {
       font-size: 2rem;
     }

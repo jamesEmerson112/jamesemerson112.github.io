@@ -31,7 +31,7 @@ function assertPublicBeforePrivate(sorted) {
 }
 
 describe('portfolioTransforms public-first sorting', () => {
-  const sortByOptions = ['lines', 'name', 'updated', 'cost'];
+  const sortByOptions = ['lines', 'name', 'updated', 'cost', 'complexity'];
   const sortOrders = ['asc', 'desc'];
 
   for (const by of sortByOptions) {
@@ -42,6 +42,29 @@ describe('portfolioTransforms public-first sorting', () => {
       });
     }
   }
+
+  it('orders repositories by summary complexity in complexity mode', () => {
+    const sorted = sortRepos(
+      [
+        {
+          name: 'Public Simple',
+          isPrivate: false,
+          lastUpdated: '2026-02-01T00:00:00Z',
+          summary: { lines: 500, complexity: 12 }
+        },
+        {
+          name: 'Public Gnarly',
+          isPrivate: false,
+          lastUpdated: '2026-01-01T00:00:00Z',
+          summary: { lines: 100, complexity: 8200 }
+        }
+      ],
+      'complexity',
+      'desc'
+    );
+
+    expect(sorted.map((repo) => repo.name)).toEqual(['Public Gnarly', 'Public Simple']);
+  });
 
   it('uses deterministic name tie-breaker when sort metric values are equal', () => {
     const sorted = sortRepos(

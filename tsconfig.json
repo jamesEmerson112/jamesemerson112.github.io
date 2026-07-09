@@ -5,6 +5,7 @@
     "allowJs": true,
     "checkJs": false,
     "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "noEmit": true,
     "target": "ES2020"
   },
