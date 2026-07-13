@@ -1,6 +1,6 @@
 {
   "id": "private-4c711ac15ed9",
-  "scannedAt": "2026-07-01T04:30:08.336Z",
+  "scannedAt": "2026-07-13T05:43:06.213Z",
   "metadata": {
     "name": "Private Project 98",
     "fullName": null,
@@ -8,7 +8,7 @@
     "url": null,
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-06-01T21:57:47Z",
+    "lastUpdated": "2026-07-09T00:52:58Z",
     "createdAt": null,
     "stars": 0,
     "language": "TypeScript",
@@ -36,10 +36,10 @@
     },
     {
       "Name": "TypeScript",
-      "Bytes": 8382,
+      "Bytes": 8472,
       "CodeBytes": 0,
-      "Lines": 301,
-      "Code": 274,
+      "Lines": 305,
+      "Code": 278,
       "Comment": 9,
       "Blank": 18,
       "Complexity": 1,
@@ -81,10 +81,10 @@
     },
     {
       "Name": "JSON",
-      "Bytes": 1308,
+      "Bytes": 1343,
       "CodeBytes": 0,
-      "Lines": 63,
-      "Code": 63,
+      "Lines": 64,
+      "Code": 64,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
@@ -172,30 +172,30 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 1247,
-      "totalCode": 1030,
+      "totalLines": 1252,
+      "totalCode": 1035,
       "totalComments": 74,
       "totalBlanks": 143,
-      "totalBytes": 42203,
+      "totalBytes": 42328,
       "totalFiles": 43,
       "totalLanguages": 10,
       "totalComplexity": 3,
       "primaryLanguage": "TypeScript",
-      "primaryLanguagePercent": 26.6
+      "primaryLanguagePercent": 26.9
     },
     "languages": [
       {
         "name": "TypeScript",
-        "lines": 301,
-        "code": 274,
+        "lines": 305,
+        "code": 278,
         "comments": 9,
         "blanks": 18,
-        "bytes": 8382,
+        "bytes": 8472,
         "files": 9,
         "complexity": 1,
-        "percentOfLines": 24.1,
-        "percentOfCode": 26.6,
-        "percentOfBytes": 19.9
+        "percentOfLines": 24.4,
+        "percentOfCode": 26.9,
+        "percentOfBytes": 20
       },
       {
         "name": "CSS",
@@ -206,9 +206,9 @@
         "bytes": 6526,
         "files": 2,
         "complexity": 0,
-        "percentOfLines": 22.4,
-        "percentOfCode": 25.4,
-        "percentOfBytes": 15.5
+        "percentOfLines": 22.3,
+        "percentOfCode": 25.3,
+        "percentOfBytes": 15.4
       },
       {
         "name": "Python",
@@ -219,9 +219,9 @@
         "bytes": 7365,
         "files": 14,
         "complexity": 2,
-        "percentOfLines": 20.7,
+        "percentOfLines": 20.6,
         "percentOfCode": 15.1,
-        "percentOfBytes": 17.5
+        "percentOfBytes": 17.4
       },
       {
         "name": "Markdown",
@@ -233,7 +233,7 @@
         "files": 5,
         "complexity": 0,
         "percentOfLines": 9.9,
-        "percentOfCode": 8,
+        "percentOfCode": 7.9,
         "percentOfBytes": 15.8
       },
       {
@@ -245,8 +245,8 @@
         "bytes": 2582,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 6.3,
-        "percentOfCode": 7.4,
+        "percentOfLines": 6.2,
+        "percentOfCode": 7.3,
         "percentOfBytes": 6.1
       },
       {
@@ -258,22 +258,22 @@
         "bytes": 4415,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 7.5,
-        "percentOfCode": 7.3,
-        "percentOfBytes": 10.5
+        "percentOfLines": 7.4,
+        "percentOfCode": 7.2,
+        "percentOfBytes": 10.4
       },
       {
         "name": "JSON",
-        "lines": 63,
-        "code": 63,
+        "lines": 64,
+        "code": 64,
         "comments": 0,
         "blanks": 0,
-        "bytes": 1308,
+        "bytes": 1343,
         "files": 3,
         "complexity": 0,
         "percentOfLines": 5.1,
-        "percentOfCode": 6.1,
-        "percentOfBytes": 3.1
+        "percentOfCode": 6.2,
+        "percentOfBytes": 3.2
       },
       {
         "name": "JavaScript",
@@ -298,8 +298,8 @@
         "files": 1,
         "complexity": 0,
         "percentOfLines": 1.7,
-        "percentOfCode": 1.7,
-        "percentOfBytes": 2.6
+        "percentOfCode": 1.6,
+        "percentOfBytes": 2.5
       },
       {
         "name": "SVG",
@@ -312,7 +312,7 @@
         "complexity": 0,
         "percentOfLines": 0.4,
         "percentOfCode": 0.5,
-        "percentOfBytes": 7.9
+        "percentOfBytes": 7.8
       }
     ],
     "projectTags": [
@@ -327,11 +327,11 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 1.03,
-        "effort": 2.48,
+        "kloc": 1.035,
+        "effort": 2.49,
         "time": 3.53,
         "people": 0.7,
-        "cost": 11612,
+        "cost": 11671,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
@@ -341,7 +341,7 @@
         "effort": 0.63,
         "time": 2.1,
         "people": 0.3,
-        "cost": 2961,
+        "cost": 2976,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -361,17 +361,17 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 2.48,
-            "weeks": 10.7,
+            "months": 2.49,
+            "weeks": 10.8,
             "days": 54,
-            "cost": 11612,
+            "cost": 11671,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
             "months": 3.53,
-            "hoursPerWeek": 28.1,
-            "totalHours": 428,
-            "cost": 11612,
+            "hoursPerWeek": 28.2,
+            "totalHours": 430,
+            "cost": 11671,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
@@ -380,14 +380,14 @@
             "months": 0.63,
             "weeks": 2.7,
             "days": 14,
-            "cost": 2961,
+            "cost": 2976,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
             "months": 2.1,
-            "hoursPerWeek": 12,
-            "totalHours": 109,
-            "cost": 2961,
+            "hoursPerWeek": 12.1,
+            "totalHours": 110,
+            "cost": 2976,
             "description": "AI-assisted part-time development"
           }
         }
