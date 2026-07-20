@@ -1,0 +1,285 @@
+{
+  "id": "battlebot-hackersquad-simulation",
+  "scannedAt": "2026-07-20T05:45:14.170Z",
+  "metadata": {
+    "name": "BattleBot-HackerSquad-simulation",
+    "fullName": "jamesEmerson112/BattleBot-HackerSquad-simulation",
+    "description": "",
+    "url": "https://github.com/jamesEmerson112/BattleBot-HackerSquad-simulation",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-07-16T06:54:01Z",
+    "createdAt": "2026-07-16T01:57:52Z",
+    "stars": 0,
+    "language": "TypeScript",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/battlebot-hackersquad-simulation"
+  },
+  "sccRaw": [
+    {
+      "Name": "TypeScript",
+      "Bytes": 97623,
+      "CodeBytes": 0,
+      "Lines": 2827,
+      "Code": 2520,
+      "Comment": 0,
+      "Blank": 307,
+      "Complexity": 253,
+      "Count": 39,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 3824,
+      "CodeBytes": 0,
+      "Lines": 125,
+      "Code": 125,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 4,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 15196,
+      "CodeBytes": 0,
+      "Lines": 279,
+      "Code": 211,
+      "Comment": 0,
+      "Blank": 68,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 27995,
+      "CodeBytes": 0,
+      "Lines": 1586,
+      "Code": 1360,
+      "Comment": 0,
+      "Blank": 226,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 559,
+      "CodeBytes": 0,
+      "Lines": 17,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TypeScript Typings",
+      "Bytes": 38,
+      "CodeBytes": 0,
+      "Lines": 1,
+      "Code": 0,
+      "Comment": 1,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 4835,
+      "totalCode": 4233,
+      "totalComments": 1,
+      "totalBlanks": 601,
+      "totalBytes": 145235,
+      "totalFiles": 48,
+      "totalLanguages": 6,
+      "totalComplexity": 253,
+      "primaryLanguage": "TypeScript",
+      "primaryLanguagePercent": 59.5
+    },
+    "languages": [
+      {
+        "name": "TypeScript",
+        "lines": 2827,
+        "code": 2520,
+        "comments": 0,
+        "blanks": 307,
+        "bytes": 97623,
+        "files": 39,
+        "complexity": 253,
+        "percentOfLines": 58.5,
+        "percentOfCode": 59.5,
+        "percentOfBytes": 67.2
+      },
+      {
+        "name": "CSS",
+        "lines": 1586,
+        "code": 1360,
+        "comments": 0,
+        "blanks": 226,
+        "bytes": 27995,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 32.8,
+        "percentOfCode": 32.1,
+        "percentOfBytes": 19.3
+      },
+      {
+        "name": "Markdown",
+        "lines": 279,
+        "code": 211,
+        "comments": 0,
+        "blanks": 68,
+        "bytes": 15196,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 5.8,
+        "percentOfCode": 5,
+        "percentOfBytes": 10.5
+      },
+      {
+        "name": "JSON",
+        "lines": 125,
+        "code": 125,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 3824,
+        "files": 4,
+        "complexity": 0,
+        "percentOfLines": 2.6,
+        "percentOfCode": 3,
+        "percentOfBytes": 2.6
+      },
+      {
+        "name": "HTML",
+        "lines": 17,
+        "code": 17,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 559,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.4,
+        "percentOfCode": 0.4,
+        "percentOfBytes": 0.4
+      },
+      {
+        "name": "TypeScript Typings",
+        "lines": 1,
+        "code": 0,
+        "comments": 1,
+        "blanks": 0,
+        "bytes": 38,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0,
+        "percentOfCode": 0,
+        "percentOfBytes": 0
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.71
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.29
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 4.233,
+        "effort": 10.92,
+        "time": 6.2,
+        "people": 1.76,
+        "cost": 51217,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 2.78,
+        "time": 3.69,
+        "people": 0.75,
+        "cost": 13060,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 10.92,
+            "weeks": 47.3,
+            "days": 237,
+            "cost": 51217,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 6.2,
+            "hoursPerWeek": 70.4,
+            "totalHours": 1889,
+            "cost": 51217,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 2.78,
+            "weeks": 12.1,
+            "days": 60,
+            "cost": 13060,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 3.69,
+            "hoursPerWeek": 30.2,
+            "totalHours": 482,
+            "cost": 13060,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

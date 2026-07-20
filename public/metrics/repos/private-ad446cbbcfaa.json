@@ -1,0 +1,453 @@
+{
+  "id": "private-ad446cbbcfaa",
+  "scannedAt": "2026-07-20T05:45:06.312Z",
+  "metadata": {
+    "name": "Private Project 106",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-07-19T06:44:05Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:ad446cbbcfaae0f7"
+  },
+  "sccRaw": [
+    {
+      "Name": "Python",
+      "Bytes": 752557,
+      "CodeBytes": 0,
+      "Lines": 18029,
+      "Code": 13677,
+      "Comment": 2838,
+      "Blank": 1514,
+      "Complexity": 997,
+      "Count": 127,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 396661,
+      "CodeBytes": 0,
+      "Lines": 5565,
+      "Code": 4505,
+      "Comment": 0,
+      "Blank": 1060,
+      "Complexity": 0,
+      "Count": 55,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TypeScript",
+      "Bytes": 155151,
+      "CodeBytes": 0,
+      "Lines": 4229,
+      "Code": 3363,
+      "Comment": 440,
+      "Blank": 426,
+      "Complexity": 158,
+      "Count": 36,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 23612,
+      "CodeBytes": 0,
+      "Lines": 1030,
+      "Code": 1028,
+      "Comment": 0,
+      "Blank": 2,
+      "Complexity": 0,
+      "Count": 12,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "YAML",
+      "Bytes": 4499,
+      "CodeBytes": 0,
+      "Lines": 126,
+      "Code": 76,
+      "Comment": 44,
+      "Blank": 6,
+      "Complexity": 0,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 12179,
+      "CodeBytes": 0,
+      "Lines": 214,
+      "Code": 196,
+      "Comment": 4,
+      "Blank": 14,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 1446,
+      "CodeBytes": 0,
+      "Lines": 56,
+      "Code": 54,
+      "Comment": 0,
+      "Blank": 2,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "INI",
+      "Bytes": 991,
+      "CodeBytes": 0,
+      "Lines": 43,
+      "Code": 30,
+      "Comment": 5,
+      "Blank": 8,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 1106,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Mako",
+      "Bytes": 615,
+      "CodeBytes": 0,
+      "Lines": 26,
+      "Code": 18,
+      "Comment": 0,
+      "Blank": 8,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Shell",
+      "Bytes": 4853,
+      "CodeBytes": 0,
+      "Lines": 82,
+      "Code": 64,
+      "Comment": 13,
+      "Blank": 5,
+      "Complexity": 19,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TOML",
+      "Bytes": 2144,
+      "CodeBytes": 0,
+      "Lines": 78,
+      "Code": 59,
+      "Comment": 9,
+      "Blank": 10,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 29499,
+      "totalCode": 23087,
+      "totalComments": 3353,
+      "totalBlanks": 3059,
+      "totalBytes": 1355814,
+      "totalFiles": 241,
+      "totalLanguages": 12,
+      "totalComplexity": 1174,
+      "primaryLanguage": "Python",
+      "primaryLanguagePercent": 59.2
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "lines": 18029,
+        "code": 13677,
+        "comments": 2838,
+        "blanks": 1514,
+        "bytes": 752557,
+        "files": 127,
+        "complexity": 997,
+        "percentOfLines": 61.1,
+        "percentOfCode": 59.2,
+        "percentOfBytes": 55.5
+      },
+      {
+        "name": "Markdown",
+        "lines": 5565,
+        "code": 4505,
+        "comments": 0,
+        "blanks": 1060,
+        "bytes": 396661,
+        "files": 55,
+        "complexity": 0,
+        "percentOfLines": 18.9,
+        "percentOfCode": 19.5,
+        "percentOfBytes": 29.3
+      },
+      {
+        "name": "TypeScript",
+        "lines": 4229,
+        "code": 3363,
+        "comments": 440,
+        "blanks": 426,
+        "bytes": 155151,
+        "files": 36,
+        "complexity": 158,
+        "percentOfLines": 14.3,
+        "percentOfCode": 14.6,
+        "percentOfBytes": 11.4
+      },
+      {
+        "name": "JSON",
+        "lines": 1030,
+        "code": 1028,
+        "comments": 0,
+        "blanks": 2,
+        "bytes": 23612,
+        "files": 12,
+        "complexity": 0,
+        "percentOfLines": 3.5,
+        "percentOfCode": 4.5,
+        "percentOfBytes": 1.7
+      },
+      {
+        "name": "HTML",
+        "lines": 214,
+        "code": 196,
+        "comments": 4,
+        "blanks": 14,
+        "bytes": 12179,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 0.7,
+        "percentOfCode": 0.8,
+        "percentOfBytes": 0.9
+      },
+      {
+        "name": "YAML",
+        "lines": 126,
+        "code": 76,
+        "comments": 44,
+        "blanks": 6,
+        "bytes": 4499,
+        "files": 3,
+        "complexity": 0,
+        "percentOfLines": 0.4,
+        "percentOfCode": 0.3,
+        "percentOfBytes": 0.3
+      },
+      {
+        "name": "Shell",
+        "lines": 82,
+        "code": 64,
+        "comments": 13,
+        "blanks": 5,
+        "bytes": 4853,
+        "files": 1,
+        "complexity": 19,
+        "percentOfLines": 0.3,
+        "percentOfCode": 0.3,
+        "percentOfBytes": 0.4
+      },
+      {
+        "name": "TOML",
+        "lines": 78,
+        "code": 59,
+        "comments": 9,
+        "blanks": 10,
+        "bytes": 2144,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.3,
+        "percentOfCode": 0.3,
+        "percentOfBytes": 0.2
+      },
+      {
+        "name": "CSS",
+        "lines": 56,
+        "code": 54,
+        "comments": 0,
+        "blanks": 2,
+        "bytes": 1446,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "INI",
+        "lines": 43,
+        "code": 30,
+        "comments": 5,
+        "blanks": 8,
+        "bytes": 991,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "Mako",
+        "lines": 26,
+        "code": 18,
+        "comments": 0,
+        "blanks": 8,
+        "bytes": 615,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0
+      },
+      {
+        "name": "License",
+        "lines": 21,
+        "code": 17,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1106,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.1
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 23.087,
+        "effort": 64.83,
+        "time": 12.2,
+        "people": 5.31,
+        "cost": 304065,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 16.53,
+        "time": 7.26,
+        "people": 2.28,
+        "cost": 77537,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 64.83,
+            "weeks": 280.7,
+            "days": 1407,
+            "cost": 304065,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 12.2,
+            "hoursPerWeek": 212.5,
+            "totalHours": 11215,
+            "cost": 304065,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 16.53,
+            "weeks": 71.6,
+            "days": 359,
+            "cost": 77537,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 7.26,
+            "hoursPerWeek": 91.1,
+            "totalHours": 2860,
+            "cost": 77537,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}
