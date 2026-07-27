@@ -1,6 +1,6 @@
 {
   "id": "private-a63c7751e1b6",
-  "scannedAt": "2026-07-20T05:45:05.614Z",
+  "scannedAt": "2026-07-27T05:55:32.090Z",
   "metadata": {
     "name": "Private Project 57",
     "fullName": null,
@@ -8,7 +8,7 @@
     "url": null,
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-07-19T18:45:09Z",
+    "lastUpdated": "2026-07-22T14:38:59Z",
     "createdAt": null,
     "stars": 0,
     "language": "Shell",
@@ -21,12 +21,12 @@
   "sccRaw": [
     {
       "Name": "Markdown",
-      "Bytes": 215489,
+      "Bytes": 215650,
       "CodeBytes": 0,
-      "Lines": 2899,
-      "Code": 2236,
+      "Lines": 2901,
+      "Code": 2237,
       "Comment": 0,
-      "Blank": 663,
+      "Blank": 664,
       "Complexity": 0,
       "Count": 31,
       "WeightedComplexity": 0,
@@ -67,11 +67,11 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 2998,
-      "totalCode": 2316,
+      "totalLines": 3000,
+      "totalCode": 2317,
       "totalComments": 7,
-      "totalBlanks": 675,
-      "totalBytes": 217897,
+      "totalBlanks": 676,
+      "totalBytes": 218058,
       "totalFiles": 34,
       "totalLanguages": 3,
       "totalComplexity": 8,
@@ -81,11 +81,11 @@
     "languages": [
       {
         "name": "Markdown",
-        "lines": 2899,
-        "code": 2236,
+        "lines": 2901,
+        "code": 2237,
         "comments": 0,
-        "blanks": 663,
-        "bytes": 215489,
+        "blanks": 664,
+        "bytes": 215650,
         "files": 31,
         "complexity": 0,
         "percentOfLines": 96.7,
@@ -131,11 +131,11 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 2.316,
+        "kloc": 2.317,
         "effort": 5.8,
-        "time": 4.87,
+        "time": 4.88,
         "people": 1.19,
-        "cost": 27190,
+        "cost": 27202,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
@@ -145,7 +145,7 @@
         "effort": 1.48,
         "time": 2.9,
         "people": 0.51,
-        "cost": 6933,
+        "cost": 6937,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -157,7 +157,7 @@
         }
       },
       "comparison": {
-        "effortReduction": "74%",
+        "effortReduction": "75%",
         "timeReduction": "41%",
         "costReduction": "75%",
         "speedup": "3.9x"
@@ -168,14 +168,14 @@
             "months": 5.8,
             "weeks": 25.1,
             "days": 126,
-            "cost": 27190,
+            "cost": 27202,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 4.87,
+            "months": 4.88,
             "hoursPerWeek": 47.6,
             "totalHours": 1003,
-            "cost": 27190,
+            "cost": 27202,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
@@ -184,14 +184,14 @@
             "months": 1.48,
             "weeks": 6.4,
             "days": 32,
-            "cost": 6933,
+            "cost": 6937,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
             "months": 2.9,
             "hoursPerWeek": 20.4,
             "totalHours": 256,
-            "cost": 6933,
+            "cost": 6937,
             "description": "AI-assisted part-time development"
           }
         }
