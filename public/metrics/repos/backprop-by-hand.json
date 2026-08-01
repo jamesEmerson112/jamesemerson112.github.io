@@ -1,6 +1,6 @@
 {
   "id": "backprop-by-hand",
-  "scannedAt": "2026-07-27T05:55:29.787Z",
+  "scannedAt": "2026-08-01T04:06:38.949Z",
   "metadata": {
     "name": "backprop-by-hand",
     "fullName": "jamesEmerson112/backprop-by-hand",
@@ -17,9 +17,9 @@
       "rust",
       "transformers"
     ],
-    "lastUpdated": "2026-07-26T15:21:59Z",
+    "lastUpdated": "2026-07-30T01:40:55Z",
     "createdAt": "2026-07-26T07:55:46Z",
-    "stars": 1,
+    "stars": 0,
     "language": "Rust",
     "isPrivate": false,
     "isFork": false,
