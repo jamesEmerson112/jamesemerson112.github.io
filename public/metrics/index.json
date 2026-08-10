@@ -1,54 +1,68 @@
 {
   "version": "1.1.0",
-  "generatedAt": "2026-08-03T05:48:01.059Z",
+  "generatedAt": "2026-08-10T04:00:49.083Z",
   "lastFullScan": "2026-08-01T04:08:42.577Z",
-  "lastIncrementalScan": "2026-08-03T05:48:01.059Z",
-  "reposScannedThisRun": 1,
-  "reposReusedThisRun": 225,
+  "lastIncrementalScan": "2026-08-10T04:00:49.083Z",
+  "reposScannedThisRun": 3,
+  "reposReusedThisRun": 223,
   "totalPublicRepos": 117,
   "totalPrivateRepos": 109,
   "totalRepos": 226,
   "portfolioTotals": {
-    "totalLines": 3363522,
-    "totalCode": 2921002,
-    "totalComments": 188580,
-    "totalBlanks": 253940,
-    "totalFiles": 11172,
-    "totalBytes": 297583106,
-    "totalComplexity": 128592,
+    "totalLines": 3394677,
+    "totalCode": 2946559,
+    "totalComments": 190641,
+    "totalBlanks": 257477,
+    "totalFiles": 11323,
+    "totalBytes": 299216252,
+    "totalComplexity": 129536,
     "estimatedValue": {
-      "standardCost": 41770846,
-      "totalEffort": 8905.42,
-      "avgTime": 39.4,
+      "standardCost": 42122803,
+      "totalEffort": 8980.46,
+      "avgTime": 39.74,
       "avgPeople": 0
     },
     "soloDeveloper": {
-      "fullTimeMonths": 8905.42,
-      "fullTimeYears": 742,
-      "fullTimeWeeks": 38560,
+      "fullTimeMonths": 8980.46,
+      "fullTimeYears": 748,
+      "fullTimeWeeks": 38885,
       "description": "Total time if developed alone, full-time"
     },
     "languages": {
+      "Plain Text": {
+        "repos": 84,
+        "totalLines": 872188,
+        "totalCode": 865371,
+        "percentOfTotal": 25.7,
+        "averagePerRepo": 10383
+      },
+      "C": {
+        "repos": 12,
+        "totalLines": 105077,
+        "totalCode": 79066,
+        "percentOfTotal": 3.1,
+        "averagePerRepo": 8756
+      },
+      "Python": {
+        "repos": 83,
+        "totalLines": 305190,
+        "totalCode": 232783,
+        "percentOfTotal": 9,
+        "averagePerRepo": 3677
+      },
+      "Markdown": {
+        "repos": 212,
+        "totalLines": 360321,
+        "totalCode": 271155,
+        "percentOfTotal": 10.6,
+        "averagePerRepo": 1700
+      },
       "JSON": {
-        "repos": 122,
-        "totalLines": 290438,
-        "totalCode": 290330,
+        "repos": 123,
+        "totalLines": 290925,
+        "totalCode": 290817,
         "percentOfTotal": 8.6,
-        "averagePerRepo": 2381
-      },
-      "JavaScript": {
-        "repos": 97,
-        "totalLines": 409522,
-        "totalCode": 303699,
-        "percentOfTotal": 12.2,
-        "averagePerRepo": 4222
-      },
-      "Svelte": {
-        "repos": 3,
-        "totalLines": 4697,
-        "totalCode": 4088,
-        "percentOfTotal": 0.1,
-        "averagePerRepo": 1566
+        "averagePerRepo": 2365
       },
       "TypeScript": {
         "repos": 41,
@@ -57,47 +71,12 @@
         "percentOfTotal": 3.6,
         "averagePerRepo": 2992
       },
-      "Markdown": {
-        "repos": 211,
-        "totalLines": 352498,
-        "totalCode": 265027,
-        "percentOfTotal": 10.5,
-        "averagePerRepo": 1671
-      },
-      "CSS": {
-        "repos": 93,
-        "totalLines": 33451,
-        "totalCode": 28299,
-        "percentOfTotal": 1,
-        "averagePerRepo": 360
-      },
-      "HTML": {
-        "repos": 92,
-        "totalLines": 60590,
-        "totalCode": 53562,
-        "percentOfTotal": 1.8,
-        "averagePerRepo": 659
-      },
-      "YAML": {
-        "repos": 35,
-        "totalLines": 8821,
-        "totalCode": 8027,
-        "percentOfTotal": 0.3,
-        "averagePerRepo": 252
-      },
-      "XML": {
-        "repos": 4,
-        "totalLines": 462,
-        "totalCode": 386,
+      "LaTeX": {
+        "repos": 1,
+        "totalLines": 737,
+        "totalCode": 520,
         "percentOfTotal": 0,
-        "averagePerRepo": 116
-      },
-      "License": {
-        "repos": 97,
-        "totalLines": 14934,
-        "totalCode": 12077,
-        "percentOfTotal": 0.4,
-        "averagePerRepo": 154
+        "averagePerRepo": 737
       },
       "SVG": {
         "repos": 44,
@@ -106,33 +85,103 @@
         "percentOfTotal": 0.1,
         "averagePerRepo": 49
       },
-      "Plain Text": {
-        "repos": 83,
-        "totalLines": 863622,
-        "totalCode": 857460,
-        "percentOfTotal": 25.7,
-        "averagePerRepo": 10405
+      "CSS": {
+        "repos": 93,
+        "totalLines": 33451,
+        "totalCode": 28299,
+        "percentOfTotal": 1,
+        "averagePerRepo": 360
+      },
+      "TOML": {
+        "repos": 24,
+        "totalLines": 1534,
+        "totalCode": 952,
+        "percentOfTotal": 0,
+        "averagePerRepo": 64
+      },
+      "Shell": {
+        "repos": 24,
+        "totalLines": 9195,
+        "totalCode": 6215,
+        "percentOfTotal": 0.3,
+        "averagePerRepo": 383
+      },
+      "JavaScript": {
+        "repos": 97,
+        "totalLines": 409522,
+        "totalCode": 303699,
+        "percentOfTotal": 12.1,
+        "averagePerRepo": 4222
+      },
+      "YAML": {
+        "repos": 35,
+        "totalLines": 8821,
+        "totalCode": 8027,
+        "percentOfTotal": 0.3,
+        "averagePerRepo": 252
+      },
+      "License": {
+        "repos": 97,
+        "totalLines": 14934,
+        "totalCode": 12077,
+        "percentOfTotal": 0.4,
+        "averagePerRepo": 154
+      },
+      "HTML": {
+        "repos": 93,
+        "totalLines": 61268,
+        "totalCode": 54175,
+        "percentOfTotal": 1.8,
+        "averagePerRepo": 659
+      },
+      "Makefile": {
+        "repos": 16,
+        "totalLines": 1923,
+        "totalCode": 1267,
+        "percentOfTotal": 0.1,
+        "averagePerRepo": 120
+      },
+      "CSV": {
+        "repos": 14,
+        "totalLines": 90172,
+        "totalCode": 85666,
+        "percentOfTotal": 2.7,
+        "averagePerRepo": 6441
+      },
+      "JSONL": {
+        "repos": 1,
+        "totalLines": 17,
+        "totalCode": 16,
+        "percentOfTotal": 0,
+        "averagePerRepo": 17
+      },
+      "Svelte": {
+        "repos": 3,
+        "totalLines": 4697,
+        "totalCode": 4088,
+        "percentOfTotal": 0.1,
+        "averagePerRepo": 1566
+      },
+      "XML": {
+        "repos": 4,
+        "totalLines": 462,
+        "totalCode": 386,
+        "percentOfTotal": 0,
+        "averagePerRepo": 116
       },
       "TypeScript Typings": {
         "repos": 18,
         "totalLines": 52290,
         "totalCode": 18295,
-        "percentOfTotal": 1.6,
+        "percentOfTotal": 1.5,
         "averagePerRepo": 2905
       },
       "Rust": {
         "repos": 11,
         "totalLines": 45443,
         "totalCode": 35745,
-        "percentOfTotal": 1.4,
+        "percentOfTotal": 1.3,
         "averagePerRepo": 4131
-      },
-      "Python": {
-        "repos": 82,
-        "totalLines": 291914,
-        "totalCode": 222616,
-        "percentOfTotal": 8.7,
-        "averagePerRepo": 3560
       },
       "SQL": {
         "repos": 9,
@@ -140,13 +189,6 @@
         "totalCode": 2123,
         "percentOfTotal": 0.1,
         "averagePerRepo": 331
-      },
-      "TOML": {
-        "repos": 23,
-        "totalLines": 1468,
-        "totalCode": 910,
-        "percentOfTotal": 0,
-        "averagePerRepo": 64
       },
       "Dockerfile": {
         "repos": 11,
@@ -161,13 +203,6 @@
         "totalCode": 126,
         "percentOfTotal": 0,
         "averagePerRepo": 36
-      },
-      "Shell": {
-        "repos": 23,
-        "totalLines": 9134,
-        "totalCode": 6180,
-        "percentOfTotal": 0.3,
-        "averagePerRepo": 397
       },
       "Go": {
         "repos": 3,
@@ -194,7 +229,7 @@
         "repos": 9,
         "totalLines": 42092,
         "totalCode": 42092,
-        "percentOfTotal": 1.3,
+        "percentOfTotal": 1.2,
         "averagePerRepo": 4677
       },
       "Powershell": {
@@ -211,40 +246,12 @@
         "percentOfTotal": 0,
         "averagePerRepo": 81
       },
-      "CSV": {
-        "repos": 13,
-        "totalLines": 90137,
-        "totalCode": 85634,
-        "percentOfTotal": 2.7,
-        "averagePerRepo": 6934
-      },
-      "Makefile": {
-        "repos": 15,
-        "totalLines": 1777,
-        "totalCode": 1141,
-        "percentOfTotal": 0.1,
-        "averagePerRepo": 118
-      },
       "R": {
         "repos": 1,
         "totalLines": 73,
         "totalCode": 51,
         "percentOfTotal": 0,
         "averagePerRepo": 73
-      },
-      "C": {
-        "repos": 12,
-        "totalLines": 105077,
-        "totalCode": 79066,
-        "percentOfTotal": 3.1,
-        "averagePerRepo": 8756
-      },
-      "TeX": {
-        "repos": 2,
-        "totalLines": 2328,
-        "totalCode": 1730,
-        "percentOfTotal": 0.1,
-        "averagePerRepo": 1164
       },
       "Autoconf": {
         "repos": 2,
@@ -278,7 +285,7 @@
         "repos": 16,
         "totalLines": 449501,
         "totalCode": 420587,
-        "percentOfTotal": 13.4,
+        "percentOfTotal": 13.2,
         "averagePerRepo": 28094
       },
       "C++": {
@@ -301,6 +308,13 @@
         "totalCode": 15168,
         "percentOfTotal": 0.6,
         "averagePerRepo": 10572
+      },
+      "TeX": {
+        "repos": 1,
+        "totalLines": 1591,
+        "totalCode": 1210,
+        "percentOfTotal": 0,
+        "averagePerRepo": 1591
       },
       "Gradle": {
         "repos": 2,
@@ -481,12 +495,392 @@
   },
   "repos": [
     {
+      "id": "ai-cds-disease-diagnosis-reproduction-alpha",
+      "sourceRef": "public:jamesemerson112/ai-cds-disease-diagnosis-reproduction-alpha",
+      "name": "AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
+      "url": "https://github.com/jamesEmerson112/AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
+      "description": "",
+      "lastUpdated": "2026-08-08T19:51:14Z",
+      "primaryLanguage": "Plain Text",
+      "isPrivate": false,
+      "isAnonymized": false,
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.73
+        },
+        {
+          "label": "Data",
+          "confidence": 0.27
+        }
+      ],
+      "languages": [
+        {
+          "name": "Plain Text",
+          "lines": 33401,
+          "code": 30715,
+          "comments": 0,
+          "blanks": 2686,
+          "bytes": 2337751,
+          "files": 37,
+          "complexity": 0,
+          "percentOfLines": 44.1,
+          "percentOfCode": 48.4,
+          "percentOfBytes": 55.2
+        },
+        {
+          "name": "C",
+          "lines": 19321,
+          "code": 14561,
+          "comments": 3904,
+          "blanks": 856,
+          "bytes": 840239,
+          "files": 1,
+          "complexity": 3662,
+          "percentOfLines": 25.5,
+          "percentOfCode": 23,
+          "percentOfBytes": 19.8
+        },
+        {
+          "name": "Python",
+          "lines": 11492,
+          "code": 8799,
+          "comments": 1632,
+          "blanks": 1061,
+          "bytes": 480436,
+          "files": 49,
+          "complexity": 753,
+          "percentOfLines": 15.2,
+          "percentOfCode": 13.9,
+          "percentOfBytes": 11.3
+        },
+        {
+          "name": "Markdown",
+          "lines": 8016,
+          "code": 6264,
+          "comments": 0,
+          "blanks": 1752,
+          "bytes": 446346,
+          "files": 33,
+          "complexity": 0,
+          "percentOfLines": 10.6,
+          "percentOfCode": 9.9,
+          "percentOfBytes": 10.5
+        },
+        {
+          "name": "JSON",
+          "lines": 1089,
+          "code": 1085,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 23707,
+          "files": 6,
+          "complexity": 0,
+          "percentOfLines": 1.4,
+          "percentOfCode": 1.7,
+          "percentOfBytes": 0.6
+        },
+        {
+          "name": "TypeScript",
+          "lines": 1117,
+          "code": 984,
+          "comments": 20,
+          "blanks": 113,
+          "bytes": 39037,
+          "files": 17,
+          "complexity": 51,
+          "percentOfLines": 1.5,
+          "percentOfCode": 1.6,
+          "percentOfBytes": 0.9
+        },
+        {
+          "name": "LaTeX",
+          "lines": 737,
+          "code": 520,
+          "comments": 0,
+          "blanks": 217,
+          "bytes": 27738,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 1,
+          "percentOfCode": 0.8,
+          "percentOfBytes": 0.7
+        },
+        {
+          "name": "SVG",
+          "lines": 317,
+          "code": 317,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 29841,
+          "files": 8,
+          "complexity": 0,
+          "percentOfLines": 0.4,
+          "percentOfCode": 0.5,
+          "percentOfBytes": 0.7
+        },
+        {
+          "name": "CSS",
+          "lines": 62,
+          "code": 55,
+          "comments": 0,
+          "blanks": 7,
+          "bytes": 967,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "TOML",
+          "lines": 67,
+          "code": 43,
+          "comments": 20,
+          "blanks": 4,
+          "bytes": 2389,
+          "files": 1,
+          "complexity": 1,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0.1
+        },
+        {
+          "name": "Shell",
+          "lines": 61,
+          "code": 35,
+          "comments": 22,
+          "blanks": 4,
+          "bytes": 3068,
+          "files": 1,
+          "complexity": 8,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0.1
+        },
+        {
+          "name": "JavaScript",
+          "lines": 23,
+          "code": 22,
+          "comments": 0,
+          "blanks": 1,
+          "bytes": 616,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "YAML",
+          "lines": 23,
+          "code": 21,
+          "comments": 2,
+          "blanks": 0,
+          "bytes": 512,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "License",
+          "lines": 21,
+          "code": 17,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 1072,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        }
+      ],
+      "summary": {
+        "lines": 75747,
+        "code": 63438,
+        "files": 159,
+        "complexity": 4475,
+        "traditionalCost": 878815,
+        "aiCost": 224098,
+        "traditionalMonths": 187.36,
+        "aiMonths": 47.78
+      },
+      "detailsFile": "repos/ai-cds-disease-diagnosis-reproduction-alpha.json"
+    },
+    {
+      "id": "private-57452843da5a",
+      "sourceRef": "private:57452843da5a0ec3",
+      "name": "Private Project 109",
+      "url": null,
+      "description": "Private repository",
+      "lastUpdated": "2026-08-03T07:06:52Z",
+      "primaryLanguage": "Python",
+      "isPrivate": true,
+      "isAnonymized": true,
+      "projectTags": [
+        {
+          "label": "AI/ML",
+          "confidence": 0.6
+        },
+        {
+          "label": "Data",
+          "confidence": 0.4
+        }
+      ],
+      "languages": [
+        {
+          "name": "Python",
+          "lines": 6284,
+          "code": 4907,
+          "comments": 804,
+          "blanks": 573,
+          "bytes": 260297,
+          "files": 24,
+          "complexity": 552,
+          "percentOfLines": 53.6,
+          "percentOfCode": 52.8,
+          "percentOfBytes": 48.7
+        },
+        {
+          "name": "Markdown",
+          "lines": 2574,
+          "code": 2012,
+          "comments": 0,
+          "blanks": 562,
+          "bytes": 167401,
+          "files": 36,
+          "complexity": 0,
+          "percentOfLines": 22,
+          "percentOfCode": 21.7,
+          "percentOfBytes": 31.3
+        },
+        {
+          "name": "Plain Text",
+          "lines": 1457,
+          "code": 1062,
+          "comments": 0,
+          "blanks": 395,
+          "bytes": 48004,
+          "files": 11,
+          "complexity": 0,
+          "percentOfLines": 12.4,
+          "percentOfCode": 11.4,
+          "percentOfBytes": 9
+        },
+        {
+          "name": "HTML",
+          "lines": 678,
+          "code": 613,
+          "comments": 0,
+          "blanks": 65,
+          "bytes": 26661,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 5.8,
+          "percentOfCode": 6.6,
+          "percentOfBytes": 5
+        },
+        {
+          "name": "JSON",
+          "lines": 485,
+          "code": 485,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 16521,
+          "files": 15,
+          "complexity": 0,
+          "percentOfLines": 4.1,
+          "percentOfCode": 5.2,
+          "percentOfBytes": 3.1
+        },
+        {
+          "name": "Makefile",
+          "lines": 146,
+          "code": 126,
+          "comments": 0,
+          "blanks": 20,
+          "bytes": 5620,
+          "files": 1,
+          "complexity": 37,
+          "percentOfLines": 1.2,
+          "percentOfCode": 1.4,
+          "percentOfBytes": 1.1
+        },
+        {
+          "name": "CSV",
+          "lines": 35,
+          "code": 32,
+          "comments": 0,
+          "blanks": 3,
+          "bytes": 3404,
+          "files": 4,
+          "complexity": 0,
+          "percentOfLines": 0.3,
+          "percentOfCode": 0.3,
+          "percentOfBytes": 0.6
+        },
+        {
+          "name": "TOML",
+          "lines": 21,
+          "code": 18,
+          "comments": 1,
+          "blanks": 2,
+          "bytes": 670,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.2,
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0.1
+        },
+        {
+          "name": "License",
+          "lines": 21,
+          "code": 17,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 1072,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.2,
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0.2
+        },
+        {
+          "name": "JSONL",
+          "lines": 17,
+          "code": 16,
+          "comments": 0,
+          "blanks": 1,
+          "bytes": 4967,
+          "files": 3,
+          "complexity": 0,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0.9
+        }
+      ],
+      "summary": {
+        "lines": 11718,
+        "code": 9288,
+        "files": 97,
+        "complexity": 589,
+        "traditionalCost": 116882,
+        "aiCost": 29805,
+        "traditionalMonths": 24.92,
+        "aiMonths": 6.35
+      },
+      "detailsFile": "repos/private-57452843da5a.json"
+    },
+    {
       "id": "jamesemerson112-github-io",
       "sourceRef": "public:jamesemerson112/jamesemerson112.github.io",
       "name": "jamesemerson112.github.io",
       "url": "https://github.com/jamesEmerson112/jamesemerson112.github.io",
       "description": "James Emerson Vo's personal portfolio",
-      "lastUpdated": "2026-08-01T04:08:53Z",
+      "lastUpdated": "2026-08-03T05:49:11Z",
       "primaryLanguage": "JSON",
       "isPrivate": false,
       "isAnonymized": false,
@@ -507,7 +901,7 @@
           "code": 85789,
           "comments": 0,
           "blanks": 0,
-          "bytes": 2032180,
+          "bytes": 2032185,
           "files": 232,
           "complexity": 0,
           "percentOfLines": 87.8,
@@ -682,44 +1076,6 @@
         "aiMonths": 73.66
       },
       "detailsFile": "repos/jamesemerson112-github-io.json"
-    },
-    {
-      "id": "private-57452843da5a",
-      "sourceRef": "private:57452843da5a0ec3",
-      "name": "Private Project 109",
-      "url": null,
-      "description": "Private repository",
-      "lastUpdated": "2026-07-31T20:11:52Z",
-      "primaryLanguage": "License",
-      "isPrivate": true,
-      "isAnonymized": true,
-      "projectTags": [],
-      "languages": [
-        {
-          "name": "License",
-          "lines": 21,
-          "code": 17,
-          "comments": 0,
-          "blanks": 4,
-          "bytes": 1072,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 100,
-          "percentOfCode": 100,
-          "percentOfBytes": 100
-        }
-      ],
-      "summary": {
-        "lines": 21,
-        "code": 17,
-        "files": 1,
-        "complexity": 0,
-        "traditionalCost": 156,
-        "aiCost": 40,
-        "traditionalMonths": 0.03,
-        "aiMonths": 0.01
-      },
-      "detailsFile": "repos/private-57452843da5a.json"
     },
     {
       "id": "private-4c711ac15ed9",
@@ -5929,209 +6285,6 @@
         "aiMonths": 0.04
       },
       "detailsFile": "repos/private-34e2aa74c09f.json"
-    },
-    {
-      "id": "ai-cds-disease-diagnosis-reproduction-alpha",
-      "sourceRef": "public:jamesemerson112/ai-cds-disease-diagnosis-reproduction-alpha",
-      "name": "AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
-      "url": "https://github.com/jamesEmerson112/AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
-      "description": "",
-      "lastUpdated": "2026-03-05T06:11:33Z",
-      "primaryLanguage": "Plain Text",
-      "isPrivate": false,
-      "isAnonymized": false,
-      "projectTags": [
-        {
-          "label": "AI/ML",
-          "confidence": 0.79
-        },
-        {
-          "label": "Data",
-          "confidence": 0.21
-        }
-      ],
-      "languages": [
-        {
-          "name": "Plain Text",
-          "lines": 26292,
-          "code": 23866,
-          "comments": 0,
-          "blanks": 2426,
-          "bytes": 1890473,
-          "files": 35,
-          "complexity": 0,
-          "percentOfLines": 46.7,
-          "percentOfCode": 50.6,
-          "percentOfBytes": 60.3
-        },
-        {
-          "name": "C",
-          "lines": 19321,
-          "code": 14561,
-          "comments": 3904,
-          "blanks": 856,
-          "bytes": 840239,
-          "files": 1,
-          "complexity": 3662,
-          "percentOfLines": 34.3,
-          "percentOfCode": 30.9,
-          "percentOfBytes": 26.8
-        },
-        {
-          "name": "Python",
-          "lines": 4500,
-          "code": 3539,
-          "comments": 418,
-          "blanks": 543,
-          "bytes": 177113,
-          "files": 19,
-          "complexity": 380,
-          "percentOfLines": 8,
-          "percentOfCode": 7.5,
-          "percentOfBytes": 5.7
-        },
-        {
-          "name": "Markdown",
-          "lines": 2767,
-          "code": 2148,
-          "comments": 0,
-          "blanks": 619,
-          "bytes": 102430,
-          "files": 11,
-          "complexity": 0,
-          "percentOfLines": 4.9,
-          "percentOfCode": 4.6,
-          "percentOfBytes": 3.3
-        },
-        {
-          "name": "JSON",
-          "lines": 1087,
-          "code": 1083,
-          "comments": 0,
-          "blanks": 4,
-          "bytes": 23621,
-          "files": 6,
-          "complexity": 0,
-          "percentOfLines": 1.9,
-          "percentOfCode": 2.3,
-          "percentOfBytes": 0.8
-        },
-        {
-          "name": "TypeScript",
-          "lines": 1117,
-          "code": 984,
-          "comments": 20,
-          "blanks": 113,
-          "bytes": 39037,
-          "files": 17,
-          "complexity": 51,
-          "percentOfLines": 2,
-          "percentOfCode": 2.1,
-          "percentOfBytes": 1.2
-        },
-        {
-          "name": "TeX",
-          "lines": 737,
-          "code": 520,
-          "comments": 0,
-          "blanks": 217,
-          "bytes": 27738,
-          "files": 1,
-          "complexity": 26,
-          "percentOfLines": 1.3,
-          "percentOfCode": 1.1,
-          "percentOfBytes": 0.9
-        },
-        {
-          "name": "SVG",
-          "lines": 317,
-          "code": 317,
-          "comments": 0,
-          "blanks": 0,
-          "bytes": 29841,
-          "files": 8,
-          "complexity": 0,
-          "percentOfLines": 0.6,
-          "percentOfCode": 0.7,
-          "percentOfBytes": 1
-        },
-        {
-          "name": "CSS",
-          "lines": 62,
-          "code": 55,
-          "comments": 0,
-          "blanks": 7,
-          "bytes": 967,
-          "files": 2,
-          "complexity": 0,
-          "percentOfLines": 0.1,
-          "percentOfCode": 0.1,
-          "percentOfBytes": 0
-        },
-        {
-          "name": "JavaScript",
-          "lines": 23,
-          "code": 22,
-          "comments": 0,
-          "blanks": 1,
-          "bytes": 616,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        },
-        {
-          "name": "YAML",
-          "lines": 23,
-          "code": 21,
-          "comments": 2,
-          "blanks": 0,
-          "bytes": 512,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        },
-        {
-          "name": "TOML",
-          "lines": 22,
-          "code": 19,
-          "comments": 0,
-          "blanks": 3,
-          "bytes": 464,
-          "files": 1,
-          "complexity": 1,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        },
-        {
-          "name": "License",
-          "lines": 21,
-          "code": 17,
-          "comments": 0,
-          "blanks": 4,
-          "bytes": 1072,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        }
-      ],
-      "summary": {
-        "lines": 56289,
-        "code": 47152,
-        "files": 104,
-        "complexity": 4120,
-        "traditionalCost": 643584,
-        "aiCost": 164114,
-        "traditionalMonths": 137.21,
-        "aiMonths": 34.99
-      },
-      "detailsFile": "repos/ai-cds-disease-diagnosis-reproduction-alpha.json"
     },
     {
       "id": "private-e8bd5c7fd7c5",
