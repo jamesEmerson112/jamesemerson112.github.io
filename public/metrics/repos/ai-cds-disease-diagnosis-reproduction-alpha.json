@@ -1,6 +1,6 @@
 {
   "id": "ai-cds-disease-diagnosis-reproduction-alpha",
-  "scannedAt": "2026-08-10T04:00:45.928Z",
+  "scannedAt": "2026-08-17T03:04:48.533Z",
   "metadata": {
     "name": "AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
     "fullName": "jamesEmerson112/AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-08-08T19:51:14Z",
+    "lastUpdated": "2026-08-12T09:41:45Z",
     "createdAt": "2025-12-31T17:38:50Z",
     "stars": 1,
     "language": "Python",
@@ -21,14 +21,14 @@
   "sccRaw": [
     {
       "Name": "Python",
-      "Bytes": 480436,
+      "Bytes": 829883,
       "CodeBytes": 0,
-      "Lines": 11492,
-      "Code": 8799,
-      "Comment": 1632,
-      "Blank": 1061,
-      "Complexity": 753,
-      "Count": 49,
+      "Lines": 18811,
+      "Code": 14708,
+      "Comment": 2837,
+      "Blank": 1266,
+      "Complexity": 1056,
+      "Count": 56,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -36,14 +36,14 @@
     },
     {
       "Name": "Plain Text",
-      "Bytes": 2337751,
+      "Bytes": 2813760,
       "CodeBytes": 0,
-      "Lines": 33401,
-      "Code": 30715,
+      "Lines": 41202,
+      "Code": 38366,
       "Comment": 0,
-      "Blank": 2686,
+      "Blank": 2836,
       "Complexity": 0,
-      "Count": 37,
+      "Count": 38,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -51,14 +51,14 @@
     },
     {
       "Name": "Markdown",
-      "Bytes": 446346,
+      "Bytes": 575596,
       "CodeBytes": 0,
-      "Lines": 8016,
-      "Code": 6264,
+      "Lines": 9276,
+      "Code": 7388,
       "Comment": 0,
-      "Blank": 1752,
+      "Blank": 1888,
       "Complexity": 0,
-      "Count": 33,
+      "Count": 35,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -66,11 +66,11 @@
     },
     {
       "Name": "TypeScript",
-      "Bytes": 39037,
+      "Bytes": 39307,
       "CodeBytes": 0,
-      "Lines": 1117,
-      "Code": 984,
-      "Comment": 20,
+      "Lines": 1123,
+      "Code": 985,
+      "Comment": 25,
       "Blank": 113,
       "Complexity": 51,
       "Count": 17,
@@ -81,7 +81,7 @@
     },
     {
       "Name": "SVG",
-      "Bytes": 29841,
+      "Bytes": 29855,
       "CodeBytes": 0,
       "Lines": 317,
       "Code": 317,
@@ -96,10 +96,10 @@
     },
     {
       "Name": "JSON",
-      "Bytes": 23707,
+      "Bytes": 23865,
       "CodeBytes": 0,
-      "Lines": 1089,
-      "Code": 1085,
+      "Lines": 1096,
+      "Code": 1092,
       "Comment": 0,
       "Blank": 4,
       "Complexity": 0,
@@ -155,21 +155,6 @@
       "ULOC": 0
     },
     {
-      "Name": "LaTeX",
-      "Bytes": 27738,
-      "CodeBytes": 0,
-      "Lines": 737,
-      "Code": 520,
-      "Comment": 0,
-      "Blank": 217,
-      "Complexity": 0,
-      "Count": 1,
-      "WeightedComplexity": 0,
-      "Files": [],
-      "LineLength": null,
-      "ULOC": 0
-    },
-    {
       "Name": "License",
       "Bytes": 1072,
       "CodeBytes": 0,
@@ -201,11 +186,11 @@
     },
     {
       "Name": "TOML",
-      "Bytes": 2389,
+      "Bytes": 3089,
       "CodeBytes": 0,
-      "Lines": 67,
+      "Lines": 76,
       "Code": 43,
-      "Comment": 20,
+      "Comment": 29,
       "Blank": 4,
       "Complexity": 1,
       "Count": 1,
@@ -215,12 +200,27 @@
       "ULOC": 0
     },
     {
-      "Name": "YAML",
-      "Bytes": 512,
+      "Name": "TeX",
+      "Bytes": 27738,
       "CodeBytes": 0,
-      "Lines": 23,
+      "Lines": 737,
+      "Code": 520,
+      "Comment": 0,
+      "Blank": 217,
+      "Complexity": 26,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "YAML",
+      "Bytes": 1015,
+      "CodeBytes": 0,
+      "Lines": 28,
       "Code": 21,
-      "Comment": 2,
+      "Comment": 7,
       "Blank": 0,
       "Complexity": 0,
       "Count": 1,
@@ -232,30 +232,43 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 75747,
-      "totalCode": 63438,
-      "totalComments": 5600,
-      "totalBlanks": 6709,
-      "totalBytes": 4233719,
-      "totalFiles": 159,
+      "totalLines": 92154,
+      "totalCode": 78130,
+      "totalComments": 6824,
+      "totalBlanks": 7200,
+      "totalBytes": 5190070,
+      "totalFiles": 169,
       "totalLanguages": 14,
-      "totalComplexity": 4475,
+      "totalComplexity": 4804,
       "primaryLanguage": "Plain Text",
-      "primaryLanguagePercent": 48.4
+      "primaryLanguagePercent": 49.1
     },
     "languages": [
       {
         "name": "Plain Text",
-        "lines": 33401,
-        "code": 30715,
+        "lines": 41202,
+        "code": 38366,
         "comments": 0,
-        "blanks": 2686,
-        "bytes": 2337751,
-        "files": 37,
+        "blanks": 2836,
+        "bytes": 2813760,
+        "files": 38,
         "complexity": 0,
-        "percentOfLines": 44.1,
-        "percentOfCode": 48.4,
-        "percentOfBytes": 55.2
+        "percentOfLines": 44.7,
+        "percentOfCode": 49.1,
+        "percentOfBytes": 54.2
+      },
+      {
+        "name": "Python",
+        "lines": 18811,
+        "code": 14708,
+        "comments": 2837,
+        "blanks": 1266,
+        "bytes": 829883,
+        "files": 56,
+        "complexity": 1056,
+        "percentOfLines": 20.4,
+        "percentOfCode": 18.8,
+        "percentOfBytes": 16
       },
       {
         "name": "C",
@@ -266,74 +279,61 @@
         "bytes": 840239,
         "files": 1,
         "complexity": 3662,
-        "percentOfLines": 25.5,
-        "percentOfCode": 23,
-        "percentOfBytes": 19.8
-      },
-      {
-        "name": "Python",
-        "lines": 11492,
-        "code": 8799,
-        "comments": 1632,
-        "blanks": 1061,
-        "bytes": 480436,
-        "files": 49,
-        "complexity": 753,
-        "percentOfLines": 15.2,
-        "percentOfCode": 13.9,
-        "percentOfBytes": 11.3
+        "percentOfLines": 21,
+        "percentOfCode": 18.6,
+        "percentOfBytes": 16.2
       },
       {
         "name": "Markdown",
-        "lines": 8016,
-        "code": 6264,
+        "lines": 9276,
+        "code": 7388,
         "comments": 0,
-        "blanks": 1752,
-        "bytes": 446346,
-        "files": 33,
+        "blanks": 1888,
+        "bytes": 575596,
+        "files": 35,
         "complexity": 0,
-        "percentOfLines": 10.6,
-        "percentOfCode": 9.9,
-        "percentOfBytes": 10.5
+        "percentOfLines": 10.1,
+        "percentOfCode": 9.5,
+        "percentOfBytes": 11.1
       },
       {
         "name": "JSON",
-        "lines": 1089,
-        "code": 1085,
+        "lines": 1096,
+        "code": 1092,
         "comments": 0,
         "blanks": 4,
-        "bytes": 23707,
+        "bytes": 23865,
         "files": 6,
         "complexity": 0,
-        "percentOfLines": 1.4,
-        "percentOfCode": 1.7,
-        "percentOfBytes": 0.6
+        "percentOfLines": 1.2,
+        "percentOfCode": 1.4,
+        "percentOfBytes": 0.5
       },
       {
         "name": "TypeScript",
-        "lines": 1117,
-        "code": 984,
-        "comments": 20,
+        "lines": 1123,
+        "code": 985,
+        "comments": 25,
         "blanks": 113,
-        "bytes": 39037,
+        "bytes": 39307,
         "files": 17,
         "complexity": 51,
-        "percentOfLines": 1.5,
-        "percentOfCode": 1.6,
-        "percentOfBytes": 0.9
+        "percentOfLines": 1.2,
+        "percentOfCode": 1.3,
+        "percentOfBytes": 0.8
       },
       {
-        "name": "LaTeX",
+        "name": "TeX",
         "lines": 737,
         "code": 520,
         "comments": 0,
         "blanks": 217,
         "bytes": 27738,
         "files": 1,
-        "complexity": 0,
-        "percentOfLines": 1,
-        "percentOfCode": 0.8,
-        "percentOfBytes": 0.7
+        "complexity": 26,
+        "percentOfLines": 0.8,
+        "percentOfCode": 0.7,
+        "percentOfBytes": 0.5
       },
       {
         "name": "SVG",
@@ -341,12 +341,12 @@
         "code": 317,
         "comments": 0,
         "blanks": 0,
-        "bytes": 29841,
+        "bytes": 29855,
         "files": 8,
         "complexity": 0,
-        "percentOfLines": 0.4,
-        "percentOfCode": 0.5,
-        "percentOfBytes": 0.7
+        "percentOfLines": 0.3,
+        "percentOfCode": 0.4,
+        "percentOfBytes": 0.6
       },
       {
         "name": "CSS",
@@ -363,11 +363,11 @@
       },
       {
         "name": "TOML",
-        "lines": 67,
+        "lines": 76,
         "code": 43,
-        "comments": 20,
+        "comments": 29,
         "blanks": 4,
-        "bytes": 2389,
+        "bytes": 3089,
         "files": 1,
         "complexity": 1,
         "percentOfLines": 0.1,
@@ -384,7 +384,7 @@
         "files": 1,
         "complexity": 8,
         "percentOfLines": 0.1,
-        "percentOfCode": 0.1,
+        "percentOfCode": 0,
         "percentOfBytes": 0.1
       },
       {
@@ -402,11 +402,11 @@
       },
       {
         "name": "YAML",
-        "lines": 23,
+        "lines": 28,
         "code": 21,
-        "comments": 2,
+        "comments": 7,
         "blanks": 0,
-        "bytes": 512,
+        "bytes": 1015,
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0,
@@ -430,30 +430,30 @@
     "projectTags": [
       {
         "label": "AI/ML",
-        "confidence": 0.73
+        "confidence": 0.7
       },
       {
         "label": "Data",
-        "confidence": 0.27
+        "confidence": 0.3
       }
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 63.438,
-        "effort": 187.36,
-        "time": 18.26,
-        "people": 10.26,
-        "cost": 878815,
+        "kloc": 78.13,
+        "effort": 233.17,
+        "time": 19.85,
+        "people": 11.75,
+        "cost": 1093677,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 47.78,
-        "time": 10.87,
-        "people": 4.4,
-        "cost": 224098,
+        "effort": 59.46,
+        "time": 11.81,
+        "people": 5.04,
+        "cost": 278888,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -465,7 +465,7 @@
         }
       },
       "comparison": {
-        "effortReduction": "75%",
+        "effortReduction": "74%",
         "timeReduction": "41%",
         "costReduction": "75%",
         "speedup": "3.9x"
@@ -473,33 +473,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 187.36,
-            "weeks": 811.3,
-            "days": 4066,
-            "cost": 878815,
+            "months": 233.17,
+            "weeks": 1009.6,
+            "days": 5060,
+            "cost": 1093677,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 18.26,
-            "hoursPerWeek": 410.4,
-            "totalHours": 32413,
-            "cost": 878815,
+            "months": 19.85,
+            "hoursPerWeek": 470,
+            "totalHours": 40338,
+            "cost": 1093677,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 47.78,
-            "weeks": 206.9,
-            "days": 1037,
-            "cost": 224098,
+            "months": 59.46,
+            "weeks": 257.5,
+            "days": 1290,
+            "cost": 278888,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 10.87,
-            "hoursPerWeek": 175.9,
-            "totalHours": 8265,
-            "cost": 224098,
+            "months": 11.81,
+            "hoursPerWeek": 201.4,
+            "totalHours": 10286,
+            "cost": 278888,
             "description": "AI-assisted part-time development"
           }
         }

@@ -1,0 +1,313 @@
+{
+  "id": "coc-phoenix",
+  "scannedAt": "2026-08-17T03:04:44.626Z",
+  "metadata": {
+    "name": "CoC-Phoenix",
+    "fullName": "jamesEmerson112/CoC-Phoenix",
+    "description": "Call of Cthulhu Diary",
+    "url": "https://github.com/jamesEmerson112/CoC-Phoenix",
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-08-14T20:26:26Z",
+    "createdAt": "2026-08-12T05:47:23Z",
+    "stars": 0,
+    "language": "Rust",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:jamesemerson112/coc-phoenix"
+  },
+  "sccRaw": [
+    {
+      "Name": "Rust",
+      "Bytes": 333835,
+      "CodeBytes": 0,
+      "Lines": 9094,
+      "Code": 7345,
+      "Comment": 980,
+      "Blank": 769,
+      "Complexity": 413,
+      "Count": 27,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 556025,
+      "CodeBytes": 0,
+      "Lines": 9007,
+      "Code": 7275,
+      "Comment": 0,
+      "Blank": 1732,
+      "Complexity": 0,
+      "Count": 20,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "SQL",
+      "Bytes": 21329,
+      "CodeBytes": 0,
+      "Lines": 312,
+      "Code": 248,
+      "Comment": 47,
+      "Blank": 17,
+      "Complexity": 0,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 17796,
+      "CodeBytes": 0,
+      "Lines": 304,
+      "Code": 304,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 1072,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TOML",
+      "Bytes": 1457,
+      "CodeBytes": 0,
+      "Lines": 49,
+      "Code": 42,
+      "Comment": 2,
+      "Blank": 5,
+      "Complexity": 1,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "YAML",
+      "Bytes": 618,
+      "CodeBytes": 0,
+      "Lines": 24,
+      "Code": 21,
+      "Comment": 1,
+      "Blank": 2,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 18811,
+      "totalCode": 15252,
+      "totalComments": 1030,
+      "totalBlanks": 2529,
+      "totalBytes": 932132,
+      "totalFiles": 54,
+      "totalLanguages": 7,
+      "totalComplexity": 414,
+      "primaryLanguage": "Rust",
+      "primaryLanguagePercent": 48.2
+    },
+    "languages": [
+      {
+        "name": "Rust",
+        "lines": 9094,
+        "code": 7345,
+        "comments": 980,
+        "blanks": 769,
+        "bytes": 333835,
+        "files": 27,
+        "complexity": 413,
+        "percentOfLines": 48.3,
+        "percentOfCode": 48.2,
+        "percentOfBytes": 35.8
+      },
+      {
+        "name": "Markdown",
+        "lines": 9007,
+        "code": 7275,
+        "comments": 0,
+        "blanks": 1732,
+        "bytes": 556025,
+        "files": 20,
+        "complexity": 0,
+        "percentOfLines": 47.9,
+        "percentOfCode": 47.7,
+        "percentOfBytes": 59.7
+      },
+      {
+        "name": "JSON",
+        "lines": 304,
+        "code": 304,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 17796,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 1.6,
+        "percentOfCode": 2,
+        "percentOfBytes": 1.9
+      },
+      {
+        "name": "SQL",
+        "lines": 312,
+        "code": 248,
+        "comments": 47,
+        "blanks": 17,
+        "bytes": 21329,
+        "files": 3,
+        "complexity": 0,
+        "percentOfLines": 1.7,
+        "percentOfCode": 1.6,
+        "percentOfBytes": 2.3
+      },
+      {
+        "name": "TOML",
+        "lines": 49,
+        "code": 42,
+        "comments": 2,
+        "blanks": 5,
+        "bytes": 1457,
+        "files": 1,
+        "complexity": 1,
+        "percentOfLines": 0.3,
+        "percentOfCode": 0.3,
+        "percentOfBytes": 0.2
+      },
+      {
+        "name": "YAML",
+        "lines": 24,
+        "code": 21,
+        "comments": 1,
+        "blanks": 2,
+        "bytes": 618,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "License",
+        "lines": 21,
+        "code": 17,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1072,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.1
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Backend",
+        "confidence": 0.8
+      },
+      {
+        "label": "DevOps",
+        "confidence": 0.2
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 15.252,
+        "effort": 41.95,
+        "time": 10.34,
+        "people": 4.06,
+        "cost": 196754,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 10.7,
+        "time": 6.15,
+        "people": 1.74,
+        "cost": 50172,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "74%",
+        "timeReduction": "41%",
+        "costReduction": "74%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 41.95,
+            "weeks": 181.6,
+            "days": 910,
+            "cost": 196754,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 10.34,
+            "hoursPerWeek": 162.3,
+            "totalHours": 7257,
+            "cost": 196754,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 10.7,
+            "weeks": 46.3,
+            "days": 232,
+            "cost": 50172,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 6.15,
+            "hoursPerWeek": 69.5,
+            "totalHours": 1851,
+            "cost": 50172,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}
