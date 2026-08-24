@@ -1,0 +1,481 @@
+{
+  "id": "heir",
+  "scannedAt": "2026-08-24T03:13:04.782Z",
+  "metadata": {
+    "name": "heir",
+    "fullName": "ianalin123/heir",
+    "description": "",
+    "url": "https://github.com/ianalin123/heir",
+    "homepage": "https://heir-theta.vercel.app",
+    "topics": [],
+    "lastUpdated": "2026-08-24T00:55:41Z",
+    "createdAt": "2026-08-23T20:32:08Z",
+    "stars": 0,
+    "language": "HTML",
+    "isPrivate": false,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": false,
+    "sourceRef": "public:ianalin123/heir"
+  },
+  "sccRaw": [
+    {
+      "Name": "TypeScript",
+      "Bytes": 81158,
+      "CodeBytes": 0,
+      "Lines": 2062,
+      "Code": 1491,
+      "Comment": 389,
+      "Blank": 182,
+      "Complexity": 228,
+      "Count": 44,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Rust",
+      "Bytes": 279551,
+      "CodeBytes": 0,
+      "Lines": 7808,
+      "Code": 5523,
+      "Comment": 1488,
+      "Blank": 797,
+      "Complexity": 431,
+      "Count": 40,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 26527,
+      "CodeBytes": 0,
+      "Lines": 982,
+      "Code": 982,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 19,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 74014,
+      "CodeBytes": 0,
+      "Lines": 947,
+      "Code": 698,
+      "Comment": 0,
+      "Blank": 249,
+      "Complexity": 0,
+      "Count": 14,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "SVG",
+      "Bytes": 3314,
+      "CodeBytes": 0,
+      "Lines": 5,
+      "Code": 5,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 5,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TOML",
+      "Bytes": 1881,
+      "CodeBytes": 0,
+      "Lines": 58,
+      "Code": 47,
+      "Comment": 7,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 4,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "SQL",
+      "Bytes": 7471,
+      "CodeBytes": 0,
+      "Lines": 161,
+      "Code": 89,
+      "Comment": 56,
+      "Blank": 16,
+      "Complexity": 4,
+      "Count": 3,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 9690,
+      "CodeBytes": 0,
+      "Lines": 200,
+      "Code": 170,
+      "Comment": 0,
+      "Blank": 30,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 7786,
+      "CodeBytes": 0,
+      "Lines": 39,
+      "Code": 35,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 515719,
+      "CodeBytes": 0,
+      "Lines": 404,
+      "Code": 379,
+      "Comment": 0,
+      "Blank": 25,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JavaScript",
+      "Bytes": 94,
+      "CodeBytes": 0,
+      "Lines": 7,
+      "Code": 6,
+      "Comment": 0,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Makefile",
+      "Bytes": 1447,
+      "CodeBytes": 0,
+      "Lines": 63,
+      "Code": 35,
+      "Comment": 12,
+      "Blank": 16,
+      "Complexity": 2,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "YAML",
+      "Bytes": 879,
+      "CodeBytes": 0,
+      "Lines": 27,
+      "Code": 22,
+      "Comment": 4,
+      "Blank": 1,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 12763,
+      "totalCode": 9482,
+      "totalComments": 1956,
+      "totalBlanks": 1325,
+      "totalBytes": 1009531,
+      "totalFiles": 136,
+      "totalLanguages": 13,
+      "totalComplexity": 665,
+      "primaryLanguage": "Rust",
+      "primaryLanguagePercent": 58.2
+    },
+    "languages": [
+      {
+        "name": "Rust",
+        "lines": 7808,
+        "code": 5523,
+        "comments": 1488,
+        "blanks": 797,
+        "bytes": 279551,
+        "files": 40,
+        "complexity": 431,
+        "percentOfLines": 61.2,
+        "percentOfCode": 58.2,
+        "percentOfBytes": 27.7
+      },
+      {
+        "name": "TypeScript",
+        "lines": 2062,
+        "code": 1491,
+        "comments": 389,
+        "blanks": 182,
+        "bytes": 81158,
+        "files": 44,
+        "complexity": 228,
+        "percentOfLines": 16.2,
+        "percentOfCode": 15.7,
+        "percentOfBytes": 8
+      },
+      {
+        "name": "JSON",
+        "lines": 982,
+        "code": 982,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 26527,
+        "files": 19,
+        "complexity": 0,
+        "percentOfLines": 7.7,
+        "percentOfCode": 10.4,
+        "percentOfBytes": 2.6
+      },
+      {
+        "name": "Markdown",
+        "lines": 947,
+        "code": 698,
+        "comments": 0,
+        "blanks": 249,
+        "bytes": 74014,
+        "files": 14,
+        "complexity": 0,
+        "percentOfLines": 7.4,
+        "percentOfCode": 7.4,
+        "percentOfBytes": 7.3
+      },
+      {
+        "name": "HTML",
+        "lines": 404,
+        "code": 379,
+        "comments": 0,
+        "blanks": 25,
+        "bytes": 515719,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 3.2,
+        "percentOfCode": 4,
+        "percentOfBytes": 51.1
+      },
+      {
+        "name": "Plain Text",
+        "lines": 200,
+        "code": 170,
+        "comments": 0,
+        "blanks": 30,
+        "bytes": 9690,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 1.6,
+        "percentOfCode": 1.8,
+        "percentOfBytes": 1
+      },
+      {
+        "name": "SQL",
+        "lines": 161,
+        "code": 89,
+        "comments": 56,
+        "blanks": 16,
+        "bytes": 7471,
+        "files": 3,
+        "complexity": 4,
+        "percentOfLines": 1.3,
+        "percentOfCode": 0.9,
+        "percentOfBytes": 0.7
+      },
+      {
+        "name": "TOML",
+        "lines": 58,
+        "code": 47,
+        "comments": 7,
+        "blanks": 4,
+        "bytes": 1881,
+        "files": 4,
+        "complexity": 0,
+        "percentOfLines": 0.5,
+        "percentOfCode": 0.5,
+        "percentOfBytes": 0.2
+      },
+      {
+        "name": "CSS",
+        "lines": 39,
+        "code": 35,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 7786,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.3,
+        "percentOfCode": 0.4,
+        "percentOfBytes": 0.8
+      },
+      {
+        "name": "Makefile",
+        "lines": 63,
+        "code": 35,
+        "comments": 12,
+        "blanks": 16,
+        "bytes": 1447,
+        "files": 1,
+        "complexity": 2,
+        "percentOfLines": 0.5,
+        "percentOfCode": 0.4,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "YAML",
+        "lines": 27,
+        "code": 22,
+        "comments": 4,
+        "blanks": 1,
+        "bytes": 879,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "JavaScript",
+        "lines": 7,
+        "code": 6,
+        "comments": 0,
+        "blanks": 1,
+        "bytes": 94,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0
+      },
+      {
+        "name": "SVG",
+        "lines": 5,
+        "code": 5,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 3314,
+        "files": 5,
+        "complexity": 0,
+        "percentOfLines": 0,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.3
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Backend",
+        "confidence": 0.75
+      },
+      {
+        "label": "Web",
+        "confidence": 0.25
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 9.482,
+        "effort": 25.47,
+        "time": 8.55,
+        "people": 2.98,
+        "cost": 119447,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 6.49,
+        "time": 5.09,
+        "people": 1.28,
+        "cost": 30459,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 25.47,
+            "weeks": 110.3,
+            "days": 553,
+            "cost": 119447,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 8.55,
+            "hoursPerWeek": 119.1,
+            "totalHours": 4406,
+            "cost": 119447,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 6.49,
+            "weeks": 28.1,
+            "days": 141,
+            "cost": 30459,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 5.09,
+            "hoursPerWeek": 51,
+            "totalHours": 1123,
+            "cost": 30459,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

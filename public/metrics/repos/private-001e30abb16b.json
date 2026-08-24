@@ -1,0 +1,257 @@
+{
+  "id": "private-001e30abb16b",
+  "scannedAt": "2026-08-24T03:13:08.057Z",
+  "metadata": {
+    "name": "Private Project 110",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-08-21T17:01:01Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "JavaScript",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:001e30abb16b5a56"
+  },
+  "sccRaw": [
+    {
+      "Name": "JavaScript",
+      "Bytes": 112341,
+      "CodeBytes": 0,
+      "Lines": 2591,
+      "Code": 2331,
+      "Comment": 0,
+      "Blank": 260,
+      "Complexity": 324,
+      "Count": 8,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 17012,
+      "CodeBytes": 0,
+      "Lines": 404,
+      "Code": 298,
+      "Comment": 0,
+      "Blank": 106,
+      "Complexity": 0,
+      "Count": 6,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSS",
+      "Bytes": 66923,
+      "CodeBytes": 0,
+      "Lines": 3454,
+      "Code": 2993,
+      "Comment": 11,
+      "Blank": 450,
+      "Complexity": 1,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "HTML",
+      "Bytes": 27876,
+      "CodeBytes": 0,
+      "Lines": 540,
+      "Code": 475,
+      "Comment": 0,
+      "Blank": 65,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 1072,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 7010,
+      "totalCode": 6114,
+      "totalComments": 11,
+      "totalBlanks": 885,
+      "totalBytes": 225224,
+      "totalFiles": 19,
+      "totalLanguages": 5,
+      "totalComplexity": 325,
+      "primaryLanguage": "CSS",
+      "primaryLanguagePercent": 49
+    },
+    "languages": [
+      {
+        "name": "CSS",
+        "lines": 3454,
+        "code": 2993,
+        "comments": 11,
+        "blanks": 450,
+        "bytes": 66923,
+        "files": 2,
+        "complexity": 1,
+        "percentOfLines": 49.3,
+        "percentOfCode": 49,
+        "percentOfBytes": 29.7
+      },
+      {
+        "name": "JavaScript",
+        "lines": 2591,
+        "code": 2331,
+        "comments": 0,
+        "blanks": 260,
+        "bytes": 112341,
+        "files": 8,
+        "complexity": 324,
+        "percentOfLines": 37,
+        "percentOfCode": 38.1,
+        "percentOfBytes": 49.9
+      },
+      {
+        "name": "HTML",
+        "lines": 540,
+        "code": 475,
+        "comments": 0,
+        "blanks": 65,
+        "bytes": 27876,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 7.7,
+        "percentOfCode": 7.8,
+        "percentOfBytes": 12.4
+      },
+      {
+        "name": "Markdown",
+        "lines": 404,
+        "code": 298,
+        "comments": 0,
+        "blanks": 106,
+        "bytes": 17012,
+        "files": 6,
+        "complexity": 0,
+        "percentOfLines": 5.8,
+        "percentOfCode": 4.9,
+        "percentOfBytes": 7.6
+      },
+      {
+        "name": "License",
+        "lines": 21,
+        "code": 17,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1072,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.3,
+        "percentOfCode": 0.3,
+        "percentOfBytes": 0.5
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "Web",
+        "confidence": 0.83
+      },
+      {
+        "label": "Backend",
+        "confidence": 0.17
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 6.114,
+        "effort": 16.06,
+        "time": 7.18,
+        "people": 2.24,
+        "cost": 75348,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 4.1,
+        "time": 4.27,
+        "people": 0.96,
+        "cost": 19214,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 16.06,
+            "weeks": 69.6,
+            "days": 349,
+            "cost": 75348,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 7.18,
+            "hoursPerWeek": 89.5,
+            "totalHours": 2779,
+            "cost": 75348,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 4.1,
+            "weeks": 17.7,
+            "days": 89,
+            "cost": 19214,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 4.27,
+            "hoursPerWeek": 38.4,
+            "totalHours": 709,
+            "cost": 19214,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}

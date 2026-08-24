@@ -1,6 +1,6 @@
 {
   "id": "agentsforimpact",
-  "scannedAt": "2026-08-01T04:06:52.235Z",
+  "scannedAt": "2026-08-24T03:13:09.021Z",
   "metadata": {
     "name": "AgentsForImpact",
     "fullName": "beaumont-code/AgentsForImpact",
@@ -8,7 +8,7 @@
     "url": "https://github.com/beaumont-code/AgentsForImpact",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-07-06T19:42:02Z",
+    "lastUpdated": "2026-08-20T13:58:05Z",
     "createdAt": "2026-03-16T23:07:30Z",
     "stars": 0,
     "language": "Python",
@@ -24,10 +24,10 @@
       "Bytes": 46142,
       "CodeBytes": 0,
       "Lines": 1355,
-      "Code": 992,
-      "Comment": 156,
-      "Blank": 207,
-      "Complexity": 119,
+      "Code": 968,
+      "Comment": 162,
+      "Blank": 225,
+      "Complexity": 126,
       "Count": 12,
       "WeightedComplexity": 0,
       "Files": [],
@@ -51,12 +51,27 @@
     },
     {
       "Name": "Markdown",
-      "Bytes": 80653,
+      "Bytes": 81440,
       "CodeBytes": 0,
-      "Lines": 2115,
-      "Code": 1699,
+      "Lines": 2139,
+      "Code": 1714,
       "Comment": 0,
-      "Blank": 416,
+      "Blank": 425,
+      "Complexity": 0,
+      "Count": 4,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "SVG",
+      "Bytes": 1757638,
+      "CodeBytes": 0,
+      "Lines": 9311,
+      "Code": 9299,
+      "Comment": 12,
+      "Blank": 0,
       "Complexity": 0,
       "Count": 3,
       "WeightedComplexity": 0,
@@ -82,43 +97,56 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 3607,
-      "totalCode": 2823,
-      "totalComments": 156,
-      "totalBlanks": 628,
-      "totalBytes": 130551,
-      "totalFiles": 20,
-      "totalLanguages": 4,
-      "totalComplexity": 119,
-      "primaryLanguage": "Markdown",
-      "primaryLanguagePercent": 60.2
+      "totalLines": 12942,
+      "totalCode": 12113,
+      "totalComments": 174,
+      "totalBlanks": 655,
+      "totalBytes": 1888976,
+      "totalFiles": 24,
+      "totalLanguages": 5,
+      "totalComplexity": 126,
+      "primaryLanguage": "SVG",
+      "primaryLanguagePercent": 76.8
     },
     "languages": [
       {
-        "name": "Markdown",
-        "lines": 2115,
-        "code": 1699,
-        "comments": 0,
-        "blanks": 416,
-        "bytes": 80653,
+        "name": "SVG",
+        "lines": 9311,
+        "code": 9299,
+        "comments": 12,
+        "blanks": 0,
+        "bytes": 1757638,
         "files": 3,
         "complexity": 0,
-        "percentOfLines": 58.6,
-        "percentOfCode": 60.2,
-        "percentOfBytes": 61.8
+        "percentOfLines": 71.9,
+        "percentOfCode": 76.8,
+        "percentOfBytes": 93
+      },
+      {
+        "name": "Markdown",
+        "lines": 2139,
+        "code": 1714,
+        "comments": 0,
+        "blanks": 425,
+        "bytes": 81440,
+        "files": 4,
+        "complexity": 0,
+        "percentOfLines": 16.5,
+        "percentOfCode": 14.2,
+        "percentOfBytes": 4.3
       },
       {
         "name": "Python",
         "lines": 1355,
-        "code": 992,
-        "comments": 156,
-        "blanks": 207,
+        "code": 968,
+        "comments": 162,
+        "blanks": 225,
         "bytes": 46142,
         "files": 12,
-        "complexity": 119,
-        "percentOfLines": 37.6,
-        "percentOfCode": 35.1,
-        "percentOfBytes": 35.3
+        "complexity": 126,
+        "percentOfLines": 10.5,
+        "percentOfCode": 8,
+        "percentOfBytes": 2.4
       },
       {
         "name": "JSON",
@@ -129,9 +157,9 @@
         "bytes": 3379,
         "files": 4,
         "complexity": 0,
-        "percentOfLines": 3.1,
-        "percentOfCode": 4,
-        "percentOfBytes": 2.6
+        "percentOfLines": 0.9,
+        "percentOfCode": 0.9,
+        "percentOfBytes": 0.2
       },
       {
         "name": "Plain Text",
@@ -142,9 +170,9 @@
         "bytes": 377,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 0.7,
-        "percentOfCode": 0.7,
-        "percentOfBytes": 0.3
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0
       }
     ],
     "projectTags": [
@@ -159,21 +187,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 2.823,
-        "effort": 7.14,
-        "time": 5.28,
-        "people": 1.35,
-        "cost": 33472,
+        "kloc": 12.113,
+        "effort": 32.93,
+        "time": 9.43,
+        "people": 3.49,
+        "cost": 154470,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 1.82,
-        "time": 3.14,
-        "people": 0.58,
-        "cost": 8535,
+        "effort": 8.4,
+        "time": 5.61,
+        "people": 1.5,
+        "cost": 39390,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -187,39 +215,39 @@
       "comparison": {
         "effortReduction": "75%",
         "timeReduction": "41%",
-        "costReduction": "75%",
+        "costReduction": "74%",
         "speedup": "3.9x"
       },
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 7.14,
-            "weeks": 30.9,
-            "days": 155,
-            "cost": 33472,
+            "months": 32.93,
+            "weeks": 142.6,
+            "days": 715,
+            "cost": 154470,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 5.28,
-            "hoursPerWeek": 54.1,
-            "totalHours": 1235,
-            "cost": 33472,
+            "months": 9.43,
+            "hoursPerWeek": 139.7,
+            "totalHours": 5697,
+            "cost": 154470,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 1.82,
-            "weeks": 7.9,
-            "days": 39,
-            "cost": 8535,
+            "months": 8.4,
+            "weeks": 36.4,
+            "days": 182,
+            "cost": 39390,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 3.14,
-            "hoursPerWeek": 23.2,
-            "totalHours": 315,
-            "cost": 8535,
+            "months": 5.61,
+            "hoursPerWeek": 59.9,
+            "totalHours": 1453,
+            "cost": 39390,
             "description": "AI-assisted part-time development"
           }
         }
