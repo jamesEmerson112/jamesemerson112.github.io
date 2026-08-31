@@ -1,6 +1,6 @@
 {
   "id": "private-a63c7751e1b6",
-  "scannedAt": "2026-08-01T04:06:41.968Z",
+  "scannedAt": "2026-08-31T08:28:22.548Z",
   "metadata": {
     "name": "Private Project 57",
     "fullName": null,
@@ -8,7 +8,7 @@
     "url": null,
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-07-22T14:38:59Z",
+    "lastUpdated": "2026-08-26T06:40:26Z",
     "createdAt": null,
     "stars": 0,
     "language": "Shell",
@@ -21,14 +21,14 @@
   "sccRaw": [
     {
       "Name": "Markdown",
-      "Bytes": 215650,
+      "Bytes": 217821,
       "CodeBytes": 0,
-      "Lines": 2901,
-      "Code": 2237,
+      "Lines": 2899,
+      "Code": 2239,
       "Comment": 0,
-      "Blank": 664,
+      "Blank": 660,
       "Complexity": 0,
-      "Count": 31,
+      "Count": 29,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -36,10 +36,10 @@
     },
     {
       "Name": "JSON",
-      "Bytes": 918,
+      "Bytes": 885,
       "CodeBytes": 0,
-      "Lines": 38,
-      "Code": 38,
+      "Lines": 36,
+      "Code": 36,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
@@ -67,29 +67,29 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 3000,
+      "totalLines": 2996,
       "totalCode": 2317,
       "totalComments": 7,
-      "totalBlanks": 676,
-      "totalBytes": 218058,
-      "totalFiles": 34,
+      "totalBlanks": 672,
+      "totalBytes": 220196,
+      "totalFiles": 32,
       "totalLanguages": 3,
       "totalComplexity": 8,
       "primaryLanguage": "Markdown",
-      "primaryLanguagePercent": 96.5
+      "primaryLanguagePercent": 96.6
     },
     "languages": [
       {
         "name": "Markdown",
-        "lines": 2901,
-        "code": 2237,
+        "lines": 2899,
+        "code": 2239,
         "comments": 0,
-        "blanks": 664,
-        "bytes": 215650,
-        "files": 31,
+        "blanks": 660,
+        "bytes": 217821,
+        "files": 29,
         "complexity": 0,
-        "percentOfLines": 96.7,
-        "percentOfCode": 96.5,
+        "percentOfLines": 96.8,
+        "percentOfCode": 96.6,
         "percentOfBytes": 98.9
       },
       {
@@ -107,14 +107,14 @@
       },
       {
         "name": "JSON",
-        "lines": 38,
-        "code": 38,
+        "lines": 36,
+        "code": 36,
         "comments": 0,
         "blanks": 0,
-        "bytes": 918,
+        "bytes": 885,
         "files": 2,
         "complexity": 0,
-        "percentOfLines": 1.3,
+        "percentOfLines": 1.2,
         "percentOfCode": 1.6,
         "percentOfBytes": 0.4
       }
