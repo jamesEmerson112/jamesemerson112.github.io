@@ -1,6 +1,6 @@
 {
   "id": "store-angular",
-  "scannedAt": "2026-08-01T04:08:32.038Z",
+  "scannedAt": "2026-09-01T08:09:36.037Z",
   "metadata": {
     "name": "store-angular",
     "fullName": "jamesEmerson112/store-angular",
@@ -27,7 +27,7 @@
       "Code": 99,
       "Comment": 72,
       "Blank": 25,
-      "Complexity": 1,
+      "Complexity": 2,
       "Count": 10,
       "WeightedComplexity": 0,
       "Files": [],
@@ -119,7 +119,7 @@
       "totalBytes": 39708,
       "totalFiles": 21,
       "totalLanguages": 6,
-      "totalComplexity": 1,
+      "totalComplexity": 2,
       "primaryLanguage": "HTML",
       "primaryLanguagePercent": 53.9
     },
@@ -158,7 +158,7 @@
         "blanks": 25,
         "bytes": 6638,
         "files": 10,
-        "complexity": 1,
+        "complexity": 2,
         "percentOfLines": 19.8,
         "percentOfCode": 12.7,
         "percentOfBytes": 16.7

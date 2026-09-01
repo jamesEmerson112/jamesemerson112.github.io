@@ -1,6 +1,6 @@
 {
   "id": "private-4870e1e5574e",
-  "scannedAt": "2026-08-01T04:06:43.027Z",
+  "scannedAt": "2026-09-01T08:07:53.981Z",
   "metadata": {
     "name": "Private Project 2",
     "fullName": null,
@@ -42,7 +42,7 @@
       "Code": 7260,
       "Comment": 319,
       "Blank": 808,
-      "Complexity": 507,
+      "Complexity": 786,
       "Count": 65,
       "WeightedComplexity": 0,
       "Files": [],
@@ -57,7 +57,7 @@
       "Code": 3783,
       "Comment": 17,
       "Blank": 374,
-      "Complexity": 264,
+      "Complexity": 334,
       "Count": 54,
       "WeightedComplexity": 0,
       "Files": [],
@@ -189,8 +189,8 @@
       "Bytes": 4072,
       "CodeBytes": 0,
       "Lines": 122,
-      "Code": 93,
-      "Comment": 14,
+      "Code": 86,
+      "Comment": 21,
       "Blank": 15,
       "Complexity": 40,
       "Count": 1,
@@ -218,13 +218,13 @@
   "computed": {
     "summary": {
       "totalLines": 26258,
-      "totalCode": 22290,
-      "totalComments": 772,
+      "totalCode": 22283,
+      "totalComments": 779,
       "totalBlanks": 3196,
       "totalBytes": 937221,
       "totalFiles": 251,
       "totalLanguages": 13,
-      "totalComplexity": 2365,
+      "totalComplexity": 2714,
       "primaryLanguage": "Go",
       "primaryLanguagePercent": 36.1
     },
@@ -250,7 +250,7 @@
         "blanks": 808,
         "bytes": 278368,
         "files": 65,
-        "complexity": 507,
+        "complexity": 786,
         "percentOfLines": 31.9,
         "percentOfCode": 32.6,
         "percentOfBytes": 29.7
@@ -263,7 +263,7 @@
         "blanks": 374,
         "bytes": 148367,
         "files": 54,
-        "complexity": 264,
+        "complexity": 334,
         "percentOfLines": 15.9,
         "percentOfCode": 17,
         "percentOfBytes": 15.8
@@ -349,8 +349,8 @@
       {
         "name": "Python",
         "lines": 122,
-        "code": 93,
-        "comments": 14,
+        "code": 86,
+        "comments": 21,
         "blanks": 15,
         "bytes": 4072,
         "files": 1,
@@ -411,11 +411,11 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 22.29,
-        "effort": 62.48,
+        "kloc": 22.283,
+        "effort": 62.46,
         "time": 12.03,
         "people": 5.19,
-        "cost": 293053,
+        "cost": 292956,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
@@ -425,7 +425,7 @@
         "effort": 15.93,
         "time": 7.16,
         "people": 2.23,
-        "cost": 74728,
+        "cost": 74704,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -437,7 +437,7 @@
         }
       },
       "comparison": {
-        "effortReduction": "75%",
+        "effortReduction": "74%",
         "timeReduction": "41%",
         "costReduction": "75%",
         "speedup": "3.9x"
@@ -445,17 +445,17 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 62.48,
-            "weeks": 270.5,
-            "days": 1356,
-            "cost": 293053,
+            "months": 62.46,
+            "weeks": 270.4,
+            "days": 1355,
+            "cost": 292956,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
             "months": 12.03,
             "hoursPerWeek": 207.7,
-            "totalHours": 10809,
-            "cost": 293053,
+            "totalHours": 10805,
+            "cost": 292956,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
@@ -464,14 +464,14 @@
             "months": 15.93,
             "weeks": 69,
             "days": 346,
-            "cost": 74728,
+            "cost": 74704,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
             "months": 7.16,
             "hoursPerWeek": 89,
-            "totalHours": 2756,
-            "cost": 74728,
+            "totalHours": 2755,
+            "cost": 74704,
             "description": "AI-assisted part-time development"
           }
         }

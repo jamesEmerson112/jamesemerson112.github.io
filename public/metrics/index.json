@@ -1,117 +1,152 @@
 {
   "version": "1.1.0",
-  "generatedAt": "2026-08-31T08:28:29.540Z",
-  "lastFullScan": "2026-08-01T04:08:42.577Z",
-  "lastIncrementalScan": "2026-08-31T08:28:29.540Z",
-  "reposScannedThisRun": 6,
-  "reposReusedThisRun": 226,
+  "generatedAt": "2026-09-01T08:09:46.773Z",
+  "lastFullScan": "2026-09-01T08:09:46.773Z",
+  "lastIncrementalScan": "2026-09-01T08:09:46.773Z",
+  "reposScannedThisRun": 232,
+  "reposReusedThisRun": 0,
   "totalPublicRepos": 122,
   "totalPrivateRepos": 110,
   "totalRepos": 232,
   "portfolioTotals": {
-    "totalLines": 3788742,
-    "totalCode": 3288784,
-    "totalComments": 209144,
-    "totalBlanks": 290814,
-    "totalFiles": 12150,
-    "totalBytes": 321786690,
-    "totalComplexity": 144341,
+    "totalLines": 3839245,
+    "totalCode": 3305112,
+    "totalComments": 227887,
+    "totalBlanks": 306246,
+    "totalFiles": 12429,
+    "totalBytes": 323684116,
+    "totalComplexity": 183151,
     "estimatedValue": {
-      "standardCost": 47091349,
-      "totalEffort": 10039.72,
-      "avgTime": 43.27,
+      "standardCost": 47341339,
+      "totalEffort": 10093.03,
+      "avgTime": 43.5,
       "avgPeople": 0
     },
     "soloDeveloper": {
-      "fullTimeMonths": 10039.72,
-      "fullTimeYears": 837,
-      "fullTimeWeeks": 43472,
+      "fullTimeMonths": 10093.03,
+      "fullTimeYears": 841,
+      "fullTimeWeeks": 43703,
       "description": "Total time if developed alone, full-time"
     },
     "languages": {
       "Python": {
         "repos": 85,
-        "totalLines": 346657,
-        "totalCode": 262605,
-        "percentOfTotal": 9.1,
-        "averagePerRepo": 4078
+        "totalLines": 363659,
+        "totalCode": 251588,
+        "percentOfTotal": 9.5,
+        "averagePerRepo": 4278
       },
       "TypeScript": {
         "repos": 43,
-        "totalLines": 163416,
-        "totalCode": 134598,
-        "percentOfTotal": 4.3,
-        "averagePerRepo": 3800
+        "totalLines": 180011,
+        "totalCode": 148160,
+        "percentOfTotal": 4.7,
+        "averagePerRepo": 4186
       },
       "JavaScript": {
         "repos": 101,
-        "totalLines": 423208,
-        "totalCode": 314839,
-        "percentOfTotal": 11.2,
-        "averagePerRepo": 4190
+        "totalLines": 425131,
+        "totalCode": 316508,
+        "percentOfTotal": 11.1,
+        "averagePerRepo": 4209
       },
       "Markdown": {
         "repos": 218,
-        "totalLines": 379040,
-        "totalCode": 286237,
+        "totalLines": 382876,
+        "totalCode": 289266,
         "percentOfTotal": 10,
-        "averagePerRepo": 1739
+        "averagePerRepo": 1756
       },
       "Svelte": {
         "repos": 4,
-        "totalLines": 7993,
-        "totalCode": 6897,
+        "totalLines": 9330,
+        "totalCode": 8128,
         "percentOfTotal": 0.2,
-        "averagePerRepo": 1998
+        "averagePerRepo": 2333
       },
       "CSS": {
         "repos": 96,
-        "totalLines": 40308,
-        "totalCode": 34029,
+        "totalLines": 40503,
+        "totalCode": 34198,
         "percentOfTotal": 1.1,
-        "averagePerRepo": 420
+        "averagePerRepo": 422
+      },
+      "Rust": {
+        "repos": 15,
+        "totalLines": 72075,
+        "totalCode": 55588,
+        "percentOfTotal": 1.9,
+        "averagePerRepo": 4805
       },
       "JSON": {
         "repos": 127,
-        "totalLines": 313418,
-        "totalCode": 313310,
-        "percentOfTotal": 8.3,
-        "averagePerRepo": 2468
+        "totalLines": 314758,
+        "totalCode": 314648,
+        "percentOfTotal": 8.2,
+        "averagePerRepo": 2478
       },
       "HTML": {
         "repos": 97,
-        "totalLines": 68879,
-        "totalCode": 61177,
+        "totalLines": 68892,
+        "totalCode": 61189,
         "percentOfTotal": 1.8,
         "averagePerRepo": 710
       },
-      "Plain Text": {
-        "repos": 86,
-        "totalLines": 1076481,
-        "totalCode": 1054190,
-        "percentOfTotal": 28.4,
-        "averagePerRepo": 12517
+      "License": {
+        "repos": 102,
+        "totalLines": 15738,
+        "totalCode": 12735,
+        "percentOfTotal": 0.4,
+        "averagePerRepo": 154
+      },
+      "Shell": {
+        "repos": 26,
+        "totalLines": 10184,
+        "totalCode": 6925,
+        "percentOfTotal": 0.3,
+        "averagePerRepo": 392
       },
       "YAML": {
         "repos": 38,
-        "totalLines": 9109,
-        "totalCode": 8272,
+        "totalLines": 9566,
+        "totalCode": 8628,
         "percentOfTotal": 0.2,
-        "averagePerRepo": 240
+        "averagePerRepo": 252
+      },
+      "Plain Text": {
+        "repos": 86,
+        "totalLines": 1076586,
+        "totalCode": 1054292,
+        "percentOfTotal": 28,
+        "averagePerRepo": 12518
       },
       "Powershell": {
         "repos": 5,
-        "totalLines": 1593,
-        "totalCode": 1226,
+        "totalLines": 1798,
+        "totalCode": 1375,
         "percentOfTotal": 0,
-        "averagePerRepo": 319
+        "averagePerRepo": 360
+      },
+      "SVG": {
+        "repos": 47,
+        "totalLines": 11681,
+        "totalCode": 11605,
+        "percentOfTotal": 0.3,
+        "averagePerRepo": 249
       },
       "TOML": {
         "repos": 28,
-        "totalLines": 1708,
-        "totalCode": 1088,
+        "totalLines": 1800,
+        "totalCode": 1166,
         "percentOfTotal": 0,
-        "averagePerRepo": 61
+        "averagePerRepo": 64
+      },
+      "Docker ignore": {
+        "repos": 7,
+        "totalLines": 293,
+        "totalCode": 171,
+        "percentOfTotal": 0,
+        "averagePerRepo": 42
       },
       "CloudFormation (YAML)": {
         "repos": 1,
@@ -120,61 +155,19 @@
         "percentOfTotal": 0,
         "averagePerRepo": 40
       },
-      "License": {
-        "repos": 102,
-        "totalLines": 15060,
-        "totalCode": 12179,
-        "percentOfTotal": 0.4,
-        "averagePerRepo": 148
-      },
       "Dockerfile": {
         "repos": 12,
-        "totalLines": 661,
-        "totalCode": 262,
+        "totalLines": 679,
+        "totalCode": 266,
         "percentOfTotal": 0,
-        "averagePerRepo": 55
-      },
-      "Docker ignore": {
-        "repos": 7,
-        "totalLines": 231,
-        "totalCode": 139,
-        "percentOfTotal": 0,
-        "averagePerRepo": 33
-      },
-      "SVG": {
-        "repos": 47,
-        "totalLines": 11482,
-        "totalCode": 11433,
-        "percentOfTotal": 0.3,
-        "averagePerRepo": 244
-      },
-      "Rust": {
-        "repos": 14,
-        "totalLines": 69038,
-        "totalCode": 53146,
-        "percentOfTotal": 1.8,
-        "averagePerRepo": 4931
-      },
-      "SQL": {
-        "repos": 11,
-        "totalLines": 3772,
-        "totalCode": 2610,
-        "percentOfTotal": 0.1,
-        "averagePerRepo": 343
-      },
-      "Shell": {
-        "repos": 25,
-        "totalLines": 9366,
-        "totalCode": 6349,
-        "percentOfTotal": 0.2,
-        "averagePerRepo": 375
+        "averagePerRepo": 57
       },
       "TypeScript Typings": {
-        "repos": 18,
-        "totalLines": 52290,
+        "repos": 19,
+        "totalLines": 52291,
         "totalCode": 18295,
         "percentOfTotal": 1.4,
-        "averagePerRepo": 2905
+        "averagePerRepo": 2752
       },
       "XML": {
         "repos": 4,
@@ -182,6 +175,13 @@
         "totalCode": 386,
         "percentOfTotal": 0,
         "averagePerRepo": 116
+      },
+      "SQL": {
+        "repos": 11,
+        "totalLines": 3772,
+        "totalCode": 2610,
+        "percentOfTotal": 0.1,
+        "averagePerRepo": 343
       },
       "Makefile": {
         "repos": 17,
@@ -194,10 +194,10 @@
         "repos": 12,
         "totalLines": 105077,
         "totalCode": 79066,
-        "percentOfTotal": 2.8,
+        "percentOfTotal": 2.7,
         "averagePerRepo": 8756
       },
-      "TeX": {
+      "LaTeX": {
         "repos": 2,
         "totalLines": 2328,
         "totalCode": 1730,
@@ -208,7 +208,7 @@
         "repos": 14,
         "totalLines": 90172,
         "totalCode": 85666,
-        "percentOfTotal": 2.4,
+        "percentOfTotal": 2.3,
         "averagePerRepo": 6441
       },
       "JSONL": {
@@ -276,10 +276,10 @@
       },
       "Cuda": {
         "repos": 3,
-        "totalLines": 18263,
-        "totalCode": 12384,
+        "totalLines": 20853,
+        "totalCode": 14252,
         "percentOfTotal": 0.5,
-        "averagePerRepo": 6088
+        "averagePerRepo": 6951
       },
       "JSONC": {
         "repos": 1,
@@ -289,11 +289,18 @@
         "averagePerRepo": 13
       },
       "C Header": {
-        "repos": 16,
-        "totalLines": 449501,
-        "totalCode": 420587,
-        "percentOfTotal": 11.9,
-        "averagePerRepo": 28094
+        "repos": 8,
+        "totalLines": 436044,
+        "totalCode": 411828,
+        "percentOfTotal": 11.4,
+        "averagePerRepo": 54506
+      },
+      "C++ Header": {
+        "repos": 9,
+        "totalLines": 13448,
+        "totalCode": 8753,
+        "percentOfTotal": 0.4,
+        "averagePerRepo": 1494
       },
       "C++": {
         "repos": 16,
@@ -338,11 +345,11 @@
         "averagePerRepo": 133
       },
       "Objective C": {
-        "repos": 1,
-        "totalLines": 76,
-        "totalCode": 61,
+        "repos": 2,
+        "totalLines": 85,
+        "totalCode": 67,
         "percentOfTotal": 0,
-        "averagePerRepo": 76
+        "averagePerRepo": 43
       },
       "Bazel": {
         "repos": 1,
@@ -495,137 +502,189 @@
   },
   "repos": [
     {
-      "id": "silkscreen",
-      "sourceRef": "public:machmoon/silkscreen",
-      "name": "silkscreen",
-      "url": "https://github.com/machmoon/silkscreen",
-      "description": "",
-      "lastUpdated": "2026-08-31T08:25:12Z",
+      "id": "ada",
+      "sourceRef": "public:machmoon/ada",
+      "name": "Ada",
+      "url": "https://github.com/machmoon/Ada",
+      "description": "The World's First AI Hardware Engineer",
+      "lastUpdated": "2026-09-01T00:03:22Z",
       "primaryLanguage": "Python",
       "isPrivate": false,
       "isAnonymized": false,
       "projectTags": [
         {
           "label": "Web",
-          "confidence": 0.58
+          "confidence": 0.52
         },
         {
           "label": "AI/ML",
-          "confidence": 0.42
+          "confidence": 0.48
         }
       ],
       "languages": [
         {
           "name": "Python",
-          "lines": 32245,
-          "code": 22598,
-          "comments": 5016,
-          "blanks": 4631,
-          "bytes": 1153978,
-          "files": 99,
-          "complexity": 3860,
-          "percentOfLines": 41.8,
-          "percentOfCode": 38.1,
-          "percentOfBytes": 38.1
+          "lines": 49247,
+          "code": 34982,
+          "comments": 7042,
+          "blanks": 7223,
+          "bytes": 1754565,
+          "files": 160,
+          "complexity": 5713,
+          "percentOfLines": 39.7,
+          "percentOfCode": 36.3,
+          "percentOfBytes": 36.6
         },
         {
           "name": "TypeScript",
-          "lines": 18976,
-          "code": 15335,
-          "comments": 2254,
-          "blanks": 1387,
-          "bytes": 817986,
-          "files": 77,
-          "complexity": 2447,
-          "percentOfLines": 24.6,
-          "percentOfCode": 25.8,
-          "percentOfBytes": 27
+          "lines": 35571,
+          "code": 28897,
+          "comments": 3896,
+          "blanks": 2778,
+          "bytes": 1378575,
+          "files": 206,
+          "complexity": 3640,
+          "percentOfLines": 28.7,
+          "percentOfCode": 30,
+          "percentOfBytes": 28.8
         },
         {
           "name": "JavaScript",
-          "lines": 10124,
-          "code": 8097,
-          "comments": 526,
-          "blanks": 1501,
-          "bytes": 347269,
-          "files": 45,
-          "complexity": 666,
-          "percentOfLines": 13.1,
-          "percentOfCode": 13.6,
-          "percentOfBytes": 11.5
+          "lines": 12047,
+          "code": 9766,
+          "comments": 613,
+          "blanks": 1668,
+          "bytes": 419936,
+          "files": 58,
+          "complexity": 935,
+          "percentOfLines": 9.7,
+          "percentOfCode": 10.1,
+          "percentOfBytes": 8.8
         },
         {
           "name": "Markdown",
-          "lines": 3925,
-          "code": 3025,
+          "lines": 7761,
+          "code": 6054,
           "comments": 0,
-          "blanks": 900,
-          "bytes": 286637,
-          "files": 19,
+          "blanks": 1707,
+          "bytes": 511982,
+          "files": 37,
           "complexity": 0,
-          "percentOfLines": 5.1,
-          "percentOfCode": 5.1,
-          "percentOfBytes": 9.5
+          "percentOfLines": 6.3,
+          "percentOfCode": 6.3,
+          "percentOfBytes": 10.7
         },
         {
           "name": "Svelte",
-          "lines": 3296,
-          "code": 2809,
-          "comments": 182,
-          "blanks": 305,
-          "bytes": 117013,
-          "files": 20,
-          "complexity": 305,
-          "percentOfLines": 4.3,
-          "percentOfCode": 4.7,
-          "percentOfBytes": 3.9
+          "lines": 4633,
+          "code": 4040,
+          "comments": 210,
+          "blanks": 383,
+          "bytes": 180912,
+          "files": 23,
+          "complexity": 466,
+          "percentOfLines": 3.7,
+          "percentOfCode": 4.2,
+          "percentOfBytes": 3.8
         },
         {
           "name": "CSS",
-          "lines": 3272,
-          "code": 2645,
-          "comments": 293,
-          "blanks": 334,
-          "bytes": 91819,
-          "files": 6,
+          "lines": 3467,
+          "code": 2814,
+          "comments": 301,
+          "blanks": 352,
+          "bytes": 98007,
+          "files": 7,
           "complexity": 1,
-          "percentOfLines": 4.2,
-          "percentOfCode": 4.5,
-          "percentOfBytes": 3
+          "percentOfLines": 2.8,
+          "percentOfCode": 2.9,
+          "percentOfBytes": 2
+        },
+        {
+          "name": "Rust",
+          "lines": 3037,
+          "code": 2442,
+          "comments": 203,
+          "blanks": 392,
+          "bytes": 102690,
+          "files": 13,
+          "complexity": 386,
+          "percentOfLines": 2.4,
+          "percentOfCode": 2.5,
+          "percentOfBytes": 2.1
         },
         {
           "name": "JSON",
-          "lines": 2052,
-          "code": 2052,
+          "lines": 2414,
+          "code": 2412,
           "comments": 0,
-          "blanks": 0,
-          "bytes": 53876,
-          "files": 9,
+          "blanks": 2,
+          "bytes": 62657,
+          "files": 18,
           "complexity": 0,
-          "percentOfLines": 2.7,
-          "percentOfCode": 3.5,
-          "percentOfBytes": 1.8
+          "percentOfLines": 1.9,
+          "percentOfCode": 2.5,
+          "percentOfBytes": 1.3
         },
         {
           "name": "HTML",
-          "lines": 2294,
-          "code": 2020,
+          "lines": 2307,
+          "code": 2032,
           "comments": 56,
-          "blanks": 218,
-          "bytes": 110597,
-          "files": 12,
+          "blanks": 219,
+          "bytes": 110932,
+          "files": 13,
           "complexity": 0,
-          "percentOfLines": 3,
-          "percentOfCode": 3.4,
-          "percentOfBytes": 3.7
+          "percentOfLines": 1.9,
+          "percentOfCode": 2.1,
+          "percentOfBytes": 2.3
+        },
+        {
+          "name": "License",
+          "lines": 720,
+          "code": 590,
+          "comments": 0,
+          "blanks": 130,
+          "bytes": 37122,
+          "files": 3,
+          "complexity": 0,
+          "percentOfLines": 0.6,
+          "percentOfCode": 0.6,
+          "percentOfBytes": 0.8
+        },
+        {
+          "name": "Shell",
+          "lines": 818,
+          "code": 576,
+          "comments": 138,
+          "blanks": 104,
+          "bytes": 32319,
+          "files": 4,
+          "complexity": 96,
+          "percentOfLines": 0.7,
+          "percentOfCode": 0.6,
+          "percentOfBytes": 0.7
+        },
+        {
+          "name": "YAML",
+          "lines": 689,
+          "code": 558,
+          "comments": 85,
+          "blanks": 46,
+          "bytes": 23036,
+          "files": 14,
+          "complexity": 0,
+          "percentOfLines": 0.6,
+          "percentOfCode": 0.6,
+          "percentOfBytes": 0.5
         },
         {
           "name": "Plain Text",
-          "lines": 260,
-          "code": 243,
+          "lines": 365,
+          "code": 345,
           "comments": 0,
-          "blanks": 17,
-          "bytes": 22346,
+          "blanks": 20,
+          "bytes": 33210,
           "files": 2,
           "complexity": 0,
           "percentOfLines": 0.3,
@@ -633,43 +692,56 @@
           "percentOfBytes": 0.7
         },
         {
-          "name": "YAML",
-          "lines": 232,
-          "code": 202,
-          "comments": 10,
-          "blanks": 20,
-          "bytes": 6297,
-          "files": 6,
-          "complexity": 0,
-          "percentOfLines": 0.3,
-          "percentOfCode": 0.3,
-          "percentOfBytes": 0.2
-        },
-        {
           "name": "Powershell",
-          "lines": 256,
-          "code": 189,
-          "comments": 37,
-          "blanks": 30,
-          "bytes": 10997,
-          "files": 2,
-          "complexity": 30,
-          "percentOfLines": 0.3,
-          "percentOfCode": 0.3,
+          "lines": 461,
+          "code": 338,
+          "comments": 73,
+          "blanks": 50,
+          "bytes": 18983,
+          "files": 3,
+          "complexity": 62,
+          "percentOfLines": 0.4,
+          "percentOfCode": 0.4,
           "percentOfBytes": 0.4
         },
         {
+          "name": "SVG",
+          "lines": 209,
+          "code": 182,
+          "comments": 10,
+          "blanks": 17,
+          "bytes": 16376,
+          "files": 9,
+          "complexity": 2,
+          "percentOfLines": 0.2,
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0.3
+        },
+        {
           "name": "TOML",
-          "lines": 52,
-          "code": 42,
-          "comments": 3,
-          "blanks": 7,
-          "bytes": 1539,
-          "files": 1,
-          "complexity": 0,
+          "lines": 144,
+          "code": 120,
+          "comments": 8,
+          "blanks": 16,
+          "bytes": 4842,
+          "files": 3,
+          "complexity": 1,
           "percentOfLines": 0.1,
           "percentOfCode": 0.1,
           "percentOfBytes": 0.1
+        },
+        {
+          "name": "Docker ignore",
+          "lines": 76,
+          "code": 45,
+          "comments": 21,
+          "blanks": 10,
+          "bytes": 1844,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0.1,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
         },
         {
           "name": "CloudFormation (YAML)",
@@ -680,30 +752,17 @@
           "bytes": 1037,
           "files": 1,
           "complexity": 0,
-          "percentOfLines": 0.1,
-          "percentOfCode": 0.1,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
           "percentOfBytes": 0
         },
         {
-          "name": "License",
-          "lines": 42,
-          "code": 34,
-          "comments": 0,
-          "blanks": 8,
-          "bytes": 2158,
-          "files": 2,
-          "complexity": 0,
-          "percentOfLines": 0.1,
-          "percentOfCode": 0.1,
-          "percentOfBytes": 0.1
-        },
-        {
           "name": "Dockerfile",
-          "lines": 46,
-          "code": 26,
-          "comments": 7,
-          "blanks": 13,
-          "bytes": 1168,
+          "lines": 64,
+          "code": 30,
+          "comments": 18,
+          "blanks": 16,
+          "bytes": 2247,
           "files": 2,
           "complexity": 0,
           "percentOfLines": 0.1,
@@ -711,12 +770,176 @@
           "percentOfBytes": 0
         },
         {
-          "name": "Docker ignore",
-          "lines": 14,
-          "code": 13,
+          "name": "TypeScript Typings",
+          "lines": 1,
+          "code": 0,
           "comments": 1,
           "blanks": 0,
-          "bytes": 236,
+          "bytes": 38,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        }
+      ],
+      "summary": {
+        "lines": 124071,
+        "code": 96259,
+        "files": 578,
+        "complexity": 11302,
+        "traditionalCost": 1361582,
+        "aiCost": 347203,
+        "traditionalMonths": 290.29,
+        "aiMonths": 74.02
+      },
+      "detailsFile": "repos/ada.json"
+    },
+    {
+      "id": "jamesemerson112-github-io",
+      "sourceRef": "public:jamesemerson112/jamesemerson112.github.io",
+      "name": "jamesemerson112.github.io",
+      "url": "https://github.com/jamesEmerson112/jamesemerson112.github.io",
+      "description": "James Emerson Vo's personal portfolio",
+      "lastUpdated": "2026-08-31T08:32:39Z",
+      "primaryLanguage": "JSON",
+      "isPrivate": false,
+      "isAnonymized": false,
+      "projectTags": [
+        {
+          "label": "Web",
+          "confidence": 0.76
+        },
+        {
+          "label": "Backend",
+          "confidence": 0.24
+        }
+      ],
+      "languages": [
+        {
+          "name": "JSON",
+          "lines": 89333,
+          "code": 89333,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 2114082,
+          "files": 238,
+          "complexity": 0,
+          "percentOfLines": 88.2,
+          "percentOfCode": 89.9,
+          "percentOfBytes": 85.5
+        },
+        {
+          "name": "JavaScript",
+          "lines": 4670,
+          "code": 3864,
+          "comments": 162,
+          "blanks": 644,
+          "bytes": 147514,
+          "files": 38,
+          "complexity": 247,
+          "percentOfLines": 4.6,
+          "percentOfCode": 3.9,
+          "percentOfBytes": 6
+        },
+        {
+          "name": "Svelte",
+          "lines": 4332,
+          "code": 3783,
+          "comments": 23,
+          "blanks": 526,
+          "bytes": 109073,
+          "files": 19,
+          "complexity": 190,
+          "percentOfLines": 4.3,
+          "percentOfCode": 3.8,
+          "percentOfBytes": 4.4
+        },
+        {
+          "name": "TypeScript",
+          "lines": 1515,
+          "code": 1243,
+          "comments": 14,
+          "blanks": 258,
+          "bytes": 46082,
+          "files": 18,
+          "complexity": 240,
+          "percentOfLines": 1.5,
+          "percentOfCode": 1.3,
+          "percentOfBytes": 1.9
+        },
+        {
+          "name": "Markdown",
+          "lines": 715,
+          "code": 544,
+          "comments": 0,
+          "blanks": 171,
+          "bytes": 33633,
+          "files": 9,
+          "complexity": 0,
+          "percentOfLines": 0.7,
+          "percentOfCode": 0.5,
+          "percentOfBytes": 1.4
+        },
+        {
+          "name": "CSS",
+          "lines": 313,
+          "code": 235,
+          "comments": 23,
+          "blanks": 55,
+          "bytes": 8452,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 0.3,
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0.3
+        },
+        {
+          "name": "HTML",
+          "lines": 213,
+          "code": 184,
+          "comments": 3,
+          "blanks": 26,
+          "bytes": 6683,
+          "files": 2,
+          "complexity": 0,
+          "percentOfLines": 0.2,
+          "percentOfCode": 0.2,
+          "percentOfBytes": 0.3
+        },
+        {
+          "name": "YAML",
+          "lines": 175,
+          "code": 141,
+          "comments": 5,
+          "blanks": 29,
+          "bytes": 5381,
+          "files": 3,
+          "complexity": 0,
+          "percentOfLines": 0.2,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0.2
+        },
+        {
+          "name": "XML",
+          "lines": 7,
+          "code": 7,
+          "comments": 0,
+          "blanks": 0,
+          "bytes": 213,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "License",
+          "lines": 9,
+          "code": 5,
+          "comments": 0,
+          "blanks": 4,
+          "bytes": 1099,
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0,
@@ -725,29 +948,55 @@
         },
         {
           "name": "SVG",
-          "lines": 10,
-          "code": 10,
+          "lines": 4,
+          "code": 4,
           "comments": 0,
           "blanks": 0,
-          "bytes": 3655,
-          "files": 6,
+          "bytes": 303,
+          "files": 1,
           "complexity": 0,
           "percentOfLines": 0,
           "percentOfCode": 0,
-          "percentOfBytes": 0.1
+          "percentOfBytes": 0
+        },
+        {
+          "name": "Plain Text",
+          "lines": 4,
+          "code": 3,
+          "comments": 0,
+          "blanks": 1,
+          "bytes": 79,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "TypeScript Typings",
+          "lines": 5,
+          "code": 3,
+          "comments": 1,
+          "blanks": 1,
+          "bytes": 99,
+          "files": 1,
+          "complexity": 0,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
         }
       ],
       "summary": {
-        "lines": 77136,
-        "code": 59376,
-        "files": 310,
-        "complexity": 7309,
-        "traditionalCost": 819826,
-        "aiCost": 209056,
-        "traditionalMonths": 174.78,
-        "aiMonths": 44.57
+        "lines": 101295,
+        "code": 99349,
+        "files": 334,
+        "complexity": 677,
+        "traditionalCost": 1407512,
+        "aiCost": 358916,
+        "traditionalMonths": 300.08,
+        "aiMonths": 76.52
       },
-      "detailsFile": "repos/silkscreen.json"
+      "detailsFile": "repos/jamesemerson112-github-io.json"
     },
     {
       "id": "private-f8cb709493f4",
@@ -1274,209 +1523,6 @@
         "aiMonths": 6.2
       },
       "detailsFile": "repos/rust-learning.json"
-    },
-    {
-      "id": "jamesemerson112-github-io",
-      "sourceRef": "public:jamesemerson112/jamesemerson112.github.io",
-      "name": "jamesemerson112.github.io",
-      "url": "https://github.com/jamesEmerson112/jamesemerson112.github.io",
-      "description": "James Emerson Vo's personal portfolio",
-      "lastUpdated": "2026-08-24T03:13:19Z",
-      "primaryLanguage": "JSON",
-      "isPrivate": false,
-      "isAnonymized": false,
-      "projectTags": [
-        {
-          "label": "Web",
-          "confidence": 0.76
-        },
-        {
-          "label": "Backend",
-          "confidence": 0.24
-        }
-      ],
-      "languages": [
-        {
-          "name": "JSON",
-          "lines": 88355,
-          "code": 88355,
-          "comments": 0,
-          "blanks": 0,
-          "bytes": 2091781,
-          "files": 237,
-          "complexity": 0,
-          "percentOfLines": 88.1,
-          "percentOfCode": 89.8,
-          "percentOfBytes": 85.4
-        },
-        {
-          "name": "JavaScript",
-          "lines": 4670,
-          "code": 3864,
-          "comments": 162,
-          "blanks": 644,
-          "bytes": 147514,
-          "files": 38,
-          "complexity": 247,
-          "percentOfLines": 4.7,
-          "percentOfCode": 3.9,
-          "percentOfBytes": 6
-        },
-        {
-          "name": "Svelte",
-          "lines": 4332,
-          "code": 3783,
-          "comments": 23,
-          "blanks": 526,
-          "bytes": 109073,
-          "files": 19,
-          "complexity": 190,
-          "percentOfLines": 4.3,
-          "percentOfCode": 3.8,
-          "percentOfBytes": 4.5
-        },
-        {
-          "name": "TypeScript",
-          "lines": 1515,
-          "code": 1243,
-          "comments": 14,
-          "blanks": 258,
-          "bytes": 46082,
-          "files": 18,
-          "complexity": 240,
-          "percentOfLines": 1.5,
-          "percentOfCode": 1.3,
-          "percentOfBytes": 1.9
-        },
-        {
-          "name": "Markdown",
-          "lines": 715,
-          "code": 544,
-          "comments": 0,
-          "blanks": 171,
-          "bytes": 33633,
-          "files": 9,
-          "complexity": 0,
-          "percentOfLines": 0.7,
-          "percentOfCode": 0.6,
-          "percentOfBytes": 1.4
-        },
-        {
-          "name": "CSS",
-          "lines": 313,
-          "code": 235,
-          "comments": 23,
-          "blanks": 55,
-          "bytes": 8452,
-          "files": 2,
-          "complexity": 0,
-          "percentOfLines": 0.3,
-          "percentOfCode": 0.2,
-          "percentOfBytes": 0.3
-        },
-        {
-          "name": "HTML",
-          "lines": 213,
-          "code": 184,
-          "comments": 3,
-          "blanks": 26,
-          "bytes": 6683,
-          "files": 2,
-          "complexity": 0,
-          "percentOfLines": 0.2,
-          "percentOfCode": 0.2,
-          "percentOfBytes": 0.3
-        },
-        {
-          "name": "YAML",
-          "lines": 175,
-          "code": 141,
-          "comments": 5,
-          "blanks": 29,
-          "bytes": 5381,
-          "files": 3,
-          "complexity": 0,
-          "percentOfLines": 0.2,
-          "percentOfCode": 0.1,
-          "percentOfBytes": 0.2
-        },
-        {
-          "name": "XML",
-          "lines": 7,
-          "code": 7,
-          "comments": 0,
-          "blanks": 0,
-          "bytes": 213,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        },
-        {
-          "name": "License",
-          "lines": 9,
-          "code": 5,
-          "comments": 0,
-          "blanks": 4,
-          "bytes": 1099,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        },
-        {
-          "name": "SVG",
-          "lines": 4,
-          "code": 4,
-          "comments": 0,
-          "blanks": 0,
-          "bytes": 303,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        },
-        {
-          "name": "Plain Text",
-          "lines": 4,
-          "code": 3,
-          "comments": 0,
-          "blanks": 1,
-          "bytes": 79,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        },
-        {
-          "name": "TypeScript Typings",
-          "lines": 5,
-          "code": 3,
-          "comments": 1,
-          "blanks": 1,
-          "bytes": 99,
-          "files": 1,
-          "complexity": 0,
-          "percentOfLines": 0,
-          "percentOfCode": 0,
-          "percentOfBytes": 0
-        }
-      ],
-      "summary": {
-        "lines": 100317,
-        "code": 98371,
-        "files": 333,
-        "complexity": 677,
-        "traditionalCost": 1392967,
-        "aiCost": 355207,
-        "traditionalMonths": 296.98,
-        "aiMonths": 75.73
-      },
-      "detailsFile": "repos/jamesemerson112-github-io.json"
     },
     {
       "id": "heir",
@@ -2071,7 +2117,7 @@
           "blanks": 769,
           "bytes": 333835,
           "files": 27,
-          "complexity": 413,
+          "complexity": 530,
           "percentOfLines": 48.3,
           "percentOfCode": 48.2,
           "percentOfBytes": 35.8
@@ -2159,7 +2205,7 @@
         "lines": 18811,
         "code": 15252,
         "files": 54,
-        "complexity": 414,
+        "complexity": 531,
         "traditionalCost": 196754,
         "aiCost": 50172,
         "traditionalMonths": 41.95,
@@ -2198,7 +2244,7 @@
           "files": 115,
           "complexity": 0,
           "percentOfLines": 93,
-          "percentOfCode": 92.4,
+          "percentOfCode": 92.5,
           "percentOfBytes": 92.5
         },
         {
@@ -2230,12 +2276,12 @@
         {
           "name": "Python",
           "lines": 282,
-          "code": 210,
-          "comments": 37,
-          "blanks": 35,
+          "code": 193,
+          "comments": 44,
+          "blanks": 45,
           "bytes": 10352,
           "files": 1,
-          "complexity": 15,
+          "complexity": 24,
           "percentOfLines": 1,
           "percentOfCode": 1,
           "percentOfBytes": 0.7
@@ -2256,13 +2302,13 @@
       ],
       "summary": {
         "lines": 28771,
-        "code": 20313,
+        "code": 20296,
         "files": 119,
-        "complexity": 15,
-        "traditionalCost": 265823,
-        "aiCost": 67785,
-        "traditionalMonths": 56.67,
-        "aiMonths": 14.45
+        "complexity": 24,
+        "traditionalCost": 265590,
+        "aiCost": 67725,
+        "traditionalMonths": 56.62,
+        "aiMonths": 14.44
       },
       "detailsFile": "repos/james-neural-network-study.json"
     },
@@ -2279,11 +2325,11 @@
       "projectTags": [
         {
           "label": "AI/ML",
-          "confidence": 0.7
+          "confidence": 0.73
         },
         {
           "label": "Data",
-          "confidence": 0.3
+          "confidence": 0.27
         }
       ],
       "languages": [
@@ -2297,21 +2343,8 @@
           "files": 38,
           "complexity": 0,
           "percentOfLines": 44.7,
-          "percentOfCode": 49.1,
+          "percentOfCode": 52.2,
           "percentOfBytes": 54.2
-        },
-        {
-          "name": "Python",
-          "lines": 18811,
-          "code": 14708,
-          "comments": 2837,
-          "blanks": 1266,
-          "bytes": 829883,
-          "files": 56,
-          "complexity": 1056,
-          "percentOfLines": 20.4,
-          "percentOfCode": 18.8,
-          "percentOfBytes": 16
         },
         {
           "name": "C",
@@ -2321,10 +2354,23 @@
           "blanks": 856,
           "bytes": 840239,
           "files": 1,
-          "complexity": 3662,
+          "complexity": 4008,
           "percentOfLines": 21,
-          "percentOfCode": 18.6,
+          "percentOfCode": 19.8,
           "percentOfBytes": 16.2
+        },
+        {
+          "name": "Python",
+          "lines": 18811,
+          "code": 10133,
+          "comments": 6148,
+          "blanks": 2530,
+          "bytes": 829883,
+          "files": 56,
+          "complexity": 1615,
+          "percentOfLines": 20.4,
+          "percentOfCode": 13.8,
+          "percentOfBytes": 16
         },
         {
           "name": "Markdown",
@@ -2336,7 +2382,7 @@
           "files": 35,
           "complexity": 0,
           "percentOfLines": 10.1,
-          "percentOfCode": 9.5,
+          "percentOfCode": 10,
           "percentOfBytes": 11.1
         },
         {
@@ -2349,7 +2395,7 @@
           "files": 6,
           "complexity": 0,
           "percentOfLines": 1.2,
-          "percentOfCode": 1.4,
+          "percentOfCode": 1.5,
           "percentOfBytes": 0.5
         },
         {
@@ -2360,20 +2406,20 @@
           "blanks": 113,
           "bytes": 39307,
           "files": 17,
-          "complexity": 51,
+          "complexity": 66,
           "percentOfLines": 1.2,
           "percentOfCode": 1.3,
           "percentOfBytes": 0.8
         },
         {
-          "name": "TeX",
+          "name": "LaTeX",
           "lines": 737,
           "code": 520,
           "comments": 0,
           "blanks": 217,
           "bytes": 27738,
           "files": 1,
-          "complexity": 26,
+          "complexity": 0,
           "percentOfLines": 0.8,
           "percentOfCode": 0.7,
           "percentOfBytes": 0.5
@@ -2472,13 +2518,13 @@
       ],
       "summary": {
         "lines": 92154,
-        "code": 78130,
+        "code": 73555,
         "files": 169,
-        "complexity": 4804,
-        "traditionalCost": 1093677,
-        "aiCost": 278888,
-        "traditionalMonths": 233.17,
-        "aiMonths": 59.46
+        "complexity": 5698,
+        "traditionalCost": 1026534,
+        "aiCost": 261766,
+        "traditionalMonths": 218.85,
+        "aiMonths": 55.81
       },
       "detailsFile": "repos/ai-cds-disease-diagnosis-reproduction-alpha.json"
     },
@@ -2513,20 +2559,20 @@
           "files": 164,
           "complexity": 0,
           "percentOfLines": 71.9,
-          "percentOfCode": 73.2,
+          "percentOfCode": 74.4,
           "percentOfBytes": 71.8
         },
         {
           "name": "Python",
           "lines": 60285,
-          "code": 54455,
-          "comments": 2438,
-          "blanks": 3392,
+          "code": 50512,
+          "comments": 4086,
+          "blanks": 5687,
           "bytes": 2838441,
           "files": 52,
-          "complexity": 7711,
+          "complexity": 12439,
           "percentOfLines": 20.6,
-          "percentOfCode": 20.6,
+          "percentOfCode": 19.4,
           "percentOfBytes": 20.5
         },
         {
@@ -2550,7 +2596,7 @@
           "blanks": 853,
           "bytes": 192156,
           "files": 36,
-          "complexity": 598,
+          "complexity": 617,
           "percentOfLines": 1.9,
           "percentOfCode": 1.4,
           "percentOfBytes": 1.4
@@ -2610,13 +2656,13 @@
       ],
       "summary": {
         "lines": 292321,
-        "code": 264422,
+        "code": 260479,
         "files": 380,
-        "complexity": 8309,
-        "traditionalCost": 3934077,
-        "aiCost": 1003190,
-        "traditionalMonths": 838.73,
-        "aiMonths": 213.88
+        "complexity": 13056,
+        "traditionalCost": 3872503,
+        "aiCost": 987488,
+        "traditionalMonths": 825.61,
+        "aiMonths": 210.53
       },
       "detailsFile": "repos/dl-team-proposal.json"
     },
@@ -2644,14 +2690,14 @@
         {
           "name": "Python",
           "lines": 6284,
-          "code": 4907,
-          "comments": 804,
-          "blanks": 573,
+          "code": 4402,
+          "comments": 1030,
+          "blanks": 852,
           "bytes": 260297,
           "files": 24,
-          "complexity": 552,
+          "complexity": 827,
           "percentOfLines": 53.6,
-          "percentOfCode": 52.8,
+          "percentOfCode": 50.1,
           "percentOfBytes": 48.7
         },
         {
@@ -2664,7 +2710,7 @@
           "files": 36,
           "complexity": 0,
           "percentOfLines": 22,
-          "percentOfCode": 21.7,
+          "percentOfCode": 22.9,
           "percentOfBytes": 31.3
         },
         {
@@ -2677,7 +2723,7 @@
           "files": 11,
           "complexity": 0,
           "percentOfLines": 12.4,
-          "percentOfCode": 11.4,
+          "percentOfCode": 12.1,
           "percentOfBytes": 9
         },
         {
@@ -2690,7 +2736,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 5.8,
-          "percentOfCode": 6.6,
+          "percentOfCode": 7,
           "percentOfBytes": 5
         },
         {
@@ -2703,7 +2749,7 @@
           "files": 15,
           "complexity": 0,
           "percentOfLines": 4.1,
-          "percentOfCode": 5.2,
+          "percentOfCode": 5.5,
           "percentOfBytes": 3.1
         },
         {
@@ -2714,7 +2760,7 @@
           "blanks": 20,
           "bytes": 5620,
           "files": 1,
-          "complexity": 37,
+          "complexity": 40,
           "percentOfLines": 1.2,
           "percentOfCode": 1.4,
           "percentOfBytes": 1.1
@@ -2729,7 +2775,7 @@
           "files": 4,
           "complexity": 0,
           "percentOfLines": 0.3,
-          "percentOfCode": 0.3,
+          "percentOfCode": 0.4,
           "percentOfBytes": 0.6
         },
         {
@@ -2774,13 +2820,13 @@
       ],
       "summary": {
         "lines": 11718,
-        "code": 9288,
+        "code": 8783,
         "files": 97,
-        "complexity": 589,
-        "traditionalCost": 116882,
-        "aiCost": 29805,
-        "traditionalMonths": 24.92,
-        "aiMonths": 6.35
+        "complexity": 867,
+        "traditionalCost": 110219,
+        "aiCost": 28106,
+        "traditionalMonths": 23.5,
+        "aiMonths": 5.99
       },
       "detailsFile": "repos/private-57452843da5a.json"
     },
@@ -2813,9 +2859,9 @@
           "blanks": 428,
           "bytes": 150914,
           "files": 57,
-          "complexity": 262,
+          "complexity": 282,
           "percentOfLines": 34,
-          "percentOfCode": 33.7,
+          "percentOfCode": 33.8,
           "percentOfBytes": 34.3
         },
         {
@@ -2826,9 +2872,9 @@
           "blanks": 266,
           "bytes": 78929,
           "files": 17,
-          "complexity": 61,
+          "complexity": 130,
           "percentOfLines": 18.7,
-          "percentOfCode": 17,
+          "percentOfCode": 17.1,
           "percentOfBytes": 17.9
         },
         {
@@ -2841,7 +2887,7 @@
           "files": 4,
           "complexity": 0,
           "percentOfLines": 14.9,
-          "percentOfCode": 16.1,
+          "percentOfCode": 16.2,
           "percentOfBytes": 16.2
         },
         {
@@ -2891,7 +2937,7 @@
           "blanks": 36,
           "bytes": 7359,
           "files": 4,
-          "complexity": 13,
+          "complexity": 17,
           "percentOfLines": 1.9,
           "percentOfCode": 1.8,
           "percentOfBytes": 1.7
@@ -2899,14 +2945,14 @@
         {
           "name": "Python",
           "lines": 258,
-          "code": 156,
-          "comments": 58,
-          "blanks": 44,
+          "code": 117,
+          "comments": 84,
+          "blanks": 57,
           "bytes": 7365,
           "files": 14,
-          "complexity": 2,
+          "complexity": 3,
           "percentOfLines": 1.9,
-          "percentOfCode": 1.3,
+          "percentOfCode": 1,
           "percentOfBytes": 1.7
         },
         {
@@ -3016,13 +3062,13 @@
       ],
       "summary": {
         "lines": 13372,
-        "code": 11633,
+        "code": 11594,
         "files": 147,
-        "complexity": 340,
-        "traditionalCost": 148049,
-        "aiCost": 37753,
-        "traditionalMonths": 31.56,
-        "aiMonths": 8.05
+        "complexity": 434,
+        "traditionalCost": 147528,
+        "aiCost": 37620,
+        "traditionalMonths": 31.45,
+        "aiMonths": 8.02
       },
       "detailsFile": "repos/private-4c711ac15ed9.json"
     },
@@ -3057,7 +3103,7 @@
           "files": 48,
           "complexity": 0,
           "percentOfLines": 85.8,
-          "percentOfCode": 85.3,
+          "percentOfCode": 85.4,
           "percentOfBytes": 88.5
         },
         {
@@ -3089,14 +3135,14 @@
         {
           "name": "Python",
           "lines": 282,
-          "code": 210,
-          "comments": 37,
-          "blanks": 35,
+          "code": 193,
+          "comments": 44,
+          "blanks": 45,
           "bytes": 10352,
           "files": 1,
-          "complexity": 15,
+          "complexity": 24,
           "percentOfLines": 2.2,
-          "percentOfCode": 2.2,
+          "percentOfCode": 2,
           "percentOfBytes": 1.6
         },
         {
@@ -3141,13 +3187,13 @@
       ],
       "summary": {
         "lines": 13113,
-        "code": 9486,
+        "code": 9469,
         "files": 67,
-        "complexity": 43,
-        "traditionalCost": 119500,
-        "aiCost": 30472,
-        "traditionalMonths": 25.48,
-        "aiMonths": 6.5
+        "complexity": 52,
+        "traditionalCost": 119275,
+        "aiCost": 30415,
+        "traditionalMonths": 25.43,
+        "aiMonths": 6.48
       },
       "detailsFile": "repos/backprop-by-hand.json"
     },
@@ -3164,11 +3210,11 @@
       "projectTags": [
         {
           "label": "Web",
-          "confidence": 0.53
+          "confidence": 0.54
         },
         {
           "label": "Backend",
-          "confidence": 0.47
+          "confidence": 0.46
         }
       ],
       "languages": [
@@ -3182,7 +3228,7 @@
           "files": 31,
           "complexity": 0,
           "percentOfLines": 33.2,
-          "percentOfCode": 34.8,
+          "percentOfCode": 34.9,
           "percentOfBytes": 17.8
         },
         {
@@ -3193,9 +3239,9 @@
           "blanks": 280,
           "bytes": 136436,
           "files": 20,
-          "complexity": 319,
+          "complexity": 372,
           "percentOfLines": 29.8,
-          "percentOfCode": 30.7,
+          "percentOfCode": 30.9,
           "percentOfBytes": 12.9
         },
         {
@@ -3206,9 +3252,9 @@
           "blanks": 147,
           "bytes": 75543,
           "files": 6,
-          "complexity": 77,
+          "complexity": 125,
           "percentOfLines": 15.5,
-          "percentOfCode": 13.5,
+          "percentOfCode": 13.6,
           "percentOfBytes": 7.1
         },
         {
@@ -3221,7 +3267,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 6,
-          "percentOfCode": 6.4,
+          "percentOfCode": 6.5,
           "percentOfBytes": 3.4
         },
         {
@@ -3316,19 +3362,6 @@
           "percentOfBytes": 0.1
         },
         {
-          "name": "Python",
-          "lines": 155,
-          "code": 60,
-          "comments": 79,
-          "blanks": 16,
-          "bytes": 8647,
-          "files": 1,
-          "complexity": 1,
-          "percentOfLines": 1.3,
-          "percentOfCode": 0.7,
-          "percentOfBytes": 0.8
-        },
-        {
           "name": "TOML",
           "lines": 25,
           "code": 18,
@@ -3353,6 +3386,19 @@
           "percentOfLines": 1,
           "percentOfCode": 0.2,
           "percentOfBytes": 0.5
+        },
+        {
+          "name": "Python",
+          "lines": 155,
+          "code": 12,
+          "comments": 127,
+          "blanks": 16,
+          "bytes": 8647,
+          "files": 1,
+          "complexity": 1,
+          "percentOfLines": 1.3,
+          "percentOfCode": 0.1,
+          "percentOfBytes": 0.8
         },
         {
           "name": "SQL",
@@ -3396,13 +3442,13 @@
       ],
       "summary": {
         "lines": 11660,
-        "code": 8870,
+        "code": 8822,
         "files": 91,
-        "complexity": 434,
-        "traditionalCost": 111365,
-        "aiCost": 28398,
-        "traditionalMonths": 23.74,
-        "aiMonths": 6.05
+        "complexity": 535,
+        "traditionalCost": 110733,
+        "aiCost": 28237,
+        "traditionalMonths": 23.61,
+        "aiMonths": 6.02
       },
       "detailsFile": "repos/weddingai.json"
     },
@@ -3448,7 +3494,7 @@
           "blanks": 808,
           "bytes": 278368,
           "files": 65,
-          "complexity": 507,
+          "complexity": 786,
           "percentOfLines": 31.9,
           "percentOfCode": 32.6,
           "percentOfBytes": 29.7
@@ -3461,7 +3507,7 @@
           "blanks": 374,
           "bytes": 148367,
           "files": 54,
-          "complexity": 264,
+          "complexity": 334,
           "percentOfLines": 15.9,
           "percentOfCode": 17,
           "percentOfBytes": 15.8
@@ -3547,8 +3593,8 @@
         {
           "name": "Python",
           "lines": 122,
-          "code": 93,
-          "comments": 14,
+          "code": 86,
+          "comments": 21,
           "blanks": 15,
           "bytes": 4072,
           "files": 1,
@@ -3599,12 +3645,12 @@
       ],
       "summary": {
         "lines": 26258,
-        "code": 22290,
+        "code": 22283,
         "files": 251,
-        "complexity": 2365,
-        "traditionalCost": 293053,
-        "aiCost": 74728,
-        "traditionalMonths": 62.48,
+        "complexity": 2714,
+        "traditionalCost": 292956,
+        "aiCost": 74704,
+        "traditionalMonths": 62.46,
         "aiMonths": 15.93
       },
       "detailsFile": "repos/private-4870e1e5574e.json"
@@ -3633,14 +3679,14 @@
         {
           "name": "Python",
           "lines": 18029,
-          "code": 13677,
-          "comments": 2838,
-          "blanks": 1514,
+          "code": 10149,
+          "comments": 5052,
+          "blanks": 2828,
           "bytes": 752557,
           "files": 127,
-          "complexity": 997,
+          "complexity": 1576,
           "percentOfLines": 60.9,
-          "percentOfCode": 59,
+          "percentOfCode": 51.7,
           "percentOfBytes": 55.2
         },
         {
@@ -3653,7 +3699,7 @@
           "files": 55,
           "complexity": 0,
           "percentOfLines": 19.2,
-          "percentOfCode": 19.8,
+          "percentOfCode": 23.3,
           "percentOfBytes": 29.7
         },
         {
@@ -3664,9 +3710,9 @@
           "blanks": 426,
           "bytes": 155151,
           "files": 36,
-          "complexity": 158,
+          "complexity": 175,
           "percentOfLines": 14.3,
-          "percentOfCode": 14.5,
+          "percentOfCode": 17.1,
           "percentOfBytes": 11.4
         },
         {
@@ -3679,7 +3725,7 @@
           "files": 12,
           "complexity": 0,
           "percentOfLines": 3.5,
-          "percentOfCode": 4.4,
+          "percentOfCode": 5.2,
           "percentOfBytes": 1.7
         },
         {
@@ -3692,7 +3738,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 0.7,
-          "percentOfCode": 0.8,
+          "percentOfCode": 1,
           "percentOfBytes": 0.9
         },
         {
@@ -3705,7 +3751,7 @@
           "files": 3,
           "complexity": 0,
           "percentOfLines": 0.4,
-          "percentOfCode": 0.3,
+          "percentOfCode": 0.4,
           "percentOfBytes": 0.3
         },
         {
@@ -3716,7 +3762,7 @@
           "blanks": 5,
           "bytes": 4853,
           "files": 1,
-          "complexity": 19,
+          "complexity": 20,
           "percentOfLines": 0.3,
           "percentOfCode": 0.3,
           "percentOfBytes": 0.4
@@ -3744,7 +3790,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.2,
-          "percentOfCode": 0.2,
+          "percentOfCode": 0.3,
           "percentOfBytes": 0.1
         },
         {
@@ -3757,7 +3803,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.1,
-          "percentOfCode": 0.1,
+          "percentOfCode": 0.2,
           "percentOfBytes": 0.1
         },
         {
@@ -3789,13 +3835,13 @@
       ],
       "summary": {
         "lines": 29611,
-        "code": 23163,
+        "code": 19635,
         "files": 241,
-        "complexity": 1174,
-        "traditionalCost": 305116,
-        "aiCost": 77805,
-        "traditionalMonths": 65.05,
-        "aiMonths": 16.59
+        "complexity": 1771,
+        "traditionalCost": 256515,
+        "aiCost": 65411,
+        "traditionalMonths": 54.69,
+        "aiMonths": 13.95
       },
       "detailsFile": "repos/lunara.json"
     },
@@ -3823,14 +3869,14 @@
         {
           "name": "Python",
           "lines": 18029,
-          "code": 13677,
-          "comments": 2838,
-          "blanks": 1514,
+          "code": 10149,
+          "comments": 5052,
+          "blanks": 2828,
           "bytes": 752557,
           "files": 127,
-          "complexity": 997,
+          "complexity": 1576,
           "percentOfLines": 61.1,
-          "percentOfCode": 59.2,
+          "percentOfCode": 51.9,
           "percentOfBytes": 55.5
         },
         {
@@ -3843,7 +3889,7 @@
           "files": 55,
           "complexity": 0,
           "percentOfLines": 18.9,
-          "percentOfCode": 19.5,
+          "percentOfCode": 23,
           "percentOfBytes": 29.3
         },
         {
@@ -3854,9 +3900,9 @@
           "blanks": 426,
           "bytes": 155151,
           "files": 36,
-          "complexity": 158,
+          "complexity": 175,
           "percentOfLines": 14.3,
-          "percentOfCode": 14.6,
+          "percentOfCode": 17.2,
           "percentOfBytes": 11.4
         },
         {
@@ -3869,7 +3915,7 @@
           "files": 12,
           "complexity": 0,
           "percentOfLines": 3.5,
-          "percentOfCode": 4.5,
+          "percentOfCode": 5.3,
           "percentOfBytes": 1.7
         },
         {
@@ -3882,7 +3928,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 0.7,
-          "percentOfCode": 0.8,
+          "percentOfCode": 1,
           "percentOfBytes": 0.9
         },
         {
@@ -3895,7 +3941,7 @@
           "files": 3,
           "complexity": 0,
           "percentOfLines": 0.4,
-          "percentOfCode": 0.3,
+          "percentOfCode": 0.4,
           "percentOfBytes": 0.3
         },
         {
@@ -3906,7 +3952,7 @@
           "blanks": 5,
           "bytes": 4853,
           "files": 1,
-          "complexity": 19,
+          "complexity": 20,
           "percentOfLines": 0.3,
           "percentOfCode": 0.3,
           "percentOfBytes": 0.4
@@ -3934,7 +3980,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.2,
-          "percentOfCode": 0.2,
+          "percentOfCode": 0.3,
           "percentOfBytes": 0.1
         },
         {
@@ -3947,7 +3993,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.1,
-          "percentOfCode": 0.1,
+          "percentOfCode": 0.2,
           "percentOfBytes": 0.1
         },
         {
@@ -3979,13 +4025,13 @@
       ],
       "summary": {
         "lines": 29499,
-        "code": 23087,
+        "code": 19559,
         "files": 241,
-        "complexity": 1174,
-        "traditionalCost": 304065,
-        "aiCost": 77537,
-        "traditionalMonths": 64.83,
-        "aiMonths": 16.53
+        "complexity": 1771,
+        "traditionalCost": 255473,
+        "aiCost": 65146,
+        "traditionalMonths": 54.47,
+        "aiMonths": 13.89
       },
       "detailsFile": "repos/private-ad446cbbcfaa.json"
     },
@@ -4020,20 +4066,20 @@
           "files": 57,
           "complexity": 0,
           "percentOfLines": 41.3,
-          "percentOfCode": 40.9,
+          "percentOfCode": 41.3,
           "percentOfBytes": 38.5
         },
         {
           "name": "Python",
           "lines": 12116,
-          "code": 7232,
-          "comments": 3185,
-          "blanks": 1699,
+          "code": 6969,
+          "comments": 3306,
+          "blanks": 1841,
           "bytes": 473803,
           "files": 110,
-          "complexity": 694,
+          "complexity": 812,
           "percentOfLines": 27.1,
-          "percentOfCode": 20.6,
+          "percentOfCode": 20,
           "percentOfBytes": 20.4
         },
         {
@@ -4046,7 +4092,7 @@
           "files": 258,
           "complexity": 0,
           "percentOfLines": 12.6,
-          "percentOfCode": 15.9,
+          "percentOfCode": 16,
           "percentOfBytes": 3.4
         },
         {
@@ -4059,7 +4105,7 @@
           "files": 3,
           "complexity": 0,
           "percentOfLines": 12.5,
-          "percentOfCode": 15.9,
+          "percentOfCode": 16,
           "percentOfBytes": 33
         },
         {
@@ -4122,7 +4168,7 @@
           "blanks": 10,
           "bytes": 2088,
           "files": 7,
-          "complexity": 3,
+          "complexity": 12,
           "percentOfLines": 0.1,
           "percentOfCode": 0.1,
           "percentOfBytes": 0.1
@@ -4135,7 +4181,7 @@
           "blanks": 3,
           "bytes": 1419,
           "files": 5,
-          "complexity": 6,
+          "complexity": 8,
           "percentOfLines": 0.1,
           "percentOfCode": 0.1,
           "percentOfBytes": 0.1
@@ -4169,13 +4215,13 @@
       ],
       "summary": {
         "lines": 44727,
-        "code": 35138,
+        "code": 34875,
         "files": 494,
-        "complexity": 791,
-        "traditionalCost": 472603,
-        "aiCost": 120514,
-        "traditionalMonths": 100.76,
-        "aiMonths": 25.69
+        "complexity": 920,
+        "traditionalCost": 468889,
+        "aiCost": 119567,
+        "traditionalMonths": 99.97,
+        "aiMonths": 25.49
       },
       "detailsFile": "repos/private-27eb0d48a34b.json"
     },
@@ -4208,7 +4254,7 @@
           "blanks": 204,
           "bytes": 91797,
           "files": 41,
-          "complexity": 363,
+          "complexity": 380,
           "percentOfLines": 56.3,
           "percentOfCode": 56,
           "percentOfBytes": 6
@@ -4247,7 +4293,7 @@
           "blanks": 33,
           "bytes": 6800,
           "files": 2,
-          "complexity": 13,
+          "complexity": 17,
           "percentOfLines": 4.4,
           "percentOfCode": 4.1,
           "percentOfBytes": 0.4
@@ -4296,7 +4342,7 @@
         "lines": 5102,
         "code": 4729,
         "files": 58,
-        "complexity": 376,
+        "complexity": 397,
         "traditionalCost": 57536,
         "aiCost": 14672,
         "traditionalMonths": 12.27,
@@ -4317,11 +4363,11 @@
       "projectTags": [
         {
           "label": "Backend",
-          "confidence": 0.59
+          "confidence": 0.58
         },
         {
           "label": "Web",
-          "confidence": 0.41
+          "confidence": 0.42
         }
       ],
       "languages": [
@@ -4333,9 +4379,9 @@
           "blanks": 63,
           "bytes": 21819,
           "files": 8,
-          "complexity": 47,
+          "complexity": 48,
           "percentOfLines": 27,
-          "percentOfCode": 29.6,
+          "percentOfCode": 30.2,
           "percentOfBytes": 22.8
         },
         {
@@ -4346,9 +4392,9 @@
           "blanks": 68,
           "bytes": 28031,
           "files": 6,
-          "complexity": 28,
+          "complexity": 58,
           "percentOfLines": 30.8,
-          "percentOfCode": 29.1,
+          "percentOfCode": 29.6,
           "percentOfBytes": 29.2
         },
         {
@@ -4361,7 +4407,7 @@
           "files": 7,
           "complexity": 0,
           "percentOfLines": 18.5,
-          "percentOfCode": 19,
+          "percentOfCode": 19.3,
           "percentOfBytes": 24.7
         },
         {
@@ -4374,7 +4420,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 5.7,
-          "percentOfCode": 7.7,
+          "percentOfCode": 7.9,
           "percentOfBytes": 3.4
         },
         {
@@ -4387,7 +4433,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 2.6,
-          "percentOfCode": 3.7,
+          "percentOfCode": 3.8,
           "percentOfBytes": 1.3
         },
         {
@@ -4400,21 +4446,8 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 2.7,
-          "percentOfCode": 2.6,
+          "percentOfCode": 2.7,
           "percentOfBytes": 1.8
-        },
-        {
-          "name": "Python",
-          "lines": 101,
-          "code": 40,
-          "comments": 46,
-          "blanks": 15,
-          "bytes": 4963,
-          "files": 1,
-          "complexity": 1,
-          "percentOfLines": 4.4,
-          "percentOfCode": 2.4,
-          "percentOfBytes": 5.2
         },
         {
           "name": "CSS",
@@ -4426,7 +4459,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 1.1,
-          "percentOfCode": 1.3,
+          "percentOfCode": 1.4,
           "percentOfBytes": 0.5
         },
         {
@@ -4452,7 +4485,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.9,
-          "percentOfCode": 1,
+          "percentOfCode": 1.1,
           "percentOfBytes": 1.1
         },
         {
@@ -4467,6 +4500,19 @@
           "percentOfLines": 0.7,
           "percentOfCode": 1,
           "percentOfBytes": 0.6
+        },
+        {
+          "name": "Python",
+          "lines": 101,
+          "code": 12,
+          "comments": 74,
+          "blanks": 15,
+          "bytes": 4963,
+          "files": 1,
+          "complexity": 1,
+          "percentOfLines": 4.4,
+          "percentOfCode": 0.7,
+          "percentOfBytes": 5.2
         },
         {
           "name": "SQL",
@@ -4510,13 +4556,13 @@
       ],
       "summary": {
         "lines": 2302,
-        "code": 1633,
+        "code": 1605,
         "files": 38,
-        "complexity": 76,
-        "traditionalCost": 18839,
-        "aiCost": 4804,
-        "traditionalMonths": 4.02,
-        "aiMonths": 1.02
+        "complexity": 107,
+        "traditionalCost": 18500,
+        "aiCost": 4718,
+        "traditionalMonths": 3.94,
+        "aiMonths": 1.01
       },
       "detailsFile": "repos/splat-service.json"
     },
@@ -4549,7 +4595,7 @@
           "blanks": 307,
           "bytes": 97623,
           "files": 39,
-          "complexity": 253,
+          "complexity": 278,
           "percentOfLines": 58.5,
           "percentOfCode": 59.5,
           "percentOfBytes": 67.2
@@ -4624,7 +4670,7 @@
         "lines": 4835,
         "code": 4233,
         "files": 48,
-        "complexity": 253,
+        "complexity": 278,
         "traditionalCost": 51217,
         "aiCost": 13060,
         "traditionalMonths": 10.92,
@@ -4825,20 +4871,20 @@
           "files": 98,
           "complexity": 0,
           "percentOfLines": 91.6,
-          "percentOfCode": 91.8,
+          "percentOfCode": 92.5,
           "percentOfBytes": 95.8
         },
         {
           "name": "Python",
           "lines": 1655,
-          "code": 1250,
-          "comments": 186,
-          "blanks": 219,
+          "code": 1133,
+          "comments": 230,
+          "blanks": 292,
           "bytes": 59769,
           "files": 8,
-          "complexity": 140,
+          "complexity": 178,
           "percentOfLines": 8.3,
-          "percentOfCode": 8,
+          "percentOfCode": 7.3,
           "percentOfBytes": 4.2
         },
         {
@@ -4870,13 +4916,13 @@
       ],
       "summary": {
         "lines": 19992,
-        "code": 15581,
+        "code": 15464,
         "files": 108,
-        "complexity": 140,
-        "traditionalCost": 201213,
-        "aiCost": 51309,
-        "traditionalMonths": 42.9,
-        "aiMonths": 10.94
+        "complexity": 178,
+        "traditionalCost": 199627,
+        "aiCost": 50905,
+        "traditionalMonths": 42.56,
+        "aiMonths": 10.85
       },
       "detailsFile": "repos/private-e635b37192f2.json"
     },
@@ -5179,14 +5225,14 @@
         {
           "name": "Python",
           "lines": 2601,
-          "code": 2165,
-          "comments": 131,
-          "blanks": 305,
+          "code": 2077,
+          "comments": 187,
+          "blanks": 337,
           "bytes": 90632,
           "files": 21,
-          "complexity": 396,
+          "complexity": 485,
           "percentOfLines": 93.4,
-          "percentOfCode": 93.9,
+          "percentOfCode": 93.7,
           "percentOfBytes": 93.7
         },
         {
@@ -5199,7 +5245,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 6,
-          "percentOfCode": 5.3,
+          "percentOfCode": 5.5,
           "percentOfBytes": 5.9
         },
         {
@@ -5212,19 +5258,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.6,
-          "percentOfCode": 0.7,
+          "percentOfCode": 0.8,
           "percentOfBytes": 0.4
         }
       ],
       "summary": {
         "lines": 2784,
-        "code": 2305,
+        "code": 2217,
         "files": 24,
-        "complexity": 396,
-        "traditionalCost": 27054,
-        "aiCost": 6899,
-        "traditionalMonths": 5.77,
-        "aiMonths": 1.47
+        "complexity": 485,
+        "traditionalCost": 25971,
+        "aiCost": 6623,
+        "traditionalMonths": 5.54,
+        "aiMonths": 1.41
       },
       "detailsFile": "repos/raw-squad-simulation.json"
     },
@@ -5252,14 +5298,14 @@
         {
           "name": "Python",
           "lines": 2630,
-          "code": 2134,
-          "comments": 82,
-          "blanks": 414,
+          "code": 2040,
+          "comments": 124,
+          "blanks": 466,
           "bytes": 90055,
           "files": 33,
-          "complexity": 290,
+          "complexity": 339,
           "percentOfLines": 65.2,
-          "percentOfCode": 65.4,
+          "percentOfCode": 64.4,
           "percentOfBytes": 59.3
         },
         {
@@ -5270,9 +5316,9 @@
           "blanks": 52,
           "bytes": 14633,
           "files": 2,
-          "complexity": 87,
+          "complexity": 115,
           "percentOfLines": 11.4,
-          "percentOfCode": 12.4,
+          "percentOfCode": 12.8,
           "percentOfBytes": 9.6
         },
         {
@@ -5285,7 +5331,7 @@
           "files": 6,
           "complexity": 0,
           "percentOfLines": 12.6,
-          "percentOfCode": 10.9,
+          "percentOfCode": 11.2,
           "percentOfBytes": 20.2
         },
         {
@@ -5337,7 +5383,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 1.4,
-          "percentOfCode": 1.6,
+          "percentOfCode": 1.7,
           "percentOfBytes": 2.8
         },
         {
@@ -5382,13 +5428,13 @@
       ],
       "summary": {
         "lines": 4032,
-        "code": 3261,
+        "code": 3167,
         "files": 51,
-        "complexity": 394,
-        "traditionalCost": 38945,
-        "aiCost": 9931,
-        "traditionalMonths": 8.3,
-        "aiMonths": 2.12
+        "complexity": 471,
+        "traditionalCost": 37767,
+        "aiCost": 9631,
+        "traditionalMonths": 8.05,
+        "aiMonths": 2.05
       },
       "detailsFile": "repos/northstar.json"
     },
@@ -5456,11 +5502,11 @@
       "projectTags": [
         {
           "label": "Web",
-          "confidence": 0.65
+          "confidence": 0.66
         },
         {
           "label": "Backend",
-          "confidence": 0.35
+          "confidence": 0.34
         }
       ],
       "languages": [
@@ -5472,22 +5518,22 @@
           "blanks": 694,
           "bytes": 185722,
           "files": 28,
-          "complexity": 600,
+          "complexity": 749,
           "percentOfLines": 28.7,
-          "percentOfCode": 29.7,
+          "percentOfCode": 29.9,
           "percentOfBytes": 28.3
         },
         {
           "name": "Python",
           "lines": 6467,
-          "code": 4809,
-          "comments": 500,
-          "blanks": 1158,
+          "code": 4697,
+          "comments": 530,
+          "blanks": 1240,
           "bytes": 218914,
           "files": 66,
-          "complexity": 660,
+          "complexity": 741,
           "percentOfLines": 30.7,
-          "percentOfCode": 28.3,
+          "percentOfCode": 27.8,
           "percentOfBytes": 33.4
         },
         {
@@ -5498,9 +5544,9 @@
           "blanks": 675,
           "bytes": 86592,
           "files": 20,
-          "complexity": 0,
+          "complexity": 1,
           "percentOfLines": 22.3,
-          "percentOfCode": 23.1,
+          "percentOfCode": 23.2,
           "percentOfBytes": 13.2
         },
         {
@@ -5511,9 +5557,9 @@
           "blanks": 206,
           "bytes": 75747,
           "files": 14,
-          "complexity": 278,
+          "complexity": 373,
           "percentOfLines": 11.2,
-          "percentOfCode": 12.2,
+          "percentOfCode": 12.3,
           "percentOfBytes": 11.6
         },
         {
@@ -5526,7 +5572,7 @@
           "files": 9,
           "complexity": 0,
           "percentOfLines": 5.7,
-          "percentOfCode": 5.2,
+          "percentOfCode": 5.3,
           "percentOfBytes": 8.2
         },
         {
@@ -5597,13 +5643,13 @@
       ],
       "summary": {
         "lines": 21075,
-        "code": 17020,
+        "code": 16908,
         "files": 150,
-        "complexity": 1538,
-        "traditionalCost": 220769,
-        "aiCost": 56296,
-        "traditionalMonths": 47.07,
-        "aiMonths": 12
+        "complexity": 1864,
+        "traditionalCost": 219244,
+        "aiCost": 55907,
+        "traditionalMonths": 46.74,
+        "aiMonths": 11.92
       },
       "detailsFile": "repos/tacnet.json"
     },
@@ -5638,20 +5684,20 @@
           "files": 69,
           "complexity": 0,
           "percentOfLines": 39.5,
-          "percentOfCode": 45.6,
+          "percentOfCode": 46.9,
           "percentOfBytes": 21.6
         },
         {
           "name": "Python",
           "lines": 8382,
-          "code": 6653,
-          "comments": 903,
-          "blanks": 826,
+          "code": 6037,
+          "comments": 1213,
+          "blanks": 1132,
           "bytes": 326113,
           "files": 26,
-          "complexity": 1015,
+          "complexity": 1411,
           "percentOfLines": 31.5,
-          "percentOfCode": 28.9,
+          "percentOfCode": 26.9,
           "percentOfBytes": 31.7
         },
         {
@@ -5664,7 +5710,7 @@
           "files": 31,
           "complexity": 0,
           "percentOfLines": 20.7,
-          "percentOfCode": 17.8,
+          "percentOfCode": 18.3,
           "percentOfBytes": 37.4
         },
         {
@@ -5677,7 +5723,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 4.3,
-          "percentOfCode": 4.3,
+          "percentOfCode": 4.4,
           "percentOfBytes": 6
         },
         {
@@ -5688,9 +5734,9 @@
           "blanks": 96,
           "bytes": 24940,
           "files": 5,
-          "complexity": 96,
+          "complexity": 99,
           "percentOfLines": 3,
-          "percentOfCode": 2.4,
+          "percentOfCode": 2.5,
           "percentOfBytes": 2.4
         },
         {
@@ -5722,13 +5768,13 @@
       ],
       "summary": {
         "lines": 26620,
-        "code": 23036,
+        "code": 22420,
         "files": 139,
-        "complexity": 1114,
-        "traditionalCost": 303360,
-        "aiCost": 77357,
-        "traditionalMonths": 64.68,
-        "aiMonths": 16.49
+        "complexity": 1513,
+        "traditionalCost": 294848,
+        "aiCost": 75186,
+        "traditionalMonths": 62.86,
+        "aiMonths": 16.03
       },
       "detailsFile": "repos/private-07c83a2f9d37.json"
     },
@@ -5825,7 +5871,7 @@
           "blanks": 23,
           "bytes": 5150,
           "files": 8,
-          "complexity": 7,
+          "complexity": 11,
           "percentOfLines": 39.5,
           "percentOfCode": 40.1,
           "percentOfBytes": 35.3
@@ -5926,7 +5972,7 @@
         "lines": 448,
         "code": 362,
         "files": 20,
-        "complexity": 7,
+        "complexity": 11,
         "traditionalCost": 3873,
         "aiCost": 988,
         "traditionalMonths": 0.83,
@@ -6077,20 +6123,20 @@
           "files": 4,
           "complexity": 0,
           "percentOfLines": 51.3,
-          "percentOfCode": 57.2,
+          "percentOfCode": 59.3,
           "percentOfBytes": 62.9
         },
         {
           "name": "Python",
           "lines": 3100,
-          "code": 2466,
-          "comments": 365,
-          "blanks": 269,
+          "code": 2062,
+          "comments": 593,
+          "blanks": 445,
           "bytes": 131826,
           "files": 11,
-          "complexity": 165,
+          "complexity": 312,
           "percentOfLines": 25.1,
-          "percentOfCode": 22.2,
+          "percentOfCode": 19.3,
           "percentOfBytes": 21.7
         },
         {
@@ -6103,7 +6149,7 @@
           "files": 8,
           "complexity": 0,
           "percentOfLines": 14.7,
-          "percentOfCode": 12.1,
+          "percentOfCode": 12.6,
           "percentOfBytes": 10.8
         },
         {
@@ -6116,7 +6162,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 4.6,
-          "percentOfCode": 4.3,
+          "percentOfCode": 4.5,
           "percentOfBytes": 1.6
         },
         {
@@ -6127,9 +6173,9 @@
           "blanks": 51,
           "bytes": 13837,
           "files": 1,
-          "complexity": 17,
+          "complexity": 19,
           "percentOfLines": 3.4,
-          "percentOfCode": 3.1,
+          "percentOfCode": 3.2,
           "percentOfBytes": 2.3
         },
         {
@@ -6161,13 +6207,13 @@
       ],
       "summary": {
         "lines": 12371,
-        "code": 11099,
+        "code": 10695,
         "files": 28,
-        "complexity": 182,
-        "traditionalCost": 140922,
-        "aiCost": 35935,
-        "traditionalMonths": 30.04,
-        "aiMonths": 7.66
+        "complexity": 331,
+        "traditionalCost": 135541,
+        "aiCost": 34563,
+        "traditionalMonths": 28.9,
+        "aiMonths": 7.37
       },
       "detailsFile": "repos/mongodb-agentic-context-window.json"
     },
@@ -6202,7 +6248,7 @@
           "files": 8,
           "complexity": 0,
           "percentOfLines": 42.1,
-          "percentOfCode": 46.8,
+          "percentOfCode": 47.2,
           "percentOfBytes": 54.5
         },
         {
@@ -6215,20 +6261,20 @@
           "files": 7,
           "complexity": 0,
           "percentOfLines": 26.2,
-          "percentOfCode": 28.6,
+          "percentOfCode": 28.9,
           "percentOfBytes": 36
         },
         {
           "name": "Python",
           "lines": 5684,
-          "code": 3810,
-          "comments": 928,
-          "blanks": 946,
+          "code": 3535,
+          "comments": 1119,
+          "blanks": 1030,
           "bytes": 189675,
           "files": 41,
-          "complexity": 494,
+          "complexity": 569,
           "percentOfLines": 18.9,
-          "percentOfCode": 14.1,
+          "percentOfCode": 13.2,
           "percentOfBytes": 6
         },
         {
@@ -6241,7 +6287,7 @@
           "files": 5,
           "complexity": 0,
           "percentOfLines": 7.6,
-          "percentOfCode": 5.9,
+          "percentOfCode": 6,
           "percentOfBytes": 2.2
         },
         {
@@ -6252,7 +6298,7 @@
           "blanks": 123,
           "bytes": 31147,
           "files": 7,
-          "complexity": 95,
+          "complexity": 100,
           "percentOfLines": 3.4,
           "percentOfCode": 3.2,
           "percentOfBytes": 1
@@ -6364,13 +6410,13 @@
       ],
       "summary": {
         "lines": 30058,
-        "code": 27084,
+        "code": 26809,
         "files": 81,
-        "complexity": 606,
-        "traditionalCost": 359566,
-        "aiCost": 91689,
-        "traditionalMonths": 76.66,
-        "aiMonths": 19.55
+        "complexity": 686,
+        "traditionalCost": 355734,
+        "aiCost": 90712,
+        "traditionalMonths": 75.84,
+        "aiMonths": 19.34
       },
       "detailsFile": "repos/watch-and-learn.json"
     },
@@ -6536,7 +6582,7 @@
           "blanks": 343,
           "bytes": 101074,
           "files": 55,
-          "complexity": 186,
+          "complexity": 233,
           "percentOfLines": 50.1,
           "percentOfCode": 48,
           "percentOfBytes": 50.3
@@ -6650,7 +6696,7 @@
         "lines": 6251,
         "code": 4448,
         "files": 152,
-        "complexity": 346,
+        "complexity": 393,
         "traditionalCost": 53951,
         "aiCost": 13758,
         "traditionalMonths": 11.5,
@@ -6726,7 +6772,7 @@
           "blanks": 28,
           "bytes": 6603,
           "files": 1,
-          "complexity": 32,
+          "complexity": 42,
           "percentOfLines": 8.4,
           "percentOfCode": 9.5,
           "percentOfBytes": 5.8
@@ -6788,7 +6834,7 @@
         "lines": 2454,
         "code": 1796,
         "files": 24,
-        "complexity": 76,
+        "complexity": 86,
         "traditionalCost": 20819,
         "aiCost": 5309,
         "traditionalMonths": 4.44,
@@ -6809,11 +6855,11 @@
       "projectTags": [
         {
           "label": "Web",
-          "confidence": 0.58
+          "confidence": 0.61
         },
         {
           "label": "AI/ML",
-          "confidence": 0.42
+          "confidence": 0.39
         }
       ],
       "languages": [
@@ -6827,7 +6873,7 @@
           "files": 3,
           "complexity": 0,
           "percentOfLines": 22.6,
-          "percentOfCode": 22.2,
+          "percentOfCode": 23.1,
           "percentOfBytes": 23.1
         },
         {
@@ -6838,23 +6884,10 @@
           "blanks": 56,
           "bytes": 13164,
           "files": 4,
-          "complexity": 24,
+          "complexity": 28,
           "percentOfLines": 18.3,
-          "percentOfCode": 20.4,
+          "percentOfCode": 21.2,
           "percentOfBytes": 18
-        },
-        {
-          "name": "Python",
-          "lines": 543,
-          "code": 424,
-          "comments": 55,
-          "blanks": 64,
-          "bytes": 19253,
-          "files": 2,
-          "complexity": 31,
-          "percentOfLines": 19.9,
-          "percentOfCode": 19.5,
-          "percentOfBytes": 26.3
         },
         {
           "name": "CSS",
@@ -6866,7 +6899,7 @@
           "files": 4,
           "complexity": 0,
           "percentOfLines": 17.7,
-          "percentOfCode": 19.2,
+          "percentOfCode": 19.9,
           "percentOfBytes": 10.4
         },
         {
@@ -6879,8 +6912,21 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 19.5,
-          "percentOfCode": 16.4,
+          "percentOfCode": 17,
           "percentOfBytes": 19.6
+        },
+        {
+          "name": "Python",
+          "lines": 543,
+          "code": 347,
+          "comments": 108,
+          "blanks": 88,
+          "bytes": 19253,
+          "files": 2,
+          "complexity": 58,
+          "percentOfLines": 19.9,
+          "percentOfCode": 16.6,
+          "percentOfBytes": 26.3
         },
         {
           "name": "JSON",
@@ -6892,7 +6938,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.8,
-          "percentOfCode": 1,
+          "percentOfCode": 1.1,
           "percentOfBytes": 0.7
         },
         {
@@ -6924,13 +6970,13 @@
       ],
       "summary": {
         "lines": 2722,
-        "code": 2171,
+        "code": 2094,
         "files": 18,
-        "complexity": 55,
-        "traditionalCost": 25405,
-        "aiCost": 6478,
-        "traditionalMonths": 5.42,
-        "aiMonths": 1.38
+        "complexity": 86,
+        "traditionalCost": 24460,
+        "aiCost": 6237,
+        "traditionalMonths": 5.21,
+        "aiMonths": 1.33
       },
       "detailsFile": "repos/yourresai-2.json"
     },
@@ -6963,7 +7009,7 @@
           "blanks": 763,
           "bytes": 208045,
           "files": 91,
-          "complexity": 462,
+          "complexity": 511,
           "percentOfLines": 63.6,
           "percentOfCode": 62.7,
           "percentOfBytes": 63.6
@@ -7064,7 +7110,7 @@
         "lines": 11013,
         "code": 9926,
         "files": 105,
-        "complexity": 462,
+        "complexity": 511,
         "traditionalCost": 125327,
         "aiCost": 31958,
         "traditionalMonths": 26.72,
@@ -7103,20 +7149,20 @@
           "files": 9,
           "complexity": 0,
           "percentOfLines": 87.6,
-          "percentOfCode": 86.2,
+          "percentOfCode": 86.5,
           "percentOfBytes": 87.6
         },
         {
           "name": "Python",
           "lines": 1732,
-          "code": 1389,
-          "comments": 136,
-          "blanks": 207,
+          "code": 1348,
+          "comments": 159,
+          "blanks": 225,
           "bytes": 60758,
           "files": 8,
-          "complexity": 250,
+          "complexity": 273,
           "percentOfLines": 12.4,
-          "percentOfCode": 13.8,
+          "percentOfCode": 13.5,
           "percentOfBytes": 12.4
         },
         {
@@ -7135,13 +7181,13 @@
       ],
       "summary": {
         "lines": 13951,
-        "code": 10061,
+        "code": 10020,
         "files": 18,
-        "complexity": 250,
-        "traditionalCost": 127117,
-        "aiCost": 32415,
-        "traditionalMonths": 27.1,
-        "aiMonths": 6.91
+        "complexity": 273,
+        "traditionalCost": 126573,
+        "aiCost": 32276,
+        "traditionalMonths": 26.98,
+        "aiMonths": 6.88
       },
       "detailsFile": "repos/private-df9bba310d94.json"
     },
@@ -7212,7 +7258,7 @@
           "blanks": 268,
           "bytes": 106331,
           "files": 24,
-          "complexity": 182,
+          "complexity": 198,
           "percentOfLines": 41.7,
           "percentOfCode": 42.3,
           "percentOfBytes": 43.8
@@ -7225,7 +7271,7 @@
           "blanks": 252,
           "bytes": 82986,
           "files": 19,
-          "complexity": 137,
+          "complexity": 376,
           "percentOfLines": 37.2,
           "percentOfCode": 37.6,
           "percentOfBytes": 34.2
@@ -7365,7 +7411,7 @@
         "lines": 7225,
         "code": 6484,
         "files": 59,
-        "complexity": 319,
+        "complexity": 574,
         "traditionalCost": 80143,
         "aiCost": 20436,
         "traditionalMonths": 17.09,
@@ -7467,7 +7513,7 @@
           "blanks": 23,
           "bytes": 3727,
           "files": 2,
-          "complexity": 25,
+          "complexity": 26,
           "percentOfLines": 0.6,
           "percentOfCode": 0.5,
           "percentOfBytes": 0
@@ -7490,7 +7536,7 @@
         "lines": 29283,
         "code": 27543,
         "files": 39,
-        "complexity": 51,
+        "complexity": 52,
         "traditionalCost": 365967,
         "aiCost": 93322,
         "traditionalMonths": 78.02,
@@ -7527,7 +7573,7 @@
           "blanks": 662,
           "bytes": 173724,
           "files": 31,
-          "complexity": 508,
+          "complexity": 524,
           "percentOfLines": 80.5,
           "percentOfCode": 79.3,
           "percentOfBytes": 85.6
@@ -7654,7 +7700,7 @@
         "lines": 6841,
         "code": 5562,
         "files": 52,
-        "complexity": 508,
+        "complexity": 524,
         "traditionalCost": 68222,
         "aiCost": 17397,
         "traditionalMonths": 14.54,
@@ -7686,14 +7732,14 @@
         {
           "name": "Python",
           "lines": 12794,
-          "code": 8023,
-          "comments": 3143,
-          "blanks": 1628,
+          "code": 6898,
+          "comments": 3779,
+          "blanks": 2117,
           "bytes": 444744,
           "files": 66,
-          "complexity": 1023,
+          "complexity": 1309,
           "percentOfLines": 77.5,
-          "percentOfCode": 72.5,
+          "percentOfCode": 69.4,
           "percentOfBytes": 74.6
         },
         {
@@ -7706,7 +7752,7 @@
           "files": 10,
           "complexity": 0,
           "percentOfLines": 18.8,
-          "percentOfCode": 22.9,
+          "percentOfCode": 25.5,
           "percentOfBytes": 21.9
         },
         {
@@ -7719,7 +7765,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 1.2,
-          "percentOfCode": 1.5,
+          "percentOfCode": 1.7,
           "percentOfBytes": 1.9
         },
         {
@@ -7730,9 +7776,9 @@
           "blanks": 14,
           "bytes": 3960,
           "files": 1,
-          "complexity": 1,
+          "complexity": 5,
           "percentOfLines": 1,
-          "percentOfCode": 1.4,
+          "percentOfCode": 1.5,
           "percentOfBytes": 0.7
         },
         {
@@ -7745,7 +7791,7 @@
           "files": 1,
           "complexity": 2,
           "percentOfLines": 0.8,
-          "percentOfCode": 0.9,
+          "percentOfCode": 1,
           "percentOfBytes": 0.6
         },
         {
@@ -7758,7 +7804,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.4,
-          "percentOfCode": 0.4,
+          "percentOfCode": 0.5,
           "percentOfBytes": 0.2
         },
         {
@@ -7784,19 +7830,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.1,
-          "percentOfCode": 0.1,
+          "percentOfCode": 0.2,
           "percentOfBytes": 0.1
         }
       ],
       "summary": {
         "lines": 16512,
-        "code": 11060,
+        "code": 9935,
         "files": 82,
-        "complexity": 1026,
-        "traditionalCost": 140402,
-        "aiCost": 35803,
-        "traditionalMonths": 29.93,
-        "aiMonths": 7.63
+        "complexity": 1316,
+        "traditionalCost": 125446,
+        "aiCost": 31989,
+        "traditionalMonths": 26.74,
+        "aiMonths": 6.82
       },
       "detailsFile": "repos/openglassbox-python.json"
     },
@@ -7875,14 +7921,14 @@
         {
           "name": "Python",
           "lines": 4000,
-          "code": 2732,
-          "comments": 619,
-          "blanks": 649,
+          "code": 2582,
+          "comments": 713,
+          "blanks": 705,
           "bytes": 128319,
           "files": 37,
-          "complexity": 300,
+          "complexity": 342,
           "percentOfLines": 50.4,
-          "percentOfCode": 45.6,
+          "percentOfCode": 44.2,
           "percentOfBytes": 45.9
         },
         {
@@ -7893,9 +7939,9 @@
           "blanks": 110,
           "bytes": 50397,
           "files": 13,
-          "complexity": 76,
+          "complexity": 103,
           "percentOfLines": 17.1,
-          "percentOfCode": 20.5,
+          "percentOfCode": 21,
           "percentOfBytes": 18
         },
         {
@@ -7908,7 +7954,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 8.5,
-          "percentOfCode": 9.2,
+          "percentOfCode": 9.5,
           "percentOfBytes": 12.6
         },
         {
@@ -7921,7 +7967,7 @@
           "files": 4,
           "complexity": 0,
           "percentOfLines": 8.4,
-          "percentOfCode": 8.9,
+          "percentOfCode": 9.1,
           "percentOfBytes": 9.6
         },
         {
@@ -7932,9 +7978,9 @@
           "blanks": 72,
           "bytes": 16071,
           "files": 6,
-          "complexity": 53,
+          "complexity": 67,
           "percentOfLines": 7.2,
-          "percentOfCode": 7.6,
+          "percentOfCode": 7.8,
           "percentOfBytes": 5.7
         },
         {
@@ -7947,7 +7993,7 @@
           "files": 3,
           "complexity": 0,
           "percentOfLines": 7.2,
-          "percentOfCode": 6.5,
+          "percentOfCode": 6.6,
           "percentOfBytes": 5.5
         },
         {
@@ -8031,13 +8077,13 @@
       ],
       "summary": {
         "lines": 7944,
-        "code": 5987,
+        "code": 5837,
         "files": 72,
-        "complexity": 429,
-        "traditionalCost": 73706,
-        "aiCost": 18795,
-        "traditionalMonths": 15.71,
-        "aiMonths": 4.01
+        "complexity": 512,
+        "traditionalCost": 71768,
+        "aiCost": 18301,
+        "traditionalMonths": 15.3,
+        "aiMonths": 3.9
       },
       "detailsFile": "repos/private-d0c96649ba3c.json"
     },
@@ -8148,11 +8194,11 @@
       "projectTags": [
         {
           "label": "AI/ML",
-          "confidence": 0.55
+          "confidence": 0.54
         },
         {
           "label": "Web",
-          "confidence": 0.45
+          "confidence": 0.46
         }
       ],
       "languages": [
@@ -8166,7 +8212,7 @@
           "files": 8,
           "complexity": 0,
           "percentOfLines": 83.8,
-          "percentOfCode": 85.6,
+          "percentOfCode": 85.8,
           "percentOfBytes": 33.6
         },
         {
@@ -8185,14 +8231,14 @@
         {
           "name": "Python",
           "lines": 5277,
-          "code": 3673,
-          "comments": 1003,
-          "blanks": 601,
+          "code": 3426,
+          "comments": 1130,
+          "blanks": 721,
           "bytes": 235916,
           "files": 10,
-          "complexity": 609,
+          "complexity": 694,
           "percentOfLines": 3.9,
-          "percentOfCode": 2.7,
+          "percentOfCode": 2.6,
           "percentOfBytes": 0.5
         },
         {
@@ -8229,7 +8275,7 @@
           "blanks": 127,
           "bytes": 29951,
           "files": 13,
-          "complexity": 75,
+          "complexity": 81,
           "percentOfLines": 0.7,
           "percentOfCode": 0.6,
           "percentOfBytes": 0.1
@@ -8255,7 +8301,7 @@
           "blanks": 49,
           "bytes": 14868,
           "files": 4,
-          "complexity": 16,
+          "complexity": 27,
           "percentOfLines": 0.3,
           "percentOfCode": 0.3,
           "percentOfBytes": 0
@@ -8289,13 +8335,13 @@
       ],
       "summary": {
         "lines": 136820,
-        "code": 133839,
+        "code": 133592,
         "files": 56,
-        "complexity": 703,
-        "traditionalCost": 1924608,
-        "aiCost": 490775,
-        "traditionalMonths": 410.32,
-        "aiMonths": 104.63
+        "complexity": 805,
+        "traditionalCost": 1920878,
+        "aiCost": 489824,
+        "traditionalMonths": 409.53,
+        "aiMonths": 104.43
       },
       "detailsFile": "repos/private-1db205af00b7.json"
     },
@@ -8328,7 +8374,7 @@
           "blanks": 153,
           "bytes": 34576,
           "files": 6,
-          "complexity": 117,
+          "complexity": 118,
           "percentOfLines": 91.4,
           "percentOfCode": 89.7,
           "percentOfBytes": 93
@@ -8364,7 +8410,7 @@
         "lines": 1247,
         "code": 819,
         "files": 8,
-        "complexity": 117,
+        "complexity": 118,
         "traditionalCost": 9128,
         "aiCost": 2328,
         "traditionalMonths": 1.95,
@@ -8439,7 +8485,7 @@
           "blanks": 122,
           "bytes": 28664,
           "files": 11,
-          "complexity": 60,
+          "complexity": 64,
           "percentOfLines": 49.6,
           "percentOfCode": 47.2,
           "percentOfBytes": 46.3
@@ -8566,7 +8612,7 @@
         "lines": 1968,
         "code": 1575,
         "files": 27,
-        "complexity": 82,
+        "complexity": 86,
         "traditionalCost": 18137,
         "aiCost": 4625,
         "traditionalMonths": 3.87,
@@ -8603,7 +8649,7 @@
           "blanks": 429,
           "bytes": 174353,
           "files": 20,
-          "complexity": 229,
+          "complexity": 340,
           "percentOfLines": 43.2,
           "percentOfCode": 42.7,
           "percentOfBytes": 57.4
@@ -8616,7 +8662,7 @@
           "blanks": 520,
           "bytes": 56144,
           "files": 5,
-          "complexity": 0,
+          "complexity": 8,
           "percentOfLines": 32.2,
           "percentOfCode": 30.2,
           "percentOfBytes": 18.5
@@ -8691,7 +8737,7 @@
         "lines": 10984,
         "code": 9725,
         "files": 37,
-        "complexity": 234,
+        "complexity": 353,
         "traditionalCost": 122663,
         "aiCost": 31279,
         "traditionalMonths": 26.15,
@@ -8728,7 +8774,7 @@
           "blanks": 32,
           "bytes": 13584,
           "files": 6,
-          "complexity": 5,
+          "complexity": 22,
           "percentOfLines": 42.1,
           "percentOfCode": 43,
           "percentOfBytes": 46
@@ -8881,7 +8927,7 @@
         "lines": 848,
         "code": 693,
         "files": 27,
-        "complexity": 51,
+        "complexity": 68,
         "traditionalCost": 7659,
         "aiCost": 1953,
         "traditionalMonths": 1.63,
@@ -8920,20 +8966,20 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 31.5,
-          "percentOfCode": 32.3,
+          "percentOfCode": 32.7,
           "percentOfBytes": 39
         },
         {
           "name": "Python",
           "lines": 700,
-          "code": 483,
-          "comments": 97,
-          "blanks": 120,
+          "code": 459,
+          "comments": 112,
+          "blanks": 129,
           "bytes": 21313,
           "files": 13,
-          "complexity": 38,
+          "complexity": 50,
           "percentOfLines": 32.7,
-          "percentOfCode": 28.2,
+          "percentOfCode": 27.2,
           "percentOfBytes": 23.6
         },
         {
@@ -8944,9 +8990,9 @@
           "blanks": 30,
           "bytes": 14335,
           "files": 8,
-          "complexity": 15,
+          "complexity": 21,
           "percentOfLines": 19.1,
-          "percentOfCode": 22.2,
+          "percentOfCode": 22.5,
           "percentOfBytes": 15.9
         },
         {
@@ -8957,9 +9003,9 @@
           "blanks": 19,
           "bytes": 4226,
           "files": 3,
-          "complexity": 8,
+          "complexity": 11,
           "percentOfLines": 7.4,
-          "percentOfCode": 8,
+          "percentOfCode": 8.1,
           "percentOfBytes": 4.7
         },
         {
@@ -8972,7 +9018,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 4.9,
-          "percentOfCode": 4,
+          "percentOfCode": 4.1,
           "percentOfBytes": 8.4
         },
         {
@@ -9056,13 +9102,13 @@
       ],
       "summary": {
         "lines": 2142,
-        "code": 1713,
+        "code": 1689,
         "files": 34,
-        "complexity": 61,
-        "traditionalCost": 19810,
-        "aiCost": 5051,
-        "traditionalMonths": 4.22,
-        "aiMonths": 1.08
+        "complexity": 82,
+        "traditionalCost": 19518,
+        "aiCost": 4977,
+        "traditionalMonths": 4.16,
+        "aiMonths": 1.06
       },
       "detailsFile": "repos/private-ea57adc9582c.json"
     },
@@ -9079,52 +9125,39 @@
       "projectTags": [
         {
           "label": "AI/ML",
-          "confidence": 0.72
+          "confidence": 0.73
         },
         {
           "label": "Data",
-          "confidence": 0.28
+          "confidence": 0.27
         }
       ],
       "languages": [
         {
           "name": "Cuda",
-          "lines": 15575,
-          "code": 10885,
-          "comments": 2941,
-          "blanks": 1749,
-          "bytes": 666031,
-          "files": 28,
-          "complexity": 1787,
-          "percentOfLines": 58.8,
-          "percentOfCode": 58.1,
-          "percentOfBytes": 59.1
+          "lines": 18165,
+          "code": 12753,
+          "comments": 3350,
+          "blanks": 2062,
+          "bytes": 778454,
+          "files": 38,
+          "complexity": 2137,
+          "percentOfLines": 62.5,
+          "percentOfCode": 62.3,
+          "percentOfBytes": 62.8
         },
         {
           "name": "Python",
           "lines": 3596,
-          "code": 2536,
-          "comments": 694,
-          "blanks": 366,
+          "code": 2413,
+          "comments": 791,
+          "blanks": 392,
           "bytes": 160848,
           "files": 14,
-          "complexity": 426,
-          "percentOfLines": 13.6,
-          "percentOfCode": 13.5,
-          "percentOfBytes": 14.3
-        },
-        {
-          "name": "C Header",
-          "lines": 2434,
-          "code": 1688,
-          "comments": 465,
-          "blanks": 281,
-          "bytes": 93835,
-          "files": 14,
-          "complexity": 297,
-          "percentOfLines": 9.2,
-          "percentOfCode": 9,
-          "percentOfBytes": 8.3
+          "complexity": 438,
+          "percentOfLines": 12.4,
+          "percentOfCode": 11.8,
+          "percentOfBytes": 13
         },
         {
           "name": "C",
@@ -9134,10 +9167,36 @@
           "blanks": 200,
           "bytes": 85733,
           "files": 6,
-          "complexity": 256,
-          "percentOfLines": 8,
-          "percentOfCode": 8.5,
-          "percentOfBytes": 7.6
+          "complexity": 257,
+          "percentOfLines": 7.3,
+          "percentOfCode": 7.7,
+          "percentOfBytes": 6.9
+        },
+        {
+          "name": "C Header",
+          "lines": 1596,
+          "code": 1111,
+          "comments": 315,
+          "blanks": 170,
+          "bytes": 61205,
+          "files": 11,
+          "complexity": 233,
+          "percentOfLines": 5.5,
+          "percentOfCode": 5.4,
+          "percentOfBytes": 4.9
+        },
+        {
+          "name": "C++ Header",
+          "lines": 838,
+          "code": 577,
+          "comments": 150,
+          "blanks": 111,
+          "bytes": 32630,
+          "files": 3,
+          "complexity": 76,
+          "percentOfLines": 2.9,
+          "percentOfCode": 2.8,
+          "percentOfBytes": 2.6
         },
         {
           "name": "Markdown",
@@ -9148,9 +9207,9 @@
           "bytes": 43324,
           "files": 7,
           "complexity": 0,
-          "percentOfLines": 2.6,
-          "percentOfCode": 2.7,
-          "percentOfBytes": 3.8
+          "percentOfLines": 2.3,
+          "percentOfCode": 2.4,
+          "percentOfBytes": 3.5
         },
         {
           "name": "Makefile",
@@ -9160,10 +9219,10 @@
           "blanks": 69,
           "bytes": 19955,
           "files": 3,
-          "complexity": 32,
-          "percentOfLines": 2.1,
-          "percentOfCode": 2.1,
-          "percentOfBytes": 1.8
+          "complexity": 99,
+          "percentOfLines": 1.9,
+          "percentOfCode": 1.9,
+          "percentOfBytes": 1.6
         },
         {
           "name": "Shell",
@@ -9174,9 +9233,9 @@
           "bytes": 20042,
           "files": 11,
           "complexity": 29,
-          "percentOfLines": 2.2,
-          "percentOfCode": 1.9,
-          "percentOfBytes": 1.8
+          "percentOfLines": 2,
+          "percentOfCode": 1.8,
+          "percentOfBytes": 1.6
         },
         {
           "name": "YAML",
@@ -9187,9 +9246,9 @@
           "bytes": 16438,
           "files": 3,
           "complexity": 0,
-          "percentOfLines": 1.7,
-          "percentOfCode": 1.9,
-          "percentOfBytes": 1.5
+          "percentOfLines": 1.5,
+          "percentOfCode": 1.7,
+          "percentOfBytes": 1.3
         },
         {
           "name": "C++",
@@ -9199,10 +9258,10 @@
           "blanks": 49,
           "bytes": 12945,
           "files": 1,
-          "complexity": 22,
-          "percentOfLines": 1.1,
-          "percentOfCode": 1.2,
-          "percentOfBytes": 1.1
+          "complexity": 25,
+          "percentOfLines": 1,
+          "percentOfCode": 1.1,
+          "percentOfBytes": 1
         },
         {
           "name": "Jupyter",
@@ -9214,7 +9273,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.6,
-          "percentOfCode": 0.9,
+          "percentOfCode": 0.8,
           "percentOfBytes": 0.5
         },
         {
@@ -9226,7 +9285,7 @@
           "bytes": 2144,
           "files": 2,
           "complexity": 0,
-          "percentOfLines": 0.2,
+          "percentOfLines": 0.1,
           "percentOfCode": 0.2,
           "percentOfBytes": 0.2
         },
@@ -9245,14 +9304,14 @@
         }
       ],
       "summary": {
-        "lines": 26493,
-        "code": 18736,
-        "files": 91,
-        "complexity": 2849,
-        "traditionalCost": 244197,
-        "aiCost": 62270,
-        "traditionalMonths": 52.06,
-        "aiMonths": 13.28
+        "lines": 29083,
+        "code": 20481,
+        "files": 101,
+        "complexity": 3294,
+        "traditionalCost": 268132,
+        "aiCost": 68374,
+        "traditionalMonths": 57.16,
+        "aiMonths": 14.58
       },
       "detailsFile": "repos/audio-language-model-aka-your-babe.json"
     },
@@ -9280,14 +9339,14 @@
         {
           "name": "Python",
           "lines": 1552,
-          "code": 973,
-          "comments": 349,
-          "blanks": 230,
+          "code": 874,
+          "comments": 395,
+          "blanks": 283,
           "bytes": 46620,
           "files": 19,
-          "complexity": 57,
+          "complexity": 70,
           "percentOfLines": 84.8,
-          "percentOfCode": 82.2,
+          "percentOfCode": 80.6,
           "percentOfBytes": 86.1
         },
         {
@@ -9300,7 +9359,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 8.7,
-          "percentOfCode": 10.1,
+          "percentOfCode": 11.1,
           "percentOfBytes": 7.9
         },
         {
@@ -9313,7 +9372,7 @@
           "files": 1,
           "complexity": 1,
           "percentOfLines": 3.7,
-          "percentOfCode": 4.9,
+          "percentOfCode": 5.4,
           "percentOfBytes": 3.1
         },
         {
@@ -9326,7 +9385,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 1.1,
-          "percentOfCode": 1.4,
+          "percentOfCode": 1.6,
           "percentOfBytes": 2
         },
         {
@@ -9339,19 +9398,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 1.7,
-          "percentOfCode": 1.3,
+          "percentOfCode": 1.4,
           "percentOfBytes": 0.9
         }
       ],
       "summary": {
         "lines": 1831,
-        "code": 1183,
+        "code": 1084,
         "files": 23,
-        "complexity": 58,
-        "traditionalCost": 13430,
-        "aiCost": 3425,
-        "traditionalMonths": 2.86,
-        "aiMonths": 0.73
+        "complexity": 71,
+        "traditionalCost": 12252,
+        "aiCost": 3124,
+        "traditionalMonths": 2.61,
+        "aiMonths": 0.67
       },
       "detailsFile": "repos/sound-project-alpha.json"
     },
@@ -9496,7 +9555,7 @@
           "blanks": 79,
           "bytes": 15695,
           "files": 5,
-          "complexity": 18,
+          "complexity": 19,
           "percentOfLines": 37.7,
           "percentOfCode": 34.3,
           "percentOfBytes": 41.8
@@ -9522,7 +9581,7 @@
           "blanks": 30,
           "bytes": 5558,
           "files": 8,
-          "complexity": 3,
+          "complexity": 4,
           "percentOfLines": 13.5,
           "percentOfCode": 13.6,
           "percentOfBytes": 14.8
@@ -9597,7 +9656,7 @@
         "lines": 1412,
         "code": 1062,
         "files": 20,
-        "complexity": 23,
+        "complexity": 25,
         "traditionalCost": 11991,
         "aiCost": 3058,
         "traditionalMonths": 2.56,
@@ -9630,7 +9689,7 @@
           "blanks": 1555,
           "bytes": 416955,
           "files": 66,
-          "complexity": 1217,
+          "complexity": 1274,
           "percentOfLines": 81.3,
           "percentOfCode": 78,
           "percentOfBytes": 82.2
@@ -9692,7 +9751,7 @@
         "lines": 13311,
         "code": 9939,
         "files": 87,
-        "complexity": 1217,
+        "complexity": 1274,
         "traditionalCost": 125499,
         "aiCost": 32002,
         "traditionalMonths": 26.76,
@@ -9725,7 +9784,7 @@
           "blanks": 1477,
           "bytes": 396589,
           "files": 64,
-          "complexity": 1178,
+          "complexity": 1235,
           "percentOfLines": 95.7,
           "percentOfCode": 94.4,
           "percentOfBytes": 70.7
@@ -9774,7 +9833,7 @@
         "lines": 10781,
         "code": 7854,
         "files": 75,
-        "complexity": 1178,
+        "complexity": 1235,
         "traditionalCost": 98011,
         "aiCost": 24993,
         "traditionalMonths": 20.9,
@@ -9795,11 +9854,11 @@
       "projectTags": [
         {
           "label": "Web",
-          "confidence": 0.55
+          "confidence": 0.57
         },
         {
           "label": "AI/ML",
-          "confidence": 0.45
+          "confidence": 0.43
         }
       ],
       "languages": [
@@ -9813,7 +9872,7 @@
           "files": 4,
           "complexity": 0,
           "percentOfLines": 34.5,
-          "percentOfCode": 35,
+          "percentOfCode": 35.7,
           "percentOfBytes": 29
         },
         {
@@ -9826,20 +9885,20 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 30.4,
-          "percentOfCode": 33.4,
+          "percentOfCode": 34,
           "percentOfBytes": 35.5
         },
         {
           "name": "Python",
           "lines": 1008,
-          "code": 696,
-          "comments": 173,
-          "blanks": 139,
+          "code": 650,
+          "comments": 217,
+          "blanks": 141,
           "bytes": 30809,
           "files": 12,
-          "complexity": 83,
+          "complexity": 85,
           "percentOfLines": 33.6,
-          "percentOfCode": 30,
+          "percentOfCode": 28.6,
           "percentOfBytes": 33.8
         },
         {
@@ -9865,7 +9924,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.5,
-          "percentOfCode": 0.6,
+          "percentOfCode": 0.7,
           "percentOfBytes": 0.3
         },
         {
@@ -9884,13 +9943,13 @@
       ],
       "summary": {
         "lines": 2999,
-        "code": 2320,
+        "code": 2274,
         "files": 20,
-        "complexity": 83,
-        "traditionalCost": 27239,
-        "aiCost": 6946,
-        "traditionalMonths": 5.81,
-        "aiMonths": 1.48
+        "complexity": 85,
+        "traditionalCost": 26672,
+        "aiCost": 6801,
+        "traditionalMonths": 5.69,
+        "aiMonths": 1.45
       },
       "detailsFile": "repos/private-1dfc1c251359.json"
     },
@@ -9923,7 +9982,7 @@
           "blanks": 856,
           "bytes": 840239,
           "files": 1,
-          "complexity": 3662,
+          "complexity": 4008,
           "percentOfLines": 89.6,
           "percentOfCode": 87.7,
           "percentOfBytes": 64.7
@@ -9998,7 +10057,7 @@
         "lines": 21558,
         "code": 16598,
         "files": 37,
-        "complexity": 3687,
+        "complexity": 4033,
         "traditionalCost": 215025,
         "aiCost": 54831,
         "traditionalMonths": 45.84,
@@ -10101,20 +10160,20 @@
           "files": 11,
           "complexity": 0,
           "percentOfLines": 87,
-          "percentOfCode": 90.2,
+          "percentOfCode": 90.7,
           "percentOfBytes": 89
         },
         {
           "name": "Python",
           "lines": 4594,
-          "code": 2689,
-          "comments": 1009,
-          "blanks": 896,
+          "code": 2315,
+          "comments": 1227,
+          "blanks": 1052,
           "bytes": 171021,
           "files": 36,
-          "complexity": 211,
+          "complexity": 253,
           "percentOfLines": 5.6,
-          "percentOfCode": 3.4,
+          "percentOfCode": 2.9,
           "percentOfBytes": 4.5
         },
         {
@@ -10144,14 +10203,14 @@
           "percentOfBytes": 1.7
         },
         {
-          "name": "TeX",
+          "name": "LaTeX",
           "lines": 1591,
           "code": 1210,
           "comments": 7,
           "blanks": 374,
           "bytes": 73518,
           "files": 3,
-          "complexity": 103,
+          "complexity": 0,
           "percentOfLines": 1.9,
           "percentOfCode": 1.5,
           "percentOfBytes": 1.9
@@ -10185,13 +10244,13 @@
       ],
       "summary": {
         "lines": 82646,
-        "code": 79610,
+        "code": 79236,
         "files": 68,
-        "complexity": 314,
-        "traditionalCost": 1115440,
-        "aiCost": 284437,
-        "traditionalMonths": 237.81,
-        "aiMonths": 60.64
+        "complexity": 253,
+        "traditionalCost": 1109939,
+        "aiCost": 283034,
+        "traditionalMonths": 236.64,
+        "aiMonths": 60.34
       },
       "detailsFile": "repos/private-cf8fe9eb9164.json"
     },
@@ -10307,11 +10366,11 @@
       "projectTags": [
         {
           "label": "Web",
-          "confidence": 0.55
+          "confidence": 0.56
         },
         {
           "label": "Backend",
-          "confidence": 0.45
+          "confidence": 0.44
         }
       ],
       "languages": [
@@ -10325,21 +10384,8 @@
           "files": 35,
           "complexity": 0,
           "percentOfLines": 35.9,
-          "percentOfCode": 36.3,
+          "percentOfCode": 36.5,
           "percentOfBytes": 38.8
-        },
-        {
-          "name": "Python",
-          "lines": 10259,
-          "code": 7571,
-          "comments": 1331,
-          "blanks": 1357,
-          "bytes": 393022,
-          "files": 55,
-          "complexity": 872,
-          "percentOfLines": 23.8,
-          "percentOfCode": 22,
-          "percentOfBytes": 25.4
         },
         {
           "name": "TypeScript",
@@ -10349,10 +10395,23 @@
           "blanks": 722,
           "bytes": 250223,
           "files": 31,
-          "complexity": 581,
+          "complexity": 635,
           "percentOfLines": 19.5,
-          "percentOfCode": 21.5,
+          "percentOfCode": 21.6,
           "percentOfBytes": 16.2
+        },
+        {
+          "name": "Python",
+          "lines": 10259,
+          "code": 7347,
+          "comments": 1430,
+          "blanks": 1482,
+          "bytes": 393022,
+          "files": 55,
+          "complexity": 914,
+          "percentOfLines": 23.8,
+          "percentOfCode": 21.5,
+          "percentOfBytes": 25.4
         },
         {
           "name": "JavaScript",
@@ -10362,9 +10421,9 @@
           "blanks": 569,
           "bytes": 234961,
           "files": 27,
-          "complexity": 192,
+          "complexity": 245,
           "percentOfLines": 16.4,
-          "percentOfCode": 16.1,
+          "percentOfCode": 16.2,
           "percentOfBytes": 15.2
         },
         {
@@ -10461,13 +10520,13 @@
       ],
       "summary": {
         "lines": 43124,
-        "code": 34348,
+        "code": 34124,
         "files": 181,
-        "complexity": 1653,
-        "traditionalCost": 461452,
-        "aiCost": 117670,
-        "traditionalMonths": 98.38,
-        "aiMonths": 25.09
+        "complexity": 1802,
+        "traditionalCost": 458293,
+        "aiCost": 116865,
+        "traditionalMonths": 97.71,
+        "aiMonths": 24.92
       },
       "detailsFile": "repos/voicereach.json"
     },
@@ -10484,11 +10543,11 @@
       "projectTags": [
         {
           "label": "Web",
-          "confidence": 0.55
+          "confidence": 0.56
         },
         {
           "label": "Backend",
-          "confidence": 0.45
+          "confidence": 0.44
         }
       ],
       "languages": [
@@ -10502,21 +10561,8 @@
           "files": 35,
           "complexity": 0,
           "percentOfLines": 35.9,
-          "percentOfCode": 36.3,
+          "percentOfCode": 36.5,
           "percentOfBytes": 38.8
-        },
-        {
-          "name": "Python",
-          "lines": 10259,
-          "code": 7571,
-          "comments": 1331,
-          "blanks": 1357,
-          "bytes": 393022,
-          "files": 55,
-          "complexity": 872,
-          "percentOfLines": 23.8,
-          "percentOfCode": 22,
-          "percentOfBytes": 25.4
         },
         {
           "name": "TypeScript",
@@ -10526,10 +10572,23 @@
           "blanks": 722,
           "bytes": 250223,
           "files": 31,
-          "complexity": 581,
+          "complexity": 635,
           "percentOfLines": 19.5,
-          "percentOfCode": 21.5,
+          "percentOfCode": 21.6,
           "percentOfBytes": 16.2
+        },
+        {
+          "name": "Python",
+          "lines": 10259,
+          "code": 7347,
+          "comments": 1430,
+          "blanks": 1482,
+          "bytes": 393022,
+          "files": 55,
+          "complexity": 914,
+          "percentOfLines": 23.8,
+          "percentOfCode": 21.5,
+          "percentOfBytes": 25.4
         },
         {
           "name": "JavaScript",
@@ -10539,9 +10598,9 @@
           "blanks": 569,
           "bytes": 234961,
           "files": 27,
-          "complexity": 192,
+          "complexity": 245,
           "percentOfLines": 16.4,
-          "percentOfCode": 16.1,
+          "percentOfCode": 16.2,
           "percentOfBytes": 15.2
         },
         {
@@ -10638,13 +10697,13 @@
       ],
       "summary": {
         "lines": 43124,
-        "code": 34348,
+        "code": 34124,
         "files": 181,
-        "complexity": 1653,
-        "traditionalCost": 461452,
-        "aiCost": 117670,
-        "traditionalMonths": 98.38,
-        "aiMonths": 25.09
+        "complexity": 1802,
+        "traditionalCost": 458293,
+        "aiCost": 116865,
+        "traditionalMonths": 97.71,
+        "aiMonths": 24.92
       },
       "detailsFile": "repos/private-73ffbbea77b3.json"
     },
@@ -10672,14 +10731,14 @@
         {
           "name": "Python",
           "lines": 223,
-          "code": 136,
-          "comments": 42,
+          "code": 134,
+          "comments": 44,
           "blanks": 45,
           "bytes": 6489,
           "files": 1,
-          "complexity": 30,
+          "complexity": 33,
           "percentOfLines": 90.7,
-          "percentOfCode": 88.3,
+          "percentOfCode": 88.2,
           "percentOfBytes": 85.6
         },
         {
@@ -10692,7 +10751,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 8.5,
-          "percentOfCode": 11,
+          "percentOfCode": 11.2,
           "percentOfBytes": 14.1
         },
         {
@@ -10705,19 +10764,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.8,
-          "percentOfCode": 0.6,
+          "percentOfCode": 0.7,
           "percentOfBytes": 0.3
         }
       ],
       "summary": {
         "lines": 246,
-        "code": 154,
+        "code": 152,
         "files": 3,
-        "complexity": 30,
-        "traditionalCost": 1579,
-        "aiCost": 403,
-        "traditionalMonths": 0.34,
-        "aiMonths": 0.09
+        "complexity": 33,
+        "traditionalCost": 1557,
+        "aiCost": 397,
+        "traditionalMonths": 0.33,
+        "aiMonths": 0.08
       },
       "detailsFile": "repos/class-mp4-merger.json"
     },
@@ -10734,11 +10793,11 @@
       "projectTags": [
         {
           "label": "Backend",
-          "confidence": 0.63
+          "confidence": 0.65
         },
         {
           "label": "AI/ML",
-          "confidence": 0.37
+          "confidence": 0.35
         }
       ],
       "languages": [
@@ -10752,7 +10811,7 @@
           "files": 7,
           "complexity": 0,
           "percentOfLines": 29.6,
-          "percentOfCode": 36.2,
+          "percentOfCode": 36.6,
           "percentOfBytes": 42.4
         },
         {
@@ -10765,7 +10824,7 @@
           "files": 8,
           "complexity": 0,
           "percentOfLines": 27,
-          "percentOfCode": 25.5,
+          "percentOfCode": 25.8,
           "percentOfBytes": 17.1
         },
         {
@@ -10778,20 +10837,20 @@
           "files": 4,
           "complexity": 0,
           "percentOfLines": 25.4,
-          "percentOfCode": 23.8,
+          "percentOfCode": 24.1,
           "percentOfBytes": 27.3
         },
         {
           "name": "Python",
           "lines": 851,
-          "code": 577,
-          "comments": 149,
-          "blanks": 125,
+          "code": 510,
+          "comments": 197,
+          "blanks": 144,
           "bytes": 28853,
           "files": 10,
-          "complexity": 64,
+          "complexity": 86,
           "percentOfLines": 11.5,
-          "percentOfCode": 9.5,
+          "percentOfCode": 8.5,
           "percentOfBytes": 8.7
         },
         {
@@ -10802,7 +10861,7 @@
           "blanks": 44,
           "bytes": 9619,
           "files": 1,
-          "complexity": 17,
+          "complexity": 22,
           "percentOfLines": 3.3,
           "percentOfCode": 2.9,
           "percentOfBytes": 2.9
@@ -10862,13 +10921,13 @@
       ],
       "summary": {
         "lines": 7406,
-        "code": 6059,
+        "code": 5992,
         "files": 34,
-        "complexity": 89,
-        "traditionalCost": 74637,
-        "aiCost": 19032,
-        "traditionalMonths": 15.91,
-        "aiMonths": 4.06
+        "complexity": 116,
+        "traditionalCost": 73770,
+        "aiCost": 18811,
+        "traditionalMonths": 15.73,
+        "aiMonths": 4.01
       },
       "detailsFile": "repos/burning-heroes-hackathon.json"
     },
@@ -10952,7 +11011,7 @@
           "blanks": 79,
           "bytes": 31422,
           "files": 6,
-          "complexity": 89,
+          "complexity": 90,
           "percentOfLines": 45.7,
           "percentOfCode": 45.2,
           "percentOfBytes": 51.2
@@ -10991,7 +11050,7 @@
           "blanks": 12,
           "bytes": 1222,
           "files": 1,
-          "complexity": 1,
+          "complexity": 3,
           "percentOfLines": 2.5,
           "percentOfCode": 2,
           "percentOfBytes": 2
@@ -11066,7 +11125,7 @@
         "lines": 2184,
         "code": 1989,
         "files": 19,
-        "complexity": 90,
+        "complexity": 93,
         "traditionalCost": 23174,
         "aiCost": 5909,
         "traditionalMonths": 4.94,
@@ -11105,20 +11164,20 @@
           "files": 7,
           "complexity": 0,
           "percentOfLines": 41.5,
-          "percentOfCode": 50.4,
+          "percentOfCode": 51.3,
           "percentOfBytes": 38.7
         },
         {
           "name": "Python",
           "lines": 5251,
-          "code": 3454,
-          "comments": 1002,
-          "blanks": 795,
+          "code": 3258,
+          "comments": 1118,
+          "blanks": 875,
           "bytes": 201991,
           "files": 21,
-          "complexity": 493,
+          "complexity": 524,
           "percentOfLines": 38.5,
-          "percentOfCode": 30.7,
+          "percentOfCode": 29.5,
           "percentOfBytes": 41
         },
         {
@@ -11131,7 +11190,7 @@
           "files": 9,
           "complexity": 0,
           "percentOfLines": 19.3,
-          "percentOfCode": 18.1,
+          "percentOfCode": 18.4,
           "percentOfBytes": 19.2
         },
         {
@@ -11176,13 +11235,13 @@
       ],
       "summary": {
         "lines": 13655,
-        "code": 11239,
+        "code": 11043,
         "files": 42,
-        "complexity": 493,
-        "traditionalCost": 142789,
-        "aiCost": 36411,
-        "traditionalMonths": 30.44,
-        "aiMonths": 7.76
+        "complexity": 524,
+        "traditionalCost": 140175,
+        "aiCost": 35745,
+        "traditionalMonths": 29.88,
+        "aiMonths": 7.62
       },
       "detailsFile": "repos/private-6be72d6f3bba.json"
     },
@@ -11296,14 +11355,14 @@
         {
           "name": "Python",
           "lines": 3504,
-          "code": 2235,
-          "comments": 738,
-          "blanks": 531,
+          "code": 2123,
+          "comments": 814,
+          "blanks": 567,
           "bytes": 135056,
           "files": 11,
-          "complexity": 351,
+          "complexity": 358,
           "percentOfLines": 99.2,
-          "percentOfCode": 98.9,
+          "percentOfCode": 98.8,
           "percentOfBytes": 98.9
         },
         {
@@ -11348,13 +11407,13 @@
       ],
       "summary": {
         "lines": 3534,
-        "code": 2260,
+        "code": 2148,
         "files": 14,
-        "complexity": 351,
-        "traditionalCost": 26500,
-        "aiCost": 6757,
-        "traditionalMonths": 5.65,
-        "aiMonths": 1.44
+        "complexity": 358,
+        "traditionalCost": 25123,
+        "aiCost": 6406,
+        "traditionalMonths": 5.36,
+        "aiMonths": 1.37
       },
       "detailsFile": "repos/private-334d4360ebd7.json"
     },
@@ -11383,7 +11442,7 @@
           "blanks": 71,
           "bytes": 23870,
           "files": 4,
-          "complexity": 31,
+          "complexity": 35,
           "percentOfLines": 77.6,
           "percentOfCode": 66.9,
           "percentOfBytes": 84.9
@@ -11432,7 +11491,7 @@
         "lines": 838,
         "code": 540,
         "files": 15,
-        "complexity": 31,
+        "complexity": 35,
         "traditionalCost": 5894,
         "aiCost": 1503,
         "traditionalMonths": 1.26,
@@ -11464,14 +11523,14 @@
         {
           "name": "Python",
           "lines": 2607,
-          "code": 2089,
-          "comments": 211,
-          "blanks": 307,
+          "code": 1854,
+          "comments": 315,
+          "blanks": 438,
           "bytes": 95007,
           "files": 6,
-          "complexity": 270,
+          "complexity": 341,
           "percentOfLines": 78.3,
-          "percentOfCode": 79.1,
+          "percentOfCode": 77.1,
           "percentOfBytes": 78.9
         },
         {
@@ -11484,7 +11543,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 21.1,
-          "percentOfCode": 20.3,
+          "percentOfCode": 22.2,
           "percentOfBytes": 20.5
         },
         {
@@ -11516,13 +11575,13 @@
       ],
       "summary": {
         "lines": 3329,
-        "code": 2640,
+        "code": 2405,
         "files": 10,
-        "complexity": 270,
-        "traditionalCost": 31197,
-        "aiCost": 7955,
-        "traditionalMonths": 6.65,
-        "aiMonths": 1.7
+        "complexity": 341,
+        "traditionalCost": 28288,
+        "aiCost": 7213,
+        "traditionalMonths": 6.03,
+        "aiMonths": 1.54
       },
       "detailsFile": "repos/virtual-cursor.json"
     },
@@ -11680,7 +11739,7 @@
           "blanks": 143,
           "bytes": 27483,
           "files": 5,
-          "complexity": 60,
+          "complexity": 67,
           "percentOfLines": 46.2,
           "percentOfCode": 42.7,
           "percentOfBytes": 54.8
@@ -11755,7 +11814,7 @@
         "lines": 1776,
         "code": 1445,
         "files": 12,
-        "complexity": 60,
+        "complexity": 67,
         "traditionalCost": 16569,
         "aiCost": 4225,
         "traditionalMonths": 3.53,
@@ -11792,7 +11851,7 @@
           "blanks": 45,
           "bytes": 10959,
           "files": 1,
-          "complexity": 27,
+          "complexity": 29,
           "percentOfLines": 56.1,
           "percentOfCode": 54.2,
           "percentOfBytes": 67.5
@@ -11828,7 +11887,7 @@
         "lines": 578,
         "code": 478,
         "files": 3,
-        "complexity": 27,
+        "complexity": 29,
         "traditionalCost": 5186,
         "aiCost": 1322,
         "traditionalMonths": 1.11,
@@ -11865,7 +11924,7 @@
           "blanks": 113,
           "bytes": 58392,
           "files": 14,
-          "complexity": 44,
+          "complexity": 45,
           "percentOfLines": 90.3,
           "percentOfCode": 91.1,
           "percentOfBytes": 87.8
@@ -11953,7 +12012,7 @@
         "lines": 1758,
         "code": 1603,
         "files": 27,
-        "complexity": 44,
+        "complexity": 45,
         "traditionalCost": 18476,
         "aiCost": 4711,
         "traditionalMonths": 3.94,
@@ -12036,14 +12095,14 @@
         {
           "name": "Python",
           "lines": 1987,
-          "code": 1567,
-          "comments": 174,
-          "blanks": 246,
+          "code": 1462,
+          "comments": 211,
+          "blanks": 314,
           "bytes": 157193,
           "files": 10,
-          "complexity": 157,
+          "complexity": 216,
           "percentOfLines": 59.3,
-          "percentOfCode": 58.4,
+          "percentOfCode": 56.8,
           "percentOfBytes": 77.9
         },
         {
@@ -12056,7 +12115,7 @@
           "files": 4,
           "complexity": 0,
           "percentOfLines": 28.4,
-          "percentOfCode": 26.3,
+          "percentOfCode": 27.4,
           "percentOfBytes": 15.1
         },
         {
@@ -12069,7 +12128,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 11.7,
-          "percentOfCode": 14.6,
+          "percentOfCode": 15.2,
           "percentOfBytes": 6.5
         },
         {
@@ -12082,19 +12141,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.6,
-          "percentOfCode": 0.6,
+          "percentOfCode": 0.7,
           "percentOfBytes": 0.5
         }
       ],
       "summary": {
         "lines": 3352,
-        "code": 2681,
+        "code": 2576,
         "files": 16,
-        "complexity": 157,
-        "traditionalCost": 31706,
-        "aiCost": 8085,
-        "traditionalMonths": 6.76,
-        "aiMonths": 1.72
+        "complexity": 216,
+        "traditionalCost": 30403,
+        "aiCost": 7753,
+        "traditionalMonths": 6.48,
+        "aiMonths": 1.65
       },
       "detailsFile": "repos/las-vegas-hackathon-august-12.json"
     },
@@ -12127,7 +12186,7 @@
           "blanks": 808,
           "bytes": 267346,
           "files": 83,
-          "complexity": 514,
+          "complexity": 551,
           "percentOfLines": 76.6,
           "percentOfCode": 77.4,
           "percentOfBytes": 77.9
@@ -12228,7 +12287,7 @@
         "lines": 10399,
         "code": 8637,
         "files": 102,
-        "complexity": 514,
+        "complexity": 551,
         "traditionalCost": 108296,
         "aiCost": 27615,
         "traditionalMonths": 23.09,
@@ -12278,7 +12337,7 @@
           "blanks": 12,
           "bytes": 2695,
           "files": 1,
-          "complexity": 19,
+          "complexity": 20,
           "percentOfLines": 11.8,
           "percentOfCode": 12.1,
           "percentOfBytes": 11.4
@@ -12314,7 +12373,7 @@
         "lines": 735,
         "code": 554,
         "files": 5,
-        "complexity": 19,
+        "complexity": 20,
         "traditionalCost": 6055,
         "aiCost": 1544,
         "traditionalMonths": 1.29,
@@ -12579,7 +12638,7 @@
           "blanks": 28,
           "bytes": 4453,
           "files": 1,
-          "complexity": 2,
+          "complexity": 6,
           "percentOfLines": 3.7,
           "percentOfCode": 3.6,
           "percentOfBytes": 4.1
@@ -12605,36 +12664,36 @@
           "blanks": 21,
           "bytes": 2674,
           "files": 1,
-          "complexity": 18,
+          "complexity": 19,
           "percentOfLines": 2.5,
           "percentOfCode": 2.4,
           "percentOfBytes": 2.4
         },
         {
-          "name": "C Header",
-          "lines": 94,
-          "code": 64,
-          "comments": 6,
-          "blanks": 24,
-          "bytes": 2591,
-          "files": 4,
-          "complexity": 0,
-          "percentOfLines": 2.6,
-          "percentOfCode": 2.3,
-          "percentOfBytes": 2.4
+          "name": "Objective C",
+          "lines": 84,
+          "code": 66,
+          "comments": 0,
+          "blanks": 18,
+          "bytes": 2403,
+          "files": 3,
+          "complexity": 8,
+          "percentOfLines": 2.4,
+          "percentOfCode": 2.4,
+          "percentOfBytes": 2.2
         },
         {
-          "name": "Objective C",
-          "lines": 76,
-          "code": 61,
-          "comments": 0,
-          "blanks": 15,
-          "bytes": 2207,
-          "files": 2,
-          "complexity": 8,
-          "percentOfLines": 2.1,
-          "percentOfCode": 2.2,
-          "percentOfBytes": 2
+          "name": "C++ Header",
+          "lines": 86,
+          "code": 59,
+          "comments": 6,
+          "blanks": 21,
+          "bytes": 2395,
+          "files": 3,
+          "complexity": 0,
+          "percentOfLines": 2.4,
+          "percentOfCode": 2.1,
+          "percentOfBytes": 2.2
         },
         {
           "name": "XML",
@@ -12732,7 +12791,7 @@
         "lines": 3557,
         "code": 2784,
         "files": 52,
-        "complexity": 158,
+        "complexity": 163,
         "traditionalCost": 32986,
         "aiCost": 8411,
         "traditionalMonths": 7.03,
@@ -12769,7 +12828,7 @@
           "blanks": 2380,
           "bytes": 601797,
           "files": 10,
-          "complexity": 3064,
+          "complexity": 3291,
           "percentOfLines": 96.9,
           "percentOfCode": 96.9,
           "percentOfBytes": 96.7
@@ -12808,7 +12867,7 @@
           "blanks": 24,
           "bytes": 4273,
           "files": 1,
-          "complexity": 1,
+          "complexity": 7,
           "percentOfLines": 0.6,
           "percentOfCode": 0.5,
           "percentOfBytes": 0.7
@@ -12831,7 +12890,7 @@
         "lines": 19093,
         "code": 14096,
         "files": 17,
-        "complexity": 3066,
+        "complexity": 3299,
         "traditionalCost": 181126,
         "aiCost": 46187,
         "traditionalMonths": 38.62,
@@ -12852,25 +12911,25 @@
       "projectTags": [
         {
           "label": "Data",
-          "confidence": 0.51
+          "confidence": 0.53
         },
         {
           "label": "AI/ML",
-          "confidence": 0.49
+          "confidence": 0.47
         }
       ],
       "languages": [
         {
           "name": "C Header",
-          "lines": 276966,
-          "code": 260772,
+          "lines": 276951,
+          "code": 260760,
           "comments": 8146,
-          "blanks": 8048,
-          "bytes": 25957456,
-          "files": 72,
-          "complexity": 14,
+          "blanks": 8045,
+          "bytes": 25957220,
+          "files": 71,
+          "complexity": 51,
           "percentOfLines": 86.8,
-          "percentOfCode": 88.9,
+          "percentOfCode": 89.1,
           "percentOfBytes": 78.4
         },
         {
@@ -12881,22 +12940,22 @@
           "blanks": 5630,
           "bytes": 1369255,
           "files": 48,
-          "complexity": 7256,
+          "complexity": 7537,
           "percentOfLines": 10.7,
-          "percentOfCode": 8.9,
+          "percentOfCode": 9,
           "percentOfBytes": 4.1
         },
         {
           "name": "Python",
           "lines": 4442,
-          "code": 3008,
-          "comments": 847,
-          "blanks": 587,
+          "code": 2346,
+          "comments": 1375,
+          "blanks": 721,
           "bytes": 177129,
           "files": 9,
-          "complexity": 415,
+          "complexity": 497,
           "percentOfLines": 1.4,
-          "percentOfCode": 1,
+          "percentOfCode": 0.8,
           "percentOfBytes": 0.5
         },
         {
@@ -12959,7 +13018,20 @@
           "blanks": 24,
           "bytes": 3597,
           "files": 1,
-          "complexity": 1,
+          "complexity": 7,
+          "percentOfLines": 0,
+          "percentOfCode": 0,
+          "percentOfBytes": 0
+        },
+        {
+          "name": "C++ Header",
+          "lines": 15,
+          "code": 12,
+          "comments": 0,
+          "blanks": 3,
+          "bytes": 236,
+          "files": 1,
+          "complexity": 0,
           "percentOfLines": 0,
           "percentOfCode": 0,
           "percentOfBytes": 0
@@ -12967,13 +13039,13 @@
       ],
       "summary": {
         "lines": 319046,
-        "code": 293454,
+        "code": 292792,
         "files": 143,
-        "complexity": 7686,
-        "traditionalCost": 4388816,
-        "aiCost": 1119148,
-        "traditionalMonths": 935.68,
-        "aiMonths": 238.6
+        "complexity": 8092,
+        "traditionalCost": 4378421,
+        "aiCost": 1116497,
+        "traditionalMonths": 933.47,
+        "aiMonths": 238.03
       },
       "detailsFile": "repos/private-5574a72ed3f8.json"
     },
@@ -13299,7 +13371,7 @@
           "blanks": 1299,
           "bytes": 260837,
           "files": 10,
-          "complexity": 1373,
+          "complexity": 1391,
           "percentOfLines": 81.8,
           "percentOfCode": 84.7,
           "percentOfBytes": 80.1
@@ -13312,7 +13384,7 @@
           "blanks": 167,
           "bytes": 43304,
           "files": 6,
-          "complexity": 18,
+          "complexity": 23,
           "percentOfLines": 11.5,
           "percentOfCode": 8.4,
           "percentOfBytes": 13.3
@@ -13374,7 +13446,7 @@
         "lines": 9936,
         "code": 7053,
         "files": 25,
-        "complexity": 1391,
+        "complexity": 1414,
         "traditionalCost": 87543,
         "aiCost": 22324,
         "traditionalMonths": 18.66,
@@ -13420,7 +13492,7 @@
           "blanks": 36,
           "bytes": 5177,
           "files": 1,
-          "complexity": 4,
+          "complexity": 11,
           "percentOfLines": 36.2,
           "percentOfCode": 31.5,
           "percentOfBytes": 33.6
@@ -13430,7 +13502,7 @@
         "lines": 478,
         "code": 365,
         "files": 4,
-        "complexity": 4,
+        "complexity": 11,
         "traditionalCost": 3907,
         "aiCost": 996,
         "traditionalMonths": 0.83,
@@ -13614,7 +13686,7 @@
           "blanks": 8,
           "bytes": 1325,
           "files": 1,
-          "complexity": 3,
+          "complexity": 5,
           "percentOfLines": 0.3,
           "percentOfCode": 0.3,
           "percentOfBytes": 0.3
@@ -13627,7 +13699,7 @@
           "blanks": 8,
           "bytes": 1289,
           "files": 1,
-          "complexity": 3,
+          "complexity": 5,
           "percentOfLines": 0.3,
           "percentOfCode": 0.2,
           "percentOfBytes": 0.3
@@ -13650,7 +13722,7 @@
         "lines": 14062,
         "code": 12788,
         "files": 29,
-        "complexity": 28,
+        "complexity": 32,
         "traditionalCost": 163521,
         "aiCost": 41698,
         "traditionalMonths": 34.86,
@@ -13753,20 +13825,20 @@
           "files": 10,
           "complexity": 0,
           "percentOfLines": 56.2,
-          "percentOfCode": 54.1,
+          "percentOfCode": 54.3,
           "percentOfBytes": 56.3
         },
         {
           "name": "Python",
           "lines": 1399,
-          "code": 1003,
-          "comments": 180,
-          "blanks": 216,
+          "code": 979,
+          "comments": 191,
+          "blanks": 229,
           "bytes": 46689,
           "files": 4,
-          "complexity": 97,
+          "complexity": 108,
           "percentOfLines": 21.7,
-          "percentOfCode": 19.6,
+          "percentOfCode": 19.2,
           "percentOfBytes": 22
         },
         {
@@ -13792,7 +13864,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 5.7,
-          "percentOfCode": 7.1,
+          "percentOfCode": 7.2,
           "percentOfBytes": 4.8
         },
         {
@@ -13863,13 +13935,13 @@
       ],
       "summary": {
         "lines": 6450,
-        "code": 5121,
+        "code": 5097,
         "files": 25,
-        "complexity": 103,
-        "traditionalCost": 62554,
-        "aiCost": 15951,
-        "traditionalMonths": 13.34,
-        "aiMonths": 3.4
+        "complexity": 114,
+        "traditionalCost": 62246,
+        "aiCost": 15873,
+        "traditionalMonths": 13.27,
+        "aiMonths": 3.38
       },
       "detailsFile": "repos/private-ebb77819d488.json"
     },
@@ -14042,20 +14114,20 @@
           "files": 5,
           "complexity": 0,
           "percentOfLines": 86.5,
-          "percentOfCode": 89,
+          "percentOfCode": 89.1,
           "percentOfBytes": 68.8
         },
         {
           "name": "Python",
           "lines": 3169,
-          "code": 2249,
-          "comments": 556,
-          "blanks": 364,
+          "code": 2199,
+          "comments": 601,
+          "blanks": 369,
           "bytes": 1657482,
           "files": 10,
-          "complexity": 369,
+          "complexity": 403,
           "percentOfLines": 7.9,
-          "percentOfCode": 6,
+          "percentOfCode": 5.9,
           "percentOfBytes": 12.2
         },
         {
@@ -14152,13 +14224,13 @@
       ],
       "summary": {
         "lines": 40182,
-        "code": 37197,
+        "code": 37147,
         "files": 31,
-        "complexity": 536,
-        "traditionalCost": 501723,
-        "aiCost": 127939,
-        "traditionalMonths": 106.97,
-        "aiMonths": 27.28
+        "complexity": 570,
+        "traditionalCost": 501015,
+        "aiCost": 127759,
+        "traditionalMonths": 106.81,
+        "aiMonths": 27.24
       },
       "detailsFile": "repos/private-e1f94bfcbcbf.json"
     },
@@ -14186,14 +14258,14 @@
         {
           "name": "Python",
           "lines": 282,
-          "code": 182,
-          "comments": 64,
-          "blanks": 36,
+          "code": 148,
+          "comments": 84,
+          "blanks": 50,
           "bytes": 9385,
           "files": 2,
-          "complexity": 21,
+          "complexity": 32,
           "percentOfLines": 84.2,
-          "percentOfCode": 83.5,
+          "percentOfCode": 80.4,
           "percentOfBytes": 78.8
         },
         {
@@ -14206,7 +14278,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 9.6,
-          "percentOfCode": 8.7,
+          "percentOfCode": 10.3,
           "percentOfBytes": 12.2
         },
         {
@@ -14219,19 +14291,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 6.3,
-          "percentOfCode": 7.8,
+          "percentOfCode": 9.2,
           "percentOfBytes": 9
         }
       ],
       "summary": {
         "lines": 335,
-        "code": 218,
+        "code": 184,
         "files": 5,
-        "complexity": 21,
-        "traditionalCost": 2274,
-        "aiCost": 580,
-        "traditionalMonths": 0.48,
-        "aiMonths": 0.12
+        "complexity": 32,
+        "traditionalCost": 1903,
+        "aiCost": 485,
+        "traditionalMonths": 0.41,
+        "aiMonths": 0.1
       },
       "detailsFile": "repos/private-3aa37c7d5749.json"
     },
@@ -14248,11 +14320,11 @@
       "projectTags": [
         {
           "label": "Data",
-          "confidence": 0.71
+          "confidence": 0.72
         },
         {
           "label": "AI/ML",
-          "confidence": 0.29
+          "confidence": 0.28
         }
       ],
       "languages": [
@@ -14298,14 +14370,14 @@
         {
           "name": "Python",
           "lines": 3867,
-          "code": 2573,
-          "comments": 663,
-          "blanks": 631,
+          "code": 2494,
+          "comments": 706,
+          "blanks": 667,
           "bytes": 145627,
           "files": 13,
-          "complexity": 546,
+          "complexity": 586,
           "percentOfLines": 2.8,
-          "percentOfCode": 2,
+          "percentOfCode": 1.9,
           "percentOfBytes": 0.3
         },
         {
@@ -14342,7 +14414,7 @@
           "blanks": 63,
           "bytes": 9994,
           "files": 3,
-          "complexity": 4,
+          "complexity": 11,
           "percentOfLines": 0.2,
           "percentOfCode": 0.1,
           "percentOfBytes": 0
@@ -14363,13 +14435,13 @@
       ],
       "summary": {
         "lines": 139598,
-        "code": 130921,
+        "code": 130842,
         "files": 81,
-        "complexity": 798,
-        "traditionalCost": 1880573,
-        "aiCost": 479546,
-        "traditionalMonths": 400.93,
-        "aiMonths": 102.24
+        "complexity": 845,
+        "traditionalCost": 1879381,
+        "aiCost": 479242,
+        "traditionalMonths": 400.68,
+        "aiMonths": 102.17
       },
       "detailsFile": "repos/private-a276fc0923d8.json"
     },
@@ -14462,7 +14534,7 @@
           "blanks": 8,
           "bytes": 930,
           "files": 1,
-          "complexity": 0,
+          "complexity": 4,
           "percentOfLines": 14.8,
           "percentOfCode": 12.2,
           "percentOfBytes": 12.5
@@ -14472,7 +14544,7 @@
         "lines": 264,
         "code": 188,
         "files": 3,
-        "complexity": 23,
+        "complexity": 27,
         "traditionalCost": 1947,
         "aiCost": 496,
         "traditionalMonths": 0.42,
@@ -14710,7 +14782,7 @@
           "blanks": 30,
           "bytes": 15544,
           "files": 7,
-          "complexity": 34,
+          "complexity": 41,
           "percentOfLines": 18,
           "percentOfCode": 19.7,
           "percentOfBytes": 15.6
@@ -14824,7 +14896,7 @@
         "lines": 2883,
         "code": 2442,
         "files": 36,
-        "complexity": 85,
+        "complexity": 92,
         "traditionalCost": 28745,
         "aiCost": 7330,
         "traditionalMonths": 6.13,
@@ -14856,14 +14928,14 @@
         {
           "name": "Python",
           "lines": 444,
-          "code": 337,
-          "comments": 58,
-          "blanks": 49,
+          "code": 282,
+          "comments": 106,
+          "blanks": 56,
           "bytes": 16808,
           "files": 3,
-          "complexity": 52,
+          "complexity": 60,
           "percentOfLines": 90.4,
-          "percentOfCode": 91.3,
+          "percentOfCode": 89.8,
           "percentOfBytes": 84
         },
         {
@@ -14876,19 +14948,19 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 9.6,
-          "percentOfCode": 8.7,
+          "percentOfCode": 10.2,
           "percentOfBytes": 16
         }
       ],
       "summary": {
         "lines": 491,
-        "code": 369,
+        "code": 314,
         "files": 5,
-        "complexity": 52,
-        "traditionalCost": 3952,
-        "aiCost": 1008,
-        "traditionalMonths": 0.84,
-        "aiMonths": 0.21
+        "complexity": 60,
+        "traditionalCost": 3336,
+        "aiCost": 851,
+        "traditionalMonths": 0.71,
+        "aiMonths": 0.18
       },
       "detailsFile": "repos/system-design-interview-demos.json"
     },
@@ -15218,7 +15290,7 @@
           "blanks": 24,
           "bytes": 9258,
           "files": 7,
-          "complexity": 4,
+          "complexity": 6,
           "percentOfLines": 45.2,
           "percentOfCode": 45.7,
           "percentOfBytes": 1.1
@@ -15270,7 +15342,7 @@
           "blanks": 5,
           "bytes": 773845,
           "files": 17,
-          "complexity": 124,
+          "complexity": 2798,
           "percentOfLines": 5.3,
           "percentOfCode": 5.3,
           "percentOfBytes": 92.6
@@ -15358,7 +15430,7 @@
         "lines": 673,
         "code": 584,
         "files": 48,
-        "complexity": 128,
+        "complexity": 2804,
         "traditionalCost": 6400,
         "aiCost": 1632,
         "traditionalMonths": 1.36,
@@ -15395,7 +15467,7 @@
           "blanks": 24,
           "bytes": 9258,
           "files": 7,
-          "complexity": 4,
+          "complexity": 6,
           "percentOfLines": 46.4,
           "percentOfCode": 47.8,
           "percentOfBytes": 1.1
@@ -15447,7 +15519,7 @@
           "blanks": 5,
           "bytes": 773847,
           "files": 17,
-          "complexity": 124,
+          "complexity": 2798,
           "percentOfLines": 5.5,
           "percentOfCode": 5.5,
           "percentOfBytes": 93.1
@@ -15535,7 +15607,7 @@
         "lines": 655,
         "code": 559,
         "files": 48,
-        "complexity": 128,
+        "complexity": 2804,
         "traditionalCost": 6112,
         "aiCost": 1559,
         "traditionalMonths": 1.3,
@@ -16103,7 +16175,7 @@
           "blanks": 21,
           "bytes": 4132,
           "files": 6,
-          "complexity": 2,
+          "complexity": 4,
           "percentOfLines": 63.3,
           "percentOfCode": 63.6,
           "percentOfBytes": 41.8
@@ -16178,7 +16250,7 @@
         "lines": 256,
         "code": 214,
         "files": 16,
-        "complexity": 2,
+        "complexity": 4,
         "traditionalCost": 2230,
         "aiCost": 569,
         "traditionalMonths": 0.48,
@@ -16215,7 +16287,7 @@
           "blanks": 21,
           "bytes": 4132,
           "files": 6,
-          "complexity": 2,
+          "complexity": 4,
           "percentOfLines": 54.4,
           "percentOfCode": 55.3,
           "percentOfBytes": 37.8
@@ -16303,7 +16375,7 @@
         "lines": 298,
         "code": 246,
         "files": 18,
-        "complexity": 3,
+        "complexity": 5,
         "traditionalCost": 2582,
         "aiCost": 658,
         "traditionalMonths": 0.55,
@@ -16373,12 +16445,12 @@
         {
           "name": "Python",
           "lines": 6729,
-          "code": 4030,
-          "comments": 1636,
-          "blanks": 1063,
+          "code": 3909,
+          "comments": 1728,
+          "blanks": 1092,
           "bytes": 252855,
           "files": 16,
-          "complexity": 829,
+          "complexity": 860,
           "percentOfLines": 99.9,
           "percentOfCode": 99.8,
           "percentOfBytes": 99.8
@@ -16399,13 +16471,13 @@
       ],
       "summary": {
         "lines": 6737,
-        "code": 4038,
+        "code": 3917,
         "files": 17,
-        "complexity": 829,
-        "traditionalCost": 48742,
-        "aiCost": 12429,
-        "traditionalMonths": 10.39,
-        "aiMonths": 2.65
+        "complexity": 860,
+        "traditionalCost": 47210,
+        "aiCost": 12038,
+        "traditionalMonths": 10.06,
+        "aiMonths": 2.57
       },
       "detailsFile": "repos/private-5e994ae56474.json"
     },
@@ -16677,14 +16749,14 @@
         {
           "name": "Python",
           "lines": 5685,
-          "code": 3252,
-          "comments": 1470,
-          "blanks": 963,
+          "code": 2995,
+          "comments": 1651,
+          "blanks": 1039,
           "bytes": 206388,
           "files": 14,
-          "complexity": 551,
+          "complexity": 558,
           "percentOfLines": 99.5,
-          "percentOfCode": 99.3,
+          "percentOfCode": 99.2,
           "percentOfBytes": 99.3
         },
         {
@@ -16697,7 +16769,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.4,
-          "percentOfCode": 0.5,
+          "percentOfCode": 0.6,
           "percentOfBytes": 0.5
         },
         {
@@ -16729,13 +16801,13 @@
       ],
       "summary": {
         "lines": 5714,
-        "code": 3276,
+        "code": 3019,
         "files": 17,
-        "complexity": 551,
-        "traditionalCost": 39133,
-        "aiCost": 9979,
-        "traditionalMonths": 8.34,
-        "aiMonths": 2.13
+        "complexity": 558,
+        "traditionalCost": 35916,
+        "aiCost": 9159,
+        "traditionalMonths": 7.66,
+        "aiMonths": 1.95
       },
       "detailsFile": "repos/private-44788cda3575.json"
     },
@@ -16815,7 +16887,7 @@
           "blanks": 49,
           "bytes": 6495,
           "files": 4,
-          "complexity": 18,
+          "complexity": 26,
           "percentOfLines": 61.4,
           "percentOfCode": 47.9,
           "percentOfBytes": 44.8
@@ -16877,7 +16949,7 @@
         "lines": 402,
         "code": 288,
         "files": 9,
-        "complexity": 18,
+        "complexity": 26,
         "traditionalCost": 3046,
         "aiCost": 777,
         "traditionalMonths": 0.65,
@@ -16909,14 +16981,14 @@
         {
           "name": "Python",
           "lines": 5907,
-          "code": 3371,
-          "comments": 1366,
-          "blanks": 1170,
+          "code": 3220,
+          "comments": 1516,
+          "blanks": 1171,
           "bytes": 218344,
           "files": 23,
-          "complexity": 678,
+          "complexity": 681,
           "percentOfLines": 97.2,
-          "percentOfCode": 95.5,
+          "percentOfCode": 95.4,
           "percentOfBytes": 97.8
         },
         {
@@ -16929,7 +17001,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 2.5,
-          "percentOfCode": 3.9,
+          "percentOfCode": 4.1,
           "percentOfBytes": 1.6
         },
         {
@@ -16961,13 +17033,13 @@
       ],
       "summary": {
         "lines": 6079,
-        "code": 3528,
+        "code": 3377,
         "files": 28,
-        "complexity": 678,
-        "traditionalCost": 42300,
-        "aiCost": 10786,
-        "traditionalMonths": 9.02,
-        "aiMonths": 2.3
+        "complexity": 681,
+        "traditionalCost": 40401,
+        "aiCost": 10302,
+        "traditionalMonths": 8.61,
+        "aiMonths": 2.2
       },
       "detailsFile": "repos/private-13c95da3e346.json"
     },
@@ -17033,9 +17105,9 @@
         {
           "name": "Python",
           "lines": 2416,
-          "code": 1346,
-          "comments": 647,
-          "blanks": 423,
+          "code": 1344,
+          "comments": 645,
+          "blanks": 427,
           "bytes": 81018,
           "files": 9,
           "complexity": 310,
@@ -17046,13 +17118,13 @@
       ],
       "summary": {
         "lines": 2416,
-        "code": 1346,
+        "code": 1344,
         "files": 9,
         "complexity": 310,
-        "traditionalCost": 15379,
-        "aiCost": 3922,
-        "traditionalMonths": 3.28,
-        "aiMonths": 0.84
+        "traditionalCost": 15355,
+        "aiCost": 3916,
+        "traditionalMonths": 3.27,
+        "aiMonths": 0.83
       },
       "detailsFile": "repos/private-5d7cff28ccb2.json"
     },
@@ -17085,7 +17157,7 @@
           "blanks": 77,
           "bytes": 9670,
           "files": 2,
-          "complexity": 3,
+          "complexity": 2,
           "percentOfLines": 39.6,
           "percentOfCode": 36.9,
           "percentOfBytes": 29.5
@@ -17098,7 +17170,7 @@
           "blanks": 13,
           "bytes": 5204,
           "files": 6,
-          "complexity": 7,
+          "complexity": 8,
           "percentOfLines": 14.8,
           "percentOfCode": 14.3,
           "percentOfBytes": 15.9
@@ -17124,7 +17196,7 @@
           "blanks": 20,
           "bytes": 4761,
           "files": 1,
-          "complexity": 9,
+          "complexity": 12,
           "percentOfLines": 12.2,
           "percentOfCode": 13.4,
           "percentOfBytes": 14.5
@@ -17212,7 +17284,7 @@
         "lines": 1067,
         "code": 715,
         "files": 19,
-        "complexity": 20,
+        "complexity": 23,
         "traditionalCost": 7915,
         "aiCost": 2018,
         "traditionalMonths": 1.69,
@@ -17249,7 +17321,7 @@
           "blanks": 49,
           "bytes": 6497,
           "files": 4,
-          "complexity": 18,
+          "complexity": 26,
           "percentOfLines": 63,
           "percentOfCode": 49.8,
           "percentOfBytes": 47.8
@@ -17311,7 +17383,7 @@
         "lines": 392,
         "code": 277,
         "files": 9,
-        "complexity": 18,
+        "complexity": 26,
         "traditionalCost": 2924,
         "aiCost": 746,
         "traditionalMonths": 0.62,
@@ -17343,14 +17415,14 @@
         {
           "name": "Python",
           "lines": 1295,
-          "code": 939,
-          "comments": 190,
-          "blanks": 166,
+          "code": 842,
+          "comments": 268,
+          "blanks": 185,
           "bytes": 48590,
           "files": 10,
-          "complexity": 105,
+          "complexity": 165,
           "percentOfLines": 95.1,
-          "percentOfCode": 94.8,
+          "percentOfCode": 94.3,
           "percentOfBytes": 94.9
         },
         {
@@ -17363,7 +17435,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 2.7,
-          "percentOfCode": 3.2,
+          "percentOfCode": 3.6,
           "percentOfBytes": 3.8
         },
         {
@@ -17376,7 +17448,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 0.9,
-          "percentOfCode": 1.2,
+          "percentOfCode": 1.3,
           "percentOfBytes": 0.3
         },
         {
@@ -17389,7 +17461,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 1.2,
-          "percentOfCode": 0.6,
+          "percentOfCode": 0.7,
           "percentOfBytes": 0.9
         },
         {
@@ -17408,13 +17480,13 @@
       ],
       "summary": {
         "lines": 1362,
-        "code": 990,
+        "code": 893,
         "files": 14,
-        "complexity": 105,
-        "traditionalCost": 11139,
-        "aiCost": 2840,
-        "traditionalMonths": 2.37,
-        "aiMonths": 0.61
+        "complexity": 165,
+        "traditionalCost": 9996,
+        "aiCost": 2549,
+        "traditionalMonths": 2.13,
+        "aiMonths": 0.54
       },
       "detailsFile": "repos/the-invisible-bot.json"
     },
@@ -17442,14 +17514,14 @@
         {
           "name": "Python",
           "lines": 1596,
-          "code": 998,
-          "comments": 329,
-          "blanks": 269,
+          "code": 927,
+          "comments": 397,
+          "blanks": 272,
           "bytes": 66506,
           "files": 6,
-          "complexity": 56,
+          "complexity": 44,
           "percentOfLines": 87.8,
-          "percentOfCode": 90.2,
+          "percentOfCode": 89.5,
           "percentOfBytes": 89.4
         },
         {
@@ -17462,7 +17534,7 @@
           "files": 1,
           "complexity": 1,
           "percentOfLines": 4.7,
-          "percentOfCode": 3.3,
+          "percentOfCode": 3.5,
           "percentOfBytes": 3.9
         },
         {
@@ -17475,11 +17547,11 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 1.5,
-          "percentOfCode": 2.1,
+          "percentOfCode": 2.2,
           "percentOfBytes": 1.5
         },
         {
-          "name": "C Header",
+          "name": "C++ Header",
           "lines": 50,
           "code": 20,
           "comments": 19,
@@ -17488,7 +17560,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 2.8,
-          "percentOfCode": 1.8,
+          "percentOfCode": 1.9,
           "percentOfBytes": 2.4
         },
         {
@@ -17501,7 +17573,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 2.1,
-          "percentOfCode": 1.5,
+          "percentOfCode": 1.6,
           "percentOfBytes": 1.6
         },
         {
@@ -17514,19 +17586,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 1,
-          "percentOfCode": 1.2,
+          "percentOfCode": 1.3,
           "percentOfBytes": 1.3
         }
       ],
       "summary": {
         "lines": 1817,
-        "code": 1107,
+        "code": 1036,
         "files": 11,
-        "complexity": 57,
-        "traditionalCost": 12525,
-        "aiCost": 3194,
-        "traditionalMonths": 2.67,
-        "aiMonths": 0.68
+        "complexity": 45,
+        "traditionalCost": 11683,
+        "aiCost": 2979,
+        "traditionalMonths": 2.49,
+        "aiMonths": 0.64
       },
       "detailsFile": "repos/private-7a7ba2a7eadc.json"
     },
@@ -18232,7 +18304,7 @@
           "blanks": 59,
           "bytes": 9377,
           "files": 10,
-          "complexity": 13,
+          "complexity": 19,
           "percentOfLines": 78.9,
           "percentOfCode": 75.2,
           "percentOfBytes": 79.1
@@ -18281,7 +18353,7 @@
         "lines": 435,
         "code": 302,
         "files": 13,
-        "complexity": 13,
+        "complexity": 19,
         "traditionalCost": 3202,
         "aiCost": 817,
         "traditionalMonths": 0.68,
@@ -18318,7 +18390,7 @@
           "blanks": 44,
           "bytes": 3992,
           "files": 7,
-          "complexity": 6,
+          "complexity": 10,
           "percentOfLines": 79.8,
           "percentOfCode": 72.2,
           "percentOfBytes": 82.1
@@ -18380,7 +18452,7 @@
         "lines": 238,
         "code": 158,
         "files": 13,
-        "complexity": 6,
+        "complexity": 10,
         "traditionalCost": 1622,
         "aiCost": 414,
         "traditionalMonths": 0.35,
@@ -18468,7 +18540,7 @@
           "blanks": 154,
           "bytes": 24755,
           "files": 24,
-          "complexity": 23,
+          "complexity": 24,
           "percentOfLines": 46.9,
           "percentOfCode": 39.1,
           "percentOfBytes": 50.3
@@ -18556,7 +18628,7 @@
         "lines": 1934,
         "code": 1495,
         "files": 44,
-        "complexity": 23,
+        "complexity": 24,
         "traditionalCost": 17171,
         "aiCost": 4379,
         "traditionalMonths": 3.66,
@@ -18756,7 +18828,7 @@
           "blanks": 131,
           "bytes": 22967,
           "files": 36,
-          "complexity": 21,
+          "complexity": 22,
           "percentOfLines": 55.7,
           "percentOfCode": 45.6,
           "percentOfBytes": 60.5
@@ -18896,7 +18968,7 @@
         "lines": 1196,
         "code": 607,
         "files": 61,
-        "complexity": 21,
+        "complexity": 22,
         "traditionalCost": 6665,
         "aiCost": 1699,
         "traditionalMonths": 1.42,
@@ -19209,7 +19281,7 @@
           "blanks": 1781,
           "bytes": 432548,
           "files": 10,
-          "complexity": 1302,
+          "complexity": 1530,
           "percentOfLines": 98.2,
           "percentOfCode": 97.8,
           "percentOfBytes": 98.8
@@ -19271,7 +19343,7 @@
         "lines": 16806,
         "code": 11777,
         "files": 15,
-        "complexity": 1302,
+        "complexity": 1530,
         "traditionalCost": 149974,
         "aiCost": 38243,
         "traditionalMonths": 31.97,
@@ -19458,7 +19530,7 @@
           "blanks": 84,
           "bytes": 26284,
           "files": 26,
-          "complexity": 10,
+          "complexity": 14,
           "percentOfLines": 70,
           "percentOfCode": 68.6,
           "percentOfBytes": 61.7
@@ -19533,7 +19605,7 @@
         "lines": 1299,
         "code": 1129,
         "files": 36,
-        "complexity": 11,
+        "complexity": 15,
         "traditionalCost": 12787,
         "aiCost": 3261,
         "traditionalMonths": 2.73,
@@ -19570,7 +19642,7 @@
           "blanks": 35,
           "bytes": 17645,
           "files": 7,
-          "complexity": 6,
+          "complexity": 9,
           "percentOfLines": 45,
           "percentOfCode": 49.5,
           "percentOfBytes": 41.2
@@ -19645,7 +19717,7 @@
         "lines": 1389,
         "code": 1083,
         "files": 24,
-        "complexity": 6,
+        "complexity": 9,
         "traditionalCost": 12240,
         "aiCost": 3121,
         "traditionalMonths": 2.61,
@@ -19755,7 +19827,7 @@
           "blanks": 204,
           "bytes": 41373,
           "files": 21,
-          "complexity": 36,
+          "complexity": 39,
           "percentOfLines": 95.1,
           "percentOfCode": 93.3,
           "percentOfBytes": 96.6
@@ -19804,7 +19876,7 @@
         "lines": 1338,
         "code": 907,
         "files": 29,
-        "complexity": 36,
+        "complexity": 39,
         "traditionalCost": 10161,
         "aiCost": 2591,
         "traditionalMonths": 2.17,
@@ -19953,7 +20025,7 @@
           "blanks": 122,
           "bytes": 1159177,
           "files": 13,
-          "complexity": 69,
+          "complexity": 1725,
           "percentOfLines": 56.9,
           "percentOfCode": 51.7,
           "percentOfBytes": 99.2
@@ -20015,7 +20087,7 @@
         "lines": 1073,
         "code": 809,
         "files": 20,
-        "complexity": 69,
+        "complexity": 1725,
         "traditionalCost": 9011,
         "aiCost": 2298,
         "traditionalMonths": 1.92,
@@ -20349,7 +20421,7 @@
           "blanks": 7274,
           "bytes": 1733070,
           "files": 31,
-          "complexity": 6067,
+          "complexity": 7866,
           "percentOfLines": 99.2,
           "percentOfCode": 99,
           "percentOfBytes": 99.5
@@ -20411,7 +20483,7 @@
         "lines": 57029,
         "code": 35964,
         "files": 38,
-        "complexity": 6067,
+        "complexity": 7866,
         "traditionalCost": 484275,
         "aiCost": 123490,
         "traditionalMonths": 103.25,
@@ -20448,7 +20520,7 @@
           "blanks": 87,
           "bytes": 14632,
           "files": 7,
-          "complexity": 26,
+          "complexity": 29,
           "percentOfLines": 87.8,
           "percentOfCode": 85.2,
           "percentOfBytes": 87.7
@@ -20523,7 +20595,7 @@
         "lines": 624,
         "code": 501,
         "files": 13,
-        "complexity": 26,
+        "complexity": 29,
         "traditionalCost": 5448,
         "aiCost": 1389,
         "traditionalMonths": 1.16,
@@ -20560,7 +20632,7 @@
           "blanks": 130,
           "bytes": 17369,
           "files": 16,
-          "complexity": 19,
+          "complexity": 27,
           "percentOfLines": 76.9,
           "percentOfCode": 69.7,
           "percentOfBytes": 79.2
@@ -20622,7 +20694,7 @@
         "lines": 828,
         "code": 578,
         "files": 21,
-        "complexity": 19,
+        "complexity": 27,
         "traditionalCost": 6331,
         "aiCost": 1614,
         "traditionalMonths": 1.35,
@@ -20659,7 +20731,7 @@
           "blanks": 81,
           "bytes": 11527,
           "files": 11,
-          "complexity": 5,
+          "complexity": 9,
           "percentOfLines": 64.2,
           "percentOfCode": 55.4,
           "percentOfBytes": 66.7
@@ -20721,7 +20793,7 @@
         "lines": 651,
         "code": 471,
         "files": 17,
-        "complexity": 5,
+        "complexity": 9,
         "traditionalCost": 5106,
         "aiCost": 1302,
         "traditionalMonths": 1.09,
@@ -20758,7 +20830,7 @@
           "blanks": 110,
           "bytes": 16430,
           "files": 12,
-          "complexity": 16,
+          "complexity": 19,
           "percentOfLines": 87.5,
           "percentOfCode": 85.1,
           "percentOfBytes": 86.6
@@ -20807,7 +20879,7 @@
         "lines": 602,
         "code": 450,
         "files": 16,
-        "complexity": 16,
+        "complexity": 19,
         "traditionalCost": 4867,
         "aiCost": 1241,
         "traditionalMonths": 1.04,
@@ -20844,7 +20916,7 @@
           "blanks": 65,
           "bytes": 8458,
           "files": 11,
-          "complexity": 0,
+          "complexity": 3,
           "percentOfLines": 81.3,
           "percentOfCode": 77.8,
           "percentOfBytes": 78.1
@@ -20893,7 +20965,7 @@
         "lines": 390,
         "code": 293,
         "files": 15,
-        "complexity": 0,
+        "complexity": 3,
         "traditionalCost": 3102,
         "aiCost": 791,
         "traditionalMonths": 0.66,
@@ -20981,7 +21053,7 @@
           "blanks": 31,
           "bytes": 4861,
           "files": 5,
-          "complexity": 4,
+          "complexity": 5,
           "percentOfLines": 32.4,
           "percentOfCode": 30.6,
           "percentOfBytes": 27.6
@@ -21069,7 +21141,7 @@
         "lines": 552,
         "code": 415,
         "files": 15,
-        "complexity": 4,
+        "complexity": 5,
         "traditionalCost": 4471,
         "aiCost": 1140,
         "traditionalMonths": 0.95,
@@ -21106,7 +21178,7 @@
           "blanks": 17,
           "bytes": 1928,
           "files": 2,
-          "complexity": 0,
+          "complexity": 11,
           "percentOfLines": 24.7,
           "percentOfCode": 25.7,
           "percentOfBytes": 11.9
@@ -21233,7 +21305,7 @@
         "lines": 457,
         "code": 354,
         "files": 18,
-        "complexity": 2,
+        "complexity": 13,
         "traditionalCost": 3783,
         "aiCost": 965,
         "traditionalMonths": 0.81,
@@ -21773,7 +21845,7 @@
           "blanks": 230,
           "bytes": 105255,
           "files": 38,
-          "complexity": 137,
+          "complexity": 192,
           "percentOfLines": 49.7,
           "percentOfCode": 49.5,
           "percentOfBytes": 54.3
@@ -21812,7 +21884,7 @@
           "blanks": 25,
           "bytes": 9501,
           "files": 9,
-          "complexity": 10,
+          "complexity": 12,
           "percentOfLines": 5.1,
           "percentOfCode": 5.1,
           "percentOfBytes": 4.9
@@ -21861,7 +21933,7 @@
         "lines": 6865,
         "code": 6137,
         "files": 69,
-        "complexity": 147,
+        "complexity": 204,
         "traditionalCost": 75646,
         "aiCost": 19290,
         "traditionalMonths": 16.13,
@@ -21898,7 +21970,7 @@
           "blanks": 350,
           "bytes": 89603,
           "files": 32,
-          "complexity": 142,
+          "complexity": 211,
           "percentOfLines": 77.4,
           "percentOfCode": 77.6,
           "percentOfBytes": 70.2
@@ -21924,7 +21996,7 @@
           "blanks": 50,
           "bytes": 6216,
           "files": 1,
-          "complexity": 0,
+          "complexity": 2,
           "percentOfLines": 8.3,
           "percentOfCode": 7.7,
           "percentOfBytes": 4.9
@@ -21973,7 +22045,7 @@
         "lines": 4525,
         "code": 3980,
         "files": 47,
-        "complexity": 143,
+        "complexity": 214,
         "traditionalCost": 48007,
         "aiCost": 12242,
         "traditionalMonths": 10.24,
@@ -22010,7 +22082,7 @@
           "blanks": 350,
           "bytes": 89603,
           "files": 32,
-          "complexity": 142,
+          "complexity": 211,
           "percentOfLines": 72.4,
           "percentOfCode": 72.9,
           "percentOfBytes": 66.2
@@ -22036,7 +22108,7 @@
           "blanks": 50,
           "bytes": 6216,
           "files": 1,
-          "complexity": 0,
+          "complexity": 2,
           "percentOfLines": 7.7,
           "percentOfCode": 7.3,
           "percentOfBytes": 4.6
@@ -22085,7 +22157,7 @@
         "lines": 4835,
         "code": 4238,
         "files": 50,
-        "complexity": 143,
+        "complexity": 214,
         "traditionalCost": 51280,
         "aiCost": 13076,
         "traditionalMonths": 10.93,
@@ -22414,14 +22486,14 @@
         {
           "name": "Python",
           "lines": 280,
-          "code": 179,
-          "comments": 48,
-          "blanks": 53,
+          "code": 146,
+          "comments": 70,
+          "blanks": 64,
           "bytes": 7550,
           "files": 13,
-          "complexity": 4,
+          "complexity": 6,
           "percentOfLines": 69.8,
-          "percentOfCode": 65.3,
+          "percentOfCode": 60.6,
           "percentOfBytes": 66.4
         },
         {
@@ -22434,7 +22506,7 @@
           "files": 2,
           "complexity": 0,
           "percentOfLines": 16.2,
-          "percentOfCode": 18.2,
+          "percentOfCode": 20.7,
           "percentOfBytes": 19.9
         },
         {
@@ -22447,7 +22519,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 8.7,
-          "percentOfCode": 10.2,
+          "percentOfCode": 11.6,
           "percentOfBytes": 4.2
         },
         {
@@ -22460,19 +22532,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 5.2,
-          "percentOfCode": 6.2,
+          "percentOfCode": 7.1,
           "percentOfBytes": 9.5
         }
       ],
       "summary": {
         "lines": 401,
-        "code": 274,
+        "code": 241,
         "files": 17,
-        "complexity": 4,
-        "traditionalCost": 2891,
-        "aiCost": 737,
-        "traditionalMonths": 0.62,
-        "aiMonths": 0.16
+        "complexity": 6,
+        "traditionalCost": 2527,
+        "aiCost": 644,
+        "traditionalMonths": 0.54,
+        "aiMonths": 0.14
       },
       "detailsFile": "repos/private-3ca44475889c.json"
     },
@@ -22505,7 +22577,7 @@
           "blanks": 1531,
           "bytes": 321148,
           "files": 35,
-          "complexity": 1254,
+          "complexity": 1995,
           "percentOfLines": 92.6,
           "percentOfCode": 91.7,
           "percentOfBytes": 93.5
@@ -22593,7 +22665,7 @@
         "lines": 9971,
         "code": 6660,
         "files": 51,
-        "complexity": 1265,
+        "complexity": 2006,
         "traditionalCost": 82429,
         "aiCost": 21019,
         "traditionalMonths": 17.57,
@@ -22630,7 +22702,7 @@
           "blanks": 114,
           "bytes": 30617,
           "files": 8,
-          "complexity": 81,
+          "complexity": 84,
           "percentOfLines": 91.7,
           "percentOfCode": 90.8,
           "percentOfBytes": 77.2
@@ -22705,7 +22777,7 @@
         "lines": 1054,
         "code": 768,
         "files": 15,
-        "complexity": 81,
+        "complexity": 84,
         "traditionalCost": 8532,
         "aiCost": 2176,
         "traditionalMonths": 1.82,
@@ -23014,7 +23086,7 @@
           "blanks": 25,
           "bytes": 6638,
           "files": 10,
-          "complexity": 1,
+          "complexity": 2,
           "percentOfLines": 19.8,
           "percentOfCode": 12.7,
           "percentOfBytes": 16.7
@@ -23063,7 +23135,7 @@
         "lines": 991,
         "code": 778,
         "files": 21,
-        "complexity": 1,
+        "complexity": 2,
         "traditionalCost": 8649,
         "aiCost": 2205,
         "traditionalMonths": 1.84,
@@ -23100,7 +23172,7 @@
           "blanks": 28291,
           "bytes": 7156855,
           "files": 1104,
-          "complexity": 36809,
+          "complexity": 48044,
           "percentOfLines": 59.4,
           "percentOfCode": 62.7,
           "percentOfBytes": 54.7
@@ -23178,7 +23250,7 @@
           "blanks": 70,
           "bytes": 47840,
           "files": 11,
-          "complexity": 624,
+          "complexity": 625,
           "percentOfLines": 0.5,
           "percentOfCode": 0.6,
           "percentOfBytes": 0.4
@@ -23269,7 +23341,7 @@
           "blanks": 21,
           "bytes": 1308,
           "files": 4,
-          "complexity": 0,
+          "complexity": 1,
           "percentOfLines": 0,
           "percentOfCode": 0,
           "percentOfBytes": 0
@@ -23331,7 +23403,7 @@
         "lines": 383216,
         "code": 272809,
         "files": 2404,
-        "complexity": 37654,
+        "complexity": 48891,
         "traditionalCost": 4065201,
         "aiCost": 1036626,
         "traditionalMonths": 866.69,
@@ -23368,7 +23440,7 @@
           "blanks": 201,
           "bytes": 20433,
           "files": 15,
-          "complexity": 33,
+          "complexity": 35,
           "percentOfLines": 73.5,
           "percentOfCode": 73.7,
           "percentOfBytes": 69.7
@@ -23456,7 +23528,7 @@
         "lines": 1206,
         "code": 885,
         "files": 23,
-        "complexity": 33,
+        "complexity": 35,
         "traditionalCost": 9902,
         "aiCost": 2525,
         "traditionalMonths": 2.11,
@@ -23544,7 +23616,7 @@
           "blanks": 3501,
           "bytes": 578133,
           "files": 115,
-          "complexity": 2261,
+          "complexity": 3106,
           "percentOfLines": 40.3,
           "percentOfCode": 32.5,
           "percentOfBytes": 33.8
@@ -23609,7 +23681,7 @@
           "blanks": 14,
           "bytes": 1059,
           "files": 1,
-          "complexity": 0,
+          "complexity": 1,
           "percentOfLines": 0.1,
           "percentOfCode": 0.1,
           "percentOfBytes": 0.1
@@ -23697,7 +23769,7 @@
         "lines": 54284,
         "code": 40989,
         "files": 333,
-        "complexity": 2267,
+        "complexity": 3113,
         "traditionalCost": 555560,
         "aiCost": 141668,
         "traditionalMonths": 118.44,
@@ -23718,11 +23790,11 @@
       "projectTags": [
         {
           "label": "Web",
-          "confidence": 0.71
+          "confidence": 0.72
         },
         {
           "label": "Backend",
-          "confidence": 0.29
+          "confidence": 0.28
         }
       ],
       "languages": [
@@ -23736,7 +23808,7 @@
           "files": 11,
           "complexity": 16,
           "percentOfLines": 57.3,
-          "percentOfCode": 59.1,
+          "percentOfCode": 61,
           "percentOfBytes": 61.8
         },
         {
@@ -23749,21 +23821,8 @@
           "files": 7,
           "complexity": 0,
           "percentOfLines": 21.3,
-          "percentOfCode": 22.3,
+          "percentOfCode": 23,
           "percentOfBytes": 12.8
-        },
-        {
-          "name": "Python",
-          "lines": 79,
-          "code": 52,
-          "comments": 12,
-          "blanks": 15,
-          "bytes": 1582,
-          "files": 1,
-          "complexity": 2,
-          "percentOfLines": 7.6,
-          "percentOfCode": 6.1,
-          "percentOfBytes": 5.9
         },
         {
           "name": "JSON",
@@ -23775,7 +23834,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 4.7,
-          "percentOfCode": 5.7,
+          "percentOfCode": 5.9,
           "percentOfBytes": 4.3
         },
         {
@@ -23788,8 +23847,21 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 7.3,
-          "percentOfCode": 4.8,
+          "percentOfCode": 4.9,
           "percentOfBytes": 13.3
+        },
+        {
+          "name": "Python",
+          "lines": 79,
+          "code": 25,
+          "comments": 39,
+          "blanks": 15,
+          "bytes": 1582,
+          "files": 1,
+          "complexity": 1,
+          "percentOfLines": 7.6,
+          "percentOfCode": 3,
+          "percentOfBytes": 5.9
         },
         {
           "name": "HTML",
@@ -23801,19 +23873,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 1.7,
-          "percentOfCode": 2.1,
+          "percentOfCode": 2.2,
           "percentOfBytes": 1.9
         }
       ],
       "summary": {
         "lines": 1038,
-        "code": 858,
+        "code": 831,
         "files": 22,
-        "complexity": 18,
-        "traditionalCost": 9585,
-        "aiCost": 2444,
-        "traditionalMonths": 2.04,
-        "aiMonths": 0.52
+        "complexity": 17,
+        "traditionalCost": 9269,
+        "aiCost": 2363,
+        "traditionalMonths": 1.98,
+        "aiMonths": 0.5
       },
       "detailsFile": "repos/private-6b61311b53b0.json"
     },
@@ -23937,7 +24009,7 @@
           "blanks": 1,
           "bytes": 404,
           "files": 1,
-          "complexity": 0,
+          "complexity": 1,
           "percentOfLines": 1.2,
           "percentOfCode": 1.8,
           "percentOfBytes": 1
@@ -23982,7 +24054,7 @@
           "percentOfBytes": 0.1
         },
         {
-          "name": "C Header",
+          "name": "Objective C",
           "lines": 1,
           "code": 1,
           "comments": 0,
@@ -23999,7 +24071,7 @@
         "lines": 1121,
         "code": 672,
         "files": 31,
-        "complexity": 0,
+        "complexity": 1,
         "traditionalCost": 7416,
         "aiCost": 1891,
         "traditionalMonths": 1.58,
@@ -24057,12 +24129,12 @@
         {
           "name": "Python",
           "lines": 235,
-          "code": 148,
-          "comments": 42,
-          "blanks": 45,
+          "code": 115,
+          "comments": 64,
+          "blanks": 56,
           "bytes": 6228,
           "files": 14,
-          "complexity": 1,
+          "complexity": 3,
           "percentOfLines": 0.3,
           "percentOfCode": 0.2,
           "percentOfBytes": 0
@@ -24075,7 +24147,7 @@
           "blanks": 3,
           "bytes": 860,
           "files": 1,
-          "complexity": 5,
+          "complexity": 7,
           "percentOfLines": 0,
           "percentOfCode": 0,
           "percentOfBytes": 0
@@ -24109,13 +24181,13 @@
       ],
       "summary": {
         "lines": 72950,
-        "code": 68043,
+        "code": 68010,
         "files": 19,
-        "complexity": 6,
-        "traditionalCost": 945917,
-        "aiCost": 241209,
-        "traditionalMonths": 201.67,
-        "aiMonths": 51.42
+        "complexity": 10,
+        "traditionalCost": 945435,
+        "aiCost": 241086,
+        "traditionalMonths": 201.56,
+        "aiMonths": 51.4
       },
       "detailsFile": "repos/private-e4a0860d8788.json"
     },
@@ -24174,20 +24246,20 @@
           "blanks": 2598,
           "bytes": 466599,
           "files": 67,
-          "complexity": 3266,
+          "complexity": 3336,
           "percentOfLines": 2.3,
           "percentOfCode": 1.6,
           "percentOfBytes": 1.8
         },
         {
-          "name": "C Header",
+          "name": "C++ Header",
           "lines": 11492,
           "code": 7531,
           "comments": 2477,
           "blanks": 1484,
           "bytes": 278526,
           "files": 39,
-          "complexity": 844,
+          "complexity": 870,
           "percentOfLines": 1.5,
           "percentOfCode": 1,
           "percentOfBytes": 1.1
@@ -24249,7 +24321,7 @@
         "lines": 773570,
         "code": 763277,
         "files": 229,
-        "complexity": 4218,
+        "complexity": 4314,
         "traditionalCost": 11974204,
         "aiCost": 3053422,
         "traditionalMonths": 2552.86,
@@ -24283,7 +24355,7 @@
           "percentOfBytes": 64.2
         },
         {
-          "name": "C Header",
+          "name": "C++ Header",
           "lines": 177,
           "code": 115,
           "comments": 44,
@@ -24363,7 +24435,7 @@
           "blanks": 269,
           "bytes": 77562,
           "files": 2,
-          "complexity": 1346,
+          "complexity": 1383,
           "percentOfLines": 95.3,
           "percentOfCode": 96.5,
           "percentOfBytes": 97.7
@@ -24412,7 +24484,7 @@
         "lines": 1833,
         "code": 1506,
         "files": 7,
-        "complexity": 1346,
+        "complexity": 1383,
         "traditionalCost": 17304,
         "aiCost": 4413,
         "traditionalMonths": 3.69,
@@ -24433,25 +24505,25 @@
       "projectTags": [
         {
           "label": "AI/ML",
-          "confidence": 0.56
+          "confidence": 0.55
         },
         {
           "label": "Data",
-          "confidence": 0.44
+          "confidence": 0.45
         }
       ],
       "languages": [
         {
           "name": "Python",
           "lines": 951,
-          "code": 575,
-          "comments": 247,
-          "blanks": 129,
+          "code": 545,
+          "comments": 266,
+          "blanks": 140,
           "bytes": 29766,
           "files": 3,
-          "complexity": 119,
+          "complexity": 124,
           "percentOfLines": 95.5,
-          "percentOfCode": 93.3,
+          "percentOfCode": 93,
           "percentOfBytes": 93.6
         },
         {
@@ -24464,7 +24536,7 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 3.5,
-          "percentOfCode": 5,
+          "percentOfCode": 5.3,
           "percentOfBytes": 4.7
         },
         {
@@ -24477,19 +24549,19 @@
           "files": 1,
           "complexity": 0,
           "percentOfLines": 1,
-          "percentOfCode": 1.6,
+          "percentOfCode": 1.7,
           "percentOfBytes": 1.7
         }
       ],
       "summary": {
         "lines": 996,
-        "code": 616,
+        "code": 586,
         "files": 5,
-        "complexity": 119,
-        "traditionalCost": 6768,
-        "aiCost": 1726,
-        "traditionalMonths": 1.44,
-        "aiMonths": 0.37
+        "complexity": 124,
+        "traditionalCost": 6423,
+        "aiCost": 1638,
+        "traditionalMonths": 1.37,
+        "aiMonths": 0.35
       },
       "detailsFile": "repos/a-client-and-a-server-communicating-in-rsa-and-fernet.json"
     },
@@ -24595,7 +24667,7 @@
           "percentOfBytes": 77.2
         },
         {
-          "name": "C Header",
+          "name": "C++ Header",
           "lines": 122,
           "code": 45,
           "comments": 45,
@@ -24659,7 +24731,7 @@
           "percentOfBytes": 91.5
         },
         {
-          "name": "C Header",
+          "name": "C++ Header",
           "lines": 447,
           "code": 254,
           "comments": 117,
@@ -24904,13 +24976,13 @@
       "url": "https://github.com/jamesEmerson112/CS-202-Inheritance-Volume-Area-of-Cyclinder",
       "description": "Find the volume and area of a cyclinder",
       "lastUpdated": "2018-03-05T21:46:41Z",
-      "primaryLanguage": "C Header",
+      "primaryLanguage": "C++ Header",
       "isPrivate": false,
       "isAnonymized": false,
       "projectTags": [],
       "languages": [
         {
-          "name": "C Header",
+          "name": "C++ Header",
           "lines": 221,
           "code": 140,
           "comments": 43,
@@ -25032,7 +25104,7 @@
           "blanks": 29,
           "bytes": 12941,
           "files": 1,
-          "complexity": 35,
+          "complexity": 36,
           "percentOfLines": 93.7,
           "percentOfCode": 91.2,
           "percentOfBytes": 86.8
@@ -25055,7 +25127,7 @@
         "lines": 413,
         "code": 272,
         "files": 2,
-        "complexity": 35,
+        "complexity": 36,
         "traditionalCost": 2869,
         "aiCost": 732,
         "traditionalMonths": 0.61,

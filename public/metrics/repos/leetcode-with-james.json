@@ -1,6 +1,6 @@
 {
   "id": "leetcode-with-james",
-  "scannedAt": "2026-08-01T04:07:04.708Z",
+  "scannedAt": "2026-09-01T08:08:09.899Z",
   "metadata": {
     "name": "leetcode-with-james",
     "fullName": "jamesEmerson112/leetcode-with-james",
@@ -42,7 +42,7 @@
       "Code": 2136,
       "Comment": 653,
       "Blank": 343,
-      "Complexity": 186,
+      "Complexity": 233,
       "Count": 55,
       "WeightedComplexity": 0,
       "Files": [],
@@ -164,7 +164,7 @@
       "totalBytes": 200761,
       "totalFiles": 152,
       "totalLanguages": 9,
-      "totalComplexity": 346,
+      "totalComplexity": 393,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 48
     },
@@ -177,7 +177,7 @@
         "blanks": 343,
         "bytes": 101074,
         "files": 55,
-        "complexity": 186,
+        "complexity": 233,
         "percentOfLines": 50.1,
         "percentOfCode": 48,
         "percentOfBytes": 50.3

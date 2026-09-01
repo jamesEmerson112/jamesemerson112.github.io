@@ -1,6 +1,6 @@
 {
   "id": "lynn-sdc-flash",
-  "scannedAt": "2026-08-01T04:08:28.896Z",
+  "scannedAt": "2026-09-01T08:09:33.038Z",
   "metadata": {
     "name": "lynn-sdc-flash",
     "fullName": "SDC-TeamFlash-RFP2207/lynn-sdc-flash",
@@ -27,7 +27,7 @@
       "Code": 3089,
       "Comment": 62,
       "Blank": 350,
-      "Complexity": 142,
+      "Complexity": 211,
       "Count": 32,
       "WeightedComplexity": 0,
       "Files": [],
@@ -72,7 +72,7 @@
       "Code": 308,
       "Comment": 16,
       "Blank": 50,
-      "Complexity": 0,
+      "Complexity": 2,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -119,7 +119,7 @@
       "totalBytes": 135393,
       "totalFiles": 50,
       "totalLanguages": 6,
-      "totalComplexity": 143,
+      "totalComplexity": 214,
       "primaryLanguage": "JSX",
       "primaryLanguagePercent": 72.9
     },
@@ -132,7 +132,7 @@
         "blanks": 350,
         "bytes": 89603,
         "files": 32,
-        "complexity": 142,
+        "complexity": 211,
         "percentOfLines": 72.4,
         "percentOfCode": 72.9,
         "percentOfBytes": 66.2
@@ -158,7 +158,7 @@
         "blanks": 50,
         "bytes": 6216,
         "files": 1,
-        "complexity": 0,
+        "complexity": 2,
         "percentOfLines": 7.7,
         "percentOfCode": 7.3,
         "percentOfBytes": 4.6

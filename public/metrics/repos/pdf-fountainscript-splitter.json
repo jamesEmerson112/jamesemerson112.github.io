@@ -1,6 +1,6 @@
 {
   "id": "pdf-fountainscript-splitter",
-  "scannedAt": "2026-08-01T04:07:18.383Z",
+  "scannedAt": "2026-09-01T08:08:23.869Z",
   "metadata": {
     "name": "PDF-fountainscript-splitter",
     "fullName": "jamesEmerson112/PDF-fountainscript-splitter",
@@ -27,7 +27,7 @@
       "Code": 735,
       "Comment": 252,
       "Blank": 153,
-      "Complexity": 117,
+      "Complexity": 118,
       "Count": 6,
       "WeightedComplexity": 0,
       "Files": [],
@@ -74,7 +74,7 @@
       "totalBytes": 37164,
       "totalFiles": 8,
       "totalLanguages": 3,
-      "totalComplexity": 117,
+      "totalComplexity": 118,
       "primaryLanguage": "Python",
       "primaryLanguagePercent": 89.7
     },
@@ -87,7 +87,7 @@
         "blanks": 153,
         "bytes": 34576,
         "files": 6,
-        "complexity": 117,
+        "complexity": 118,
         "percentOfLines": 91.4,
         "percentOfCode": 89.7,
         "percentOfBytes": 93

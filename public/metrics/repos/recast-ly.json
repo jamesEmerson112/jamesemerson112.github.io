@@ -1,6 +1,6 @@
 {
   "id": "recast-ly",
-  "scannedAt": "2026-08-01T04:08:19.368Z",
+  "scannedAt": "2026-09-01T08:09:22.606Z",
   "metadata": {
     "name": "recast.ly",
     "fullName": "jamesEmerson112/recast.ly",
@@ -42,7 +42,7 @@
       "Code": 536,
       "Comment": 54,
       "Blank": 35,
-      "Complexity": 6,
+      "Complexity": 9,
       "Count": 7,
       "WeightedComplexity": 0,
       "Files": [],
@@ -119,7 +119,7 @@
       "totalBytes": 42820,
       "totalFiles": 24,
       "totalLanguages": 6,
-      "totalComplexity": 6,
+      "totalComplexity": 9,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 49.5
     },
@@ -132,7 +132,7 @@
         "blanks": 35,
         "bytes": 17645,
         "files": 7,
-        "complexity": 6,
+        "complexity": 9,
         "percentOfLines": 45,
         "percentOfCode": 49.5,
         "percentOfBytes": 41.2

@@ -1,6 +1,6 @@
 {
   "id": "cs-135-variance-standard-deviation",
-  "scannedAt": "2026-08-01T04:08:42.049Z",
+  "scannedAt": "2026-09-01T08:09:46.227Z",
   "metadata": {
     "name": "CS-135-Variance-Standard-Deviation",
     "fullName": "jamesEmerson112/CS-135-Variance-Standard-Deviation",
@@ -27,7 +27,7 @@
       "Code": 248,
       "Comment": 110,
       "Blank": 29,
-      "Complexity": 35,
+      "Complexity": 36,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -59,7 +59,7 @@
       "totalBytes": 14904,
       "totalFiles": 2,
       "totalLanguages": 2,
-      "totalComplexity": 35,
+      "totalComplexity": 36,
       "primaryLanguage": "C++",
       "primaryLanguagePercent": 91.2
     },
@@ -72,7 +72,7 @@
         "blanks": 29,
         "bytes": 12941,
         "files": 1,
-        "complexity": 35,
+        "complexity": 36,
         "percentOfLines": 93.7,
         "percentOfCode": 91.2,
         "percentOfBytes": 86.8

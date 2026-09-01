@@ -1,6 +1,6 @@
 {
   "id": "cruddy-todo",
-  "scannedAt": "2026-08-01T04:08:21.971Z",
+  "scannedAt": "2026-09-01T08:09:25.579Z",
   "metadata": {
     "name": "cruddy-todo",
     "fullName": "jamesEmerson112/cruddy-todo",
@@ -27,7 +27,7 @@
       "Code": 427,
       "Comment": 34,
       "Blank": 87,
-      "Complexity": 26,
+      "Complexity": 29,
       "Count": 7,
       "WeightedComplexity": 0,
       "Files": [],
@@ -119,7 +119,7 @@
       "totalBytes": 16679,
       "totalFiles": 13,
       "totalLanguages": 6,
-      "totalComplexity": 26,
+      "totalComplexity": 29,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 85.2
     },
@@ -132,7 +132,7 @@
         "blanks": 87,
         "bytes": 14632,
         "files": 7,
-        "complexity": 26,
+        "complexity": 29,
         "percentOfLines": 87.8,
         "percentOfCode": 85.2,
         "percentOfBytes": 87.7

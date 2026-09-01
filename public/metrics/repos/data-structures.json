@@ -1,6 +1,6 @@
 {
   "id": "data-structures",
-  "scannedAt": "2026-08-01T04:08:21.720Z",
+  "scannedAt": "2026-09-01T08:09:25.325Z",
   "metadata": {
     "name": "data-structures",
     "fullName": "jamesEmerson112/data-structures",
@@ -27,7 +27,7 @@
       "Code": 35588,
       "Comment": 13728,
       "Blank": 7274,
-      "Complexity": 6067,
+      "Complexity": 7866,
       "Count": 31,
       "WeightedComplexity": 0,
       "Files": [],
@@ -104,7 +104,7 @@
       "totalBytes": 1742223,
       "totalFiles": 38,
       "totalLanguages": 5,
-      "totalComplexity": 6067,
+      "totalComplexity": 7866,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 99
     },
@@ -117,7 +117,7 @@
         "blanks": 7274,
         "bytes": 1733070,
         "files": 31,
-        "complexity": 6067,
+        "complexity": 7866,
         "percentOfLines": 99.2,
         "percentOfCode": 99,
         "percentOfBytes": 99.5

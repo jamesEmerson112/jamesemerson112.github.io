@@ -1,6 +1,6 @@
 {
   "id": "uniqlo-clone-quddad",
-  "scannedAt": "2026-08-01T04:08:27.685Z",
+  "scannedAt": "2026-09-01T08:09:32.113Z",
   "metadata": {
     "name": "Uniqlo-Clone-Quddad",
     "fullName": "friendsFEC/Uniqlo-Clone-Quddad",
@@ -27,7 +27,7 @@
       "Code": 3039,
       "Comment": 143,
       "Blank": 230,
-      "Complexity": 137,
+      "Complexity": 192,
       "Count": 38,
       "WeightedComplexity": 0,
       "Files": [],
@@ -57,7 +57,7 @@
       "Code": 312,
       "Comment": 14,
       "Blank": 25,
-      "Complexity": 10,
+      "Complexity": 12,
       "Count": 9,
       "WeightedComplexity": 0,
       "Files": [],
@@ -134,7 +134,7 @@
       "totalBytes": 193876,
       "totalFiles": 69,
       "totalLanguages": 7,
-      "totalComplexity": 147,
+      "totalComplexity": 204,
       "primaryLanguage": "JSX",
       "primaryLanguagePercent": 49.5
     },
@@ -147,7 +147,7 @@
         "blanks": 230,
         "bytes": 105255,
         "files": 38,
-        "complexity": 137,
+        "complexity": 192,
         "percentOfLines": 49.7,
         "percentOfCode": 49.5,
         "percentOfBytes": 54.3
@@ -186,7 +186,7 @@
         "blanks": 25,
         "bytes": 9501,
         "files": 9,
-        "complexity": 10,
+        "complexity": 12,
         "percentOfLines": 5.1,
         "percentOfCode": 5.1,
         "percentOfBytes": 4.9

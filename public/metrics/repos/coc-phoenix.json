@@ -1,6 +1,6 @@
 {
   "id": "coc-phoenix",
-  "scannedAt": "2026-08-17T03:04:44.626Z",
+  "scannedAt": "2026-09-01T08:07:47.506Z",
   "metadata": {
     "name": "CoC-Phoenix",
     "fullName": "jamesEmerson112/CoC-Phoenix",
@@ -27,7 +27,7 @@
       "Code": 7345,
       "Comment": 980,
       "Blank": 769,
-      "Complexity": 413,
+      "Complexity": 530,
       "Count": 27,
       "WeightedComplexity": 0,
       "Files": [],
@@ -134,7 +134,7 @@
       "totalBytes": 932132,
       "totalFiles": 54,
       "totalLanguages": 7,
-      "totalComplexity": 414,
+      "totalComplexity": 531,
       "primaryLanguage": "Rust",
       "primaryLanguagePercent": 48.2
     },
@@ -147,7 +147,7 @@
         "blanks": 769,
         "bytes": 333835,
         "files": 27,
-        "complexity": 413,
+        "complexity": 530,
         "percentOfLines": 48.3,
         "percentOfCode": 48.2,
         "percentOfBytes": 35.8

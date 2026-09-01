@@ -1,6 +1,6 @@
 {
   "id": "some-parse-tree",
-  "scannedAt": "2026-08-01T04:07:21.344Z",
+  "scannedAt": "2026-09-01T08:08:27.476Z",
   "metadata": {
     "name": "some-parse-tree",
     "fullName": "jamesEmerson112/some-parse-tree",
@@ -27,7 +27,7 @@
       "Code": 144,
       "Comment": 17,
       "Blank": 30,
-      "Complexity": 3,
+      "Complexity": 4,
       "Count": 8,
       "WeightedComplexity": 0,
       "Files": [],
@@ -42,7 +42,7 @@
       "Code": 364,
       "Comment": 89,
       "Blank": 79,
-      "Complexity": 18,
+      "Complexity": 19,
       "Count": 5,
       "WeightedComplexity": 0,
       "Files": [],
@@ -149,7 +149,7 @@
       "totalBytes": 37573,
       "totalFiles": 20,
       "totalLanguages": 8,
-      "totalComplexity": 23,
+      "totalComplexity": 25,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 34.3
     },
@@ -162,7 +162,7 @@
         "blanks": 79,
         "bytes": 15695,
         "files": 5,
-        "complexity": 18,
+        "complexity": 19,
         "percentOfLines": 37.7,
         "percentOfCode": 34.3,
         "percentOfBytes": 41.8
@@ -188,7 +188,7 @@
         "blanks": 30,
         "bytes": 5558,
         "files": 8,
-        "complexity": 3,
+        "complexity": 4,
         "percentOfLines": 13.5,
         "percentOfCode": 13.6,
         "percentOfBytes": 14.8

@@ -1,6 +1,6 @@
 {
   "id": "promises",
-  "scannedAt": "2026-08-01T04:08:19.895Z",
+  "scannedAt": "2026-09-01T08:09:23.151Z",
   "metadata": {
     "name": "promises",
     "fullName": "jamesEmerson112/promises",
@@ -27,7 +27,7 @@
       "Code": 846,
       "Comment": 223,
       "Blank": 204,
-      "Complexity": 36,
+      "Complexity": 39,
       "Count": 21,
       "WeightedComplexity": 0,
       "Files": [],
@@ -89,7 +89,7 @@
       "totalBytes": 42844,
       "totalFiles": 29,
       "totalLanguages": 4,
-      "totalComplexity": 36,
+      "totalComplexity": 39,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 93.3
     },
@@ -102,7 +102,7 @@
         "blanks": 204,
         "bytes": 41373,
         "files": 21,
-        "complexity": 36,
+        "complexity": 39,
         "percentOfLines": 95.1,
         "percentOfCode": 93.3,
         "percentOfBytes": 96.6

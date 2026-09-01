@@ -1,6 +1,6 @@
 {
   "id": "weddingai",
-  "scannedAt": "2026-08-01T04:06:39.660Z",
+  "scannedAt": "2026-09-01T08:07:53.167Z",
   "metadata": {
     "name": "WeddingAI",
     "fullName": "jamesEmerson112/WeddingAI",
@@ -42,7 +42,7 @@
       "Code": 2725,
       "Comment": 474,
       "Blank": 280,
-      "Complexity": 319,
+      "Complexity": 372,
       "Count": 20,
       "WeightedComplexity": 0,
       "Files": [],
@@ -72,7 +72,7 @@
       "Code": 1198,
       "Comment": 463,
       "Blank": 147,
-      "Complexity": 77,
+      "Complexity": 125,
       "Count": 6,
       "WeightedComplexity": 0,
       "Files": [],
@@ -249,8 +249,8 @@
       "Bytes": 8647,
       "CodeBytes": 0,
       "Lines": 155,
-      "Code": 60,
-      "Comment": 79,
+      "Code": 12,
+      "Comment": 127,
       "Blank": 16,
       "Complexity": 1,
       "Count": 1,
@@ -278,15 +278,15 @@
   "computed": {
     "summary": {
       "totalLines": 11660,
-      "totalCode": 8870,
-      "totalComments": 1259,
+      "totalCode": 8822,
+      "totalComments": 1307,
       "totalBlanks": 1531,
       "totalBytes": 1059747,
       "totalFiles": 91,
       "totalLanguages": 17,
-      "totalComplexity": 434,
+      "totalComplexity": 535,
       "primaryLanguage": "Markdown",
-      "primaryLanguagePercent": 34.8
+      "primaryLanguagePercent": 34.9
     },
     "languages": [
       {
@@ -299,7 +299,7 @@
         "files": 31,
         "complexity": 0,
         "percentOfLines": 33.2,
-        "percentOfCode": 34.8,
+        "percentOfCode": 34.9,
         "percentOfBytes": 17.8
       },
       {
@@ -310,9 +310,9 @@
         "blanks": 280,
         "bytes": 136436,
         "files": 20,
-        "complexity": 319,
+        "complexity": 372,
         "percentOfLines": 29.8,
-        "percentOfCode": 30.7,
+        "percentOfCode": 30.9,
         "percentOfBytes": 12.9
       },
       {
@@ -323,9 +323,9 @@
         "blanks": 147,
         "bytes": 75543,
         "files": 6,
-        "complexity": 77,
+        "complexity": 125,
         "percentOfLines": 15.5,
-        "percentOfCode": 13.5,
+        "percentOfCode": 13.6,
         "percentOfBytes": 7.1
       },
       {
@@ -338,7 +338,7 @@
         "files": 2,
         "complexity": 0,
         "percentOfLines": 6,
-        "percentOfCode": 6.4,
+        "percentOfCode": 6.5,
         "percentOfBytes": 3.4
       },
       {
@@ -433,19 +433,6 @@
         "percentOfBytes": 0.1
       },
       {
-        "name": "Python",
-        "lines": 155,
-        "code": 60,
-        "comments": 79,
-        "blanks": 16,
-        "bytes": 8647,
-        "files": 1,
-        "complexity": 1,
-        "percentOfLines": 1.3,
-        "percentOfCode": 0.7,
-        "percentOfBytes": 0.8
-      },
-      {
         "name": "TOML",
         "lines": 25,
         "code": 18,
@@ -470,6 +457,19 @@
         "percentOfLines": 1,
         "percentOfCode": 0.2,
         "percentOfBytes": 0.5
+      },
+      {
+        "name": "Python",
+        "lines": 155,
+        "code": 12,
+        "comments": 127,
+        "blanks": 16,
+        "bytes": 8647,
+        "files": 1,
+        "complexity": 1,
+        "percentOfLines": 1.3,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.8
       },
       {
         "name": "SQL",
@@ -514,30 +514,30 @@
     "projectTags": [
       {
         "label": "Web",
-        "confidence": 0.53
+        "confidence": 0.54
       },
       {
         "label": "Backend",
-        "confidence": 0.47
+        "confidence": 0.46
       }
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 8.87,
-        "effort": 23.74,
-        "time": 8.33,
-        "people": 2.85,
-        "cost": 111365,
+        "kloc": 8.822,
+        "effort": 23.61,
+        "time": 8.31,
+        "people": 2.84,
+        "cost": 110733,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 6.05,
-        "time": 4.96,
+        "effort": 6.02,
+        "time": 4.95,
         "people": 1.22,
-        "cost": 28398,
+        "cost": 28237,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -557,33 +557,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 23.74,
-            "weeks": 102.8,
-            "days": 515,
-            "cost": 111365,
+            "months": 23.61,
+            "weeks": 102.2,
+            "days": 512,
+            "cost": 110733,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 8.33,
-            "hoursPerWeek": 114,
-            "totalHours": 4107,
-            "cost": 111365,
+            "months": 8.31,
+            "hoursPerWeek": 113.6,
+            "totalHours": 4084,
+            "cost": 110733,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 6.05,
-            "weeks": 26.2,
+            "months": 6.02,
+            "weeks": 26.1,
             "days": 131,
-            "cost": 28398,
+            "cost": 28237,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 4.96,
-            "hoursPerWeek": 48.9,
-            "totalHours": 1047,
-            "cost": 28398,
+            "months": 4.95,
+            "hoursPerWeek": 48.7,
+            "totalHours": 1041,
+            "cost": 28237,
             "description": "AI-assisted part-time development"
           }
         }

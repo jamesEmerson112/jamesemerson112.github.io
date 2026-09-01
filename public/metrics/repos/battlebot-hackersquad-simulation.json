@@ -1,6 +1,6 @@
 {
   "id": "battlebot-hackersquad-simulation",
-  "scannedAt": "2026-08-01T04:06:51.139Z",
+  "scannedAt": "2026-09-01T08:07:59.761Z",
   "metadata": {
     "name": "BattleBot-HackerSquad-simulation",
     "fullName": "jamesEmerson112/BattleBot-HackerSquad-simulation",
@@ -27,7 +27,7 @@
       "Code": 2520,
       "Comment": 0,
       "Blank": 307,
-      "Complexity": 253,
+      "Complexity": 278,
       "Count": 39,
       "WeightedComplexity": 0,
       "Files": [],
@@ -119,7 +119,7 @@
       "totalBytes": 145235,
       "totalFiles": 48,
       "totalLanguages": 6,
-      "totalComplexity": 253,
+      "totalComplexity": 278,
       "primaryLanguage": "TypeScript",
       "primaryLanguagePercent": 59.5
     },
@@ -132,7 +132,7 @@
         "blanks": 307,
         "bytes": 97623,
         "files": 39,
-        "complexity": 253,
+        "complexity": 278,
         "percentOfLines": 58.5,
         "percentOfCode": 59.5,
         "percentOfBytes": 67.2

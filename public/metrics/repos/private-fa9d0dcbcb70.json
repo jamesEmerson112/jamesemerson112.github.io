@@ -1,6 +1,6 @@
 {
   "id": "private-fa9d0dcbcb70",
-  "scannedAt": "2026-08-01T04:08:38.168Z",
+  "scannedAt": "2026-09-01T08:09:41.294Z",
   "metadata": {
     "name": "Private Project 100",
     "fullName": null,
@@ -42,7 +42,7 @@
       "Code": 12505,
       "Comment": 2839,
       "Blank": 2598,
-      "Complexity": 3266,
+      "Complexity": 3336,
       "Count": 67,
       "WeightedComplexity": 0,
       "Files": [],
@@ -50,14 +50,14 @@
       "ULOC": 0
     },
     {
-      "Name": "C Header",
+      "Name": "C++ Header",
       "Bytes": 278526,
       "CodeBytes": 0,
       "Lines": 11492,
       "Code": 7531,
       "Comment": 2477,
       "Blank": 1484,
-      "Complexity": 844,
+      "Complexity": 870,
       "Count": 39,
       "WeightedComplexity": 0,
       "Files": [],
@@ -149,7 +149,7 @@
       "totalBytes": 25523093,
       "totalFiles": 229,
       "totalLanguages": 8,
-      "totalComplexity": 4218,
+      "totalComplexity": 4314,
       "primaryLanguage": "Plain Text",
       "primaryLanguagePercent": 94.2
     },
@@ -188,20 +188,20 @@
         "blanks": 2598,
         "bytes": 466599,
         "files": 67,
-        "complexity": 3266,
+        "complexity": 3336,
         "percentOfLines": 2.3,
         "percentOfCode": 1.6,
         "percentOfBytes": 1.8
       },
       {
-        "name": "C Header",
+        "name": "C++ Header",
         "lines": 11492,
         "code": 7531,
         "comments": 2477,
         "blanks": 1484,
         "bytes": 278526,
         "files": 39,
-        "complexity": 844,
+        "complexity": 870,
         "percentOfLines": 1.5,
         "percentOfCode": 1,
         "percentOfBytes": 1.1

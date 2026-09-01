@@ -1,6 +1,6 @@
 {
   "id": "shopify-hackathon-backend",
-  "scannedAt": "2026-08-01T04:07:41.851Z",
+  "scannedAt": "2026-09-01T08:08:46.067Z",
   "metadata": {
     "name": "shopify-hackathon-backend",
     "fullName": "jamesEmerson112/shopify-hackathon-backend",
@@ -57,7 +57,7 @@
       "Code": 67,
       "Comment": 8,
       "Blank": 12,
-      "Complexity": 19,
+      "Complexity": 20,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -89,7 +89,7 @@
       "totalBytes": 23686,
       "totalFiles": 5,
       "totalLanguages": 4,
-      "totalComplexity": 19,
+      "totalComplexity": 20,
       "primaryLanguage": "Markdown",
       "primaryLanguagePercent": 80.7
     },
@@ -115,7 +115,7 @@
         "blanks": 12,
         "bytes": 2695,
         "files": 1,
-        "complexity": 19,
+        "complexity": 20,
         "percentOfLines": 11.8,
         "percentOfCode": 12.1,
         "percentOfBytes": 11.4

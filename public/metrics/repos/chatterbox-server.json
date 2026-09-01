@@ -1,6 +1,6 @@
 {
   "id": "chatterbox-server",
-  "scannedAt": "2026-08-01T04:08:22.449Z",
+  "scannedAt": "2026-09-01T08:09:26.272Z",
   "metadata": {
     "name": "chatterbox-server",
     "fullName": "jamesEmerson112/chatterbox-server",
@@ -27,7 +27,7 @@
       "Code": 403,
       "Comment": 104,
       "Blank": 130,
-      "Complexity": 19,
+      "Complexity": 27,
       "Count": 16,
       "WeightedComplexity": 0,
       "Files": [],
@@ -104,7 +104,7 @@
       "totalBytes": 21918,
       "totalFiles": 21,
       "totalLanguages": 5,
-      "totalComplexity": 19,
+      "totalComplexity": 27,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 69.7
     },
@@ -117,7 +117,7 @@
         "blanks": 130,
         "bytes": 17369,
         "files": 16,
-        "complexity": 19,
+        "complexity": 27,
         "percentOfLines": 76.9,
         "percentOfCode": 69.7,
         "percentOfBytes": 79.2

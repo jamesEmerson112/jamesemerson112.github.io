@@ -1,6 +1,6 @@
 {
   "id": "private-265db65a57cf",
-  "scannedAt": "2026-08-01T04:06:49.942Z",
+  "scannedAt": "2026-09-01T08:07:58.865Z",
   "metadata": {
     "name": "Private Project 103",
     "fullName": null,
@@ -27,7 +27,7 @@
       "Code": 2646,
       "Comment": 20,
       "Blank": 204,
-      "Complexity": 363,
+      "Complexity": 380,
       "Count": 41,
       "WeightedComplexity": 0,
       "Files": [],
@@ -87,7 +87,7 @@
       "Code": 193,
       "Comment": 0,
       "Blank": 33,
-      "Complexity": 13,
+      "Complexity": 17,
       "Count": 2,
       "WeightedComplexity": 0,
       "Files": [],
@@ -134,7 +134,7 @@
       "totalBytes": 1530901,
       "totalFiles": 58,
       "totalLanguages": 7,
-      "totalComplexity": 376,
+      "totalComplexity": 397,
       "primaryLanguage": "TypeScript",
       "primaryLanguagePercent": 56
     },
@@ -147,7 +147,7 @@
         "blanks": 204,
         "bytes": 91797,
         "files": 41,
-        "complexity": 363,
+        "complexity": 380,
         "percentOfLines": 56.3,
         "percentOfCode": 56,
         "percentOfBytes": 6
@@ -186,7 +186,7 @@
         "blanks": 33,
         "bytes": 6800,
         "files": 2,
-        "complexity": 13,
+        "complexity": 17,
         "percentOfLines": 4.4,
         "percentOfCode": 4.1,
         "percentOfBytes": 0.4

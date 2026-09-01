@@ -1,6 +1,6 @@
 {
   "id": "cs6750-medium-prototype-todo-list",
-  "scannedAt": "2026-08-01T04:07:57.697Z",
+  "scannedAt": "2026-09-01T08:09:01.250Z",
   "metadata": {
     "name": "Cs6750-medium-prototype-todo-list",
     "fullName": "jamesEmerson112/Cs6750-medium-prototype-todo-list",
@@ -27,7 +27,7 @@
       "Code": 31,
       "Comment": 0,
       "Blank": 5,
-      "Complexity": 124,
+      "Complexity": 2798,
       "Count": 17,
       "WeightedComplexity": 0,
       "Files": [],
@@ -57,7 +57,7 @@
       "Code": 267,
       "Comment": 13,
       "Blank": 24,
-      "Complexity": 4,
+      "Complexity": 6,
       "Count": 7,
       "WeightedComplexity": 0,
       "Files": [],
@@ -194,7 +194,7 @@
       "totalBytes": 835600,
       "totalFiles": 48,
       "totalLanguages": 11,
-      "totalComplexity": 128,
+      "totalComplexity": 2804,
       "primaryLanguage": "TypeScript",
       "primaryLanguagePercent": 45.7
     },
@@ -207,7 +207,7 @@
         "blanks": 24,
         "bytes": 9258,
         "files": 7,
-        "complexity": 4,
+        "complexity": 6,
         "percentOfLines": 45.2,
         "percentOfCode": 45.7,
         "percentOfBytes": 1.1
@@ -259,7 +259,7 @@
         "blanks": 5,
         "bytes": 773845,
         "files": 17,
-        "complexity": 124,
+        "complexity": 2798,
         "percentOfLines": 5.3,
         "percentOfCode": 5.3,
         "percentOfBytes": 92.6

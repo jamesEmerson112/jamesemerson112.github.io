@@ -1,6 +1,6 @@
 {
   "id": "lunara",
-  "scannedAt": "2026-08-01T04:06:44.063Z",
+  "scannedAt": "2026-09-01T08:07:54.379Z",
   "metadata": {
     "name": "lunara",
     "fullName": "VerisimilitudeX/lunara",
@@ -24,10 +24,10 @@
       "Bytes": 752557,
       "CodeBytes": 0,
       "Lines": 18029,
-      "Code": 13677,
-      "Comment": 2838,
-      "Blank": 1514,
-      "Complexity": 997,
+      "Code": 10149,
+      "Comment": 5052,
+      "Blank": 2828,
+      "Complexity": 1576,
       "Count": 127,
       "WeightedComplexity": 0,
       "Files": [],
@@ -57,7 +57,7 @@
       "Code": 3363,
       "Comment": 440,
       "Blank": 426,
-      "Complexity": 158,
+      "Complexity": 175,
       "Count": 36,
       "WeightedComplexity": 0,
       "Files": [],
@@ -177,7 +177,7 @@
       "Code": 64,
       "Comment": 13,
       "Blank": 5,
-      "Complexity": 19,
+      "Complexity": 20,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -203,28 +203,28 @@
   "computed": {
     "summary": {
       "totalLines": 29611,
-      "totalCode": 23163,
-      "totalComments": 3353,
-      "totalBlanks": 3095,
+      "totalCode": 19635,
+      "totalComments": 5567,
+      "totalBlanks": 4409,
       "totalBytes": 1364540,
       "totalFiles": 241,
       "totalLanguages": 12,
-      "totalComplexity": 1174,
+      "totalComplexity": 1771,
       "primaryLanguage": "Python",
-      "primaryLanguagePercent": 59
+      "primaryLanguagePercent": 51.7
     },
     "languages": [
       {
         "name": "Python",
         "lines": 18029,
-        "code": 13677,
-        "comments": 2838,
-        "blanks": 1514,
+        "code": 10149,
+        "comments": 5052,
+        "blanks": 2828,
         "bytes": 752557,
         "files": 127,
-        "complexity": 997,
+        "complexity": 1576,
         "percentOfLines": 60.9,
-        "percentOfCode": 59,
+        "percentOfCode": 51.7,
         "percentOfBytes": 55.2
       },
       {
@@ -237,7 +237,7 @@
         "files": 55,
         "complexity": 0,
         "percentOfLines": 19.2,
-        "percentOfCode": 19.8,
+        "percentOfCode": 23.3,
         "percentOfBytes": 29.7
       },
       {
@@ -248,9 +248,9 @@
         "blanks": 426,
         "bytes": 155151,
         "files": 36,
-        "complexity": 158,
+        "complexity": 175,
         "percentOfLines": 14.3,
-        "percentOfCode": 14.5,
+        "percentOfCode": 17.1,
         "percentOfBytes": 11.4
       },
       {
@@ -263,7 +263,7 @@
         "files": 12,
         "complexity": 0,
         "percentOfLines": 3.5,
-        "percentOfCode": 4.4,
+        "percentOfCode": 5.2,
         "percentOfBytes": 1.7
       },
       {
@@ -276,7 +276,7 @@
         "files": 2,
         "complexity": 0,
         "percentOfLines": 0.7,
-        "percentOfCode": 0.8,
+        "percentOfCode": 1,
         "percentOfBytes": 0.9
       },
       {
@@ -289,7 +289,7 @@
         "files": 3,
         "complexity": 0,
         "percentOfLines": 0.4,
-        "percentOfCode": 0.3,
+        "percentOfCode": 0.4,
         "percentOfBytes": 0.3
       },
       {
@@ -300,7 +300,7 @@
         "blanks": 5,
         "bytes": 4853,
         "files": 1,
-        "complexity": 19,
+        "complexity": 20,
         "percentOfLines": 0.3,
         "percentOfCode": 0.3,
         "percentOfBytes": 0.4
@@ -328,7 +328,7 @@
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0.2,
-        "percentOfCode": 0.2,
+        "percentOfCode": 0.3,
         "percentOfBytes": 0.1
       },
       {
@@ -341,7 +341,7 @@
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0.1,
-        "percentOfCode": 0.1,
+        "percentOfCode": 0.2,
         "percentOfBytes": 0.1
       },
       {
@@ -383,21 +383,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 23.163,
-        "effort": 65.05,
-        "time": 12.22,
-        "people": 5.32,
-        "cost": 305116,
+        "kloc": 19.635,
+        "effort": 54.69,
+        "time": 11.44,
+        "people": 4.78,
+        "cost": 256515,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 16.59,
-        "time": 7.27,
-        "people": 2.28,
-        "cost": 77805,
+        "effort": 13.95,
+        "time": 6.8,
+        "people": 2.05,
+        "cost": 65411,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -417,33 +417,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 65.05,
-            "weeks": 281.7,
-            "days": 1412,
-            "cost": 305116,
+            "months": 54.69,
+            "weeks": 236.8,
+            "days": 1187,
+            "cost": 256515,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 12.22,
-            "hoursPerWeek": 213,
-            "totalHours": 11254,
-            "cost": 305116,
+            "months": 11.44,
+            "hoursPerWeek": 191.3,
+            "totalHours": 9461,
+            "cost": 256515,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 16.59,
-            "weeks": 71.8,
-            "days": 360,
-            "cost": 77805,
+            "months": 13.95,
+            "weeks": 60.4,
+            "days": 303,
+            "cost": 65411,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 7.27,
-            "hoursPerWeek": 91.3,
-            "totalHours": 2870,
-            "cost": 77805,
+            "months": 6.8,
+            "hoursPerWeek": 82,
+            "totalHours": 2413,
+            "cost": 65411,
             "description": "AI-assisted part-time development"
           }
         }

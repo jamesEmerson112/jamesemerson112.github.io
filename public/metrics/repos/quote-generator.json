@@ -1,6 +1,6 @@
 {
   "id": "quote-generator",
-  "scannedAt": "2026-08-01T04:07:00.877Z",
+  "scannedAt": "2026-09-01T08:08:05.731Z",
   "metadata": {
     "name": "quote-generator",
     "fullName": "jamesEmerson112/quote-generator",
@@ -27,7 +27,7 @@
       "Code": 145,
       "Comment": 9,
       "Blank": 23,
-      "Complexity": 7,
+      "Complexity": 11,
       "Count": 8,
       "WeightedComplexity": 0,
       "Files": [],
@@ -149,7 +149,7 @@
       "totalBytes": 14580,
       "totalFiles": 20,
       "totalLanguages": 8,
-      "totalComplexity": 7,
+      "totalComplexity": 11,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 40.1
     },
@@ -162,7 +162,7 @@
         "blanks": 23,
         "bytes": 5150,
         "files": 8,
-        "complexity": 7,
+        "complexity": 11,
         "percentOfLines": 39.5,
         "percentOfCode": 40.1,
         "percentOfBytes": 35.3

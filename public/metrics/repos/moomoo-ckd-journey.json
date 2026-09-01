@@ -1,6 +1,6 @@
 {
   "id": "moomoo-ckd-journey",
-  "scannedAt": "2026-08-01T04:07:05.550Z",
+  "scannedAt": "2026-09-01T08:08:11.306Z",
   "metadata": {
     "name": "Moomoo-CKD-journey-",
     "fullName": "jamesEmerson112/Moomoo-CKD-journey-",
@@ -27,7 +27,7 @@
       "Code": 6227,
       "Comment": 13,
       "Blank": 763,
-      "Complexity": 462,
+      "Complexity": 511,
       "Count": 91,
       "WeightedComplexity": 0,
       "Files": [],
@@ -149,7 +149,7 @@
       "totalBytes": 327309,
       "totalFiles": 105,
       "totalLanguages": 8,
-      "totalComplexity": 462,
+      "totalComplexity": 511,
       "primaryLanguage": "TypeScript",
       "primaryLanguagePercent": 62.7
     },
@@ -162,7 +162,7 @@
         "blanks": 763,
         "bytes": 208045,
         "files": 91,
-        "complexity": 462,
+        "complexity": 511,
         "percentOfLines": 63.6,
         "percentOfCode": 62.7,
         "percentOfBytes": 63.6

@@ -1,6 +1,6 @@
 {
   "id": "sdc-flash-renew",
-  "scannedAt": "2026-08-01T04:08:13.780Z",
+  "scannedAt": "2026-09-01T08:09:17.385Z",
   "metadata": {
     "name": "SDC-Flash-Renew",
     "fullName": "jamesEmerson112/SDC-Flash-Renew",
@@ -27,7 +27,7 @@
       "Code": 227,
       "Comment": 57,
       "Blank": 59,
-      "Complexity": 13,
+      "Complexity": 19,
       "Count": 10,
       "WeightedComplexity": 0,
       "Files": [],
@@ -89,7 +89,7 @@
       "totalBytes": 11860,
       "totalFiles": 13,
       "totalLanguages": 4,
-      "totalComplexity": 13,
+      "totalComplexity": 19,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 75.2
     },
@@ -102,7 +102,7 @@
         "blanks": 59,
         "bytes": 9377,
         "files": 10,
-        "complexity": 13,
+        "complexity": 19,
         "percentOfLines": 78.9,
         "percentOfCode": 75.2,
         "percentOfBytes": 79.1

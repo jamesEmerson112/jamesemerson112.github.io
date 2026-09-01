@@ -1,6 +1,6 @@
 {
   "id": "cs-202-inheritance-volume-area-of-cyclinder",
-  "scannedAt": "2026-08-01T04:08:41.597Z",
+  "scannedAt": "2026-09-01T08:09:45.719Z",
   "metadata": {
     "name": "CS-202-Inheritance-Volume-Area-of-Cyclinder",
     "fullName": "jamesEmerson112/CS-202-Inheritance-Volume-Area-of-Cyclinder",
@@ -20,7 +20,7 @@
   },
   "sccRaw": [
     {
-      "Name": "C Header",
+      "Name": "C++ Header",
       "Bytes": 5021,
       "CodeBytes": 0,
       "Lines": 221,
@@ -75,12 +75,12 @@
       "totalFiles": 4,
       "totalLanguages": 3,
       "totalComplexity": 9,
-      "primaryLanguage": "C Header",
+      "primaryLanguage": "C++ Header",
       "primaryLanguagePercent": 76.1
     },
     "languages": [
       {
-        "name": "C Header",
+        "name": "C++ Header",
         "lines": 221,
         "code": 140,
         "comments": 43,

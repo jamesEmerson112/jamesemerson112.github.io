@@ -1,6 +1,6 @@
 {
   "id": "private-9f9c9b1a1dfb",
-  "scannedAt": "2026-08-01T04:08:25.095Z",
+  "scannedAt": "2026-09-01T08:09:29.443Z",
   "metadata": {
     "name": "Private Project 87",
     "fullName": null,
@@ -87,7 +87,7 @@
       "Code": 91,
       "Comment": 5,
       "Blank": 17,
-      "Complexity": 0,
+      "Complexity": 11,
       "Count": 2,
       "WeightedComplexity": 0,
       "Files": [],
@@ -179,7 +179,7 @@
       "totalBytes": 16258,
       "totalFiles": 18,
       "totalLanguages": 10,
-      "totalComplexity": 2,
+      "totalComplexity": 13,
       "primaryLanguage": "Terraform",
       "primaryLanguagePercent": 25.7
     },
@@ -192,7 +192,7 @@
         "blanks": 17,
         "bytes": 1928,
         "files": 2,
-        "complexity": 0,
+        "complexity": 11,
         "percentOfLines": 24.7,
         "percentOfCode": 25.7,
         "percentOfBytes": 11.9

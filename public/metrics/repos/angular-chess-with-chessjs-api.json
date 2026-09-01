@@ -1,6 +1,6 @@
 {
   "id": "angular-chess-with-chessjs-api",
-  "scannedAt": "2026-08-01T04:08:14.756Z",
+  "scannedAt": "2026-09-01T08:09:18.374Z",
   "metadata": {
     "name": "Angular-Chess-with-ChessJS-API",
     "fullName": "jamesEmerson112/Angular-Chess-with-ChessJS-API",
@@ -27,7 +27,7 @@
       "Code": 585,
       "Comment": 168,
       "Blank": 154,
-      "Complexity": 23,
+      "Complexity": 24,
       "Count": 24,
       "WeightedComplexity": 0,
       "Files": [],
@@ -134,7 +134,7 @@
       "totalBytes": 49253,
       "totalFiles": 44,
       "totalLanguages": 7,
-      "totalComplexity": 23,
+      "totalComplexity": 24,
       "primaryLanguage": "TypeScript",
       "primaryLanguagePercent": 39.1
     },
@@ -147,7 +147,7 @@
         "blanks": 154,
         "bytes": 24755,
         "files": 24,
-        "complexity": 23,
+        "complexity": 24,
         "percentOfLines": 46.9,
         "percentOfCode": 39.1,
         "percentOfBytes": 50.3

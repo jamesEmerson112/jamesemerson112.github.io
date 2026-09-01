@@ -1,6 +1,6 @@
 {
   "id": "chat-demo-firebase",
-  "scannedAt": "2026-08-01T04:08:23.988Z",
+  "scannedAt": "2026-09-01T08:09:28.729Z",
   "metadata": {
     "name": "chat-demo-firebase",
     "fullName": "Blue-Ocean-3-Bowser/chat-demo-firebase",
@@ -27,7 +27,7 @@
       "Code": 127,
       "Comment": 21,
       "Blank": 31,
-      "Complexity": 4,
+      "Complexity": 5,
       "Count": 5,
       "WeightedComplexity": 0,
       "Files": [],
@@ -149,7 +149,7 @@
       "totalBytes": 17624,
       "totalFiles": 15,
       "totalLanguages": 8,
-      "totalComplexity": 4,
+      "totalComplexity": 5,
       "primaryLanguage": "CSS",
       "primaryLanguagePercent": 34.2
     },
@@ -175,7 +175,7 @@
         "blanks": 31,
         "bytes": 4861,
         "files": 5,
-        "complexity": 4,
+        "complexity": 5,
         "percentOfLines": 32.4,
         "percentOfCode": 30.6,
         "percentOfBytes": 27.6

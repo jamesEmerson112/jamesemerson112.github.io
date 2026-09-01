@@ -1,6 +1,6 @@
 {
   "id": "private-9a0cffc40668",
-  "scannedAt": "2026-08-01T04:07:52.252Z",
+  "scannedAt": "2026-09-01T08:08:55.739Z",
   "metadata": {
     "name": "Private Project 44",
     "fullName": null,
@@ -42,7 +42,7 @@
       "Code": 23,
       "Comment": 8,
       "Blank": 8,
-      "Complexity": 0,
+      "Complexity": 4,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -59,7 +59,7 @@
       "totalBytes": 7420,
       "totalFiles": 3,
       "totalLanguages": 2,
-      "totalComplexity": 23,
+      "totalComplexity": 27,
       "primaryLanguage": "C",
       "primaryLanguagePercent": 87.8
     },
@@ -85,7 +85,7 @@
         "blanks": 8,
         "bytes": 930,
         "files": 1,
-        "complexity": 0,
+        "complexity": 4,
         "percentOfLines": 14.8,
         "percentOfCode": 12.2,
         "percentOfBytes": 12.5

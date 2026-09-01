@@ -1,6 +1,6 @@
 {
   "id": "private-9d529a452a23",
-  "scannedAt": "2026-08-01T04:08:38.859Z",
+  "scannedAt": "2026-09-01T08:09:41.979Z",
   "metadata": {
     "name": "Private Project 101",
     "fullName": null,
@@ -42,7 +42,7 @@
       "Code": 1454,
       "Comment": 24,
       "Blank": 269,
-      "Complexity": 1346,
+      "Complexity": 1383,
       "Count": 2,
       "WeightedComplexity": 0,
       "Files": [],
@@ -89,7 +89,7 @@
       "totalBytes": 79378,
       "totalFiles": 7,
       "totalLanguages": 4,
-      "totalComplexity": 1346,
+      "totalComplexity": 1383,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 96.5
     },
@@ -102,7 +102,7 @@
         "blanks": 269,
         "bytes": 77562,
         "files": 2,
-        "complexity": 1346,
+        "complexity": 1383,
         "percentOfLines": 95.3,
         "percentOfCode": 96.5,
         "percentOfBytes": 97.7

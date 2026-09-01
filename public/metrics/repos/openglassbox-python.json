@@ -1,6 +1,6 @@
 {
   "id": "openglassbox-python",
-  "scannedAt": "2026-08-01T04:07:14.621Z",
+  "scannedAt": "2026-09-01T08:08:20.268Z",
   "metadata": {
     "name": "OpenGlassBox-Python",
     "fullName": "jamesEmerson112/OpenGlassBox-Python",
@@ -24,10 +24,10 @@
       "Bytes": 444744,
       "CodeBytes": 0,
       "Lines": 12794,
-      "Code": 8023,
-      "Comment": 3143,
-      "Blank": 1628,
-      "Complexity": 1023,
+      "Code": 6898,
+      "Comment": 3779,
+      "Blank": 2117,
+      "Complexity": 1309,
       "Count": 66,
       "WeightedComplexity": 0,
       "Files": [],
@@ -117,7 +117,7 @@
       "Code": 152,
       "Comment": 0,
       "Blank": 14,
-      "Complexity": 1,
+      "Complexity": 5,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -143,28 +143,28 @@
   "computed": {
     "summary": {
       "totalLines": 16512,
-      "totalCode": 11060,
-      "totalComments": 3161,
-      "totalBlanks": 2291,
+      "totalCode": 9935,
+      "totalComments": 3797,
+      "totalBlanks": 2780,
       "totalBytes": 596280,
       "totalFiles": 82,
       "totalLanguages": 8,
-      "totalComplexity": 1026,
+      "totalComplexity": 1316,
       "primaryLanguage": "Python",
-      "primaryLanguagePercent": 72.5
+      "primaryLanguagePercent": 69.4
     },
     "languages": [
       {
         "name": "Python",
         "lines": 12794,
-        "code": 8023,
-        "comments": 3143,
-        "blanks": 1628,
+        "code": 6898,
+        "comments": 3779,
+        "blanks": 2117,
         "bytes": 444744,
         "files": 66,
-        "complexity": 1023,
+        "complexity": 1309,
         "percentOfLines": 77.5,
-        "percentOfCode": 72.5,
+        "percentOfCode": 69.4,
         "percentOfBytes": 74.6
       },
       {
@@ -177,7 +177,7 @@
         "files": 10,
         "complexity": 0,
         "percentOfLines": 18.8,
-        "percentOfCode": 22.9,
+        "percentOfCode": 25.5,
         "percentOfBytes": 21.9
       },
       {
@@ -190,7 +190,7 @@
         "files": 1,
         "complexity": 0,
         "percentOfLines": 1.2,
-        "percentOfCode": 1.5,
+        "percentOfCode": 1.7,
         "percentOfBytes": 1.9
       },
       {
@@ -201,9 +201,9 @@
         "blanks": 14,
         "bytes": 3960,
         "files": 1,
-        "complexity": 1,
+        "complexity": 5,
         "percentOfLines": 1,
-        "percentOfCode": 1.4,
+        "percentOfCode": 1.5,
         "percentOfBytes": 0.7
       },
       {
@@ -216,7 +216,7 @@
         "files": 1,
         "complexity": 2,
         "percentOfLines": 0.8,
-        "percentOfCode": 0.9,
+        "percentOfCode": 1,
         "percentOfBytes": 0.6
       },
       {
@@ -229,7 +229,7 @@
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0.4,
-        "percentOfCode": 0.4,
+        "percentOfCode": 0.5,
         "percentOfBytes": 0.2
       },
       {
@@ -255,7 +255,7 @@
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0.1,
-        "percentOfCode": 0.1,
+        "percentOfCode": 0.2,
         "percentOfBytes": 0.1
       }
     ],
@@ -271,21 +271,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 11.06,
-        "effort": 29.93,
-        "time": 9.1,
-        "people": 3.29,
-        "cost": 140402,
+        "kloc": 9.935,
+        "effort": 26.74,
+        "time": 8.72,
+        "people": 3.07,
+        "cost": 125446,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 7.63,
-        "time": 5.41,
-        "people": 1.41,
-        "cost": 35803,
+        "effort": 6.82,
+        "time": 5.19,
+        "people": 1.32,
+        "cost": 31989,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -299,39 +299,39 @@
       "comparison": {
         "effortReduction": "75%",
         "timeReduction": "41%",
-        "costReduction": "75%",
+        "costReduction": "74%",
         "speedup": "3.9x"
       },
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 29.93,
-            "weeks": 129.6,
-            "days": 650,
-            "cost": 140402,
+            "months": 26.74,
+            "weeks": 115.8,
+            "days": 580,
+            "cost": 125446,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 9.1,
-            "hoursPerWeek": 131.6,
-            "totalHours": 5178,
-            "cost": 140402,
+            "months": 8.72,
+            "hoursPerWeek": 122.7,
+            "totalHours": 4627,
+            "cost": 125446,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 7.63,
-            "weeks": 33.1,
-            "days": 166,
-            "cost": 35803,
+            "months": 6.82,
+            "weeks": 29.5,
+            "days": 148,
+            "cost": 31989,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 5.41,
-            "hoursPerWeek": 56.4,
-            "totalHours": 1321,
-            "cost": 35803,
+            "months": 5.19,
+            "hoursPerWeek": 52.6,
+            "totalHours": 1180,
+            "cost": 31989,
             "description": "AI-assisted part-time development"
           }
         }

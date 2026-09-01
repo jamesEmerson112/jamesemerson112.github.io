@@ -1,6 +1,6 @@
 {
   "id": "private-cf8fe9eb9164",
-  "scannedAt": "2026-08-01T04:07:31.309Z",
+  "scannedAt": "2026-09-01T08:08:35.703Z",
   "metadata": {
     "name": "Private Project 21",
     "fullName": null,
@@ -24,10 +24,10 @@
       "Bytes": 171021,
       "CodeBytes": 0,
       "Lines": 4594,
-      "Code": 2689,
-      "Comment": 1009,
-      "Blank": 896,
-      "Complexity": 211,
+      "Code": 2315,
+      "Comment": 1227,
+      "Blank": 1052,
+      "Complexity": 253,
       "Count": 36,
       "WeightedComplexity": 0,
       "Files": [],
@@ -65,14 +65,14 @@
       "ULOC": 0
     },
     {
-      "Name": "TeX",
+      "Name": "LaTeX",
       "Bytes": 73518,
       "CodeBytes": 0,
       "Lines": 1591,
       "Code": 1210,
       "Comment": 7,
       "Blank": 374,
-      "Complexity": 103,
+      "Complexity": 0,
       "Count": 3,
       "WeightedComplexity": 0,
       "Files": [],
@@ -128,15 +128,15 @@
   "computed": {
     "summary": {
       "totalLines": 82646,
-      "totalCode": 79610,
-      "totalComments": 1017,
-      "totalBlanks": 2019,
+      "totalCode": 79236,
+      "totalComments": 1235,
+      "totalBlanks": 2175,
       "totalBytes": 3817953,
       "totalFiles": 68,
       "totalLanguages": 7,
-      "totalComplexity": 314,
+      "totalComplexity": 253,
       "primaryLanguage": "Plain Text",
-      "primaryLanguagePercent": 90.2
+      "primaryLanguagePercent": 90.7
     },
     "languages": [
       {
@@ -149,20 +149,20 @@
         "files": 11,
         "complexity": 0,
         "percentOfLines": 87,
-        "percentOfCode": 90.2,
+        "percentOfCode": 90.7,
         "percentOfBytes": 89
       },
       {
         "name": "Python",
         "lines": 4594,
-        "code": 2689,
-        "comments": 1009,
-        "blanks": 896,
+        "code": 2315,
+        "comments": 1227,
+        "blanks": 1052,
         "bytes": 171021,
         "files": 36,
-        "complexity": 211,
+        "complexity": 253,
         "percentOfLines": 5.6,
-        "percentOfCode": 3.4,
+        "percentOfCode": 2.9,
         "percentOfBytes": 4.5
       },
       {
@@ -192,14 +192,14 @@
         "percentOfBytes": 1.7
       },
       {
-        "name": "TeX",
+        "name": "LaTeX",
         "lines": 1591,
         "code": 1210,
         "comments": 7,
         "blanks": 374,
         "bytes": 73518,
         "files": 3,
-        "complexity": 103,
+        "complexity": 0,
         "percentOfLines": 1.9,
         "percentOfCode": 1.5,
         "percentOfBytes": 1.9
@@ -243,21 +243,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 79.61,
-        "effort": 237.81,
-        "time": 19.99,
-        "people": 11.89,
-        "cost": 1115440,
+        "kloc": 79.236,
+        "effort": 236.64,
+        "time": 19.96,
+        "people": 11.86,
+        "cost": 1109939,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 60.64,
-        "time": 11.9,
-        "people": 5.1,
-        "cost": 284437,
+        "effort": 60.34,
+        "time": 11.87,
+        "people": 5.08,
+        "cost": 283034,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -277,33 +277,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 237.81,
-            "weeks": 1029.7,
-            "days": 5160,
-            "cost": 1115440,
+            "months": 236.64,
+            "weeks": 1024.6,
+            "days": 5135,
+            "cost": 1109939,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 19.99,
-            "hoursPerWeek": 475.8,
-            "totalHours": 41141,
-            "cost": 1115440,
+            "months": 19.96,
+            "hoursPerWeek": 474.3,
+            "totalHours": 40938,
+            "cost": 1109939,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 60.64,
-            "weeks": 262.6,
-            "days": 1316,
-            "cost": 284437,
+            "months": 60.34,
+            "weeks": 261.3,
+            "days": 1309,
+            "cost": 283034,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 11.9,
-            "hoursPerWeek": 203.9,
-            "totalHours": 10491,
-            "cost": 284437,
+            "months": 11.87,
+            "hoursPerWeek": 203.3,
+            "totalHours": 10439,
+            "cost": 283034,
             "description": "AI-assisted part-time development"
           }
         }

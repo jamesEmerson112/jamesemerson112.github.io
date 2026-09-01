@@ -1,6 +1,6 @@
 {
   "id": "6ees6ees6ees",
-  "scannedAt": "2026-08-01T04:08:23.185Z",
+  "scannedAt": "2026-09-01T08:09:27.458Z",
   "metadata": {
     "name": "6ees6ees6ees",
     "fullName": "jamesEmerson112/6ees6ees6ees",
@@ -27,7 +27,7 @@
       "Code": 228,
       "Comment": 24,
       "Blank": 65,
-      "Complexity": 0,
+      "Complexity": 3,
       "Count": 11,
       "WeightedComplexity": 0,
       "Files": [],
@@ -89,7 +89,7 @@
       "totalBytes": 10836,
       "totalFiles": 15,
       "totalLanguages": 4,
-      "totalComplexity": 0,
+      "totalComplexity": 3,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 77.8
     },
@@ -102,7 +102,7 @@
         "blanks": 65,
         "bytes": 8458,
         "files": 11,
-        "complexity": 0,
+        "complexity": 3,
         "percentOfLines": 81.3,
         "percentOfCode": 77.8,
         "percentOfBytes": 78.1

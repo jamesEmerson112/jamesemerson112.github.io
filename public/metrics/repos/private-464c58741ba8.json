@@ -1,6 +1,6 @@
 {
   "id": "private-464c58741ba8",
-  "scannedAt": "2026-08-01T04:08:08.813Z",
+  "scannedAt": "2026-09-01T08:09:12.051Z",
   "metadata": {
     "name": "Private Project 69",
     "fullName": null,
@@ -27,7 +27,7 @@
       "Code": 138,
       "Comment": 60,
       "Blank": 49,
-      "Complexity": 18,
+      "Complexity": 26,
       "Count": 4,
       "WeightedComplexity": 0,
       "Files": [],
@@ -104,7 +104,7 @@
       "totalBytes": 13579,
       "totalFiles": 9,
       "totalLanguages": 5,
-      "totalComplexity": 18,
+      "totalComplexity": 26,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 49.8
     },
@@ -117,7 +117,7 @@
         "blanks": 49,
         "bytes": 6497,
         "files": 4,
-        "complexity": 18,
+        "complexity": 26,
         "percentOfLines": 63,
         "percentOfCode": 49.8,
         "percentOfBytes": 47.8

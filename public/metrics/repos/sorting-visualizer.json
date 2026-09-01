@@ -1,6 +1,6 @@
 {
   "id": "sorting-visualizer",
-  "scannedAt": "2026-08-01T04:08:08.422Z",
+  "scannedAt": "2026-09-01T08:09:11.676Z",
   "metadata": {
     "name": "sorting-visualizer",
     "fullName": "jamesEmerson112/sorting-visualizer",
@@ -27,7 +27,7 @@
       "Code": 102,
       "Comment": 43,
       "Blank": 13,
-      "Complexity": 7,
+      "Complexity": 8,
       "Count": 6,
       "WeightedComplexity": 0,
       "Files": [],
@@ -72,7 +72,7 @@
       "Code": 264,
       "Comment": 81,
       "Blank": 77,
-      "Complexity": 3,
+      "Complexity": 2,
       "Count": 2,
       "WeightedComplexity": 0,
       "Files": [],
@@ -117,7 +117,7 @@
       "Code": 96,
       "Comment": 14,
       "Blank": 20,
-      "Complexity": 9,
+      "Complexity": 12,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -179,7 +179,7 @@
       "totalBytes": 32816,
       "totalFiles": 19,
       "totalLanguages": 10,
-      "totalComplexity": 20,
+      "totalComplexity": 23,
       "primaryLanguage": "Terraform",
       "primaryLanguagePercent": 36.9
     },
@@ -192,7 +192,7 @@
         "blanks": 77,
         "bytes": 9670,
         "files": 2,
-        "complexity": 3,
+        "complexity": 2,
         "percentOfLines": 39.6,
         "percentOfCode": 36.9,
         "percentOfBytes": 29.5
@@ -205,7 +205,7 @@
         "blanks": 13,
         "bytes": 5204,
         "files": 6,
-        "complexity": 7,
+        "complexity": 8,
         "percentOfLines": 14.8,
         "percentOfCode": 14.3,
         "percentOfBytes": 15.9
@@ -231,7 +231,7 @@
         "blanks": 20,
         "bytes": 4761,
         "files": 1,
-        "complexity": 9,
+        "complexity": 12,
         "percentOfLines": 12.2,
         "percentOfCode": 13.4,
         "percentOfBytes": 14.5

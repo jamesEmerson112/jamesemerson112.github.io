@@ -1,6 +1,6 @@
 {
   "id": "hash-tables-made-of-linked-lists",
-  "scannedAt": "2026-08-01T04:08:40.210Z",
+  "scannedAt": "2026-09-01T08:09:43.979Z",
   "metadata": {
     "name": "Hash-tables-made-of-linked-lists",
     "fullName": "jamesEmerson112/Hash-tables-made-of-linked-lists",
@@ -35,7 +35,7 @@
       "ULOC": 0
     },
     {
-      "Name": "C Header",
+      "Name": "C++ Header",
       "Bytes": 2691,
       "CodeBytes": 0,
       "Lines": 122,
@@ -93,7 +93,7 @@
         "percentOfBytes": 77.2
       },
       {
-        "name": "C Header",
+        "name": "C++ Header",
         "lines": 122,
         "code": 45,
         "comments": 45,

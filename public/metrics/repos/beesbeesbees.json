@@ -1,6 +1,6 @@
 {
   "id": "beesbeesbees",
-  "scannedAt": "2026-08-01T04:08:22.952Z",
+  "scannedAt": "2026-09-01T08:09:26.800Z",
   "metadata": {
     "name": "beesbeesbees",
     "fullName": "jamesEmerson112/beesbeesbees",
@@ -27,7 +27,7 @@
       "Code": 383,
       "Comment": 34,
       "Blank": 110,
-      "Complexity": 16,
+      "Complexity": 19,
       "Count": 12,
       "WeightedComplexity": 0,
       "Files": [],
@@ -89,7 +89,7 @@
       "totalBytes": 18977,
       "totalFiles": 16,
       "totalLanguages": 4,
-      "totalComplexity": 16,
+      "totalComplexity": 19,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 85.1
     },
@@ -102,7 +102,7 @@
         "blanks": 110,
         "bytes": 16430,
         "files": 12,
-        "complexity": 16,
+        "complexity": 19,
         "percentOfLines": 87.5,
         "percentOfCode": 85.1,
         "percentOfBytes": 86.6

@@ -1,6 +1,6 @@
 {
   "id": "underbar-review",
-  "scannedAt": "2026-08-01T04:08:18.074Z",
+  "scannedAt": "2026-09-01T08:09:21.195Z",
   "metadata": {
     "name": "underbar-review",
     "fullName": "jamesEmerson112/underbar-review",
@@ -27,7 +27,7 @@
       "Code": 11522,
       "Comment": 3200,
       "Blank": 1781,
-      "Complexity": 1302,
+      "Complexity": 1530,
       "Count": 10,
       "WeightedComplexity": 0,
       "Files": [],
@@ -104,7 +104,7 @@
       "totalBytes": 437995,
       "totalFiles": 15,
       "totalLanguages": 5,
-      "totalComplexity": 1302,
+      "totalComplexity": 1530,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 97.8
     },
@@ -117,7 +117,7 @@
         "blanks": 1781,
         "bytes": 432548,
         "files": 10,
-        "complexity": 1302,
+        "complexity": 1530,
         "percentOfLines": 98.2,
         "percentOfCode": 97.8,
         "percentOfBytes": 98.8

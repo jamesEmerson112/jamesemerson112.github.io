@@ -1,6 +1,6 @@
 {
   "id": "private-a15de1b25925",
-  "scannedAt": "2026-08-01T04:07:47.801Z",
+  "scannedAt": "2026-09-01T08:08:51.458Z",
   "metadata": {
     "name": "Private Project 37",
     "fullName": null,
@@ -42,7 +42,7 @@
       "Code": 115,
       "Comment": 22,
       "Blank": 36,
-      "Complexity": 4,
+      "Complexity": 11,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -59,7 +59,7 @@
       "totalBytes": 15390,
       "totalFiles": 4,
       "totalLanguages": 2,
-      "totalComplexity": 4,
+      "totalComplexity": 11,
       "primaryLanguage": "Markdown",
       "primaryLanguagePercent": 68.5
     },
@@ -85,7 +85,7 @@
         "blanks": 36,
         "bytes": 5177,
         "files": 1,
-        "complexity": 4,
+        "complexity": 11,
         "percentOfLines": 36.2,
         "percentOfCode": 31.5,
         "percentOfBytes": 33.6

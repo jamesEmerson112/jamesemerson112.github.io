@@ -1,6 +1,6 @@
 {
   "id": "private-b9c8a2b2abe8",
-  "scannedAt": "2026-08-01T04:07:27.488Z",
+  "scannedAt": "2026-09-01T08:08:32.023Z",
   "metadata": {
     "name": "Private Project 12",
     "fullName": null,
@@ -27,7 +27,7 @@
       "Code": 7413,
       "Comment": 1428,
       "Blank": 1477,
-      "Complexity": 1178,
+      "Complexity": 1235,
       "Count": 64,
       "WeightedComplexity": 0,
       "Files": [],
@@ -89,7 +89,7 @@
       "totalBytes": 560757,
       "totalFiles": 75,
       "totalLanguages": 4,
-      "totalComplexity": 1178,
+      "totalComplexity": 1235,
       "primaryLanguage": "C#",
       "primaryLanguagePercent": 94.4
     },
@@ -102,7 +102,7 @@
         "blanks": 1477,
         "bytes": 396589,
         "files": 64,
-        "complexity": 1178,
+        "complexity": 1235,
         "percentOfLines": 95.7,
         "percentOfCode": 94.4,
         "percentOfBytes": 70.7

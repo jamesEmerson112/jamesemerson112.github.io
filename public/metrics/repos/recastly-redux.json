@@ -1,6 +1,6 @@
 {
   "id": "recastly-redux",
-  "scannedAt": "2026-08-01T04:08:19.073Z",
+  "scannedAt": "2026-09-01T08:09:22.359Z",
   "metadata": {
     "name": "recastly-redux",
     "fullName": "jamesEmerson112/recastly-redux",
@@ -27,7 +27,7 @@
       "Code": 775,
       "Comment": 50,
       "Blank": 84,
-      "Complexity": 10,
+      "Complexity": 14,
       "Count": 26,
       "WeightedComplexity": 0,
       "Files": [],
@@ -119,7 +119,7 @@
       "totalBytes": 42605,
       "totalFiles": 36,
       "totalLanguages": 6,
-      "totalComplexity": 11,
+      "totalComplexity": 15,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 68.6
     },
@@ -132,7 +132,7 @@
         "blanks": 84,
         "bytes": 26284,
         "files": 26,
-        "complexity": 10,
+        "complexity": 14,
         "percentOfLines": 70,
         "percentOfCode": 68.6,
         "percentOfBytes": 61.7

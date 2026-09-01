@@ -1,6 +1,6 @@
 {
   "id": "one-hour-project",
-  "scannedAt": "2026-08-01T04:07:19.579Z",
+  "scannedAt": "2026-09-01T08:08:25.508Z",
   "metadata": {
     "name": "one-hour-project",
     "fullName": "jamesEmerson112/one-hour-project",
@@ -27,7 +27,7 @@
       "Code": 298,
       "Comment": 27,
       "Blank": 32,
-      "Complexity": 5,
+      "Complexity": 22,
       "Count": 6,
       "WeightedComplexity": 0,
       "Files": [],
@@ -209,7 +209,7 @@
       "totalBytes": 29527,
       "totalFiles": 27,
       "totalLanguages": 12,
-      "totalComplexity": 51,
+      "totalComplexity": 68,
       "primaryLanguage": "Svelte",
       "primaryLanguagePercent": 43
     },
@@ -222,7 +222,7 @@
         "blanks": 32,
         "bytes": 13584,
         "files": 6,
-        "complexity": 5,
+        "complexity": 22,
         "percentOfLines": 42.1,
         "percentOfCode": 43,
         "percentOfBytes": 46

@@ -1,6 +1,6 @@
 {
   "id": "private-e635b37192f2",
-  "scannedAt": "2026-08-01T04:06:53.222Z",
+  "scannedAt": "2026-09-01T08:08:01.440Z",
   "metadata": {
     "name": "Private Project 25",
     "fullName": null,
@@ -39,10 +39,10 @@
       "Bytes": 59769,
       "CodeBytes": 0,
       "Lines": 1655,
-      "Code": 1250,
-      "Comment": 186,
-      "Blank": 219,
-      "Complexity": 140,
+      "Code": 1133,
+      "Comment": 230,
+      "Blank": 292,
+      "Complexity": 178,
       "Count": 8,
       "WeightedComplexity": 0,
       "Files": [],
@@ -83,15 +83,15 @@
   "computed": {
     "summary": {
       "totalLines": 19992,
-      "totalCode": 15581,
-      "totalComments": 186,
-      "totalBlanks": 4225,
+      "totalCode": 15464,
+      "totalComments": 230,
+      "totalBlanks": 4298,
       "totalBytes": 1438896,
       "totalFiles": 108,
       "totalLanguages": 4,
-      "totalComplexity": 140,
+      "totalComplexity": 178,
       "primaryLanguage": "Markdown",
-      "primaryLanguagePercent": 91.8
+      "primaryLanguagePercent": 92.5
     },
     "languages": [
       {
@@ -104,20 +104,20 @@
         "files": 98,
         "complexity": 0,
         "percentOfLines": 91.6,
-        "percentOfCode": 91.8,
+        "percentOfCode": 92.5,
         "percentOfBytes": 95.8
       },
       {
         "name": "Python",
         "lines": 1655,
-        "code": 1250,
-        "comments": 186,
-        "blanks": 219,
+        "code": 1133,
+        "comments": 230,
+        "blanks": 292,
         "bytes": 59769,
         "files": 8,
-        "complexity": 140,
+        "complexity": 178,
         "percentOfLines": 8.3,
-        "percentOfCode": 8,
+        "percentOfCode": 7.3,
         "percentOfBytes": 4.2
       },
       {
@@ -159,21 +159,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 15.581,
-        "effort": 42.9,
-        "time": 10.43,
-        "people": 4.11,
-        "cost": 201213,
+        "kloc": 15.464,
+        "effort": 42.56,
+        "time": 10.4,
+        "people": 4.09,
+        "cost": 199627,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 10.94,
-        "time": 6.21,
-        "people": 1.76,
-        "cost": 51309,
+        "effort": 10.85,
+        "time": 6.19,
+        "people": 1.75,
+        "cost": 50905,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -193,33 +193,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 42.9,
-            "weeks": 185.7,
-            "days": 931,
-            "cost": 201213,
+            "months": 42.56,
+            "weeks": 184.3,
+            "days": 924,
+            "cost": 199627,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 10.43,
-            "hoursPerWeek": 164.5,
-            "totalHours": 7421,
-            "cost": 201213,
+            "months": 10.4,
+            "hoursPerWeek": 163.7,
+            "totalHours": 7363,
+            "cost": 199627,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 10.94,
-            "weeks": 47.4,
-            "days": 237,
-            "cost": 51309,
+            "months": 10.85,
+            "weeks": 47,
+            "days": 236,
+            "cost": 50905,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 6.21,
-            "hoursPerWeek": 70.5,
-            "totalHours": 1892,
-            "cost": 51309,
+            "months": 6.19,
+            "hoursPerWeek": 70.2,
+            "totalHours": 1878,
+            "cost": 50905,
             "description": "AI-assisted part-time development"
           }
         }

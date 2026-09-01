@@ -1,6 +1,6 @@
 {
   "id": "eye-to-home",
-  "scannedAt": "2026-08-01T04:07:36.729Z",
+  "scannedAt": "2026-09-01T08:08:40.673Z",
   "metadata": {
     "name": "Eye-to-home",
     "fullName": "jamesEmerson112/Eye-to-home",
@@ -42,7 +42,7 @@
       "Code": 361,
       "Comment": 218,
       "Blank": 71,
-      "Complexity": 31,
+      "Complexity": 35,
       "Count": 4,
       "WeightedComplexity": 0,
       "Files": [],
@@ -89,7 +89,7 @@
       "totalBytes": 28115,
       "totalFiles": 15,
       "totalLanguages": 4,
-      "totalComplexity": 31,
+      "totalComplexity": 35,
       "primaryLanguage": "Swift",
       "primaryLanguagePercent": 66.9
     },
@@ -102,7 +102,7 @@
         "blanks": 71,
         "bytes": 23870,
         "files": 4,
-        "complexity": 31,
+        "complexity": 35,
         "percentOfLines": 77.6,
         "percentOfCode": 66.9,
         "percentOfBytes": 84.9

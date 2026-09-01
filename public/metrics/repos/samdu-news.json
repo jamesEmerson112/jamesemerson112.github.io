@@ -1,6 +1,6 @@
 {
   "id": "samdu-news",
-  "scannedAt": "2026-08-01T04:07:39.240Z",
+  "scannedAt": "2026-09-01T08:08:43.389Z",
   "metadata": {
     "name": "samdu-news",
     "fullName": "jamesEmerson112/samdu-news",
@@ -27,7 +27,7 @@
       "Code": 1461,
       "Comment": 13,
       "Blank": 113,
-      "Complexity": 44,
+      "Complexity": 45,
       "Count": 14,
       "WeightedComplexity": 0,
       "Files": [],
@@ -134,7 +134,7 @@
       "totalBytes": 66472,
       "totalFiles": 27,
       "totalLanguages": 7,
-      "totalComplexity": 44,
+      "totalComplexity": 45,
       "primaryLanguage": "TypeScript",
       "primaryLanguagePercent": 91.1
     },
@@ -147,7 +147,7 @@
         "blanks": 113,
         "bytes": 58392,
         "files": 14,
-        "complexity": 44,
+        "complexity": 45,
         "percentOfLines": 90.3,
         "percentOfCode": 91.1,
         "percentOfBytes": 87.8

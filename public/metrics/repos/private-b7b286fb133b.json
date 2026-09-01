@@ -1,6 +1,6 @@
 {
   "id": "private-b7b286fb133b",
-  "scannedAt": "2026-08-01T04:08:16.380Z",
+  "scannedAt": "2026-09-01T08:09:19.684Z",
   "metadata": {
     "name": "Private Project 82",
     "fullName": null,
@@ -27,7 +27,7 @@
       "Code": 277,
       "Comment": 258,
       "Blank": 131,
-      "Complexity": 21,
+      "Complexity": 22,
       "Count": 36,
       "WeightedComplexity": 0,
       "Files": [],
@@ -194,7 +194,7 @@
       "totalBytes": 37955,
       "totalFiles": 61,
       "totalLanguages": 11,
-      "totalComplexity": 21,
+      "totalComplexity": 22,
       "primaryLanguage": "Ruby",
       "primaryLanguagePercent": 45.6
     },
@@ -207,7 +207,7 @@
         "blanks": 131,
         "bytes": 22967,
         "files": 36,
-        "complexity": 21,
+        "complexity": 22,
         "percentOfLines": 55.7,
         "percentOfCode": 45.6,
         "percentOfBytes": 60.5

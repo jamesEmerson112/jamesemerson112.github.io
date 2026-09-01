@@ -1,6 +1,6 @@
 {
   "id": "icantdrinkmap-backend",
-  "scannedAt": "2026-08-01T04:08:06.762Z",
+  "scannedAt": "2026-09-01T08:09:10.180Z",
   "metadata": {
     "name": "icantdrinkmap-backend",
     "fullName": "jamesEmerson112/icantdrinkmap-backend",
@@ -27,7 +27,7 @@
       "Code": 138,
       "Comment": 60,
       "Blank": 49,
-      "Complexity": 18,
+      "Complexity": 26,
       "Count": 4,
       "WeightedComplexity": 0,
       "Files": [],
@@ -104,7 +104,7 @@
       "totalBytes": 14498,
       "totalFiles": 9,
       "totalLanguages": 5,
-      "totalComplexity": 18,
+      "totalComplexity": 26,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 47.9
     },
@@ -117,7 +117,7 @@
         "blanks": 49,
         "bytes": 6495,
         "files": 4,
-        "complexity": 18,
+        "complexity": 26,
         "percentOfLines": 61.4,
         "percentOfCode": 47.9,
         "percentOfBytes": 44.8

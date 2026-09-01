@@ -1,6 +1,6 @@
 {
   "id": "reviews-sdc-flash",
-  "scannedAt": "2026-08-01T04:08:28.315Z",
+  "scannedAt": "2026-09-01T08:09:32.575Z",
   "metadata": {
     "name": "Reviews---SDC---Flash",
     "fullName": "SDC-TeamFlash-RFP2207/Reviews---SDC---Flash",
@@ -27,7 +27,7 @@
       "Code": 3089,
       "Comment": 62,
       "Blank": 350,
-      "Complexity": 142,
+      "Complexity": 211,
       "Count": 32,
       "WeightedComplexity": 0,
       "Files": [],
@@ -72,7 +72,7 @@
       "Code": 308,
       "Comment": 16,
       "Blank": 50,
-      "Complexity": 0,
+      "Complexity": 2,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -119,7 +119,7 @@
       "totalBytes": 127613,
       "totalFiles": 47,
       "totalLanguages": 6,
-      "totalComplexity": 143,
+      "totalComplexity": 214,
       "primaryLanguage": "JSX",
       "primaryLanguagePercent": 77.6
     },
@@ -132,7 +132,7 @@
         "blanks": 350,
         "bytes": 89603,
         "files": 32,
-        "complexity": 142,
+        "complexity": 211,
         "percentOfLines": 77.4,
         "percentOfCode": 77.6,
         "percentOfBytes": 70.2
@@ -158,7 +158,7 @@
         "blanks": 50,
         "bytes": 6216,
         "files": 1,
-        "complexity": 0,
+        "complexity": 2,
         "percentOfLines": 8.3,
         "percentOfCode": 7.7,
         "percentOfBytes": 4.9

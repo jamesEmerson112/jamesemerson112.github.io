@@ -1,6 +1,6 @@
 {
   "id": "stanford-cme295-transformers-and-llms-visualization",
-  "scannedAt": "2026-08-01T04:07:19.297Z",
+  "scannedAt": "2026-09-01T08:08:25.238Z",
   "metadata": {
     "name": "Stanford-CME295-Transformers-and-LLMs-visualization",
     "fullName": "jamesEmerson112/Stanford-CME295-Transformers-and-LLMs-visualization",
@@ -27,7 +27,7 @@
       "Code": 4149,
       "Comment": 162,
       "Blank": 429,
-      "Complexity": 229,
+      "Complexity": 340,
       "Count": 20,
       "WeightedComplexity": 0,
       "Files": [],
@@ -42,7 +42,7 @@
       "Code": 2939,
       "Comment": 73,
       "Blank": 520,
-      "Complexity": 0,
+      "Complexity": 8,
       "Count": 5,
       "WeightedComplexity": 0,
       "Files": [],
@@ -134,7 +134,7 @@
       "totalBytes": 303531,
       "totalFiles": 37,
       "totalLanguages": 7,
-      "totalComplexity": 234,
+      "totalComplexity": 353,
       "primaryLanguage": "JSX",
       "primaryLanguagePercent": 42.7
     },
@@ -147,7 +147,7 @@
         "blanks": 429,
         "bytes": 174353,
         "files": 20,
-        "complexity": 229,
+        "complexity": 340,
         "percentOfLines": 43.2,
         "percentOfCode": 42.7,
         "percentOfBytes": 57.4
@@ -160,7 +160,7 @@
         "blanks": 520,
         "bytes": 56144,
         "files": 5,
-        "complexity": 0,
+        "complexity": 8,
         "percentOfLines": 32.2,
         "percentOfCode": 30.2,
         "percentOfBytes": 18.5

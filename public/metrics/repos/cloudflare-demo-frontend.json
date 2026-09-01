@@ -1,6 +1,6 @@
 {
   "id": "cloudflare-demo-frontend",
-  "scannedAt": "2026-08-01T04:08:02.737Z",
+  "scannedAt": "2026-09-01T08:09:06.347Z",
   "metadata": {
     "name": "Cloudflare-Demo-Frontend",
     "fullName": "jamesEmerson112/Cloudflare-Demo-Frontend",
@@ -27,7 +27,7 @@
       "Code": 136,
       "Comment": 5,
       "Blank": 21,
-      "Complexity": 2,
+      "Complexity": 4,
       "Count": 6,
       "WeightedComplexity": 0,
       "Files": [],
@@ -119,7 +119,7 @@
       "totalBytes": 9888,
       "totalFiles": 16,
       "totalLanguages": 6,
-      "totalComplexity": 2,
+      "totalComplexity": 4,
       "primaryLanguage": "JavaScript",
       "primaryLanguagePercent": 63.6
     },
@@ -132,7 +132,7 @@
         "blanks": 21,
         "bytes": 4132,
         "files": 6,
-        "complexity": 2,
+        "complexity": 4,
         "percentOfLines": 63.3,
         "percentOfCode": 63.6,
         "percentOfBytes": 41.8

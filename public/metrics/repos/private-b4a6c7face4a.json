@@ -1,6 +1,6 @@
 {
   "id": "private-b4a6c7face4a",
-  "scannedAt": "2026-08-01T04:07:43.888Z",
+  "scannedAt": "2026-09-01T08:08:47.821Z",
   "metadata": {
     "name": "Private Project 32",
     "fullName": null,
@@ -27,7 +27,7 @@
       "Code": 13659,
       "Comment": 2468,
       "Blank": 2380,
-      "Complexity": 3064,
+      "Complexity": 3291,
       "Count": 10,
       "WeightedComplexity": 0,
       "Files": [],
@@ -72,7 +72,7 @@
       "Code": 77,
       "Comment": 15,
       "Blank": 24,
-      "Complexity": 1,
+      "Complexity": 7,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -104,7 +104,7 @@
       "totalBytes": 622113,
       "totalFiles": 17,
       "totalLanguages": 5,
-      "totalComplexity": 3066,
+      "totalComplexity": 3299,
       "primaryLanguage": "C",
       "primaryLanguagePercent": 96.9
     },
@@ -117,7 +117,7 @@
         "blanks": 2380,
         "bytes": 601797,
         "files": 10,
-        "complexity": 3064,
+        "complexity": 3291,
         "percentOfLines": 96.9,
         "percentOfCode": 96.9,
         "percentOfBytes": 96.7
@@ -156,7 +156,7 @@
         "blanks": 24,
         "bytes": 4273,
         "files": 1,
-        "complexity": 1,
+        "complexity": 7,
         "percentOfLines": 0.6,
         "percentOfCode": 0.5,
         "percentOfBytes": 0.7
