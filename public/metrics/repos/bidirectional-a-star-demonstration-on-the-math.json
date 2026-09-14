@@ -1,22 +1,22 @@
 {
-  "id": "greptile-hackathon",
-  "scannedAt": "2026-09-14T07:46:01.615Z",
+  "id": "bidirectional-a-star-demonstration-on-the-math",
+  "scannedAt": "2026-09-14T07:45:50.595Z",
   "metadata": {
-    "name": "greptile-hackathon",
-    "fullName": "jamesEmerson112/greptile-hackathon",
+    "name": "bidirectional-A-star-demonstration-on-the-math",
+    "fullName": "jamesEmerson112/bidirectional-A-star-demonstration-on-the-math",
     "description": "",
-    "url": "https://github.com/jamesEmerson112/greptile-hackathon",
+    "url": "https://github.com/jamesEmerson112/bidirectional-A-star-demonstration-on-the-math",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-09-07T10:24:19Z",
-    "createdAt": "2026-08-23T04:11:56Z",
+    "lastUpdated": "2026-09-13T22:13:11Z",
+    "createdAt": "2026-09-13T22:13:04Z",
     "stars": 0,
     "language": "Unknown",
     "isPrivate": false,
     "isFork": false,
-    "isArchived": true,
+    "isArchived": false,
     "isAnonymized": false,
-    "sourceRef": "public:jamesemerson112/greptile-hackathon"
+    "sourceRef": "public:jamesemerson112/bidirectional-a-star-demonstration-on-the-math"
   },
   "sccRaw": [
     {
@@ -36,7 +36,7 @@
     },
     {
       "Name": "Markdown",
-      "Bytes": 22,
+      "Bytes": 50,
       "CodeBytes": 0,
       "Lines": 2,
       "Code": 1,
@@ -56,7 +56,7 @@
       "totalCode": 18,
       "totalComments": 0,
       "totalBlanks": 5,
-      "totalBytes": 1094,
+      "totalBytes": 1122,
       "totalFiles": 2,
       "totalLanguages": 2,
       "totalComplexity": 0,
@@ -75,7 +75,7 @@
         "complexity": 0,
         "percentOfLines": 91.3,
         "percentOfCode": 94.4,
-        "percentOfBytes": 98
+        "percentOfBytes": 95.5
       },
       {
         "name": "Markdown",
@@ -83,12 +83,12 @@
         "code": 1,
         "comments": 0,
         "blanks": 1,
-        "bytes": 22,
+        "bytes": 50,
         "files": 1,
         "complexity": 0,
         "percentOfLines": 8.7,
         "percentOfCode": 5.6,
-        "percentOfBytes": 2
+        "percentOfBytes": 4.5
       }
     ],
     "projectTags": [],

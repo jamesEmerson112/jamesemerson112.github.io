@@ -1,6 +1,6 @@
 {
   "id": "audio-language-model-aka-your-babe",
-  "scannedAt": "2026-09-01T08:08:26.318Z",
+  "scannedAt": "2026-09-14T07:46:02.296Z",
   "metadata": {
     "name": "Audio-Language-Model-aka-Your-Babe",
     "fullName": "jamesEmerson112/Audio-Language-Model-aka-Your-Babe",
@@ -8,13 +8,13 @@
     "url": "https://github.com/jamesEmerson112/Audio-Language-Model-aka-Your-Babe",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2025-12-28T19:22:09Z",
+    "lastUpdated": "2026-09-07T10:24:18Z",
     "createdAt": "2025-12-28T05:54:51Z",
     "stars": 0,
     "language": "Cuda",
     "isPrivate": false,
     "isFork": false,
-    "isArchived": false,
+    "isArchived": true,
     "isAnonymized": false,
     "sourceRef": "public:jamesemerson112/audio-language-model-aka-your-babe"
   },
@@ -72,7 +72,7 @@
       "Code": 361,
       "Comment": 123,
       "Blank": 92,
-      "Complexity": 29,
+      "Complexity": 28,
       "Count": 11,
       "WeightedComplexity": 0,
       "Files": [],
@@ -224,7 +224,7 @@
       "totalBytes": 1239479,
       "totalFiles": 101,
       "totalLanguages": 13,
-      "totalComplexity": 3294,
+      "totalComplexity": 3293,
       "primaryLanguage": "Cuda",
       "primaryLanguagePercent": 62.3
     },
@@ -328,7 +328,7 @@
         "blanks": 92,
         "bytes": 20042,
         "files": 11,
-        "complexity": 29,
+        "complexity": 28,
         "percentOfLines": 2,
         "percentOfCode": 1.8,
         "percentOfBytes": 1.6

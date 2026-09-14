@@ -1,6 +1,6 @@
 {
   "id": "las-vegas-hackathon-august-12",
-  "scannedAt": "2026-09-01T08:08:44.049Z",
+  "scannedAt": "2026-09-14T07:45:59.500Z",
   "metadata": {
     "name": "las-vegas-hackathon-august-12",
     "fullName": "jamesEmerson112/las-vegas-hackathon-august-12",
@@ -8,13 +8,13 @@
     "url": "https://github.com/jamesEmerson112/las-vegas-hackathon-august-12",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2025-08-13T03:31:51Z",
+    "lastUpdated": "2026-09-07T10:24:23Z",
     "createdAt": "2025-08-13T01:13:50Z",
     "stars": 0,
     "language": "Python",
     "isPrivate": false,
     "isFork": false,
-    "isArchived": false,
+    "isArchived": true,
     "isAnonymized": false,
     "sourceRef": "public:jamesemerson112/las-vegas-hackathon-august-12"
   },

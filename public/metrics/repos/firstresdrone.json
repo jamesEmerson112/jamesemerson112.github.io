@@ -1,6 +1,6 @@
 {
   "id": "firstresdrone",
-  "scannedAt": "2026-09-01T08:08:03.988Z",
+  "scannedAt": "2026-09-14T07:46:01.063Z",
   "metadata": {
     "name": "FirstResDrone",
     "fullName": "jamesEmerson112/FirstResDrone",
@@ -8,13 +8,13 @@
     "url": "https://github.com/jamesEmerson112/FirstResDrone",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-05-08T19:37:01Z",
+    "lastUpdated": "2026-09-07T10:24:20Z",
     "createdAt": "2026-05-08T19:36:53Z",
     "stars": 0,
     "language": "Unknown",
     "isPrivate": false,
     "isFork": false,
-    "isArchived": false,
+    "isArchived": true,
     "isAnonymized": false,
     "sourceRef": "public:jamesemerson112/firstresdrone"
   },

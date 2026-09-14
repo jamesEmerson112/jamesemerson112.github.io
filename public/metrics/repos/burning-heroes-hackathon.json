@@ -1,6 +1,6 @@
 {
   "id": "burning-heroes-hackathon",
-  "scannedAt": "2026-09-01T08:08:38.566Z",
+  "scannedAt": "2026-09-14T07:46:00.049Z",
   "metadata": {
     "name": "Burning-Heroes-hackathon",
     "fullName": "jamesEmerson112/Burning-Heroes-hackathon",
@@ -8,13 +8,13 @@
     "url": "https://github.com/jamesEmerson112/Burning-Heroes-hackathon",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2025-10-05T17:31:40Z",
+    "lastUpdated": "2026-09-07T10:24:21Z",
     "createdAt": "2025-10-04T18:16:55Z",
     "stars": 0,
     "language": "Python",
     "isPrivate": false,
     "isFork": false,
-    "isArchived": false,
+    "isArchived": true,
     "isAnonymized": false,
     "sourceRef": "public:jamesemerson112/burning-heroes-hackathon"
   },
@@ -147,7 +147,7 @@
       "Code": 7,
       "Comment": 2,
       "Blank": 3,
-      "Complexity": 1,
+      "Complexity": 0,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -164,7 +164,7 @@
       "totalBytes": 333045,
       "totalFiles": 34,
       "totalLanguages": 9,
-      "totalComplexity": 116,
+      "totalComplexity": 115,
       "primaryLanguage": "JSON",
       "primaryLanguagePercent": 36.6
     },
@@ -281,7 +281,7 @@
         "blanks": 3,
         "bytes": 226,
         "files": 1,
-        "complexity": 1,
+        "complexity": 0,
         "percentOfLines": 0.2,
         "percentOfCode": 0.1,
         "percentOfBytes": 0.1

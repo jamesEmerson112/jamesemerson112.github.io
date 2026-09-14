@@ -1,6 +1,6 @@
 {
   "id": "cs6750-medium-prototype",
-  "scannedAt": "2026-09-01T08:09:01.566Z",
+  "scannedAt": "2026-09-14T07:45:58.816Z",
   "metadata": {
     "name": "Cs6750-medium-prototype",
     "fullName": "jamesEmerson112/Cs6750-medium-prototype",
@@ -8,13 +8,13 @@
     "url": "https://github.com/jamesEmerson112/Cs6750-medium-prototype",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2025-04-18T23:25:34Z",
+    "lastUpdated": "2026-09-07T10:24:24Z",
     "createdAt": "2025-04-17T04:56:52Z",
     "stars": 0,
     "language": "HTML",
     "isPrivate": false,
     "isFork": false,
-    "isArchived": false,
+    "isArchived": true,
     "isAnonymized": false,
     "sourceRef": "public:jamesemerson112/cs6750-medium-prototype"
   },

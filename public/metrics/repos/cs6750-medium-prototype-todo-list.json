@@ -1,6 +1,6 @@
 {
   "id": "cs6750-medium-prototype-todo-list",
-  "scannedAt": "2026-09-01T08:09:01.250Z",
+  "scannedAt": "2026-09-14T07:45:58.090Z",
   "metadata": {
     "name": "Cs6750-medium-prototype-todo-list",
     "fullName": "jamesEmerson112/Cs6750-medium-prototype-todo-list",
@@ -8,13 +8,13 @@
     "url": "https://github.com/jamesEmerson112/Cs6750-medium-prototype-todo-list",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2025-04-19T01:04:42Z",
+    "lastUpdated": "2026-09-07T10:24:24Z",
     "createdAt": "2025-04-18T23:57:03Z",
     "stars": 0,
     "language": "HTML",
     "isPrivate": false,
     "isFork": false,
-    "isArchived": false,
+    "isArchived": true,
     "isAnonymized": false,
     "sourceRef": "public:jamesemerson112/cs6750-medium-prototype-todo-list"
   },
