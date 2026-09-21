@@ -1,6 +1,6 @@
 {
   "id": "wire-pod-rs",
-  "scannedAt": "2026-09-14T07:45:55.551Z",
+  "scannedAt": "2026-09-21T07:49:44.265Z",
   "metadata": {
     "name": "wire-pod-rs",
     "fullName": "jamesEmerson112/wire-pod-rs",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/wire-pod-rs",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-09-10T00:18:52Z",
+    "lastUpdated": "2026-09-20T23:06:24Z",
     "createdAt": "2026-09-08T07:34:50Z",
     "stars": 0,
     "language": "Rust",
@@ -21,14 +21,29 @@
   "sccRaw": [
     {
       "Name": "Rust",
-      "Bytes": 603970,
+      "Bytes": 2384650,
       "CodeBytes": 0,
-      "Lines": 16092,
-      "Code": 10584,
-      "Comment": 3924,
-      "Blank": 1584,
-      "Complexity": 581,
-      "Count": 83,
+      "Lines": 61534,
+      "Code": 41621,
+      "Comment": 14627,
+      "Blank": 5286,
+      "Complexity": 3340,
+      "Count": 187,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 473754,
+      "CodeBytes": 0,
+      "Lines": 6179,
+      "Code": 4848,
+      "Comment": 0,
+      "Blank": 1331,
+      "Complexity": 0,
+      "Count": 32,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -36,14 +51,29 @@
     },
     {
       "Name": "TOML",
-      "Bytes": 10314,
+      "Bytes": 18113,
       "CodeBytes": 0,
-      "Lines": 312,
-      "Code": 232,
-      "Comment": 59,
-      "Blank": 21,
+      "Lines": 521,
+      "Code": 384,
+      "Comment": 103,
+      "Blank": 34,
       "Complexity": 0,
       "Count": 21,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 133495,
+      "CodeBytes": 0,
+      "Lines": 3628,
+      "Code": 3628,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 17,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -80,45 +110,45 @@
       "ULOC": 0
     },
     {
-      "Name": "JSON",
-      "Bytes": 127416,
+      "Name": "HTML",
+      "Bytes": 238343,
       "CodeBytes": 0,
-      "Lines": 3626,
-      "Code": 3626,
+      "Lines": 3133,
+      "Code": 2825,
+      "Comment": 18,
+      "Blank": 290,
+      "Complexity": 0,
+      "Count": 7,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Go",
+      "Bytes": 124024,
+      "CodeBytes": 0,
+      "Lines": 2981,
+      "Code": 1675,
+      "Comment": 1064,
+      "Blank": 242,
+      "Complexity": 197,
+      "Count": 4,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 69479,
+      "CodeBytes": 0,
+      "Lines": 710,
+      "Code": 710,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
-      "Count": 15,
-      "WeightedComplexity": 0,
-      "Files": [],
-      "LineLength": null,
-      "ULOC": 0
-    },
-    {
-      "Name": "HTML",
-      "Bytes": 68576,
-      "CodeBytes": 0,
-      "Lines": 1386,
-      "Code": 1283,
-      "Comment": 18,
-      "Blank": 85,
-      "Complexity": 0,
-      "Count": 6,
-      "WeightedComplexity": 0,
-      "Files": [],
-      "LineLength": null,
-      "ULOC": 0
-    },
-    {
-      "Name": "Markdown",
-      "Bytes": 30490,
-      "CodeBytes": 0,
-      "Lines": 445,
-      "Code": 339,
-      "Comment": 0,
-      "Blank": 106,
-      "Complexity": 0,
-      "Count": 6,
+      "Count": 4,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -172,43 +202,56 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 33299,
-      "totalCode": 24425,
-      "totalComments": 5596,
-      "totalBlanks": 3278,
-      "totalBytes": 1209207,
-      "totalFiles": 170,
-      "totalLanguages": 10,
-      "totalComplexity": 1411,
+      "totalLines": 90124,
+      "totalCode": 64052,
+      "totalComments": 17407,
+      "totalBlanks": 8665,
+      "totalBytes": 3810299,
+      "totalFiles": 311,
+      "totalLanguages": 12,
+      "totalComplexity": 4367,
       "primaryLanguage": "Rust",
-      "primaryLanguagePercent": 43.3
+      "primaryLanguagePercent": 65
     },
     "languages": [
       {
         "name": "Rust",
-        "lines": 16092,
-        "code": 10584,
-        "comments": 3924,
-        "blanks": 1584,
-        "bytes": 603970,
-        "files": 83,
-        "complexity": 581,
-        "percentOfLines": 48.3,
-        "percentOfCode": 43.3,
-        "percentOfBytes": 49.9
+        "lines": 61534,
+        "code": 41621,
+        "comments": 14627,
+        "blanks": 5286,
+        "bytes": 2384650,
+        "files": 187,
+        "complexity": 3340,
+        "percentOfLines": 68.3,
+        "percentOfCode": 65,
+        "percentOfBytes": 62.6
+      },
+      {
+        "name": "Markdown",
+        "lines": 6179,
+        "code": 4848,
+        "comments": 0,
+        "blanks": 1331,
+        "bytes": 473754,
+        "files": 32,
+        "complexity": 0,
+        "percentOfLines": 6.9,
+        "percentOfCode": 7.6,
+        "percentOfBytes": 12.4
       },
       {
         "name": "JSON",
-        "lines": 3626,
-        "code": 3626,
+        "lines": 3628,
+        "code": 3628,
         "comments": 0,
         "blanks": 0,
-        "bytes": 127416,
-        "files": 15,
+        "bytes": 133495,
+        "files": 17,
         "complexity": 0,
-        "percentOfLines": 10.9,
-        "percentOfCode": 14.8,
-        "percentOfBytes": 10.5
+        "percentOfLines": 4,
+        "percentOfCode": 5.7,
+        "percentOfBytes": 3.5
       },
       {
         "name": "JavaScript",
@@ -219,9 +262,22 @@
         "bytes": 168627,
         "files": 17,
         "complexity": 814,
-        "percentOfLines": 12.5,
-        "percentOfCode": 14.1,
-        "percentOfBytes": 13.9
+        "percentOfLines": 4.6,
+        "percentOfCode": 5.4,
+        "percentOfBytes": 4.4
+      },
+      {
+        "name": "HTML",
+        "lines": 3133,
+        "code": 2825,
+        "comments": 18,
+        "blanks": 290,
+        "bytes": 238343,
+        "files": 7,
+        "complexity": 0,
+        "percentOfLines": 3.5,
+        "percentOfCode": 4.4,
+        "percentOfBytes": 6.3
       },
       {
         "name": "Protocol Buffers",
@@ -232,9 +288,9 @@
         "bytes": 134100,
         "files": 17,
         "complexity": 0,
-        "percentOfLines": 13,
-        "percentOfCode": 10.6,
-        "percentOfBytes": 11.1
+        "percentOfLines": 4.8,
+        "percentOfCode": 4.1,
+        "percentOfBytes": 3.5
       },
       {
         "name": "CSS",
@@ -245,35 +301,48 @@
         "bytes": 51468,
         "files": 2,
         "complexity": 0,
-        "percentOfLines": 7.6,
-        "percentOfCode": 8.3,
-        "percentOfBytes": 4.3
+        "percentOfLines": 2.8,
+        "percentOfCode": 3.2,
+        "percentOfBytes": 1.4
       },
       {
-        "name": "HTML",
-        "lines": 1386,
-        "code": 1283,
-        "comments": 18,
-        "blanks": 85,
-        "bytes": 68576,
-        "files": 6,
-        "complexity": 0,
-        "percentOfLines": 4.2,
-        "percentOfCode": 5.3,
-        "percentOfBytes": 5.7
+        "name": "Go",
+        "lines": 2981,
+        "code": 1675,
+        "comments": 1064,
+        "blanks": 242,
+        "bytes": 124024,
+        "files": 4,
+        "complexity": 197,
+        "percentOfLines": 3.3,
+        "percentOfCode": 2.6,
+        "percentOfBytes": 3.3
       },
       {
-        "name": "Markdown",
-        "lines": 445,
-        "code": 339,
+        "name": "Plain Text",
+        "lines": 710,
+        "code": 710,
         "comments": 0,
-        "blanks": 106,
-        "bytes": 30490,
-        "files": 6,
+        "blanks": 0,
+        "bytes": 69479,
+        "files": 4,
         "complexity": 0,
-        "percentOfLines": 1.3,
-        "percentOfCode": 1.4,
-        "percentOfBytes": 2.5
+        "percentOfLines": 0.8,
+        "percentOfCode": 1.1,
+        "percentOfBytes": 1.8
+      },
+      {
+        "name": "TOML",
+        "lines": 521,
+        "code": 384,
+        "comments": 103,
+        "blanks": 34,
+        "bytes": 18113,
+        "files": 21,
+        "complexity": 0,
+        "percentOfLines": 0.6,
+        "percentOfCode": 0.6,
+        "percentOfBytes": 0.5
       },
       {
         "name": "Shell",
@@ -284,22 +353,9 @@
         "bytes": 13859,
         "files": 2,
         "complexity": 16,
-        "percentOfLines": 1.2,
-        "percentOfCode": 1.1,
-        "percentOfBytes": 1.1
-      },
-      {
-        "name": "TOML",
-        "lines": 312,
-        "code": 232,
-        "comments": 59,
-        "blanks": 21,
-        "bytes": 10314,
-        "files": 21,
-        "complexity": 0,
-        "percentOfLines": 0.9,
-        "percentOfCode": 0.9,
-        "percentOfBytes": 0.9
+        "percentOfLines": 0.4,
+        "percentOfCode": 0.4,
+        "percentOfBytes": 0.4
       },
       {
         "name": "YAML",
@@ -310,38 +366,38 @@
         "bytes": 387,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 0.1,
-        "percentOfCode": 0.1,
+        "percentOfLines": 0,
+        "percentOfCode": 0,
         "percentOfBytes": 0
       }
     ],
     "projectTags": [
       {
         "label": "Backend",
-        "confidence": 0.61
+        "confidence": 0.8
       },
       {
-        "label": "Web",
-        "confidence": 0.39
+        "label": "DevOps",
+        "confidence": 0.2
       }
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 24.425,
-        "effort": 68.78,
-        "time": 12.48,
-        "people": 5.51,
-        "cost": 322594,
+        "kloc": 64.052,
+        "effort": 189.27,
+        "time": 18.33,
+        "people": 10.32,
+        "cost": 887748,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 17.54,
-        "time": 7.42,
-        "people": 2.36,
-        "cost": 82262,
+        "effort": 48.26,
+        "time": 10.91,
+        "people": 4.42,
+        "cost": 226376,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -361,33 +417,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 68.78,
-            "weeks": 297.8,
-            "days": 1492,
-            "cost": 322594,
+            "months": 189.27,
+            "weeks": 819.5,
+            "days": 4107,
+            "cost": 887748,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 12.48,
-            "hoursPerWeek": 220.5,
-            "totalHours": 11898,
-            "cost": 322594,
+            "months": 18.33,
+            "hoursPerWeek": 413,
+            "totalHours": 32743,
+            "cost": 887748,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 17.54,
-            "weeks": 75.9,
-            "days": 381,
-            "cost": 82262,
+            "months": 48.26,
+            "weeks": 209,
+            "days": 1047,
+            "cost": 226376,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 7.42,
-            "hoursPerWeek": 94.5,
-            "totalHours": 3034,
-            "cost": 82262,
+            "months": 10.91,
+            "hoursPerWeek": 177,
+            "totalHours": 8349,
+            "cost": 226376,
             "description": "AI-assisted part-time development"
           }
         }
