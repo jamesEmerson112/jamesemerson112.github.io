@@ -1,6 +1,6 @@
 {
   "id": "sorting-visualizer",
-  "scannedAt": "2026-09-01T08:09:11.676Z",
+  "scannedAt": "2026-10-01T09:39:10.858Z",
   "metadata": {
     "name": "sorting-visualizer",
     "fullName": "jamesEmerson112/sorting-visualizer",
@@ -87,7 +87,7 @@
       "Code": 10,
       "Comment": 0,
       "Blank": 9,
-      "Complexity": 1,
+      "Complexity": 0,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -179,7 +179,7 @@
       "totalBytes": 32816,
       "totalFiles": 19,
       "totalLanguages": 10,
-      "totalComplexity": 23,
+      "totalComplexity": 22,
       "primaryLanguage": "Terraform",
       "primaryLanguagePercent": 36.9
     },
@@ -283,7 +283,7 @@
         "blanks": 9,
         "bytes": 292,
         "files": 1,
-        "complexity": 1,
+        "complexity": 0,
         "percentOfLines": 1.8,
         "percentOfCode": 1.4,
         "percentOfBytes": 0.9

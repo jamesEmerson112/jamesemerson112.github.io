@@ -1,6 +1,6 @@
 {
   "id": "weddingai",
-  "scannedAt": "2026-09-01T08:07:53.167Z",
+  "scannedAt": "2026-10-01T09:37:24.718Z",
   "metadata": {
     "name": "WeddingAI",
     "fullName": "jamesEmerson112/WeddingAI",
@@ -114,10 +114,10 @@
       "Bytes": 12212,
       "CodeBytes": 0,
       "Lines": 288,
-      "Code": 163,
+      "Code": 164,
       "Comment": 83,
-      "Blank": 42,
-      "Complexity": 28,
+      "Blank": 41,
+      "Complexity": 26,
       "Count": 3,
       "WeightedComplexity": 0,
       "Files": [],
@@ -278,13 +278,13 @@
   "computed": {
     "summary": {
       "totalLines": 11660,
-      "totalCode": 8822,
+      "totalCode": 8823,
       "totalComments": 1307,
-      "totalBlanks": 1531,
+      "totalBlanks": 1530,
       "totalBytes": 1059747,
       "totalFiles": 91,
       "totalLanguages": 17,
-      "totalComplexity": 535,
+      "totalComplexity": 533,
       "primaryLanguage": "Markdown",
       "primaryLanguagePercent": 34.9
     },
@@ -370,14 +370,14 @@
       {
         "name": "Shell",
         "lines": 288,
-        "code": 163,
+        "code": 164,
         "comments": 83,
-        "blanks": 42,
+        "blanks": 41,
         "bytes": 12212,
         "files": 3,
-        "complexity": 28,
+        "complexity": 26,
         "percentOfLines": 2.5,
-        "percentOfCode": 1.8,
+        "percentOfCode": 1.9,
         "percentOfBytes": 1.2
       },
       {
@@ -523,11 +523,11 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 8.822,
+        "kloc": 8.823,
         "effort": 23.61,
         "time": 8.31,
         "people": 2.84,
-        "cost": 110733,
+        "cost": 110746,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
@@ -537,7 +537,7 @@
         "effort": 6.02,
         "time": 4.95,
         "people": 1.22,
-        "cost": 28237,
+        "cost": 28240,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -560,14 +560,14 @@
             "months": 23.61,
             "weeks": 102.2,
             "days": 512,
-            "cost": 110733,
+            "cost": 110746,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
             "months": 8.31,
             "hoursPerWeek": 113.6,
-            "totalHours": 4084,
-            "cost": 110733,
+            "totalHours": 4085,
+            "cost": 110746,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
@@ -576,14 +576,14 @@
             "months": 6.02,
             "weeks": 26.1,
             "days": 131,
-            "cost": 28237,
+            "cost": 28240,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
             "months": 4.95,
             "hoursPerWeek": 48.7,
-            "totalHours": 1041,
-            "cost": 28237,
+            "totalHours": 1042,
+            "cost": 28240,
             "description": "AI-assisted part-time development"
           }
         }

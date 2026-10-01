@@ -1,6 +1,6 @@
 {
   "id": "dl-team-proposal",
-  "scannedAt": "2026-09-01T08:07:51.100Z",
+  "scannedAt": "2026-10-01T09:37:21.374Z",
   "metadata": {
     "name": "DL-Team-Proposal",
     "fullName": "jamesEmerson112/DL-Team-Proposal",
@@ -84,10 +84,10 @@
       "Bytes": 192156,
       "CodeBytes": 0,
       "Lines": 5573,
-      "Code": 3755,
-      "Comment": 965,
-      "Blank": 853,
-      "Complexity": 617,
+      "Code": 4087,
+      "Comment": 897,
+      "Blank": 589,
+      "Complexity": 118,
       "Count": 36,
       "WeightedComplexity": 0,
       "Files": [],
@@ -143,15 +143,15 @@
   "computed": {
     "summary": {
       "totalLines": 292321,
-      "totalCode": 260479,
-      "totalComments": 5068,
-      "totalBlanks": 26774,
+      "totalCode": 260811,
+      "totalComments": 5000,
+      "totalBlanks": 26510,
       "totalBytes": 13850574,
       "totalFiles": 380,
       "totalLanguages": 8,
-      "totalComplexity": 13056,
+      "totalComplexity": 12557,
       "primaryLanguage": "Plain Text",
-      "primaryLanguagePercent": 74.4
+      "primaryLanguagePercent": 74.3
     },
     "languages": [
       {
@@ -164,7 +164,7 @@
         "files": 164,
         "complexity": 0,
         "percentOfLines": 71.9,
-        "percentOfCode": 74.4,
+        "percentOfCode": 74.3,
         "percentOfBytes": 71.8
       },
       {
@@ -196,14 +196,14 @@
       {
         "name": "Shell",
         "lines": 5573,
-        "code": 3755,
-        "comments": 965,
-        "blanks": 853,
+        "code": 4087,
+        "comments": 897,
+        "blanks": 589,
         "bytes": 192156,
         "files": 36,
-        "complexity": 617,
+        "complexity": 118,
         "percentOfLines": 1.9,
-        "percentOfCode": 1.4,
+        "percentOfCode": 1.6,
         "percentOfBytes": 1.4
       },
       {
@@ -271,21 +271,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 260.479,
-        "effort": 825.61,
-        "time": 32.09,
-        "people": 25.73,
-        "cost": 3872503,
+        "kloc": 260.811,
+        "effort": 826.71,
+        "time": 32.1,
+        "people": 25.75,
+        "cost": 3877685,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 210.53,
-        "time": 19.09,
-        "people": 11.03,
-        "cost": 987488,
+        "effort": 210.81,
+        "time": 19.1,
+        "people": 11.04,
+        "cost": 988810,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -305,33 +305,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 825.61,
-            "weeks": 3574.9,
-            "days": 17916,
-            "cost": 3872503,
+            "months": 826.71,
+            "weeks": 3579.7,
+            "days": 17940,
+            "cost": 3877685,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 32.09,
-            "hoursPerWeek": 1029.2,
-            "totalHours": 142830,
-            "cost": 3872503,
+            "months": 32.1,
+            "hoursPerWeek": 1030.1,
+            "totalHours": 143021,
+            "cost": 3877685,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 210.53,
-            "weeks": 911.6,
-            "days": 4568,
-            "cost": 987488,
+            "months": 210.81,
+            "weeks": 912.8,
+            "days": 4575,
+            "cost": 988810,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 19.09,
-            "hoursPerWeek": 441.1,
-            "totalHours": 36422,
-            "cost": 987488,
+            "months": 19.1,
+            "hoursPerWeek": 441.5,
+            "totalHours": 36470,
+            "cost": 988810,
             "description": "AI-assisted part-time development"
           }
         }

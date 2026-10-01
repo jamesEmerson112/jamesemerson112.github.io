@@ -1,6 +1,6 @@
 {
   "id": "nasa-urine-analysis",
-  "scannedAt": "2026-09-01T08:08:10.190Z",
+  "scannedAt": "2026-10-01T09:37:49.344Z",
   "metadata": {
     "name": "NASA-Urine-Analysis",
     "fullName": "jamesEmerson112/NASA-Urine-Analysis",
@@ -132,7 +132,7 @@
       "Code": 42,
       "Comment": 6,
       "Blank": 12,
-      "Complexity": 13,
+      "Complexity": 10,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -149,7 +149,7 @@
       "totalBytes": 114666,
       "totalFiles": 24,
       "totalLanguages": 8,
-      "totalComplexity": 86,
+      "totalComplexity": 83,
       "primaryLanguage": "Markdown",
       "primaryLanguagePercent": 36
     },
@@ -227,7 +227,7 @@
         "blanks": 12,
         "bytes": 2337,
         "files": 1,
-        "complexity": 13,
+        "complexity": 10,
         "percentOfLines": 2.4,
         "percentOfCode": 2.3,
         "percentOfBytes": 2

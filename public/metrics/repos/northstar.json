@@ -1,6 +1,6 @@
 {
   "id": "northstar",
-  "scannedAt": "2026-09-01T08:08:03.738Z",
+  "scannedAt": "2026-10-01T09:37:41.695Z",
   "metadata": {
     "name": "Northstar",
     "fullName": "jamesEmerson112/Northstar",
@@ -147,7 +147,7 @@
       "Code": 67,
       "Comment": 10,
       "Blank": 13,
-      "Complexity": 17,
+      "Complexity": 9,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -179,7 +179,7 @@
       "totalBytes": 151882,
       "totalFiles": 51,
       "totalLanguages": 10,
-      "totalComplexity": 471,
+      "totalComplexity": 463,
       "primaryLanguage": "Python",
       "primaryLanguagePercent": 64.4
     },
@@ -257,7 +257,7 @@
         "blanks": 13,
         "bytes": 2510,
         "files": 1,
-        "complexity": 17,
+        "complexity": 9,
         "percentOfLines": 2.2,
         "percentOfCode": 2.1,
         "percentOfBytes": 1.7

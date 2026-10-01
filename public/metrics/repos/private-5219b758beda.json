@@ -1,6 +1,6 @@
 {
   "id": "private-5219b758beda",
-  "scannedAt": "2026-09-01T08:08:52.252Z",
+  "scannedAt": "2026-10-01T09:38:43.506Z",
   "metadata": {
     "name": "Private Project 39",
     "fullName": null,
@@ -117,7 +117,7 @@
       "Code": 29,
       "Comment": 8,
       "Blank": 8,
-      "Complexity": 5,
+      "Complexity": 1,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -134,7 +134,7 @@
       "totalBytes": 468198,
       "totalFiles": 29,
       "totalLanguages": 7,
-      "totalComplexity": 32,
+      "totalComplexity": 28,
       "primaryLanguage": "Jupyter",
       "primaryLanguagePercent": 67.1
     },
@@ -212,7 +212,7 @@
         "blanks": 8,
         "bytes": 1289,
         "files": 1,
-        "complexity": 5,
+        "complexity": 1,
         "percentOfLines": 0.3,
         "percentOfCode": 0.2,
         "percentOfBytes": 0.3

@@ -1,6 +1,6 @@
 {
   "id": "raw-squad-simulation",
-  "scannedAt": "2026-09-01T08:08:03.399Z",
+  "scannedAt": "2026-10-01T09:37:40.512Z",
   "metadata": {
     "name": "raw-squad-simulation",
     "fullName": "jamesEmerson112/raw-squad-simulation",
@@ -54,9 +54,9 @@
       "Bytes": 379,
       "CodeBytes": 0,
       "Lines": 17,
-      "Code": 17,
+      "Code": 15,
       "Comment": 0,
-      "Blank": 0,
+      "Blank": 2,
       "Complexity": 0,
       "Count": 1,
       "WeightedComplexity": 0,
@@ -68,15 +68,15 @@
   "computed": {
     "summary": {
       "totalLines": 2784,
-      "totalCode": 2217,
+      "totalCode": 2215,
       "totalComments": 187,
-      "totalBlanks": 380,
+      "totalBlanks": 382,
       "totalBytes": 96677,
       "totalFiles": 24,
       "totalLanguages": 3,
       "totalComplexity": 485,
       "primaryLanguage": "Python",
-      "primaryLanguagePercent": 93.7
+      "primaryLanguagePercent": 93.8
     },
     "languages": [
       {
@@ -89,7 +89,7 @@
         "files": 21,
         "complexity": 485,
         "percentOfLines": 93.4,
-        "percentOfCode": 93.7,
+        "percentOfCode": 93.8,
         "percentOfBytes": 93.7
       },
       {
@@ -102,20 +102,20 @@
         "files": 2,
         "complexity": 0,
         "percentOfLines": 6,
-        "percentOfCode": 5.5,
+        "percentOfCode": 5.6,
         "percentOfBytes": 5.9
       },
       {
         "name": "TOML",
         "lines": 17,
-        "code": 17,
+        "code": 15,
         "comments": 0,
-        "blanks": 0,
+        "blanks": 2,
         "bytes": 379,
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0.6,
-        "percentOfCode": 0.8,
+        "percentOfCode": 0.7,
         "percentOfBytes": 0.4
       }
     ],
@@ -131,11 +131,11 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 2.217,
-        "effort": 5.54,
+        "kloc": 2.215,
+        "effort": 5.53,
         "time": 4.79,
         "people": 1.16,
-        "cost": 25971,
+        "cost": 25946,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
@@ -145,7 +145,7 @@
         "effort": 1.41,
         "time": 2.85,
         "people": 0.5,
-        "cost": 6623,
+        "cost": 6616,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -165,17 +165,17 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 5.54,
+            "months": 5.53,
             "weeks": 24,
             "days": 120,
-            "cost": 25971,
+            "cost": 25946,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
             "months": 4.79,
             "hoursPerWeek": 46.2,
-            "totalHours": 958,
-            "cost": 25971,
+            "totalHours": 957,
+            "cost": 25946,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
@@ -184,14 +184,14 @@
             "months": 1.41,
             "weeks": 6.1,
             "days": 31,
-            "cost": 6623,
+            "cost": 6616,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
             "months": 2.85,
             "hoursPerWeek": 19.8,
             "totalHours": 244,
-            "cost": 6623,
+            "cost": 6616,
             "description": "AI-assisted part-time development"
           }
         }

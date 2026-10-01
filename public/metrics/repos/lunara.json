@@ -1,6 +1,6 @@
 {
   "id": "lunara",
-  "scannedAt": "2026-09-01T08:07:54.379Z",
+  "scannedAt": "2026-10-01T09:37:26.369Z",
   "metadata": {
     "name": "lunara",
     "fullName": "VerisimilitudeX/lunara",
@@ -177,7 +177,7 @@
       "Code": 64,
       "Comment": 13,
       "Blank": 5,
-      "Complexity": 20,
+      "Complexity": 19,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -209,7 +209,7 @@
       "totalBytes": 1364540,
       "totalFiles": 241,
       "totalLanguages": 12,
-      "totalComplexity": 1771,
+      "totalComplexity": 1770,
       "primaryLanguage": "Python",
       "primaryLanguagePercent": 51.7
     },
@@ -300,7 +300,7 @@
         "blanks": 5,
         "bytes": 4853,
         "files": 1,
-        "complexity": 20,
+        "complexity": 19,
         "percentOfLines": 0.3,
         "percentOfCode": 0.3,
         "percentOfBytes": 0.4

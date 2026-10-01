@@ -1,6 +1,6 @@
 {
   "id": "openglassbox-python",
-  "scannedAt": "2026-09-07T07:11:40.425Z",
+  "scannedAt": "2026-10-01T09:37:14.343Z",
   "metadata": {
     "name": "OpenGlassBox-Python",
     "fullName": "jamesEmerson112/OpenGlassBox-Python",
@@ -117,7 +117,7 @@
       "Code": 148,
       "Comment": 0,
       "Blank": 14,
-      "Complexity": 5,
+      "Complexity": 0,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -149,7 +149,7 @@
       "totalBytes": 595704,
       "totalFiles": 87,
       "totalLanguages": 8,
-      "totalComplexity": 1362,
+      "totalComplexity": 1357,
       "primaryLanguage": "Python",
       "primaryLanguagePercent": 73.6
     },
@@ -188,7 +188,7 @@
         "blanks": 14,
         "bytes": 3877,
         "files": 1,
-        "complexity": 5,
+        "complexity": 0,
         "percentOfLines": 1,
         "percentOfCode": 1.5,
         "percentOfBytes": 0.7

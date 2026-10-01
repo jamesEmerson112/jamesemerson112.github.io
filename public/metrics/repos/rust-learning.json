@@ -1,6 +1,6 @@
 {
   "id": "rust-learning",
-  "scannedAt": "2026-09-01T08:07:44.719Z",
+  "scannedAt": "2026-10-01T09:37:17.406Z",
   "metadata": {
     "name": "Rust-learning",
     "fullName": "jamesEmerson112/Rust-learning",
@@ -24,9 +24,9 @@
       "Bytes": 366382,
       "CodeBytes": 0,
       "Lines": 9660,
-      "Code": 7767,
+      "Code": 7769,
       "Comment": 779,
-      "Blank": 1114,
+      "Blank": 1112,
       "Complexity": 545,
       "Count": 254,
       "WeightedComplexity": 0,
@@ -128,9 +128,9 @@
   "computed": {
     "summary": {
       "totalLines": 11535,
-      "totalCode": 9080,
+      "totalCode": 9082,
       "totalComments": 939,
-      "totalBlanks": 1516,
+      "totalBlanks": 1514,
       "totalBytes": 454077,
       "totalFiles": 332,
       "totalLanguages": 7,
@@ -142,9 +142,9 @@
       {
         "name": "Rust",
         "lines": 9660,
-        "code": 7767,
+        "code": 7769,
         "comments": 779,
-        "blanks": 1114,
+        "blanks": 1112,
         "bytes": 366382,
         "files": 254,
         "complexity": 545,
@@ -243,21 +243,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 9.08,
-        "effort": 24.33,
+        "kloc": 9.082,
+        "effort": 24.34,
         "time": 8.41,
         "people": 2.89,
-        "cost": 114135,
+        "cost": 114162,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 6.2,
+        "effort": 6.21,
         "time": 5,
         "people": 1.24,
-        "cost": 29105,
+        "cost": 29111,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -277,33 +277,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 24.33,
+            "months": 24.34,
             "weeks": 105.4,
             "days": 528,
-            "cost": 114135,
+            "cost": 114162,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
             "months": 8.41,
             "hoursPerWeek": 115.8,
-            "totalHours": 4210,
-            "cost": 114135,
+            "totalHours": 4211,
+            "cost": 114162,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 6.2,
+            "months": 6.21,
             "weeks": 26.9,
             "days": 135,
-            "cost": 29105,
+            "cost": 29111,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
             "months": 5,
             "hoursPerWeek": 49.6,
-            "totalHours": 1073,
-            "cost": 29105,
+            "totalHours": 1074,
+            "cost": 29111,
             "description": "AI-assisted part-time development"
           }
         }

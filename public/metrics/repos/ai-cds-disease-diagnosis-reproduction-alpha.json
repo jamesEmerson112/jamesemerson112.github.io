@@ -1,6 +1,6 @@
 {
   "id": "ai-cds-disease-diagnosis-reproduction-alpha",
-  "scannedAt": "2026-09-01T08:07:50.336Z",
+  "scannedAt": "2026-10-01T09:37:20.431Z",
   "metadata": {
     "name": "AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
     "fullName": "jamesEmerson112/AI-CDS-Disease-Diagnosis-Reproduction-Alpha",
@@ -192,7 +192,7 @@
       "Code": 35,
       "Comment": 22,
       "Blank": 4,
-      "Complexity": 8,
+      "Complexity": 7,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -207,7 +207,7 @@
       "Code": 43,
       "Comment": 29,
       "Blank": 4,
-      "Complexity": 1,
+      "Complexity": 0,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -239,7 +239,7 @@
       "totalBytes": 5190070,
       "totalFiles": 169,
       "totalLanguages": 14,
-      "totalComplexity": 5698,
+      "totalComplexity": 5696,
       "primaryLanguage": "Plain Text",
       "primaryLanguagePercent": 52.2
     },
@@ -369,7 +369,7 @@
         "blanks": 4,
         "bytes": 3089,
         "files": 1,
-        "complexity": 1,
+        "complexity": 0,
         "percentOfLines": 0.1,
         "percentOfCode": 0.1,
         "percentOfBytes": 0.1
@@ -382,7 +382,7 @@
         "blanks": 4,
         "bytes": 3068,
         "files": 1,
-        "complexity": 8,
+        "complexity": 7,
         "percentOfLines": 0.1,
         "percentOfCode": 0,
         "percentOfBytes": 0.1

@@ -1,6 +1,6 @@
 {
   "id": "sound-project-alpha",
-  "scannedAt": "2026-09-01T08:08:26.580Z",
+  "scannedAt": "2026-10-01T09:38:07.708Z",
   "metadata": {
     "name": "sound-project-alpha",
     "fullName": "jamesEmerson112/sound-project-alpha",
@@ -72,7 +72,7 @@
       "Code": 58,
       "Comment": 0,
       "Blank": 9,
-      "Complexity": 1,
+      "Complexity": 0,
       "Count": 1,
       "WeightedComplexity": 0,
       "Files": [],
@@ -104,7 +104,7 @@
       "totalBytes": 54134,
       "totalFiles": 23,
       "totalLanguages": 5,
-      "totalComplexity": 71,
+      "totalComplexity": 70,
       "primaryLanguage": "Python",
       "primaryLanguagePercent": 80.6
     },
@@ -143,7 +143,7 @@
         "blanks": 9,
         "bytes": 1656,
         "files": 1,
-        "complexity": 1,
+        "complexity": 0,
         "percentOfLines": 3.7,
         "percentOfCode": 5.4,
         "percentOfBytes": 3.1

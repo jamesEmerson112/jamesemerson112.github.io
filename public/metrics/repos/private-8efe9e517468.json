@@ -1,6 +1,6 @@
 {
   "id": "private-8efe9e517468",
-  "scannedAt": "2026-09-01T08:08:19.613Z",
+  "scannedAt": "2026-10-01T09:37:59.492Z",
   "metadata": {
     "name": "Private Project 16",
     "fullName": null,
@@ -87,7 +87,7 @@
       "Code": 137,
       "Comment": 9,
       "Blank": 23,
-      "Complexity": 26,
+      "Complexity": 23,
       "Count": 2,
       "WeightedComplexity": 0,
       "Files": [],
@@ -134,7 +134,7 @@
       "totalBytes": 9335376,
       "totalFiles": 39,
       "totalLanguages": 7,
-      "totalComplexity": 52,
+      "totalComplexity": 49,
       "primaryLanguage": "CSV",
       "primaryLanguagePercent": 40.9
     },
@@ -212,7 +212,7 @@
         "blanks": 23,
         "bytes": 3727,
         "files": 2,
-        "complexity": 26,
+        "complexity": 23,
         "percentOfLines": 0.6,
         "percentOfCode": 0.5,
         "percentOfBytes": 0
