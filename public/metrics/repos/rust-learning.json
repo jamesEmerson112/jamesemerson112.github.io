@@ -1,6 +1,6 @@
 {
   "id": "rust-learning",
-  "scannedAt": "2026-10-01T09:37:17.406Z",
+  "scannedAt": "2026-10-05T08:43:51.619Z",
   "metadata": {
     "name": "Rust-learning",
     "fullName": "jamesEmerson112/Rust-learning",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/Rust-learning",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-08-25T05:03:22Z",
+    "lastUpdated": "2026-10-03T12:18:08Z",
     "createdAt": "2026-03-05T06:11:45Z",
     "stars": 0,
     "language": "Rust",
@@ -21,13 +21,13 @@
   "sccRaw": [
     {
       "Name": "Rust",
-      "Bytes": 366382,
+      "Bytes": 372483,
       "CodeBytes": 0,
-      "Lines": 9660,
-      "Code": 7769,
-      "Comment": 779,
-      "Blank": 1112,
-      "Complexity": 545,
+      "Lines": 9753,
+      "Code": 7786,
+      "Comment": 859,
+      "Blank": 1108,
+      "Complexity": 551,
       "Count": 254,
       "WeightedComplexity": 0,
       "Files": [],
@@ -51,10 +51,10 @@
     },
     {
       "Name": "Markdown",
-      "Bytes": 60130,
+      "Bytes": 56395,
       "CodeBytes": 0,
-      "Lines": 1009,
-      "Code": 748,
+      "Lines": 982,
+      "Code": 721,
       "Comment": 0,
       "Blank": 261,
       "Complexity": 0,
@@ -66,10 +66,10 @@
     },
     {
       "Name": "JSON",
-      "Bytes": 127,
+      "Bytes": 156,
       "CodeBytes": 0,
-      "Lines": 9,
-      "Code": 9,
+      "Lines": 10,
+      "Code": 10,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
@@ -127,43 +127,43 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 11535,
-      "totalCode": 9082,
-      "totalComments": 939,
-      "totalBlanks": 1514,
-      "totalBytes": 454077,
+      "totalLines": 11602,
+      "totalCode": 9073,
+      "totalComments": 1019,
+      "totalBlanks": 1510,
+      "totalBytes": 456472,
       "totalFiles": 332,
       "totalLanguages": 7,
-      "totalComplexity": 641,
+      "totalComplexity": 647,
       "primaryLanguage": "Rust",
-      "primaryLanguagePercent": 85.5
+      "primaryLanguagePercent": 85.8
     },
     "languages": [
       {
         "name": "Rust",
-        "lines": 9660,
-        "code": 7769,
-        "comments": 779,
-        "blanks": 1112,
-        "bytes": 366382,
+        "lines": 9753,
+        "code": 7786,
+        "comments": 859,
+        "blanks": 1108,
+        "bytes": 372483,
         "files": 254,
-        "complexity": 545,
-        "percentOfLines": 83.7,
-        "percentOfCode": 85.5,
-        "percentOfBytes": 80.7
+        "complexity": 551,
+        "percentOfLines": 84.1,
+        "percentOfCode": 85.8,
+        "percentOfBytes": 81.6
       },
       {
         "name": "Markdown",
-        "lines": 1009,
-        "code": 748,
+        "lines": 982,
+        "code": 721,
         "comments": 0,
         "blanks": 261,
-        "bytes": 60130,
+        "bytes": 56395,
         "files": 3,
         "complexity": 0,
-        "percentOfLines": 8.7,
-        "percentOfCode": 8.2,
-        "percentOfBytes": 13.2
+        "percentOfLines": 8.5,
+        "percentOfCode": 7.9,
+        "percentOfBytes": 12.4
       },
       {
         "name": "Python",
@@ -206,11 +206,11 @@
       },
       {
         "name": "JSON",
-        "lines": 9,
-        "code": 9,
+        "lines": 10,
+        "code": 10,
         "comments": 0,
         "blanks": 0,
-        "bytes": 127,
+        "bytes": 156,
         "files": 1,
         "complexity": 0,
         "percentOfLines": 0.1,
@@ -243,21 +243,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 9.082,
-        "effort": 24.34,
+        "kloc": 9.073,
+        "effort": 24.31,
         "time": 8.41,
         "people": 2.89,
-        "cost": 114162,
+        "cost": 114043,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 6.21,
+        "effort": 6.2,
         "time": 5,
         "people": 1.24,
-        "cost": 29111,
+        "cost": 29081,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -269,7 +269,7 @@
         }
       },
       "comparison": {
-        "effortReduction": "75%",
+        "effortReduction": "74%",
         "timeReduction": "41%",
         "costReduction": "75%",
         "speedup": "3.9x"
@@ -277,33 +277,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 24.34,
-            "weeks": 105.4,
+            "months": 24.31,
+            "weeks": 105.3,
             "days": 528,
-            "cost": 114162,
+            "cost": 114043,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
             "months": 8.41,
-            "hoursPerWeek": 115.8,
-            "totalHours": 4211,
-            "cost": 114162,
+            "hoursPerWeek": 115.7,
+            "totalHours": 4206,
+            "cost": 114043,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 6.21,
-            "weeks": 26.9,
+            "months": 6.2,
+            "weeks": 26.8,
             "days": 135,
-            "cost": 29111,
+            "cost": 29081,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
             "months": 5,
             "hoursPerWeek": 49.6,
-            "totalHours": 1074,
-            "cost": 29111,
+            "totalHours": 1073,
+            "cost": 29081,
             "description": "AI-assisted part-time development"
           }
         }

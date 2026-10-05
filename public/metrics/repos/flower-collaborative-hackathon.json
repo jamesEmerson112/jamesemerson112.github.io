@@ -1,6 +1,6 @@
 {
   "id": "flower-collaborative-hackathon",
-  "scannedAt": "2026-10-01T09:36:56.933Z",
+  "scannedAt": "2026-10-05T08:43:56.999Z",
   "metadata": {
     "name": "Flower-Collaborative-Hackathon",
     "fullName": "jamesEmerson112/Flower-Collaborative-Hackathon",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/Flower-Collaborative-Hackathon",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-09-30T03:46:29Z",
+    "lastUpdated": "2026-10-01T20:47:32Z",
     "createdAt": "2026-09-29T17:32:24Z",
     "stars": 0,
     "language": "JavaScript",
@@ -81,10 +81,10 @@
     },
     {
       "Name": "Markdown",
-      "Bytes": 302604,
+      "Bytes": 303057,
       "CodeBytes": 0,
-      "Lines": 3391,
-      "Code": 2586,
+      "Lines": 3392,
+      "Code": 2587,
       "Comment": 0,
       "Blank": 805,
       "Complexity": 0,
@@ -96,14 +96,14 @@
     },
     {
       "Name": "HTML",
-      "Bytes": 248848,
+      "Bytes": 271565,
       "CodeBytes": 0,
-      "Lines": 2403,
-      "Code": 2230,
-      "Comment": 0,
-      "Blank": 173,
+      "Lines": 2795,
+      "Code": 2579,
+      "Comment": 9,
+      "Blank": 207,
       "Complexity": 0,
-      "Count": 8,
+      "Count": 9,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -187,16 +187,16 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 34399,
-      "totalCode": 31961,
-      "totalComments": 590,
-      "totalBlanks": 1848,
-      "totalBytes": 2369185,
-      "totalFiles": 221,
+      "totalLines": 34792,
+      "totalCode": 32311,
+      "totalComments": 599,
+      "totalBlanks": 1882,
+      "totalBytes": 2392355,
+      "totalFiles": 222,
       "totalLanguages": 11,
       "totalComplexity": 1250,
       "primaryLanguage": "JSON",
-      "primaryLanguagePercent": 57.7
+      "primaryLanguagePercent": 57.1
     },
     "languages": [
       {
@@ -208,9 +208,9 @@
         "bytes": 865900,
         "files": 48,
         "complexity": 0,
-        "percentOfLines": 53.6,
-        "percentOfCode": 57.7,
-        "percentOfBytes": 36.5
+        "percentOfLines": 53,
+        "percentOfCode": 57.1,
+        "percentOfBytes": 36.2
       },
       {
         "name": "JavaScript",
@@ -221,8 +221,8 @@
         "bytes": 164016,
         "files": 27,
         "complexity": 272,
-        "percentOfLines": 9.6,
-        "percentOfCode": 9.8,
+        "percentOfLines": 9.5,
+        "percentOfCode": 9.7,
         "percentOfBytes": 6.9
       },
       {
@@ -234,35 +234,35 @@
         "bytes": 186485,
         "files": 42,
         "complexity": 888,
-        "percentOfLines": 11.8,
-        "percentOfCode": 9.8,
-        "percentOfBytes": 7.9
+        "percentOfLines": 11.7,
+        "percentOfCode": 9.7,
+        "percentOfBytes": 7.8
       },
       {
         "name": "Markdown",
-        "lines": 3391,
-        "code": 2586,
+        "lines": 3392,
+        "code": 2587,
         "comments": 0,
         "blanks": 805,
-        "bytes": 302604,
+        "bytes": 303057,
         "files": 25,
         "complexity": 0,
-        "percentOfLines": 9.9,
-        "percentOfCode": 8.1,
-        "percentOfBytes": 12.8
+        "percentOfLines": 9.7,
+        "percentOfCode": 8,
+        "percentOfBytes": 12.7
       },
       {
         "name": "HTML",
-        "lines": 2403,
-        "code": 2230,
-        "comments": 0,
-        "blanks": 173,
-        "bytes": 248848,
-        "files": 8,
+        "lines": 2795,
+        "code": 2579,
+        "comments": 9,
+        "blanks": 207,
+        "bytes": 271565,
+        "files": 9,
         "complexity": 0,
-        "percentOfLines": 7,
-        "percentOfCode": 7,
-        "percentOfBytes": 10.5
+        "percentOfLines": 8,
+        "percentOfCode": 8,
+        "percentOfBytes": 11.4
       },
       {
         "name": "CSV",
@@ -275,7 +275,7 @@
         "complexity": 0,
         "percentOfLines": 2.6,
         "percentOfCode": 2.8,
-        "percentOfBytes": 20.9
+        "percentOfBytes": 20.7
       },
       {
         "name": "License",
@@ -301,7 +301,7 @@
         "complexity": 0,
         "percentOfLines": 1.4,
         "percentOfCode": 1.3,
-        "percentOfBytes": 1.8
+        "percentOfBytes": 1.7
       },
       {
         "name": "Shell",
@@ -314,7 +314,7 @@
         "complexity": 90,
         "percentOfLines": 1.6,
         "percentOfCode": 1.3,
-        "percentOfBytes": 0.9
+        "percentOfBytes": 0.8
       },
       {
         "name": "TOML",
@@ -346,30 +346,30 @@
     "projectTags": [
       {
         "label": "Web",
-        "confidence": 0.66
+        "confidence": 0.67
       },
       {
         "label": "AI/ML",
-        "confidence": 0.34
+        "confidence": 0.33
       }
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 31.961,
-        "effort": 91.21,
-        "time": 13.89,
-        "people": 6.57,
-        "cost": 427840,
+        "kloc": 32.311,
+        "effort": 92.26,
+        "time": 13.95,
+        "people": 6.61,
+        "cost": 432761,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 23.26,
-        "time": 8.27,
-        "people": 2.81,
-        "cost": 109099,
+        "effort": 23.53,
+        "time": 8.3,
+        "people": 2.83,
+        "cost": 110354,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -389,33 +389,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 91.21,
-            "weeks": 395,
-            "days": 1979,
-            "cost": 427840,
+            "months": 92.26,
+            "weeks": 399.5,
+            "days": 2002,
+            "cost": 432761,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 13.89,
-            "hoursPerWeek": 262.6,
-            "totalHours": 15780,
-            "cost": 427840,
+            "months": 13.95,
+            "hoursPerWeek": 264.5,
+            "totalHours": 15962,
+            "cost": 432761,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 23.26,
-            "weeks": 100.7,
-            "days": 505,
-            "cost": 109099,
+            "months": 23.53,
+            "weeks": 101.9,
+            "days": 511,
+            "cost": 110354,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 8.27,
-            "hoursPerWeek": 112.6,
-            "totalHours": 4024,
-            "cost": 109099,
+            "months": 8.3,
+            "hoursPerWeek": 113.4,
+            "totalHours": 4070,
+            "cost": 110354,
             "description": "AI-assisted part-time development"
           }
         }

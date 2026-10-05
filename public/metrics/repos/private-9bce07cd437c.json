@@ -1,0 +1,313 @@
+{
+  "id": "private-9bce07cd437c",
+  "scannedAt": "2026-10-05T08:43:51.051Z",
+  "metadata": {
+    "name": "Private Project 114",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-10-04T08:19:35Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:9bce07cd437c88d8"
+  },
+  "sccRaw": [
+    {
+      "Name": "Python",
+      "Bytes": 897850,
+      "CodeBytes": 0,
+      "Lines": 20156,
+      "Code": 16839,
+      "Comment": 1379,
+      "Blank": 1938,
+      "Complexity": 3762,
+      "Count": 24,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 140474,
+      "CodeBytes": 0,
+      "Lines": 1375,
+      "Code": 979,
+      "Comment": 0,
+      "Blank": 396,
+      "Complexity": 0,
+      "Count": 19,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "JSON",
+      "Bytes": 120244,
+      "CodeBytes": 0,
+      "Lines": 3611,
+      "Code": 3611,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 16,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "CSV",
+      "Bytes": 786,
+      "CodeBytes": 0,
+      "Lines": 5,
+      "Code": 5,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "License",
+      "Bytes": 1072,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 17,
+      "Comment": 0,
+      "Blank": 4,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Plain Text",
+      "Bytes": 4982,
+      "CodeBytes": 0,
+      "Lines": 19,
+      "Code": 10,
+      "Comment": 0,
+      "Blank": 9,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "TOML",
+      "Bytes": 465,
+      "CodeBytes": 0,
+      "Lines": 21,
+      "Code": 19,
+      "Comment": 0,
+      "Blank": 2,
+      "Complexity": 0,
+      "Count": 1,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 25208,
+      "totalCode": 21480,
+      "totalComments": 1379,
+      "totalBlanks": 2349,
+      "totalBytes": 1165873,
+      "totalFiles": 63,
+      "totalLanguages": 7,
+      "totalComplexity": 3762,
+      "primaryLanguage": "Python",
+      "primaryLanguagePercent": 78.4
+    },
+    "languages": [
+      {
+        "name": "Python",
+        "lines": 20156,
+        "code": 16839,
+        "comments": 1379,
+        "blanks": 1938,
+        "bytes": 897850,
+        "files": 24,
+        "complexity": 3762,
+        "percentOfLines": 80,
+        "percentOfCode": 78.4,
+        "percentOfBytes": 77
+      },
+      {
+        "name": "JSON",
+        "lines": 3611,
+        "code": 3611,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 120244,
+        "files": 16,
+        "complexity": 0,
+        "percentOfLines": 14.3,
+        "percentOfCode": 16.8,
+        "percentOfBytes": 10.3
+      },
+      {
+        "name": "Markdown",
+        "lines": 1375,
+        "code": 979,
+        "comments": 0,
+        "blanks": 396,
+        "bytes": 140474,
+        "files": 19,
+        "complexity": 0,
+        "percentOfLines": 5.5,
+        "percentOfCode": 4.6,
+        "percentOfBytes": 12
+      },
+      {
+        "name": "TOML",
+        "lines": 21,
+        "code": 19,
+        "comments": 0,
+        "blanks": 2,
+        "bytes": 465,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0
+      },
+      {
+        "name": "License",
+        "lines": 21,
+        "code": 17,
+        "comments": 0,
+        "blanks": 4,
+        "bytes": 1072,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0.1,
+        "percentOfBytes": 0.1
+      },
+      {
+        "name": "Plain Text",
+        "lines": 19,
+        "code": 10,
+        "comments": 0,
+        "blanks": 9,
+        "bytes": 4982,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0.1,
+        "percentOfCode": 0,
+        "percentOfBytes": 0.4
+      },
+      {
+        "name": "CSV",
+        "lines": 5,
+        "code": 5,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 786,
+        "files": 1,
+        "complexity": 0,
+        "percentOfLines": 0,
+        "percentOfCode": 0,
+        "percentOfBytes": 0.1
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 21.48,
+        "effort": 60.1,
+        "time": 11.86,
+        "people": 5.07,
+        "cost": 281881,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 15.32,
+        "time": 7.05,
+        "people": 2.17,
+        "cost": 71880,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "74%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 60.1,
+            "weeks": 260.2,
+            "days": 1304,
+            "cost": 281881,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 11.86,
+            "hoursPerWeek": 202.8,
+            "totalHours": 10397,
+            "cost": 281881,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 15.32,
+            "weeks": 66.4,
+            "days": 333,
+            "cost": 71880,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 7.05,
+            "hoursPerWeek": 86.9,
+            "totalHours": 2651,
+            "cost": 71880,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}
