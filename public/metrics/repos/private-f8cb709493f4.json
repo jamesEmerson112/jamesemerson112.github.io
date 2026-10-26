@@ -1,6 +1,6 @@
 {
   "id": "private-f8cb709493f4",
-  "scannedAt": "2026-10-12T08:54:54.598Z",
+  "scannedAt": "2026-10-26T07:37:22.704Z",
   "metadata": {
     "name": "Private Project 107",
     "fullName": null,
@@ -8,7 +8,7 @@
     "url": null,
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-10-08T20:21:59Z",
+    "lastUpdated": "2026-10-25T03:05:46Z",
     "createdAt": null,
     "stars": 0,
     "language": "HTML",
@@ -21,29 +21,14 @@
   "sccRaw": [
     {
       "Name": "TypeScript",
-      "Bytes": 2946241,
+      "Bytes": 2788305,
       "CodeBytes": 0,
-      "Lines": 62427,
-      "Code": 47427,
-      "Comment": 9632,
-      "Blank": 5368,
-      "Complexity": 4772,
-      "Count": 347,
-      "WeightedComplexity": 0,
-      "Files": [],
-      "LineLength": null,
-      "ULOC": 0
-    },
-    {
-      "Name": "Markdown",
-      "Bytes": 1222253,
-      "CodeBytes": 0,
-      "Lines": 16670,
-      "Code": 12755,
-      "Comment": 0,
-      "Blank": 3915,
-      "Complexity": 0,
-      "Count": 62,
+      "Lines": 58846,
+      "Code": 44625,
+      "Comment": 9471,
+      "Blank": 4750,
+      "Complexity": 4650,
+      "Count": 324,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -51,14 +36,29 @@
     },
     {
       "Name": "Rust",
-      "Bytes": 1617745,
+      "Bytes": 3306654,
       "CodeBytes": 0,
-      "Lines": 34428,
-      "Code": 23569,
-      "Comment": 8496,
-      "Blank": 2363,
-      "Complexity": 1842,
-      "Count": 41,
+      "Lines": 76520,
+      "Code": 57545,
+      "Comment": 14421,
+      "Blank": 4554,
+      "Complexity": 4069,
+      "Count": 90,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Markdown",
+      "Bytes": 1366308,
+      "CodeBytes": 0,
+      "Lines": 19303,
+      "Code": 14940,
+      "Comment": 0,
+      "Blank": 4363,
+      "Complexity": 0,
+      "Count": 75,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -66,14 +66,14 @@
     },
     {
       "Name": "SQL",
-      "Bytes": 94073,
+      "Bytes": 129109,
       "CodeBytes": 0,
-      "Lines": 1524,
-      "Code": 627,
-      "Comment": 811,
-      "Blank": 86,
-      "Complexity": 104,
-      "Count": 35,
+      "Lines": 2054,
+      "Code": 879,
+      "Comment": 1058,
+      "Blank": 117,
+      "Complexity": 153,
+      "Count": 42,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -81,10 +81,10 @@
     },
     {
       "Name": "JSON",
-      "Bytes": 97913,
+      "Bytes": 106034,
       "CodeBytes": 0,
-      "Lines": 3134,
-      "Code": 3131,
+      "Lines": 3214,
+      "Code": 3211,
       "Comment": 0,
       "Blank": 3,
       "Complexity": 0,
@@ -140,6 +140,21 @@
       "ULOC": 0
     },
     {
+      "Name": "Plain Text",
+      "Bytes": 25939,
+      "CodeBytes": 0,
+      "Lines": 439,
+      "Code": 329,
+      "Comment": 0,
+      "Blank": 110,
+      "Complexity": 0,
+      "Count": 9,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
       "Name": "CSS",
       "Bytes": 45580,
       "CodeBytes": 0,
@@ -186,11 +201,11 @@
     },
     {
       "Name": "TOML",
-      "Bytes": 4457,
+      "Bytes": 5277,
       "CodeBytes": 0,
-      "Lines": 78,
-      "Code": 34,
-      "Comment": 40,
+      "Lines": 91,
+      "Code": 38,
+      "Comment": 49,
       "Blank": 4,
       "Complexity": 0,
       "Count": 2,
@@ -245,21 +260,6 @@
       "ULOC": 0
     },
     {
-      "Name": "Plain Text",
-      "Bytes": 8633,
-      "CodeBytes": 0,
-      "Lines": 59,
-      "Code": 37,
-      "Comment": 0,
-      "Blank": 22,
-      "Complexity": 0,
-      "Count": 1,
-      "WeightedComplexity": 0,
-      "Files": [],
-      "LineLength": null,
-      "ULOC": 0
-    },
-    {
       "Name": "TypeScript Typings",
       "Bytes": 357,
       "CodeBytes": 0,
@@ -277,30 +277,43 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 159382,
-      "totalCode": 126692,
-      "totalComments": 20377,
-      "totalBlanks": 12313,
-      "totalBytes": 21095679,
-      "totalFiles": 551,
+      "totalLines": 201529,
+      "totalCode": 160679,
+      "totalComments": 26397,
+      "totalBlanks": 14453,
+      "totalBytes": 22831990,
+      "totalFiles": 605,
       "totalLanguages": 17,
-      "totalComplexity": 15797,
-      "primaryLanguage": "TypeScript",
-      "primaryLanguagePercent": 37.4
+      "totalComplexity": 17951,
+      "primaryLanguage": "Rust",
+      "primaryLanguagePercent": 35.8
     },
     "languages": [
       {
+        "name": "Rust",
+        "lines": 76520,
+        "code": 57545,
+        "comments": 14421,
+        "blanks": 4554,
+        "bytes": 3306654,
+        "files": 90,
+        "complexity": 4069,
+        "percentOfLines": 38,
+        "percentOfCode": 35.8,
+        "percentOfBytes": 14.5
+      },
+      {
         "name": "TypeScript",
-        "lines": 62427,
-        "code": 47427,
-        "comments": 9632,
-        "blanks": 5368,
-        "bytes": 2946241,
-        "files": 347,
-        "complexity": 4772,
-        "percentOfLines": 39.2,
-        "percentOfCode": 37.4,
-        "percentOfBytes": 14
+        "lines": 58846,
+        "code": 44625,
+        "comments": 9471,
+        "blanks": 4750,
+        "bytes": 2788305,
+        "files": 324,
+        "complexity": 4650,
+        "percentOfLines": 29.2,
+        "percentOfCode": 27.8,
+        "percentOfBytes": 12.2
       },
       {
         "name": "JavaScript",
@@ -311,35 +324,22 @@
         "bytes": 1285870,
         "files": 12,
         "complexity": 9013,
-        "percentOfLines": 19.6,
-        "percentOfCode": 23.7,
-        "percentOfBytes": 6.1
-      },
-      {
-        "name": "Rust",
-        "lines": 34428,
-        "code": 23569,
-        "comments": 8496,
-        "blanks": 2363,
-        "bytes": 1617745,
-        "files": 41,
-        "complexity": 1842,
-        "percentOfLines": 21.6,
-        "percentOfCode": 18.6,
-        "percentOfBytes": 7.7
+        "percentOfLines": 15.5,
+        "percentOfCode": 18.7,
+        "percentOfBytes": 5.6
       },
       {
         "name": "Markdown",
-        "lines": 16670,
-        "code": 12755,
+        "lines": 19303,
+        "code": 14940,
         "comments": 0,
-        "blanks": 3915,
-        "bytes": 1222253,
-        "files": 62,
+        "blanks": 4363,
+        "bytes": 1366308,
+        "files": 75,
         "complexity": 0,
-        "percentOfLines": 10.5,
-        "percentOfCode": 10.1,
-        "percentOfBytes": 5.8
+        "percentOfLines": 9.6,
+        "percentOfCode": 9.3,
+        "percentOfBytes": 6
       },
       {
         "name": "HTML",
@@ -350,35 +350,35 @@
         "bytes": 13686270,
         "files": 13,
         "complexity": 0,
-        "percentOfLines": 5.3,
-        "percentOfCode": 6.4,
-        "percentOfBytes": 64.9
+        "percentOfLines": 4.2,
+        "percentOfCode": 5,
+        "percentOfBytes": 59.9
       },
       {
         "name": "JSON",
-        "lines": 3134,
-        "code": 3131,
+        "lines": 3214,
+        "code": 3211,
         "comments": 0,
         "blanks": 3,
-        "bytes": 97913,
+        "bytes": 106034,
         "files": 16,
         "complexity": 0,
-        "percentOfLines": 2,
-        "percentOfCode": 2.5,
+        "percentOfLines": 1.6,
+        "percentOfCode": 2,
         "percentOfBytes": 0.5
       },
       {
         "name": "SQL",
-        "lines": 1524,
-        "code": 627,
-        "comments": 811,
-        "blanks": 86,
-        "bytes": 94073,
-        "files": 35,
-        "complexity": 104,
+        "lines": 2054,
+        "code": 879,
+        "comments": 1058,
+        "blanks": 117,
+        "bytes": 129109,
+        "files": 42,
+        "complexity": 153,
         "percentOfLines": 1,
         "percentOfCode": 0.5,
-        "percentOfBytes": 0.4
+        "percentOfBytes": 0.6
       },
       {
         "name": "CSS",
@@ -389,9 +389,22 @@
         "bytes": 45580,
         "files": 2,
         "complexity": 0,
-        "percentOfLines": 0.4,
-        "percentOfCode": 0.4,
+        "percentOfLines": 0.3,
+        "percentOfCode": 0.3,
         "percentOfBytes": 0.2
+      },
+      {
+        "name": "Plain Text",
+        "lines": 439,
+        "code": 329,
+        "comments": 0,
+        "blanks": 110,
+        "bytes": 25939,
+        "files": 9,
+        "complexity": 0,
+        "percentOfLines": 0.2,
+        "percentOfCode": 0.2,
+        "percentOfBytes": 0.1
       },
       {
         "name": "Python",
@@ -403,7 +416,7 @@
         "files": 2,
         "complexity": 44,
         "percentOfLines": 0.2,
-        "percentOfCode": 0.2,
+        "percentOfCode": 0.1,
         "percentOfBytes": 0.1
       },
       {
@@ -428,8 +441,8 @@
         "bytes": 2672,
         "files": 2,
         "complexity": 0,
-        "percentOfLines": 0.1,
-        "percentOfCode": 0.1,
+        "percentOfLines": 0,
+        "percentOfCode": 0,
         "percentOfBytes": 0
       },
       {
@@ -442,29 +455,16 @@
         "files": 11,
         "complexity": 0,
         "percentOfLines": 0,
-        "percentOfCode": 0.1,
+        "percentOfCode": 0,
         "percentOfBytes": 0.3
       },
       {
-        "name": "Plain Text",
-        "lines": 59,
-        "code": 37,
-        "comments": 0,
-        "blanks": 22,
-        "bytes": 8633,
-        "files": 1,
-        "complexity": 0,
-        "percentOfLines": 0,
-        "percentOfCode": 0,
-        "percentOfBytes": 0
-      },
-      {
         "name": "TOML",
-        "lines": 78,
-        "code": 34,
-        "comments": 40,
+        "lines": 91,
+        "code": 38,
+        "comments": 49,
         "blanks": 4,
-        "bytes": 4457,
+        "bytes": 5277,
         "files": 2,
         "complexity": 0,
         "percentOfLines": 0,
@@ -513,31 +513,31 @@
     ],
     "projectTags": [
       {
-        "label": "Web",
-        "confidence": 0.56
+        "label": "Backend",
+        "confidence": 0.54
       },
       {
-        "label": "Backend",
-        "confidence": 0.44
+        "label": "Web",
+        "confidence": 0.46
       }
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 126.692,
-        "effort": 387.34,
-        "time": 24.07,
-        "people": 16.09,
-        "cost": 1816841,
+        "kloc": 160.679,
+        "effort": 497.13,
+        "time": 26.46,
+        "people": 18.79,
+        "cost": 2331779,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 98.77,
-        "time": 14.32,
-        "people": 6.9,
-        "cost": 463295,
+        "effort": 126.77,
+        "time": 15.74,
+        "people": 8.05,
+        "cost": 594604,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -557,33 +557,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 387.34,
-            "weeks": 1677.2,
-            "days": 8405,
-            "cost": 1816841,
+            "months": 497.13,
+            "weeks": 2152.6,
+            "days": 10788,
+            "cost": 2331779,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 24.07,
-            "hoursPerWeek": 643.8,
-            "totalHours": 67011,
-            "cost": 1816841,
+            "months": 26.46,
+            "hoursPerWeek": 751.5,
+            "totalHours": 86003,
+            "cost": 2331779,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 98.77,
-            "weeks": 427.7,
-            "days": 2143,
-            "cost": 463295,
+            "months": 126.77,
+            "weeks": 548.9,
+            "days": 2751,
+            "cost": 594604,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 14.32,
-            "hoursPerWeek": 275.9,
-            "totalHours": 17088,
-            "cost": 463295,
+            "months": 15.74,
+            "hoursPerWeek": 322.1,
+            "totalHours": 21931,
+            "cost": 594604,
             "description": "AI-assisted part-time development"
           }
         }

@@ -1,0 +1,173 @@
+{
+  "id": "private-df49a3cc20df",
+  "scannedAt": "2026-10-26T07:37:21.259Z",
+  "metadata": {
+    "name": "Private Project 115",
+    "fullName": null,
+    "description": "Private repository",
+    "url": null,
+    "homepage": null,
+    "topics": [],
+    "lastUpdated": "2026-10-25T05:14:03Z",
+    "createdAt": null,
+    "stars": 0,
+    "language": "Python",
+    "isPrivate": true,
+    "isFork": false,
+    "isArchived": false,
+    "isAnonymized": true,
+    "sourceRef": "private:df49a3cc20dffffb"
+  },
+  "sccRaw": [
+    {
+      "Name": "Plain Text",
+      "Bytes": 2882,
+      "CodeBytes": 0,
+      "Lines": 528,
+      "Code": 528,
+      "Comment": 0,
+      "Blank": 0,
+      "Complexity": 0,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    },
+    {
+      "Name": "Python",
+      "Bytes": 2766,
+      "CodeBytes": 0,
+      "Lines": 62,
+      "Code": 30,
+      "Comment": 22,
+      "Blank": 10,
+      "Complexity": 1,
+      "Count": 2,
+      "WeightedComplexity": 0,
+      "Files": [],
+      "LineLength": null,
+      "ULOC": 0
+    }
+  ],
+  "computed": {
+    "summary": {
+      "totalLines": 590,
+      "totalCode": 558,
+      "totalComments": 22,
+      "totalBlanks": 10,
+      "totalBytes": 5648,
+      "totalFiles": 4,
+      "totalLanguages": 2,
+      "totalComplexity": 1,
+      "primaryLanguage": "Plain Text",
+      "primaryLanguagePercent": 94.6
+    },
+    "languages": [
+      {
+        "name": "Plain Text",
+        "lines": 528,
+        "code": 528,
+        "comments": 0,
+        "blanks": 0,
+        "bytes": 2882,
+        "files": 2,
+        "complexity": 0,
+        "percentOfLines": 89.5,
+        "percentOfCode": 94.6,
+        "percentOfBytes": 51
+      },
+      {
+        "name": "Python",
+        "lines": 62,
+        "code": 30,
+        "comments": 22,
+        "blanks": 10,
+        "bytes": 2766,
+        "files": 2,
+        "complexity": 1,
+        "percentOfLines": 10.5,
+        "percentOfCode": 5.4,
+        "percentOfBytes": 49
+      }
+    ],
+    "projectTags": [
+      {
+        "label": "AI/ML",
+        "confidence": 0.6
+      },
+      {
+        "label": "Data",
+        "confidence": 0.4
+      }
+    ],
+    "cocomo": {
+      "traditional": {
+        "kloc": 0.558,
+        "effort": 1.3,
+        "time": 2.76,
+        "people": 0.47,
+        "cost": 6101,
+        "avgWage": 56286,
+        "model": "organic",
+        "description": "Traditional COCOMO estimate"
+      },
+      "aiAssisted": {
+        "effectiveMultiplier": 0.255,
+        "effort": 0.33,
+        "time": 1.64,
+        "people": 0.2,
+        "cost": 1556,
+        "description": "With AI assistance (~3.9x faster)",
+        "taskBreakdown": {
+          "boilerplate": "20x faster (10% of work)",
+          "implementation": "10x faster (40% of work)",
+          "testing": "3.3x faster (15% of work)",
+          "debugging": "2x faster (15% of work)",
+          "architecture": "1.4x faster (10% of work)",
+          "documentation": "5x faster (10% of work)"
+        }
+      },
+      "comparison": {
+        "effortReduction": "75%",
+        "timeReduction": "41%",
+        "costReduction": "75%",
+        "speedup": "3.9x"
+      },
+      "singleDeveloper": {
+        "traditional": {
+          "fullTime": {
+            "months": 1.3,
+            "weeks": 5.6,
+            "days": 28,
+            "cost": 6101,
+            "description": "Traditional full-time solo development"
+          },
+          "partTime": {
+            "months": 2.76,
+            "hoursPerWeek": 18.8,
+            "totalHours": 225,
+            "cost": 6101,
+            "description": "Traditional part-time to match COCOMO schedule"
+          }
+        },
+        "aiAssisted": {
+          "fullTime": {
+            "months": 0.33,
+            "weeks": 1.4,
+            "days": 7,
+            "cost": 1556,
+            "description": "AI-assisted full-time solo development"
+          },
+          "partTime": {
+            "months": 1.64,
+            "hoursPerWeek": 8.1,
+            "totalHours": 57,
+            "cost": 1556,
+            "description": "AI-assisted part-time development"
+          }
+        }
+      }
+    }
+  }
+}
