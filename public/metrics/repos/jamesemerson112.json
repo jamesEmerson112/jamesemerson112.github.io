@@ -1,6 +1,6 @@
 {
   "id": "jamesemerson112",
-  "scannedAt": "2026-10-26T07:37:20.949Z",
+  "scannedAt": "2026-11-01T09:54:36.776Z",
   "metadata": {
     "name": "jamesEmerson112",
     "fullName": "jamesEmerson112/jamesEmerson112",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/jamesEmerson112",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-10-25T15:29:24Z",
+    "lastUpdated": "2026-10-31T16:45:39Z",
     "createdAt": "2022-12-02T23:47:32Z",
     "stars": 0,
     "language": "Unknown",
@@ -36,10 +36,10 @@
     },
     {
       "Name": "SVG",
-      "Bytes": 151893,
+      "Bytes": 150426,
       "CodeBytes": 0,
-      "Lines": 1319,
-      "Code": 1319,
+      "Lines": 1308,
+      "Code": 1308,
       "Comment": 0,
       "Blank": 0,
       "Complexity": 0,
@@ -67,11 +67,11 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 1467,
-      "totalCode": 1424,
+      "totalLines": 1456,
+      "totalCode": 1413,
       "totalComments": 6,
       "totalBlanks": 37,
-      "totalBytes": 166969,
+      "totalBytes": 165502,
       "totalFiles": 4,
       "totalLanguages": 3,
       "totalComplexity": 0,
@@ -81,16 +81,16 @@
     "languages": [
       {
         "name": "SVG",
-        "lines": 1319,
-        "code": 1319,
+        "lines": 1308,
+        "code": 1308,
         "comments": 0,
         "blanks": 0,
-        "bytes": 151893,
+        "bytes": 150426,
         "files": 1,
         "complexity": 0,
-        "percentOfLines": 89.9,
+        "percentOfLines": 89.8,
         "percentOfCode": 92.6,
-        "percentOfBytes": 91
+        "percentOfBytes": 90.9
       },
       {
         "name": "Markdown",
@@ -127,21 +127,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 1.424,
-        "effort": 3.48,
-        "time": 4.01,
-        "people": 0.87,
-        "cost": 16316,
+        "kloc": 1.413,
+        "effort": 3.45,
+        "time": 4,
+        "people": 0.86,
+        "cost": 16184,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 0.89,
-        "time": 2.39,
+        "effort": 0.88,
+        "time": 2.38,
         "people": 0.37,
-        "cost": 4161,
+        "cost": 4127,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -161,33 +161,33 @@
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 3.48,
-            "weeks": 15.1,
+            "months": 3.45,
+            "weeks": 14.9,
             "days": 75,
-            "cost": 16316,
+            "cost": 16184,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 4.01,
-            "hoursPerWeek": 34.7,
-            "totalHours": 602,
-            "cost": 16316,
+            "months": 4,
+            "hoursPerWeek": 34.5,
+            "totalHours": 597,
+            "cost": 16184,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 0.89,
+            "months": 0.88,
             "weeks": 3.8,
             "days": 19,
-            "cost": 4161,
+            "cost": 4127,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 2.39,
-            "hoursPerWeek": 14.9,
-            "totalHours": 153,
-            "cost": 4161,
+            "months": 2.38,
+            "hoursPerWeek": 14.8,
+            "totalHours": 152,
+            "cost": 4127,
             "description": "AI-assisted part-time development"
           }
         }
