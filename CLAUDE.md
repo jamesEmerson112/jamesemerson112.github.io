@@ -41,7 +41,7 @@ Design: dark-first "Keita Yamada"-style layout — fixed 300px sidebar rail (`la
 - **State**: Svelte stores in `src/stores/`. `portfolioStore.ts` holds portfolio data, filters, sort state, and exposes derived stores (`filteredRepos`, `availableLanguages`, `qualityBaselines`, etc.). `theme.ts` manages dark/light mode with localStorage persistence and system preference detection.
 - **Data loading**: Lazy — triggered by IntersectionObserver (`src/utils/dataPreloader.ts`) when metrics/projects sections approach the viewport. `portfolioStore.ts` fetches from `/metrics/index.json`.
 - **Visualization**: Hand-crafted SVG spider/radar charts (`CategorySpider.svelte`).
-- **Theming**: CSS custom properties in `src/styles/themes.css`, toggled via `data-light` attribute on `<html>`. No CSS framework.
+- **Theming**: CSS custom properties in `src/styles/themes.css`, toggled via `data-light` attribute on `<html>`. No CSS framework. Text tokens in both themes are tuned to WCAG AA (≥4.5:1 for small text on the canvas); check contrast when changing them (axe-core can't see through the neural-field canvas, so verify text over it by hand). The theme toggle uses a View Transition (circular reveal) with an instant fallback.
 - **Security**: CSP meta tag in `index.html`. Blog markdown sanitized with DOMPurify. Blog slugs validated with regex. All external links use `rel="noopener noreferrer"`.
 
 ### Blog
