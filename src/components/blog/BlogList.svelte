@@ -139,6 +139,7 @@
 
 <style>
   .blog-list {
+    min-height: 100vh;
     max-width: 720px;
     margin: 0 auto;
     padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 10vw, 7rem);

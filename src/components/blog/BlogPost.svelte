@@ -43,7 +43,10 @@
   let scrollEl: HTMLElement | null = null;
 
   // A contents rail appears (on wide screens) once a post has enough sections.
-  $: showToc = headings.length >= 3;
+  // Until headings are collected from the DOM, predict from the markdown so
+  // the two-column layout is in place on first paint (no sideways jump).
+  let predictedSections = 0;
+  $: showToc = (headings.length || predictedSections) >= 3;
 
   async function renderEnhancements(token: number) {
     await tick();
@@ -95,12 +98,16 @@
       tags = parseTagList(meta.tags);
       isDraft = String(meta.draft || '').toLowerCase() === 'true';
       readingTime = estimateReadingMinutes(content);
+
       // `math: true` posts get KaTeX; loaded on demand so other pages never pay for it.
       const wantsMath = String(meta.math || '').toLowerCase() === 'true';
       const rendered = wantsMath
         ? await (await import('../../utils/mathMarkdown.ts')).parseMathMarkdown(content)
         : await marked.parse(content);
       if (token !== loadToken) return;
+      // Same update as the content, so the layout switches exactly once.
+      headings = [];
+      predictedSections = (content.replace(/```[\s\S]*?```/g, '').match(/^#{2,3}[ \t]+\S/gm) || []).length;
       html = DOMPurify.sanitize(rendered);
       if (token !== loadToken) return;
       loading = false;
@@ -323,6 +330,8 @@
 
 <style>
   .blog-post {
+    /* Reserve the first screen so the footer never jumps while a post loads. */
+    min-height: 100vh;
     max-width: 700px;
     margin: 0 auto;
     padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 10vw, 8rem);
