@@ -41,11 +41,14 @@
     if (token !== loadToken || !bodyEl) return;
     enhancePostBody(bodyEl);
 
-    if (!bodyEl.querySelector('pre code')) return;
+    // Only fenced blocks with an explicit language get highlighted; unlabeled
+    // blocks (ASCII diagrams, output) stay plain instead of being guessed at.
+    const highlightable = 'pre code[class*="language-"]:not(.language-text):not(.language-plaintext)';
+    if (!bodyEl.querySelector(highlightable)) return;
     const { default: hljs } = await import('../../utils/highlighter.ts');
     // The component may have navigated or unmounted while hljs loaded.
     if (token !== loadToken || !bodyEl) return;
-    for (const block of bodyEl.querySelectorAll<HTMLElement>('pre code')) {
+    for (const block of bodyEl.querySelectorAll<HTMLElement>(highlightable)) {
       if (block.dataset.highlighted) continue;
       hljs.highlightElement(block);
     }
