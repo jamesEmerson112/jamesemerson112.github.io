@@ -118,6 +118,14 @@ body {
   animation: fade-up 1s var(--ease-out-expo) var(--enter-delay, 0ms) backwards;
 }
 
+/* Theme switch view transition: the new snapshot is revealed by a clip-path
+   circle animated from Sidebar.svelte; disable the default cross-fade. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
 @media print {
   .reveal {
     opacity: 1 !important;

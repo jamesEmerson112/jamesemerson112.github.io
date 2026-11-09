@@ -2,6 +2,7 @@
   import { createEventDispatcher, tick } from 'svelte';
   import { NAV_ITEMS } from '../../utils/routing.ts';
   import { darkMode } from '../../stores/theme.ts';
+  import { prefersReducedMotion } from '../../utils/reveal.ts';
 
   export let activeSection = 'home';
   export let isMobile = false;
@@ -12,6 +13,39 @@
 
   function handleNavigate(sectionId: string) {
     dispatch('navigate', sectionId);
+  }
+
+  type ViewTransitionDocument = Document & {
+    startViewTransition?: (update: () => void) => { ready: Promise<void>; finished: Promise<void> };
+  };
+
+  // Theme switch as a circle expanding from the toggle (View Transitions API).
+  // Falls back to an instant toggle where unsupported or under reduced motion.
+  function toggleTheme(event: MouseEvent) {
+    const doc = document as ViewTransitionDocument;
+    if (typeof doc.startViewTransition !== 'function' || prefersReducedMotion()) {
+      darkMode.toggle();
+      return;
+    }
+
+    const rect = (event.currentTarget as HTMLElement).getBoundingClientRect();
+    const fromPointer = event.clientX !== 0 || event.clientY !== 0;
+    const x = fromPointer ? event.clientX : rect.left + rect.width / 2;
+    const y = fromPointer ? event.clientY : rect.top + rect.height / 2;
+    const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+
+    const root = document.documentElement;
+    root.classList.add('theme-switching');
+    const transition = doc.startViewTransition(() => darkMode.toggle());
+    transition.ready
+      .then(() => {
+        root.animate(
+          { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+          { duration: 700, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', pseudoElement: '::view-transition-new(root)' }
+        );
+      })
+      .catch(() => {});
+    transition.finished.finally(() => root.classList.remove('theme-switching'));
   }
 
   // The mobile top bar publishes its real height so the scroll container can
@@ -68,7 +102,7 @@
       type="button"
       data-name="theme-toggle"
       aria-label="Toggle color theme"
-      on:click={() => darkMode.toggle()}
+      on:click={toggleTheme}
     >
       {$darkMode ? '☾ DARK' : '☀ LIGHT'}
     </button>
