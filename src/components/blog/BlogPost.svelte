@@ -237,6 +237,9 @@
           <button class="action-link" type="button" on:click={copyLink} data-name="BlogPostCopyLink">
             {linkCopied ? 'LINK COPIED ✓' : 'COPY LINK'}
           </button>
+          <a class="action-link" href="/blog/feed.xml" target="_blank" rel="noopener noreferrer" data-name="BlogPostRss">
+            RSS
+          </a>
           <button class="action-link" type="button" on:click={goBack} data-name="BlogPostFooterBack">
             ALL POSTS →
           </button>
@@ -920,6 +923,7 @@
   }
 
   .action-link {
+    text-decoration: none;
     background: none;
     border: none;
     padding: 0.4em 0;

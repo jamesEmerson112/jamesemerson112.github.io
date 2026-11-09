@@ -245,10 +245,12 @@
   {#if currentView === 'blog'}
     <main class="single-page-scroll blog-view" data-name="AppBlogScroll">
       <BlogList />
+      <Footer />
     </main>
   {:else if currentView === 'post'}
     <main class="single-page-scroll blog-view" data-name="AppPostScroll">
       <BlogPost slug={blogSlug} />
+      <Footer />
     </main>
   {:else}
     <main
