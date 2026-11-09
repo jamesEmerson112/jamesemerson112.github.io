@@ -156,8 +156,8 @@ function enhanceTables(root: HTMLElement): void {
 
 function enhanceImages(root: HTMLElement): void {
   for (const image of root.querySelectorAll<HTMLImageElement>('img')) {
-    image.loading = 'lazy';
-    image.decoding = 'async';
+    image.setAttribute('loading', 'lazy');
+    image.setAttribute('decoding', 'async');
     const caption = image.getAttribute('title');
     if (!caption || image.closest('figure')) continue;
 
