@@ -442,10 +442,12 @@
       gap: 0.52rem;
     }
 
+    /* Equal columns so the three numbers never run together. */
     .repo-stats {
-      padding: 0.5rem;
-      gap: 0.45rem;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      display: grid;
+      padding: 0.6rem 0.75rem;
+      gap: 0.75rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
     .stat {
