@@ -541,8 +541,10 @@
       padding-top: clamp(4rem, 12vw, 7rem);
     }
 
+    /* Text is left-aligned below 960px, so the block hugs the left edge too. */
     .home-sec {
       padding-top: 0;
+      justify-content: flex-start;
     }
 
     .hero-wrap {
