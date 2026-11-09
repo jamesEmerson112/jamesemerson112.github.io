@@ -169,6 +169,7 @@
     background: var(--surface-overlay);
     backdrop-filter: blur(5px);
     z-index: 100;
+    animation: fade-in 0.22s ease both;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -176,6 +177,7 @@
   }
 
   .detail-panel {
+    animation: panel-in 0.42s var(--ease-out-expo, ease-out) both;
     width: min(1160px, 100%);
     max-height: 92vh;
     overflow: auto;
@@ -395,6 +397,20 @@
 
     .detail-chart {
       order: 2;
+    }
+  }
+
+  @keyframes panel-in {
+    from {
+      opacity: 0;
+      transform: translateY(14px) scale(0.985);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .detail-overlay,
+    .detail-panel {
+      animation: none;
     }
   }
 </style>
