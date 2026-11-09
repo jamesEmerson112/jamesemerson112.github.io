@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { reveal } from '../../utils/reveal.ts';
   import {
     searchTerm,
     languageFilter,
@@ -19,7 +20,7 @@
   }
 </script>
 
-<div class="search-filter" data-name="SearchFilter">
+<div class="search-filter" use:reveal={{ delay: 80 }} data-name="SearchFilter">
   <div class="search-box" data-name="SearchFilterDiv1">
     <span class="search-icon" aria-hidden="true" data-name="SearchFilterSpan2">
       <span class="search-circle" data-name="SearchFilterSpan3"></span>

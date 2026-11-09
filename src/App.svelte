@@ -80,6 +80,13 @@
     });
   }
 
+  function skipToContent() {
+    const main = document.querySelector<HTMLElement>('main.single-page-scroll');
+    if (!main) return;
+    if (!main.hasAttribute('tabindex')) main.setAttribute('tabindex', '-1');
+    main.focus({ preventScroll: true });
+  }
+
   function trackView(id) {
     if (!id || id === lastTrackedView) return;
     lastTrackedView = id;
@@ -227,6 +234,7 @@
 </script>
 
 <PageContainer>
+  <button class="skip-link" type="button" on:click={skipToContent} data-name="AppSkipLink">Skip to content</button>
   <NeuralField />
   <Sidebar
     activeSection={activeSection}
@@ -324,6 +332,34 @@
   :global(body) {
     margin: 0;
     padding: 0;
+  }
+
+  /* Visible only when focused from the keyboard. */
+  .skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 50;
+    padding: 10px 16px;
+    border-radius: 999px;
+    border: 1px solid var(--acc);
+    background: var(--scene-canvas);
+    color: var(--acc);
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+    transform: translateY(-160%);
+    transition: transform 0.25s ease;
+  }
+
+  .skip-link:focus-visible {
+    transform: none;
+    outline: none;
+  }
+
+  .single-page-scroll:focus {
+    outline: none;
   }
 
   .single-page-scroll {

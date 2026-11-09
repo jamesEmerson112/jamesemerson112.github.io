@@ -28,6 +28,16 @@
 
   $: publishedCount = posts.filter((post) => !post.draft).length;
   $: draftCount = posts.length - publishedCount;
+
+  // Tag filter: only offered once there is more than one tag to choose from.
+  let activeTag: string | null = null;
+  $: allTags = [...new Set(posts.flatMap((post) => post.tags || []))].sort((a, b) => a.localeCompare(b));
+  $: if (activeTag && !allTags.includes(activeTag)) activeTag = null;
+  $: visiblePosts = activeTag ? posts.filter((post) => (post.tags || []).includes(activeTag as string)) : posts;
+
+  function toggleTag(tag: string) {
+    activeTag = activeTag === tag ? null : tag;
+  }
 </script>
 
 <div class="blog-list" data-name="BlogList">
@@ -56,8 +66,34 @@
   {:else if posts.length === 0}
     <p class="blog-status" data-name="BlogListEmpty">No posts yet.</p>
   {:else}
+    {#if allTags.length > 1}
+      <div class="tag-filter" role="group" aria-label="Filter posts by tag" data-name="BlogListTagFilter">
+        <button
+          type="button"
+          class="tag-chip"
+          class:active={activeTag === null}
+          aria-pressed={activeTag === null}
+          on:click={() => (activeTag = null)}
+          data-name="BlogListTagAll"
+        >
+          All
+        </button>
+        {#each allTags as tag}
+          <button
+            type="button"
+            class="tag-chip"
+            class:active={activeTag === tag}
+            aria-pressed={activeTag === tag}
+            on:click={() => toggleTag(tag)}
+            data-name="BlogListTagChip"
+          >
+            #{tag}
+          </button>
+        {/each}
+      </div>
+    {/if}
     <ul class="post-list" data-name="BlogPostList">
-      {#each posts as post, index (post.slug)}
+      {#each visiblePosts as post, index (post.slug)}
         <li class="post-item" use:reveal={{ delay: Math.min(index, 4) * 70 }} data-name="BlogPostItem">
           <button
             class="post-link"
@@ -162,6 +198,42 @@
   }
 
   .rss-link:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px;
+  }
+
+  .tag-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: -1rem 0 1.6rem;
+  }
+
+  .tag-chip {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    padding: 5px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--line-1);
+    background: transparent;
+    color: var(--mono-tone-3);
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+  }
+
+  .tag-chip:hover {
+    color: var(--text-primary);
+    border-color: color-mix(in srgb, var(--acc) 50%, transparent);
+  }
+
+  .tag-chip.active {
+    color: var(--acc);
+    border-color: var(--chip-active-border);
+    background: var(--chip-active-bg);
+  }
+
+  .tag-chip:focus-visible {
     outline: 2px solid var(--acc);
     outline-offset: 2px;
   }
