@@ -124,9 +124,10 @@
 :root[data-light="true"] {
   color-scheme: light;
 
-  --acc: #1f8f96;
+  /* Light tokens are tuned for WCAG AA (>=4.5:1) as small text on the canvas. */
+  --acc: #17757b;
   --acc-hover: #12666b;
-  --acc-2: #1f9d6b;
+  --acc-2: #16794f;
   --band-moderate: #5f8385;
 
   --scene-canvas: #f7f7f5;
@@ -138,7 +139,7 @@
 
   --text-primary: #14201f;
   --text-secondary: #4a5555;
-  --text-muted: #6b7676;
+  --text-muted: #5f6a6a;
 
   --line-1: rgba(0, 0, 0, 0.18);
   --line-2: rgba(0, 0, 0, 0.1);
@@ -168,7 +169,7 @@
   --accent-primary-strong: var(--acc-hover);
   --accent-info: #3c6b6d;
   --accent-success: var(--acc-2);
-  --accent-warning: #b97a10;
+  --accent-warning: #8f5e0a;
 
   --nav-idle: #66716f;
   --nav-hover: #2a3231;
@@ -192,7 +193,7 @@
   --radar-spoke: rgba(0, 0, 0, 0.07);
   --radar-label: #5a6665;
 
-  --badge-open: #1f8f96;
+  --badge-open: #17757b;
   --footer-ink: #9aa3a1;
 
   --neural-accent: #2b9aa1;
@@ -203,10 +204,10 @@
 
   /* Code / syntax highlighting */
   --code-bg: rgba(0, 0, 0, 0.04);
-  --code-keyword: #1f8f96;
+  --code-keyword: #17757b;
   --code-string: #177a53;
-  --code-comment: #8a9391;
-  --code-number: #b97a10;
+  --code-comment: #6a7472;
+  --code-number: #8f5e0a;
   --code-title: #12666b;
   --code-attr: #2a3231;
 

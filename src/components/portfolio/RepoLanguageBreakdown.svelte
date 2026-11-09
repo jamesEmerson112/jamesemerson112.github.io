@@ -36,7 +36,8 @@
       {/each}
     </div>
 
-    <div class="table-scroll" data-name="RepoLanguageBreakdownTableScroll">
+    <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
+    <div class="table-scroll" tabindex="0" role="region" aria-label="Language table" data-name="RepoLanguageBreakdownTableScroll">
     <table aria-label="Language composition breakdown" data-name="RepoDetailPanelTable48">
       <thead data-name="RepoDetailPanelThead49">
         <tr data-name="RepoDetailPanelTr50">
@@ -120,6 +121,11 @@
   .table-scroll {
     max-width: 100%;
     overflow-x: auto;
+  }
+
+  .table-scroll:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px;
   }
 
   table {

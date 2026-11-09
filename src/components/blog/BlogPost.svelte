@@ -841,6 +841,15 @@
     --callout: #f87171;
   }
 
+  /* Light theme: deeper hues keep the small callout titles above 4.5:1. */
+  :global([data-light='true']) .post-body :global(blockquote.callout-important) {
+    --callout: #6d4fc2;
+  }
+
+  :global([data-light='true']) .post-body :global(blockquote.callout-caution) {
+    --callout: #b42318;
+  }
+
   .post-body :global(.callout-title) {
     font-family: var(--font-mono);
     font-size: 10px;
