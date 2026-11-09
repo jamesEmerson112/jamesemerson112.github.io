@@ -52,16 +52,23 @@
   }
 
   .summary-grid .label {
-    font-size: 0.7rem;
-    opacity: 0.65;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    margin-bottom: 0.24rem;
+    color: var(--text-muted);
+    margin-bottom: 0.35rem;
   }
 
+  /* Display numerals, as in the home hero stats. */
   .summary-grid .value {
-    font-size: 1rem;
-    font-weight: 700;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.01em;
+    color: var(--scene-text);
+    font-variant-numeric: tabular-nums lining-nums;
   }
 
   .cost-card {
@@ -80,7 +87,9 @@
   }
 
   .row strong {
-    font-weight: 700;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
   }
 
   .row.highlight strong {
@@ -94,15 +103,9 @@
     line-height: 1.4;
   }
 
-  @media (max-width: 820px) {
-    .summary-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-  }
-
   @media (max-width: 560px) {
-    .summary-grid {
-      grid-template-columns: 1fr;
+    .summary-grid .value {
+      font-size: 22px;
     }
   }
 </style>
