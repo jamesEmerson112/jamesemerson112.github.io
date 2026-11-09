@@ -109,6 +109,7 @@ Private repos are included in metrics but anonymized for recruiter-facing displa
 ## Deployment
 - **Vercel git integration**: every push to `main` deploys to production; every PR gets a preview URL. No tokens or CI config needed — connect the repo once at vercel.com/new.
 - Metrics commits made by `scan-metrics.yml` (as `github-actions[bot]`) auto-trigger Vercel production deploys, keeping the live site's metrics fresh.
+- If the production domain changes (e.g. a custom domain on Vercel), update the canonical link, `og:url`, `og:image` and `twitter:image` URLs in `index.html`; the RSS feed follows the canonical link automatically (or set `SITE_URL` at build time).
 - `vercel.json` sets security headers (nosniff, X-Frame-Options, Referrer-Policy, Permissions-Policy) and cache policy (immutable `/assets/*`, revalidated `/metrics/*` and `/blog/*`). CSP stays in the `index.html` meta tag.
 
 ## Workflows
