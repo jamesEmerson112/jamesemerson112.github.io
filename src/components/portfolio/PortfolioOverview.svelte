@@ -11,7 +11,8 @@
     sortBy,
     sortOrder,
     selectedRepo,
-    loadPortfolioData
+    loadPortfolioData,
+    resetFilters
   } from '../../stores/portfolioStore.ts';
   import SearchFilter from './SearchFilter.svelte';
   import RepoCard from './RepoCard.svelte';
@@ -91,7 +92,7 @@
     {:else if $hasError}
       <!-- Error State -->
       <div class="error-state" data-name="PortfolioOverviewDiv8">
-        <span class="error-icon" data-name="PortfolioOverviewSpan9">⚠️</span>
+        <span class="error-eyebrow" data-name="PortfolioOverviewSpan9">// SOMETHING WENT WRONG</span>
         <h3 data-name="PortfolioOverviewH310">Failed to load metrics</h3>
         <p data-name="PortfolioOverviewP11">{$hasError}</p>
         <button class="retry-button" on:click={loadPortfolioData} type="button" data-name="portfolio-retry">
@@ -129,9 +130,12 @@
       {:else}
         <!-- Empty State -->
         <div class="empty-state" data-name="PortfolioOverviewDiv16">
-          <span class="empty-icon" data-name="PortfolioOverviewSpan17">🔍</span>
+          <span class="empty-eyebrow" data-name="PortfolioOverviewSpan17">// NO MATCHES</span>
           <h3 data-name="PortfolioOverviewH318">No repositories found</h3>
           <p data-name="PortfolioOverviewP19">Try adjusting your search or filters</p>
+          <button type="button" class="clear-filters" on:click={resetFilters} data-name="projects-clear-filters">
+            Clear filters
+          </button>
         </div>
       {/if}
     {/if}
@@ -226,14 +230,19 @@
     text-align: center;
   }
 
-  .error-icon {
-    font-size: 4rem;
+  .error-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    color: var(--accent-warning);
   }
 
   .error-state h3 {
-    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
     margin: 0;
-    color: var(--text-primary);
+    color: var(--scene-text);
   }
 
   .error-state p {
@@ -265,27 +274,56 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 4rem 2rem;
-    gap: 1rem;
+    padding: 4.5rem 2rem;
+    gap: 0.7rem;
     text-align: center;
-    background: var(--surface-glass);
-    border: 1px solid var(--surface-border);
-    border-radius: 12px;
+    border: 1px dashed var(--line-1);
+    border-radius: 14px;
   }
 
-  .empty-icon {
-    font-size: 4rem;
-    opacity: 0.5;
+  .empty-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    color: var(--acc);
   }
 
   .empty-state h3 {
-    font-size: 1.5rem;
+    font-family: var(--font-display);
+    font-size: 28px;
+    font-weight: 300;
     margin: 0;
-    color: var(--text-primary);
+    color: var(--scene-text);
   }
 
   .empty-state p {
+    margin: 0;
+    font-size: 14px;
     color: var(--text-secondary);
+  }
+
+  .clear-filters {
+    margin-top: 0.8rem;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    letter-spacing: 0.06em;
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: 1px solid color-mix(in srgb, var(--acc) 55%, transparent);
+    background: color-mix(in srgb, var(--acc) 8%, transparent);
+    color: var(--acc);
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .clear-filters:hover {
+    color: var(--acc-hover);
+    background: color-mix(in srgb, var(--acc) 14%, transparent);
+  }
+
+  .clear-filters:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px;
   }
 
   /* Repos Header */
