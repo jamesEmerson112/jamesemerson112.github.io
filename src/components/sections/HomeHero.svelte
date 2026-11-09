@@ -76,7 +76,7 @@
 <div class="hero" data-name="HomeHero">
   <p class="hero-kicker enter" style="--enter-delay: 80ms" data-name="HomeHeroKicker">
     <span class="kicker-dot" aria-hidden="true" data-name="HomeHeroKickerDot"></span>
-    Software Developer @ JCM Global · MSCS @ Georgia Tech
+    <span data-name="HomeHeroKickerText"><span class="nowrap" data-name="HomeHeroKickerRole">Software Developer @ JCM Global</span> · <span class="nowrap" data-name="HomeHeroKickerSchool">MSCS @ Georgia Tech</span></span>
   </p>
 
   <h1 class="tagline" aria-label={FULL_TAGLINE} data-name="HomeHeroTagline">
@@ -142,6 +142,11 @@
     text-transform: uppercase;
     color: var(--text-secondary);
     margin: 0 0 22px;
+  }
+
+  /* Each phrase stays whole; narrow screens break at the separator. */
+  .nowrap {
+    white-space: nowrap;
   }
 
   .kicker-dot {
