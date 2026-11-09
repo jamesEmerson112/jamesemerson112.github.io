@@ -6,7 +6,8 @@ Recruiter-facing portfolio site with automated GitHub repository scanning, COCOM
 - Renders a Svelte portfolio website deployed to Vercel.
 - Scans GitHub repositories (public + private with anonymization) via `scc`.
 - Generates portfolio metrics JSON under `public/metrics/`.
-- Displays searchable/filterable projects with mini spider charts and a selected-project detail panel.
+- Displays searchable/filterable project cards (code-composition bars) with a detail panel (language breakdown, quality radar, COCOMO estimates).
+- Hosts a Markdown blog: drafts, live preview while writing, reading time, tags, RSS, opt-in math (see "Writing blog posts").
 - Runs the scheduled metrics scan in GitHub Actions; its commits auto-trigger Vercel deploys.
 
 ## Stack
