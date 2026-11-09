@@ -59,7 +59,7 @@
       {/each}
     </div>
     <button class="recent-view-all" type="button" use:reveal={{ delay: 200 }} on:click={viewAll} data-name="RecentPostsViewAll">
-      VIEW ALL POSTS →
+      VIEW ALL POSTS <span class="view-all-arrow" aria-hidden="true" data-name="RecentPostsViewAllArrow">→</span>
     </button>
   </div>
 {/if}
@@ -199,9 +199,18 @@
     transition: color 0.25s ease;
   }
 
+  .view-all-arrow {
+    display: inline-block;
+    transition: transform 0.3s var(--ease-out-expo, ease);
+  }
+
   @media (hover: hover) {
     .recent-view-all:hover {
       color: var(--nav-hover);
+    }
+
+    .recent-view-all:hover .view-all-arrow {
+      transform: translateX(4px);
     }
   }
 
