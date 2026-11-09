@@ -1,11 +1,16 @@
+<script lang="ts">
+  import { reveal } from '../../utils/reveal.ts';
+</script>
+
 <div class="contact_content" data-name="AppDiv5">
-  <h2 data-name="AppH26">Get in Touch</h2>
+  <h2 use:reveal data-name="AppH26">Get in Touch</h2>
   <div class="contact_links" data-name="AppDiv7">
     <a
       href="https://x.com/V_like_flan"
       target="_blank"
       rel="noopener noreferrer"
       class="contact_link"
+      use:reveal={{ delay: 80 }}
       data-name="AppA8"
     >
       <span class="link_label" data-name="AppSpan9">Twitter</span>
@@ -17,6 +22,7 @@
       target="_blank"
       rel="noopener noreferrer"
       class="contact_link"
+      use:reveal={{ delay: 160 }}
       data-name="AppA11"
     >
       <span class="link_label" data-name="AppSpan12">LinkedIn</span>
@@ -25,12 +31,13 @@
   </div>
 
   <div class="contact_links" data-name="AppDiv19">
-    <div class="section_label" data-name="AppDiv20">Blogs I Follow</div>
+    <div class="section_label" use:reveal={{ delay: 160 }} data-name="AppDiv20">Blogs I Follow</div>
     <a
       href="https://sebastianraschka.com/blog/"
       target="_blank"
       rel="noopener noreferrer"
       class="contact_link"
+      use:reveal={{ delay: 240 }}
       data-name="AppA21"
     >
       <span class="link_label" data-name="AppSpan22">AI / ML Research</span>
@@ -42,6 +49,7 @@
       target="_blank"
       rel="noopener noreferrer"
       class="contact_link"
+      use:reveal={{ delay: 320 }}
       data-name="AppA24"
     >
       <span class="link_label" data-name="AppSpan25">AI / Deep Learning</span>
@@ -77,11 +85,34 @@
     gap: 5px;
     text-decoration: none;
     color: var(--scene-text);
-    transition: opacity 0.3s ease;
   }
 
-  .contact_link:hover {
-    opacity: 0.65;
+  /* Out of flow so right-aligned handles stay flush with their labels. */
+  .link_handle::after {
+    content: '↗';
+    position: absolute;
+    right: -1.05em;
+    top: 0.18em;
+    font-size: 0.75em;
+    color: var(--acc);
+    opacity: 0;
+    transform: translate(-4px, 4px);
+    transition: opacity 0.3s ease, transform 0.4s var(--ease-out-expo, ease);
+  }
+
+  .contact_link:hover .link_handle {
+    color: var(--acc-hover);
+  }
+
+  .contact_link:hover .link_handle::after {
+    opacity: 1;
+    transform: none;
+  }
+
+  .contact_link:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 4px;
+    border-radius: 4px;
   }
 
   .link_label {
@@ -93,8 +124,12 @@
   }
 
   .link_handle {
-    font-size: 17px;
-    font-weight: 400;
+    position: relative;
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: -0.01em;
+    transition: color 0.25s ease;
   }
 
   .section_label {

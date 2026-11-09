@@ -5,7 +5,8 @@
    Content is only hidden once this action has armed the element, so markup
    stays visible without JS, under prefers-reduced-motion, and in environments
    without IntersectionObserver (jsdom tests). Elements reveal once and stay
-   revealed. Styles live in src/styles/base.css (.reveal / .is-revealed). */
+   revealed. One shared observer serves every element (the project grid can
+   hold hundreds of cards). Styles live in src/styles/base.css. */
 
 export interface RevealOptions {
   /** Delay before the entrance animation starts, in ms. */
@@ -16,6 +17,21 @@ export function prefersReducedMotion(): boolean {
   return typeof window !== 'undefined'
     && typeof window.matchMedia === 'function'
     && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
+
+let sharedObserver: IntersectionObserver | null = null;
+
+function getObserver(): IntersectionObserver {
+  if (!sharedObserver) {
+    sharedObserver = new IntersectionObserver((entries, observer) => {
+      for (const entry of entries) {
+        if (!entry.isIntersecting) continue;
+        entry.target.classList.add('is-revealed');
+        observer.unobserve(entry.target);
+      }
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
+  }
+  return sharedObserver;
 }
 
 export function reveal(node: HTMLElement, options: RevealOptions = {}) {
@@ -33,17 +49,7 @@ export function reveal(node: HTMLElement, options: RevealOptions = {}) {
 
   applyDelay(options);
   node.classList.add('reveal');
-
-  const observer = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (entry.isIntersecting) {
-        node.classList.add('is-revealed');
-        observer.disconnect();
-        break;
-      }
-    }
-  }, { rootMargin: '0px 0px -8% 0px', threshold: 0 });
-
+  const observer = getObserver();
   observer.observe(node);
 
   return {
@@ -51,7 +57,7 @@ export function reveal(node: HTMLElement, options: RevealOptions = {}) {
       applyDelay(next);
     },
     destroy() {
-      observer.disconnect();
+      observer.unobserve(node);
     }
   };
 }

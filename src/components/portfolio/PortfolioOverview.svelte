@@ -16,6 +16,7 @@
   import SearchFilter from './SearchFilter.svelte';
   import RepoCard from './RepoCard.svelte';
   import RepoDetailPanel from './RepoDetailPanel.svelte';
+  import { reveal } from '../../utils/reveal.ts';
 
   export let autoLoad = true;
   const INITIAL_VISIBLE_COUNT = 12;
@@ -61,7 +62,7 @@
 <section class="portfolio-overview" data-name="PortfolioOverview">
   <div class="container" data-name="PortfolioOverviewDiv1">
     <!-- Header -->
-    <header class="section-header" data-name="PortfolioOverviewHeader2">
+    <header class="section-header" use:reveal data-name="PortfolioOverviewHeader2">
       <div class="eyebrow" data-name="PortfolioOverviewEyebrow">
         // {$repos.length} REPOSITORIES ANALYZED
       </div>
@@ -93,13 +94,13 @@
 
       <!-- Repositories Grid -->
       {#if $filteredRepos.length > 0}
-        <div class="repos-header" data-name="PortfolioOverviewDiv12">
+        <div class="repos-header" use:reveal data-name="PortfolioOverviewDiv12">
           <h2 data-name="PortfolioOverviewH213">Recent Projects ({shownCount} of {$filteredRepos.length})</h2>
         </div>
 
         <div class="repos-grid" data-name="PortfolioOverviewDiv14">
-          {#each visibleRepos as repo (repo.id)}
-            <RepoCard {repo} />
+          {#each visibleRepos as repo, index (repo.id)}
+            <RepoCard {repo} revealDelay={(index % 3) * 70} />
           {/each}
         </div>
 

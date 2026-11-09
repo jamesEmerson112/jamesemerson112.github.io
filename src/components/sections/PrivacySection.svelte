@@ -1,10 +1,14 @@
+<script lang="ts">
+  import { reveal } from '../../utils/reveal.ts';
+</script>
+
 <div class="privacy_content" data-name="AppDiv14">
-  <h2 data-name="AppH215">Privacy</h2>
-  <p class="privacy_summary" data-name="AppP16">
+  <h2 use:reveal data-name="AppH215">Privacy</h2>
+  <p class="privacy_summary" use:reveal={{ delay: 80 }} data-name="AppP16">
     This site uses Google Analytics<br data-name="AppBr17" />
     to understand how visitors use the site.
   </p>
-  <a href="/privacy.html" target="_blank" class="privacy_link" data-name="AppA18">
+  <a href="/privacy.html" target="_blank" rel="noopener noreferrer" class="privacy_link" use:reveal={{ delay: 160 }} data-name="AppA18">
     Full Privacy Policy →
   </a>
 </div>

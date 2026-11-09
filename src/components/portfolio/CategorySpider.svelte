@@ -135,18 +135,20 @@
         {/each}
       </g>
 
-      <path d={polygonPath} style="fill: {fill}" data-name="CategorySpiderPath8" />
-      <path
-        d={polygonPath}
-        fill="none"
-        style="stroke: {color}"
-        stroke-width="1.6"
-        stroke-linejoin="round"
-        data-name="CategorySpiderPath9"
-      />
+      <g class="shape" data-name="CategorySpiderShape">
+        <path d={polygonPath} style="fill: {fill}" data-name="CategorySpiderPath8" />
+        <path
+          d={polygonPath}
+          fill="none"
+          style="stroke: {color}"
+          stroke-width="1.6"
+          stroke-linejoin="round"
+          data-name="CategorySpiderPath9"
+        />
+      </g>
 
       {#each points as point}
-        <circle cx={point.x} cy={point.y} r={dotRadius} style="fill: {color}" data-name="CategorySpiderCircle10" />
+        <circle class="shape-dot" cx={point.x} cy={point.y} r={dotRadius} style="fill: {color}" data-name="CategorySpiderCircle10" />
         <text
           class="axis-label"
           x={point.labelX}
@@ -294,6 +296,26 @@
   @media (max-width: 620px) {
     .axis-table {
       grid-template-columns: 1fr;
+    }
+  }
+
+  /* Bloom the data shape out from the center when the surrounding panel is
+     revealed by the scroll-reveal action (never armed under reduced motion). */
+  .shape,
+  .shape-dot {
+    transform-box: view-box;
+    transform-origin: center;
+  }
+
+  :global(.is-revealed) .shape,
+  :global(.is-revealed) .shape-dot {
+    animation: spider-bloom 1.3s var(--ease-out-expo, ease-out) 0.25s backwards;
+  }
+
+  @keyframes spider-bloom {
+    from {
+      opacity: 0;
+      transform: scale(0.2);
     }
   }
 </style>

@@ -30,6 +30,10 @@
   let scrollRoot;
   let isMobileViewport = false;
   let lastTrackedView = '';
+  // A deep link (#contact, #blog, …) opened on page load. Metrics data loads
+  // after the first scroll and grows the sections above it, so we keep the
+  // target anchored until the user takes over.
+  let pendingDeepLink: string | null = null;
   const sectionElements = new Map();
 
   $: portfolioIndex = $portfolio.data;
@@ -55,6 +59,24 @@
       month: 'short',
       day: 'numeric',
       year: 'numeric'
+    });
+  }
+
+  const releaseDeepLink = () => {
+    pendingDeepLink = null;
+  };
+
+  $: if (pendingDeepLink && portfolioIndex) {
+    const target = pendingDeepLink;
+    // Wait for the data-driven sections to render and lay out.
+    tick().then(() => {
+      requestAnimationFrame(() => {
+        if (pendingDeepLink === target) {
+          // Re-assert the hash too: scroll sync may have rewritten it while
+          // the sections above were still growing.
+          scrollToSection(target, { behavior: 'auto', hashMode: 'replace' });
+        }
+      });
     });
   }
 
@@ -112,6 +134,7 @@
   }
 
   function handleNavigate(event) {
+    pendingDeepLink = null;
     const sectionId = event.detail;
     if (currentView !== 'main') {
       currentView = 'main';
@@ -141,6 +164,9 @@
     };
 
     window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener('wheel', releaseDeepLink, { passive: true });
+    window.addEventListener('touchstart', releaseDeepLink, { passive: true });
+    window.addEventListener('keydown', releaseDeepLink);
 
     // Hero stats need the metrics index; defer past first paint.
     if (typeof window.requestIdleCallback === 'function') {
@@ -177,12 +203,21 @@
       const initialScrollTarget = applyHash();
       if (initialScrollTarget) {
         scrollToSection(initialScrollTarget, { behavior: 'auto' });
+        if (initialScrollTarget !== 'home') {
+          pendingDeepLink = initialScrollTarget;
+          window.setTimeout(() => {
+            pendingDeepLink = null;
+          }, 6000);
+        }
       }
     });
 
     return () => {
       viewport.destroy();
       window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener('wheel', releaseDeepLink);
+      window.removeEventListener('touchstart', releaseDeepLink);
+      window.removeEventListener('keydown', releaseDeepLink);
       scrollSyncHandle?.destroy();
       preloadHandle?.destroy();
     };

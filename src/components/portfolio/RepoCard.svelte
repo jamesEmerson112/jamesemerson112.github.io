@@ -7,9 +7,12 @@
   } from '../../utils/languageUtils.ts';
   import { clampPercent } from '../../utils/math.ts';
   import { selectedRepo } from '../../stores/portfolioStore.ts';
+  import { reveal } from '../../utils/reveal.ts';
   import type { Repo } from '../../types.js';
 
   export let repo: Repo;
+  /** Stagger for the scroll-reveal entrance, in ms. */
+  export let revealDelay = 0;
   const PROGRAMMING_LANGUAGE_LIMIT = 4;
   const OTHER_THRESHOLD_PERCENT = 0.5;
   const OTHER_COLOR = '#6a6d6a';
@@ -47,6 +50,7 @@
 <div
   class="repo-card"
   data-name="RepoCard"
+  use:reveal={{ delay: revealDelay }}
   role="button"
   tabindex="0"
   on:click={handleClick}

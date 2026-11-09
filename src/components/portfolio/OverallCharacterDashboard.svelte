@@ -10,6 +10,7 @@
     loadPortfolioData
   } from '../../stores/portfolioStore.ts';
   import { clampPercent } from '../../utils/math.ts';
+  import { reveal } from '../../utils/reveal.ts';
   import CategorySpider from './CategorySpider.svelte';
 
   const BAND_COLORS = {
@@ -38,7 +39,7 @@
 </script>
 
 <section class="overall-dashboard" data-name="OverallCharacterDashboard">
-  <header class="dashboard-header" data-name="OverallCharacterDashboardHeader1">
+  <header class="dashboard-header" use:reveal data-name="OverallCharacterDashboardHeader1">
     <div class="eyebrow" data-name="OverallCharacterDashboardEyebrow">// PORTFOLIO ANALYSIS</div>
     <h1 data-name="OverallCharacterDashboardH12">Generalist Character Stats</h1>
     <p data-name="OverallCharacterDashboardP3">
@@ -63,7 +64,7 @@
       <p data-name="OverallCharacterDashboardP12">Add repositories to build the overall profile dashboard.</p>
     </div>
   {:else}
-    <div class="spider-controls" role="group" aria-label="Spider scale mode" data-name="OverallCharacterDashboardDiv13">
+    <div class="spider-controls" role="group" aria-label="Spider scale mode" use:reveal={{ delay: 80 }} data-name="OverallCharacterDashboardDiv13">
       <div class="control-buttons" data-name="OverallCharacterDashboardDiv14">
         {#each SPIDER_SCALE_OPTIONS as option}
           <button
@@ -83,7 +84,7 @@
     </div>
 
     <div class="dashboard-grid" data-name="OverallCharacterDashboardDiv16">
-      <div class="panel category-panel" data-name="OverallCharacterDashboardDiv18">
+      <div class="panel category-panel" use:reveal={{ delay: 120 }} data-name="OverallCharacterDashboardDiv18">
         <CategorySpider
           stats={$overallCategoryStats}
           absoluteStats={$overallCategoryStats}
@@ -99,7 +100,7 @@
         />
       </div>
 
-      <div class="panel proficiency-panel" data-name="OverallCharacterDashboardDiv19">
+      <div class="panel proficiency-panel" use:reveal={{ delay: 220 }} data-name="OverallCharacterDashboardDiv19">
         <CategorySpider
           stats={$overallLanguageProficiencyStats}
           absoluteStats={$overallLanguageProficiencyStats}
@@ -116,7 +117,7 @@
         />
       </div>
 
-      <aside class="panel quality-panel" aria-label="Quality Scorecard" data-name="OverallCharacterDashboardAside21">
+      <aside class="panel quality-panel" aria-label="Quality Scorecard" use:reveal={{ delay: 320 }} data-name="OverallCharacterDashboardAside21">
         <h2 data-name="OverallCharacterDashboardH222">Quality Scorecard</h2>
         <p class="quality-subtitle" data-name="OverallCharacterDashboardP23">Proxy indicators from static code metrics</p>
 
@@ -362,6 +363,18 @@
     .panel,
     .state-card {
       padding: 16px;
+    }
+  }
+
+  /* Score bars grow in once the scorecard is revealed. */
+  .quality-panel:global(.is-revealed) .row-fill {
+    transform-origin: 0 50%;
+    animation: bar-grow 1.2s var(--ease-out-expo, ease-out) 0.45s backwards;
+  }
+
+  @keyframes bar-grow {
+    from {
+      transform: scaleX(0);
     }
   }
 </style>
