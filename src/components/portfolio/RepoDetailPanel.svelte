@@ -304,11 +304,12 @@
   }
 
   .signals-label {
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    opacity: 0.65;
-    margin-bottom: 0.35rem;
+    color: var(--text-muted);
+    margin-bottom: 0.45rem;
   }
 
   .signals-tags {
