@@ -123,7 +123,7 @@
               on:click={showAllRepos}
               data-name="projects-show-all"
             >
-              Show all {$filteredRepos.length}
+              Show all {$filteredRepos.length} <span aria-hidden="true" data-name="PortfolioOverviewShowAllArrow">↓</span>
             </button>
           </div>
         {/if}
@@ -347,27 +347,31 @@
   }
 
   .load-more-wrap {
-    margin-top: 1.4rem;
+    margin-top: 2rem;
     display: flex;
     justify-content: center;
   }
 
   .load-more-button {
-    border: 1px solid var(--surface-border-strong);
-    background: var(--surface-glass);
-    color: var(--text-primary);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid color-mix(in srgb, var(--acc) 55%, transparent);
+    background: color-mix(in srgb, var(--acc) 8%, transparent);
+    color: var(--acc);
     border-radius: 999px;
-    padding: 0.62rem 1rem;
-    font-size: 0.9rem;
-    font-weight: 600;
+    padding: 11px 20px;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
     cursor: pointer;
-    transition: border-color 0.2s ease, background-color 0.2s ease, transform 0.2s ease;
+    transition: border-color 0.2s ease, background-color 0.2s ease, color 0.2s ease, box-shadow 0.25s ease;
   }
 
   .load-more-button:hover {
-    border-color: color-mix(in srgb, var(--accent-primary) 65%, transparent);
-    background: color-mix(in srgb, var(--accent-primary) 12%, var(--surface-glass));
-    transform: translateY(-1px);
+    color: var(--acc-hover);
+    background: color-mix(in srgb, var(--acc) 14%, transparent);
+    box-shadow: 0 0 28px color-mix(in srgb, var(--acc) 20%, transparent);
   }
 
   .load-more-button:focus-visible {
