@@ -1,6 +1,6 @@
 {
   "id": "james-neural-network-study",
-  "scannedAt": "2026-11-01T09:54:51.934Z",
+  "scannedAt": "2026-11-09T09:29:10.071Z",
   "metadata": {
     "name": "James-neural-network-study",
     "fullName": "jamesEmerson112/James-neural-network-study",
@@ -8,7 +8,7 @@
     "url": "https://github.com/jamesEmerson112/James-neural-network-study",
     "homepage": null,
     "topics": [],
-    "lastUpdated": "2026-10-02T02:16:06Z",
+    "lastUpdated": "2026-11-06T23:17:08Z",
     "createdAt": "2026-03-10T05:32:59Z",
     "stars": 0,
     "language": "HTML",
@@ -21,14 +21,14 @@
   "sccRaw": [
     {
       "Name": "Markdown",
-      "Bytes": 1437004,
+      "Bytes": 1451712,
       "CodeBytes": 0,
-      "Lines": 27022,
-      "Code": 18946,
+      "Lines": 27209,
+      "Code": 19082,
       "Comment": 0,
-      "Blank": 8076,
+      "Blank": 8127,
       "Complexity": 0,
-      "Count": 119,
+      "Count": 120,
       "WeightedComplexity": 0,
       "Files": [],
       "LineLength": null,
@@ -157,30 +157,30 @@
   ],
   "computed": {
     "summary": {
-      "totalLines": 41559,
-      "totalCode": 31439,
+      "totalLines": 41746,
+      "totalCode": 31575,
       "totalComments": 954,
-      "totalBlanks": 9166,
-      "totalBytes": 8206059,
-      "totalFiles": 162,
+      "totalBlanks": 9217,
+      "totalBytes": 8220767,
+      "totalFiles": 163,
       "totalLanguages": 9,
       "totalComplexity": 3421,
       "primaryLanguage": "Markdown",
-      "primaryLanguagePercent": 60.3
+      "primaryLanguagePercent": 60.4
     },
     "languages": [
       {
         "name": "Markdown",
-        "lines": 27022,
-        "code": 18946,
+        "lines": 27209,
+        "code": 19082,
         "comments": 0,
-        "blanks": 8076,
-        "bytes": 1437004,
-        "files": 119,
+        "blanks": 8127,
+        "bytes": 1451712,
+        "files": 120,
         "complexity": 0,
-        "percentOfLines": 65,
-        "percentOfCode": 60.3,
-        "percentOfBytes": 17.5
+        "percentOfLines": 65.2,
+        "percentOfCode": 60.4,
+        "percentOfBytes": 17.7
       },
       {
         "name": "HTML",
@@ -191,8 +191,8 @@
         "bytes": 666318,
         "files": 12,
         "complexity": 0,
-        "percentOfLines": 26.1,
-        "percentOfCode": 31.4,
+        "percentOfLines": 26,
+        "percentOfCode": 31.3,
         "percentOfBytes": 8.1
       },
       {
@@ -232,7 +232,7 @@
         "complexity": 3152,
         "percentOfLines": 2.5,
         "percentOfCode": 0.9,
-        "percentOfBytes": 43.8
+        "percentOfBytes": 43.7
       },
       {
         "name": "CSS",
@@ -271,7 +271,7 @@
         "complexity": 0,
         "percentOfLines": 0.2,
         "percentOfCode": 0.3,
-        "percentOfBytes": 28.1
+        "percentOfBytes": 28
       },
       {
         "name": "TypeScript Typings",
@@ -299,21 +299,21 @@
     ],
     "cocomo": {
       "traditional": {
-        "kloc": 31.439,
-        "effort": 89.65,
-        "time": 13.8,
-        "people": 6.5,
-        "cost": 420506,
+        "kloc": 31.575,
+        "effort": 90.06,
+        "time": 13.82,
+        "people": 6.51,
+        "cost": 422417,
         "avgWage": 56286,
         "model": "organic",
         "description": "Traditional COCOMO estimate"
       },
       "aiAssisted": {
         "effectiveMultiplier": 0.255,
-        "effort": 22.86,
-        "time": 8.21,
-        "people": 2.78,
-        "cost": 107229,
+        "effort": 22.96,
+        "time": 8.23,
+        "people": 2.79,
+        "cost": 107716,
         "description": "With AI assistance (~3.9x faster)",
         "taskBreakdown": {
           "boilerplate": "20x faster (10% of work)",
@@ -327,39 +327,39 @@
       "comparison": {
         "effortReduction": "75%",
         "timeReduction": "41%",
-        "costReduction": "75%",
+        "costReduction": "74%",
         "speedup": "3.9x"
       },
       "singleDeveloper": {
         "traditional": {
           "fullTime": {
-            "months": 89.65,
-            "weeks": 388.2,
-            "days": 1945,
-            "cost": 420506,
+            "months": 90.06,
+            "weeks": 390,
+            "days": 1954,
+            "cost": 422417,
             "description": "Traditional full-time solo development"
           },
           "partTime": {
-            "months": 13.8,
-            "hoursPerWeek": 259.8,
-            "totalHours": 15510,
-            "cost": 420506,
+            "months": 13.82,
+            "hoursPerWeek": 260.6,
+            "totalHours": 15580,
+            "cost": 422417,
             "description": "Traditional part-time to match COCOMO schedule"
           }
         },
         "aiAssisted": {
           "fullTime": {
-            "months": 22.86,
-            "weeks": 99,
-            "days": 496,
-            "cost": 107229,
+            "months": 22.96,
+            "weeks": 99.4,
+            "days": 498,
+            "cost": 107716,
             "description": "AI-assisted full-time solo development"
           },
           "partTime": {
-            "months": 8.21,
-            "hoursPerWeek": 111.4,
-            "totalHours": 3955,
-            "cost": 107229,
+            "months": 8.23,
+            "hoursPerWeek": 111.7,
+            "totalHours": 3973,
+            "cost": 107716,
             "description": "AI-assisted part-time development"
           }
         }
