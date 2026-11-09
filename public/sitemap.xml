@@ -4,4 +4,8 @@
     <loc>https://jamesemerson112.github.io/</loc>
     <changefreq>weekly</changefreq>
   </url>
+  <url>
+    <loc>https://jamesemerson112.github.io/privacy.html</loc>
+    <changefreq>yearly</changefreq>
+  </url>
 </urlset>
