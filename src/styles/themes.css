@@ -10,6 +10,9 @@
 /* Dark Mode (prototype palette) - Default */
 :root,
 :root[data-light="false"] {
+  /* Native controls (select popups, checkboxes, scrollbars) follow the theme. */
+  color-scheme: dark;
+
   /* Core accent system */
   --acc: #5ccfd6;
   --acc-hover: #a9ecef;
@@ -119,6 +122,8 @@
 
 /* Light Mode (derived variant) */
 :root[data-light="true"] {
+  color-scheme: light;
+
   --acc: #1f8f96;
   --acc-hover: #12666b;
   --acc-2: #1f9d6b;

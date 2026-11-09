@@ -24,6 +24,8 @@ function applyThemeToDocument(isDark: boolean): void {
   if (typeof window === 'undefined') return;
 
   document.documentElement.setAttribute('data-light', (!isDark).toString());
+  // Keep the mobile browser chrome in step with the page background.
+  document.querySelector('meta[name="theme-color"]')?.setAttribute('content', isDark ? '#000000' : '#f7f7f5');
 
   if (document.body) {
     document.body.classList.toggle('dark-theme', isDark);
