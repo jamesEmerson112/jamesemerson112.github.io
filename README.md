@@ -65,11 +65,11 @@ title: My Post Title
 date: 2026-11-09
 excerpt: One or two sentences shown in the list and under the title.
 tags: [machine learning, side projects]
-updated: 2026-11-20  # optional: shows "Updated <date>" for revised posts
-math: true        # optional: render $inline$ and $$display$$ TeX with KaTeX
 draft: true
 ---
 ```
+
+Optional keys: `updated: 2026-11-20` shows "Updated <date>" on revised posts, and `math: true` renders TeX (below). Frontmatter is simple `key: value` lines — no inline `#` comments.
 
 - `draft: true` shows the post on the dev server (with a badge) but keeps it out of the published index and strips the file from production builds. Delete the line or set it to `false` to publish.
 - `math: true` turns on KaTeX for that post only (loaded on demand). Inline math needs no space just inside the dollars and no digit right after the closing one, so prices like "$5 and $10" stay text; write `\$` for a literal dollar, and put things like `$HOME` in backticks. Display math (`$$`) goes on its own lines.
