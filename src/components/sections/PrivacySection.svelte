@@ -3,7 +3,8 @@
 </script>
 
 <div class="privacy_content" data-name="AppDiv14">
-  <h2 use:reveal data-name="AppH215">Privacy</h2>
+  <div class="eyebrow" use:reveal data-name="PrivacyEyebrow">// PRIVACY</div>
+  <h2 use:reveal={{ delay: 40 }} data-name="AppH215">Privacy</h2>
   <p class="privacy_summary" use:reveal={{ delay: 80 }} data-name="AppP16">
     This site uses Google Analytics<br data-name="AppBr17" />
     to understand how visitors use the site.
@@ -48,5 +49,19 @@
 
   .privacy_link:hover {
     color: var(--acc-hover);
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    color: var(--acc);
+    margin-bottom: 12px;
+  }
+
+  @media (max-width: 960px) {
+    .privacy_content {
+      text-align: left;
+    }
   }
 </style>

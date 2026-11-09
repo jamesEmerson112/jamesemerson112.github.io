@@ -498,5 +498,9 @@
       margin-left: 0;
       text-align: left;
     }
+
+    .right-sec {
+      justify-content: flex-start;
+    }
   }
 </style>

@@ -3,7 +3,8 @@
 </script>
 
 <div class="contact_content" data-name="AppDiv5">
-  <h2 use:reveal data-name="AppH26">Get in Touch</h2>
+  <div class="eyebrow" use:reveal data-name="ContactEyebrow">// CONTACT</div>
+  <h2 use:reveal={{ delay: 40 }} data-name="AppH26">Get in Touch</h2>
   <div class="contact_links" data-name="AppDiv7">
     <a
       href="https://x.com/V_like_flan"
@@ -139,5 +140,25 @@
     letter-spacing: 0.15em;
     color: var(--text-muted);
     margin-bottom: -4px;
+  }
+
+  .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    color: var(--acc);
+    margin-bottom: 12px;
+  }
+
+  /* Mobile follows the rest of the page: left-aligned reading edge. */
+  @media (max-width: 960px) {
+    .contact_content {
+      text-align: left;
+    }
+
+    .link_handle::after {
+      right: auto;
+      left: calc(100% + 0.3em);
+    }
   }
 </style>
