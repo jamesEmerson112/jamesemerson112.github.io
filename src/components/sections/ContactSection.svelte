@@ -2,7 +2,7 @@
   import { reveal } from '../../utils/reveal.ts';
 </script>
 
-<div class="contact_content" data-name="AppDiv5">
+<div class="contact_content selectable" data-name="AppDiv5">
   <div class="eyebrow" use:reveal data-name="ContactEyebrow">// CONTACT</div>
   <h2 use:reveal={{ delay: 40 }} data-name="AppH26">Get in Touch</h2>
   <div class="contact_links" data-name="AppDiv7">

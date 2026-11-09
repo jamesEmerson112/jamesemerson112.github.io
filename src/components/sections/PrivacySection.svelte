@@ -2,7 +2,7 @@
   import { reveal } from '../../utils/reveal.ts';
 </script>
 
-<div class="privacy_content" data-name="AppDiv14">
+<div class="privacy_content selectable" data-name="AppDiv14">
   <div class="eyebrow" use:reveal data-name="PrivacyEyebrow">// PRIVACY</div>
   <h2 use:reveal={{ delay: 40 }} data-name="AppH215">Privacy</h2>
   <p class="privacy_summary" use:reveal={{ delay: 80 }} data-name="AppP16">
