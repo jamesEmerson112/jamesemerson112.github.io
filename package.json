@@ -37,6 +37,7 @@
     "dompurify": "^3.3.3",
     "dotenv": "^17.2.3",
     "highlight.js": "^11.11.1",
+    "katex": "^0.19.1",
     "marked": "^17.0.5"
   }
 }

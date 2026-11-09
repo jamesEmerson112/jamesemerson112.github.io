@@ -95,7 +95,13 @@
       tags = parseTagList(meta.tags);
       isDraft = String(meta.draft || '').toLowerCase() === 'true';
       readingTime = estimateReadingMinutes(content);
-      html = DOMPurify.sanitize(await marked.parse(content));
+      // `math: true` posts get KaTeX; loaded on demand so other pages never pay for it.
+      const wantsMath = String(meta.math || '').toLowerCase() === 'true';
+      const rendered = wantsMath
+        ? await (await import('../../utils/mathMarkdown.ts')).parseMathMarkdown(content)
+        : await marked.parse(content);
+      if (token !== loadToken) return;
+      html = DOMPurify.sanitize(rendered);
       if (token !== loadToken) return;
       loading = false;
       error = null;
@@ -763,6 +769,23 @@
   .post-body :global(.hljs-params),
   .post-body :global(.hljs-property) {
     color: var(--code-attr);
+  }
+
+  /* Math (KaTeX, for posts with math: true) */
+  .post-body :global(.math-block) {
+    margin: 1.8em 0;
+    padding: 0.4em 0;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .post-body :global(.katex) {
+    font-size: 1.08em;
+    color: var(--text-primary);
+  }
+
+  .post-body :global(.katex-display) {
+    margin: 0;
   }
 
   /* Pull quote */

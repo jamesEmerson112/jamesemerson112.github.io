@@ -3,6 +3,7 @@ title: Markdown Style Guide
 date: 2026-11-09
 excerpt: Every element a post can use, rendered with the site's styles. A draft, so it only appears on the dev server.
 tags: [meta, reference]
+math: true
 draft: true
 ---
 
@@ -58,6 +59,16 @@ export function clamp(value: number, min = 0, max = 1): number {
 ```bash
 npm run blog:new -- "My Next Post"
 ```
+
+## Math
+
+Add `math: true` to the frontmatter and write TeX. Inline math like $\sigma(x) = \frac{1}{1 + e^{-x}}$ sits in the sentence; display math goes on its own lines:
+
+$$
+\operatorname{softmax}(z)_i = \frac{e^{z_i}}{\sum_{j=1}^{K} e^{z_j}}
+$$
+
+Prices stay prose even in math posts: it costs $5 and $10. Write `\$` for a literal dollar sign next to a number, like \$3.
 
 ## Quotes and callouts
 
