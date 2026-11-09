@@ -22,13 +22,18 @@ export const mathExtension: MarkedExtension = {
     {
       name: 'mathBlock',
       level: 'block',
+      // Only a $$ at the start of a line can open display math, so a $$ in
+      // prose or inside a code span never cuts a paragraph.
       start(src: string) {
-        const index = src.indexOf('$$');
-        return index < 0 ? undefined : index;
-      },
-      tokenizer(src: string) {
-        const match = /^\$\$([\s\S]+?)\$\$[ \t]*(?:\n|$)/.exec(src);
+        const match = /(?:^|\n)\$\$/.exec(src);
         if (!match) return undefined;
+        return match.index + (match[0].startsWith('\n') ? 1 : 0);
+      },
+      // Content may span lines but not a blank line or another $$, and the
+      // closing $$ must end its line — an unclosed $$ can't swallow the post.
+      tokenizer(src: string) {
+        const match = /^\$\$((?:[^$\n]|\$(?!\$)|\n(?![ \t]*\n))+?)\$\$[ \t]*(?:\n|$)/.exec(src);
+        if (!match || !match[1].trim()) return undefined;
         return { type: 'mathBlock', raw: match[0], text: match[1].trim() };
       },
       renderer(token) {
@@ -43,9 +48,9 @@ export const mathExtension: MarkedExtension = {
         return index < 0 ? undefined : index;
       },
       tokenizer(src: string) {
-        // Escapes are consumed in pairs, and the closing $ may not follow a
-        // backslash, so an escaped \$ never ends (or starts) a formula.
-        const match = /^\$(?!\s)((?:\\.|[^\\$\n])+?)(?<![\s\\])\$(?!\d)/.exec(src);
+        // Escapes are consumed in pairs, the closing $ may not follow a
+        // backslash, and a formula never runs into a code span (backtick).
+        const match = /^\$(?!\s)((?:\\.|[^\\$\n`])+?)(?<![\s\\])\$(?!\d)/.exec(src);
         if (!match) return undefined;
         return { type: 'mathInline', raw: match[0], text: match[1] };
       },

@@ -144,7 +144,7 @@
     <button
       type="button"
       class="view-details"
-      aria-label={`Open details for ${repo.name}`}
+      aria-label={`View details for ${repo.name}`}
       on:click|stopPropagation={handleClick}
       data-name="RepoCardSpan33"
     >View Details →</button>

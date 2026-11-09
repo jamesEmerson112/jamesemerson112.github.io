@@ -1,6 +1,9 @@
 import { describe, expect, it } from 'vitest';
 import DOMPurify from 'dompurify';
 import { parseMathMarkdown } from './mathMarkdown.ts';
+import { POST_SANITIZE_OPTIONS } from './postEnhancements.ts';
+
+const countDisplay = (html) => (html.match(/class="katex-display"/g) || []).length;
 
 describe('parseMathMarkdown', () => {
   it('renders inline and display math with KaTeX', async () => {
@@ -28,6 +31,37 @@ describe('parseMathMarkdown', () => {
   it('allows escaped dollars inside a formula', async () => {
     const html = await parseMathMarkdown('Price $p = \\$5$ total.');
     expect(html).toContain('class="katex"');
+  });
+
+  it('does not open display math from a $$ inside a sentence or code span', async () => {
+    const html = await parseMathMarkdown('Wrap display math in `$$` on its own lines:\n\n$$\nE = mc^2\n$$\n');
+
+    expect(html).toContain('<code>$$</code>');
+    expect(html).toContain('on its own lines:');
+    expect(countDisplay(html)).toBe(1);
+  });
+
+  it('never lets display math cross a blank line or an improperly closed $$', async () => {
+    const html = await parseMathMarkdown('$$\na\n$$.\n\nProse here.\n\n$$\nb\n$$\n\n$$\nunclosed\n\nLast paragraph.\n');
+
+    expect(countDisplay(html)).toBe(1);
+    expect(html).toMatch(/<p>Prose here\.<\/p>/);
+    expect(html).toMatch(/<p>Last paragraph\.<\/p>/);
+  });
+
+  it('never pairs an inline $ with a dollar inside a code span', async () => {
+    const html = await parseMathMarkdown('It costs about $5/month on a VPS; set `$PORT` to change it.');
+
+    expect(html).not.toContain('katex');
+    expect(html).toContain('<code>$PORT</code>');
+  });
+
+  it('drops the TeX annotation when sanitized with the post options', async () => {
+    const container = document.createElement('div');
+    container.innerHTML = DOMPurify.sanitize(await parseMathMarkdown('Half is $\\frac{1}{2}$.'), POST_SANITIZE_OPTIONS);
+
+    expect(container.querySelector('.katex')).not.toBeNull();
+    expect(container.textContent).not.toContain('\\frac');
   });
 
   it('survives DOMPurify sanitization', async () => {

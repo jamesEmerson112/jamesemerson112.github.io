@@ -15,7 +15,7 @@
     setBlogTitle
   } from '../../utils/blogLoader.ts';
   import { navigateToPost, navigateToBlogList } from '../../utils/routing.ts';
-  import { enhancePostBody, collectHeadings, copyText } from '../../utils/postEnhancements.ts';
+  import { enhancePostBody, collectHeadings, copyText, POST_SANITIZE_OPTIONS } from '../../utils/postEnhancements.ts';
   import type { PostHeading } from '../../utils/postEnhancements.ts';
   import PostToc from './PostToc.svelte';
   import type { BlogPostMeta } from '../../types.js';
@@ -108,7 +108,7 @@
       // Same update as the content, so the layout switches exactly once.
       headings = [];
       predictedSections = (content.replace(/```[\s\S]*?```/g, '').match(/^#{2,3}[ \t]+\S/gm) || []).length;
-      html = DOMPurify.sanitize(rendered);
+      html = DOMPurify.sanitize(rendered, POST_SANITIZE_OPTIONS) as string;
       if (token !== loadToken) return;
       loading = false;
       error = null;

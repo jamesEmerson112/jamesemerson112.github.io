@@ -9,6 +9,11 @@
    - tables scroll horizontally inside a wrapper on narrow screens
    - images load lazily; an image title becomes a caption */
 
+/* DOMPurify options for post HTML. KaTeX output carries the TeX source in a
+   MathML <annotation>; DOMPurify removes the tag but keeps its text, which
+   screen readers then announce after every formula. Drop the contents too. */
+export const POST_SANITIZE_OPTIONS = { ADD_FORBID_CONTENTS: ['annotation'] };
+
 const CALLOUT_TYPES: Record<string, string> = {
   NOTE: 'Note',
   TIP: 'Tip',

@@ -330,7 +330,7 @@ describe('Option B portfolio overview integration', () => {
 
     await screen.findByText('Repo Alpha');
 
-    await fireEvent.click(screen.getByRole('button', { name: /Open details for Repo Alpha/i }));
+    await fireEvent.click(screen.getByRole('button', { name: /View details for Repo Alpha/i }));
 
     expect(await screen.findByRole('dialog')).toBeInTheDocument();
     expect(await screen.findByText(/Project Type Signals/i)).toBeInTheDocument();
