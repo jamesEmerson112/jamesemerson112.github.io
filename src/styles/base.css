@@ -67,6 +67,55 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ─── Motion system ───────────────────────────────────────────────
+   Shared easing + keyframes. Everything here is opt-in via classes and is
+   switched off under prefers-reduced-motion. */
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-soft: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+/* Scroll reveal: armed by the `reveal` action (src/utils/reveal.ts). The
+   animation uses backwards fill so hover transforms keep working afterwards. */
+.reveal {
+  opacity: 0;
+}
+
+.reveal.is-revealed {
+  opacity: 1;
+  animation: fade-up 0.9s var(--ease-out-expo) var(--reveal-delay, 0ms) backwards;
+}
+
+/* Load-time entrance for above-the-fold content: add .enter and an optional
+   --enter-delay inline. */
+.enter {
+  animation: fade-up 1s var(--ease-out-expo) var(--enter-delay, 0ms) backwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    opacity: 1;
+  }
+
+  .reveal.is-revealed,
+  .enter {
+    animation: none;
+  }
+}
+
 /* Scrollbar (prototype) */
 ::-webkit-scrollbar {
   width: 11px;

@@ -93,6 +93,10 @@ function compareLanguageEntriesByDominance(a: NormalizedEntry, b: NormalizedEntr
 interface CompositionOptions {
   maxProgrammingLanguages?: number;
   otherThresholdPercent?: number;
+  /** Compute shares over programming languages only, so data/docs files
+      (JSON, Markdown, CSV, …) don't swamp the bar as one giant "Other".
+      Falls back to all entries when a repo has no programming languages. */
+  codeOnly?: boolean;
 }
 
 export function buildProgrammingComposition(languages: LanguagesParam = [], options: CompositionOptions = {}): CompositionEntry[] {
@@ -103,8 +107,12 @@ export function buildProgrammingComposition(languages: LanguagesParam = [], opti
     ? Math.max(0, Number(options.otherThresholdPercent))
     : 0.5;
 
-  const sortedEntries = toLanguageEntryList(languages)
+  const allEntries = toLanguageEntryList(languages)
     .sort(compareLanguageEntriesByDominance);
+  const programmingEntries = allEntries.filter((entry) => !isNonProgrammingLanguage(entry.name));
+  const sortedEntries = options.codeOnly === true && programmingEntries.some((entry) => entry.code > 0)
+    ? programmingEntries
+    : allEntries;
   const totalCode = sortedEntries.reduce((sum, entry) => sum + entry.code, 0);
 
   if (totalCode <= 0) return [];

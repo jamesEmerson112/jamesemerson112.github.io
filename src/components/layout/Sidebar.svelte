@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { createEventDispatcher } from 'svelte';
+  import { createEventDispatcher, tick } from 'svelte';
   import { NAV_ITEMS } from '../../utils/routing.ts';
   import { darkMode } from '../../stores/theme.ts';
 
@@ -7,15 +7,41 @@
   export let isMobile = false;
   const dispatch = createEventDispatcher();
 
+  let barHeight = 0;
+  let navEl: HTMLElement | null = null;
+
   function handleNavigate(sectionId: string) {
     dispatch('navigate', sectionId);
   }
+
+  // The mobile top bar publishes its real height so the scroll container can
+  // offset content and scroll targets by exactly that much.
+  $: if (isMobile && barHeight > 0 && typeof document !== 'undefined') {
+    document.documentElement.style.setProperty('--topbar-h', `${barHeight}px`);
+  }
+
+  // Keep the active item visible in the horizontally scrolling mobile nav.
+  $: if (isMobile && navEl && activeSection) {
+    centerActiveLink();
+  }
+
+  async function centerActiveLink() {
+    await tick();
+    const active = navEl?.querySelector<HTMLElement>('.navlink.active');
+    if (!navEl || !active || typeof navEl.scrollTo !== 'function') return;
+    const target = active.offsetLeft - (navEl.clientWidth - active.offsetWidth) / 2;
+    navEl.scrollTo({ left: Math.max(0, target), behavior: 'smooth' });
+  }
 </script>
 
-<aside class="sidebar" class:is-mobile={isMobile} data-name="Sidebar">
-  <div class="idblock" data-name="SidebarIdentity">James<br />Emerson<br />Vo</div>
+<aside class="sidebar" class:is-mobile={isMobile} bind:offsetHeight={barHeight} data-name="Sidebar">
+  <div class="idblock enter" style="--enter-delay: 0ms" data-name="SidebarIdentity">
+    <span data-name="SidebarFirstName">James</span>
+    <span data-name="SidebarMiddleName">Emerson</span>
+    <span data-name="SidebarLastName">Vo</span>
+  </div>
 
-  <nav class="sidenav" data-name="SidebarNav">
+  <nav class="sidenav enter" style="--enter-delay: 120ms" bind:this={navEl} data-name="SidebarNav">
     {#each NAV_ITEMS as item}
       <button
         class="navlink"
@@ -29,7 +55,7 @@
     {/each}
   </nav>
 
-  <div class="sidefoot" data-name="SidebarFooter">
+  <div class="sidefoot enter" style="--enter-delay: 240ms" data-name="SidebarFooter">
     <div class="open-badge" data-name="SidebarOpenBadge">
       <span class="pulse-dot" data-name="SidebarPulseDot"></span>OPEN TO WORK
     </div>
@@ -77,6 +103,10 @@
     text-shadow: none;
   }
 
+  .idblock span {
+    display: block;
+  }
+
   .sidenav {
     margin-top: 46px;
     display: flex;
@@ -109,6 +139,10 @@
 
   .navlink:hover {
     color: var(--nav-hover);
+  }
+
+  .navlink:hover .bar {
+    width: 10px;
   }
 
   .navlink.active {
@@ -215,30 +249,82 @@
     .sidebar {
       width: 100%;
       height: auto;
-      flex-direction: row;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      grid-template-areas:
+        'id foot'
+        'nav nav';
       align-items: center;
-      flex-wrap: wrap;
-      gap: 14px 26px;
+      gap: 8px 16px;
       border-bottom: 1px solid var(--line-2);
-      padding: 18px 22px;
+      padding: 14px 20px 0;
       background: color-mix(in srgb, var(--scene-canvas) 86%, transparent);
-      backdrop-filter: blur(10px);
-      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
       z-index: 20;
     }
 
     .idblock {
-      font-size: 19px;
+      grid-area: id;
+      font-size: 21px;
+      font-weight: 300;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .idblock span {
+      display: inline;
     }
 
     .sidenav {
+      grid-area: nav;
       flex-direction: row;
-      flex-wrap: wrap;
-      margin-top: 0;
-      gap: 6px 18px;
+      flex-wrap: nowrap;
+      margin: 0 -20px;
+      padding: 0 20px;
+      gap: 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 24px), transparent 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 24px), transparent 100%);
+    }
+
+    .sidenav::-webkit-scrollbar {
+      display: none;
+    }
+
+    .navlink {
+      position: relative;
+      flex-shrink: 0;
+      font-size: 12.5px;
+      padding: 8px 0 11px;
+      white-space: nowrap;
+    }
+
+    /* The desktop leading bar becomes an underline on the bar's edge. */
+    .navlink .bar {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      height: 2px;
+      border-radius: 2px;
+    }
+
+    .navlink.active .bar {
+      width: 100%;
+    }
+
+    .navlink:hover .bar {
+      width: 0;
+    }
+
+    .navlink.active:hover .bar {
+      width: 100%;
     }
 
     .sidefoot {
+      grid-area: foot;
       margin-top: 0;
       flex-direction: row;
       align-items: center;

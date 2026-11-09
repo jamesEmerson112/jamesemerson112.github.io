@@ -69,20 +69,22 @@ describe('RepoCard', () => {
     expect(screen.getAllByText('Language composition').length).toBeGreaterThan(0);
   });
 
-  it('uses programming language colors and buckets non-programming share into gray Other', () => {
+  it('uses programming language colors and computes shares over code only', () => {
     const { container } = render(RepoCard, {
       props: { repo: nonProgrammingPrimaryFixture }
     });
 
-    const pythonSegment = [...container.querySelectorAll('.composition-segment')]
-      .find((segment) => segment.getAttribute('title')?.startsWith('Python '));
-    const otherSegment = [...container.querySelectorAll('.composition-segment')]
-      .find((segment) => segment.getAttribute('title')?.startsWith('Other '));
+    const segments = [...container.querySelectorAll('.composition-segment')];
+    const pythonSegment = segments.find((segment) => segment.getAttribute('title')?.startsWith('Python '));
+    const typescriptSegment = segments.find((segment) => segment.getAttribute('title')?.startsWith('TypeScript '));
+    const otherSegment = segments.find((segment) => segment.getAttribute('title')?.startsWith('Other '));
 
     expect(pythonSegment).toBeTruthy();
     expect(pythonSegment?.getAttribute('style')).toMatch(/(#3572A5|rgb\(53,\s*114,\s*165\))/i);
-    expect(otherSegment).toBeTruthy();
-    expect(otherSegment?.getAttribute('style')).toMatch(/(#6a6d6a|rgb\(106,\s*109,\s*106\))/i);
+    // JSON / Plain Text are data, not code: they no longer swamp the bar as a gray "Other".
+    expect(pythonSegment?.getAttribute('title')).toBe('Python 62.5%');
+    expect(typescriptSegment?.getAttribute('title')).toBe('TypeScript 37.5%');
+    expect(otherSegment).toBeUndefined();
     expect(screen.queryByText('JSON')).not.toBeInTheDocument();
     expect(screen.queryByText('Plain Text')).not.toBeInTheDocument();
   });

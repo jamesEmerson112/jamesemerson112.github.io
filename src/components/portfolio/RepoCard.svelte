@@ -30,7 +30,8 @@
 
   $: compositionShares = buildProgrammingComposition(repo.languages || [], {
     maxProgrammingLanguages: PROGRAMMING_LANGUAGE_LIMIT,
-    otherThresholdPercent: OTHER_THRESHOLD_PERCENT
+    otherThresholdPercent: OTHER_THRESHOLD_PERCENT,
+    codeOnly: true
   });
   $: repoUrl = repo?.url || null;
   $: canShowRepoLink = repo?.isPrivate !== true && Boolean(repoUrl);

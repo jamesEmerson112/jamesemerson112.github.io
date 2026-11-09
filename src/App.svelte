@@ -13,7 +13,8 @@
   import RecentPosts from './components/blog/RecentPosts.svelte';
   import ContactSection from './components/sections/ContactSection.svelte';
   import PrivacySection from './components/sections/PrivacySection.svelte';
-  import { formatCompact } from './utils/formatters.ts';
+  import HomeHero from './components/sections/HomeHero.svelte';
+  import { reveal } from './utils/reveal.ts';
   import { SECTION_IDS, isValidSection, parseHash, updateHash } from './utils/routing.ts';
   import { createScrollSync } from './utils/scrollSync.ts';
   import { createDataPreloader } from './utils/dataPreloader.ts';
@@ -35,11 +36,17 @@
   $: heroStats = portfolioIndex?.portfolioTotals
     ? {
         repos: portfolioIndex.totalRepos ?? portfolioIndex.repos?.length ?? 0,
-        lines: formatCompact(portfolioIndex.portfolioTotals.totalLines),
+        lines: Number(portfolioIndex.portfolioTotals.totalLines) || 0,
         languages: Object.keys(portfolioIndex.portfolioTotals.languages || {}).length,
         scanned: formatScanDate(portfolioIndex.generatedAt)
       }
     : null;
+
+  // Lets global styles react to the current view (e.g. dim the background
+  // animation while reading a post).
+  $: if (typeof document !== 'undefined') {
+    document.documentElement.dataset.view = currentView;
+  }
 
   function formatScanDate(value) {
     const timestamp = Date.parse(String(value || ''));
@@ -206,22 +213,22 @@
     >
       <section id="home" class="sec home-sec" use:registerSection={'home'} data-name="AppHomeSection">
         <div class="rightblk home-block" data-name="AppHomeContent">
-          <div class="herotag" data-name="AppHeroTag">
-            'Cure' neural networks <span class="eq">==</span> cure brains
+          <div class="hero-wrap" data-name="AppHeroWrap">
+            <HomeHero
+              repos={heroStats ? heroStats.repos : null}
+              lines={heroStats ? heroStats.lines : null}
+              languages={heroStats ? heroStats.languages : null}
+              scanned={heroStats ? heroStats.scanned : null}
+            />
+            <div class="scroll-cue enter" style="--enter-delay: 900ms" aria-hidden="true" data-name="AppScrollCue">
+              <span class="scroll-cue-label" data-name="AppScrollCueLabel">SCROLL</span>
+              <span class="scroll-cue-line" data-name="AppScrollCueLine"></span>
+            </div>
           </div>
-          <div class="role-line" data-name="AppRoleLine">
-            Software Developer @ JCM Global · MSCS @ Georgia Tech
+          <div class="timeline-block" data-name="AppTimelineBlock">
+            <div class="eyebrow" use:reveal data-name="AppTimelineEyebrow">// TIMELINE</div>
+            <Timeline />
           </div>
-          <div class="hero-stats" data-name="AppHeroStats">
-            {#if heroStats}
-              {heroStats.repos} repos · {heroStats.lines} lines · {heroStats.languages} languages{#if heroStats.scanned}
-                · scanned {heroStats.scanned}{/if}
-            {:else}
-              — repos · — lines · — languages
-            {/if}
-          </div>
-          <div class="eyebrow" data-name="AppTimelineEyebrow">// TIMELINE</div>
-          <Timeline />
         </div>
       </section>
 
@@ -302,44 +309,70 @@
 
   .home-sec {
     display: flex;
-    align-items: center;
     justify-content: flex-end;
-    padding-top: 100px;
-    padding-bottom: 100px;
+    padding-top: 0;
+    padding-bottom: 120px;
   }
 
   .rightblk {
-    max-width: 620px;
+    max-width: 640px;
     margin-left: auto;
     text-align: right;
     width: 100%;
   }
 
-  .herotag {
+  .hero-wrap {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 110px 0 120px;
+  }
+
+  .scroll-cue {
+    position: absolute;
+    right: 0;
+    bottom: 44px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .scroll-cue-label {
     font-family: var(--font-mono);
-    font-size: 15px;
-    letter-spacing: 0.01em;
-    color: var(--mono-tone-2);
-    margin-bottom: 14px;
-    white-space: nowrap;
-  }
-
-  .herotag .eq {
-    color: var(--acc);
-  }
-
-  .role-line {
-    font-size: 14px;
-    color: var(--text-secondary);
-    margin-bottom: 12px;
-  }
-
-  .hero-stats {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.04em;
+    font-size: 9.5px;
+    letter-spacing: 0.24em;
     color: var(--text-muted);
-    margin-bottom: 30px;
+  }
+
+  .scroll-cue-line {
+    position: relative;
+    width: 56px;
+    height: 1px;
+    overflow: hidden;
+    background: var(--line-2);
+  }
+
+  .scroll-cue-line::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, transparent, var(--acc), transparent);
+    transform: translateX(-100%);
+    animation: cue-sweep 2.6s var(--ease-out-soft, ease) infinite;
+  }
+
+  @keyframes cue-sweep {
+    60%,
+    100% {
+      transform: translateX(100%);
+    }
+  }
+
+  .timeline-block {
+    padding-top: 8px;
   }
 
   .eyebrow {
@@ -389,19 +422,39 @@
     padding-top: 40px;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-cue-line::after {
+      animation: none;
+      transform: none;
+      opacity: 0.4;
+    }
+  }
+
   @media (max-width: 960px) {
     .single-page-scroll {
       padding-left: 0;
-      padding-top: var(--topbar-h, 128px);
+      padding-top: var(--topbar-h, 96px);
+      /* Keep scrollIntoView targets clear of the fixed top bar. */
+      scroll-padding-top: var(--topbar-h, 96px);
     }
 
     .sec {
       padding-top: clamp(4rem, 12vw, 7rem);
     }
 
-    .herotag {
-      white-space: normal;
-      font-size: 13.5px;
+    .home-sec {
+      padding-top: 0;
+    }
+
+    .hero-wrap {
+      min-height: calc(100svh - var(--topbar-h, 96px));
+      padding: 48px 0 96px;
+    }
+
+    .scroll-cue {
+      right: auto;
+      left: 0;
+      bottom: 36px;
     }
 
     .rightblk {

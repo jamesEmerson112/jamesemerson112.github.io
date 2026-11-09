@@ -202,3 +202,40 @@ describe('formatDuration edge cases', () => {
     expect(formatDuration(120)).toBe('10 yrs');
   });
 });
+
+describe('buildProgrammingComposition codeOnly mode', () => {
+  it('computes shares over programming languages only', () => {
+    const rows = buildProgrammingComposition([
+      { name: 'JSON', code: 9000, complexity: 0 },
+      { name: 'TypeScript', code: 600, complexity: 40 },
+      { name: 'Svelte', code: 400, complexity: 20 }
+    ], { codeOnly: true });
+
+    expect(rows.map((row) => row.name)).toEqual(['TypeScript', 'Svelte']);
+    expect(rows[0].percent).toBeCloseTo(60, 6);
+    expect(rows[1].percent).toBeCloseTo(40, 6);
+  });
+
+  it('buckets only the programming tail into Other', () => {
+    const rows = buildProgrammingComposition([
+      { name: 'Markdown', code: 5000 },
+      { name: 'Python', code: 500 },
+      { name: 'Rust', code: 300 },
+      { name: 'Go', code: 200 }
+    ], { codeOnly: true, maxProgrammingLanguages: 1 });
+
+    expect(rows.map((row) => row.name)).toEqual(['Python', 'Other']);
+    expect(rows[1].percent).toBeCloseTo(50, 6);
+  });
+
+  it('falls back to all entries when a repo has no programming languages', () => {
+    const rows = buildProgrammingComposition([
+      { name: 'JSON', code: 400 },
+      { name: 'Markdown', code: 100 }
+    ], { codeOnly: true });
+
+    expect(rows).toHaveLength(1);
+    expect(rows[0].name).toBe('Other');
+    expect(rows[0].percent).toBeCloseTo(100, 6);
+  });
+});
