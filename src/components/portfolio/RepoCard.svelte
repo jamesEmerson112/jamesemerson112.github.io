@@ -238,6 +238,7 @@
     line-height: 1.25;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
   }
 
@@ -271,6 +272,7 @@
     line-height: 1.34;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
   }
@@ -453,11 +455,13 @@
     .repo-title h3 {
       font-size: 1rem;
       -webkit-line-clamp: 3;
+      line-clamp: 3;
     }
 
     .repo-description {
       font-size: 0.8rem;
       -webkit-line-clamp: 1;
+      line-clamp: 1;
     }
 
     .language-composition {
