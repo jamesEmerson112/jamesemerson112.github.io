@@ -41,6 +41,16 @@ export async function fetchBlogPost(slug: string): Promise<string> {
   return text;
 }
 
+/* Tab titles for blog views; restores the page's own title afterwards. */
+const SITE_NAME = 'James Emerson Vo';
+let baseTitle: string | null = null;
+
+export function setBlogTitle(title: string | null): void {
+  if (typeof document === 'undefined') return;
+  if (baseTitle === null) baseTitle = document.title;
+  document.title = title ? `${title} — ${SITE_NAME}` : baseTitle;
+}
+
 export function formatReadingTime(minutes: number | undefined): string {
   const value = Number(minutes);
   return Number.isFinite(value) && value > 0 ? `${Math.round(value)} min read` : '';

@@ -10,7 +10,8 @@
     estimateReadingMinutes,
     formatDate,
     formatReadingTime,
-    onBlogChange
+    onBlogChange,
+    setBlogTitle
   } from '../../utils/blogLoader.ts';
   import { navigateToPost, navigateToBlogList } from '../../utils/routing.ts';
   import { enhancePostBody, collectHeadings, copyText } from '../../utils/postEnhancements.ts';
@@ -87,6 +88,7 @@
       if (token !== loadToken) return;
       const { meta, content } = parseFrontmatter(raw);
       title = meta.title || postSlug;
+      setBlogTitle(title);
       date = meta.date || '';
       excerpt = meta.excerpt || '';
       tags = parseTagList(meta.tags);
@@ -160,6 +162,7 @@
       window.clearTimeout(copiedTimer);
       stopWatching();
       loadToken += 1;
+      setBlogTitle(null);
     };
   });
 

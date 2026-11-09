@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { fetchBlogIndex, formatDate, formatReadingTime, onBlogChange } from '../../utils/blogLoader.ts';
+  import { fetchBlogIndex, formatDate, formatReadingTime, onBlogChange, setBlogTitle } from '../../utils/blogLoader.ts';
   import { navigateToPost } from '../../utils/routing.ts';
   import { reveal } from '../../utils/reveal.ts';
   import type { BlogPostMeta } from '../../types.js';
@@ -22,8 +22,13 @@
 
   onMount(() => {
     load();
+    setBlogTitle('Blog');
     // Dev live preview: new/renamed/edited posts show up without a reload.
-    return onBlogChange(() => load());
+    const stopWatching = onBlogChange(() => load());
+    return () => {
+      stopWatching();
+      setBlogTitle(null);
+    };
   });
 
   $: publishedCount = posts.filter((post) => !post.draft).length;
