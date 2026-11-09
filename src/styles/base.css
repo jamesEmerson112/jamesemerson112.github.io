@@ -73,6 +73,18 @@ body {
   z-index: 30 !important;
 }
 
+/* Multi-line headings wrap evenly instead of leaving one orphaned word. */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+/* Paragraphs avoid a lone last-line word where supported. */
+p {
+  text-wrap: pretty;
+}
+
 /* Long-form content stays selectable (the layout chrome does not), so
    readers can quote and copy from posts. */
 .selectable,
