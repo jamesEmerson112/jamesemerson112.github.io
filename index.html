@@ -7,6 +7,20 @@
     <title>James Vo - Portfolio</title>
     <meta name="description" content="Full Stack Developer & Creative Technologist - Portfolio" />
     <meta name="theme-color" content="#000000" />
+    <!-- Apply the saved/system theme before first paint (mirrors
+         resolveInitialMode in src/stores/theme.ts) so light-mode visitors
+         don't see a dark frame while the app loads. -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('darkMode');
+          var dark = saved === 'true' ? true : saved === 'false' ? false
+            : !window.matchMedia || window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.setAttribute('data-light', String(!dark));
+          if (!dark) document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f7f5');
+        } catch (e) {}
+      })();
+    </script>
     <link rel="canonical" href="https://jamesemerson112.github.io/" />
     <link rel="alternate" type="application/rss+xml" title="James Emerson Vo — Writing" href="/blog/feed.xml" />
 
