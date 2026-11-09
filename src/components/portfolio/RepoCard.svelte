@@ -60,7 +60,12 @@
   <div class="card-header" data-name="RepoCardDiv1">
     <div class="repo-title" data-name="RepoCardDiv2">
       {#if repo.isPrivate}
-        <span class="privacy-badge" title="Private Repository" data-name="RepoCardSpan3">🔒</span>
+        <span class="privacy-badge" title="Private Repository" role="img" aria-label="Private repository" data-name="RepoCardSpan3">
+          <svg viewBox="0 0 16 16" width="13" height="13" aria-hidden="true" data-name="RepoCardLockIcon">
+            <rect x="3" y="7" width="10" height="7" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.4" />
+            <path d="M5.5 7V5a2.5 2.5 0 0 1 5 0v2" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" />
+          </svg>
+        </span>
       {/if}
       <h3 data-name="RepoCardH34">{repo.name}</h3>
     </div>
@@ -218,8 +223,9 @@
   }
 
   .privacy-badge {
-    font-size: 1rem;
+    display: inline-flex;
     flex-shrink: 0;
+    color: var(--text-muted);
   }
 
   .repo-title h3 {
