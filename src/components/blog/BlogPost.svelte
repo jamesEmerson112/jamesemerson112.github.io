@@ -140,6 +140,17 @@
     progress = max > 0 ? Math.min(1, Math.max(0, container.scrollTop / max)) : 0;
   }
 
+  // Inline contents (narrow screens): scroll the reading container to a heading.
+  function jumpToHeading(id: string) {
+    const el = document.getElementById(id);
+    const container = scrollContainer();
+    if (!el || !container) return;
+    const topbar = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--topbar-h')) || 0;
+    const barOffset = window.matchMedia?.('(max-width: 960px)').matches ? topbar : 0;
+    const offset = el.getBoundingClientRect().top - container.getBoundingClientRect().top;
+    container.scrollTo({ top: container.scrollTop + offset - barOffset - 24, behavior: 'smooth' });
+  }
+
   async function copyLink() {
     const ok = await copyText(window.location.href);
     linkCopied = ok;
@@ -240,6 +251,21 @@
         {/if}
       </header>
 
+      {#if showToc}
+        <details class="toc-inline" data-name="BlogPostTocInline">
+          <summary data-name="BlogPostTocInlineSummary">Contents <span class="toc-count" data-name="BlogPostTocInlineCount">{headings.length} sections</span></summary>
+          <ol data-name="BlogPostTocInlineList">
+            {#each headings as heading (heading.id)}
+              <li class:sub={heading.level === 3} data-name="BlogPostTocInlineItem">
+                <button type="button" on:click={() => jumpToHeading(heading.id)} data-name="BlogPostTocInlineLink">
+                  {heading.text}
+                </button>
+              </li>
+            {/each}
+          </ol>
+        </details>
+      {/if}
+
       <div class="post-body enter" style="--enter-delay: 120ms" bind:this={bodyEl} data-name="BlogPostBody">
         {@html html}
       </div>
@@ -308,6 +334,84 @@
 
   .post-article {
     min-width: 0;
+  }
+
+  /* Inline contents for narrower screens (the rail takes over at 1400px). */
+  .toc-inline {
+    margin: -1.6em 0 2.6em;
+    border: 1px solid var(--line-2);
+    border-radius: 12px;
+    padding: 0 16px;
+  }
+
+  .toc-inline summary {
+    cursor: pointer;
+    padding: 12px 0;
+    font-family: var(--font-mono);
+    font-size: 10.5px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--acc);
+    list-style-position: inside;
+  }
+
+  .toc-inline summary:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+
+  .toc-count {
+    margin-left: 8px;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+  }
+
+  .toc-inline ol {
+    list-style: none;
+    margin: 0;
+    padding: 0 0 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .toc-inline li.sub {
+    padding-left: 14px;
+  }
+
+  .toc-inline button {
+    width: 100%;
+    text-align: left;
+    background: none;
+    border: none;
+    padding: 6px 0;
+    font-family: var(--font-family-primary);
+    font-size: 14.5px;
+    line-height: 1.4;
+    color: var(--text-secondary);
+    cursor: pointer;
+  }
+
+  .toc-inline button:hover {
+    color: var(--text-primary);
+  }
+
+  .toc-inline button:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px;
+  }
+
+  @media (min-width: 1400px) {
+    .toc-inline {
+      display: none;
+    }
+  }
+
+  @media print {
+    .toc-inline {
+      display: none;
+    }
   }
 
   /* Wide screens: article + sticky contents rail. Below that the rail hides. */
