@@ -378,15 +378,18 @@
     background: linear-gradient(90deg, #e5e7eb, #f3f4f6);
   }
 
+  /* minmax(0, …) lets tracks shrink below their content's min-content
+     width, so wide tables scroll inside their card instead of pushing the
+     panel wider than the screen. */
   @media (max-width: 1080px) {
     .detail-body {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
     }
   }
 
   @media (max-width: 820px) {
     .detail-visuals {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
     }
 
     .detail-chart {
