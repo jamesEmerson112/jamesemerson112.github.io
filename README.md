@@ -71,7 +71,7 @@ draft: true
 ```
 
 - `draft: true` shows the post on the dev server (with a badge) but keeps it out of the published index and strips the file from production builds. Delete the line or set it to `false` to publish.
-- `math: true` turns on KaTeX for that post only (loaded on demand). Inline math needs no space just inside the dollars and no digit right after the closing one, so prices like "$5 and $10" stay text; write `\$` for a literal dollar.
+- `math: true` turns on KaTeX for that post only (loaded on demand). Inline math needs no space just inside the dollars and no digit right after the closing one, so prices like "$5 and $10" stay text; write `\$` for a literal dollar, and put things like `$HOME` in backticks. Display math (`$$`) goes on its own lines.
 - Reading time is computed automatically. Posts with three or more `##`/`###` sections get a contents rail on wide screens, and once posts use more than one tag the blog page shows tag filter chips.
 - Builds also write an RSS feed to `/blog/feed.xml` (full post content, published posts only). Links use the `<link rel="canonical">` origin from `index.html`; set `SITE_URL` to override it, e.g. after moving to a custom domain.
 - `npm run build` regenerates `public/blog/index.json`, so the index can't go stale. `npm run blog:index` does the same on its own.
