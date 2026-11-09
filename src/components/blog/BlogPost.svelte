@@ -24,6 +24,7 @@
 
   let title = '';
   let date = '';
+  let updated = '';
   let excerpt = '';
   let tags: string[] = [];
   let readingTime = 0;
@@ -94,6 +95,8 @@
       title = meta.title || postSlug;
       setBlogTitle(title);
       date = normalizeDate(meta.date || '') || '';
+      const updatedDate = normalizeDate(meta.updated || '');
+      updated = updatedDate && updatedDate !== date ? updatedDate : '';
       excerpt = meta.excerpt || '';
       tags = parseTagList(meta.tags);
       isDraft = String(meta.draft || '').toLowerCase() === 'true';
@@ -157,6 +160,16 @@
     const offset = el.getBoundingClientRect().top - container.getBoundingClientRect().top;
     container.scrollTo({ top: container.scrollTop + offset - barOffset - 24, behavior: 'smooth' });
   }
+
+  $: shareUrl = typeof window !== 'undefined' && slug
+    ? `${window.location.origin}/#posts/${slug}`
+    : '';
+  $: shareOnX = shareUrl
+    ? `https://x.com/intent/post?text=${encodeURIComponent(title)}&url=${encodeURIComponent(shareUrl)}`
+    : '';
+  $: shareOnLinkedIn = shareUrl
+    ? `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(shareUrl)}`
+    : '';
 
   async function copyLink() {
     const ok = await copyText(window.location.href);
@@ -241,6 +254,10 @@
             <span class="meta-sep" aria-hidden="true" data-name="BlogPostMetaSep">·</span>
             <span class="post-reading" data-name="BlogPostReadingTime">{formatReadingTime(readingTime)}</span>
           {/if}
+          {#if updated}
+            <span class="meta-sep" aria-hidden="true" data-name="BlogPostMetaSep2">·</span>
+            <span class="post-updated" data-name="BlogPostUpdated">Updated <time datetime={updated} data-name="BlogPostUpdatedTime">{formatDate(updated)}</time></span>
+          {/if}
           {#if isDraft}
             <span class="draft-badge" data-name="BlogPostDraftBadge">Draft</span>
           {/if}
@@ -283,6 +300,14 @@
           <button class="action-link" type="button" on:click={copyLink} data-name="BlogPostCopyLink">
             {linkCopied ? 'LINK COPIED ✓' : 'COPY LINK'}
           </button>
+          {#if shareOnX}
+            <a class="action-link" href={shareOnX} target="_blank" rel="noopener noreferrer" data-name="BlogPostShareX">
+              SHARE ON X
+            </a>
+            <a class="action-link" href={shareOnLinkedIn} target="_blank" rel="noopener noreferrer" data-name="BlogPostShareLinkedIn">
+              LINKEDIN
+            </a>
+          {/if}
           <a class="action-link" href="/blog/feed.xml" target="_blank" rel="noopener noreferrer" data-name="BlogPostRss">
             RSS
           </a>
@@ -1078,7 +1103,9 @@
 
   .post-actions {
     display: flex;
-    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 6px 20px;
   }
 
   .action-link {

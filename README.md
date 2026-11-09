@@ -65,6 +65,7 @@ title: My Post Title
 date: 2026-11-09
 excerpt: One or two sentences shown in the list and under the title.
 tags: [machine learning, side projects]
+updated: 2026-11-20  # optional: shows "Updated <date>" for revised posts
 math: true        # optional: render $inline$ and $$display$$ TeX with KaTeX
 draft: true
 ---

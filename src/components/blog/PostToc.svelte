@@ -12,6 +12,13 @@
   function updateActive() {
     frame = 0;
     if (!container || headings.length === 0) return;
+    // At the very bottom the last sections can't reach the reading line;
+    // treat the final heading as current there.
+    const atBottom = container.scrollTop + container.clientHeight >= container.scrollHeight - 2;
+    if (atBottom) {
+      activeId = headings[headings.length - 1].id;
+      return;
+    }
     const line = container.getBoundingClientRect().top + 140;
     let current = headings[0].id;
     for (const heading of headings) {

@@ -1,6 +1,7 @@
 ---
 title: Markdown Style Guide
 date: 2026-11-09
+updated: 2026-11-10
 excerpt: Every element a post can use, rendered with the site's styles. A draft, so it only appears on the dev server.
 tags: [meta, reference]
 math: true
