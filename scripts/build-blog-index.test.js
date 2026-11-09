@@ -49,6 +49,16 @@ describe('readBlogPosts', () => {
   });
 });
 
+describe('updated dates', () => {
+  it('includes a normalized updated date only when it is after the publish date', () => {
+    write('revised.md', '---\ntitle: Revised\ndate: 2026-03-01\nupdated: 2026-3-9\n---\nBody\n');
+    write('same-day.md', '---\ntitle: Same\ndate: 2026-03-01\nupdated: 2026-03-01\n---\nBody\n');
+    const posts = readBlogPosts({ postsDir: dir });
+    expect(posts.find((post) => post.slug === 'revised').updated).toBe('2026-03-09');
+    expect(posts.find((post) => post.slug === 'same-day').updated).toBeUndefined();
+  });
+});
+
 describe('listDraftSlugs', () => {
   it('finds drafts even when the rest of the frontmatter is invalid, BOM included', () => {
     write('no-date.md', '﻿---\ntitle: Unfinished\ndraft: true\n---\nBody\n');

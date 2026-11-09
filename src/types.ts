@@ -136,6 +136,8 @@ export interface BlogPostMeta {
   excerpt: string;
   tags?: string[];
   readingTime?: number;
+  /** YYYY-MM-DD; present when a post was revised after publishing. */
+  updated?: string;
   /** Only present in the dev-server index; drafts never ship. */
   draft?: boolean;
 }

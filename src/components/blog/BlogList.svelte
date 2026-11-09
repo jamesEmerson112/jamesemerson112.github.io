@@ -112,6 +112,10 @@
                 <span class="meta-sep" aria-hidden="true" data-name="BlogListMetaSep">·</span>
                 <span data-name="BlogListReadingTime">{formatReadingTime(post.readingTime)}</span>
               {/if}
+              {#if post.updated}
+                <span class="meta-sep" aria-hidden="true" data-name="BlogListMetaSep2">·</span>
+                <span data-name="BlogListUpdated">Updated <time datetime={post.updated} data-name="BlogListUpdatedTime">{formatDate(post.updated)}</time></span>
+              {/if}
               {#if post.draft}
                 <span class="draft-badge" data-name="BlogListDraftBadge">Draft</span>
               {/if}

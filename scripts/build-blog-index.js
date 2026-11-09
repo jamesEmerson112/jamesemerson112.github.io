@@ -112,6 +112,8 @@ export function readBlogPosts({ includeDrafts = false, postsDir = POSTS_DIR } = 
         tags: parseTagList(meta.tags),
         readingTime: estimateReadingMinutes(content)
       };
+      const updated = normalizeDate(meta.updated);
+      if (updated && updated > date) post.updated = updated;
       if (draft) post.draft = true;
       return post;
     })
