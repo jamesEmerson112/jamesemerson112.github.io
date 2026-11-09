@@ -81,7 +81,7 @@ describe('RepoDetailPanel', () => {
     await fireEvent.click(closeButton);
   });
 
-  it('uses programming colors in composition bars and buckets non-programming share into Other', () => {
+  it('uses programming colors in composition bars and shows code-only shares', () => {
     render(RepoDetailPanel, {
       props: { repo: nonProgrammingPrimaryFixture }
     });
@@ -91,7 +91,9 @@ describe('RepoDetailPanel', () => {
       /(#3572A5|rgb\(53,\s*114,\s*165\))/i.test(bar.getAttribute('style') || '')
     ));
     expect(pythonRow).toBeTruthy();
-    expect(screen.getAllByText('Other').length).toBeGreaterThan(0);
+    // Data/docs files no longer appear as a dominant "Other" share (matches the repo cards).
+    expect(screen.queryByText('Other')).not.toBeInTheDocument();
+    expect(screen.getByText(/data and docs files/i)).toBeInTheDocument();
     expect(screen.queryByText('JSON')).not.toBeInTheDocument();
     expect(screen.queryByText('Plain Text')).not.toBeInTheDocument();
   });

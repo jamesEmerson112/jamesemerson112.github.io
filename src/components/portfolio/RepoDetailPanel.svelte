@@ -138,8 +138,8 @@
               title="Quality Profile"
               showTitle={false}
               showAxisTable={false}
-              color="#38bdf8"
-              fill="rgba(56, 189, 248, 0.18)"
+              color="var(--acc)"
+              fill="color-mix(in srgb, var(--acc) 18%, transparent)"
             />
 
             <div class="quality-rows" aria-label="Quality profile scores" data-name="RepoDetailPanelDiv66">

@@ -67,6 +67,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Modals render inside the scroll container, whose stacking context sits
+   below the fixed sidebar; lift it while a detail overlay is open. */
+.single-page-scroll:has(.detail-overlay) {
+  z-index: 30 !important;
+}
+
 /* Long-form content stays selectable (the layout chrome does not), so
    readers can quote and copy from posts. */
 .selectable,

@@ -6,7 +6,8 @@
 
   const OTHER_COLOR = 'var(--mono-tone-5)';
 
-  $: languageRows = buildProgrammingComposition(languages);
+  // Code-only shares, matching the repo cards (data/docs files excluded).
+  $: languageRows = buildProgrammingComposition(languages, { codeOnly: true });
 
   function compositionColor(name) {
     return name === 'Other' ? OTHER_COLOR : getLanguageColor(name);
@@ -15,6 +16,7 @@
 
 <div class="language-breakdown" data-name="RepoDetailPanelDiv39">
   <h3 data-name="RepoDetailPanelH340">Language composition</h3>
+  <p class="breakdown-note" data-name="RepoLanguageBreakdownNote">Share of code; data and docs files (JSON, Markdown, …) excluded.</p>
   {#if languageRows.length > 0}
     <div class="composition-bars" aria-hidden="true" data-name="RepoDetailPanelDiv41">
       {#each languageRows as language}
@@ -34,6 +36,7 @@
       {/each}
     </div>
 
+    <div class="table-scroll" data-name="RepoLanguageBreakdownTableScroll">
     <table aria-label="Language composition breakdown" data-name="RepoDetailPanelTable48">
       <thead data-name="RepoDetailPanelThead49">
         <tr data-name="RepoDetailPanelTr50">
@@ -56,6 +59,7 @@
         {/each}
       </tbody>
     </table>
+    </div>
   {:else}
     <p class="empty-breakdown" data-name="RepoDetailPanelP63">No language metrics available.</p>
   {/if}
@@ -104,10 +108,26 @@
     border-radius: inherit;
   }
 
+  .breakdown-note {
+    margin: -0.2rem 0 0.7rem;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.02em;
+    color: var(--text-muted);
+  }
+
+  /* The five-column table is wider than the panel on most screens. */
+  .table-scroll {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
   table {
     width: 100%;
+    min-width: 360px;
     border-collapse: collapse;
     font-size: 0.78rem;
+    font-variant-numeric: tabular-nums;
   }
 
   th,
