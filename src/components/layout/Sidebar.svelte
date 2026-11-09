@@ -90,9 +90,15 @@
   </nav>
 
   <div class="sidefoot enter" style="--enter-delay: 240ms" data-name="SidebarFooter">
-    <div class="open-badge" data-name="SidebarOpenBadge">
+    <button
+      class="open-badge"
+      type="button"
+      title="Get in touch"
+      on:click={() => handleNavigate('contact')}
+      data-name="SidebarOpenBadge"
+    >
       <span class="pulse-dot" data-name="SidebarPulseDot"></span>OPEN TO WORK
-    </div>
+    </button>
     <div class="socials" data-name="SidebarSocials">
       <a href="https://x.com/V_like_flan" target="_blank" rel="noopener noreferrer">Twitter</a>
       <a href="https://www.linkedin.com/in/james-vo/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
@@ -208,6 +214,20 @@
     letter-spacing: 0.14em;
     color: var(--badge-open);
     width: fit-content;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+
+  .open-badge:hover {
+    color: var(--acc);
+  }
+
+  .open-badge:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 3px;
   }
 
   .pulse-dot {
