@@ -67,6 +67,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Long-form content stays selectable (the layout chrome does not), so
+   readers can quote and copy from posts. */
+.selectable,
+.selectable * {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--acc, #5ccfd6) 32%, transparent);
+  color: inherit;
+}
+
 /* ─── Motion system ───────────────────────────────────────────────
    Shared easing + keyframes. Everything here is opt-in via classes and is
    switched off under prefers-reduced-motion. */

@@ -47,6 +47,32 @@ Run tests:
 npm run test
 ```
 
+## Writing blog posts
+Posts are Markdown files in `public/blog/posts/` with YAML-style frontmatter.
+
+Start a new post (creates a draft with a starter outline):
+```bash
+npm run blog:new -- "My Post Title"
+```
+
+Then run `npm run dev` and open `http://localhost:5173/#posts/<slug>`. Saving the file refreshes the open post in place (scroll position is kept), and the blog list picks up new or renamed posts without a reload.
+
+Frontmatter:
+```yaml
+---
+title: My Post Title
+date: 2026-11-09
+excerpt: One or two sentences shown in the list and under the title.
+tags: [machine learning, side projects]
+draft: true
+---
+```
+
+- `draft: true` shows the post on the dev server (with a badge) but keeps it out of the published index and strips the file from production builds. Delete the line or set it to `false` to publish.
+- Reading time is computed automatically.
+- `npm run build` regenerates `public/blog/index.json`, so the index can't go stale. `npm run blog:index` does the same on its own.
+- The `markdown-style-guide` draft shows every supported element: headings, lists, task lists, code blocks (highlighted, with a copy button), pull quotes, callouts (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`), tables, and images with captions (`![alt](/path.png "Caption")`). Put images under `public/blog/` and reference them by absolute path.
+
 ## Metrics pipeline (local)
 Requirements:
 - `GITHUB_TOKEN` env var (PAT with access to repos you want scanned; set in a gitignored `.env`)

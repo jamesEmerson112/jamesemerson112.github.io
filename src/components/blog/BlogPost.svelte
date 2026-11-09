@@ -184,7 +184,7 @@
       </button>
     </div>
   {:else}
-    <article class="post-article" data-name="BlogPostArticle">
+    <article class="post-article selectable" data-name="BlogPostArticle">
       <header class="post-header enter" data-name="BlogPostHeader">
         <div class="post-meta" data-name="BlogPostMeta">
           {#if date}
