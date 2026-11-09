@@ -31,7 +31,14 @@ export async function fetchBlogPost(slug: string): Promise<string> {
   }
   const res = await fetch(`/blog/posts/${slug}.md`);
   if (!res.ok) throw new Error(`Failed to load post: ${slug}`);
-  return res.text();
+  const text = await res.text();
+  // SPA servers (Vite dev/preview, many static hosts) answer unknown paths
+  // with index.html and a 200; never render that as a post.
+  const contentType = res.headers?.get?.('content-type') || '';
+  if (contentType.includes('text/html') || /^\s*<!doctype html/i.test(text)) {
+    throw new Error(`Post not found: ${slug}`);
+  }
+  return text;
 }
 
 export function formatReadingTime(minutes: number | undefined): string {

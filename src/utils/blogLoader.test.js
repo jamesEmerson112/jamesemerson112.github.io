@@ -33,6 +33,17 @@ describe('fetchBlogPost slug validation', () => {
     expect(fetchMock).toHaveBeenCalledWith('/blog/posts/hello-world.md');
   });
 
+  it('treats an SPA index.html fallback as a missing post', async () => {
+    vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+      ok: true,
+      headers: { get: () => 'text/html; charset=utf-8' },
+      text: () => Promise.resolve('<!DOCTYPE html><html><head></head></html>')
+    }));
+    const { fetchBlogPost } = await importBlogLoader();
+
+    await expect(fetchBlogPost('renamed-post')).rejects.toThrow(/Post not found/);
+  });
+
   it('throws when the post request fails', async () => {
     vi.stubGlobal('fetch', vi.fn().mockResolvedValue({ ok: false, status: 404 }));
     const { fetchBlogPost } = await importBlogLoader();

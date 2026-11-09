@@ -88,6 +88,8 @@ export default defineConfig(() => ({
   // Root path for GitHub Pages user site
   base: '/',
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    // Never inline fonts as data: URIs; the CSP only allows font-src 'self'.
+    assetsInlineLimit: (filePath) => (/\.(woff2?|ttf|otf)$/i.test(filePath) ? false : undefined)
   }
 }))
