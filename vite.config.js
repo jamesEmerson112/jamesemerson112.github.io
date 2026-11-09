@@ -6,7 +6,8 @@ import {
   POSTS_DIR,
   buildBlogIndex,
   listDraftSlugs,
-  readBlogPosts
+  readBlogPosts,
+  renderBlogFeed
 } from './scripts/build-blog-index.js'
 
 /* Blog authoring support.
@@ -14,7 +15,9 @@ import {
      flagged), and saving a post pushes a `blog:changed` event so the open
      page refreshes in place.
    - Build: public/blog/index.json is regenerated before bundling (it can't
-     go stale), and draft posts are removed from the output so they never ship. */
+     go stale), draft posts are removed from the output so they never ship,
+     and an RSS feed is written to dist/blog/feed.xml.
+   The feed is served on the fly in dev too. */
 function blogPlugin() {
   const postsDir = path.normalize(POSTS_DIR)
   const slugFromFile = (file) => {
@@ -31,10 +34,20 @@ function blogPlugin() {
       apply: 'serve',
       configureServer(server) {
         server.middlewares.use((req, res, next) => {
-          if ((req.url || '').split('?')[0] !== '/blog/index.json') return next()
-          res.setHeader('Content-Type', 'application/json; charset=utf-8')
-          res.setHeader('Cache-Control', 'no-store')
-          res.end(JSON.stringify(readBlogPosts({ includeDrafts: true }), null, 2))
+          const url = (req.url || '').split('?')[0]
+          if (url === '/blog/index.json') {
+            res.setHeader('Content-Type', 'application/json; charset=utf-8')
+            res.setHeader('Cache-Control', 'no-store')
+            res.end(JSON.stringify(readBlogPosts({ includeDrafts: true }), null, 2))
+            return
+          }
+          if (url === '/blog/feed.xml') {
+            res.setHeader('Content-Type', 'application/rss+xml; charset=utf-8')
+            res.setHeader('Cache-Control', 'no-store')
+            res.end(renderBlogFeed())
+            return
+          }
+          next()
         })
 
         const notify = (file) => {
@@ -61,6 +74,9 @@ function blogPlugin() {
           const draftFile = path.join(outDir, 'blog', 'posts', `${slug}.md`)
           if (fs.existsSync(draftFile)) fs.rmSync(draftFile)
         }
+        const feedDir = path.join(outDir, 'blog')
+        fs.mkdirSync(feedDir, { recursive: true })
+        fs.writeFileSync(path.join(feedDir, 'feed.xml'), renderBlogFeed())
       }
     }
   ]

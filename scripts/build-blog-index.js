@@ -1,6 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { marked } from 'marked';
 
 /* Blog index builder.
 
@@ -111,6 +112,79 @@ export function buildBlogIndex({ indexPath = INDEX_PATH, postsDir = POSTS_DIR } 
     fs.writeFileSync(indexPath, next);
   }
   return posts;
+}
+
+/* ─── RSS ─────────────────────────────────────────────────────── */
+
+const FEED_TITLE = 'James Emerson Vo — Writing';
+const FEED_DESCRIPTION = 'Notes at the intersection of neuroscience, machine learning, and the things I build.';
+
+function escapeXml(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&apos;');
+}
+
+function cdata(value) {
+  return `<![CDATA[${String(value ?? '').replace(/]]>/g, ']]]]><![CDATA[>')}]]>`;
+}
+
+/* Site origin for absolute links: SITE_URL env, else the canonical link in
+   index.html, so the feed follows whatever domain the site declares. */
+export function resolveSiteUrl(indexHtmlPath = path.resolve('index.html')) {
+  const fromEnv = process.env.SITE_URL;
+  if (fromEnv) return fromEnv.replace(/\/+$/, '') + '/';
+  try {
+    const html = fs.readFileSync(indexHtmlPath, 'utf-8');
+    const match = html.match(/<link[^>]+rel=["']canonical["'][^>]*href=["']([^"']+)["']/i);
+    if (match) return match[1].replace(/\/+$/, '') + '/';
+  } catch {
+    // Fall through to the default.
+  }
+  return 'https://jamesemerson112.github.io/';
+}
+
+export function renderBlogFeed({ siteUrl = resolveSiteUrl(), postsDir = POSTS_DIR, limit = 20 } = {}) {
+  const posts = readBlogPosts({ includeDrafts: false, postsDir }).slice(0, limit);
+  const absolutize = (html) => html.replace(/(src|href)="\/(?!\/)/g, `$1="${siteUrl}`);
+
+  const items = posts.map((post) => {
+    const raw = fs.readFileSync(path.join(postsDir, `${post.slug}.md`), 'utf-8');
+    const { content } = parseFrontmatter(raw);
+    const body = absolutize(marked.parse(content.replace(/^\s*#\s+.*\n/, '')));
+    const link = `${siteUrl}#posts/${post.slug}`;
+    const categories = post.tags.map((tag) => `      <category>${escapeXml(tag)}</category>`).join('\n');
+    return [
+      '    <item>',
+      `      <title>${escapeXml(post.title)}</title>`,
+      `      <link>${escapeXml(link)}</link>`,
+      `      <guid isPermaLink="true">${escapeXml(link)}</guid>`,
+      `      <pubDate>${new Date(`${post.date}T00:00:00Z`).toUTCString()}</pubDate>`,
+      `      <description>${escapeXml(post.excerpt)}</description>`,
+      categories,
+      `      <content:encoded>${cdata(body)}</content:encoded>`,
+      '    </item>'
+    ].filter(Boolean).join('\n');
+  });
+
+  const lastBuild = posts[0] ? new Date(`${posts[0].date}T00:00:00Z`).toUTCString() : new Date(0).toUTCString();
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>${escapeXml(FEED_TITLE)}</title>
+    <link>${escapeXml(`${siteUrl}#posts`)}</link>
+    <description>${escapeXml(FEED_DESCRIPTION)}</description>
+    <language>en-us</language>
+    <lastBuildDate>${lastBuild}</lastBuildDate>
+    <atom:link href="${escapeXml(`${siteUrl}blog/feed.xml`)}" rel="self" type="application/rss+xml" />
+${items.join('\n')}
+  </channel>
+</rss>
+`;
 }
 
 const isCli = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);

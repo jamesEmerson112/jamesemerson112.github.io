@@ -70,6 +70,7 @@ draft: true
 
 - `draft: true` shows the post on the dev server (with a badge) but keeps it out of the published index and strips the file from production builds. Delete the line or set it to `false` to publish.
 - Reading time is computed automatically.
+- Builds also write an RSS feed to `/blog/feed.xml` (full post content, published posts only). Links use the `<link rel="canonical">` origin from `index.html`; set `SITE_URL` to override it, e.g. after moving to a custom domain.
 - `npm run build` regenerates `public/blog/index.json`, so the index can't go stale. `npm run blog:index` does the same on its own.
 - The `markdown-style-guide` draft shows every supported element: headings, lists, task lists, code blocks (highlighted, with a copy button), pull quotes, callouts (`> [!NOTE]`, `[!TIP]`, `[!IMPORTANT]`, `[!WARNING]`, `[!CAUTION]`), tables, and images with captions (`![alt](/path.png "Caption")`). Put images under `public/blog/` and reference them by absolute path.
 

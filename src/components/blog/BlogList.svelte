@@ -37,11 +37,16 @@
     <p class="blog-dek" data-name="BlogListDek">
       Notes at the intersection of neuroscience, machine learning, and the things I build.
     </p>
-    {#if !loading && !error && posts.length > 0}
-      <div class="blog-count" data-name="BlogListCount">
-        {publishedCount} {publishedCount === 1 ? 'post' : 'posts'}{#if draftCount > 0}{` · ${draftCount} ${draftCount === 1 ? 'draft' : 'drafts'} (dev only)`}{/if}
-      </div>
-    {/if}
+    <div class="blog-subline" data-name="BlogListSubline">
+      {#if !loading && !error && posts.length > 0}
+        <span class="blog-count" data-name="BlogListCount">
+          {publishedCount} {publishedCount === 1 ? 'post' : 'posts'}{#if draftCount > 0}{` · ${draftCount} ${draftCount === 1 ? 'draft' : 'drafts'} (dev only)`}{/if}
+        </span>
+      {/if}
+      <a class="rss-link" href="/blog/feed.xml" target="_blank" rel="noopener noreferrer" data-name="BlogListRss">
+        RSS ↗
+      </a>
+    </div>
   </header>
 
   {#if loading}
@@ -130,13 +135,35 @@
     color: var(--text-secondary);
   }
 
-  .blog-count {
+  .blog-subline {
+    display: flex;
+    align-items: center;
+    gap: 18px;
     margin-top: 1.6em;
     font-family: var(--font-mono);
     font-size: 10.5px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--text-muted);
+  }
+
+  .rss-link {
+    color: var(--nav-idle);
+    text-decoration: none;
+    padding: 3px 10px;
+    border: 1px solid var(--line-1);
+    border-radius: 999px;
+    transition: color 0.25s ease, border-color 0.25s ease;
+  }
+
+  .rss-link:hover {
+    color: var(--acc);
+    border-color: color-mix(in srgb, var(--acc) 55%, transparent);
+  }
+
+  .rss-link:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px;
   }
 
   .blog-status {
