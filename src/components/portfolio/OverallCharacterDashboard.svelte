@@ -192,7 +192,8 @@
 
   .dashboard-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* min(100%, …) lets a single column shrink on very small phones. */
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 20px;
     align-items: start;
     margin-top: 26px;
