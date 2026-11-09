@@ -106,4 +106,4 @@ Add a title in quotes and it becomes a caption:
 
 ---
 
-A horizontal rule renders as a quiet section break. End posts with a short takeaway; the footer adds a copy-link button and links to the neighbouring posts.
+A horizontal rule renders as a quiet section break. End posts with a short takeaway; the footer adds copy-link and share buttons (X, LinkedIn), the RSS feed, and links to the neighbouring posts.
