@@ -1,4 +1,4 @@
-import { writable, derived } from 'svelte/store';
+import { writable, derived, get } from 'svelte/store';
 import type { Writable, Readable } from 'svelte/store';
 import { filterAndSortRepos, getAvailableLanguages } from '../utils/portfolioTransforms.ts';
 import {
@@ -17,22 +17,36 @@ function createPortfolioStore() {
     error: null
   });
 
+  // Several triggers (idle callback, section preloader) can ask for the data;
+  // share one request and don't refetch once loaded, so the sections never
+  // flash back to their loading state and re-mount.
+  let inflight: Promise<void> | null = null;
+
+  async function fetchIndex(): Promise<void> {
+    update(state => ({ ...state, loading: true, error: null }));
+
+    try {
+      const response = await fetch('/metrics/index.json');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch portfolio index: ${response.status}`);
+      }
+      const data: PortfolioIndex = await response.json();
+      set({ data, loading: false, error: null });
+    } catch (err) {
+      set({ data: null, loading: false, error: (err as Error).message });
+    }
+  }
+
   return {
     subscribe,
 
-    async load() {
-      update(state => ({ ...state, loading: true, error: null }));
-
-      try {
-        const response = await fetch('/metrics/index.json');
-        if (!response.ok) {
-          throw new Error(`Failed to fetch portfolio index: ${response.status}`);
-        }
-        const data: PortfolioIndex = await response.json();
-        set({ data, loading: false, error: null });
-      } catch (err) {
-        set({ data: null, loading: false, error: (err as Error).message });
-      }
+    load(): Promise<void> {
+      if (inflight) return inflight;
+      if (get({ subscribe }).data) return Promise.resolve();
+      inflight = fetchIndex().finally(() => {
+        inflight = null;
+      });
+      return inflight;
     },
 
     reset() {

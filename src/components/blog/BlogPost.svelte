@@ -8,6 +8,7 @@
     parseFrontmatter,
     parseTagList,
     estimateReadingMinutes,
+    normalizeDate,
     formatDate,
     formatReadingTime,
     onBlogChange,
@@ -89,7 +90,7 @@
       const { meta, content } = parseFrontmatter(raw);
       title = meta.title || postSlug;
       setBlogTitle(title);
-      date = meta.date || '';
+      date = normalizeDate(meta.date || '') || '';
       excerpt = meta.excerpt || '';
       tags = parseTagList(meta.tags);
       isDraft = String(meta.draft || '').toLowerCase() === 'true';
@@ -108,7 +109,9 @@
     }
   }
 
-  $: if (slug) loadPost(slug);
+  // Always load: fetchBlogPost rejects empty/invalid slugs (e.g. "#posts/"),
+  // which shows the error state instead of an endless skeleton.
+  $: loadPost(slug);
 
   function scrollContainer(): HTMLElement | null {
     return rootEl?.closest<HTMLElement>('.single-page-scroll') ?? null;
@@ -116,7 +119,11 @@
 
   function resetScroll() {
     const container = scrollContainer();
-    if (container) container.scrollTop = 0;
+    if (container && typeof container.scrollTo === 'function') {
+      container.scrollTo({ top: 0, behavior: 'instant' });
+    } else if (container) {
+      container.scrollTop = 0;
+    }
     progress = 0;
   }
 

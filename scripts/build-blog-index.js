@@ -21,7 +21,8 @@ const WORDS_PER_MINUTE = 230;
 
 // Inlined from src/utils/frontmatter.ts (kept pure JS for Node script compatibility)
 export function parseFrontmatter(raw) {
-  const normalized = raw.replace(/\r\n/g, '\n');
+  // Strip a UTF-8 BOM (PowerShell / older Notepad) and normalize CRLF.
+  const normalized = raw.replace(/^\uFEFF/, '').replace(/\r\n/g, '\n');
   const match = normalized.match(/^---\n([\s\S]*?)\n---\n?([\s\S]*)$/);
   if (!match) return { meta: {}, content: normalized };
 
@@ -30,10 +31,25 @@ export function parseFrontmatter(raw) {
     const idx = line.indexOf(':');
     if (idx === -1) continue;
     const key = line.slice(0, idx).trim();
-    const val = line.slice(idx + 1).trim();
+    const val = unquote(line.slice(idx + 1).trim());
     meta[key] = val;
   }
   return { meta, content: match[2] };
+}
+
+function unquote(value) {
+  const quoted = value.match(/^(['"])([\s\S]*)\1$/);
+  return quoted ? quoted[2] : value;
+}
+
+/* Accept YYYY-MM-DD (also unpadded YYYY-M-D); null when not a real date. */
+export function normalizeDate(value) {
+  const match = String(value ?? '').trim().match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  if (!match) return null;
+  const [year, month, day] = [match[1], match[2].padStart(2, '0'), match[3].padStart(2, '0')];
+  const date = new Date(`${year}-${month}-${day}T00:00:00Z`);
+  if (Number.isNaN(date.getTime()) || date.getUTCDate() !== Number(day)) return null;
+  return `${year}-${month}-${day}`;
 }
 
 export function parseTagList(value) {
@@ -67,25 +83,31 @@ export function estimateReadingMinutes(markdown) {
   return Math.max(1, Math.round(minutes));
 }
 
-export function readBlogPosts({ includeDrafts = false, postsDir = POSTS_DIR } = {}) {
+function readPostFiles(postsDir) {
   if (!fs.existsSync(postsDir)) return [];
-  const files = fs.readdirSync(postsDir).filter((file) => file.endsWith('.md'));
-
-  return files
+  return fs.readdirSync(postsDir)
+    .filter((file) => file.endsWith('.md'))
     .map((file) => {
       const raw = fs.readFileSync(path.join(postsDir, file), 'utf-8');
-      const { meta, content } = parseFrontmatter(raw);
-      if (!meta.title || !meta.date) {
-        console.warn(`Skipping ${file}: missing title or date in frontmatter`);
+      return { file, slug: file.replace(/\.md$/, ''), ...parseFrontmatter(raw) };
+    });
+}
+
+export function readBlogPosts({ includeDrafts = false, postsDir = POSTS_DIR } = {}) {
+  return readPostFiles(postsDir)
+    .map(({ file, slug, meta, content }) => {
+      const date = normalizeDate(meta.date);
+      if (!meta.title || !date) {
+        console.warn(`Skipping ${file}: needs a title and a date in YYYY-MM-DD form`);
         return null;
       }
       const draft = isDraft(meta);
       if (draft && !includeDrafts) return null;
 
       const post = {
-        slug: file.replace(/\.md$/, ''),
+        slug,
         title: meta.title,
-        date: meta.date,
+        date,
         excerpt: meta.excerpt || '',
         tags: parseTagList(meta.tags),
         readingTime: estimateReadingMinutes(content)
@@ -94,14 +116,15 @@ export function readBlogPosts({ includeDrafts = false, postsDir = POSTS_DIR } = 
       return post;
     })
     .filter(Boolean)
-    .sort((a, b) => new Date(b.date) - new Date(a.date) || a.title.localeCompare(b.title));
+    .sort((a, b) => b.date.localeCompare(a.date) || a.title.localeCompare(b.title));
 }
 
-/* Slugs of draft posts — the production build strips these files. */
+/* Slugs of draft posts — the production build strips these files. Decided
+   from frontmatter alone, so a draft with a missing/bad date still never ships. */
 export function listDraftSlugs({ postsDir = POSTS_DIR } = {}) {
-  return readBlogPosts({ includeDrafts: true, postsDir })
-    .filter((post) => post.draft)
-    .map((post) => post.slug);
+  return readPostFiles(postsDir)
+    .filter(({ meta }) => isDraft(meta))
+    .map(({ slug }) => slug);
 }
 
 export function buildBlogIndex({ indexPath = INDEX_PATH, postsDir = POSTS_DIR } = {}) {

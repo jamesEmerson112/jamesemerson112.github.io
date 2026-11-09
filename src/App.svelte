@@ -66,7 +66,9 @@
     pendingDeepLink = null;
   };
 
-  $: if (pendingDeepLink && portfolioIndex) {
+  let anchoredFor: unknown = null;
+  $: if (pendingDeepLink && portfolioIndex && portfolioIndex !== anchoredFor) {
+    anchoredFor = portfolioIndex;
     const target = pendingDeepLink;
     // Wait for the data-driven sections to render and lay out.
     tick().then(() => {
@@ -74,7 +76,7 @@
         if (pendingDeepLink === target) {
           // Re-assert the hash too: scroll sync may have rewritten it while
           // the sections above were still growing.
-          scrollToSection(target, { behavior: 'auto', hashMode: 'replace' });
+          scrollToSection(target, { behavior: 'instant', hashMode: 'replace' });
         }
       });
     });
@@ -148,7 +150,7 @@
       blogSlug = '';
       window.location.hash = sectionId;
       tick().then(() => {
-        scrollToSection(sectionId, { behavior: 'auto' });
+        scrollToSection(sectionId, { behavior: 'instant' });
       });
       return;
     }
@@ -164,6 +166,8 @@
     });
 
     const handleHashChange = () => {
+      // Back/forward or a typed URL supersedes the load-time deep link.
+      pendingDeepLink = null;
       const scrollTarget = applyHash();
       if (scrollTarget) {
         scrollToSection(scrollTarget, { behavior: 'smooth' });
@@ -185,6 +189,7 @@
 
     let scrollSyncHandle;
     let preloadHandle;
+    let anchorObserver: ResizeObserver | null = null;
 
     tick().then(() => {
       scrollSyncHandle = createScrollSync({
@@ -210,11 +215,26 @@
 
       const initialScrollTarget = applyHash();
       if (initialScrollTarget) {
-        scrollToSection(initialScrollTarget, { behavior: 'auto' });
+        scrollToSection(initialScrollTarget, { behavior: 'instant' });
         if (initialScrollTarget !== 'home') {
           pendingDeepLink = initialScrollTarget;
+          // Keep the target pinned through any layout shift above it (data,
+          // fonts, the mobile bar's measured height) until the visitor takes
+          // over or the page settles.
+          if (typeof ResizeObserver !== 'undefined') {
+            anchorObserver = new ResizeObserver(() => {
+              if (pendingDeepLink) {
+                scrollToSection(pendingDeepLink, { behavior: 'instant', hashMode: 'replace' });
+              } else {
+                anchorObserver?.disconnect();
+              }
+            });
+            anchorObserver.observe(scrollRoot);
+            for (const node of sectionElements.values()) anchorObserver.observe(node);
+          }
           window.setTimeout(() => {
             pendingDeepLink = null;
+            anchorObserver?.disconnect();
           }, 6000);
         }
       }
@@ -229,6 +249,7 @@
       window.removeEventListener('keydown', releaseDeepLink);
       scrollSyncHandle?.destroy();
       preloadHandle?.destroy();
+      anchorObserver?.disconnect();
     };
   });
 </script>

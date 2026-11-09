@@ -1,6 +1,6 @@
 import type { BlogPostMeta } from '../types.js';
 
-export { parseFrontmatter, parseTagList, estimateReadingMinutes } from './frontmatter.ts';
+export { parseFrontmatter, parseTagList, estimateReadingMinutes, normalizeDate } from './frontmatter.ts';
 
 let cachedIndex: BlogPostMeta[] | null = null;
 

@@ -348,12 +348,23 @@
       display: none;
     }
 
+    /* Explicit line-heights keep the bar's height identical before and
+       after web fonts load (buttons default to font-dependent "normal"). */
     .navlink {
       position: relative;
       flex-shrink: 0;
       font-size: 12.5px;
+      line-height: 16px;
       padding: 8px 0 11px;
       white-space: nowrap;
+    }
+
+    .idblock {
+      line-height: 28px;
+    }
+
+    .theme-pill {
+      line-height: 14px;
     }
 
     /* The desktop leading bar becomes an underline on the bar's edge. */

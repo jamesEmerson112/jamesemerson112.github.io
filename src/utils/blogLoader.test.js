@@ -113,3 +113,21 @@ describe('frontmatter helpers', () => {
     expect(formatReadingTime(undefined)).toBe('');
   });
 });
+
+describe('frontmatter robustness', () => {
+  it('strips a UTF-8 BOM and surrounding quotes', async () => {
+    const { parseFrontmatter } = await importBlogLoader();
+    const parsed = parseFrontmatter('﻿---\ntitle: "Part 1: Intro"\ndraft: \'true\'\n---\nBody');
+    expect(parsed.meta).toEqual({ title: 'Part 1: Intro', draft: 'true' });
+    expect(parsed.content).toBe('Body');
+  });
+
+  it('normalizes dates and rejects impossible ones', async () => {
+    const { normalizeDate } = await importBlogLoader();
+    expect(normalizeDate('2026-1-5')).toBe('2026-01-05');
+    expect(normalizeDate('2026-01-05')).toBe('2026-01-05');
+    expect(normalizeDate('2026-02-31')).toBeNull();
+    expect(normalizeDate('Jan 5 2026')).toBeNull();
+    expect(normalizeDate('')).toBeNull();
+  });
+});

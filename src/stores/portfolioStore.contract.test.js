@@ -1,5 +1,5 @@
 import { get } from 'svelte/store';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import * as store from './portfolioStore.ts';
 
 describe('portfolioStore public contract', () => {
@@ -25,5 +25,22 @@ describe('portfolioStore public contract', () => {
     expect(typeof store.toggleSortOrder).toBe('function');
     expect(typeof store.resetFilters).toBe('function');
     expect(get(store.sortBy)).toBe('recent');
+  });
+});
+
+describe('portfolio.load deduplication', () => {
+  it('shares one request between concurrent callers and skips refetch once loaded', async () => {
+    const { portfolio } = await import('./portfolioStore.ts');
+    portfolio.reset();
+    const payload = { repos: [], portfolioTotals: { totalLines: 0, languages: {} } };
+    const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: () => Promise.resolve(payload) });
+    vi.stubGlobal('fetch', fetchMock);
+
+    await Promise.all([portfolio.load(), portfolio.load()]);
+    await portfolio.load();
+
+    expect(fetchMock).toHaveBeenCalledTimes(1);
+    vi.unstubAllGlobals();
+    portfolio.reset();
   });
 });
