@@ -14,6 +14,7 @@
     "scan:test": "node scripts/fetch-repos.js --test --limit=20",
     "scan:validate": "node scripts/validate-metrics.js",
     "blog:index": "node scripts/build-blog-index.js",
+    "blog:new": "node scripts/new-blog-post.js",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {

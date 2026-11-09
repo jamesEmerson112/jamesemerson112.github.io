@@ -229,4 +229,13 @@
     opacity: var(--neural-opacity, 0.3);
     pointer-events: none;
   }
+
+  /* Reading views: fade the field back so long-form text stays legible. */
+  :global([data-view='post']) .neural-field {
+    opacity: calc(var(--neural-opacity, 0.3) * 0.35);
+  }
+
+  :global([data-view='blog']) .neural-field {
+    opacity: calc(var(--neural-opacity, 0.3) * 0.7);
+  }
 </style>

@@ -134,6 +134,10 @@ export interface BlogPostMeta {
   title: string;
   date: string;
   excerpt: string;
+  tags?: string[];
+  readingTime?: number;
+  /** Only present in the dev-server index; drafts never ship. */
+  draft?: boolean;
 }
 
 export interface FrontmatterResult {

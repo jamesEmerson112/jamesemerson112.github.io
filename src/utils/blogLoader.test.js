@@ -77,3 +77,28 @@ describe('formatDate', () => {
     expect(formatDate('2026-01-05')).toBe('January 5, 2026');
   });
 });
+
+describe('frontmatter helpers', () => {
+  it('parses CRLF frontmatter the same as LF', async () => {
+    const { parseFrontmatter } = await importBlogLoader();
+    const parsed = parseFrontmatter('---\r\ntitle: Windows Post\r\ndate: 2026-11-09\r\n---\r\n\r\nBody text\r\n');
+    expect(parsed.meta).toEqual({ title: 'Windows Post', date: '2026-11-09' });
+    expect(parsed.content.trim()).toBe('Body text');
+  });
+
+  it('parses bracketed and bare tag lists', async () => {
+    const { parseTagList } = await importBlogLoader();
+    expect(parseTagList('[ml, neuroscience]')).toEqual(['ml', 'neuroscience']);
+    expect(parseTagList('side projects, "web"')).toEqual(['side projects', 'web']);
+    expect(parseTagList('')).toEqual([]);
+    expect(parseTagList(undefined)).toEqual([]);
+  });
+
+  it('estimates reading time with a one-minute floor', async () => {
+    const { estimateReadingMinutes, formatReadingTime } = await importBlogLoader();
+    expect(estimateReadingMinutes('short')).toBe(1);
+    expect(estimateReadingMinutes('word '.repeat(1150))).toBe(5);
+    expect(formatReadingTime(4)).toBe('4 min read');
+    expect(formatReadingTime(undefined)).toBe('');
+  });
+});

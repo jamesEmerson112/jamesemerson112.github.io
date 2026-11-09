@@ -3,12 +3,16 @@
     "slug": "fifty-cents-a-day",
     "title": "My Journey to Making $0.50 a Day",
     "date": "2026-04-12",
-    "excerpt": "My journey of making a product that generates 50 cents per day passively."
+    "excerpt": "My journey of making a product that generates 50 cents per day passively.",
+    "tags": [],
+    "readingTime": 6
   },
   {
     "slug": "hello-world",
     "title": "Hello World",
     "date": "2026-03-22",
-    "excerpt": "First post on the new technical blog. A quick intro to what I'll be writing about."
+    "excerpt": "First post on the new technical blog. A quick intro to what I'll be writing about.",
+    "tags": [],
+    "readingTime": 1
   }
 ]

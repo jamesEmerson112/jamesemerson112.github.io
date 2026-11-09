@@ -1,21 +1,29 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { fetchBlogIndex, formatDate } from '../../utils/blogLoader.ts';
+  import { fetchBlogIndex, formatDate, formatReadingTime, onBlogChange } from '../../utils/blogLoader.ts';
   import { navigateToPost, navigateToBlogList } from '../../utils/routing.ts';
+  import { reveal } from '../../utils/reveal.ts';
+  import type { BlogPostMeta } from '../../types.js';
 
   const MAX_POSTS = 3;
 
-  let posts = [];
+  let posts: BlogPostMeta[] = [];
   let visible = false;
 
-  onMount(async () => {
+  async function load() {
     try {
       const all = await fetchBlogIndex();
-      posts = all.slice(0, MAX_POSTS);
+      // Drafts only exist in the dev index; keep the home page production-true.
+      posts = all.filter((post) => !post.draft).slice(0, MAX_POSTS);
       visible = posts.length > 0;
     } catch {
       visible = false;
     }
+  }
+
+  onMount(() => {
+    load();
+    return onBlogChange(() => load());
   });
 
   const viewAll = navigateToBlogList;
@@ -23,17 +31,23 @@
 
 {#if visible}
   <div class="recent-posts" data-name="RecentPosts">
-    <div class="eyebrow" data-name="RecentPostsLabel">// RECENT POSTS</div>
-    <h2 class="writing-title" data-name="RecentPostsTitle">Writing</h2>
+    <div class="eyebrow" use:reveal data-name="RecentPostsLabel">// RECENT POSTS</div>
+    <h2 class="writing-title" use:reveal={{ delay: 60 }} data-name="RecentPostsTitle">Writing</h2>
     <div class="recent-items" data-name="RecentPostsItems">
-      {#each posts as post}
+      {#each posts as post, index (post.slug)}
         <button
           class="blogrow"
           type="button"
+          use:reveal={{ delay: 120 + index * 80 }}
           on:click={() => navigateToPost(post.slug)}
           data-name={`recent-post-${post.slug}`}
         >
-          <time class="recent-date" datetime={post.date}>{formatDate(post.date)}</time>
+          <span class="recent-meta" data-name="RecentPostsMeta">
+            <time class="recent-date" datetime={post.date} data-name="RecentPostsDate">{formatDate(post.date)}</time>
+            {#if post.readingTime}
+              <span class="recent-reading" data-name="RecentPostsReadingTime">{formatReadingTime(post.readingTime)}</span>
+            {/if}
+          </span>
           <span class="row-main">
             <span class="recent-title">{post.title}</span>
             {#if post.excerpt}
@@ -44,7 +58,7 @@
         </button>
       {/each}
     </div>
-    <button class="recent-view-all" type="button" on:click={viewAll} data-name="RecentPostsViewAll">
+    <button class="recent-view-all" type="button" use:reveal={{ delay: 200 }} on:click={viewAll} data-name="RecentPostsViewAll">
       VIEW ALL POSTS →
     </button>
   </div>
@@ -84,10 +98,12 @@
     display: flex;
     align-items: baseline;
     gap: 18px;
-    padding: 20px 4px;
+    padding: 20px 12px;
     border: none;
     border-top: 1px solid var(--line-2);
+    border-radius: 0 0 10px 10px;
     background: none;
+    transition: background-color 0.3s ease;
     cursor: pointer;
     color: inherit;
     font-family: inherit;
@@ -100,6 +116,14 @@
     outline-offset: 2px;
   }
 
+  .recent-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex-shrink: 0;
+    min-width: 118px;
+  }
+
   .recent-date {
     font-family: var(--font-mono);
     font-size: 11px;
@@ -107,7 +131,14 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     white-space: nowrap;
-    flex-shrink: 0;
+  }
+
+  .recent-reading {
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
   }
 
   .row-main {
@@ -123,6 +154,10 @@
     transition: color 0.2s;
     display: block;
     line-height: 1.3;
+  }
+
+  .blogrow:hover {
+    background: var(--card-hover-bg);
   }
 
   .blogrow:hover .recent-title {
@@ -178,6 +213,21 @@
   @media (max-width: 768px) {
     .recent-title {
       font-size: 18px;
+    }
+
+    .blogrow {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .recent-meta {
+      flex-direction: row;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .barrow {
+      display: none;
     }
   }
 </style>
