@@ -170,6 +170,7 @@
   .blog-dek {
     margin: 0.9em 0 0;
     max-width: 34em;
+    text-wrap: balance;
     font-family: var(--font-display);
     font-weight: 300;
     font-size: clamp(18px, 2.2vw, 21px);
@@ -376,6 +377,7 @@
   }
 
   .post-excerpt {
+    text-wrap: pretty;
     font-size: 15px;
     line-height: 1.6;
     color: var(--text-secondary);
