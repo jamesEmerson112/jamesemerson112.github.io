@@ -13,7 +13,9 @@
     onBlogChange
   } from '../../utils/blogLoader.ts';
   import { navigateToPost, navigateToBlogList } from '../../utils/routing.ts';
-  import { enhancePostBody, copyText } from '../../utils/postEnhancements.ts';
+  import { enhancePostBody, collectHeadings, copyText } from '../../utils/postEnhancements.ts';
+  import type { PostHeading } from '../../utils/postEnhancements.ts';
+  import PostToc from './PostToc.svelte';
   import type { BlogPostMeta } from '../../types.js';
 
   export let slug: string;
@@ -35,11 +37,17 @@
   let linkCopied = false;
   let loadToken = 0;
   let copiedTimer = 0;
+  let headings: PostHeading[] = [];
+  let scrollEl: HTMLElement | null = null;
+
+  // A contents rail appears (on wide screens) once a post has enough sections.
+  $: showToc = headings.length >= 3;
 
   async function renderEnhancements(token: number) {
     await tick();
     if (token !== loadToken || !bodyEl) return;
     enhancePostBody(bodyEl);
+    headings = collectHeadings(bodyEl);
 
     // Only fenced blocks with an explicit language get highlighted; unlabeled
     // blocks (ASCII diagrams, output) stay plain instead of being guessed at.
@@ -128,6 +136,7 @@
 
   onMount(() => {
     const container = scrollContainer();
+    scrollEl = container;
     let frame = 0;
     const onScroll = () => {
       if (frame) return;
@@ -157,7 +166,7 @@
   const goBack = navigateToBlogList;
 </script>
 
-<div class="blog-post" bind:this={rootEl} data-name="BlogPost">
+<div class="blog-post" class:has-toc={showToc} bind:this={rootEl} data-name="BlogPost">
   <div
     class="read-progress"
     style="transform: scaleX({progress})"
@@ -187,6 +196,7 @@
       </button>
     </div>
   {:else}
+    <div class="post-layout" data-name="BlogPostLayout">
     <article class="post-article selectable" data-name="BlogPostArticle">
       <header class="post-header enter" data-name="BlogPostHeader">
         <div class="post-meta" data-name="BlogPostMeta">
@@ -259,6 +269,10 @@
         </nav>
       {/if}
     </article>
+    {#if showToc}
+      <PostToc {headings} container={scrollEl} />
+    {/if}
+    </div>
   {/if}
 </div>
 
@@ -267,6 +281,36 @@
     max-width: 700px;
     margin: 0 auto;
     padding: clamp(2rem, 6vw, 4rem) clamp(1.25rem, 4vw, 2rem) clamp(4rem, 10vw, 8rem);
+  }
+
+  .post-layout {
+    min-width: 0;
+  }
+
+  .post-article {
+    min-width: 0;
+  }
+
+  /* Wide screens: article + sticky contents rail. Below that the rail hides. */
+  .blog-post :global(.post-toc) {
+    display: none;
+  }
+
+  @media (min-width: 1400px) {
+    .blog-post.has-toc {
+      max-width: 980px;
+    }
+
+    .has-toc .post-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 700px) 210px;
+      gap: 56px;
+      align-items: start;
+    }
+
+    .blog-post.has-toc :global(.post-toc) {
+      display: block;
+    }
   }
 
   /* Reading progress: pinned to the top of the content column. */

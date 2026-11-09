@@ -175,6 +175,35 @@ function enhanceImages(root: HTMLElement): void {
   }
 }
 
+export interface PostHeading {
+  id: string;
+  text: string;
+  level: 2 | 3;
+}
+
+/* Give h2/h3 headings stable ids and return them for a table of contents.
+   Ids are prefixed so they can never collide with the app's section ids. */
+export function collectHeadings(root: HTMLElement | null): PostHeading[] {
+  if (!root) return [];
+  const used = new Set<string>();
+  const headings: PostHeading[] = [];
+  for (const heading of root.querySelectorAll<HTMLElement>('h2, h3')) {
+    const text = (heading.textContent || '').trim();
+    if (!text) continue;
+    const slug = text
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/^-+|-+$/g, '') || 'heading';
+    const base = `section-${slug}`;
+    let id = base;
+    for (let n = 2; used.has(id); n += 1) id = `${base}-${n}`;
+    used.add(id);
+    heading.id = id;
+    headings.push({ id, text, level: heading.tagName === 'H2' ? 2 : 3 });
+  }
+  return headings;
+}
+
 export function enhancePostBody(root: HTMLElement | null): void {
   if (!root) return;
   enhanceLinks(root);

@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { marked } from 'marked';
 import DOMPurify from 'dompurify';
-import { enhancePostBody } from './postEnhancements.ts';
+import { enhancePostBody, collectHeadings } from './postEnhancements.ts';
 import { reveal } from './reveal.ts';
 
 function renderMarkdown(markdown) {
@@ -89,6 +89,22 @@ describe('enhancePostBody', () => {
     enhancePostBody(root);
     expect(root.querySelectorAll('.code-block').length).toBe(1);
     expect(root.querySelectorAll('.table-wrap').length).toBe(1);
+  });
+});
+
+describe('collectHeadings', () => {
+  it('assigns prefixed, de-duplicated ids to h2/h3 and returns them in order', () => {
+    const root = renderMarkdown('## Projects\n\ntext\n\n### Setup & Install\n\n## Projects\n\n#### Not included');
+    const headings = collectHeadings(root);
+
+    expect(headings).toEqual([
+      { id: 'section-projects', text: 'Projects', level: 2 },
+      { id: 'section-setup-install', text: 'Setup & Install', level: 3 },
+      { id: 'section-projects-2', text: 'Projects', level: 2 }
+    ]);
+    // Never collides with the app's own section ids (#projects etc.).
+    expect(root.querySelector('#projects')).toBeNull();
+    expect(root.querySelector('#section-projects-2').tagName).toBe('H2');
   });
 });
 
