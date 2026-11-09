@@ -57,6 +57,16 @@
   function closeSelectedRepo() {
     selectedRepo.set(null);
   }
+
+  // Cursor spotlight: one delegated listener feeds --mx/--my to the hovered card.
+  function trackSpotlight(event: PointerEvent) {
+    if (event.pointerType !== 'mouse') return;
+    const card = (event.target as HTMLElement | null)?.closest<HTMLElement>('.repo-card');
+    if (!card) return;
+    const rect = card.getBoundingClientRect();
+    card.style.setProperty('--mx', `${event.clientX - rect.left}px`);
+    card.style.setProperty('--my', `${event.clientY - rect.top}px`);
+  }
 </script>
 
 <section class="portfolio-overview" data-name="PortfolioOverview">
@@ -98,7 +108,7 @@
           <h2 data-name="PortfolioOverviewH213">Recent Projects ({shownCount} of {$filteredRepos.length})</h2>
         </div>
 
-        <div class="repos-grid" data-name="PortfolioOverviewDiv14">
+        <div class="repos-grid" on:pointermove={trackSpotlight} data-name="PortfolioOverviewDiv14">
           {#each visibleRepos as repo, index (repo.id)}
             <RepoCard {repo} revealDelay={(index % 3) * 70} />
           {/each}

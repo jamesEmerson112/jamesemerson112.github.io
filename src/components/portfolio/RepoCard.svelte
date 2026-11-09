@@ -164,6 +164,32 @@
     gap: 14px;
   }
 
+  /* Cursor spotlight (position fed by PortfolioOverview via --mx/--my). */
+  .repo-card {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .repo-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      420px circle at var(--mx, 50%) var(--my, 0%),
+      color-mix(in srgb, var(--acc) 10%, transparent),
+      transparent 60%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+
+  .repo-card:hover::before {
+    opacity: 1;
+  }
+
   .repo-card:hover {
     transform: translateY(-3px);
     border-color: color-mix(in srgb, var(--acc) 45%, transparent);

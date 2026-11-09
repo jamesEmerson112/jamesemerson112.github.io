@@ -166,6 +166,7 @@
     window.addEventListener('hashchange', handleHashChange);
     window.addEventListener('wheel', releaseDeepLink, { passive: true });
     window.addEventListener('touchstart', releaseDeepLink, { passive: true });
+    window.addEventListener('pointerdown', releaseDeepLink, { passive: true });
     window.addEventListener('keydown', releaseDeepLink);
 
     // Hero stats need the metrics index; defer past first paint.
@@ -217,6 +218,7 @@
       window.removeEventListener('hashchange', handleHashChange);
       window.removeEventListener('wheel', releaseDeepLink);
       window.removeEventListener('touchstart', releaseDeepLink);
+      window.removeEventListener('pointerdown', releaseDeepLink);
       window.removeEventListener('keydown', releaseDeepLink);
       scrollSyncHandle?.destroy();
       preloadHandle?.destroy();

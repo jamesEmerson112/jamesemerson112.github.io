@@ -155,7 +155,7 @@
   .tagline {
     font-family: var(--font-mono);
     font-weight: 400;
-    font-size: clamp(22px, 2.6vw, 34px);
+    font-size: clamp(22px, 2.5vw, 40px);
     line-height: 1.3;
     letter-spacing: -0.02em;
     color: var(--scene-text);
@@ -237,7 +237,7 @@
     margin: 0;
     font-family: var(--font-display);
     font-weight: 300;
-    font-size: clamp(34px, 3.4vw, 46px);
+    font-size: clamp(34px, 3.3vw, 52px);
     line-height: 1;
     letter-spacing: -0.02em;
     color: var(--scene-text);
