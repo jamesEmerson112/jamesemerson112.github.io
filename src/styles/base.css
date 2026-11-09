@@ -137,6 +137,81 @@ body {
     opacity: 1 !important;
     animation: none !important;
   }
+
+  .enter {
+    animation: none !important;
+  }
+
+  /* Ink on paper: theme tokens override both color modes. */
+  :root {
+    --scene-canvas: #fff !important;
+    --scene-text: #111 !important;
+    --c-bg: #fff !important;
+    --c-text: #111 !important;
+    --text-primary: #111 !important;
+    --text-secondary: #333 !important;
+    --text-muted: #555 !important;
+    --mono-tone-2: #222 !important;
+    --mono-tone-3: #444 !important;
+    --acc: #0b6b70 !important;
+    --acc-hover: #0b6b70 !important;
+    --accent-info: #0b6b70 !important;
+    --code-bg: #f5f5f4 !important;
+    --line-1: #bbb !important;
+    --line-2: #d4d4d4 !important;
+    --line-3: #e5e5e5 !important;
+  }
+
+  /* Unwrap the fixed, overflow-hidden app shell so every page prints. */
+  html,
+  body,
+  #Page,
+  .single-page-scroll {
+    position: static !important;
+    height: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+  }
+
+  .single-page-scroll {
+    padding: 0 !important;
+  }
+
+  .sidebar,
+  .neural-field,
+  .read-progress,
+  .post-toc,
+  .skip-link,
+  .site-footer,
+  .post-nav,
+  .post-actions,
+  .post-pager,
+  .scroll-cue,
+  .code-copy {
+    display: none !important;
+  }
+
+  .post-body a[href^="http"]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.8em;
+    color: #555;
+    word-break: break-all;
+  }
+
+  pre,
+  blockquote,
+  figure,
+  table,
+  .code-block,
+  .math-block {
+    break-inside: avoid;
+  }
+
+  h2,
+  h3,
+  h4 {
+    break-after: avoid;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
