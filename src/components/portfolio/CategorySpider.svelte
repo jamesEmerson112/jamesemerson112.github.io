@@ -172,8 +172,8 @@
             <span data-name="CategorySpiderSpan15">{point.label}</span>
             {#if tableShowBoth}
               <div class="axis-values" data-name="CategorySpiderDiv16">
-                <strong class="axis-primary" style="color: {color}" data-name="CategorySpiderStrong17">R{point.relativeRoundedScore}</strong>
-                <span class="axis-secondary" data-name="CategorySpiderSpan18">A{point.absoluteRoundedScore}</span>
+                <strong class="axis-primary" style="color: {color}" title="Relative score (top axis = 100)" data-name="CategorySpiderStrong17">R{point.relativeRoundedScore}</strong>
+                <span class="axis-secondary" title="Absolute (raw) score" data-name="CategorySpiderSpan18">A{point.absoluteRoundedScore}</span>
               </div>
             {:else}
               <strong data-name="CategorySpiderStrong19">{point.roundedScore}</strong>
@@ -181,6 +181,12 @@
           </div>
         {/each}
       </div>
+      {#if tableShowBoth}
+        <p class="axis-legend" data-name="CategorySpiderLegend">
+          <span style="color: {color}" data-name="CategorySpiderLegendRel">R</span> relative (top axis = 100) ·
+          <span class="axis-legend-abs" data-name="CategorySpiderLegendAbs">A</span> absolute
+        </p>
+      {/if}
     {/if}
   {:else}
     <p class="empty" data-name="CategorySpiderP20">No category stats available.</p>
@@ -317,5 +323,21 @@
       opacity: 0;
       transform: scale(0.2);
     }
+  }
+
+  .axis-legend {
+    margin: 10px 0 0;
+    font-family: var(--font-mono);
+    font-size: 9.5px;
+    letter-spacing: 0.06em;
+    color: var(--text-muted);
+  }
+
+  .axis-legend span {
+    font-weight: 600;
+  }
+
+  .axis-legend-abs {
+    color: var(--mono-tone-3);
   }
 </style>
