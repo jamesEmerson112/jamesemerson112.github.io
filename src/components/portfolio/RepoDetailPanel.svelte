@@ -362,20 +362,21 @@
     border-radius: inherit;
   }
 
+  /* Same band tones as the portfolio dashboard; readable in both themes. */
   .quality-fill.low {
-    background: linear-gradient(90deg, #6b7280, #9ca3af);
+    background: var(--mono-tone-4);
   }
 
   .quality-fill.moderate {
-    background: linear-gradient(90deg, #9ca3af, #d1d5db);
+    background: var(--band-moderate);
   }
 
   .quality-fill.high {
-    background: linear-gradient(90deg, #d1d5db, #e5e7eb);
+    background: var(--acc);
   }
 
   .quality-fill.very-high {
-    background: linear-gradient(90deg, #e5e7eb, #f3f4f6);
+    background: linear-gradient(90deg, var(--acc), var(--acc-2));
   }
 
   /* minmax(0, …) lets tracks shrink below their content's min-content

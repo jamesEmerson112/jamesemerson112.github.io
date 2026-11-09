@@ -11,8 +11,8 @@
   export let showRingHint = true;
   export let dotRadius = 4.4;
   export let displayLabels: string[] | null = null;
-  export let color = '#38bdf8';
-  export let fill = 'rgba(56, 189, 248, 0.2)';
+  export let color = 'var(--acc)';
+  export let fill = 'color-mix(in srgb, var(--acc) 20%, transparent)';
   export let scaleMode: 'absolute' | 'relative' = 'absolute';
   export let tableShowBoth = false;
   export let absoluteStats: AxisScore[] | undefined = undefined;
