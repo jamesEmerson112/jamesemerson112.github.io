@@ -233,37 +233,48 @@
     background: var(--text-primary);
   }
 
-  .close-btn {
-    border: 1px solid var(--surface-border-strong);
-    background: var(--surface-glass);
-    color: inherit;
-    border-radius: 8px;
-    padding: 0.5rem 0.85rem;
+  /* Header actions match the site's mono pill buttons. */
+  .close-btn,
+  .repo-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 8px 16px;
+    font-family: var(--font-mono);
+    font-size: 11.5px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    text-decoration: none;
     cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
   }
 
-  .close-btn:focus-visible {
-    outline: 2px solid var(--accent-primary);
-    outline-offset: 2px;
+  .close-btn {
+    border: 1px solid var(--line-1);
+    background: transparent;
+    color: var(--mono-tone-2);
+  }
+
+  .close-btn:hover {
+    color: var(--text-primary);
+    border-color: color-mix(in srgb, var(--acc) 60%, transparent);
   }
 
   .repo-link {
-    text-decoration: none;
-    border: 1px solid var(--surface-border-strong);
-    background: var(--surface-glass);
-    color: var(--text-primary);
-    border-radius: 8px;
-    padding: 0.5rem 0.8rem;
-    font-weight: 600;
-    font-size: 0.85rem;
+    border: 1px solid color-mix(in srgb, var(--acc) 55%, transparent);
+    background: color-mix(in srgb, var(--acc) 8%, transparent);
+    color: var(--acc);
   }
 
   .repo-link:hover {
-    text-decoration: underline;
+    color: var(--acc-hover);
+    background: color-mix(in srgb, var(--acc) 14%, transparent);
   }
 
+  .close-btn:focus-visible,
   .repo-link:focus-visible {
-    outline: 2px solid var(--accent-primary);
+    outline: 2px solid var(--acc);
     outline-offset: 2px;
   }
 
