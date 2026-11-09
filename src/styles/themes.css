@@ -88,7 +88,7 @@
 
   /* Sidebar extras */
   --badge-open: #7fb9bb;
-  --footer-ink: #4a4d4d;
+  --footer-ink: #747a7b; /* dimmest value that still meets 4.5:1 on black */
 
   /* Neural field background */
   --neural-accent: var(--acc);
@@ -194,7 +194,7 @@
   --radar-label: #5a6665;
 
   --badge-open: #17757b;
-  --footer-ink: #9aa3a1;
+  --footer-ink: #69726f; /* dimmest value that still meets 4.5:1 on the canvas */
 
   --neural-accent: #2b9aa1;
   --neural-opacity: 0.16;
