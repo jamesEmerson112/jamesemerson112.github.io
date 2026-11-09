@@ -124,7 +124,10 @@
     };
   }
 
-  function scrollToSection(sectionId, { behavior = 'smooth', hashMode = null } = {}) {
+  function scrollToSection(
+    sectionId: string,
+    { behavior = 'smooth', hashMode = null }: { behavior?: ScrollBehavior; hashMode?: 'push' | 'replace' | null } = {}
+  ) {
     if (!isValidSection(sectionId)) return;
     const sectionNode = sectionElements.get(sectionId);
     if (!sectionNode) return;

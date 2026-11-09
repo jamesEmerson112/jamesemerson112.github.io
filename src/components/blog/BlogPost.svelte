@@ -723,6 +723,13 @@
     background: transparent;
   }
 
+  .post-body :global(pre:focus-visible),
+  .post-body :global(.table-wrap:focus-visible),
+  .post-body :global(.math-block:focus-visible) {
+    outline: 2px solid var(--acc);
+    outline-offset: 2px;
+  }
+
   .post-body :global(pre code) {
     padding: 0;
     color: var(--mono-tone-2);

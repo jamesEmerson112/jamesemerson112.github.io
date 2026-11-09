@@ -21,13 +21,6 @@
     selectedRepo.set(repo);
   }
 
-  function handleKeydown(event) {
-    if (event.key === 'Enter' || event.key === ' ') {
-      event.preventDefault();
-      handleClick();
-    }
-  }
-
   $: displayPrimaryLanguage = getDisplayPrimaryLanguage(repo.primaryLanguage, repo.languages || []);
   $: topProjectTags = Array.isArray(repo.projectTags) ? repo.projectTags.slice(0, 2) : [];
 
@@ -47,15 +40,15 @@
   }
 </script>
 
+<!-- Clicking anywhere on the card is a mouse convenience; keyboard and
+     screen-reader users get the real "View Details" button below, which
+     avoids nesting the "View Repo" link inside an interactive element. -->
+<!-- svelte-ignore a11y-click-events-have-key-events a11y-no-static-element-interactions -->
 <div
   class="repo-card"
   data-name="RepoCard"
   use:reveal={{ delay: revealDelay }}
-  role="button"
-  tabindex="0"
   on:click={handleClick}
-  on:keydown={handleKeydown}
-  aria-label={`Open details for ${repo.name}`}
 >
   <div class="card-header" data-name="RepoCardDiv1">
     <div class="repo-title" data-name="RepoCardDiv2">
@@ -148,7 +141,13 @@
         View Repo ↗
       </a>
     {/if}
-    <span class="view-details" data-name="RepoCardSpan33">View Details →</span>
+    <button
+      type="button"
+      class="view-details"
+      aria-label={`Open details for ${repo.name}`}
+      on:click|stopPropagation={handleClick}
+      data-name="RepoCardSpan33"
+    >View Details →</button>
   </div>
 </div>
 
@@ -201,9 +200,8 @@
     background: var(--card-hover-bg);
   }
 
-  .repo-card:focus-visible {
-    outline: 2px solid var(--acc);
-    outline-offset: 3px;
+  .repo-card:focus-within {
+    border-color: color-mix(in srgb, var(--acc) 45%, transparent);
   }
 
   .card-header {
@@ -414,6 +412,20 @@
     font-size: 11.5px;
     color: var(--acc);
     margin-left: auto;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .view-details:hover {
+    color: var(--acc-hover);
+  }
+
+  .view-details:focus-visible {
+    outline: 2px solid var(--acc);
+    outline-offset: 3px;
+    border-radius: 4px;
   }
 
   @media (max-width: 1024px) {

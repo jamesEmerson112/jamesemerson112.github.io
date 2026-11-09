@@ -141,6 +141,9 @@ function enhanceCodeBlocks(root: HTMLElement): void {
     bar.append(label, button);
     pre.replaceWith(wrapper);
     wrapper.append(bar, pre);
+    // Wide code scrolls horizontally; keyboard users need to reach it.
+    pre.tabIndex = 0;
+    pre.setAttribute('aria-label', `${label.textContent} code`);
   }
 }
 
@@ -149,6 +152,9 @@ function enhanceTables(root: HTMLElement): void {
     if (table.parentElement?.classList.contains('table-wrap')) continue;
     const wrapper = document.createElement('div');
     wrapper.className = 'table-wrap';
+    wrapper.tabIndex = 0;
+    wrapper.setAttribute('role', 'region');
+    wrapper.setAttribute('aria-label', 'Table');
     table.replaceWith(wrapper);
     wrapper.append(table);
   }
@@ -204,9 +210,24 @@ export function collectHeadings(root: HTMLElement | null): PostHeading[] {
   return headings;
 }
 
+function enhanceTaskLists(root: HTMLElement): void {
+  for (const box of root.querySelectorAll<HTMLInputElement>('li > input[type="checkbox"]')) {
+    const text = (box.parentElement?.textContent || '').trim();
+    if (text && !box.hasAttribute('aria-label')) box.setAttribute('aria-label', text);
+  }
+}
+
+function enhanceMath(root: HTMLElement): void {
+  for (const block of root.querySelectorAll<HTMLElement>('.math-block')) {
+    block.tabIndex = 0;
+  }
+}
+
 export function enhancePostBody(root: HTMLElement | null): void {
   if (!root) return;
   enhanceLinks(root);
+  enhanceTaskLists(root);
+  enhanceMath(root);
   enhanceCallouts(root);
   enhanceCodeBlocks(root);
   enhanceTables(root);
