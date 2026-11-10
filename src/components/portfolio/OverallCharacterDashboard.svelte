@@ -178,7 +178,7 @@
     font-size: clamp(32px, 3.8vw, 50px);
     line-height: 1.1;
     font-weight: 300;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
     color: var(--scene-text);
   }
 

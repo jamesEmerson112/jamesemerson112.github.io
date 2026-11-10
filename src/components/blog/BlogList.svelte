@@ -164,11 +164,11 @@
   .blog-header h1 {
     font-family: var(--font-display);
     font-size: clamp(44px, 7vw, 68px);
-    font-weight: 200;
+    font-weight: 300;
     line-height: 1;
     margin: 0;
     color: var(--scene-text);
-    letter-spacing: -0.025em;
+    letter-spacing: -0.04em;
   }
 
   .blog-dek {
@@ -176,7 +176,7 @@
     max-width: 34em;
     text-wrap: balance;
     font-family: var(--font-display);
-    font-weight: 300;
+    font-weight: 400;
     font-size: clamp(18px, 2.2vw, 21px);
     line-height: 1.45;
     color: var(--text-secondary);
@@ -366,7 +366,7 @@
     margin: 0;
     color: var(--text-primary);
     line-height: 1.2;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     transition: color 0.25s ease;
   }
 

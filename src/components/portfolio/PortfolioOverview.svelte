@@ -178,7 +178,7 @@
     font-family: var(--font-display);
     font-size: clamp(32px, 3.8vw, 50px);
     font-weight: 300;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
     margin-bottom: 0.8rem;
     color: var(--scene-text);
   }

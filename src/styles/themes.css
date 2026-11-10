@@ -112,9 +112,10 @@
   --backdrop-blur: blur(10px);
   --card-border-radius: 14px;
 
-  --font-family-primary: system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: 'Newsreader', Georgia, serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  /* System font stacks only: no web fonts to download (KaTeX loads its own on math posts). */
+  --font-family-primary: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-family-primary);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 600;
@@ -217,9 +218,10 @@
   --backdrop-blur: blur(10px);
   --card-border-radius: 14px;
 
-  --font-family-primary: system-ui, -apple-system, 'Segoe UI', sans-serif;
-  --font-display: 'Newsreader', Georgia, serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+  /* System font stacks only: no web fonts to download (KaTeX loads its own on math posts). */
+  --font-family-primary: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-display: var(--font-family-primary);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace;
   --font-weight-normal: 400;
   --font-weight-medium: 500;
   --font-weight-bold: 600;

@@ -30,8 +30,6 @@
     "vitest": "^2.1.8"
   },
   "dependencies": {
-    "@fontsource/jetbrains-mono": "^5.2.8",
-    "@fontsource/newsreader": "^5.2.10",
     "@octokit/rest": "^22.0.0",
     "@vercel/analytics": "^2.0.1",
     "dompurify": "^3.3.3",

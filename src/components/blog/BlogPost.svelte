@@ -608,18 +608,18 @@
   .post-title {
     font-family: var(--font-display);
     font-size: clamp(36px, 6vw, 58px);
-    font-weight: 200;
+    font-weight: 300;
     margin: 0;
     color: var(--scene-text);
     line-height: 1.08;
-    letter-spacing: -0.025em;
+    letter-spacing: -0.035em;
     text-wrap: balance;
   }
 
   .post-dek {
     margin: 0.9em 0 0;
     font-family: var(--font-display);
-    font-weight: 300;
+    font-weight: 400;
     font-size: clamp(18px, 2.2vw, 21px);
     line-height: 1.45;
     color: var(--text-secondary);
@@ -679,7 +679,7 @@
     font-size: clamp(25px, 3vw, 30px);
     font-weight: 400;
     line-height: 1.2;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.02em;
     margin: 2.2em 0 0.7em;
     color: var(--text-primary);
   }

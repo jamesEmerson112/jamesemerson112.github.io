@@ -131,10 +131,10 @@
 
   .idblock {
     font-family: var(--font-display);
-    font-weight: 200;
+    font-weight: 300;
     font-size: 34px;
     line-height: 1.08;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
     color: var(--scene-text);
     text-shadow: 0 2px 24px rgba(0, 0, 0, 0.6);
   }

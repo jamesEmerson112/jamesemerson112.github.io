@@ -158,16 +158,19 @@
   }
 
   .tagline {
-    font-family: var(--font-mono);
-    font-weight: 400;
-    font-size: clamp(22px, 2.5vw, 40px);
-    line-height: 1.3;
-    letter-spacing: -0.02em;
+    font-family: var(--font-display);
+    font-weight: 300;
+    font-size: clamp(30px, 3.6vw, 56px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
     color: var(--scene-text);
     margin: 0 0 40px;
   }
 
   .tagline .eq {
+    font-family: var(--font-mono);
+    font-size: 0.72em;
+    letter-spacing: -0.06em;
     color: var(--acc);
   }
 
@@ -244,7 +247,7 @@
     font-weight: 300;
     font-size: clamp(34px, 3.3vw, 52px);
     line-height: 1;
-    letter-spacing: -0.02em;
+    letter-spacing: -0.035em;
     color: var(--scene-text);
     font-variant-numeric: tabular-nums lining-nums;
   }

@@ -66,7 +66,7 @@
     font-size: 28px;
     font-weight: 300;
     line-height: 1;
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
     color: var(--scene-text);
     font-variant-numeric: tabular-nums lining-nums;
   }

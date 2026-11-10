@@ -68,7 +68,9 @@
   .contact_content h2 {
     font-family: var(--font-display);
     font-size: clamp(34px, 6vw, 60px);
-    font-weight: 200;
+    font-weight: 300;
+    line-height: 1.05;
+    letter-spacing: -0.035em;
     margin: 0;
     color: var(--scene-text);
   }

@@ -82,43 +82,15 @@ function blogPlugin() {
   ]
 }
 
-/* Preload the three font faces used above the fold (sidebar name, hero
-   tagline/nav, display numerals) so the first paint doesn't swap from
-   fallback fonts. File names are hashed, so they're resolved from the
-   bundle at build time. */
-function preloadFontsPlugin() {
-  const wanted = [
-    /newsreader-latin-200-normal-[\w-]+\.woff2$/,
-    /newsreader-latin-300-normal-[\w-]+\.woff2$/,
-    /jetbrains-mono-latin-400-normal-[\w-]+\.woff2$/
-  ]
-  return {
-    name: 'preload-fonts',
-    apply: 'build',
-    transformIndexHtml: {
-      order: 'post',
-      handler(html, ctx) {
-        if (!ctx.bundle) return html
-        return Object.keys(ctx.bundle)
-          .filter((file) => wanted.some((re) => re.test(file)))
-          .map((file) => ({
-            tag: 'link',
-            attrs: { rel: 'preload', as: 'font', type: 'font/woff2', href: `/${file}`, crossorigin: '' },
-            injectTo: 'head'
-          }))
-      }
-    }
-  }
-}
-
 // https://vitejs.dev/config/
 export default defineConfig(() => ({
-  plugins: [svelte(), blogPlugin(), preloadFontsPlugin()],
+  plugins: [svelte(), blogPlugin()],
   // Root path for GitHub Pages user site
   base: '/',
   build: {
     outDir: 'dist',
-    // Never inline fonts as data: URIs; the CSP only allows font-src 'self'.
+    // Never inline fonts (KaTeX's, on math posts) as data: URIs; the CSP
+    // only allows font-src 'self'.
     assetsInlineLimit: (filePath) => (/\.(woff2?|ttf|otf)$/i.test(filePath) ? false : undefined)
   }
 }))

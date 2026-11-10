@@ -81,7 +81,7 @@
     font-family: var(--font-display);
     font-weight: 300;
     font-size: clamp(30px, 3.6vw, 46px);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
     color: var(--scene-text);
     margin: 0 0 34px;
   }
